@@ -4,6 +4,8 @@ use_frameworks!
 
 target 'Orbot' do
   platform :ios, '15.0'
+
+  pod 'Tor', '~> 406.7'
 end
 
 target 'TorVPN' do
