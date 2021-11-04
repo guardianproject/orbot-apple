@@ -11,23 +11,10 @@ import Tor
 
 class ViewController: UIViewController {
 
-    private enum Info: Int {
-        case vpnLog = 0
-        case torLog = 1
-        case leafLog = 2
-        case leafConf = 3
-        case circuits = 4
-    }
+    @IBOutlet weak var statusIcon: UIImageView!
+    @IBOutlet weak var controlBt: UIButton!
+    @IBOutlet weak var statusLb: UILabel!
 
-    @IBOutlet weak var confStatusLb: UILabel!
-    @IBOutlet weak var confBt: UIButton!
-    @IBOutlet weak var transportSc: UISegmentedControl!
-    @IBOutlet weak var errorLb: UILabel!
-    @IBOutlet weak var sessionStatusLb: UILabel!
-    @IBOutlet weak var sessionBt: UIButton!
-    @IBOutlet weak var logSc: UISegmentedControl!
-    @IBOutlet weak var logTv: UITextView!
-    
     private static let nf: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .percent
@@ -45,28 +32,11 @@ class ViewController: UIViewController {
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnProgress, object: nil)
 
-        clear()
-        updateLog(continuous: true)
+        updateUi()
     }
 
 
     // MARK: Actions
-
-    @IBAction func clear() {
-        if let logfile = FileManager.default.vpnLogFile {
-            try? "".write(to: logfile, atomically: false, encoding: .utf8)
-        }
-
-        if let logfile = FileManager.default.torLogFile {
-            try? "".write(to: logfile, atomically: false, encoding: .utf8)
-        }
-
-        if let logfile = FileManager.default.leafLogFile {
-            try? "".write(to: logfile, atomically: false, encoding: .utf8)
-        }
-
-        updateUi()
-    }
 
     @IBAction func changeConf() {
         switch VpnManager.shared.confStatus {
@@ -82,10 +52,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeTransport() {
-        VpnManager.shared.switch(to: .init(rawValue: transportSc.selectedSegmentIndex) ?? .direct)
+//        VpnManager.shared.switch(to: .init(rawValue: transportSc.selectedSegmentIndex) ?? .direct)
     }
 
-    @IBAction func changeSession() {
+    @IBAction func control() {
+
+        // Enable, if disabled.
+        if VpnManager.shared.confStatus == .disabled {
+            VpnManager.shared.enable()
+        }
+        // Install first, if not installed.
+        else if VpnManager.shared.confStatus == .notInstalled {
+            return VpnManager.shared.install()
+        }
+
         switch VpnManager.shared.sessionStatus {
         case .connected, .connecting:
             VpnManager.shared.disconnect()
@@ -98,133 +78,42 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func switchInfo() {
-        if logSc.selectedSegmentIndex == Info.circuits.rawValue {
-            logTv.text = ""
-
-            let showCircuits = { [weak self] (circuits: [TorCircuit]) -> Void in
-                DispatchQueue.main.async {
-                    self?.logTv.text = circuits.map { $0.raw ?? "" }.joined(separator: "\n")
-                }
-            }
-
-            VpnManager.shared.getCircuits { [weak self] circuits, error in
-                if let error = error {
-                    self?.setError(error)
-                }
-
-                showCircuits(circuits)
-            }
-        }
-        else {
-            updateLog()
-        }
-    }
-
 
     // MARK: Observers
 
     @objc func updateUi(_ notification: Notification? = nil) {
-        confStatusLb.text = String(format: NSLocalizedString("VPN Configuration: %@", comment: ""),
-                                   VpnManager.shared.confStatus.description)
-
-        switch VpnManager.shared.confStatus {
-        case .notInstalled:
-            confBt.setTitle(NSLocalizedString("Install", comment: ""))
-
-        case .disabled:
-            confBt.setTitle(NSLocalizedString("Enable", comment: ""))
-
-        case .enabled:
-            confBt.setTitle(NSLocalizedString("Disable", comment: ""))
-        }
-
-        transportSc.selectedSegmentIndex = VpnManager.shared.transport.rawValue
-
-        var progress = ""
-
-        if notification?.name == .vpnProgress,
-            let raw = notification?.object as? Float {
-
-            progress = ViewController.nf.string(from: NSNumber(value: raw)) ?? ""
-
-        }
-
-        sessionStatusLb.text = String(format: NSLocalizedString("Session: %@", comment: ""),
-                                      [VpnManager.shared.sessionStatus.description, progress].joined(separator: " "))
 
         switch VpnManager.shared.sessionStatus {
         case .connected, .connecting:
-            transportSc.isEnabled = false
-            sessionBt.setTitle(NSLocalizedString("Disconnect", comment: ""))
-            sessionBt.isEnabled = true
+            statusIcon.image = UIImage(named: "TorOn")
+            controlBt.setTitle(NSLocalizedString("Stop", comment: ""))
 
-        case .disconnected, .disconnecting:
-            transportSc.isEnabled = true
-            sessionBt.setTitle(NSLocalizedString("Connect", comment: ""))
-            sessionBt.isEnabled = true
+        case .invalid:
+            statusIcon.image = UIImage(named: "TorOff")
+            controlBt.setTitle(NSLocalizedString("Install", comment: ""))
 
         default:
-            transportSc.isEnabled = false
-            sessionBt.isEnabled = false
+            statusIcon.image = UIImage(named: "TorOff")
+            controlBt.setTitle(NSLocalizedString("Start", comment: ""))
         }
 
-        setError(VpnManager.shared.error)
-
-        updateLog()
-    }
-
-    private var running = false
-
-    private func updateLog(continuous: Bool = false) {
-        if !running {
-            running = true
-
-            if logSc.selectedSegmentIndex < Info.circuits.rawValue {
-                let text: String?
-                let idx = logSc.selectedSegmentIndex
-
-                if idx == Info.torLog.rawValue {
-                    text = FileManager.default.torLog
-                }
-                else if idx == Info.vpnLog.rawValue {
-                    text = FileManager.default.vpnLog
-                }
-                else if idx == Info.leafLog.rawValue {
-                    text = FileManager.default.leafLog
-                }
-                else {
-                    text = FileManager.default.leafConf
-                }
-
-                if logTv.text != text {
-                    logTv.text = text
-                    logTv.scrollToBottom()
-                }
-            }
-
-            running = false
+        if let error = VpnManager.shared.error {
+            statusLb.text = error.localizedDescription
         }
-
-        if continuous {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self.updateLog(continuous: true)
-            }
-        }
-    }
-
-
-    // MARK: Private Methods
-
-    private func setError(_ error: Error?) {
-        if let error = error {
-            errorLb.isHidden = false
-            errorLb.text = String(format: NSLocalizedString("Error: %@", comment: ""),
-                                  error.localizedDescription)
+        else if VpnManager.shared.confStatus != .enabled {
+            statusLb.text = VpnManager.shared.confStatus.description
         }
         else {
-            errorLb.isHidden = true
+            var progress = ""
+
+            if notification?.name == .vpnProgress,
+                let raw = notification?.object as? Float {
+
+                progress = ViewController.nf.string(from: NSNumber(value: raw)) ?? ""
+            }
+
+            statusLb.text = [VpnManager.shared.sessionStatus.description, progress]
+                .joined(separator: " ")
         }
     }
 }
-

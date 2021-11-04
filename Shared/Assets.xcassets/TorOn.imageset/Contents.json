@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "toron.png",
       "idiom" : "universal"
     }
   ],

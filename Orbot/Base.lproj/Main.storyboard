@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zOy-O2-NNl">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,138 +14,75 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="VPN Configuration: %@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-5A-rvF">
-                                <rect key="frame" x="16" y="58" width="239" height="18"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAX-85-q23">
+                                <rect key="frame" x="16" y="60" width="343" height="279.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TorOff" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="279.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-rR-QxJ">
+                                        <rect key="frame" x="140.5" y="124.5" width="62.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Install"/>
+                                        <connections>
+                                            <action selector="control" destination="BYZ-38-t0r" eventType="touchUpInside" id="wew-ai-k2h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerX" secondItem="VAX-85-q23" secondAttribute="centerX" id="8AD-0J-szj"/>
+                                    <constraint firstAttribute="trailing" secondItem="1N5-w4-uQk" secondAttribute="trailing" id="97m-ZA-bX0"/>
+                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="leading" secondItem="VAX-85-q23" secondAttribute="leading" id="D4H-fu-2CT"/>
+                                    <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="centerY" id="SQN-3L-91M"/>
+                                    <constraint firstAttribute="bottom" secondItem="1N5-w4-uQk" secondAttribute="bottom" id="eGm-wk-ZT6"/>
+                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="top" id="r86-rH-sKJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-w6-CDg">
+                                <rect key="frame" x="16" y="347.5" width="343" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-eZ-eNK">
-                                <rect key="frame" x="263" y="52" width="41" height="30"/>
-                                <state key="normal" title="Install"/>
-                                <connections>
-                                    <action selector="changeConf" destination="BYZ-38-t0r" eventType="touchUpInside" id="699-Bm-u0G"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Session: %@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-VF-05V">
-                                <rect key="frame" x="16" y="129" width="221" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoX-1r-5fw">
-                                <rect key="frame" x="245" y="123" width="59" height="30"/>
-                                <state key="normal" title="Connect"/>
-                                <connections>
-                                    <action selector="changeSession" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Xd-gH-LdY"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: %@" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfg-d4-gTq">
-                                <rect key="frame" x="16" y="155" width="288" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NMi-zG-000">
-                                <rect key="frame" x="16" y="181" width="288" height="32"/>
-                                <segments>
-                                    <segment title="VPN Log"/>
-                                    <segment title="Tor Log"/>
-                                    <segment title="Leaf Log"/>
-                                    <segment title="Leaf Conf"/>
-                                    <segment title="Circuits"/>
-                                </segments>
-                                <connections>
-                                    <action selector="switchInfo" destination="BYZ-38-t0r" eventType="valueChanged" id="aYe-TB-b1h"/>
-                                </connections>
-                            </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PlS-Eg-V1S">
-                                <rect key="frame" x="16" y="220" width="288" height="348"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k8y-m8-Rta">
-                                <rect key="frame" x="16" y="90" width="288" height="32"/>
-                                <segments>
-                                    <segment title="Direct"/>
-                                    <segment title="Obfs4"/>
-                                    <segment title="Snowflake"/>
-                                </segments>
-                                <connections>
-                                    <action selector="changeTransport" destination="BYZ-38-t0r" eventType="valueChanged" id="XV7-7o-Azl"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="NMi-zG-000" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="06d-1N-QTA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PlS-Eg-V1S" secondAttribute="trailing" constant="16" id="3C2-Xp-RC0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PoX-1r-5fw" secondAttribute="trailing" constant="16" id="7lA-je-GCG"/>
-                            <constraint firstItem="k8y-m8-Rta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8Jm-3b-SYk"/>
-                            <constraint firstItem="PlS-Eg-V1S" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="HpA-zC-mLW"/>
-                            <constraint firstItem="1VZ-5A-rvF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MgR-pd-C4s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k8y-m8-Rta" secondAttribute="trailing" constant="16" id="TBJ-52-xka"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gfg-d4-gTq" secondAttribute="trailing" constant="16" id="UQx-ij-D9s"/>
-                            <constraint firstItem="k8y-m8-Rta" firstAttribute="top" secondItem="EfP-eZ-eNK" secondAttribute="bottom" constant="8" symbolic="YES" id="V8X-Wa-ywj"/>
-                            <constraint firstItem="gfg-d4-gTq" firstAttribute="top" secondItem="4dJ-VF-05V" secondAttribute="bottom" constant="8" symbolic="YES" id="W3N-8L-uCa"/>
-                            <constraint firstItem="NMi-zG-000" firstAttribute="top" secondItem="gfg-d4-gTq" secondAttribute="bottom" constant="8" symbolic="YES" id="XYc-95-Wcd"/>
-                            <constraint firstItem="PlS-Eg-V1S" firstAttribute="top" secondItem="NMi-zG-000" secondAttribute="bottom" constant="8" id="aqn-U8-Eae"/>
-                            <constraint firstItem="PlS-Eg-V1S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ciL-0i-PZ0"/>
-                            <constraint firstItem="EfP-eZ-eNK" firstAttribute="leading" secondItem="1VZ-5A-rvF" secondAttribute="trailing" constant="8" id="e3R-9H-PsC"/>
-                            <constraint firstItem="EfP-eZ-eNK" firstAttribute="centerY" secondItem="1VZ-5A-rvF" secondAttribute="centerY" id="es4-yn-VcN"/>
-                            <constraint firstItem="EfP-eZ-eNK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="gyo-ia-KXE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfP-eZ-eNK" secondAttribute="trailing" constant="16" id="h8U-Zp-fUI"/>
-                            <constraint firstItem="PoX-1r-5fw" firstAttribute="centerY" secondItem="4dJ-VF-05V" secondAttribute="centerY" id="n7V-J4-hnz"/>
-                            <constraint firstItem="4dJ-VF-05V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nD7-0z-pWr"/>
-                            <constraint firstItem="PoX-1r-5fw" firstAttribute="leading" secondItem="4dJ-VF-05V" secondAttribute="trailing" constant="8" id="tGa-XN-cFd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NMi-zG-000" secondAttribute="trailing" constant="16" id="uje-xk-mHg"/>
-                            <constraint firstItem="4dJ-VF-05V" firstAttribute="top" secondItem="k8y-m8-Rta" secondAttribute="bottom" constant="8" symbolic="YES" id="y9V-GJ-aFd"/>
-                            <constraint firstItem="gfg-d4-gTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zKT-g8-xOW"/>
+                            <constraint firstItem="VAX-85-q23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0Rt-3j-kcF"/>
+                            <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Jm-94-J7W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="bottom" constant="16" id="CdO-Hx-sqm"/>
+                            <constraint firstItem="VAX-85-q23" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
+                            <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="bottom" constant="8" symbolic="YES" id="SGc-kf-BKI"/>
+                            <constraint firstItem="VAX-85-q23" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Skm-AT-cIl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="uQO-Z3-E7o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="csL-pE-TAh">
-                            <connections>
-                                <action selector="clear" destination="BYZ-38-t0r" id="WAN-Wt-zAP"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="globe" catalog="system" id="fDO-vW-QMh">
-                            <connections>
-                                <segue destination="jYA-dm-nIX" kind="show" id="mmD-sA-ga4"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH"/>
                     <connections>
-                        <outlet property="confBt" destination="EfP-eZ-eNK" id="LDK-9D-yOU"/>
-                        <outlet property="confStatusLb" destination="1VZ-5A-rvF" id="uiW-K6-ixS"/>
-                        <outlet property="errorLb" destination="gfg-d4-gTq" id="uf7-wa-j0h"/>
-                        <outlet property="logSc" destination="NMi-zG-000" id="v8w-Gi-PYy"/>
-                        <outlet property="logTv" destination="PlS-Eg-V1S" id="fVW-rB-6pC"/>
-                        <outlet property="sessionBt" destination="PoX-1r-5fw" id="Veq-gy-d7b"/>
-                        <outlet property="sessionStatusLb" destination="4dJ-VF-05V" id="QMp-zn-U6I"/>
-                        <outlet property="transportSc" destination="k8y-m8-Rta" id="9ei-0h-l0V"/>
+                        <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
+                        <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
+                        <outlet property="statusLb" destination="trJ-w6-CDg" id="5FA-6q-zNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.25" y="137.32394366197184"/>
+            <point key="canvasLocation" x="130.40000000000001" y="137.18140929535232"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="d0t-Hs-yGt">
             <objects>
                 <viewController id="jYA-dm-nIX" customClass="WebViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="otY-Yz-heB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIm-NQ-9Rx">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -198,7 +136,7 @@
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -210,16 +148,17 @@
             <point key="canvasLocation" x="-743" y="137"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="DarkGreen"/>
     <resources>
-        <image name="globe" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="TorOff" width="512" height="512"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.30980392156862746" green="0.21176470588235294" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGreen">
+            <color red="0.40000000000000002" green="0.59999999999999998" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
