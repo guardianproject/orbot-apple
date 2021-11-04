@@ -1,6 +1,6 @@
 //
 //  NETunnelProviderManager+Helpers.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 18.10.21.
 //  Copyright © 2021 Guardian Project. All rights reserved.

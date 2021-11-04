@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:iCepa.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Tor.framework/Tor.xcodeproj">
+      location = "group:Orbot.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

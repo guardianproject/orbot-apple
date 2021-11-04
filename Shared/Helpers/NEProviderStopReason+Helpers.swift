@@ -1,6 +1,6 @@
 //
 //  NEProviderStopReason+Helpers.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 03.06.20.
 //  Copyright © 2020 Guardian Project. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  Logger.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 17.05.21.
 //  Copyright © 2021 Guardian Project. All rights reserved.

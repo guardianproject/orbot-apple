@@ -1,6 +1,6 @@
 //
 //  Config.m
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 20.05.20.
 //  Copyright © 2020 Guardian Project. All rights reserved.
@@ -20,10 +20,6 @@
 
 + (NSString *) groupId {
     return MACRO_STRING(APP_GROUP);
-}
-
-+ (BOOL) torInApp {
-    return NO;
 }
 
 @end

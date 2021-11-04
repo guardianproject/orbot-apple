@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 20.05.20.
 //  Copyright © 2020 Guardian Project. All rights reserved.
@@ -107,17 +107,12 @@ class ViewController: UIViewController {
                 }
             }
 
-            if Config.torInApp {
-                TorManager.shared.getCircuits(showCircuits)
-            }
-            else {
-                VpnManager.shared.getCircuits { [weak self] circuits, error in
-                    if let error = error {
-                        self?.setError(error)
-                    }
-
-                    showCircuits(circuits)
+            VpnManager.shared.getCircuits { [weak self] circuits, error in
+                if let error = error {
+                    self?.setError(error)
                 }
+
+                showCircuits(circuits)
             }
         }
         else {

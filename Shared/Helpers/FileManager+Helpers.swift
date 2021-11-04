@@ -1,6 +1,6 @@
 //
 //  FileManager+Helpers.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 20.05.20.
 //  Copyright © 2020 Guardian Project. All rights reserved.
@@ -30,12 +30,8 @@ extension FileManager {
         return groupFolder?.appendingPathComponent("leaf.conf")
     }
 
-    var leafConfAppTemplateFile: URL? {
-        return Bundle.main.url(forResource: "template-app", withExtension: "conf")
-    }
-
-    var leafConfNeTemplateFile: URL? {
-        return Bundle.main.url(forResource: "template-ne", withExtension: "conf")
+    var leafConfTemplateFile: URL? {
+        return Bundle.main.url(forResource: "template", withExtension: "conf")
     }
 
 	var vpnLog: String? {
@@ -62,16 +58,8 @@ extension FileManager {
         return nil
     }
 
-    var leafConfAppTemplate: String? {
-        if let templateFile = leafConfAppTemplateFile {
-            return try? String(contentsOf: templateFile)
-        }
-
-        return nil
-    }
-
-    var leafConfNeTemplate: String? {
-        if let templateFile = leafConfNeTemplateFile {
+    var leafConfTemplate: String? {
+        if let templateFile = leafConfTemplateFile {
             return try? String(contentsOf: templateFile)
         }
 

@@ -3,5 +3,3 @@
 //
 
 #import "Config.h"
-#import <Tor/Tor.h>
-#import <IPtProxy/IPtProxy.h>

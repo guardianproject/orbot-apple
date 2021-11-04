@@ -1,12 +1,13 @@
 //
 //  TorManager.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 17.05.21.
 //  Copyright © 2021 Guardian Project. All rights reserved.
 //
 
 import NetworkExtension
+import Tor
 
 #if os(iOS)
 import IPtProxy
@@ -25,7 +26,6 @@ class TorManager {
 
     static let torProxyPort: UInt16 = 39050
     static let dnsPort: UInt16 = 39053
-    static let leafProxyPort: UInt16 = 39080
 
     private static let torControlPort: UInt16 = 39060
 
@@ -36,24 +36,13 @@ class TorManager {
     private var torConf: TorConfiguration?
 
     private var torRunning: Bool {
-        log("#torRunning 0")
-
         guard torThread?.isExecuting ?? false else {
-            log("#torRunning 1")
-
             return false
         }
 
-        log("#torRunning 2")
-
-
         if let lock = torConf?.dataDirectory?.appendingPathComponent("lock") {
-            log("#torRunning 3")
-
             return FileManager.default.fileExists(atPath: lock.path)
         }
-
-        log("#torRunning 4")
 
         return false
     }
@@ -70,7 +59,6 @@ class TorManager {
 
 
     private init() {
-        
     }
 
     func start(_ transport: NETunnelProviderProtocol.Transport,
@@ -79,21 +67,14 @@ class TorManager {
                _ completion: @escaping (Error?) -> Void)
     {
         if !torRunning {
-            log("#startTunnel configure Tor thread")
-
             torConf = getTorConf(transport, port)
 
             torThread = TorThread(configuration: torConf)
 
-            log("#startTunnel start Tor thread")
             torThread?.start()
         }
 
-        log("#startTunnel before dispatch")
-
         controllerQueue.asyncAfter(deadline: .now() + 0.65) {
-            self.log("#startTunnel try to connect to Tor thread=\(String(describing: self.torThread))")
-
             if self.torController == nil {
                 self.torController = TorController(
                     socketHost: TorManager.localhost,
@@ -188,13 +169,6 @@ class TorManager {
 
         let dataDirectory = FileManager.default.groupFolder?.appendingPathComponent("tor")
 
-        // Should not be needed anymore with 50 MB RAM limit.
-//        if let dataDirectory = dataDirectory {
-//            // Need to clean out, so data doesn't grow too big. Otherwise
-//            // we get killed by Jetsam because Tor will use too much memory.
-//            try? FileManager.default.removeItem(at: dataDirectory)
-//        }
-
         conf.options = [
             // DNS
             "DNSPort": "\(TorManager.localhost):\(TorManager.dnsPort)",
@@ -217,10 +191,6 @@ class TorManager {
             "ClientOnly": "1",
             "AvoidDiskWrites": "1",
             "MaxMemInQueues": "5MB"]
-
-        if Config.torInApp && transport == .direct {
-            conf.options["Socks5Proxy"] = "\(TorManager.localhost):\(TorManager.leafProxyPort)"
-        }
 
 #if os(iOS)
         if transport == .obfs4 {

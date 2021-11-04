@@ -43,22 +43,20 @@ class BasePTProvider: NEPacketTunnelProvider {
         super.init()
 
         NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
-            "iCepa.\(String(describing: CloseCircuitsMessage.self))")
+            "Orbot.\(String(describing: CloseCircuitsMessage.self))")
 
         NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
-            "iCepa.\(String(describing: GetCircuitsMessage.self))")
+            "Orbot.\(String(describing: GetCircuitsMessage.self))")
 
         NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
-            "iCepa_Mac.\(String(describing: CloseCircuitsMessage.self))")
+            "Orbot_Mac.\(String(describing: CloseCircuitsMessage.self))")
 
         NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
-            "iCepa_Mac.\(String(describing: GetCircuitsMessage.self))")
+            "Orbot_Mac.\(String(describing: GetCircuitsMessage.self))")
     }
 
 
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
-        log("#startTunnel")
-
         let ipv4 = NEIPv4Settings(addresses: ["192.168.20.2"], subnetMasks: ["255.255.255.0"])
         ipv4.includedRoutes = [NEIPv4Route.default()]
 
@@ -76,11 +74,7 @@ class BasePTProvider: NEPacketTunnelProvider {
         settings.ipv6Settings = ipv6
         settings.dnsSettings = dns
 
-        log("#startTunnel before setTunnelNetworkSettings")
-
         setTunnelNetworkSettings(settings) { error in
-            self.log("#startTunnel in setTunnelNetworkSettings callback")
-
             if let error = error {
                 self.log("#startTunnel error=\(error)")
                 return completionHandler(error)
@@ -98,45 +92,38 @@ class BasePTProvider: NEPacketTunnelProvider {
                 completionHandler(nil)
             }
 
-            if Config.torInApp {
-                completion(nil)
-            }
-            else {
-                self.log("#startTunnel before start Tor thread")
-
-                var port: Int? = nil
+            var port: Int? = nil
 
 #if os(iOS)
-                switch self.transport {
-                case .obfs4:
-                    #if DEBUG
-                    let ennableLogging = true
-                    #else
-                    let ennableLogging = false
-                    #endif
+            switch self.transport {
+            case .obfs4:
+                #if DEBUG
+                let ennableLogging = true
+                #else
+                let ennableLogging = false
+                #endif
 
-                    IPtProxyStartObfs4Proxy("DEBUG", ennableLogging, true, nil)
+                IPtProxyStartObfs4Proxy("DEBUG", ennableLogging, true, nil)
 
-                    port = IPtProxyObfs4Port()
+                port = IPtProxyObfs4Port()
 
-                case .snowflake:
-                    IPtProxyStartSnowflake(
-                        "stun:stun.l.google.com:19302,stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478",
-                        "https://snowflake-broker.torproject.net.global.prod.fastly.net/",
-                        "cdn.sstatic.net", nil, true, false, true, 1)
+            case .snowflake:
+                IPtProxyStartSnowflake(
+                    "stun:stun.l.google.com:19302,stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478",
+                    "https://snowflake-broker.torproject.net.global.prod.fastly.net/",
+                    "cdn.sstatic.net", nil, true, false, true, 1)
 
-                    port = IPtProxySnowflakePort()
+                port = IPtProxySnowflakePort()
 
-                default:
-                    break
-                }
+            default:
+                break
+            }
 #endif
 
-                TorManager.shared.start(self.transport, port, { progress in
-                    BasePTProvider.messageQueue.append(ProgressMessage(Float(progress) / 100))
-                    self.sendMessages()
-                }, completion)
-            }
+            TorManager.shared.start(self.transport, port, { progress in
+                BasePTProvider.messageQueue.append(ProgressMessage(Float(progress) / 100))
+                self.sendMessages()
+            }, completion)
         }
     }
     
@@ -146,17 +133,15 @@ class BasePTProvider: NEPacketTunnelProvider {
         TorManager.shared.stop()
 
 #if os(iOS)
-        if !Config.torInApp {
-            switch transport {
-            case .obfs4:
-                IPtProxyStopObfs4Proxy()
+        switch transport {
+        case .obfs4:
+            IPtProxyStopObfs4Proxy()
 
-            case .snowflake:
-                IPtProxyStopSnowflake()
+        case .snowflake:
+            IPtProxyStopSnowflake()
 
-            default:
-                break
-            }
+        default:
+            break
         }
 #endif
 

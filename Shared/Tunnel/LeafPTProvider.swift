@@ -16,17 +16,8 @@ class LeafPTProvider: BasePTProvider {
     private static let leafId: UInt16 = 666
 
     override func startTun2Socks() {
-        var conf: String?
-
-        if Config.torInApp {
-            conf = FileManager.default.leafConfAppTemplate?
-                .replacingOccurrences(of: "{{leafProxyPort}}", with: String(TorManager.leafProxyPort))
-        }
-        else {
-            conf = FileManager.default.leafConfNeTemplate
-        }
-
-        conf = conf?.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile!.path)
+        let conf = FileManager.default.leafConfTemplate?
+            .replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile!.path)
             .replacingOccurrences(of: "{{tunFd}}", with: String(tunnelFd!))
             .replacingOccurrences(of: "{{torProxyPort}}", with: String(TorManager.torProxyPort))
             .replacingOccurrences(of: "{{dnsPort}}", with: String(TorManager.dnsPort))

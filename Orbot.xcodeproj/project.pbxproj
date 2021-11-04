@@ -3,49 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31E151BC94D5763DF8D173E8 /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6E47E342E2CBFC3A05A241 /* Pods_TorVPN.framework */; };
+		2AB3BC5615062C2CF06D8D7E /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63AAF9393B95CA0DB9025EA /* Pods_TorVPN.framework */; };
+		8E900C8223783156D8427040 /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E4D820537A65DA0B8F79EC /* Pods_Orbot.framework */; };
 		A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
-		A023D82B271986FB00A634B7 /* template-ne.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-ne.conf */; };
-		A023D82C271986FC00A634B7 /* template-ne.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template-ne.conf */; };
-		A04F2A4726F8DA5C00C660B0 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
-		A04F2A4826F8E3AA00C660B0 /* template-app.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-app.conf */; };
+		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
-		A0507CF626F9FB9400F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF526F9FB9400F91105 /* NetworkExtension.framework */; };
-		A0507CF726F9FB9B00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF526F9FB9400F91105 /* NetworkExtension.framework */; };
-		A0507CF926F9FC0F00F91105 /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF826F9FC0F00F91105 /* Tor.framework */; };
-		A0507CFA26F9FC0F00F91105 /* Tor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF826F9FC0F00F91105 /* Tor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A0507CFD26F9FC1700F91105 /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CFC26F9FC1700F91105 /* Tor.framework */; };
-		A0507CFE26F9FC1700F91105 /* Tor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CFC26F9FC1700F91105 /* Tor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A0507D0126F9FC2600F91105 /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507D0026F9FC2600F91105 /* Tor.framework */; };
-		A0507D0226F9FC2600F91105 /* Tor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0507D0026F9FC2600F91105 /* Tor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A0507D0526F9FC2C00F91105 /* Tor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507D0426F9FC2C00F91105 /* Tor.framework */; };
-		A0507D0626F9FC2C00F91105 /* Tor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0507D0426F9FC2C00F91105 /* Tor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0507D0926FA303800F91105 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0507D0826FA303800F91105 /* WebViewController.swift */; };
-		A05399342682293500A19969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05399332682293500A19969 /* AppDelegate.swift */; };
-		A05399362682293500A19969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05399352682293500A19969 /* ViewController.swift */; };
-		A053993B2682293700A19969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05399392682293700A19969 /* Main.storyboard */; };
-		A0539941268229E800A19969 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
-		A0539942268229EB00A19969 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
-		A053994726822A8400A19969 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
-		A053994826822A9300A19969 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
-		A053994926822A9C00A19969 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A053995026822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
-		A053995126822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
-		A053995326822D8600A19969 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73602247584EE00073C81 /* VpnManager.swift */; };
-		A053995426822DB100A19969 /* ProgressMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F424757FA400073C81 /* ProgressMessage.swift */; };
-		A053995526822DC200A19969 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E824756CA200073C81 /* Message.swift */; };
-		A053995626822DDA00A19969 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
-		A053995726822DE800A19969 /* GetCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */; };
-		A053995826822DF800A19969 /* CloseCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */; };
 		A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B324755CE600930C40 /* AppDelegate.swift */; };
 		A05B73B824755CE600930C40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* ViewController.swift */; };
 		A05B73BB24755CE600930C40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05B73B924755CE600930C40 /* Main.storyboard */; };
@@ -53,7 +26,6 @@
 		A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
-		A0956913271F2AC30089BDB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -78,29 +50,11 @@
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B77FF6271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
-		A0B77FF7271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
 		A0B77FF8271DAE7500A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
-		A0B77FF9271DAE7600A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
 		A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
 		A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
-		A0B77FFD271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
-		A0B77FFE271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
-		A0D6A88A26F4DE2900130C03 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
-		A0E1F1AE26834C0400111461 /* TorVPN-Mac.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0E1F1A526834C0400111461 /* TorVPN-Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A0E1F1B426834C7D00111461 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E824756CA200073C81 /* Message.swift */; };
-		A0E1F1B526834C8200111461 /* CloseCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */; };
-		A0E1F1B626834C8900111461 /* GetCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */; };
-		A0E1F1B726834C8F00111461 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
-		A0E1F1B826834C9B00111461 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
-		A0E1F1B926834C9E00111461 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
-		A0E1F1BA26834CA600111461 /* ProgressMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F424757FA400073C81 /* ProgressMessage.swift */; };
-		A0E1F1BB26834CB200111461 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
-		A0E1F1BE26834DDD00111461 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
-		A0FD91A926F368BB002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
-		A0FD91AF26F36A61002C317C /* template-app.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0FD91A226F35FB2002C317C /* template-app.conf */; };
-		A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C078DF9171B7034766397E7 /* Pods_iCepa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,60 +65,9 @@
 			remoteGlobalIDString = A0A735CC247561F200073C81;
 			remoteInfo = TorVPN;
 		};
-		A0E1F1AC26834C0400111461 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A05B73A824755CE600930C40 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0E1F1A426834C0400111461;
-			remoteInfo = "TorVPN-Mac";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A0507CFB26F9FC0F00F91105 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A0507CFA26F9FC0F00F91105 /* Tor.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0507CFF26F9FC1700F91105 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A0507CFE26F9FC1700F91105 /* Tor.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0507D0326F9FC2600F91105 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A0507D0226F9FC2600F91105 /* Tor.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0507D0726F9FC2C00F91105 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A0507D0626F9FC2C00F91105 /* Tor.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A0A735D9247561F200073C81 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,25 +79,15 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0E1F1AF26834C0400111461 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				A0E1F1AE26834C0400111461 /* TorVPN-Mac.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D6E47E342E2CBFC3A05A241 /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C078DF9171B7034766397E7 /* Pods_iCepa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCepa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
+		788C5515DC1FFA3E7581A328 /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
+		7FBB9B7F6CDA4F14311500C6 /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		A023D82A271983C000A634B7 /* template-ne.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-ne.conf"; sourceTree = "<group>"; };
+		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
 		A04F285B26F8D46500C660B0 /* build_cross.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_cross.sh; sourceTree = "<group>"; };
 		A04F285D26F8D46500C660B0 /* Cargo.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cargo.toml; sourceTree = "<group>"; };
@@ -609,29 +502,18 @@
 		A0507D0026F9FC2600F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0426F9FC2C00F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0826FA303800F91105 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		A0534495264C35180077560D /* T2TPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T2TPTProvider.swift; sourceTree = "<group>"; };
-		A05399312682293500A19969 /* iCepa-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iCepa-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A05399332682293500A19969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A05399352682293500A19969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A053993A2682293700A19969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A053993C2682293700A19969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A053993D2682293700A19969 /* iCepa_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCepa_Mac.entitlements; sourceTree = "<group>"; };
 		A053994E26822C4F00A19969 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
-		A057A06025377D45004B3D18 /* TunWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunWriter.swift; sourceTree = "<group>"; };
-		A05B73B024755CE600930C40 /* iCepa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCepa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05B73B024755CE600930C40 /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05B73B324755CE600930C40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A05B73B724755CE600930C40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A05B73BA24755CE600930C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73BF24755CE700930C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A05B73C124755CE700930C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A05FDFCC270B42FC00A3D46E /* iCepa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCepa-Bridging-Header.h"; sourceTree = "<group>"; };
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A08DA307252DDC26006B0DC1 /* GoT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoT2SPTProvider.swift; sourceTree = "<group>"; };
-		A08DA309252DDC49006B0DC1 /* OBT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBT2SPTProvider.swift; sourceTree = "<group>"; };
-		A0A735C024755DCB00073C81 /* iCepa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCepa.entitlements; sourceTree = "<group>"; };
+		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C624755F2200073C81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -640,7 +522,7 @@
 		A0A735D1247561F200073C81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0A735D2247561F200073C81 /* TorVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TorVPN.entitlements; sourceTree = "<group>"; };
 		A0A735DC2475628F00073C81 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		A0A735DD247566CC00073C81 /* iCepa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCepa-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Orbot-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TorVPN-Bridging-Header.h"; sourceTree = "<group>"; };
 		A0A735DF247566CD00073C81 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		A0A735E0247566CD00073C81 /* Config.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
@@ -657,38 +539,21 @@
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
 		A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderProtocol+Helpers.swift"; sourceTree = "<group>"; };
 		A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderManager+Helpers.swift"; sourceTree = "<group>"; };
-		A0DD8CDD252CB794006750DF /* PacketFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketFlow.swift; sourceTree = "<group>"; };
-		A0E1F1A526834C0400111461 /* TorVPN-Mac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TorVPN-Mac.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0E1F1AA26834C0400111461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0E1F1AB26834C0400111461 /* TorVPN_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TorVPN_Mac.entitlements; sourceTree = "<group>"; };
-		A0E9915525375EFA0051AB88 /* OGoT2SPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGoT2SPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
-		A0FD91A226F35FB2002C317C /* template-app.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-app.conf"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
-		B97A8F56E0F8DD7206C1FA14 /* Pods-iCepa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.debug.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.debug.xcconfig"; sourceTree = "<group>"; };
-		BA3E6397C157544CEA3CA28D /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
-		CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCepa.release.xcconfig"; path = "Target Support Files/Pods-iCepa/Pods-iCepa.release.xcconfig"; sourceTree = "<group>"; };
-		FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		A63AAF9393B95CA0DB9025EA /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1E4D820537A65DA0B8F79EC /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3532B6F6A7B2FC1ED7B2F5D /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A053992E2682293500A19969 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0507D0126F9FC2600F91105 /* Tor.framework in Frameworks */,
-				A0507CF626F9FB9400F91105 /* NetworkExtension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A05B73AD24755CE600930C40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0507CF926F9FC0F00F91105 /* Tor.framework in Frameworks */,
-				A5445C28740CC946E8C5C0FA /* Pods_iCepa.framework in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
+				8E900C8223783156D8427040 /* Pods_Orbot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,18 +563,7 @@
 			files = (
 				A0FD91A626F36199002C317C /* libleaf.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
-				A0507CFD26F9FC1700F91105 /* Tor.framework in Frameworks */,
-				31E151BC94D5763DF8D173E8 /* Pods_TorVPN.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0E1F1A226834C0400111461 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0507D0526F9FC2C00F91105 /* Tor.framework in Frameworks */,
-				A04F2A4726F8DA5C00C660B0 /* libleaf.a in Frameworks */,
-				A0507CF726F9FB9B00F91105 /* NetworkExtension.framework in Frameworks */,
+				2AB3BC5615062C2CF06D8D7E /* Pods_TorVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1825,27 +1679,12 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		A05399322682293500A19969 /* iCepa-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				A05399332682293500A19969 /* AppDelegate.swift */,
-				A05399352682293500A19969 /* ViewController.swift */,
-				A05399392682293700A19969 /* Main.storyboard */,
-				A05FDFCC270B42FC00A3D46E /* iCepa-Bridging-Header.h */,
-				A053993C2682293700A19969 /* Info.plist */,
-				A053993D2682293700A19969 /* iCepa_Mac.entitlements */,
-			);
-			path = "iCepa-Mac";
-			sourceTree = "<group>";
-		};
 		A05B73A724755CE600930C40 = {
 			isa = PBXGroup;
 			children = (
 				A0A735C324755E0C00073C81 /* Build */,
-				A05B73B224755CE600930C40 /* iCepa */,
+				A05B73B224755CE600930C40 /* Orbot */,
 				A0A735CE247561F200073C81 /* TorVPN */,
-				A05399322682293500A19969 /* iCepa-Mac */,
-				A0E1F1A726834C0400111461 /* TorVPN-Mac */,
 				A0A735DA2475621400073C81 /* Shared */,
 				A04F285826F8D46400C660B0 /* leaf */,
 				A05B73B124755CE600930C40 /* Products */,
@@ -1857,15 +1696,13 @@
 		A05B73B124755CE600930C40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A05B73B024755CE600930C40 /* iCepa.app */,
+				A05B73B024755CE600930C40 /* Orbot.app */,
 				A0A735CD247561F200073C81 /* TorVPN.appex */,
-				A05399312682293500A19969 /* iCepa-Mac.app */,
-				A0E1F1A526834C0400111461 /* TorVPN-Mac.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A05B73B224755CE600930C40 /* iCepa */ = {
+		A05B73B224755CE600930C40 /* Orbot */ = {
 			isa = PBXGroup;
 			children = (
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
@@ -1873,11 +1710,11 @@
 				A0507D0826FA303800F91105 /* WebViewController.swift */,
 				A05B73B924755CE600930C40 /* Main.storyboard */,
 				A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */,
-				A0A735DD247566CC00073C81 /* iCepa-Bridging-Header.h */,
+				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
 				A05B73C124755CE700930C40 /* Info.plist */,
-				A0A735C024755DCB00073C81 /* iCepa.entitlements */,
+				A0A735C024755DCB00073C81 /* Orbot.entitlements */,
 			);
-			path = iCepa;
+			path = Orbot;
 			sourceTree = "<group>";
 		};
 		A0A735C324755E0C00073C81 /* Build */ = {
@@ -1897,11 +1734,6 @@
 		A0A735CE247561F200073C81 /* TorVPN */ = {
 			isa = PBXGroup;
 			children = (
-				A08DA309252DDC49006B0DC1 /* OBT2SPTProvider.swift */,
-				A08DA307252DDC26006B0DC1 /* GoT2SPTProvider.swift */,
-				A0E9915525375EFA0051AB88 /* OGoT2SPTProvider.swift */,
-				A0DD8CDD252CB794006750DF /* PacketFlow.swift */,
-				A057A06025377D45004B3D18 /* TunWriter.swift */,
 				A0A735D1247561F200073C81 /* Info.plist */,
 				A0A735D2247561F200073C81 /* TorVPN.entitlements */,
 			);
@@ -1922,8 +1754,7 @@
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
-				A0FD91A226F35FB2002C317C /* template-app.conf */,
-				A023D82A271983C000A634B7 /* template-ne.conf */,
+				A023D82A271983C000A634B7 /* template.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -1955,20 +1786,10 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		A0E1F1A726834C0400111461 /* TorVPN-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				A0E1F1AA26834C0400111461 /* Info.plist */,
-				A0E1F1AB26834C0400111461 /* TorVPN_Mac.entitlements */,
-			);
-			path = "TorVPN-Mac";
-			sourceTree = "<group>";
-		};
 		A0E1F1BC26834D7300111461 /* Tunnel */ = {
 			isa = PBXGroup;
 			children = (
 				A0A735CF247561F200073C81 /* BasePTProvider.swift */,
-				A0534495264C35180077560D /* T2TPTProvider.swift */,
 				A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */,
 			);
 			path = Tunnel;
@@ -1977,10 +1798,10 @@
 		A53EFD1654E1809EC93A8DBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B97A8F56E0F8DD7206C1FA14 /* Pods-iCepa.debug.xcconfig */,
-				CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */,
-				FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */,
-				BA3E6397C157544CEA3CA28D /* Pods-TorVPN.release.xcconfig */,
+				C3532B6F6A7B2FC1ED7B2F5D /* Pods-Orbot.debug.xcconfig */,
+				599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */,
+				7FBB9B7F6CDA4F14311500C6 /* Pods-TorVPN.debug.xcconfig */,
+				788C5515DC1FFA3E7581A328 /* Pods-TorVPN.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1996,8 +1817,8 @@
 				A0507CF526F9FB9400F91105 /* NetworkExtension.framework */,
 				A0FD91A526F36199002C317C /* leaf.h */,
 				A0FD91A426F36199002C317C /* libleaf.a */,
-				2D6E47E342E2CBFC3A05A241 /* Pods_TorVPN.framework */,
-				8C078DF9171B7034766397E7 /* Pods_iCepa.framework */,
+				C1E4D820537A65DA0B8F79EC /* Pods_Orbot.framework */,
+				A63AAF9393B95CA0DB9025EA /* Pods_TorVPN.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2005,57 +1826,36 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A05399302682293500A19969 /* iCepa-Mac */ = {
+		A05B73AF24755CE600930C40 /* Orbot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A053993E2682293700A19969 /* Build configuration list for PBXNativeTarget "iCepa-Mac" */;
+			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */;
 			buildPhases = (
-				A053992D2682293500A19969 /* Sources */,
-				A053992E2682293500A19969 /* Frameworks */,
-				A053992F2682293500A19969 /* Resources */,
-				A0E1F1AF26834C0400111461 /* Embed App Extensions */,
-				A0507D0326F9FC2600F91105 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0E1F1AD26834C0400111461 /* PBXTargetDependency */,
-			);
-			name = "iCepa-Mac";
-			productName = "iCepa-Mac";
-			productReference = A05399312682293500A19969 /* iCepa-Mac.app */;
-			productType = "com.apple.product-type.application";
-		};
-		A05B73AF24755CE600930C40 /* iCepa */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "iCepa" */;
-			buildPhases = (
-				8E4701B3DB5DDBD970B64164 /* [CP] Check Pods Manifest.lock */,
+				1B48643FF68EB7D4CECC3DFA /* [CP] Check Pods Manifest.lock */,
 				A05B73AC24755CE600930C40 /* Sources */,
 				A05B73AD24755CE600930C40 /* Frameworks */,
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed App Extensions */,
-				A0507CFB26F9FC0F00F91105 /* Embed Frameworks */,
+				AF040E52713D0D1A657E8FF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				A0A735D4247561F200073C81 /* PBXTargetDependency */,
 			);
-			name = iCepa;
+			name = Orbot;
 			productName = iCepa;
-			productReference = A05B73B024755CE600930C40 /* iCepa.app */;
+			productReference = A05B73B024755CE600930C40 /* Orbot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A0A735CC247561F200073C81 /* TorVPN */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A735D6247561F200073C81 /* Build configuration list for PBXNativeTarget "TorVPN" */;
 			buildPhases = (
-				E106A27B8D0B93AAA622196B /* [CP] Check Pods Manifest.lock */,
+				91020647A0D1DFBD2DEEA19B /* [CP] Check Pods Manifest.lock */,
 				A0E794A526528ECD0052E32E /* ShellScript */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
-				A0507CFF26F9FC1700F91105 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2064,25 +1864,6 @@
 			name = TorVPN;
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		A0E1F1A426834C0400111461 /* TorVPN-Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0E1F1B226834C0400111461 /* Build configuration list for PBXNativeTarget "TorVPN-Mac" */;
-			buildPhases = (
-				A0E1F1C426834F1E00111461 /* ShellScript */,
-				A0E1F1A126834C0400111461 /* Sources */,
-				A0E1F1A226834C0400111461 /* Frameworks */,
-				A0E1F1A326834C0400111461 /* Resources */,
-				A0507D0726F9FC2C00F91105 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "TorVPN-Mac";
-			productName = "TorVPN-Mac";
-			productReference = A0E1F1A526834C0400111461 /* TorVPN-Mac.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -2095,9 +1876,6 @@
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
-					A05399302682293500A19969 = {
-						CreatedOnToolsVersion = 12.5.1;
-					};
 					A05B73AF24755CE600930C40 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
@@ -2106,12 +1884,9 @@
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
-					A0E1F1A426834C0400111461 = {
-						CreatedOnToolsVersion = 12.5.1;
-					};
 				};
 			};
-			buildConfigurationList = A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "iCepa" */;
+			buildConfigurationList = A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "Orbot" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -2124,24 +1899,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A05B73AF24755CE600930C40 /* iCepa */,
+				A05B73AF24755CE600930C40 /* Orbot */,
 				A0A735CC247561F200073C81 /* TorVPN */,
-				A05399302682293500A19969 /* iCepa-Mac */,
-				A0E1F1A426834C0400111461 /* TorVPN-Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A053992F2682293500A19969 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0956913271F2AC30089BDB6 /* Assets.xcassets in Resources */,
-				A053993B2682293700A19969 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A05B73AE24755CE600930C40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2156,24 +1920,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A023D82B271986FB00A634B7 /* template-ne.conf in Resources */,
-				A04F2A4826F8E3AA00C660B0 /* template-app.conf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0E1F1A326834C0400111461 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A023D82C271986FC00A634B7 /* template-ne.conf in Resources */,
-				A0FD91AF26F36A61002C317C /* template-app.conf in Resources */,
+				A023D82B271986FB00A634B7 /* template.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8E4701B3DB5DDBD970B64164 /* [CP] Check Pods Manifest.lock */ = {
+		1B48643FF68EB7D4CECC3DFA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2188,48 +1942,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iCepa-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Orbot-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A0E1F1C426834F1E00111461 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/build-leaf.sh\n";
-		};
-		A0E794A526528ECD0052E32E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/build-leaf.sh\n";
-		};
-		E106A27B8D0B93AAA622196B /* [CP] Check Pods Manifest.lock */ = {
+		91020647A0D1DFBD2DEEA19B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2251,32 +1971,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A0E794A526528ECD0052E32E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/build-leaf.sh\n";
+		};
+		AF040E52713D0D1A657E8FF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A053992D2682293500A19969 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A05399362682293500A19969 /* ViewController.swift in Sources */,
-				A0539942268229EB00A19969 /* Config.swift in Sources */,
-				A053995726822DE800A19969 /* GetCircuitsMessage.swift in Sources */,
-				A053995426822DB100A19969 /* ProgressMessage.swift in Sources */,
-				A053995326822D8600A19969 /* VpnManager.swift in Sources */,
-				A053995826822DF800A19969 /* CloseCircuitsMessage.swift in Sources */,
-				A0539941268229E800A19969 /* Config.m in Sources */,
-				A05399342682293500A19969 /* AppDelegate.swift in Sources */,
-				A053994926822A9C00A19969 /* Logger.swift in Sources */,
-				A053994726822A8400A19969 /* TorManager.swift in Sources */,
-				A053995526822DC200A19969 /* Message.swift in Sources */,
-				A0B77FF7271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
-				A053994826822A9300A19969 /* FileManager+Helpers.swift in Sources */,
-				A0B77FFD271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
-				A053995626822DDA00A19969 /* Bundle+Helpers.swift in Sources */,
-				A053995126822C4F00A19969 /* URL+Helpers.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A05B73AC24755CE600930C40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2329,26 +2060,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0E1F1A126834C0400111461 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0E1F1B826834C9B00111461 /* Config.m in Sources */,
-				A0D6A88A26F4DE2900130C03 /* BasePTProvider.swift in Sources */,
-				A0B77FFE271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
-				A0E1F1B426834C7D00111461 /* Message.swift in Sources */,
-				A0E1F1B626834C8900111461 /* GetCircuitsMessage.swift in Sources */,
-				A0E1F1BE26834DDD00111461 /* FileManager+Helpers.swift in Sources */,
-				A0E1F1B526834C8200111461 /* CloseCircuitsMessage.swift in Sources */,
-				A0FD91A926F368BB002C317C /* LeafPTProvider.swift in Sources */,
-				A0E1F1BB26834CB200111461 /* Logger.swift in Sources */,
-				A0E1F1B926834C9E00111461 /* Config.swift in Sources */,
-				A0B77FF9271DAE7600A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
-				A0E1F1BA26834CA600111461 /* ProgressMessage.swift in Sources */,
-				A0E1F1B726834C8F00111461 /* TorManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2357,22 +2068,9 @@
 			target = A0A735CC247561F200073C81 /* TorVPN */;
 			targetProxy = A0A735D3247561F200073C81 /* PBXContainerItemProxy */;
 		};
-		A0E1F1AD26834C0400111461 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0E1F1A426834C0400111461 /* TorVPN-Mac */;
-			targetProxy = A0E1F1AC26834C0400111461 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A05399392682293700A19969 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A053993A2682293700A19969 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A05B73B924755CE600930C40 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2392,66 +2090,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A053993F2682293700A19969 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "iCepa-Mac/iCepa_Mac.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = "iCepa-Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
-				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "iCepa-Mac/iCepa-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		A05399402682293700A19969 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
-				CODE_SIGN_ENTITLEMENTS = "iCepa-Mac/iCepa_Mac.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = "iCepa-Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
-				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "iCepa-Mac/iCepa-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		A05B73C224755CE700930C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0A735DC2475628F00073C81 /* Config.xcconfig */;
@@ -2572,19 +2210,19 @@
 		};
 		A05B73C524755CE700930C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B97A8F56E0F8DD7206C1FA14 /* Pods-iCepa.debug.xcconfig */;
+			baseConfigurationReference = C3532B6F6A7B2FC1ED7B2F5D /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = iCepa/iCepa.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Orbot/Orbot.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = iCepa/Info.plist;
+				INFOPLIST_FILE = Orbot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2596,7 +2234,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCepa/iCepa-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2605,19 +2243,19 @@
 		};
 		A05B73C624755CE700930C40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB2AC54866A669B1EF53DA4E /* Pods-iCepa.release.xcconfig */;
+			baseConfigurationReference = 599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = iCepa/iCepa.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Orbot/Orbot.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = iCepa/Info.plist;
+				INFOPLIST_FILE = Orbot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2629,7 +2267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
-				SWIFT_OBJC_BRIDGING_HEADER = "iCepa/iCepa-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2637,7 +2275,7 @@
 		};
 		A0A735D7247561F200073C81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC6B77D8E3D9B67DE283B98C /* Pods-TorVPN.debug.xcconfig */;
+			baseConfigurationReference = 7FBB9B7F6CDA4F14311500C6 /* Pods-TorVPN.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -2667,7 +2305,7 @@
 		};
 		A0A735D8247561F200073C81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA3E6397C157544CEA3CA28D /* Pods-TorVPN.release.xcconfig */;
+			baseConfigurationReference = 788C5515DC1FFA3E7581A328 /* Pods-TorVPN.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -2694,75 +2332,10 @@
 			};
 			name = Release;
 		};
-		A0E1F1B026834C0400111461 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "TorVPN-Mac/TorVPN_Mac.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = "TorVPN-Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		A0E1F1B126834C0400111461 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "TorVPN-Mac/TorVPN_Mac.entitlements";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
-				INFOPLIST_FILE = "TorVPN-Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A053993E2682293700A19969 /* Build configuration list for PBXNativeTarget "iCepa-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A053993F2682293700A19969 /* Debug */,
-				A05399402682293700A19969 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "iCepa" */ = {
+		A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "Orbot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A05B73C224755CE700930C40 /* Debug */,
@@ -2771,7 +2344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "iCepa" */ = {
+		A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A05B73C524755CE700930C40 /* Debug */,
@@ -2785,15 +2358,6 @@
 			buildConfigurations = (
 				A0A735D7247561F200073C81 /* Debug */,
 				A0A735D8247561F200073C81 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0E1F1B226834C0400111461 /* Build configuration list for PBXNativeTarget "TorVPN-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0E1F1B026834C0400111461 /* Debug */,
-				A0E1F1B126834C0400111461 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

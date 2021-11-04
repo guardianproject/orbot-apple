@@ -1,16 +1,20 @@
 PODS:
   - IPtProxy (1.2.0)
+  - Tor (406.7.2)
 
 DEPENDENCIES:
   - IPtProxy (~> 1.2)
+  - Tor (~> 406.7)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - IPtProxy
+    - Tor
 
 SPEC CHECKSUMS:
   IPtProxy: ab3cbf127f2e34e9c54ad5c5e818cf8cf93e0a7d
+  Tor: 2113eeda30e664c1adf863529a1c970ca254e6fa
 
-PODFILE CHECKSUM: 56a6fcd03359375389f350e210c9a93b62bb3fcc
+PODFILE CHECKSUM: 9f6e4bf85103935514d117737ddeee109bc0d883
 
 COCOAPODS: 1.11.2

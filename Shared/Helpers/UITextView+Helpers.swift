@@ -1,6 +1,6 @@
 //
 //  UITextView+Helpers.swift
-//  iCepa
+//  Orbot
 //
 //  Created by Benjamin Erhart on 22.05.20.
 //  Copyright © 2020 Guardian Project. All rights reserved.
