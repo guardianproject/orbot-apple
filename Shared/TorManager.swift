@@ -24,8 +24,8 @@ class TorManager {
 
     static let localhost = "127.0.0.1"
 
-    static let torProxyPort: UInt16 = 39050
-    static let dnsPort: UInt16 = 39053
+    static let torProxyPort: UInt16 = 9050
+    static let dnsPort: UInt16 = 5400
 
     private static let torControlPort: UInt16 = 39060
 
