@@ -53,6 +53,17 @@
 		A0B77FF8271DAE7500A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
 		A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
 		A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
+		A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */; };
+		A0E3C64527344A8D0085353A /* BridgeConfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */; };
+		A0E3C64727344F390085353A /* MoatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64627344F390085353A /* MoatViewController.swift */; };
+		A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C648273450440085353A /* CaptchaRow.swift */; };
+		A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E3C649273450450085353A /* CaptchaCell.xib */; };
+		A0E3C64D2734525D0085353A /* URLSession+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */; };
+		A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */; };
+		A0E3C650273452760085353A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64F273452760085353A /* ApiError.swift */; };
+		A0E3C651273452760085353A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64F273452760085353A /* ApiError.swift */; };
+		A0E3C653273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
+		A0E3C654273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 /* End PBXBuildFile section */
@@ -539,6 +550,14 @@
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
 		A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderProtocol+Helpers.swift"; sourceTree = "<group>"; };
 		A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderManager+Helpers.swift"; sourceTree = "<group>"; };
+		A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeekURLProtocol.swift; sourceTree = "<group>"; };
+		A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeConfViewController.swift; sourceTree = "<group>"; };
+		A0E3C64627344F390085353A /* MoatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoatViewController.swift; sourceTree = "<group>"; };
+		A0E3C648273450440085353A /* CaptchaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaRow.swift; sourceTree = "<group>"; };
+		A0E3C649273450450085353A /* CaptchaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptchaCell.xib; sourceTree = "<group>"; };
+		A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Helpers.swift"; sourceTree = "<group>"; };
+		A0E3C64F273452760085353A /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		A0E3C652273452B20085353A /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -1707,6 +1726,10 @@
 			children = (
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
 				A05B73B724755CE600930C40 /* ViewController.swift */,
+				A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */,
+				A0E3C64627344F390085353A /* MoatViewController.swift */,
+				A0E3C649273450450085353A /* CaptchaCell.xib */,
+				A0E3C648273450440085353A /* CaptchaRow.swift */,
 				A0507D0826FA303800F91105 /* WebViewController.swift */,
 				A05B73B924755CE600930C40 /* Main.storyboard */,
 				A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */,
@@ -1774,14 +1797,18 @@
 		A0A735F024756D5600073C81 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0E3C652273452B20085353A /* AlertHelper.swift */,
+				A0E3C64F273452760085353A /* ApiError.swift */,
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */,
 				A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */,
+				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
+				A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1910,6 +1937,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */,
 				A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
 				A05B73BB24755CE600930C40 /* Main.storyboard in Resources */,
@@ -2012,6 +2040,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E3C653273452B20085353A /* AlertHelper.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0507D0926FA303800F91105 /* WebViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -2020,17 +2049,23 @@
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
+				A0E3C64D2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
+				A0E3C64527344A8D0085353A /* BridgeConfViewController.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
+				A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
+				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
 				A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
+				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				A0E3C650273452760085353A /* ApiError.swift in Sources */,
 				A0B77FF6271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2052,11 +2087,14 @@
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
+				A0E3C651273452760085353A /* ApiError.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
+				A0E3C654273452B20085353A /* AlertHelper.swift in Sources */,
 				A0B77FF8271DAE7500A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
+				A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2212,7 +2250,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3532B6F6A7B2FC1ED7B2F5D /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -2245,7 +2282,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;

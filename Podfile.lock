@@ -1,20 +1,33 @@
 PODS:
+  - Eureka (5.3.4)
+  - ImageRow (4.0.0):
+    - Eureka (~> 5.0)
   - IPtProxy (1.2.0)
+  - MBProgressHUD (1.2.0)
   - Tor (406.7.2)
 
 DEPENDENCIES:
+  - Eureka (~> 5.3)
+  - ImageRow (~> 4.0)
   - IPtProxy (~> 1.2)
+  - MBProgressHUD (~> 1.2)
   - Tor (~> 406.7)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Eureka
+    - ImageRow
     - IPtProxy
+    - MBProgressHUD
     - Tor
 
 SPEC CHECKSUMS:
+  Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
+  ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
   IPtProxy: ab3cbf127f2e34e9c54ad5c5e818cf8cf93e0a7d
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Tor: 2113eeda30e664c1adf863529a1c970ca254e6fa
 
-PODFILE CHECKSUM: 2a58998acc8304d2891e2b819b2b6cf86a060063
+PODFILE CHECKSUM: 291023401bd040f3bc60906ec093b3d07cbc3ea6
 
 COCOAPODS: 1.11.2

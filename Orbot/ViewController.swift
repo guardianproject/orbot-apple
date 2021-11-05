@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .bookmarks, target: self, action: #selector(changeTransport))
+
         let nc = NotificationCenter.default
 
         nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
@@ -52,7 +55,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func changeTransport() {
-//        VpnManager.shared.switch(to: .init(rawValue: transportSc.selectedSegmentIndex) ?? .direct)
+        BridgeConfViewController.present(from: self)
     }
 
     @IBAction func control() {

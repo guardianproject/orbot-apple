@@ -24,9 +24,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="279.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-rR-QxJ">
-                                        <rect key="frame" x="140.5" y="124.5" width="62.5" height="31"/>
+                                        <rect key="frame" x="134.5" y="122.5" width="74" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Install"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Install">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="control" destination="BYZ-38-t0r" eventType="touchUpInside" id="wew-ai-k2h"/>
                                         </connections>
