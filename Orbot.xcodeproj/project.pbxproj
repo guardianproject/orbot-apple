@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		2AB3BC5615062C2CF06D8D7E /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63AAF9393B95CA0DB9025EA /* Pods_TorVPN.framework */; };
 		8E900C8223783156D8427040 /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E4D820537A65DA0B8F79EC /* Pods_Orbot.framework */; };
+		A00D90D8273AA62B009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
+		A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */; };
+		A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DB273AB035009C8053 /* ScanQrViewController.swift */; };
+		A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
+		A00D90DF273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */; };
+		A00D90E0273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */; };
 		A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
+		A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
+		A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507D0926FA303800F91105 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0507D0826FA303800F91105 /* WebViewController.swift */; };
@@ -49,10 +57,6 @@
 		A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
-		A0B77FF6271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
-		A0B77FF8271DAE7500A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */; };
-		A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
-		A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */; };
 		A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */; };
 		A0E3C64527344A8D0085353A /* BridgeConfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */; };
 		A0E3C64727344F390085353A /* MoatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64627344F390085353A /* MoatViewController.swift */; };
@@ -96,9 +100,14 @@
 		599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
 		788C5515DC1FFA3E7581A328 /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
 		7FBB9B7F6CDA4F14311500C6 /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "obfs4-bridges.plist"; sourceTree = "<group>"; };
+		A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
+		A00D90DB273AB035009C8053 /* ScanQrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQrViewController.swift; sourceTree = "<group>"; };
+		A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBridgeMessage.swift; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
+		A033EB61273AA2A000A24F43 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
 		A04F285B26F8D46500C660B0 /* build_cross.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_cross.sh; sourceTree = "<group>"; };
 		A04F285D26F8D46500C660B0 /* Cargo.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cargo.toml; sourceTree = "<group>"; };
@@ -548,8 +557,6 @@
 		A0A736042475851D00073C81 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		A0A73607247587D300073C81 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
-		A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderProtocol+Helpers.swift"; sourceTree = "<group>"; };
-		A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NETunnelProviderManager+Helpers.swift"; sourceTree = "<group>"; };
 		A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeekURLProtocol.swift; sourceTree = "<group>"; };
 		A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeConfViewController.swift; sourceTree = "<group>"; };
 		A0E3C64627344F390085353A /* MoatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoatViewController.swift; sourceTree = "<group>"; };
@@ -1727,6 +1734,8 @@
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
 				A05B73B724755CE600930C40 /* ViewController.swift */,
 				A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */,
+				A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */,
+				A00D90DB273AB035009C8053 /* ScanQrViewController.swift */,
 				A0E3C64627344F390085353A /* MoatViewController.swift */,
 				A0E3C649273450450085353A /* CaptchaCell.xib */,
 				A0E3C648273450440085353A /* CaptchaRow.swift */,
@@ -1779,6 +1788,7 @@
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A023D82A271983C000A634B7 /* template.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
+				A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1786,6 +1796,7 @@
 		A0A735E624756C8E00073C81 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */,
 				A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */,
 				A0A735F424757FA400073C81 /* ProgressMessage.swift */,
 				A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */,
@@ -1799,11 +1810,10 @@
 			children = (
 				A0E3C652273452B20085353A /* AlertHelper.swift */,
 				A0E3C64F273452760085353A /* ApiError.swift */,
+				A033EB61273AA2A000A24F43 /* Bridge.swift */,
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
-				A0B77FFA271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift */,
-				A0B77FF5271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift */,
 				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
@@ -1938,6 +1948,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */,
+				A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */,
 				A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
 				A05B73BB24755CE600930C40 /* Main.storyboard in Resources */,
@@ -1948,6 +1959,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00D90D8273AA62B009C8053 /* obfs4-bridges.plist in Resources */,
 				A023D82B271986FB00A634B7 /* template.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2041,6 +2053,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E3C653273452B20085353A /* AlertHelper.swift in Sources */,
+				A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0507D0926FA303800F91105 /* WebViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -2048,6 +2061,7 @@
 				A05B73B824755CE600930C40 /* ViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
+				A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A0E3C64D2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
@@ -2058,15 +2072,15 @@
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */,
+				A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
-				A0B77FFB271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
+				A00D90DF273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */,
 				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
 				A0E3C650273452760085353A /* ApiError.swift in Sources */,
-				A0B77FF6271DACA300A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2074,6 +2088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */,
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
 				A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
@@ -2085,7 +2100,6 @@
 				A0A735EF24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A0A735F324756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
-				A0B77FFC271DB2DF00A3DDC4 /* NETunnelProviderManager+Helpers.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0E3C651273452760085353A /* ApiError.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
@@ -2093,8 +2107,8 @@
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
 				A0E3C654273452B20085353A /* AlertHelper.swift in Sources */,
-				A0B77FF8271DAE7500A3DDC4 /* NETunnelProviderProtocol+Helpers.swift in Sources */,
 				A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */,
+				A00D90E0273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2318,7 +2332,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = TorVPN/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2348,7 +2362,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				INFOPLIST_FILE = TorVPN/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -77,6 +77,7 @@ class VpnManager {
         case couldNotConnect
     }
 
+
     static let shared = VpnManager()
 
     private var manager: NETunnelProviderManager?
@@ -91,9 +92,7 @@ class VpnManager {
         return manager == nil ? .notInstalled : manager!.isEnabled ? .enabled : .disabled
     }
 
-    var transport: NETunnelProviderProtocol.Transport {
-        return manager?.transport ?? .direct
-    }
+    var bridge = Bridge.none
 
     var sessionStatus: NEVPNStatus {
         if confStatus != .enabled {
@@ -124,53 +123,28 @@ class VpnManager {
         }
     }
 
-    private var transportIterator: IndexingIterator<[NETunnelProviderProtocol.Transport]>? = nil
-
     func install() {
-        if transportIterator == nil {
-            transportIterator = NETunnelProviderProtocol.Transport.allCases.makeIterator()
-            error = nil
-        }
+        let conf = NETunnelProviderProtocol()
+        conf.providerBundleIdentifier = Config.extBundleId
+        conf.serverAddress = "Tor" // Needs to be set to something, otherwise error.
 
-        if error != nil {
-            transportIterator = nil
+        let manager = NETunnelProviderManager()
+        manager.protocolConfiguration = conf
+        manager.localizedDescription = Bundle.main.displayName
 
-            postChange()
+        // Add a "always connect" rule to avoid leakage after the network
+        // extension got killed.
+        manager.onDemandRules = [NEOnDemandRuleConnect()]
 
-            return
-        }
-
-        var transport = transportIterator?.next()
-
-        #if os(macOS)
-        // Don't install Obfs4 and Snowflake profiles: both are unavailable on MacOS.
-        while transport == .obfs4 || transport == .snowflake {
-            transport = transportIterator?.next()
-        }
-        #endif
-
-        if let transport = transport {
-            let conf = NETunnelProviderProtocol()
-            conf.providerBundleIdentifier = Config.extBundleId
-            conf.serverAddress = transport.description // Needs to be set to something, otherwise error.
-            conf.transport = transport
-
-            let manager = NETunnelProviderManager()
-            manager.protocolConfiguration = conf
-            manager.localizedDescription = "\(Bundle.main.displayName) (\(transport.description))"
-
-            // Add a "always connect" rule to avoid leakage after the network
-            // extension got killed.
-            manager.onDemandRules = [NEOnDemandRuleConnect()]
-
-            manager.saveToPreferences { [weak self] error in
+        manager.saveToPreferences { [weak self] error in
+            if let error = error {
                 self?.error = error
 
-                // Install next one.
-                self?.install()
+                self?.postChange()
+
+                return
             }
-        }
-        else {
+
             // Always re-load the manager from preferences.
             // If we use one of the created ones, it will stay invalid and can't
             // be used for connecting right away.
@@ -179,13 +153,11 @@ class VpnManager {
                 self?.error = error
 
                 // After install, we use and enable the direct (no) transport at first.
-                self?.manager = managers?.first(where: { $0.transport == .direct }) ?? managers?.first
+                self?.manager = managers?.first
                 self?.manager?.isEnabled = true
 
                 self?.save()
             }
-
-            transportIterator = nil
         }
     }
 
@@ -201,15 +173,28 @@ class VpnManager {
         save()
     }
 
-    func `switch`(to transport: NETunnelProviderProtocol.Transport) {
-        NETunnelProviderManager.loadAllFromPreferences { [weak self] managers, error in
-            self?.error = error
+    func `switch`(to bridge: Bridge) {
+        let oldBridge = self.bridge
+        self.bridge = bridge
 
-            self?.manager = managers?.first(where: { $0.transport == transport })
-            self?.manager?.isEnabled = true
+        if sessionStatus == .connected || sessionStatus == .reasserting {
+            sendMessage(ChangeBridgeMessage(bridge)) { (success: Bool?, error) in
+                print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
 
-            self?.save()
+                if (!(success ?? false)) {
+                    self.bridge = oldBridge
+                }
+
+                self.error = error
+
+                self.postChange()
+            }
         }
+        else if sessionStatus == .connecting {
+            disconnect()
+        }
+
+        connect()
     }
 
     func connect() {
@@ -221,9 +206,13 @@ class VpnManager {
             return
         }
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+
             do {
-                try session.startVPNTunnel()
+                try session.startVPNTunnel(options: ["bridge": NSNumber(value: self.bridge.rawValue)])
             }
             catch let error {
                 self.error = error
@@ -240,63 +229,14 @@ class VpnManager {
     }
 
     func getCircuits(_ callback: @escaping ((_ circuits: [TorCircuit], _ error: Error?) -> Void)) {
-        let request: Data
-
-        do {
-            request = try NSKeyedArchiver.archivedData(withRootObject: GetCircuitsMessage(), requiringSecureCoding: true)
-        }
-        catch let error {
-            return callback([], error)
-        }
-
-        do {
-            try session?.sendProviderMessage(request) { response in
-
-                guard let response = response else {
-                    return callback([], nil)
-                }
-
-                do {
-                    let circuits = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? [TorCircuit]
-                    callback(circuits ?? [], nil)
-                }
-                catch let error {
-                    callback([], error)
-                }
-            }
-        }
-        catch let error {
-            callback([], error)
+        sendMessage(GetCircuitsMessage()) { (circuits: [TorCircuit]?, error) in
+            callback(circuits ?? [], error)
         }
     }
 
     func closeCircuits(_ circuits: [TorCircuit], _ callback: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {
-        let request: Data
-
-        do {
-            request = try NSKeyedArchiver.archivedData(withRootObject: CloseCircuitsMessage(circuits), requiringSecureCoding: true)
-        }
-        catch let error {
-            return callback(false, error)
-        }
-
-        do {
-            try session?.sendProviderMessage(request) { response in
-                guard let response = response else {
-                    return callback(false, nil)
-                }
-
-                do {
-                    let success = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? Bool
-                    callback(success ?? false, nil)
-                }
-                catch let error {
-                    callback(false, error)
-                }
-            }
-        }
-        catch let error {
-            callback(false, error)
+        sendMessage(CloseCircuitsMessage(circuits)) { (success: Bool?, error) in
+            callback(success ?? false, error)
         }
     }
 
@@ -356,7 +296,7 @@ class VpnManager {
                         if let response = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? [Message] {
                             for message in response {
                                 if let pm = message as? ProgressMessage {
-                                    NSLog("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
+                                    print("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
 
                                     DispatchQueue.main.async {
                                         NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)
@@ -386,6 +326,41 @@ class VpnManager {
             error = Errors.couldNotConnect
 
             postChange()
+        }
+    }
+
+    func sendMessage<T>(_ message: Message, _ callback: @escaping ((_ payload: T?, _ error: Error?) -> Void)) {
+        let request: Data
+
+        do {
+            request = try NSKeyedArchiver.archivedData(withRootObject: message, requiringSecureCoding: true)
+        }
+        catch let error {
+            return callback(nil, error)
+        }
+
+        do {
+            try session?.sendProviderMessage(request) { response in
+                guard let response = response else {
+                    return callback(nil, nil)
+                }
+
+                do {
+                    if let error = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? Error {
+                        callback(nil, error)
+                    }
+                    else {
+                        let payload = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? T
+                        callback(payload, nil)
+                    }
+                }
+                catch let error {
+                    callback(nil, error)
+                }
+            }
+        }
+        catch let error {
+            callback(nil, error)
         }
     }
 

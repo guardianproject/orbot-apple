@@ -115,8 +115,18 @@ class ViewController: UIViewController {
                 progress = ViewController.nf.string(from: NSNumber(value: raw)) ?? ""
             }
 
-            statusLb.text = [VpnManager.shared.sessionStatus.description, progress]
-                .joined(separator: " ")
+            var bridge = ""
+
+            switch VpnManager.shared.sessionStatus {
+            case .connected, .connecting, .reasserting:
+                bridge = VpnManager.shared.bridge.description
+
+            default:
+                break
+            }
+
+            statusLb.text = [VpnManager.shared.sessionStatus.description,
+                             bridge, progress].joined(separator: " ")
         }
     }
 }

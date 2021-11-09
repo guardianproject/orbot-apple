@@ -12,7 +12,7 @@ import NetworkExtension
 
 protocol BridgeConfDelegate: AnyObject {
 
-    var bridgesType: NETunnelProviderProtocol.Transport { get set }
+    var bridgesType: Bridge { get set }
 
 	var customBridges: [String]? { get set }
 
@@ -26,7 +26,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
         from.present(UINavigationController(rootViewController: BridgeConfViewController()), animated: true)
 	}
 
-	private let bridgesSection: SelectableSection<ListCheckRow<NETunnelProviderProtocol.Transport>> = {
+	private let bridgesSection: SelectableSection<ListCheckRow<Bridge>> = {
 		let description = [
 			NSLocalizedString("If you are in a country or using a connection that censors Tor, you might need to use bridges.",
 							  comment: ""),
@@ -40,15 +40,15 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 							  comment: "")
 			]
 
-		return SelectableSection<ListCheckRow<NETunnelProviderProtocol.Transport>>(
+		return SelectableSection<ListCheckRow<Bridge>>(
 			header: "", footer: description.joined(separator: "\n"),
 			selectionType: .singleSelection(enableDeselection: false))
 	}()
 
-    var bridgesType = VpnManager.shared.transport {
+    var bridgesType = VpnManager.shared.bridge {
 		didSet {
 			for row in bridgesSection {
-				if (row as? ListCheckRow<NETunnelProviderProtocol.Transport>)?.value == bridgesType {
+				if (row as? ListCheckRow<Bridge>)?.value == bridgesType {
 					row.select()
 				}
 				else {
@@ -58,7 +58,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 		}
 	}
 
-    var customBridges: [String]? = nil
+    var customBridges = FileManager.default.customObfs4Bridges
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -72,20 +72,20 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 			title: NSLocalizedString("Connect", comment: ""), style: .done,
 			target: self, action: #selector(connect))
 
-		let bridges: [NETunnelProviderProtocol.Transport: String] = [
-			.direct: NSLocalizedString("No Bridges", comment: ""),
+		let bridges: [Bridge: String] = [
+			.none: NSLocalizedString("No Bridges", comment: ""),
 			.obfs4: String(format: NSLocalizedString("Built-in %@", comment: ""), "obfs4"),
 			.snowflake: String(format: NSLocalizedString("Built-in %@", comment: ""), "snowflake"),
-//			.custom: NSLocalizedString("Custom Bridges", comment: ""),
+			.custom: NSLocalizedString("Custom Bridges", comment: ""),
 		]
 
 		bridgesSection.onSelectSelectableRow = { [weak self] _, row in
-//			if row.value == .custom {
-//				let vc = CustomBridgesViewController()
-//				vc.delegate = self
-//
-//				self?.navigationController?.pushViewController(vc, animated: true)
-//			}
+			if row.value == .custom {
+				let vc = CustomBridgesViewController()
+				vc.delegate = self
+
+				self?.navigationController?.pushViewController(vc, animated: true)
+			}
 		}
 
 		form
@@ -102,7 +102,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 			+++ bridgesSection
 
 		for option in bridges.sorted(by: { $0.key.rawValue < $1.key.rawValue }) {
-			form.last! <<< ListCheckRow<NETunnelProviderProtocol.Transport>() {
+			form.last! <<< ListCheckRow<Bridge>() {
 				$0.title = option.value
 				$0.selectableValue = option.key
 				$0.value = option.key == bridgesType ? bridgesType : nil
@@ -118,7 +118,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 			return
 		}
 
-		for row in bridgesSection.allRows as? [ListCheckRow<NETunnelProviderProtocol.Transport>] ?? [] {
+		for row in bridgesSection.allRows as? [ListCheckRow<Bridge>] ?? [] {
 			row.value = row.selectableValue == bridgesType ? bridgesType : nil
 		}
 	}
@@ -128,7 +128,9 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 
 	@objc
 	func connect() {
-		bridgesType = bridgesSection.selectedRow()?.value ?? .direct
+		bridgesType = bridgesSection.selectedRow()?.value ?? .none
+
+        FileManager.default.customObfs4Bridges = customBridges
 
         VpnManager.shared.switch(to: bridgesType)
 

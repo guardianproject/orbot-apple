@@ -34,9 +34,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
     private var hostHandler: ((Data?) -> Void)?
 
-    private var transport: NETunnelProviderProtocol.Transport {
-        return (protocolConfiguration as? NETunnelProviderProtocol)?.transport ?? .direct
-    }
+    private var bridge = Bridge.none
 
 
     override init() {
@@ -53,10 +51,23 @@ class BasePTProvider: NEPacketTunnelProvider {
 
         NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
             "Orbot_Mac.\(String(describing: GetCircuitsMessage.self))")
+
+        NSKeyedUnarchiver.setClass(ChangeBridgeMessage.self, forClassName:
+            "Orbot.\(String(describing: ChangeBridgeMessage.self))")
+
+        NSKeyedUnarchiver.setClass(ChangeBridgeMessage.self, forClassName:
+            "Orbot_Mac.\(String(describing: ChangeBridgeMessage.self))")
     }
 
 
-    override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+    override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
+    {
+        if let raw = options?["bridge"] as? NSNumber,
+           let bridge = Bridge(rawValue: raw.intValue)
+        {
+            self.bridge = bridge
+        }
+
         let ipv4 = NEIPv4Settings(addresses: ["192.168.20.2"], subnetMasks: ["255.255.255.0"])
         ipv4.includedRoutes = [NEIPv4Route.default()]
 
@@ -92,38 +103,7 @@ class BasePTProvider: NEPacketTunnelProvider {
                 completionHandler(nil)
             }
 
-            var port: Int? = nil
-
-#if os(iOS)
-            switch self.transport {
-            case .obfs4:
-                #if DEBUG
-                let ennableLogging = true
-                #else
-                let ennableLogging = false
-                #endif
-
-                IPtProxyStartObfs4Proxy("DEBUG", ennableLogging, true, nil)
-
-                port = IPtProxyObfs4Port()
-
-            case .snowflake:
-                IPtProxyStartSnowflake(
-                    "stun:stun.l.google.com:19302,stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478",
-                    "https://snowflake-broker.torproject.net.global.prod.fastly.net/",
-                    "cdn.sstatic.net", nil, true, false, true, 1)
-
-                port = IPtProxySnowflakePort()
-
-            default:
-                break
-            }
-#endif
-
-            TorManager.shared.start(self.transport, port, { progress in
-                BasePTProvider.messageQueue.append(ProgressMessage(Float(progress) / 100))
-                self.sendMessages()
-            }, completion)
+            self.startBridgeAndTor(completion)
         }
     }
     
@@ -133,8 +113,8 @@ class BasePTProvider: NEPacketTunnelProvider {
         TorManager.shared.stop()
 
 #if os(iOS)
-        switch transport {
-        case .obfs4:
+        switch bridge {
+        case .obfs4, .custom:
             IPtProxyStopObfs4Proxy()
 
         case .snowflake:
@@ -157,10 +137,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
         if request is GetCircuitsMessage {
             TorManager.shared.getCircuits { circuits in
-                let response = try? NSKeyedArchiver.archivedData(
-                    withRootObject: circuits, requiringSecureCoding: true)
-
-                completionHandler?(response)
+                completionHandler?(Self.archive(circuits))
             }
 
             return
@@ -168,13 +145,33 @@ class BasePTProvider: NEPacketTunnelProvider {
 
         if let request = request as? CloseCircuitsMessage {
             TorManager.shared.close(request.circuits) { success in
-                let response = try? NSKeyedArchiver.archivedData(
-                    withRootObject: success, requiringSecureCoding: true)
-
-                completionHandler?(response)
+                completionHandler?(Self.archive(success))
             }
 
             return
+        }
+
+        if let request = request as? ChangeBridgeMessage {
+            guard bridge != request.bridge else {
+                completionHandler?(Self.archive(true))
+
+                return
+            }
+
+            // If the old bridge is snowflake, stop that. (The new one certainly isn't!)
+            if bridge == .snowflake {
+                IPtProxyStopSnowflake()
+            }
+            // If the old bridge is obfs4 and the new one not, stop that.
+            else if (bridge == .obfs4 || bridge == .custom) && request.bridge != .obfs4 && request.bridge != .custom {
+                IPtProxyStopObfs4Proxy()
+            }
+
+            bridge = request.bridge
+
+            startBridgeAndTor { error in
+                completionHandler?(Self.archive(error ?? true))
+            }
         }
 
         // Wait for progress updates.
@@ -198,17 +195,55 @@ class BasePTProvider: NEPacketTunnelProvider {
     @objc private func sendMessages() {
         DispatchQueue.main.async {
             if let handler = self.hostHandler {
-                let response = try? NSKeyedArchiver.archivedData(
-                    withRootObject: BasePTProvider.messageQueue,
-                    requiringSecureCoding: true)
+                let response = Self.archive(Self.messageQueue)
 
-                BasePTProvider.messageQueue.removeAll()
+                Self.messageQueue.removeAll()
 
                 handler(response)
 
                 self.hostHandler = nil
             }
         }
+    }
+
+    private class func archive(_ root: Any) -> Data? {
+        return try? NSKeyedArchiver.archivedData(withRootObject: root, requiringSecureCoding: true)
+    }
+
+    private func startBridgeAndTor(_ completion: @escaping (Error?) -> Void) {
+        var port: Int? = nil
+
+#if os(iOS)
+        switch bridge {
+        case .obfs4, .custom:
+            #if DEBUG
+            let ennableLogging = true
+            #else
+            let ennableLogging = false
+            #endif
+
+            IPtProxyStartObfs4Proxy("DEBUG", ennableLogging, true, nil)
+
+            port = IPtProxyObfs4Port()
+
+        case .snowflake:
+            IPtProxyStartSnowflake(
+                "stun:stun.l.google.com:19302,stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478",
+                "https://snowflake-broker.torproject.net.global.prod.fastly.net/",
+                "cdn.sstatic.net", nil, true, false, true, 1)
+
+            port = IPtProxySnowflakePort()
+
+        default:
+            break
+        }
+#endif
+
+        TorManager.shared.start(bridge, port, { progress in
+            Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
+            self.sendMessages()
+        }, completion)
+
     }
 
 

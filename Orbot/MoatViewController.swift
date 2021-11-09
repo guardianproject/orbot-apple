@@ -191,6 +191,7 @@ class MoatViewController: FormViewController {
 				}
 
 				vc.delegate?.customBridges = bridges.isEmpty ? nil : bridges
+                vc.delegate?.bridgesType = .custom
 
 				vc.navigationController?.popViewController(animated: true)
 			}

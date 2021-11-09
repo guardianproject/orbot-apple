@@ -29,6 +29,7 @@ class TorManager {
 
     private static let torControlPort: UInt16 = 39060
 
+
     private var torThread: TorThread?
 
     private var torController: TorController?
@@ -61,17 +62,22 @@ class TorManager {
     private init() {
     }
 
-    func start(_ transport: NETunnelProviderProtocol.Transport,
+    func start(_ bridge: Bridge,
                _ port: Int? = nil,
                _ progressCallback: @escaping (Int) -> Void,
                _ completion: @escaping (Error?) -> Void)
     {
         if !torRunning {
-            torConf = getTorConf(transport, port)
+            torConf = getTorConf(bridge, port)
 
             torThread = TorThread(configuration: torConf)
 
             torThread?.start()
+        }
+        else {
+            torController?.resetConf(forKey: "Bridge")
+
+            torController?.setConfs(getBridgeConfig(bridge, port, { ["key": $0, "value": $1] }))
         }
 
         controllerQueue.asyncAfter(deadline: .now() + 0.65) {
@@ -164,7 +170,7 @@ class TorManager {
         Logger.log(message, to: Logger.vpnLogfile)
     }
 
-    private func getTorConf(_ transport: NETunnelProviderProtocol.Transport, _ port: Int?) -> TorConfiguration {
+    private func getTorConf(_ bridge: Bridge, _ port: Int?) -> TorConfiguration {
         let conf = TorConfiguration()
 
         let dataDirectory = FileManager.default.groupFolder?.appendingPathComponent("tor")
@@ -192,34 +198,6 @@ class TorManager {
             "AvoidDiskWrites": "1",
             "MaxMemInQueues": "5MB"]
 
-#if os(iOS)
-        if transport == .obfs4 {
-            conf.options["ClientTransportPlugin"] = "obfs4 socks5 \(TorManager.localhost):\(port ?? IPtProxyObfs4Port())"
-            conf.options["UseBridges"] = "1"
-
-            conf.arguments += [
-                "--Bridge", "obfs4 192.95.36.142:443 CDF2E852BF539B82BD10E27E9115A31734E378C2 cert=qUVQ0srL1JI/vO6V6m/24anYXiJD3QP2HgzUKQtQ7GRqqUvs7P+tG43RtAqdhLOALP7DJQ iat-mode=1",
-                "--Bridge", "obfs4 38.229.1.78:80 C8CBDB2464FC9804A69531437BCF2BE31FDD2EE4 cert=Hmyfd2ev46gGY7NoVxA9ngrPF2zCZtzskRTzoWXbxNkzeVnGFPWmrTtILRyqCTjHR+s9dg iat-mode=1",
-                "--Bridge", "obfs4 38.229.33.83:80 0BAC39417268B96B9F514E7F63FA6FBA1A788955 cert=VwEFpk9F/UN9JED7XpG1XOjm/O8ZCXK80oPecgWnNDZDv5pdkhq1OpbAH0wNqOT6H6BmRQ iat-mode=1",
-                "--Bridge", "obfs4 37.218.245.14:38224 D9A82D2F9C2F65A18407B1D2B764F130847F8B5D cert=bjRaMrr1BRiAW8IE9U5z27fQaYgOhX1UCmOpg2pFpoMvo6ZgQMzLsaTzzQNTlm7hNcb+Sg iat-mode=0",
-                "--Bridge", "obfs4 85.31.186.98:443 011F2599C0E9B27EE74B353155E244813763C3E5 cert=ayq0XzCwhpdysn5o0EyDUbmSOx3X/oTEbzDMvczHOdBJKlvIdHHLJGkZARtT4dcBFArPPg iat-mode=0",
-                "--Bridge", "obfs4 85.31.186.26:443 91A6354697E6B02A386312F68D82CF86824D3606 cert=PBwr+S8JTVZo6MPdHnkTwXJPILWADLqfMGoVvhZClMq/Urndyd42BwX9YFJHZnBB3H0XCw iat-mode=0",
-                "--Bridge", "obfs4 144.217.20.138:80 FB70B257C162BF1038CA669D568D76F5B7F0BABB cert=vYIV5MgrghGQvZPIi1tJwnzorMgqgmlKaB77Y3Z9Q/v94wZBOAXkW+fdx4aSxLVnKO+xNw iat-mode=0",
-                "--Bridge", "obfs4 193.11.166.194:27015 2D82C2E354D531A68469ADF7F878FA6060C6BACA cert=4TLQPJrTSaDffMK7Nbao6LC7G9OW/NHkUwIdjLSS3KYf0Nv4/nQiiI8dY2TcsQx01NniOg iat-mode=0",
-                "--Bridge", "obfs4 193.11.166.194:27020 86AC7B8D430DAC4117E9F42C9EAED18133863AAF cert=0LDeJH4JzMDtkJJrFphJCiPqKx7loozKN7VNfuukMGfHO0Z8OGdzHVkhVAOfo1mUdv9cMg iat-mode=0",
-                "--Bridge", "obfs4 193.11.166.194:27025 1AE2C08904527FEA90C4C4F8C1083EA59FBC6FAF cert=ItvYZzW5tn6v3G4UnQa6Qz04Npro6e81AP70YujmK/KXwDFPTs3aHXcHp4n8Vt6w/bv8cA iat-mode=0",
-                "--Bridge", "obfs4 209.148.46.65:443 74FAD13168806246602538555B5521A0383A1875 cert=ssH+9rP8dG2NLDN2XuFw63hIO/9MNNinLmxQDpVa+7kTOa9/m+tGWT1SmSYpQ9uTBGa6Hw iat-mode=0",
-                "--Bridge", "obfs4 146.57.248.225:22 10A6CD36A537FCE513A322361547444B393989F0 cert=K1gDtDAIcUfeLqbstggjIw2rtgIKqdIhUlHp82XRqNSq/mtAjp1BIC9vHKJ2FAEpGssTPw iat-mode=0",
-                "--Bridge", "obfs4 45.145.95.6:27015 C5B7CD6946FF10C5B3E89691A7D3F2C122D2117C cert=TD7PbUO0/0k6xYHMPW3vJxICfkMZNdkRrb63Zhl5j9dW3iRGiCx0A7mPhe5T2EDzQ35+Zw iat-mode=0",
-                "--Bridge", "obfs4 [2a0c:4d80:42:702::1]:27015 C5B7CD6946FF10C5B3E89691A7D3F2C122D2117C cert=TD7PbUO0/0k6xYHMPW3vJxICfkMZNdkRrb63Zhl5j9dW3iRGiCx0A7mPhe5T2EDzQ35+Zw iat-mode=0",
-                "--Bridge", "obfs4 51.222.13.177:80 5EDAC3B810E12B01F6FD8050D2FD3E277B289A08 cert=2uplIpLQ0q9+0qMFrK5pkaYRDOe460LL9WHBvatgkuRr/SL31wBOEupaMMJ6koRE6Ld0ew iat-mode=0"]
-        }
-        else if transport == .snowflake {
-            conf.options["ClientTransportPlugin"] = "snowflake socks5 127.0.0.1:\(port ?? IPtProxySnowflakePort())"
-            conf.options["UseBridges"] = "1"
-            conf.options["Bridge"] = "snowflake 192.0.2.3:1 2B280B23E1107BB62ABFC40DDCC8824814F80A72"
-        }
-#endif
 
         conf.cookieAuthentication = true
         conf.dataDirectory = dataDirectory
@@ -229,6 +207,8 @@ class TorManager {
             "--ignore-missing-torrc",
         ]
 
+        conf.arguments += getBridgeConfig(bridge, port, { ["--\($0)", $1] }).joined()
+
         if Logger.ENABLE_LOGGING,
            let logfile = Logger.torLogfile?.path
         {
@@ -236,5 +216,39 @@ class TorManager {
         }
 
         return conf
+    }
+
+    private func getBridgeConfig<T>(_ bridge: Bridge, _ port: Int?, _ cv: (String, String) -> T) -> [T] {
+        var arguments = [T]()
+
+#if os(iOS)
+        switch bridge {
+        case .obfs4, .custom:
+            arguments.append(cv("ClientTransportPlugin", "obfs4 socks5 \(TorManager.localhost):\(port ?? IPtProxyObfs4Port())"))
+            arguments.append(cv("UseBridges", "1"))
+
+            var bridges: [String]?
+
+            if bridge == .custom {
+                bridges = FileManager.default.customObfs4Bridges
+
+                if bridges?.isEmpty ?? false {
+                    bridges = nil
+                }
+            }
+
+            arguments += (bridges ?? FileManager.default.builtInObfs4Bridges).map({ cv("Bridge", $0) })
+
+        case .snowflake:
+            arguments.append(cv("ClientTransportPlugin", "snowflake socks5 127.0.0.1:\(port ?? IPtProxySnowflakePort())"))
+            arguments.append(cv("UseBridges", "1"))
+            arguments.append(cv("Bridge", "snowflake 192.0.2.3:1 2B280B23E1107BB62ABFC40DDCC8824814F80A72"))
+
+        default:
+            arguments.append(cv("UseBridges", "0"))
+        }
+#endif
+
+        return arguments
     }
 }
