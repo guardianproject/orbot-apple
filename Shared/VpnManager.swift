@@ -92,8 +92,6 @@ class VpnManager {
         return manager == nil ? .notInstalled : manager!.isEnabled ? .enabled : .disabled
     }
 
-    var bridge = Bridge.none
-
     var sessionStatus: NEVPNStatus {
         if confStatus != .enabled {
             return .invalid
@@ -174,16 +172,9 @@ class VpnManager {
     }
 
     func `switch`(to bridge: Bridge) {
-        let oldBridge = self.bridge
-        self.bridge = bridge
-
         if sessionStatus == .connected || sessionStatus == .reasserting {
             sendMessage(ChangeBridgeMessage(bridge)) { (success: Bool?, error) in
                 print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
-
-                if (!(success ?? false)) {
-                    self.bridge = oldBridge
-                }
 
                 self.error = error
 
@@ -212,7 +203,7 @@ class VpnManager {
             }
 
             do {
-                try session.startVPNTunnel(options: ["bridge": NSNumber(value: self.bridge.rawValue)])
+                try session.startVPNTunnel()
             }
             catch let error {
                 self.error = error

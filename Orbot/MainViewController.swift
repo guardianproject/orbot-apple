@@ -208,7 +208,7 @@ class MainViewController: UIViewController {
 
 			switch VpnManager.shared.sessionStatus {
 			case .connected, .connecting, .reasserting:
-				bridge = VpnManager.shared.bridge.description
+				bridge = Settings.bridge.description
 
 			default:
 				break

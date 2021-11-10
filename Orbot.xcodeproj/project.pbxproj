@@ -35,6 +35,8 @@
 		A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06C96EF273C2F070019ABE5 /* geoip6 in Resources */ = {isa = PBXBuildFile; fileRef = A06C96ED273C2F070019ABE5 /* geoip6 */; };
 		A06C96F0273C2F070019ABE5 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A06C96EE273C2F070019ABE5 /* geoip */; };
+		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
+		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -537,6 +539,7 @@
 		A06C96ED273C2F070019ABE5 /* geoip6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geoip6; sourceTree = "<group>"; };
 		A06C96EE273C2F070019ABE5 /* geoip */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geoip; sourceTree = "<group>"; };
 		A06C96F1273C33530019ABE5 /* update-bridges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "update-bridges.swift"; sourceTree = "<group>"; };
+		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -1793,6 +1796,7 @@
 				A01F34DE2652D082008F9912 /* Logger.swift */,
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
+				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A023D82A271983C000A634B7 /* template.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
@@ -2098,6 +2102,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A0E3C653273452B20085353A /* AlertHelper.swift in Sources */,
 				A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
@@ -2153,6 +2158,7 @@
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
 				A0E3C654273452B20085353A /* AlertHelper.swift in Sources */,
 				A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */,
+				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

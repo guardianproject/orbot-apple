@@ -34,7 +34,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	private var hostHandler: ((Data?) -> Void)?
 
-	private var bridge = Bridge.none
+	private var bridge = Settings.bridge
 
 
 	override init() {
@@ -62,12 +62,6 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
 	{
-		if let raw = options?["bridge"] as? NSNumber,
-		   let bridge = Bridge(rawValue: raw.intValue)
-		{
-			self.bridge = bridge
-		}
-
 		let ipv4 = NEIPv4Settings(addresses: ["192.168.20.2"], subnetMasks: ["255.255.255.0"])
 		ipv4.includedRoutes = [NEIPv4Route.default()]
 

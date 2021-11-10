@@ -45,7 +45,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 			selectionType: .singleSelection(enableDeselection: false))
 	}()
 
-    var bridgesType = VpnManager.shared.bridge {
+    var bridgesType = Settings.bridge {
 		didSet {
 			for row in bridgesSection {
 				if (row as? ListCheckRow<Bridge>)?.value == bridgesType {
@@ -129,6 +129,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 	@objc
 	func connect() {
 		bridgesType = bridgesSection.selectedRow()?.value ?? .none
+		Settings.bridge = bridgesType
 
         FileManager.default.customObfs4Bridges = customBridges
 
