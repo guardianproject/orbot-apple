@@ -11,9 +11,25 @@ import Tor
 
 class MainViewController: UIViewController {
 
+	private static let purposeFilter = [
+		TorCircuit.purposeGeneral,
+		TorCircuit.purposeHsClientRend,
+		TorCircuit.purposeHsServiceRend]
+
 	@IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
+
+	@IBOutlet weak var logContainer: UIView! {
+		didSet {
+			// Only round top right corner.
+			logContainer.layer.cornerRadius = 9
+			logContainer.layer.maskedCorners = [.layerMaxXMinYCorner]
+		}
+	}
+
+	@IBOutlet weak var logSc: UISegmentedControl!
+	@IBOutlet weak var logTv: UITextView!
 
 	private static let nf: NumberFormatter = {
 		let nf = NumberFormatter()
@@ -22,6 +38,8 @@ class MainViewController: UIViewController {
 
 		return nf
 	}()
+
+	private var logFsObject: DispatchSourceFileSystemObject?
 
 
 	override func viewDidLoad() {
@@ -38,7 +56,34 @@ class MainViewController: UIViewController {
 
 	// MARK: Actions
 
-	@IBAction func showLogs() {
+	@IBAction func toggleLogs() {
+		if logContainer.isHidden {
+			logContainer.transform = CGAffineTransform(translationX: -logContainer.bounds.width, y: 0)
+			logContainer.isHidden = false
+
+			UIView.animate(withDuration: 0.5) {
+				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
+			} completion: { _ in
+				self.changeLog()
+			}
+		}
+		else {
+			hideLogs()
+		}
+	}
+
+	@IBAction func hideLogs() {
+		if !logContainer.isHidden {
+			UIView.animate(withDuration: 0.5) {
+				self.logContainer.transform = CGAffineTransform(translationX: -self.logContainer.bounds.width, y: 0)
+			} completion: { _ in
+				self.logContainer.isHidden = true
+				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
+
+				self.logFsObject?.cancel()
+				self.logFsObject = nil
+			}
+		}
 	}
 
 	@IBAction func changeBridge() {
@@ -65,6 +110,61 @@ class MainViewController: UIViewController {
 
 		default:
 			break
+		}
+	}
+
+	@IBAction func changeLog() {
+		switch logSc.selectedSegmentIndex {
+		case 1:
+			logFsObject?.cancel()
+			logFsObject = nil
+
+			logTv.text = nil
+
+			VpnManager.shared.getCircuits { [weak self] circuits, error in
+				var text = ""
+
+				var i = 1
+
+				for c in circuits {
+					if c.purpose == nil
+						|| !Self.purposeFilter.contains(c.purpose!)
+						|| c.buildFlags?.contains(TorCircuit.buildFlagIsInternal) ?? false
+						|| c.buildFlags?.contains(TorCircuit.buildFlagOneHopTunnel) ?? false
+						|| c.nodes?.isEmpty ?? true
+					{
+						continue
+					}
+
+					text += "Circuit \(c.circuitId ?? String(i))\n"
+
+					var j = 1
+
+					for n in c.nodes ?? [] {
+						var country = n.localizedCountryName ?? n.countryCode ?? ""
+
+						if !country.isEmpty {
+							country = " (\(country))"
+						}
+
+						text += "\(j): \(n.nickName ?? n.fingerprint ?? n.ipv4Address ?? n.ipv6Address ?? "unknown node")\(country)\n"
+
+						j += 1
+					}
+
+					text += "\n"
+
+					i += 1
+				}
+
+				self?.logTv.text = text
+				self?.logTv.scrollToBottom()
+			}
+
+		default:
+			if logFsObject == nil {
+				logFsObject = createLogFsObject()
+			}
 		}
 	}
 
@@ -115,5 +215,52 @@ class MainViewController: UIViewController {
 			statusLb.text = [VpnManager.shared.sessionStatus.description,
 							 bridge, progress].joined(separator: " ")
 		}
+	}
+
+
+	// MARK: Private Methods
+
+	private func createLogFsObject() -> DispatchSourceFileSystemObject? {
+		guard let url = FileManager.default.torLogFile,
+			let fh = try? FileHandle(forReadingFrom: url)
+		else {
+			return nil
+		}
+
+		let ui = { [weak self] in
+			let data = fh.readDataToEndOfFile()
+			self?.logTv.text = (self?.logTv.text ?? "") + (String(data: data, encoding: .utf8) ?? "")
+			self?.logTv.scrollToBottom()
+		}
+
+		logTv.text = nil
+		ui()
+
+		var logFsObject = DispatchSource.makeFileSystemObjectSource(
+			fileDescriptor: fh.fileDescriptor,
+			eventMask: [.extend, .delete, .link],
+			queue: .main)
+
+		logFsObject.setEventHandler { [weak self] in
+			if logFsObject.data.contains(.delete) || logFsObject.data.contains(.link) {
+				logFsObject.cancel()
+
+				if let lfo = self?.createLogFsObject() {
+					logFsObject = lfo
+				}
+			}
+
+			if logFsObject.data.contains(.extend) {
+				ui()
+			}
+		}
+
+		logFsObject.setCancelHandler {
+			try? fh.close()
+		}
+
+		logFsObject.resume()
+
+		return logFsObject
 	}
 }

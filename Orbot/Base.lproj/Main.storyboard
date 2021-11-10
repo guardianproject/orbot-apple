@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,6 +54,44 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48u-FW-Qyr">
+                                <rect key="frame" x="0.0" y="44" width="256" height="623"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-pb-Y2g">
+                                        <rect key="frame" x="8" y="8" width="240" height="32"/>
+                                        <segments>
+                                            <segment title="Log"/>
+                                            <segment title="Circuits"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="changeLog" destination="BYZ-38-t0r" eventType="valueChanged" id="zVU-4c-SB0"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8i5-ZV-uUu">
+                                        <rect key="frame" x="8" y="47" width="240" height="568"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wHn-pb-Y2g" firstAttribute="top" secondItem="48u-FW-Qyr" secondAttribute="top" constant="8" id="Q3W-nA-ZuR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="Qay-6N-teC"/>
+                                    <constraint firstAttribute="trailing" secondItem="8i5-ZV-uUu" secondAttribute="trailing" constant="8" id="Tbf-It-1Lj"/>
+                                    <constraint firstItem="8i5-ZV-uUu" firstAttribute="leading" secondItem="48u-FW-Qyr" secondAttribute="leading" constant="8" id="bnR-si-VUs"/>
+                                    <constraint firstItem="8i5-ZV-uUu" firstAttribute="top" secondItem="wHn-pb-Y2g" secondAttribute="bottom" constant="8" id="eDJ-Ce-lXw"/>
+                                    <constraint firstAttribute="trailing" secondItem="wHn-pb-Y2g" secondAttribute="trailing" constant="8" id="iFl-ST-w5e"/>
+                                    <constraint firstAttribute="bottom" secondItem="8i5-ZV-uUu" secondAttribute="bottom" constant="8" id="mrt-DM-ISN"/>
+                                    <constraint firstItem="wHn-pb-Y2g" firstAttribute="leading" secondItem="48u-FW-Qyr" secondAttribute="leading" constant="8" id="qms-R7-o1d"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -64,13 +103,20 @@
                             <constraint firstItem="VAX-85-q23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="bottom" constant="8" symbolic="YES" id="SGc-kf-BKI"/>
+                            <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
+                            <constraint firstItem="48u-FW-Qyr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="stN-RM-dne"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="uQO-Z3-E7o"/>
+                            <constraint firstAttribute="centerX" relation="lessThanOrEqual" secondItem="48u-FW-Qyr" secondAttribute="trailing" constant="32" id="v0O-35-Pck"/>
+                            <constraint firstItem="48u-FW-Qyr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ybe-1K-dUF"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="brJ-t9-Xqj" appends="YES" id="7BY-8L-c2e"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
                         <barButtonItem key="leftBarButtonItem" image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
                             <connections>
-                                <action selector="showLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
+                                <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
@@ -81,12 +127,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
+                        <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
+                        <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>
+                        <outlet property="logTv" destination="8i5-ZV-uUu" id="qh4-Jt-saG"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
                         <outlet property="statusLb" destination="trJ-w6-CDg" id="5FA-6q-zNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="5tp-Td-2GI">
+                <tapGestureRecognizer id="brJ-t9-Xqj" userLabel="background-dismiss-recognizer">
+                    <connections>
+                        <action selector="hideLogs" destination="BYZ-38-t0r" id="D1N-8l-KRA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5tp-Td-2GI" userLabel="icon-control-tap-recognizer">
                     <connections>
                         <action selector="control" destination="BYZ-38-t0r" id="aUd-uY-tsI"/>
                     </connections>
@@ -128,5 +182,14 @@
         <namedColor name="DarkGreen">
             <color red="0.40000000596046448" green="0.60000002384185791" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
