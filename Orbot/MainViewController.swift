@@ -188,9 +188,11 @@ class MainViewController: UIViewController {
 		}
 
 		if let error = VpnManager.shared.error {
+			statusLb.textColor = .systemRed
 			statusLb.text = error.localizedDescription
 		}
 		else if VpnManager.shared.confStatus != .enabled {
+			statusLb.textColor = .white
 			statusLb.text = VpnManager.shared.confStatus.description
 		}
 		else {
@@ -212,6 +214,7 @@ class MainViewController: UIViewController {
 				break
 			}
 
+			statusLb.textColor = .white
 			statusLb.text = [VpnManager.shared.sessionStatus.description,
 							 bridge, progress].joined(separator: " ")
 		}
