@@ -68,9 +68,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="bookmarks" id="K2Q-jl-U8h">
+                        <barButtonItem key="leftBarButtonItem" image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
                             <connections>
-                                <action selector="changeTransport" destination="BYZ-38-t0r" id="1oQ-U0-KSX"/>
+                                <action selector="showLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
+                            <connections>
+                                <action selector="changeBridge" destination="BYZ-38-t0r" id="1oQ-U0-KSX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,6 +120,8 @@
     <color key="tintColor" name="DarkGreen"/>
     <resources>
         <image name="TorOff" width="512" height="512"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="network.badge.shield.half.filled" catalog="system" width="128" height="118"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

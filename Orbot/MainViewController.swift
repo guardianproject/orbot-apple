@@ -38,20 +38,10 @@ class MainViewController: UIViewController {
 
 	// MARK: Actions
 
-	@IBAction func changeConf() {
-		switch VpnManager.shared.confStatus {
-		case .notInstalled:
-			VpnManager.shared.install()
-
-		case .disabled:
-			VpnManager.shared.enable()
-
-		case .enabled:
-			VpnManager.shared.disable()
-		}
+	@IBAction func showLogs() {
 	}
 
-	@IBAction func changeTransport() {
+	@IBAction func changeBridge() {
 		BridgeConfViewController.present(from: self)
 	}
 

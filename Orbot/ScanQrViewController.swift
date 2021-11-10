@@ -19,7 +19,7 @@ class ScanQrViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
 
 		navigationItem.title = NSLocalizedString("Scan QR Code", comment: "")
 
-		view.backgroundColor = .init(named: "BackgroundColor")
+		view.backgroundColor = .systemGroupedBackground
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -98,7 +98,7 @@ class ScanQrViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
 		warning.translatesAutoresizingMaskIntoConstraints = false
 		warning.numberOfLines = 0
 		warning.textAlignment = .center
-		warning.textColor = .white // hard white, will always look better on dark purple.
+		warning.textColor = .secondaryLabel
 
 		view.addSubview(warning)
 		warning.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
