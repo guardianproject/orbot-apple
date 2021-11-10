@@ -5,14 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Orbot-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,14 +20,20 @@
                                 <rect key="frame" x="16" y="60" width="343" height="279.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TorOff" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="279.5"/>
+                                        <rect key="frame" x="43.5" y="12" width="256" height="256"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1N5-w4-uQk" secondAttribute="height" multiplier="1:1" id="Ax5-Yy-XVq"/>
+                                            <constraint firstAttribute="width" constant="256" id="Wnm-LL-BGe"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5tp-Td-2GI" appends="YES" id="uTb-Zc-mm8"/>
+                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-rR-QxJ">
-                                        <rect key="frame" x="134.5" y="122.5" width="74" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Install">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="136" y="119" width="71" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Install"/>
                                         <connections>
                                             <action selector="control" destination="BYZ-38-t0r" eventType="touchUpInside" id="wew-ai-k2h"/>
                                         </connections>
@@ -36,12 +41,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="centerY" id="2CW-Rl-YyB"/>
                                     <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerX" secondItem="VAX-85-q23" secondAttribute="centerX" id="8AD-0J-szj"/>
-                                    <constraint firstAttribute="trailing" secondItem="1N5-w4-uQk" secondAttribute="trailing" id="97m-ZA-bX0"/>
-                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="leading" secondItem="VAX-85-q23" secondAttribute="leading" id="D4H-fu-2CT"/>
                                     <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="centerY" id="SQN-3L-91M"/>
-                                    <constraint firstAttribute="bottom" secondItem="1N5-w4-uQk" secondAttribute="bottom" id="eGm-wk-ZT6"/>
-                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="top" id="r86-rH-sKJ"/>
+                                    <constraint firstItem="1N5-w4-uQk" firstAttribute="centerX" secondItem="VAX-85-q23" secondAttribute="centerX" id="XUs-bd-UnD"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-w6-CDg">
@@ -53,18 +56,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="VAX-85-q23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0Rt-3j-kcF"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Jm-94-J7W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="bottom" constant="16" id="CdO-Hx-sqm"/>
-                            <constraint firstItem="VAX-85-q23" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
+                            <constraint firstItem="VAX-85-q23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="bottom" constant="8" symbolic="YES" id="SGc-kf-BKI"/>
-                            <constraint firstItem="VAX-85-q23" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Skm-AT-cIl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="uQO-Z3-E7o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH"/>
+                    <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="bookmarks" id="K2Q-jl-U8h">
+                            <connections>
+                                <action selector="changeTransport" destination="BYZ-38-t0r" id="1oQ-U0-KSX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
@@ -72,66 +81,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5tp-Td-2GI">
+                    <connections>
+                        <action selector="control" destination="BYZ-38-t0r" id="aUd-uY-tsI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="137.18140929535232"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="d0t-Hs-yGt">
-            <objects>
-                <viewController id="jYA-dm-nIX" customClass="WebViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="otY-Yz-heB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIm-NQ-9Rx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Vhj-78-nuw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="uIm-NQ-9Rx" firstAttribute="top" secondItem="Vhj-78-nuw" secondAttribute="top" id="gSH-an-gnb"/>
-                            <constraint firstItem="uIm-NQ-9Rx" firstAttribute="bottom" secondItem="otY-Yz-heB" secondAttribute="bottom" id="tEy-Cu-NSv"/>
-                            <constraint firstItem="uIm-NQ-9Rx" firstAttribute="leading" secondItem="otY-Yz-heB" secondAttribute="leading" id="vUc-dH-eRy"/>
-                            <constraint firstItem="uIm-NQ-9Rx" firstAttribute="trailing" secondItem="otY-Yz-heB" secondAttribute="trailing" id="xpX-HR-hqw"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="lEy-8P-ie0">
-                        <rightBarButtonItems>
-                            <barButtonItem title="N" id="QfE-ek-aGg">
-                                <connections>
-                                    <action selector="neverSsl" destination="jYA-dm-nIX" id="NRy-ie-Kb0"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="F" id="ykQ-ZL-pdu">
-                                <connections>
-                                    <action selector="fb" destination="jYA-dm-nIX" id="imK-fI-SRe"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="D" id="rjP-pl-gnr">
-                                <connections>
-                                    <action selector="ddg" destination="jYA-dm-nIX" id="ukD-od-u6N"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="C" id="GAq-6U-5gc">
-                                <connections>
-                                    <action selector="check" destination="jYA-dm-nIX" id="JC5-jN-S6R"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="webView" destination="uIm-NQ-9Rx" id="nzh-Xc-Sdr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmh-tq-JIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036.875" y="135.21126760563379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dcy-1L-Z2H">
@@ -140,6 +96,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wss-WJ-xcc"/>
@@ -154,13 +116,10 @@
     <resources>
         <image name="TorOff" width="512" height="512"/>
         <namedColor name="BackgroundColor">
-            <color red="0.30980392156862746" green="0.21176470588235294" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkGreen">
-            <color red="0.40000000000000002" green="0.59999999999999998" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.40000000596046448" green="0.60000002384185791" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

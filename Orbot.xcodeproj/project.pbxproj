@@ -24,11 +24,10 @@
 		A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
-		A0507D0926FA303800F91105 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0507D0826FA303800F91105 /* WebViewController.swift */; };
 		A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A053995026822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B324755CE600930C40 /* AppDelegate.swift */; };
-		A05B73B824755CE600930C40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* ViewController.swift */; };
+		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BB24755CE600930C40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05B73B924755CE600930C40 /* Main.storyboard */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A05B73C024755CE700930C40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */; };
@@ -521,11 +520,10 @@
 		A0507CFC26F9FC1700F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0026F9FC2600F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0426F9FC2C00F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0507D0826FA303800F91105 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A053994E26822C4F00A19969 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		A05B73B024755CE600930C40 /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05B73B324755CE600930C40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A05B73B724755CE600930C40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A05B73B724755CE600930C40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A05B73BA24755CE600930C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73BF24755CE700930C40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1718,6 +1716,7 @@
 				B492266852BAC9D548C91D19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		A05B73B124755CE600930C40 /* Products */ = {
 			isa = PBXGroup;
@@ -1732,14 +1731,13 @@
 			isa = PBXGroup;
 			children = (
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
-				A05B73B724755CE600930C40 /* ViewController.swift */,
+				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */,
+				A0E3C64627344F390085353A /* MoatViewController.swift */,
 				A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */,
 				A00D90DB273AB035009C8053 /* ScanQrViewController.swift */,
-				A0E3C64627344F390085353A /* MoatViewController.swift */,
 				A0E3C649273450450085353A /* CaptchaCell.xib */,
 				A0E3C648273450440085353A /* CaptchaRow.swift */,
-				A0507D0826FA303800F91105 /* WebViewController.swift */,
 				A05B73B924755CE600930C40 /* Main.storyboard */,
 				A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -2055,10 +2053,9 @@
 				A0E3C653273452B20085353A /* AlertHelper.swift in Sources */,
 				A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
-				A0507D0926FA303800F91105 /* WebViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
-				A05B73B824755CE600930C40 /* ViewController.swift in Sources */,
+				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */,
