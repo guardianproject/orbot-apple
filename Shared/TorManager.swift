@@ -204,6 +204,10 @@ class TorManager {
 			"SocksPort": "\(Self.localhost):\(Self.torProxyPort)",
 			"ControlPort": "\(Self.localhost):\(Self.torControlPort)",
 
+			// GeoIP files for circuit node country display.
+			"GeoIPFile": Bundle.main.path(forResource: "geoip", ofType: nil) ?? "",
+			"GeoIPv6File": Bundle.main.path(forResource: "geoip6", ofType: nil) ?? "",
+
 			// Miscelaneous
 			"ClientOnly": "1",
 			"AvoidDiskWrites": "1",

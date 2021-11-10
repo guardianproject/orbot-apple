@@ -1,4 +1,6 @@
 leaf.h
+TorVPN/geoip
+TorVPN/geoip6
 
 
 # Created by https://www.gitignore.io/api/xcode,macos,swift,objective-c
