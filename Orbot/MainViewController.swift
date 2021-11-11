@@ -94,7 +94,11 @@ class MainViewController: UIViewController {
 
 		// Enable, if disabled.
 		if VpnManager.shared.confStatus == .disabled {
-			VpnManager.shared.enable()
+			return VpnManager.shared.enable { [weak self] success in
+				if success && VpnManager.shared.confStatus == .enabled {
+					self?.control()
+				}
+			}
 		}
 		// Install first, if not installed.
 		else if VpnManager.shared.confStatus == .notInstalled {
