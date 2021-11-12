@@ -21,7 +21,7 @@ supported bridge type, the latter should be the same as we requested (0.1.0) any
 API description:
 https://github.com/NullHypothesis/bridgedb#accessing-the-moat-interface
 */
-class MoatViewController: FormViewController {
+class MoatViewController: FixedFormViewController {
 
 	private static let moatBaseUrl = URL(string: "https://bridges.torproject.org/moat")
 

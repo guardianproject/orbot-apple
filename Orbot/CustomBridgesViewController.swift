@@ -10,7 +10,7 @@ import UIKit
 import Eureka
 import MessageUI
 
-class CustomBridgesViewController: FormViewController, UIImagePickerControllerDelegate,
+class CustomBridgesViewController: FixedFormViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, MFMailComposeViewControllerDelegate, ScanQrDelegate {
 
 	weak var delegate: BridgeConfDelegate?

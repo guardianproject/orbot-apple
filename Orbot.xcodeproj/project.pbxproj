@@ -72,6 +72,7 @@
 		A0E3C651273452760085353A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64F273452760085353A /* ApiError.swift */; };
 		A0E3C653273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
 		A0E3C654273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
+		A0E7CD20273ED1830004B573 /* FixedFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 /* End PBXBuildFile section */
@@ -574,6 +575,7 @@
 		A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Helpers.swift"; sourceTree = "<group>"; };
 		A0E3C64F273452760085353A /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		A0E3C652273452B20085353A /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedFormViewController.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -1828,6 +1830,7 @@
 				A033EB61273AA2A000A24F43 /* Bridge.swift */,
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
+				A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
@@ -2131,6 +2134,7 @@
 				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
+				A0E7CD20273ED1830004B573 /* FixedFormViewController.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,

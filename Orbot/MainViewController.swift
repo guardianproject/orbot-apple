@@ -86,12 +86,20 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBAction func changeBridge() {
-		BridgeConfViewController.present(from: self)
+	@IBAction func changeBridge(_ sender: UIBarButtonItem) {
+		let vc = UINavigationController(rootViewController: BridgeConfViewController())
+		vc.modalPresentationStyle = .popover
+		vc.popoverPresentationController?.barButtonItem = sender
+
+		present(vc, animated: true)
 	}
 
-	@IBAction func showAuth() {
-		present(UINavigationController(rootViewController: AuthViewController(style: .grouped)), animated: true)
+    @IBAction func showAuth(_ sender: UIBarButtonItem) {
+		let vc = UINavigationController(rootViewController: AuthViewController(style: .grouped))
+		vc.modalPresentationStyle = .popover
+        vc.popoverPresentationController?.barButtonItem = sender
+
+		present(vc, animated: true)
 	}
 
 	@IBAction func control() {

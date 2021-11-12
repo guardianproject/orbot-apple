@@ -19,12 +19,8 @@ protocol BridgeConfDelegate: AnyObject {
 	func save()
 }
 
-class BridgeConfViewController: FormViewController, UINavigationControllerDelegate,
+class BridgeConfViewController: FixedFormViewController, UINavigationControllerDelegate,
                                 BridgeConfDelegate {
-
-	class func present(from: UIViewController) {
-        from.present(UINavigationController(rootViewController: BridgeConfViewController()), animated: true)
-	}
 
 	private let bridgesSection: SelectableSection<ListCheckRow<Bridge>> = {
 		let description = [
