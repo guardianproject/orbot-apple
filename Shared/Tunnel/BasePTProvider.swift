@@ -52,11 +52,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: GetCircuitsMessage.self))")
 
-		NSKeyedUnarchiver.setClass(ChangeBridgeMessage.self, forClassName:
-									"Orbot.\(String(describing: ChangeBridgeMessage.self))")
+		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
+									"Orbot.\(String(describing: ConfigChangedMessage.self))")
 
-		NSKeyedUnarchiver.setClass(ChangeBridgeMessage.self, forClassName:
-									"Orbot_Mac.\(String(describing: ChangeBridgeMessage.self))")
+		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
+									"Orbot_Mac.\(String(describing: ConfigChangedMessage.self))")
 	}
 
 
@@ -145,23 +145,19 @@ class BasePTProvider: NEPacketTunnelProvider {
 			return
 		}
 
-		if let request = request as? ChangeBridgeMessage {
-			guard bridge != request.bridge else {
-				completionHandler?(Self.archive(true))
-
-				return
-			}
+		if request is ConfigChangedMessage {
+			let newBridge = Settings.bridge
 
 			// If the old bridge is snowflake, stop that. (The new one certainly isn't!)
-			if bridge == .snowflake {
+			if bridge == .snowflake && newBridge != .snowflake {
 				IPtProxyStopSnowflake()
 			}
 			// If the old bridge is obfs4 and the new one not, stop that.
-			else if (bridge == .obfs4 || bridge == .custom) && request.bridge != .obfs4 && request.bridge != .custom {
+			else if (bridge == .obfs4 || bridge == .custom) && newBridge != .obfs4 && newBridge != .custom {
 				IPtProxyStopObfs4Proxy()
 			}
 
-			bridge = request.bridge
+			bridge = newBridge
 
 			startBridgeAndTor { error in
 				completionHandler?(Self.archive(error ?? true))

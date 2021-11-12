@@ -185,8 +185,6 @@ class TorManager {
 	private func getTorConf(_ bridge: Bridge) -> TorConfiguration {
 		let conf = TorConfiguration()
 
-		let dataDirectory = FileManager.default.groupFolder?.appendingPathComponent("tor")
-
 		conf.options = [
 			// DNS
 			"DNSPort": "\(Self.localhost):\(Self.dnsPort)",
@@ -208,6 +206,9 @@ class TorManager {
 			"GeoIPFile": Bundle.main.path(forResource: "geoip", ofType: nil) ?? "",
 			"GeoIPv6File": Bundle.main.path(forResource: "geoip6", ofType: nil) ?? "",
 
+			// v3 Onion Service Authentication
+			"ClientOnionAuthDir": FileManager.default.torAuthDir?.path ?? "",
+
 			// Miscelaneous
 			"ClientOnly": "1",
 			"AvoidDiskWrites": "1",
@@ -215,7 +216,7 @@ class TorManager {
 
 
 		conf.cookieAuthentication = true
-		conf.dataDirectory = dataDirectory
+		conf.dataDirectory = FileManager.default.torDir
 
 		conf.arguments += [
 			"--allow-missing-torrc",

@@ -16,7 +16,7 @@ protocol BridgeConfDelegate: AnyObject {
 
 	var customBridges: [String]? { get set }
 
-	func connect()
+	func save()
 }
 
 class BridgeConfViewController: FormViewController, UINavigationControllerDelegate,
@@ -69,8 +69,7 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 			barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
 		navigationItem.title = NSLocalizedString("Bridge Configuration", comment: "")
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
-			title: NSLocalizedString("Connect", comment: ""), style: .done,
-			target: self, action: #selector(connect))
+			barButtonSystemItem: .save, target: self, action: #selector(save))
 
 		let bridges: [Bridge: String] = [
 			.none: NSLocalizedString("No Bridges", comment: ""),
@@ -127,13 +126,13 @@ class BridgeConfViewController: FormViewController, UINavigationControllerDelega
 	// MARK: Actions
 
 	@objc
-	func connect() {
+	func save() {
 		bridgesType = bridgesSection.selectedRow()?.value ?? .none
 		Settings.bridge = bridgesType
 
         FileManager.default.customObfs4Bridges = customBridges
 
-        VpnManager.shared.switch(to: bridgesType)
+		VpnManager.shared.configChanged()
 
         navigationController?.dismiss(animated: true)
 	}

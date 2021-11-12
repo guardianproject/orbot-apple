@@ -90,6 +90,10 @@ class MainViewController: UIViewController {
 		BridgeConfViewController.present(from: self)
 	}
 
+	@IBAction func showAuth() {
+		present(UINavigationController(rootViewController: AuthViewController(style: .grouped)), animated: true)
+	}
+
 	@IBAction func control() {
 
 		// Enable, if disabled.

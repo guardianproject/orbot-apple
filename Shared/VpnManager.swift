@@ -171,21 +171,20 @@ class VpnManager {
 		save(manager, completed)
 	}
 
-	func `switch`(to bridge: Bridge) {
-		if sessionStatus == .connected || sessionStatus == .reasserting {
-			sendMessage(ChangeBridgeMessage(bridge)) { (success: Bool?, error) in
+	func configChanged() {
+		switch sessionStatus {
+		case .connecting, .connected, .reasserting:
+			sendMessage(ConfigChangedMessage()) { (success: Bool?, error) in
 				print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
 
 				self.error = error
 
 				self.postChange()
 			}
-		}
-		else if sessionStatus == .connecting {
-			disconnect()
-		}
 
-		connect()
+		default:
+			break
+		}
 	}
 
 	func connect() {

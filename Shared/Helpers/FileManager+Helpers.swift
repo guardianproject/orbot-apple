@@ -10,24 +10,24 @@ import Foundation
 
 extension FileManager {
 
-	var groupFolder: URL? {
+	var groupDir: URL? {
 		return containerURL(forSecurityApplicationGroupIdentifier: Config.groupId)
 	}
 
 	var vpnLogFile: URL? {
-		return groupFolder?.appendingPathComponent("log")
+		return groupDir?.appendingPathComponent("log")
 	}
 
 	var torLogFile: URL? {
-		return groupFolder?.appendingPathComponent("tor.log")
+		return groupDir?.appendingPathComponent("tor.log")
 	}
 
 	var leafLogFile: URL? {
-		return groupFolder?.appendingPathComponent("leaf.log")
+		return groupDir?.appendingPathComponent("leaf.log")
 	}
 
 	var leafConfFile: URL? {
-		return groupFolder?.appendingPathComponent("leaf.conf")
+		return groupDir?.appendingPathComponent("leaf.conf")
 	}
 
 	var leafConfTemplateFile: URL? {
@@ -39,8 +39,29 @@ extension FileManager {
 	}
 
 	var customObfs4BridgesFile: URL? {
-		return groupFolder?.appendingPathComponent("custom-bridges.plist")
+		return groupDir?.appendingPathComponent("custom-bridges.plist")
 	}
+
+	var torDir: URL? {
+		guard let url = groupDir?.appendingPathComponent("tor") else {
+			return nil
+		}
+
+		try? createDirectory(at: url, withIntermediateDirectories: true)
+
+		return url
+	}
+
+	var torAuthDir: URL? {
+		guard let url = torDir?.appendingPathComponent("auth") else {
+			return nil
+		}
+
+		try? createDirectory(at: url, withIntermediateDirectories: true)
+
+		return url
+	}
+
 
 	var leafConfTemplate: String? {
 		if let templateFile = leafConfTemplateFile {

@@ -13,8 +13,8 @@
 		A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */; };
 		A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DB273AB035009C8053 /* ScanQrViewController.swift */; };
 		A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
-		A00D90DF273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */; };
-		A00D90E0273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */; };
+		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
+		A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -22,6 +22,7 @@
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
 		A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
+		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
@@ -106,11 +107,12 @@
 		A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "obfs4-bridges.plist"; sourceTree = "<group>"; };
 		A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
 		A00D90DB273AB035009C8053 /* ScanQrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQrViewController.swift; sourceTree = "<group>"; };
-		A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBridgeMessage.swift; sourceTree = "<group>"; };
+		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A033EB61273AA2A000A24F43 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
 		A04F285B26F8D46500C660B0 /* build_cross.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_cross.sh; sourceTree = "<group>"; };
 		A04F285D26F8D46500C660B0 /* Cargo.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cargo.toml; sourceTree = "<group>"; };
@@ -1747,6 +1749,7 @@
 				A00D90DB273AB035009C8053 /* ScanQrViewController.swift */,
 				A0E3C649273450450085353A /* CaptchaCell.xib */,
 				A0E3C648273450440085353A /* CaptchaRow.swift */,
+				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A05B73B924755CE600930C40 /* Main.storyboard */,
 				A05B73BE24755CE700930C40 /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -1808,8 +1811,8 @@
 		A0A735E624756C8E00073C81 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				A00D90DE273AC4CB009C8053 /* ChangeBridgeMessage.swift */,
 				A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */,
+				A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */,
 				A0A735F424757FA400073C81 /* ProgressMessage.swift */,
 				A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */,
 				A0A735E824756CA200073C81 /* Message.swift */,
@@ -2124,10 +2127,11 @@
 				A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */,
 				A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
+				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
 				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
-				A00D90DF273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */,
+				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
 				A0E3C650273452760085353A /* ApiError.swift in Sources */,
@@ -2159,7 +2163,7 @@
 				A0E3C654273452B20085353A /* AlertHelper.swift in Sources */,
 				A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
-				A00D90E0273AC4CB009C8053 /* ChangeBridgeMessage.swift in Sources */,
+				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

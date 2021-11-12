@@ -11,7 +11,7 @@ import Eureka
 import MessageUI
 
 class CustomBridgesViewController: FormViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
+UINavigationControllerDelegate, MFMailComposeViewControllerDelegate, ScanQrDelegate {
 
 	weak var delegate: BridgeConfDelegate?
 
@@ -41,8 +41,7 @@ UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 
 		navigationItem.title = NSLocalizedString("Use Custom Bridges", comment: "")
 		navigationItem.rightBarButtonItem = UIBarButtonItem(
-			title: NSLocalizedString("Connect", comment: ""), style: .done,
-			target: self, action: #selector(connect))
+			barButtonSystemItem: .save, target: self, action: #selector(save))
 		navigationItem.rightBarButtonItem?.isEnabled = !(textAreaRow.value?.isEmpty ?? true)
 
 		form
@@ -68,7 +67,10 @@ UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 				$0.title = NSLocalizedString("Scan QR Code", comment: "")
 			}
 			.onCellSelection({ [weak self] _, _ in
-				self?.navigationController?.pushViewController(ScanQrViewController(), animated: true)
+				let vc = ScanQrViewController()
+				vc.delegate = self
+
+				self?.navigationController?.pushViewController(vc, animated: true)
 			})
 			<<< ButtonRow() {
 				$0.title = NSLocalizedString("Upload QR Code", comment: "")
@@ -120,7 +122,7 @@ UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 			}
 		}
 
-		tryDecode(raw)
+		scanned(value: raw)
 	}
 
 	func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -135,9 +137,9 @@ UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
     }
 
 
-	// MARK: Public Methods
+	// MARK: ScanQrDelegate
 
-	func tryDecode(_ raw: String?) {
+	func scanned(value raw: String?) {
 		// They really had to use JSON for content encoding but with illegal single quotes instead
 		// of double quotes as per JSON standard. Srsly?
 		if let data = raw?.replacingOccurrences(of: "'", with: "\"").data(using: .utf8),
@@ -157,10 +159,10 @@ UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 	// MARK: Private Methods
 
 	@objc
-	private func connect() {
+	private func save() {
 		updateDelegate()
 
-		delegate?.connect()
+		delegate?.save()
 	}
 
 	private func updateDelegate() {

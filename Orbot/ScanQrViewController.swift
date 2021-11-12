@@ -9,10 +9,17 @@
 import UIKit
 import AVFoundation
 
+protocol ScanQrDelegate {
+
+	func scanned(value: String?)
+}
+
 class ScanQrViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
 	private var captureSession: AVCaptureSession?
 	private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+
+	var delegate: ScanQrDelegate?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -53,9 +60,7 @@ class ScanQrViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
 			if let navC = navigationController {
 				navC.popViewController(animated: true)
 
-				if let vc = navC.viewControllers[navC.viewControllers.count - 1] as? CustomBridgesViewController {
-					vc.tryDecode(metadata.stringValue)
-				}
+				delegate?.scanned(value: metadata.stringValue)
 			}
 		}
 	}
