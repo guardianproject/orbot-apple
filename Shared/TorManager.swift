@@ -80,14 +80,21 @@ class TorManager {
 					return
 				}
 
-				self?.torController?.resetConf(forKey: "Bridge")
+				self?.torController?.resetConf(forKey: "ClientTransportPlugin")
 				{ [weak self] success, error in
 					if !success {
 						return
 					}
 
-					self?.torController?.setConfs(
-						self?.getBridgeConfig(bridge, { ["key": $0, "value": "\"\($1)\""] }) ?? [])
+					self?.torController?.resetConf(forKey: "Bridge")
+					{ [weak self] success, error in
+						if !success {
+							return
+						}
+
+						self?.torController?.setConfs(
+							self?.getBridgeConfig(bridge, { ["key": $0, "value": "\"\($1)\""] }) ?? [])
+					}
 				}
 			}
 		}
@@ -221,8 +228,6 @@ class TorManager {
 		conf.arguments += [
 			"--allow-missing-torrc",
 			"--ignore-missing-torrc",
-			"--ClientTransportPlugin", "obfs4 socks5 \(Self.localhost):\(IPtProxyObfs4Port())",
-			"--ClientTransportPlugin", "snowflake socks5 \(Self.localhost):\(IPtProxySnowflakePort())",
 		]
 
 		conf.arguments += getBridgeConfig(bridge, { ["--\($0)", $1] }).joined()
@@ -244,21 +249,15 @@ class TorManager {
 #if os(iOS)
 		switch bridge {
 		case .obfs4, .custom:
-			var bridges: [String]?
+			arguments.append(cv("ClientTransportPlugin", "obfs4 socks5 \(Self.localhost):\(IPtProxyObfs4Port())"))
 
-			if bridge == .custom {
-				bridges = FileManager.default.customObfs4Bridges
-
-				if bridges?.isEmpty ?? false {
-					bridges = nil
-				}
-			}
-
-			arguments += (bridges ?? FileManager.default.builtInObfs4Bridges).map({ cv("Bridge", $0) })
+			let bridges = bridge == .custom ? FileManager.default.customObfs4Bridges : FileManager.default.builtInObfs4Bridges
+			arguments += bridges?.map({ cv("Bridge", $0) }) ?? []
 
 			arguments.append(cv("UseBridges", "1"))
 
 		case .snowflake:
+			arguments.append(cv("ClientTransportPlugin", "snowflake socks5 \(Self.localhost):\(IPtProxySnowflakePort())"))
 			arguments.append(cv("Bridge", "snowflake 192.0.2.3:1 2B280B23E1107BB62ABFC40DDCC8824814F80A72"))
 			arguments.append(cv("UseBridges", "1"))
 
