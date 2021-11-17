@@ -27,8 +27,6 @@ class TorManager {
 	static let torProxyPort: UInt16 = 9050
 	static let dnsPort: UInt16 = 5400
 
-	private static let torControlPort: UInt16 = 39060
-
 
 	private var torThread: TorThread?
 
@@ -100,10 +98,11 @@ class TorManager {
 		}
 
 		controllerQueue.asyncAfter(deadline: .now() + 0.65) {
-			if self.torController == nil {
+			if self.torController == nil, let url = FileManager.default.torControlPort {
+
 				self.torController = TorController(
-					socketHost: Self.localhost,
-					port: Self.torControlPort)
+					socketHost: url.host ?? Self.localhost,
+					port: UInt16(url.port ?? 0))
 			}
 
 			if !(self.torController?.isConnected ?? false) {
@@ -207,7 +206,8 @@ class TorManager {
 
 			// Ports
 			"SocksPort": "\(Self.localhost):\(Self.torProxyPort)",
-			"ControlPort": "\(Self.localhost):\(Self.torControlPort)",
+			"ControlPort": "auto",
+			"ControlPortWriteToFile": FileManager.default.torControlPortFile?.path ?? "",
 
 			// GeoIP files for circuit node country display.
 			"GeoIPFile": Bundle.main.path(forResource: "geoip", ofType: nil) ?? "",
