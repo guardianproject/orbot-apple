@@ -1,0 +1,21 @@
+[update]
+tasks = ["code", "normalize"]
+
+[update.code]
+codePaths = ["."]
+localizablePaths = ["Shared"]
+defaultToKeys = true
+additive = false
+unstripped = false
+plistArguments = false
+
+[update.normalize]
+paths = ["Shared"]
+sourceLocale = "en"
+harmonizeWithSource = true
+sortByKeys = true
+
+[lint]
+paths = ["Shared"]
+duplicateKeys = true
+emptyValues = true

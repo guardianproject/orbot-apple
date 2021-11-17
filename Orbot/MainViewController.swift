@@ -30,7 +30,13 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBOutlet weak var logSc: UISegmentedControl!
+	@IBOutlet weak var logSc: UISegmentedControl! {
+		didSet {
+			logSc.setTitle(NSLocalizedString("Log", comment: ""), forSegmentAt: 0)
+			logSc.setTitle(NSLocalizedString("Circuits", comment: ""), forSegmentAt: 1)
+		}
+	}
+
 	@IBOutlet weak var logTv: UITextView!
 
 	private static let nf: NumberFormatter = {

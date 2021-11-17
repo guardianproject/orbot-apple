@@ -1,0 +1,176 @@
+/* No comment provided by engineer. */
+"%1$@ %2$@ makes your traffic appear \"random\"." = "%1$@ %2$@ lässt den Datenverkehr \"zufällig\" aussehen.";
+
+/* No comment provided by engineer. */
+"%1$@ %2$@ makes your traffic look like a phone call to a random user on the net." = "%1$@ %2$@ lässt den Datenverkehr aussehen wie einen Telefonanruf zu irgendjemand anderem im Internet.";
+
+/* No comment provided by engineer. */
+"Add" = "Hinzufügen";
+
+/* No comment provided by engineer. */
+"Add v3 Onion Service Auth Cookie" = "Onion Service v3 Auth Schlüssel hinzufügen";
+
+/* No comment provided by engineer. */
+"Auth Cookies" = "Auth Schlüssel";
+
+/* No comment provided by engineer. */
+"Bridge Configuration" = "Brückenkonfiguration";
+
+/* No comment provided by engineer. */
+"Built-in %@" = "Eingebaute %@";
+
+/* No comment provided by engineer. */
+"Camera access was not granted or QR Code scanning is not supported by your device." = "Es wurde kein Zugriff auf die Kamera gewährt, oder QR-Code Scanning wird von diesem Gerät nicht unterstützt.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Abbrechen";
+
+/* No comment provided by engineer. */
+"Circuits" = "Kanäle";
+
+/* No comment provided by engineer. */
+"connected" = "verbunden";
+
+/* No comment provided by engineer. */
+"connecting" = "verbinden";
+
+/* No comment provided by engineer. */
+"Copy URL to Clipboard" = "URL in die Zwischenablage kopieren";
+
+/* No comment provided by engineer. */
+"Could not connect." = "Konnte nicht verbinden.";
+
+/* No comment provided by engineer. */
+"Couldn't understand server response." = "Konnte Serverantwort nicht verstehen.";
+
+/* No comment provided by engineer. */
+"Custom Bridges" = "Eigene Brücken";
+
+/* No comment provided by engineer. */
+"disabled" = "deaktiviert";
+
+/* No comment provided by engineer. */
+"disconnected" = "getrennt";
+
+/* No comment provided by engineer. */
+"disconnecting" = "trennen";
+
+/* No comment provided by engineer. */
+"E-Mail" = "E-Mail";
+
+/* No comment provided by engineer. */
+"Edit" = "Ändern";
+
+/* No comment provided by engineer. */
+"Edit v3 Onion Service Auth Cookie" = "Onion Service v3 Auth Schlüssel ändern";
+
+/* No comment provided by engineer. */
+"enabled" = "aktiviert";
+
+/* No comment provided by engineer. */
+"Enter characters from image" = "Gebe die Zeichen im Bild ein";
+
+/* No comment provided by engineer. */
+"Error" = "Fehler";
+
+/* No comment provided by engineer. */
+"If one type of bridge does not work, try using a different one." = "Wenn eine Art von Brücken nicht funktioniert, versuch eine andere Art.";
+
+/* No comment provided by engineer. */
+"If you are in a country or using a connection that censors Tor, you might need to use bridges." = "Wenn Du in einem Land bist oder eine Verbindung benutzt die Tor zensiert, mußt Du vielleicht eine Brücke benutzen.";
+
+/* No comment provided by engineer. */
+"In a separate browser, visit %@ and tap \"Get Bridges\" > \"Just Give Me Bridges!\"" = "Besuche %@ in einem anderen Browser und wähle \"Brücken erhalten\" > \"Mir nur Brücken geben!\"";
+
+/* No comment provided by engineer. */
+"Install" = "Installieren";
+
+/* No comment provided by engineer. */
+"invalid" = "ungültig";
+
+/* No comment provided by engineer. */
+"Key" = "Schlüssel";
+
+/* No comment provided by engineer. */
+"Log" = "Log";
+
+/* No comment provided by engineer. */
+"No Bridges" = "Keine Brücken";
+
+/* No comment provided by engineer. */
+"No success, but \"%@\" instead." = "No success, but \"%@\" instead.";
+
+/* No comment provided by engineer. */
+"No valid HTTP response." = "Keine gültige HTTP-Antwort.";
+
+/* No comment provided by engineer. */
+"No VPN configuration set." = "Keine VPN-Konfiguration gesetzt.";
+
+/* No comment provided by engineer. */
+"not installed" = "nicht installiert";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Paste Bridges" = "Brücken einfügen";
+
+/* No comment provided by engineer. */
+"QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen .onion Link gescannt hast?";
+
+/* No comment provided by engineer. */
+"QR Code could not be decoded! Are you sure you scanned a QR code from %@?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen QR Code von %@ gescannt hast?";
+
+/* No comment provided by engineer. */
+"reasserting" = "wiederherstellen";
+
+/* No comment provided by engineer. */
+"Request Bridges" = "Brücken anfordern";
+
+/* No comment provided by engineer. */
+"Request Bridges from torproject.org" = "Brücken von torproject.org anfordern";
+
+/* No comment provided by engineer. */
+"Request could not be formed. Please check host and username/password!" = "Request could not be formed. Please check host and username/password!";
+
+/* No comment provided by engineer. */
+"Request via E-Mail" = "Per E-Mail anfordern";
+
+/* No comment provided by engineer. */
+"Response body missing." = "Kein Antwortinhalt.";
+
+/* No comment provided by engineer. */
+"Response is no valid JSON." = "Antwort ist kein gültiges JSON.";
+
+/* No comment provided by engineer. */
+"Scan QR Code" = "QR-Code scannen";
+
+/* No comment provided by engineer. */
+"Solve the CAPTCHA to request bridges." = "Löse das CAPTCHA, um Brücken anzufordern.";
+
+/* No comment provided by engineer. */
+"Start" = "Start";
+
+/* No comment provided by engineer. */
+"Stop" = "Stopp";
+
+/* No comment provided by engineer. */
+"unknown" = "unbekannt";
+
+/* No comment provided by engineer. */
+"Upload QR Code" = "QR-Code aus Fotos";
+
+/* No comment provided by engineer. */
+"Use Custom Bridges" = "Benutze eigene Brücken";
+
+/* No comment provided by engineer. */
+"Use QR Code" = "QR-Code verwenden";
+
+/* No comment provided by engineer. */
+"via custom bridges" = "via eigener Brücken";
+
+/* No comment provided by engineer. */
+"via Obfs4 bridges" = "via Obfs4-Brücken";
+
+/* No comment provided by engineer. */
+"via Snowflake bridge" = "via Snowflake-Brücke";

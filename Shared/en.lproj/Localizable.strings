@@ -1,0 +1,176 @@
+/* No comment provided by engineer. */
+"%1$@ %2$@ makes your traffic appear \"random\"." = "%1$@ %2$@ makes your traffic appear \"random\".";
+
+/* No comment provided by engineer. */
+"%1$@ %2$@ makes your traffic look like a phone call to a random user on the net." = "%1$@ %2$@ makes your traffic look like a phone call to a random user on the net.";
+
+/* No comment provided by engineer. */
+"Add" = "Add";
+
+/* No comment provided by engineer. */
+"Add v3 Onion Service Auth Cookie" = "Add v3 Onion Service Auth Cookie";
+
+/* No comment provided by engineer. */
+"Auth Cookies" = "Auth Cookies";
+
+/* No comment provided by engineer. */
+"Bridge Configuration" = "Bridge Configuration";
+
+/* No comment provided by engineer. */
+"Built-in %@" = "Built-in %@";
+
+/* No comment provided by engineer. */
+"Camera access was not granted or QR Code scanning is not supported by your device." = "Camera access was not granted or QR Code scanning is not supported by your device.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* No comment provided by engineer. */
+"Circuits" = "Circuits";
+
+/* No comment provided by engineer. */
+"connected" = "connected";
+
+/* No comment provided by engineer. */
+"connecting" = "connecting";
+
+/* No comment provided by engineer. */
+"Copy URL to Clipboard" = "Copy URL to Clipboard";
+
+/* No comment provided by engineer. */
+"Could not connect." = "Could not connect.";
+
+/* No comment provided by engineer. */
+"Couldn't understand server response." = "Couldn't understand server response.";
+
+/* No comment provided by engineer. */
+"Custom Bridges" = "Custom Bridges";
+
+/* No comment provided by engineer. */
+"disabled" = "disabled";
+
+/* No comment provided by engineer. */
+"disconnected" = "disconnected";
+
+/* No comment provided by engineer. */
+"disconnecting" = "disconnecting";
+
+/* No comment provided by engineer. */
+"E-Mail" = "E-Mail";
+
+/* No comment provided by engineer. */
+"Edit" = "Edit";
+
+/* No comment provided by engineer. */
+"Edit v3 Onion Service Auth Cookie" = "Edit v3 Onion Service Auth Cookie";
+
+/* No comment provided by engineer. */
+"enabled" = "enabled";
+
+/* No comment provided by engineer. */
+"Enter characters from image" = "Enter characters from image";
+
+/* No comment provided by engineer. */
+"Error" = "Error";
+
+/* No comment provided by engineer. */
+"If one type of bridge does not work, try using a different one." = "If one type of bridge does not work, try using a different one.";
+
+/* No comment provided by engineer. */
+"If you are in a country or using a connection that censors Tor, you might need to use bridges." = "If you are in a country or using a connection that censors Tor, you might need to use bridges.";
+
+/* No comment provided by engineer. */
+"In a separate browser, visit %@ and tap \"Get Bridges\" > \"Just Give Me Bridges!\"" = "In a separate browser, visit %@ and tap \"Get Bridges\" > \"Just Give Me Bridges!\"";
+
+/* No comment provided by engineer. */
+"Install" = "Install";
+
+/* No comment provided by engineer. */
+"invalid" = "invalid";
+
+/* No comment provided by engineer. */
+"Key" = "Key";
+
+/* No comment provided by engineer. */
+"Log" = "Log";
+
+/* No comment provided by engineer. */
+"No Bridges" = "No Bridges";
+
+/* No comment provided by engineer. */
+"No success, but \"%@\" instead." = "No success, but \"%@\" instead.";
+
+/* No comment provided by engineer. */
+"No valid HTTP response." = "No valid HTTP response.";
+
+/* No comment provided by engineer. */
+"No VPN configuration set." = "No VPN configuration set.";
+
+/* No comment provided by engineer. */
+"not installed" = "not installed";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Paste Bridges" = "Paste Bridges";
+
+/* No comment provided by engineer. */
+"QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";
+
+/* No comment provided by engineer. */
+"QR Code could not be decoded! Are you sure you scanned a QR code from %@?" = "QR Code could not be decoded! Are you sure you scanned a QR code from %@?";
+
+/* No comment provided by engineer. */
+"reasserting" = "reasserting";
+
+/* No comment provided by engineer. */
+"Request Bridges" = "Request Bridges";
+
+/* No comment provided by engineer. */
+"Request Bridges from torproject.org" = "Request Bridges from torproject.org";
+
+/* No comment provided by engineer. */
+"Request could not be formed. Please check host and username/password!" = "Request could not be formed. Please check host and username/password!";
+
+/* No comment provided by engineer. */
+"Request via E-Mail" = "Request via E-Mail";
+
+/* No comment provided by engineer. */
+"Response body missing." = "Response body missing.";
+
+/* No comment provided by engineer. */
+"Response is no valid JSON." = "Response is no valid JSON.";
+
+/* No comment provided by engineer. */
+"Scan QR Code" = "Scan QR Code";
+
+/* No comment provided by engineer. */
+"Solve the CAPTCHA to request bridges." = "Solve the CAPTCHA to request bridges.";
+
+/* No comment provided by engineer. */
+"Start" = "Start";
+
+/* No comment provided by engineer. */
+"Stop" = "Stop";
+
+/* No comment provided by engineer. */
+"unknown" = "unknown";
+
+/* No comment provided by engineer. */
+"Upload QR Code" = "Upload QR Code";
+
+/* No comment provided by engineer. */
+"Use Custom Bridges" = "Use Custom Bridges";
+
+/* No comment provided by engineer. */
+"Use QR Code" = "Use QR Code";
+
+/* No comment provided by engineer. */
+"via custom bridges" = "via custom bridges";
+
+/* No comment provided by engineer. */
+"via Obfs4 bridges" = "via Obfs4 bridges";
+
+/* No comment provided by engineer. */
+"via Snowflake bridge" = "via Snowflake bridge";
