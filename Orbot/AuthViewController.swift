@@ -88,7 +88,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	}
 
 	@objc func add() {
-		internalAdd(nil, nil)
+		addKey(nil, nil)
 	}
 
 	@objc func qr() {
@@ -118,7 +118,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 			urlc.query = nil
 			urlc.fragment = nil
 
-			internalAdd(urlc.url, key)
+			addKey(urlc.url, key)
 		}
 		else {
 			AlertHelper.present(self, message: NSLocalizedString(
@@ -128,10 +128,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 
 	}
 
-
-	// MARK: Private Methods
-
-	private func internalAdd(_ url: URL?, _ key: String?) {
+	func addKey(_ url: URL?, _ key: String?) {
 		let old = auth?.keys.count ?? 0
 
 		showAlert(
@@ -153,6 +150,9 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 				VpnManager.shared.configChanged()
 			}
 	}
+
+
+	// MARK: Private Methods
 
 	private func showAlert(title: String, actionTitle: String, url: URL?, key: String?, completion: @escaping (_ success: Bool) -> Void) {
 		let alert = AlertHelper.build(

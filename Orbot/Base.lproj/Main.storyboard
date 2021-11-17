@@ -133,6 +133,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="authBt" destination="5Vp-J7-qi5" id="0f7-j1-dOt"/>
+                        <outlet property="bridgesBt" destination="K2Q-jl-U8h" id="hb2-A4-aQk"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
                         <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>

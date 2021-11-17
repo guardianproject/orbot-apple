@@ -15,6 +15,7 @@
 		A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
+		A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */; };
 		A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -109,6 +110,7 @@
 		A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
 		A00D90DB273AB035009C8053 /* ScanQrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQrViewController.swift; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
+		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
@@ -1835,6 +1837,7 @@
 				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
+				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
 				A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */,
 			);
@@ -2128,6 +2131,7 @@
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */,
+				A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */,
 				A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,

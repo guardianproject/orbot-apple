@@ -16,7 +16,9 @@ class MainViewController: UIViewController {
 		TorCircuit.purposeHsClientRend,
 		TorCircuit.purposeHsServiceRend]
 
-	@IBOutlet weak var statusIcon: UIImageView!
+    @IBOutlet weak var bridgesBt: UIBarButtonItem?
+	@IBOutlet weak var authBt: UIBarButtonItem?
+    @IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
 
@@ -86,20 +88,21 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBAction func changeBridge(_ sender: UIBarButtonItem) {
-		let vc = UINavigationController(rootViewController: BridgeConfViewController())
-		vc.modalPresentationStyle = .popover
-		vc.popoverPresentationController?.barButtonItem = sender
-
-		present(vc, animated: true)
+	@IBAction func changeBridge(_ sender: UIBarButtonItem? = nil) {
+		present(inNav: BridgeConfViewController(), button: sender ?? bridgesBt)
 	}
 
     @IBAction func showAuth(_ sender: UIBarButtonItem) {
-		let vc = UINavigationController(rootViewController: AuthViewController(style: .grouped))
-		vc.modalPresentationStyle = .popover
-        vc.popoverPresentationController?.barButtonItem = sender
+		showAuth(button: sender)
+	}
 
-		present(vc, animated: true)
+	@discardableResult
+	func showAuth(button: UIBarButtonItem? = nil) -> AuthViewController {
+		let vc = AuthViewController(style: .grouped)
+
+		present(inNav: vc, button: button ?? authBt)
+
+		return vc
 	}
 
 	@IBAction func control() {
