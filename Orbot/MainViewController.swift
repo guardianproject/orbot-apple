@@ -177,6 +177,18 @@ class MainViewController: UIViewController {
 				self?.logTv.scrollToBottom()
 			}
 
+		case 2:
+			// Shows the content of the leaf config file.
+			// Only for development!
+			logFsObject?.cancel()
+			logFsObject = nil
+
+			logTv.text = nil
+
+			if let url = FileManager.default.leafConfFile {
+				logTv.text = try? String(contentsOf: url)
+			}
+
 		default:
 			if logFsObject == nil {
 				logFsObject = createLogFsObject()

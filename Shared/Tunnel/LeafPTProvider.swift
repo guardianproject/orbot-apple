@@ -15,12 +15,18 @@ class LeafPTProvider: BasePTProvider {
 
     private static let leafId: UInt16 = 666
 
-    override func startTun2Socks() {
+	override func startTun2Socks(socksAddr: String?, dnsAddr: String?) {
+		let tunFd = tunnelFd != nil ? String(tunnelFd!) : nil
+		let socks = socksAddr?.split(separator: ":")
+		let dns = dnsAddr?.split(separator: ":")
+
         let conf = FileManager.default.leafConfTemplate?
-            .replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile!.path)
-            .replacingOccurrences(of: "{{tunFd}}", with: String(tunnelFd!))
-            .replacingOccurrences(of: "{{torProxyPort}}", with: String(TorManager.torProxyPort))
-            .replacingOccurrences(of: "{{dnsPort}}", with: String(TorManager.dnsPort))
+            .replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile?.path ?? "")
+            .replacingOccurrences(of: "{{tunFd}}", with: tunFd ?? "")
+			.replacingOccurrences(of: "{{dnsHost}}", with: dns?.first ?? "")
+			.replacingOccurrences(of: "{{dnsPort}}", with: dns?.last ?? "")
+			.replacingOccurrences(of: "{{socksHost}}", with: socks?.first ?? "")
+			.replacingOccurrences(of: "{{socksPort}}", with: socks?.last ?? "")
 
         let file = FileManager.default.leafConfFile
 

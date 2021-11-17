@@ -18,14 +18,13 @@ class TorManager {
 
 	private enum Errors: Error {
 		case cookieUnreadable
+		case noSocksAddr
+		case noDnsAddr
 	}
 
 	static let shared = TorManager()
 
 	static let localhost = "127.0.0.1"
-
-	static let torProxyPort: UInt16 = 9050
-	static let dnsPort: UInt16 = 5400
 
 
 	private var torThread: TorThread?
@@ -62,7 +61,7 @@ class TorManager {
 
 	func start(_ bridge: Bridge,
 			   _ progressCallback: @escaping (Int) -> Void,
-			   _ completion: @escaping (Error?) -> Void)
+			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
 		if !torRunning {
 			torConf = getTorConf(bridge)
@@ -112,21 +111,21 @@ class TorManager {
 				catch let error {
 					self.log("#startTunnel error=\(error)")
 
-					return completion(error)
+					return completion(error, nil, nil)
 				}
 			}
 
 			guard let cookie = self.cookie else {
 				self.log("#startTunnel cookie unreadable")
 
-				return completion(Errors.cookieUnreadable)
+				return completion(Errors.cookieUnreadable, nil, nil)
 			}
 
 			self.torController?.authenticate(with: cookie) { success, error in
 				if let error = error {
 					self.log("#startTunnel error=\(error)")
 
-					return completion(error)
+					return completion(error, nil, nil)
 				}
 
 				var progressObs: Any?
@@ -157,7 +156,17 @@ class TorManager {
 
 					self.torController?.removeObserver(observer)
 
-					completion(nil)
+					self.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
+						guard let socksAddr = response.first, !socksAddr.isEmpty else {
+							return completion(Errors.noSocksAddr, nil, nil)
+						}
+
+						guard let dnsAddr = response.last, !dnsAddr.isEmpty else {
+							return completion(Errors.noDnsAddr, nil, nil)
+						}
+
+						completion(nil, socksAddr, dnsAddr)
+					}
 				})
 			}
 		}
@@ -193,7 +202,7 @@ class TorManager {
 
 		conf.options = [
 			// DNS
-			"DNSPort": "\(Self.localhost):\(Self.dnsPort)",
+			"DNSPort": "auto",
 			"AutomapHostsOnResolve": "1",
 			// By default, localhost resp. link-local addresses will be returned by Tor.
 			// That seems to not get accepted by iOS. Use private network addresses instead.
@@ -205,7 +214,7 @@ class TorManager {
 			"SafeLogging": "1",
 
 			// Ports
-			"SocksPort": "\(Self.localhost):\(Self.torProxyPort)",
+			"SocksPort": "auto",
 			"ControlPort": "auto",
 			"ControlPortWriteToFile": FileManager.default.torControlPortFile?.path ?? "",
 

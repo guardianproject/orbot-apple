@@ -85,12 +85,12 @@ class BasePTProvider: NEPacketTunnelProvider {
 				return completionHandler(error)
 			}
 
-			let completion = { (error: Error?) -> Void in
+			let completion = { (error: Error?, socksAddr: String?, dnsAddr: String?) -> Void in
 				if let error = error {
 					return completionHandler(error)
 				}
 
-				self.startTun2Socks()
+				self.startTun2Socks(socksAddr: socksAddr, dnsAddr: dnsAddr)
 
 				self.log("#startTunnel successful")
 
@@ -159,7 +159,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 			bridge = newBridge
 
-			startBridgeAndTor { error in
+			startBridgeAndTor { error, socksAddr, dnsAddr in
 				completionHandler?(Self.archive(error ?? true))
 			}
 		}
@@ -171,7 +171,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	// MARK: Abstract Methods
 
-	func startTun2Socks() {
+	func startTun2Socks(socksAddr: String?, dnsAddr: String?) {
 		assertionFailure("Method needs to be implemented in subclass!")
 	}
 
@@ -200,7 +200,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		return try? NSKeyedArchiver.archivedData(withRootObject: root, requiringSecureCoding: true)
 	}
 
-	private func startBridgeAndTor(_ completion: @escaping (Error?) -> Void) {
+	private func startBridgeAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
 #if os(iOS)
 		switch bridge {
 		case .obfs4, .custom:
