@@ -193,9 +193,7 @@ class MainViewController: UIViewController {
 			}
 
 		default:
-			if logFsObject == nil {
-				logFsObject = createLogFsObject()
-			}
+			createLogFsObject()
 		}
 	}
 
@@ -254,11 +252,12 @@ class MainViewController: UIViewController {
 
 	// MARK: Private Methods
 
-	private func createLogFsObject() -> DispatchSourceFileSystemObject? {
-		guard let url = FileManager.default.torLogFile,
+	private func createLogFsObject() {
+		guard logFsObject == nil,
+			let url = FileManager.default.torLogFile,
 			let fh = try? FileHandle(forReadingFrom: url)
 		else {
-			return nil
+			return
 		}
 
 		let ui = { [weak self] in
@@ -270,31 +269,31 @@ class MainViewController: UIViewController {
 		logTv.text = nil
 		ui()
 
-		var logFsObject = DispatchSource.makeFileSystemObjectSource(
+		logFsObject = DispatchSource.makeFileSystemObjectSource(
 			fileDescriptor: fh.fileDescriptor,
 			eventMask: [.extend, .delete, .link],
 			queue: .main)
 
-		logFsObject.setEventHandler { [weak self] in
-			if logFsObject.data.contains(.delete) || logFsObject.data.contains(.link) {
-				logFsObject.cancel()
-
-				if let lfo = self?.createLogFsObject() {
-					logFsObject = lfo
-				}
+		logFsObject?.setEventHandler { [weak self] in
+			guard let data = self?.logFsObject?.data else {
+				return
 			}
 
-			if logFsObject.data.contains(.extend) {
+			if data.contains(.delete) || data.contains(.link) {
+				self?.logFsObject?.cancel()
+				self?.logFsObject = nil
+				self?.createLogFsObject()
+			}
+
+			if data.contains(.extend) {
 				ui()
 			}
 		}
 
-		logFsObject.setCancelHandler {
+		logFsObject?.setCancelHandler {
 			try? fh.close()
 		}
 
-		logFsObject.resume()
-
-		return logFsObject
+		logFsObject?.resume()
 	}
 }
