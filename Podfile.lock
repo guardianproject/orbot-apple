@@ -4,6 +4,7 @@ PODS:
     - Eureka (~> 5.0)
   - IPtProxy (1.2.0)
   - MBProgressHUD (1.2.0)
+  - ReachabilitySwift (5.0.0)
   - Tor (406.7.2)
 
 DEPENDENCIES:
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - ImageRow (~> 4.0)
   - IPtProxy (~> 1.2)
   - MBProgressHUD (~> 1.2)
+  - ReachabilitySwift (~> 5.0)
   - Tor (~> 406.7)
 
 SPEC REPOS:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - ImageRow
     - IPtProxy
     - MBProgressHUD
+    - ReachabilitySwift
     - Tor
 
 SPEC CHECKSUMS:
@@ -26,8 +29,9 @@ SPEC CHECKSUMS:
   ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
   IPtProxy: ab3cbf127f2e34e9c54ad5c5e818cf8cf93e0a7d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 2113eeda30e664c1adf863529a1c970ca254e6fa
 
-PODFILE CHECKSUM: 291023401bd040f3bc60906ec093b3d07cbc3ea6
+PODFILE CHECKSUM: dde6f4dcb1bde19c20cd5ffb02f2f6f126e7318e
 
 COCOAPODS: 1.11.2

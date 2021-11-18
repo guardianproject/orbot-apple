@@ -17,4 +17,5 @@ target 'TorVPN' do
 
   pod 'Tor', '~> 406.7'
   pod 'IPtProxy', '~> 1.2'
+  pod 'ReachabilitySwift', '~> 5.0'
 end

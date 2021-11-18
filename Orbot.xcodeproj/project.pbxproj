@@ -20,7 +20,7 @@
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F5137274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
-		A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
+		A00F513D2745698A0037DD4A /* IpSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F513C2745698A0037DD4A /* IpSupport.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -118,6 +118,7 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A00F513C2745698A0037DD4A /* IpSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpSupport.swift; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
@@ -1840,6 +1841,7 @@
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */,
+				A00F513C2745698A0037DD4A /* IpSupport.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
@@ -2165,7 +2167,6 @@
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
 				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
-				A01F34DC2652C7D6008F9912 /* TorManager.swift in Sources */,
 				A0E7CD20273ED1830004B573 /* FixedFormViewController.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
@@ -2191,6 +2192,7 @@
 				A0A735F324756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
+				A00F513D2745698A0037DD4A /* IpSupport.swift in Sources */,
 				A0E3C651273452760085353A /* ApiError.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,

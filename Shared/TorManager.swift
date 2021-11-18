@@ -55,16 +55,35 @@ class TorManager {
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
 
+	private var bridge = Bridge.none
+
+	private var ipStatus = IpSupport.Status.unknown
+
 
 	private init() {
+		IpSupport.shared.start({ [weak self] status in
+			self?.ipStatus = status
+
+			if self?.torRunning ?? false {
+				self?.torController?.setConfs(self?.getIpConfig({ ["key": $0, "value": "\"\($1)\""] }) ?? []) { success, error in
+					if let error = error {
+						print("[\(String(describing: type(of: self)))] error: \(error)")
+					}
+
+					self?.torController?.resetConnection()
+				}
+			}
+		})
 	}
 
 	func start(_ bridge: Bridge,
 			   _ progressCallback: @escaping (Int) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
+		self.bridge = bridge
+
 		if !torRunning {
-			torConf = getTorConf(bridge)
+			torConf = getTorConf()
 
 			torThread = TorThread(configuration: torConf)
 
@@ -90,7 +109,7 @@ class TorManager {
 						}
 
 						self?.torController?.setConfs(
-							self?.getBridgeConfig(bridge, { ["key": $0, "value": "\"\($1)\""] }) ?? [])
+							self?.getBridgeConfig({ ["key": $0, "value": "\"\($1)\""] }) ?? [])
 					}
 				}
 			}
@@ -197,7 +216,7 @@ class TorManager {
 		Logger.log(message, to: Logger.vpnLogfile)
 	}
 
-	private func getTorConf(_ bridge: Bridge) -> TorConfiguration {
+	private func getTorConf() -> TorConfiguration {
 		let conf = TorConfiguration()
 
 		conf.options = [
@@ -239,7 +258,9 @@ class TorManager {
 			"--ignore-missing-torrc",
 		]
 
-		conf.arguments += getBridgeConfig(bridge, { ["--\($0)", $1] }).joined()
+		conf.arguments += getBridgeConfig({ ["--\($0)", $1] }).joined()
+
+		conf.arguments += getIpConfig({ ["--\($0)", $1] }).joined()
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
@@ -252,7 +273,7 @@ class TorManager {
 		return conf
 	}
 
-	private func getBridgeConfig<T>(_ bridge: Bridge, _ cv: (String, String) -> T) -> [T] {
+	private func getBridgeConfig<T>(_ cv: (String, String) -> T) -> [T] {
 		var arguments = [T]()
 
 #if os(iOS)
@@ -274,6 +295,32 @@ class TorManager {
 			arguments.append(cv("UseBridges", "0"))
 		}
 #endif
+
+		return arguments
+	}
+
+	private func getIpConfig<T>(_ cv: (String, String) -> T) -> [T] {
+		var arguments = [T]()
+
+		if ipStatus == .ipV6Only {
+			arguments.append(cv("ClientPreferIPv6ORPort", "1"))
+
+			if bridge == .none {
+				// Switch off IPv4, if we're on a IPv6-only network.
+				arguments.append(cv("ClientUseIPv4", "0"))
+			}
+			else {
+				// ...but not, when we're using bridges. The bridge configuration
+				// lines are what is important, then.
+				arguments.append(cv("ClientUseIPv4", "1"))
+			}
+		}
+		else {
+			arguments.append(cv("ClientPreferIPv6ORPort", "auto"))
+			arguments.append(cv("ClientUseIPv4", "1"))
+		}
+
+		arguments.append(cv("ClientUseIPv6", "1"))
 
 		return arguments
 	}
