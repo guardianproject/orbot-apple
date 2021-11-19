@@ -28,7 +28,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 				barButtonSystemItem: .camera, target: self, action: #selector(qr))]
 
 		if let authDir = FileManager.default.torAuthDir {
-			auth = TorOnionAuth(privateDirUrl: authDir, andPublicDirUrl: authDir)
+			auth = TorOnionAuth(withPrivateDir: authDir, andPublicDir: authDir)
 		}
 	}
 

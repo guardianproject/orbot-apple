@@ -45,14 +45,6 @@ class TorManager {
 		return false
 	}
 
-	private var cookie: Data? {
-		if let cookieUrl = torConf?.dataDirectory?.appendingPathComponent("control_auth_cookie") {
-			return try? Data(contentsOf: cookieUrl)
-		}
-
-		return nil
-	}
-
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
 
 	private var bridge = Bridge.none
@@ -65,7 +57,7 @@ class TorManager {
 			self?.ipStatus = status
 
 			if self?.torRunning ?? false {
-				self?.torController?.setConfs(self?.getIpConfig({ ["key": $0, "value": "\"\($1)\""] }) ?? []) { success, error in
+				self?.torController?.setConfs(self?.getIpConfig(self!.asConf) ?? []) { success, error in
 					if let error = error {
 						print("[\(String(describing: type(of: self)))] error: \(error)")
 					}
@@ -109,18 +101,15 @@ class TorManager {
 						}
 
 						self?.torController?.setConfs(
-							self?.getBridgeConfig({ ["key": $0, "value": "\"\($1)\""] }) ?? [])
+							self?.getBridgeConfig(self!.asConf) ?? [])
 					}
 				}
 			}
 		}
 
 		controllerQueue.asyncAfter(deadline: .now() + 0.65) {
-			if self.torController == nil, let url = FileManager.default.torControlPort {
-
-				self.torController = TorController(
-					socketHost: url.host ?? Self.localhost,
-					port: UInt16(url.port ?? 0))
+			if self.torController == nil, let url = self.torConf?.controlPortFile {
+				self.torController = TorController(controlPortFile: url)
 			}
 
 			if !(self.torController?.isConnected ?? false) {
@@ -134,7 +123,7 @@ class TorManager {
 				}
 			}
 
-			guard let cookie = self.cookie else {
+			guard let cookie = self.torConf?.cookie else {
 				self.log("#startTunnel cookie unreadable")
 
 				return completion(Errors.cookieUnreadable, nil, nil)
@@ -234,15 +223,10 @@ class TorManager {
 
 			// Ports
 			"SocksPort": "auto",
-			"ControlPort": "auto",
-			"ControlPortWriteToFile": FileManager.default.torControlPortFile?.path ?? "",
 
 			// GeoIP files for circuit node country display.
 			"GeoIPFile": Bundle.main.path(forResource: "geoip", ofType: nil) ?? "",
 			"GeoIPv6File": Bundle.main.path(forResource: "geoip6", ofType: nil) ?? "",
-
-			// v3 Onion Service Authentication
-			"ClientOnionAuthDir": FileManager.default.torAuthDir?.path ?? "",
 
 			// Miscelaneous
 			"ClientOnly": "1",
@@ -250,17 +234,15 @@ class TorManager {
 			"MaxMemInQueues": "5MB"]
 
 
+		conf.ignoreMissingTorrc = true
 		conf.cookieAuthentication = true
+		conf.autoControlPort = true
 		conf.dataDirectory = FileManager.default.torDir
+		conf.clientAuthDirectory = FileManager.default.torAuthDir
 
-		conf.arguments += [
-			"--allow-missing-torrc",
-			"--ignore-missing-torrc",
-		]
+		conf.arguments += getBridgeConfig(asArguments).joined()
 
-		conf.arguments += getBridgeConfig({ ["--\($0)", $1] }).joined()
-
-		conf.arguments += getIpConfig({ ["--\($0)", $1] }).joined()
+		conf.arguments += getIpConfig(asArguments).joined()
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
@@ -271,6 +253,14 @@ class TorManager {
 		}
 
 		return conf
+	}
+
+	private func asArguments(key: String, value: String) -> [String] {
+		return ["--\(key)", value]
+	}
+
+	private func asConf(key: String, value: String) -> [String: String] {
+		return ["key": key, "value": "\"\(value)\""]
 	}
 
 	private func getBridgeConfig<T>(_ cv: (String, String) -> T) -> [T] {

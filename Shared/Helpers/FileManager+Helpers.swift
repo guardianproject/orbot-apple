@@ -62,10 +62,6 @@ extension FileManager {
 		return url
 	}
 
-	var torControlPortFile: URL? {
-		return torDir?.appendingPathComponent("controlport")
-	}
-
 
 	var leafConfTemplate: String? {
 		if let templateFile = leafConfTemplateFile {
@@ -105,32 +101,5 @@ extension FileManager {
 				try? removeItem(at: file)
 			}
 		}
-	}
-
-	/**
-	 The address of Tor's control port listening.
-	 Should return something like "127.0.0.1:49651".
-	 */
-	var torControlPort: URL? {
-		// Expected example content:
-		// PORT=127.0.0.1:49651
-
-		guard let url = torControlPortFile,
-			  let address = (try? String(contentsOf: url))?
-				.split(separator: "=")
-				.last?
-				.trimmingCharacters(in: .whitespacesAndNewlines)
-				.split(separator: ":"),
-			  let host = address.first?.description,
-			  let port = Int(address.last ?? "")
-		else {
-			return nil
-		}
-
-		var urlc = URLComponents()
-		urlc.host = host
-		urlc.port = port
-
-		return urlc.url
 	}
 }
