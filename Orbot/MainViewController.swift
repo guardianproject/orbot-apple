@@ -268,11 +268,14 @@ class MainViewController: UIViewController {
 
 		let ui = { [weak self] in
 			let data = fh.readDataToEndOfFile()
-			self?.logTv.text = (self?.logTv.text ?? "") + (String(data: data, encoding: .utf8) ?? "")
-			self?.logTv.scrollToBottom()
+
+			if let content = String(data: data, encoding: .utf8) {
+				self?.logTv.text.append(content)
+				self?.logTv.scrollToBottom()
+			}
 		}
 
-		logTv.text = nil
+		logTv.text = ""
 		ui()
 
 		logFsObject = DispatchSource.makeFileSystemObjectSource(
