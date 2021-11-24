@@ -551,6 +551,62 @@
 		A06C96EE273C2F070019ABE5 /* geoip */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geoip; sourceTree = "<group>"; };
 		A06C96F1273C33530019ABE5 /* update-bridges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "update-bridges.swift"; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A0A03972274E807500D80FD1 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		A0A03973274E807500D80FD1 /* Deliverfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Deliverfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0A03975274E807500D80FD1 /* copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
+		A0A03977274E807500D80FD1 /* privacy_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = privacy_url.txt; sourceTree = "<group>"; };
+		A0A03978274E807500D80FD1 /* subtitle.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = subtitle.txt; sourceTree = "<group>"; };
+		A0A03979274E807500D80FD1 /* support_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = support_url.txt; sourceTree = "<group>"; };
+		A0A0397A274E807500D80FD1 /* keywords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = keywords.txt; sourceTree = "<group>"; };
+		A0A0397B274E807500D80FD1 /* apple_tv_privacy_policy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apple_tv_privacy_policy.txt; sourceTree = "<group>"; };
+		A0A0397C274E807500D80FD1 /* promotional_text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = promotional_text.txt; sourceTree = "<group>"; };
+		A0A0397D274E807500D80FD1 /* release_notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		A0A0397E274E807500D80FD1 /* name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = name.txt; sourceTree = "<group>"; };
+		A0A0397F274E807500D80FD1 /* marketing_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = marketing_url.txt; sourceTree = "<group>"; };
+		A0A03980274E807500D80FD1 /* description.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = description.txt; sourceTree = "<group>"; };
+		A0A03981274E807500D80FD1 /* secondary_first_sub_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = secondary_first_sub_category.txt; sourceTree = "<group>"; };
+		A0A03982274E807500D80FD1 /* secondary_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = secondary_category.txt; sourceTree = "<group>"; };
+		A0A03983274E807500D80FD1 /* secondary_second_sub_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = secondary_second_sub_category.txt; sourceTree = "<group>"; };
+		A0A03985274E807500D80FD1 /* privacy_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = privacy_url.txt; sourceTree = "<group>"; };
+		A0A03986274E807500D80FD1 /* subtitle.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = subtitle.txt; sourceTree = "<group>"; };
+		A0A03987274E807500D80FD1 /* support_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = support_url.txt; sourceTree = "<group>"; };
+		A0A03988274E807500D80FD1 /* keywords.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = keywords.txt; sourceTree = "<group>"; };
+		A0A03989274E807500D80FD1 /* apple_tv_privacy_policy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = apple_tv_privacy_policy.txt; sourceTree = "<group>"; };
+		A0A0398A274E807500D80FD1 /* promotional_text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = promotional_text.txt; sourceTree = "<group>"; };
+		A0A0398B274E807500D80FD1 /* release_notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		A0A0398C274E807500D80FD1 /* name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = name.txt; sourceTree = "<group>"; };
+		A0A0398D274E807500D80FD1 /* marketing_url.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = marketing_url.txt; sourceTree = "<group>"; };
+		A0A0398E274E807500D80FD1 /* description.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = description.txt; sourceTree = "<group>"; };
+		A0A0398F274E807500D80FD1 /* primary_second_sub_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = primary_second_sub_category.txt; sourceTree = "<group>"; };
+		A0A03991274E807500D80FD1 /* phone_number.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = phone_number.txt; sourceTree = "<group>"; };
+		A0A03992274E807500D80FD1 /* demo_user.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = demo_user.txt; sourceTree = "<group>"; };
+		A0A03993274E807500D80FD1 /* notes.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
+		A0A03994274E807500D80FD1 /* email_address.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = email_address.txt; sourceTree = "<group>"; };
+		A0A03995274E807500D80FD1 /* last_name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = last_name.txt; sourceTree = "<group>"; };
+		A0A03996274E807500D80FD1 /* first_name.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = first_name.txt; sourceTree = "<group>"; };
+		A0A03997274E807500D80FD1 /* demo_password.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = demo_password.txt; sourceTree = "<group>"; };
+		A0A03998274E807500D80FD1 /* primary_first_sub_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = primary_first_sub_category.txt; sourceTree = "<group>"; };
+		A0A03999274E807500D80FD1 /* primary_category.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = primary_category.txt; sourceTree = "<group>"; };
+		A0A0399B274E89F800D80FD1 /* 2_APP_IPAD_PRO_129_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_APP_IPAD_PRO_129_2.png; sourceTree = "<group>"; };
+		A0A0399C274E89F800D80FD1 /* 4_APP_IPHONE_55_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_APP_IPHONE_55_4.png; sourceTree = "<group>"; };
+		A0A0399D274E89F800D80FD1 /* 2_APP_IPAD_PRO_3GEN_129_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_APP_IPAD_PRO_3GEN_129_2.png; sourceTree = "<group>"; };
+		A0A0399E274E89F800D80FD1 /* 2_APP_IPHONE_55_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_APP_IPHONE_55_2.png; sourceTree = "<group>"; };
+		A0A0399F274E89F800D80FD1 /* 3_APP_IPHONE_55_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_APP_IPHONE_55_3.png; sourceTree = "<group>"; };
+		A0A039A0274E89F800D80FD1 /* 0_APP_IPHONE_55_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_APP_IPHONE_55_0.png; sourceTree = "<group>"; };
+		A0A039A1274E89F800D80FD1 /* 1_APP_IPHONE_55_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_APP_IPHONE_55_1.png; sourceTree = "<group>"; };
+		A0A039A2274E89F800D80FD1 /* 1_APP_IPAD_PRO_129_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_APP_IPAD_PRO_129_1.png; sourceTree = "<group>"; };
+		A0A039A3274E89F800D80FD1 /* 4_APP_IPAD_PRO_129_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_APP_IPAD_PRO_129_4.png; sourceTree = "<group>"; };
+		A0A039A4274E89F800D80FD1 /* 3_APP_IPAD_PRO_3GEN_129_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_APP_IPAD_PRO_3GEN_129_3.png; sourceTree = "<group>"; };
+		A0A039A5274E89F800D80FD1 /* 0_APP_IPAD_PRO_129_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_APP_IPAD_PRO_129_0.png; sourceTree = "<group>"; };
+		A0A039A6274E89F800D80FD1 /* 3_APP_IPAD_PRO_129_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_APP_IPAD_PRO_129_3.png; sourceTree = "<group>"; };
+		A0A039A7274E89F800D80FD1 /* 4_APP_IPHONE_65_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_APP_IPHONE_65_4.png; sourceTree = "<group>"; };
+		A0A039A8274E89F800D80FD1 /* 1_APP_IPHONE_65_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_APP_IPHONE_65_1.png; sourceTree = "<group>"; };
+		A0A039A9274E89F800D80FD1 /* 0_APP_IPAD_PRO_3GEN_129_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_APP_IPAD_PRO_3GEN_129_0.png; sourceTree = "<group>"; };
+		A0A039AA274E89F800D80FD1 /* 0_APP_IPHONE_65_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_APP_IPHONE_65_0.png; sourceTree = "<group>"; };
+		A0A039AB274E89F800D80FD1 /* 3_APP_IPHONE_65_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_APP_IPHONE_65_3.png; sourceTree = "<group>"; };
+		A0A039AC274E89F800D80FD1 /* 2_APP_IPHONE_65_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_APP_IPHONE_65_2.png; sourceTree = "<group>"; };
+		A0A039AD274E89F800D80FD1 /* 4_APP_IPAD_PRO_3GEN_129_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_APP_IPAD_PRO_3GEN_129_4.png; sourceTree = "<group>"; };
+		A0A039AE274E89F800D80FD1 /* 1_APP_IPAD_PRO_3GEN_129_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_APP_IPAD_PRO_3GEN_129_1.png; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -1769,6 +1825,117 @@
 			path = Orbot;
 			sourceTree = "<group>";
 		};
+		A0A03970274E807500D80FD1 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				A0A03973274E807500D80FD1 /* Deliverfile */,
+				A0A03974274E807500D80FD1 /* metadata */,
+				A0A03971274E807500D80FD1 /* screenshots */,
+			);
+			path = fastlane;
+			sourceTree = "<group>";
+		};
+		A0A03971274E807500D80FD1 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0399A274E89F800D80FD1 /* en-US */,
+				A0A03972274E807500D80FD1 /* README.txt */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
+		A0A03974274E807500D80FD1 /* metadata */ = {
+			isa = PBXGroup;
+			children = (
+				A0A03975274E807500D80FD1 /* copyright.txt */,
+				A0A03999274E807500D80FD1 /* primary_category.txt */,
+				A0A03998274E807500D80FD1 /* primary_first_sub_category.txt */,
+				A0A0398F274E807500D80FD1 /* primary_second_sub_category.txt */,
+				A0A03982274E807500D80FD1 /* secondary_category.txt */,
+				A0A03981274E807500D80FD1 /* secondary_first_sub_category.txt */,
+				A0A03983274E807500D80FD1 /* secondary_second_sub_category.txt */,
+				A0A03990274E807500D80FD1 /* review_information */,
+				A0A03984274E807500D80FD1 /* de-DE */,
+				A0A03976274E807500D80FD1 /* en-US */,
+			);
+			path = metadata;
+			sourceTree = "<group>";
+		};
+		A0A03976274E807500D80FD1 /* en-US */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0397B274E807500D80FD1 /* apple_tv_privacy_policy.txt */,
+				A0A03980274E807500D80FD1 /* description.txt */,
+				A0A0397A274E807500D80FD1 /* keywords.txt */,
+				A0A0397F274E807500D80FD1 /* marketing_url.txt */,
+				A0A0397E274E807500D80FD1 /* name.txt */,
+				A0A03977274E807500D80FD1 /* privacy_url.txt */,
+				A0A0397C274E807500D80FD1 /* promotional_text.txt */,
+				A0A0397D274E807500D80FD1 /* release_notes.txt */,
+				A0A03978274E807500D80FD1 /* subtitle.txt */,
+				A0A03979274E807500D80FD1 /* support_url.txt */,
+			);
+			path = "en-US";
+			sourceTree = "<group>";
+		};
+		A0A03984274E807500D80FD1 /* de-DE */ = {
+			isa = PBXGroup;
+			children = (
+				A0A03989274E807500D80FD1 /* apple_tv_privacy_policy.txt */,
+				A0A0398E274E807500D80FD1 /* description.txt */,
+				A0A03988274E807500D80FD1 /* keywords.txt */,
+				A0A0398D274E807500D80FD1 /* marketing_url.txt */,
+				A0A0398C274E807500D80FD1 /* name.txt */,
+				A0A03985274E807500D80FD1 /* privacy_url.txt */,
+				A0A0398A274E807500D80FD1 /* promotional_text.txt */,
+				A0A0398B274E807500D80FD1 /* release_notes.txt */,
+				A0A03986274E807500D80FD1 /* subtitle.txt */,
+				A0A03987274E807500D80FD1 /* support_url.txt */,
+			);
+			path = "de-DE";
+			sourceTree = "<group>";
+		};
+		A0A03990274E807500D80FD1 /* review_information */ = {
+			isa = PBXGroup;
+			children = (
+				A0A03997274E807500D80FD1 /* demo_password.txt */,
+				A0A03992274E807500D80FD1 /* demo_user.txt */,
+				A0A03994274E807500D80FD1 /* email_address.txt */,
+				A0A03996274E807500D80FD1 /* first_name.txt */,
+				A0A03995274E807500D80FD1 /* last_name.txt */,
+				A0A03993274E807500D80FD1 /* notes.txt */,
+				A0A03991274E807500D80FD1 /* phone_number.txt */,
+			);
+			path = review_information;
+			sourceTree = "<group>";
+		};
+		A0A0399A274E89F800D80FD1 /* en-US */ = {
+			isa = PBXGroup;
+			children = (
+				A0A039A0274E89F800D80FD1 /* 0_APP_IPHONE_55_0.png */,
+				A0A039A1274E89F800D80FD1 /* 1_APP_IPHONE_55_1.png */,
+				A0A0399E274E89F800D80FD1 /* 2_APP_IPHONE_55_2.png */,
+				A0A0399F274E89F800D80FD1 /* 3_APP_IPHONE_55_3.png */,
+				A0A0399C274E89F800D80FD1 /* 4_APP_IPHONE_55_4.png */,
+				A0A039AA274E89F800D80FD1 /* 0_APP_IPHONE_65_0.png */,
+				A0A039A8274E89F800D80FD1 /* 1_APP_IPHONE_65_1.png */,
+				A0A039AC274E89F800D80FD1 /* 2_APP_IPHONE_65_2.png */,
+				A0A039AB274E89F800D80FD1 /* 3_APP_IPHONE_65_3.png */,
+				A0A039A7274E89F800D80FD1 /* 4_APP_IPHONE_65_4.png */,
+				A0A039A5274E89F800D80FD1 /* 0_APP_IPAD_PRO_129_0.png */,
+				A0A039A2274E89F800D80FD1 /* 1_APP_IPAD_PRO_129_1.png */,
+				A0A0399B274E89F800D80FD1 /* 2_APP_IPAD_PRO_129_2.png */,
+				A0A039A6274E89F800D80FD1 /* 3_APP_IPAD_PRO_129_3.png */,
+				A0A039A3274E89F800D80FD1 /* 4_APP_IPAD_PRO_129_4.png */,
+				A0A039A9274E89F800D80FD1 /* 0_APP_IPAD_PRO_3GEN_129_0.png */,
+				A0A039AE274E89F800D80FD1 /* 1_APP_IPAD_PRO_3GEN_129_1.png */,
+				A0A0399D274E89F800D80FD1 /* 2_APP_IPAD_PRO_3GEN_129_2.png */,
+				A0A039A4274E89F800D80FD1 /* 3_APP_IPAD_PRO_3GEN_129_3.png */,
+				A0A039AD274E89F800D80FD1 /* 4_APP_IPAD_PRO_3GEN_129_4.png */,
+			);
+			path = "en-US";
+			sourceTree = "<group>";
+		};
 		A0A735C324755E0C00073C81 /* Build */ = {
 			isa = PBXGroup;
 			children = (
@@ -1782,6 +1949,7 @@
 				A04F2A4626F8D4F500C660B0 /* build-leaf.sh */,
 				A06C96EB273C2E590019ABE5 /* get-geoip.sh */,
 				A06C96F1273C33530019ABE5 /* update-bridges.swift */,
+				A0A03970274E807500D80FD1 /* fastlane */,
 			);
 			name = Build;
 			sourceTree = "<group>";
