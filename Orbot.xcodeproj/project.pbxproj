@@ -123,6 +123,7 @@
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A033EB61273AA2A000A24F43 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
 		A04F285B26F8D46500C660B0 /* build_cross.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build_cross.sh; sourceTree = "<group>"; };
@@ -1945,6 +1946,7 @@
 				A0A735C524755E2100073C81 /* Podfile */,
 				A0A735C424755E2100073C81 /* Podfile.lock */,
 				A064701A2478170F00311CBE /* README.md */,
+				A0367840274E5E8000344B7F /* CHANGELOG.md */,
 				A064701B24781C5400311CBE /* LICENSE */,
 				A04F2A4626F8D4F500C660B0 /* build-leaf.sh */,
 				A06C96EB273C2E590019ABE5 /* get-geoip.sh */,
