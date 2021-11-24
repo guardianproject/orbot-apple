@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  Orbot
+
+  Created by Benjamin Erhart on 24.11.21.
+  Copyright © 2021 Guardian Project. All rights reserved.
+*/
+NSCameraUsageDescription = "Needed to read bridge addresses from displayed QR codes.";

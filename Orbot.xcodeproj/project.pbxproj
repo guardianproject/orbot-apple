@@ -41,6 +41,7 @@
 		A06C96F0273C2F070019ABE5 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A06C96EE273C2F070019ABE5 /* geoip */; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
+		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -608,6 +609,8 @@
 		A0A039AC274E89F800D80FD1 /* 2_APP_IPHONE_65_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_APP_IPHONE_65_2.png; sourceTree = "<group>"; };
 		A0A039AD274E89F800D80FD1 /* 4_APP_IPAD_PRO_3GEN_129_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_APP_IPAD_PRO_3GEN_129_4.png; sourceTree = "<group>"; };
 		A0A039AE274E89F800D80FD1 /* 1_APP_IPAD_PRO_3GEN_129_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_APP_IPAD_PRO_3GEN_129_1.png; sourceTree = "<group>"; };
+		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -1821,6 +1824,7 @@
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
 				A05B73C124755CE700930C40 /* Info.plist */,
+				A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */,
 				A0A735C024755DCB00073C81 /* Orbot.entitlements */,
 			);
 			path = Orbot;
@@ -2152,6 +2156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */,
+				A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */,
 				A00F5136274545BC0037DD4A /* Localizable.strings in Resources */,
 				A00F51332745456A0037DD4A /* Main.storyboard in Resources */,
 				A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */,
@@ -2393,6 +2398,15 @@
 				A00F513B274546920037DD4A /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0A039B2274E9DF400D80FD1 /* en */,
+				A0A039B4274E9E1600D80FD1 /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
