@@ -21,7 +21,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
-
+	@IBOutlet weak var versionLb: UILabel! {
+		didSet {
+			versionLb.text = String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
+									Bundle.main.version, Bundle.main.build)
+		}
+	}
+    
 	@IBOutlet weak var logContainer: UIView! {
 		didSet {
 			// Only round top right corner.

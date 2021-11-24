@@ -10,14 +10,18 @@ import Foundation
 
 public extension Bundle {
 
-    var displayName: String {
-        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
-            ?? object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String
-            ?? ""
+	var displayName: String {
+		object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+			?? object(forInfoDictionaryKey: kCFBundleNameKey as String) as? String
+			?? ""
     }
 
 	var version: String {
-		return object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+		object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
 			?? "unknown"
+	}
+
+	var build: String {
+		object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown"
 	}
 }

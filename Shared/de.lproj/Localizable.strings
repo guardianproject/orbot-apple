@@ -167,6 +167,9 @@
 "Use QR Code" = "QR-Code verwenden";
 
 /* No comment provided by engineer. */
+"Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
 "via custom bridges" = "via eigener Brücken";
 
 /* No comment provided by engineer. */

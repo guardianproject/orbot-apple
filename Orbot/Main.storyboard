@@ -54,6 +54,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version %@, Build %@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9e-jY-cnx">
+                                <rect key="frame" x="16" y="636.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48u-FW-Qyr">
                                 <rect key="frame" x="0.0" y="44" width="256" height="623"/>
                                 <subviews>
@@ -98,12 +104,15 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="VAX-85-q23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0Rt-3j-kcF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b9e-jY-cnx" secondAttribute="bottom" constant="16" id="0ZU-UY-Xhk"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Jm-94-J7W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="bottom" constant="16" id="CdO-Hx-sqm"/>
                             <constraint firstItem="VAX-85-q23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="bottom" constant="8" symbolic="YES" id="SGc-kf-BKI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b9e-jY-cnx" secondAttribute="trailing" constant="16" id="crh-q5-yXK"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
+                            <constraint firstItem="b9e-jY-cnx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="prv-SJ-Gl3"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="stN-RM-dne"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="uQO-Z3-E7o"/>
                             <constraint firstAttribute="centerX" relation="lessThanOrEqual" secondItem="48u-FW-Qyr" secondAttribute="trailing" constant="32" id="v0O-35-Pck"/>
@@ -140,7 +149,8 @@
                         <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>
                         <outlet property="logTv" destination="8i5-ZV-uUu" id="qh4-Jt-saG"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
-                        <outlet property="statusLb" destination="trJ-w6-CDg" id="5FA-6q-zNl"/>
+                        <outlet property="statusLb" destination="trJ-w6-CDg" id="2On-Ts-emC"/>
+                        <outlet property="versionLb" destination="b9e-jY-cnx" id="1ge-vK-0ym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
