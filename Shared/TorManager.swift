@@ -56,7 +56,7 @@ class TorManager {
 		IpSupport.shared.start({ [weak self] status in
 			self?.ipStatus = status
 
-			if self?.torRunning ?? false {
+			if self?.torRunning ?? false && self?.torController?.isConnected ?? false {
 				self?.torController?.setConfs(self?.getIpConfig(self!.asConf) ?? []) { success, error in
 					if let error = error {
 						print("[\(String(describing: type(of: self)))] error: \(error)")
