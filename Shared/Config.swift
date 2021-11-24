@@ -17,4 +17,17 @@ extension Config {
     class var groupId: String {
         return __groupId as String
     }
+
+#if DEBUG
+	/**
+	 Simulates a running Network Extension to get nice screenshots.
+
+	 NEVER EVER remove the `#if DEBUG` condition around this and any code using this.
+
+	 Should positively never end up in production code!
+	 */
+	class var screenshotMode: Bool {
+		return false
+	}
+#endif
 }

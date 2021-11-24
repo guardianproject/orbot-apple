@@ -91,10 +91,22 @@ class VpnManager {
 	private var poll = false
 
 	var confStatus: ConfStatus {
+#if DEBUG
+		if Config.screenshotMode {
+			return .enabled
+		}
+#endif
+
 		return manager == nil ? .notInstalled : manager!.isEnabled ? .enabled : .disabled
 	}
 
 	var sessionStatus: NEVPNStatus {
+#if DEBUG
+		if Config.screenshotMode {
+			return .connected
+		}
+#endif
+
 		if confStatus == .notInstalled {
 			return .invalid
 		}
@@ -102,7 +114,21 @@ class VpnManager {
 		return session?.status ?? .disconnected
 	}
 
-	private(set) var error: Error?
+	private var _error: Error?
+	private(set) var error: Error? {
+		get {
+#if DEBUG
+			if Config.screenshotMode {
+				return nil
+			}
+#endif
+
+			return _error
+		}
+		set {
+			_error = newValue
+		}
+	}
 
 	init() {
 		NSKeyedUnarchiver.setClass(ProgressMessage.self, forClassName:
