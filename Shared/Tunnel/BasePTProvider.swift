@@ -7,10 +7,8 @@
 //
 
 import NetworkExtension
+import IPtProxyUI
 
-#if os(iOS)
-import IPtProxy
-#endif
 
 class BasePTProvider: NEPacketTunnelProvider {
 
@@ -106,18 +104,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		TorManager.shared.stop()
 
-#if os(iOS)
-		switch bridge {
-		case .obfs4, .custom:
-			IPtProxyStopObfs4Proxy()
-
-		case .snowflake:
-			IPtProxyStopSnowflake()
-
-		default:
-			break
-		}
-#endif
+		bridge.stop()
 
 		stopTun2Socks()
 
@@ -150,11 +137,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 			// If the old bridge is snowflake, stop that. (The new one certainly isn't!)
 			if bridge == .snowflake && newBridge != .snowflake {
-				IPtProxyStopSnowflake()
+				bridge.stop()
 			}
 			// If the old bridge is obfs4 and the new one not, stop that.
 			else if (bridge == .obfs4 || bridge == .custom) && newBridge != .obfs4 && newBridge != .custom {
-				IPtProxyStopObfs4Proxy()
+				bridge.stop()
 			}
 
 			bridge = newBridge
@@ -201,33 +188,12 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	private func startBridgeAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-#if os(iOS)
-		switch bridge {
-		case .obfs4, .custom:
-#if DEBUG
-			let ennableLogging = true
-#else
-			let ennableLogging = false
-#endif
-
-			IPtProxyStartObfs4Proxy("DEBUG", ennableLogging, true, nil)
-
-		case .snowflake:
-			IPtProxyStartSnowflake(
-				"stun:stun.l.google.com:19302,stun:stun.voip.blackberry.com:3478,stun:stun.altar.com.pl:3478,stun:stun.antisip.com:3478,stun:stun.bluesip.net:3478,stun:stun.dus.net:3478,stun:stun.epygi.com:3478,stun:stun.sonetel.com:3478,stun:stun.sonetel.net:3478,stun:stun.stunprotocol.org:3478,stun:stun.uls.co.za:3478,stun:stun.voipgate.com:3478,stun:stun.voys.nl:3478",
-				"https://snowflake-broker.torproject.net.global.prod.fastly.net/",
-				"cdn.sstatic.net", nil, true, false, true, 1)
-
-		default:
-			break
-		}
-#endif
+		bridge.start()
 
 		TorManager.shared.start(bridge, { progress in
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
 			self.sendMessages()
 		}, completion)
-
 	}
 
 

@@ -8,10 +8,7 @@
 
 import NetworkExtension
 import Tor
-
-#if os(iOS)
-import IPtProxy
-#endif
+import IPtProxyUI
 
 
 class TorManager {
@@ -57,7 +54,7 @@ class TorManager {
 			self?.ipStatus = status
 
 			if self?.torRunning ?? false && self?.torController?.isConnected ?? false {
-				self?.torController?.setConfs(self?.getIpConfig(self!.asConf) ?? []) { success, error in
+				self?.torController?.setConfs(self?.getIpConfig(Bridge.asConf) ?? []) { success, error in
 					if let error = error {
 						print("[\(String(describing: type(of: self)))] error: \(error)")
 					}
@@ -101,7 +98,7 @@ class TorManager {
 						}
 
 						self?.torController?.setConfs(
-							self?.getBridgeConfig(self!.asConf) ?? [])
+							self?.getBridgeConfig(Bridge.asConf) ?? [])
 					}
 				}
 			}
@@ -240,9 +237,9 @@ class TorManager {
 		conf.dataDirectory = FileManager.default.torDir
 		conf.clientAuthDirectory = FileManager.default.torAuthDir
 
-		conf.arguments += getBridgeConfig(asArguments).joined()
+		conf.arguments += getBridgeConfig(Bridge.asArguments).joined()
 
-		conf.arguments += getIpConfig(asArguments).joined()
+		conf.arguments += getIpConfig(Bridge.asArguments).joined()
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
@@ -255,36 +252,20 @@ class TorManager {
 		return conf
 	}
 
-	private func asArguments(key: String, value: String) -> [String] {
-		return ["--\(key)", value]
-	}
-
-	private func asConf(key: String, value: String) -> [String: String] {
-		return ["key": key, "value": "\"\(value)\""]
-	}
-
 	private func getBridgeConfig<T>(_ cv: (String, String) -> T) -> [T] {
-		var arguments = [T]()
 
-#if os(iOS)
-		switch bridge {
-		case .obfs4, .custom:
-			arguments.append(cv("ClientTransportPlugin", "obfs4 socks5 \(Self.localhost):\(IPtProxyObfs4Port())"))
+		var arguments = bridge.getConfiguration(cv)
 
-			let bridges = bridge == .custom ? FileManager.default.customObfs4Bridges : FileManager.default.builtInObfs4Bridges
-			arguments += bridges?.map({ cv("Bridge", $0) }) ?? []
+		if bridge == .custom, let bridgeLines = FileManager.default.customObfs4Bridges {
+			arguments += bridgeLines.map({ cv("Bridge", $0) })
+		}
 
-			arguments.append(cv("UseBridges", "1"))
-
-		case .snowflake:
-			arguments.append(cv("ClientTransportPlugin", "snowflake socks5 \(Self.localhost):\(IPtProxySnowflakePort())"))
-			arguments.append(cv("Bridge", "snowflake 192.0.2.3:1 2B280B23E1107BB62ABFC40DDCC8824814F80A72"))
-			arguments.append(cv("UseBridges", "1"))
-
-		default:
+		if bridge == .none {
 			arguments.append(cv("UseBridges", "0"))
 		}
-#endif
+		else {
+			arguments.append(cv("UseBridges", "1"))
+		}
 
 		return arguments
 	}

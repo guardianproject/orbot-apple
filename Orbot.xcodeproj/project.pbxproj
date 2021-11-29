@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2AB3BC5615062C2CF06D8D7E /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63AAF9393B95CA0DB9025EA /* Pods_TorVPN.framework */; };
 		8E900C8223783156D8427040 /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E4D820537A65DA0B8F79EC /* Pods_Orbot.framework */; };
-		A00D90D8273AA62B009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
-		A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */; };
-		A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DB273AB035009C8053 /* ScanQrViewController.swift */; };
-		A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */; };
@@ -25,8 +21,6 @@
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
-		A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
-		A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A033EB61273AA2A000A24F43 /* Bridge.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -65,18 +59,6 @@
 		A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
-		A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */; };
-		A0E3C64527344A8D0085353A /* BridgeConfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */; };
-		A0E3C64727344F390085353A /* MoatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64627344F390085353A /* MoatViewController.swift */; };
-		A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C648273450440085353A /* CaptchaRow.swift */; };
-		A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E3C649273450450085353A /* CaptchaCell.xib */; };
-		A0E3C64D2734525D0085353A /* URLSession+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */; };
-		A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */; };
-		A0E3C650273452760085353A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64F273452760085353A /* ApiError.swift */; };
-		A0E3C651273452760085353A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C64F273452760085353A /* ApiError.swift */; };
-		A0E3C653273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
-		A0E3C654273452B20085353A /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E3C652273452B20085353A /* AlertHelper.swift */; };
-		A0E7CD20273ED1830004B573 /* FixedFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 /* End PBXBuildFile section */
@@ -109,9 +91,6 @@
 		599A42136E4371D7E87F8E77 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
 		788C5515DC1FFA3E7581A328 /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
 		7FBB9B7F6CDA4F14311500C6 /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
-		A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "obfs4-bridges.plist"; sourceTree = "<group>"; };
-		A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
-		A00D90DB273AB035009C8053 /* ScanQrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQrViewController.swift; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		A00F512527453EE10037DD4A /* .bartycrouch.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .bartycrouch.toml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
@@ -123,7 +102,6 @@
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
-		A033EB61273AA2A000A24F43 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A04F285926F8D46400C660B0 /* Cross.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cross.toml; sourceTree = "<group>"; };
@@ -551,7 +529,6 @@
 		A06C96EB273C2E590019ABE5 /* get-geoip.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "get-geoip.sh"; sourceTree = "<group>"; };
 		A06C96ED273C2F070019ABE5 /* geoip6 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geoip6; sourceTree = "<group>"; };
 		A06C96EE273C2F070019ABE5 /* geoip */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = geoip; sourceTree = "<group>"; };
-		A06C96F1273C33530019ABE5 /* update-bridges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "update-bridges.swift"; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A0A03972274E807500D80FD1 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		A0A03973274E807500D80FD1 /* Deliverfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Deliverfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -635,15 +612,6 @@
 		A0A736042475851D00073C81 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		A0A73607247587D300073C81 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
-		A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeekURLProtocol.swift; sourceTree = "<group>"; };
-		A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeConfViewController.swift; sourceTree = "<group>"; };
-		A0E3C64627344F390085353A /* MoatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoatViewController.swift; sourceTree = "<group>"; };
-		A0E3C648273450440085353A /* CaptchaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptchaRow.swift; sourceTree = "<group>"; };
-		A0E3C649273450450085353A /* CaptchaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptchaCell.xib; sourceTree = "<group>"; };
-		A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Helpers.swift"; sourceTree = "<group>"; };
-		A0E3C64F273452760085353A /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
-		A0E3C652273452B20085353A /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedFormViewController.swift; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -1814,12 +1782,6 @@
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
-				A0E3C64427344A8D0085353A /* BridgeConfViewController.swift */,
-				A0E3C64627344F390085353A /* MoatViewController.swift */,
-				A00D90D9273AAFFD009C8053 /* CustomBridgesViewController.swift */,
-				A00D90DB273AB035009C8053 /* ScanQrViewController.swift */,
-				A0E3C649273450450085353A /* CaptchaCell.xib */,
-				A0E3C648273450440085353A /* CaptchaRow.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -1954,7 +1916,6 @@
 				A064701B24781C5400311CBE /* LICENSE */,
 				A04F2A4626F8D4F500C660B0 /* build-leaf.sh */,
 				A06C96EB273C2E590019ABE5 /* get-geoip.sh */,
-				A06C96F1273C33530019ABE5 /* update-bridges.swift */,
 				A0A03970274E807500D80FD1 /* fastlane */,
 			);
 			name = Build;
@@ -1988,7 +1949,6 @@
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A023D82A271983C000A634B7 /* template.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
-				A00D90D7273AA62B009C8053 /* obfs4-bridges.plist */,
 				A00F5134274545BC0037DD4A /* Localizable.strings */,
 			);
 			path = Shared;
@@ -2009,20 +1969,14 @@
 		A0A735F024756D5600073C81 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A0E3C652273452B20085353A /* AlertHelper.swift */,
-				A0E3C64F273452760085353A /* ApiError.swift */,
-				A033EB61273AA2A000A24F43 /* Bridge.swift */,
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
-				A0E7CD1F273ED1830004B573 /* FixedFormViewController.swift */,
 				A00F513C2745698A0037DD4A /* IpSupport.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
-				A0D4B6C02735538000CEEFE0 /* MeekURLProtocol.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
-				A0E3C64C2734525D0085353A /* URLSession+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2077,6 +2031,7 @@
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed App Extensions */,
 				AF040E52713D0D1A657E8FF8 /* [CP] Embed Pods Frameworks */,
+				F6722AEC782B5E11E48C226A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2095,11 +2050,11 @@
 				91020647A0D1DFBD2DEEA19B /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* ShellScript */,
 				A06C96EC273C2ED30019ABE5 /* ShellScript */,
-				A06C96F4273C34A60019ABE5 /* ShellScript */,
 				A0E794A526528ECD0052E32E /* ShellScript */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
+				EFBB1F628DD217E2BC3ED379 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2155,12 +2110,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0E3C64B273450450085353A /* CaptchaCell.xib in Resources */,
 				A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */,
 				A00F5136274545BC0037DD4A /* Localizable.strings in Resources */,
 				A00F51332745456A0037DD4A /* Main.storyboard in Resources */,
 				A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */,
-				A00D90DD273AB175009C8053 /* obfs4-bridges.plist in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2172,7 +2125,6 @@
 				A00F5137274545BC0037DD4A /* Localizable.strings in Resources */,
 				A06C96EF273C2F070019ABE5 /* geoip6 in Resources */,
 				A06C96F0273C2F070019ABE5 /* geoip in Resources */,
-				A00D90D8273AA62B009C8053 /* obfs4-bridges.plist in Resources */,
 				A023D82B271986FB00A634B7 /* template.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2258,23 +2210,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT\"/get-geoip.sh\n";
 		};
-		A06C96F4273C34A60019ABE5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT\"/update-bridges.swift\n";
-		};
 		A0E794A526528ECD0052E32E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2309,6 +2244,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EFBB1F628DD217E2BC3ED379 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6722AEC782B5E11E48C226A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2317,36 +2286,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
-				A0E3C653273452B20085353A /* AlertHelper.swift in Sources */,
-				A00D90DA273AAFFD009C8053 /* CustomBridgesViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
-				A033EB62273AA2A000A24F43 /* Bridge.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
-				A0E3C64D2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
-				A0E3C64527344A8D0085353A /* BridgeConfViewController.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
-				A0E3C64A273450450085353A /* CaptchaRow.swift in Sources */,
 				A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */,
-				A00D90DC273AB035009C8053 /* ScanQrViewController.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
-				A0D4B6C12735538000CEEFE0 /* MeekURLProtocol.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
-				A0E7CD20273ED1830004B573 /* FixedFormViewController.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
-				A0E3C64727344F390085353A /* MoatViewController.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
-				A0E3C650273452760085353A /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2354,7 +2312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A033EB63273AA2A000A24F43 /* Bridge.swift in Sources */,
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
 				A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
@@ -2368,13 +2325,10 @@
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A00F513D2745698A0037DD4A /* IpSupport.swift in Sources */,
-				A0E3C651273452760085353A /* ApiError.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
-				A0E3C654273452B20085353A /* AlertHelper.swift in Sources */,
-				A0E3C64E2734525D0085353A /* URLSession+Helpers.swift in Sources */,
 				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);

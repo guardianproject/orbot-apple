@@ -8,8 +8,9 @@
 
 import UIKit
 import Tor
+import IPtProxyUI
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, BridgeConfDelegate {
 
 	private static let purposeFilter = [
 		TorCircuit.purposeGeneral,
@@ -101,7 +102,10 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func changeBridge(_ sender: UIBarButtonItem? = nil) {
-		present(inNav: BridgeConfViewController(), button: sender ?? bridgesBt)
+		let vc = BridgeConfViewController()
+		vc.delegate = self
+
+		present(inNav: vc, button: sender ?? bridgesBt)
 	}
 
     @IBAction func showAuth(_ sender: UIBarButtonItem) {
@@ -259,6 +263,31 @@ class MainViewController: UIViewController {
 			statusLb.text = [VpnManager.shared.sessionStatus.description,
 							 bridge, progress].joined(separator: " ")
 		}
+	}
+
+
+	// MARK: BridgeConfDelegate
+
+	var bridgesType: Bridge {
+		get {
+			Settings.bridge
+		}
+		set {
+			Settings.bridge = newValue
+		}
+	}
+
+	var customBridges: [String]? {
+		get {
+			FileManager.default.customObfs4Bridges
+		}
+		set {
+			FileManager.default.customObfs4Bridges = newValue
+		}
+	}
+
+	func save() {
+		VpnManager.shared.configChanged()
 	}
 
 

@@ -34,10 +34,6 @@ extension FileManager {
 		return Bundle.main.url(forResource: "template", withExtension: "conf")
 	}
 
-	var builtInObfs4BridgesFile: URL? {
-		return Bundle.main.url(forResource: "obfs4-bridges", withExtension: "plist")
-	}
-
 	var customObfs4BridgesFile: URL? {
 		return groupDir?.appendingPathComponent("custom-bridges.plist")
 	}
@@ -69,14 +65,6 @@ extension FileManager {
 		}
 
 		return nil
-	}
-
-	var builtInObfs4Bridges: [String] {
-		guard let file = builtInObfs4BridgesFile else {
-			return []
-		}
-
-		return NSArray(contentsOf: file) as? [String] ?? []
 	}
 
 	var customObfs4Bridges: [String]? {

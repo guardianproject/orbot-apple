@@ -8,7 +8,6 @@
 
 import UIKit
 import NetworkExtension
-import IPtProxy
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -6,16 +6,13 @@ target 'Orbot' do
   platform :ios, '15.0'
 
   pod 'Tor', '~> 406.8'
-  pod 'IPtProxy', '~> 1.2'
-  pod 'Eureka', '~> 5.3'
-  pod 'ImageRow', '~> 4.0'
-  pod 'MBProgressHUD', '~> 1.2'
+  pod 'IPtProxyUI', '~> 1.0'
 end
 
 target 'TorVPN' do
   platform :ios, '15.0'
 
   pod 'Tor', '~> 406.8'
-  pod 'IPtProxy', '~> 1.2'
+  pod 'IPtProxyUI', '~> 1.0'
   pod 'ReachabilitySwift', '~> 5.0'
 end

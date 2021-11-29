@@ -79,9 +79,7 @@ You can call these URIs like this:
 
 - [leaf](https://github.com/eycorsican/leaf), licensed under [Apache 2.0](https://github.com/eycorsican/leaf/blob/master/LICENSE)
 - [Tor.framework](https://github.com/iCepa/Tor.framework), licensed under [MIT](https://github.com/iCepa/Tor.framework/blob/master/LICENSE)
-- [IPtProxy](https://github.com/tladesignz/IPtProxy), licensed under [MIT](https://github.com/tladesignz/IPtProxy/blob/master/LICENSE)
-- [Eureka](https://github.com/xmartlabs/Eureka), licensed under [MIT](https://github.com/xmartlabs/Eureka/blob/master/LICENSE)
-- [MBProgressHUD](https://github.com/jdg/MBProgressHUD), licensed under [MIT](https://github.com/jdg/MBProgressHUD/blob/master/LICENSE)
+- [IPtProxyUI](https://github.com/tladesignz/IPtProxyUI-ios), licensed under [MIT](https://github.com/tladesignz/IPtProxyUI-ios/blob/master/LICENSE)
 - [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift), licensed under [MIT](https://github.com/ashleymills/Reachability.swift/blob/master/LICENSE)
 
 
