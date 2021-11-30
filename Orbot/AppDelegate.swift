@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			break
 
 		case "show.bridges":
-			vc.changeBridge()
+			vc.changeBridges()
 
 		case "show.auth":
 			vc.showAuth()

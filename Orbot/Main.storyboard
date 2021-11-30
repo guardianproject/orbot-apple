@@ -131,7 +131,7 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
                                 <connections>
-                                    <action selector="changeBridge:" destination="BYZ-38-t0r" id="pmS-Tc-dz6"/>
+                                    <action selector="changeBridges:" destination="BYZ-38-t0r" id="UI4-Vl-1dH"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="key" catalog="system" id="5Vp-J7-qi5">

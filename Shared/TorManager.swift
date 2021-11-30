@@ -44,7 +44,7 @@ class TorManager {
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
 
-	private var bridge = Bridge.none
+	private var transport = Transport.none
 
 	private var ipStatus = IpSupport.Status.unknown
 
@@ -54,7 +54,7 @@ class TorManager {
 			self?.ipStatus = status
 
 			if self?.torRunning ?? false && self?.torController?.isConnected ?? false {
-				self?.torController?.setConfs(self?.getIpConfig(Bridge.asConf) ?? []) { success, error in
+				self?.torController?.setConfs(self?.ipConf(Transport.asConf) ?? []) { success, error in
 					if let error = error {
 						print("[\(String(describing: type(of: self)))] error: \(error)")
 					}
@@ -65,11 +65,11 @@ class TorManager {
 		})
 	}
 
-	func start(_ bridge: Bridge,
+	func start(_ transport: Transport,
 			   _ progressCallback: @escaping (Int) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
-		self.bridge = bridge
+		self.transport = transport
 
 		if !torRunning {
 			torConf = getTorConf()
@@ -98,7 +98,7 @@ class TorManager {
 						}
 
 						self?.torController?.setConfs(
-							self?.getBridgeConfig(Bridge.asConf) ?? [])
+							self?.transportConf(Transport.asConf) ?? [])
 					}
 				}
 			}
@@ -237,9 +237,9 @@ class TorManager {
 		conf.dataDirectory = FileManager.default.torDir
 		conf.clientAuthDirectory = FileManager.default.torAuthDir
 
-		conf.arguments += getBridgeConfig(Bridge.asArguments).joined()
+		conf.arguments += transportConf(Transport.asArguments).joined()
 
-		conf.arguments += getIpConfig(Bridge.asArguments).joined()
+		conf.arguments += ipConf(Transport.asArguments).joined()
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
@@ -252,15 +252,15 @@ class TorManager {
 		return conf
 	}
 
-	private func getBridgeConfig<T>(_ cv: (String, String) -> T) -> [T] {
+	private func transportConf<T>(_ cv: (String, String) -> T) -> [T] {
 
-		var arguments = bridge.getConfiguration(cv)
+		var arguments = transport.torConf(cv)
 
-		if bridge == .custom, let bridgeLines = FileManager.default.customObfs4Bridges {
+		if transport == .custom, let bridgeLines = FileManager.default.customObfs4Bridges {
 			arguments += bridgeLines.map({ cv("Bridge", $0) })
 		}
 
-		if bridge == .none {
+		if transport == .none {
 			arguments.append(cv("UseBridges", "0"))
 		}
 		else {
@@ -270,19 +270,19 @@ class TorManager {
 		return arguments
 	}
 
-	private func getIpConfig<T>(_ cv: (String, String) -> T) -> [T] {
+	private func ipConf<T>(_ cv: (String, String) -> T) -> [T] {
 		var arguments = [T]()
 
 		if ipStatus == .ipV6Only {
 			arguments.append(cv("ClientPreferIPv6ORPort", "1"))
 
-			if bridge == .none {
+			if transport == .none {
 				// Switch off IPv4, if we're on a IPv6-only network.
 				arguments.append(cv("ClientUseIPv4", "0"))
 			}
 			else {
-				// ...but not, when we're using bridges. The bridge configuration
-				// lines are what is important, then.
+				// ...but not, when we're using a transport. The bridge
+				// configuration lines are what is important, then.
 				arguments.append(cv("ClientUseIPv4", "1"))
 			}
 		}

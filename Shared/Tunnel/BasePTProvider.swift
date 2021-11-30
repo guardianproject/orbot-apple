@@ -32,7 +32,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	private var hostHandler: ((Data?) -> Void)?
 
-	private var bridge = Settings.bridge
+	private var transport = Settings.transport
 
 
 	override init() {
@@ -95,7 +95,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 				completionHandler(nil)
 			}
 
-			self.startBridgeAndTor(completion)
+			self.startTransportAndTor(completion)
 		}
 	}
 
@@ -104,7 +104,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		TorManager.shared.stop()
 
-		bridge.stop()
+		transport.stop()
 
 		stopTun2Socks()
 
@@ -133,20 +133,20 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 
 		if request is ConfigChangedMessage {
-			let newBridge = Settings.bridge
+			let newTransport = Settings.transport
 
-			// If the old bridge is snowflake, stop that. (The new one certainly isn't!)
-			if bridge == .snowflake && newBridge != .snowflake {
-				bridge.stop()
+			// If the old transport is snowflake, stop that. (The new one certainly isn't!)
+			if transport == .snowflake && newTransport != .snowflake {
+				transport.stop()
 			}
-			// If the old bridge is obfs4 and the new one not, stop that.
-			else if (bridge == .obfs4 || bridge == .custom) && newBridge != .obfs4 && newBridge != .custom {
-				bridge.stop()
+			// If the old transport is obfs4 and the new one not, stop that.
+			else if (transport == .obfs4 || transport == .custom) && newTransport != .obfs4 && newTransport != .custom {
+				transport.stop()
 			}
 
-			bridge = newBridge
+			transport = newTransport
 
-			startBridgeAndTor { error, socksAddr, dnsAddr in
+			startTransportAndTor { error, socksAddr, dnsAddr in
 				completionHandler?(Self.archive(error ?? true))
 			}
 		}
@@ -187,10 +187,10 @@ class BasePTProvider: NEPacketTunnelProvider {
 		return try? NSKeyedArchiver.archivedData(withRootObject: root, requiringSecureCoding: true)
 	}
 
-	private func startBridgeAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-		bridge.start()
+	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
+		transport.start()
 
-		TorManager.shared.start(bridge, { progress in
+		TorManager.shared.start(transport, { progress in
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
 			self.sendMessages()
 		}, completion)

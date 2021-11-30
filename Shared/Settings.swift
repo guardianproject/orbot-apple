@@ -13,16 +13,16 @@ class Settings {
 
 	private static let defaults = UserDefaults(suiteName: Config.groupId)
 
-	class var bridge: Bridge {
+	class var transport: Transport {
 		get {
-			guard let raw = defaults?.integer(forKey: "bridge") else {
+			guard let raw = defaults?.integer(forKey: "transport") else {
 				return .none
 			}
 
-			return Bridge(rawValue: raw) ?? .none
+			return Transport(rawValue: raw) ?? .none
 		}
 		set {
-			defaults?.set(newValue.rawValue, forKey: "bridge")
+			defaults?.set(newValue.rawValue, forKey: "transport")
 		}
 	}
 }

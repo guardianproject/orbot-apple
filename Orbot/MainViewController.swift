@@ -10,7 +10,7 @@ import UIKit
 import Tor
 import IPtProxyUI
 
-class MainViewController: UIViewController, BridgeConfDelegate {
+class MainViewController: UIViewController, BridgesConfDelegate {
 
 	private static let purposeFilter = [
 		TorCircuit.purposeGeneral,
@@ -101,8 +101,8 @@ class MainViewController: UIViewController, BridgeConfDelegate {
 		}
 	}
 
-	@IBAction func changeBridge(_ sender: UIBarButtonItem? = nil) {
-		let vc = BridgeConfViewController()
+	@IBAction func changeBridges(_ sender: UIBarButtonItem? = nil) {
+		let vc = BridgesConfViewController()
 		vc.delegate = self
 
 		present(inNav: vc, button: sender ?? bridgesBt)
@@ -249,11 +249,11 @@ class MainViewController: UIViewController, BridgeConfDelegate {
 				progress = MainViewController.nf.string(from: NSNumber(value: raw)) ?? ""
 			}
 
-			var bridge = ""
+			var transport = ""
 
 			switch VpnManager.shared.sessionStatus {
 			case .connected, .connecting, .reasserting:
-				bridge = Settings.bridge.description
+				transport = Settings.transport.description
 
 			default:
 				break
@@ -261,19 +261,19 @@ class MainViewController: UIViewController, BridgeConfDelegate {
 
 			statusLb.textColor = .white
 			statusLb.text = [VpnManager.shared.sessionStatus.description,
-							 bridge, progress].joined(separator: " ")
+							 transport, progress].joined(separator: " ")
 		}
 	}
 
 
-	// MARK: BridgeConfDelegate
+	// MARK: BridgesConfDelegate
 
-	var bridgesType: Bridge {
+	var transport: Transport {
 		get {
-			Settings.bridge
+			Settings.transport
 		}
 		set {
-			Settings.bridge = newValue
+			Settings.transport = newValue
 		}
 	}
 
