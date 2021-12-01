@@ -9,20 +9,9 @@
 import Foundation
 import IPtProxyUI
 
-class Settings {
+class Settings: IPtProxyUI.Settings {
 
-	private static let defaults = UserDefaults(suiteName: Config.groupId)
-
-	class var transport: Transport {
-		get {
-			guard let raw = defaults?.integer(forKey: "transport") else {
-				return .none
-			}
-
-			return Transport(rawValue: raw) ?? .none
-		}
-		set {
-			defaults?.set(newValue.rawValue, forKey: "transport")
-		}
+	class override var defaults: UserDefaults? {
+		UserDefaults(suiteName: Config.groupId)
 	}
 }

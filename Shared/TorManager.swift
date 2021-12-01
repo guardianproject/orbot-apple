@@ -256,16 +256,11 @@ class TorManager {
 
 		var arguments = transport.torConf(cv)
 
-		if transport == .custom, let bridgeLines = FileManager.default.customObfs4Bridges {
+		if transport == .custom, let bridgeLines = Settings.customBridges {
 			arguments += bridgeLines.map({ cv("Bridge", $0) })
 		}
 
-		if transport == .none {
-			arguments.append(cv("UseBridges", "0"))
-		}
-		else {
-			arguments.append(cv("UseBridges", "1"))
-		}
+		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
 
 		return arguments
 	}

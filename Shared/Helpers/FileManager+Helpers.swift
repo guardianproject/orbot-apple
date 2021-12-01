@@ -34,10 +34,6 @@ extension FileManager {
 		return Bundle.main.url(forResource: "template", withExtension: "conf")
 	}
 
-	var customObfs4BridgesFile: URL? {
-		return groupDir?.appendingPathComponent("custom-bridges.plist")
-	}
-
 	var torDir: URL? {
 		guard let url = groupDir?.appendingPathComponent("tor") else {
 			return nil
@@ -65,29 +61,5 @@ extension FileManager {
 		}
 
 		return nil
-	}
-
-	var customObfs4Bridges: [String]? {
-		get {
-			guard let file = customObfs4BridgesFile else {
-				return nil
-			}
-
-			return NSArray(contentsOf: file) as? [String]
-		}
-
-		set {
-			guard let file = customObfs4BridgesFile
-			else {
-				return
-			}
-
-			if let newValue = newValue {
-				(newValue as NSArray).write(to: file, atomically: true)
-			}
-			else {
-				try? removeItem(at: file)
-			}
-		}
 	}
 }

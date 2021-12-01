@@ -279,10 +279,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	var customBridges: [String]? {
 		get {
-			FileManager.default.customObfs4Bridges
+			Settings.customBridges
 		}
 		set {
-			FileManager.default.customObfs4Bridges = newValue
+			Settings.customBridges = newValue
 		}
 	}
 
