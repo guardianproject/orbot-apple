@@ -10,12 +10,14 @@ PODS:
     - MBProgressHUD (~> 1.2)
   - MBProgressHUD (1.2.0)
   - ReachabilitySwift (5.0.0)
-  - Tor (406.8.1)
+  - Tor/Core (406.8.2)
+  - Tor/GeoIP (406.8.2):
+    - Tor/Core
 
 DEPENDENCIES:
   - IPtProxyUI (~> 1.3)
   - ReachabilitySwift (~> 5.0)
-  - Tor (~> 406.8)
+  - Tor/GeoIP (~> 406.8)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -34,8 +36,8 @@ SPEC CHECKSUMS:
   IPtProxyUI: 3dc6f74077670ed2a8c5e63701298947f7153820
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Tor: 60f6c9067ded259d2dce2020f04c045dee96e8f8
+  Tor: a1bab7ff724cce3621f0a840b0291c48f9888d6c
 
-PODFILE CHECKSUM: 79fe36a491d572b11c70e39938e7f2ebcc6442d5
+PODFILE CHECKSUM: 0e4663e94999e70b0f9448ca708dd2db3b149b52
 
 COCOAPODS: 1.11.2

@@ -35,11 +35,7 @@ class TorManager {
 			return false
 		}
 
-		if let lock = torConf?.dataDirectory?.appendingPathComponent("lock") {
-			return FileManager.default.fileExists(atPath: lock.path)
-		}
-
-		return false
+		return torConf?.isLocked ?? false
 	}
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
@@ -221,21 +217,21 @@ class TorManager {
 			// Ports
 			"SocksPort": "auto",
 
-			// GeoIP files for circuit node country display.
-			"GeoIPFile": Bundle.main.path(forResource: "geoip", ofType: nil) ?? "",
-			"GeoIPv6File": Bundle.main.path(forResource: "geoip6", ofType: nil) ?? "",
-
 			// Miscelaneous
-			"ClientOnly": "1",
-			"AvoidDiskWrites": "1",
 			"MaxMemInQueues": "5MB"]
 
 
 		conf.ignoreMissingTorrc = true
 		conf.cookieAuthentication = true
 		conf.autoControlPort = true
+		conf.clientOnly = true
+		conf.avoidDiskWrites = true
 		conf.dataDirectory = FileManager.default.torDir
 		conf.clientAuthDirectory = FileManager.default.torAuthDir
+
+		// GeoIP files for circuit node country display.
+		conf.geoipFile = Bundle.geoIp?.geoipFile
+		conf.geoip6File = Bundle.geoIp?.geoip6File
 
 		conf.arguments += transportConf(Transport.asArguments).joined()
 

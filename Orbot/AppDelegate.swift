@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NetworkExtension
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
