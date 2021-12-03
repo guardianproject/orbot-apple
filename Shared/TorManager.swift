@@ -42,7 +42,7 @@ class TorManager {
 
 	private var transport = Transport.none
 
-	private var ipStatus = IpSupport.Status.unknown
+	private var ipStatus = IpSupport.Status.unavailable
 
 
 	private init() {
@@ -50,7 +50,8 @@ class TorManager {
 			self?.ipStatus = status
 
 			if self?.torRunning ?? false && self?.torController?.isConnected ?? false {
-				self?.torController?.setConfs(self?.ipConf(Transport.asConf) ?? []) { success, error in
+				self?.torController?.setConfs(status.torConf(self?.transport ?? .none, Transport.asConf))
+				{ success, error in
 					if let error = error {
 						print("[\(String(describing: type(of: self)))] error: \(error)")
 					}
@@ -235,7 +236,7 @@ class TorManager {
 
 		conf.arguments += transportConf(Transport.asArguments).joined()
 
-		conf.arguments += ipConf(Transport.asArguments).joined()
+		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
@@ -257,32 +258,6 @@ class TorManager {
 		}
 
 		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
-
-		return arguments
-	}
-
-	private func ipConf<T>(_ cv: (String, String) -> T) -> [T] {
-		var arguments = [T]()
-
-		if ipStatus == .ipV6Only {
-			arguments.append(cv("ClientPreferIPv6ORPort", "1"))
-
-			if transport == .none {
-				// Switch off IPv4, if we're on a IPv6-only network.
-				arguments.append(cv("ClientUseIPv4", "0"))
-			}
-			else {
-				// ...but not, when we're using a transport. The bridge
-				// configuration lines are what is important, then.
-				arguments.append(cv("ClientUseIPv4", "1"))
-			}
-		}
-		else {
-			arguments.append(cv("ClientPreferIPv6ORPort", "auto"))
-			arguments.append(cv("ClientUseIPv4", "1"))
-		}
-
-		arguments.append(cv("ClientUseIPv6", "1"))
 
 		return arguments
 	}
