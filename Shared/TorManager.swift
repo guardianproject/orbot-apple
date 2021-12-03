@@ -31,11 +31,7 @@ class TorManager {
 	private var torConf: TorConfiguration?
 
 	private var torRunning: Bool {
-		guard torThread?.isExecuting ?? false else {
-			return false
-		}
-
-		return torConf?.isLocked ?? false
+		(torThread?.isExecuting ?? false) && (torConf?.isLocked ?? false)
 	}
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
@@ -49,7 +45,7 @@ class TorManager {
 		IpSupport.shared.start({ [weak self] status in
 			self?.ipStatus = status
 
-			if self?.torRunning ?? false && self?.torController?.isConnected ?? false {
+			if (self?.torRunning ?? false) && (self?.torController?.isConnected ?? false) {
 				self?.torController?.setConfs(status.torConf(self?.transport ?? .none, Transport.asConf))
 				{ success, error in
 					if let error = error {
@@ -202,26 +198,6 @@ class TorManager {
 	private func getTorConf() -> TorConfiguration {
 		let conf = TorConfiguration()
 
-		conf.options = [
-			// DNS
-			"DNSPort": "auto",
-			"AutomapHostsOnResolve": "1",
-			// By default, localhost resp. link-local addresses will be returned by Tor.
-			// That seems to not get accepted by iOS. Use private network addresses instead.
-			"VirtualAddrNetworkIPv4": "10.192.0.0/10",
-			"VirtualAddrNetworkIPv6": "[FC00::]/7",
-
-			// Log
-			"LogMessageDomains": "1",
-			"SafeLogging": "1",
-
-			// Ports
-			"SocksPort": "auto",
-
-			// Miscelaneous
-			"MaxMemInQueues": "5MB"]
-
-
 		conf.ignoreMissingTorrc = true
 		conf.cookieAuthentication = true
 		conf.autoControlPort = true
@@ -237,6 +213,25 @@ class TorManager {
 		conf.arguments += transportConf(Transport.asArguments).joined()
 
 		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
+
+		conf.options = [
+			// DNS
+			"DNSPort": "auto",
+			"AutomapHostsOnResolve": "1",
+			// By default, localhost resp. link-local addresses will be returned by Tor.
+			// That seems to not get accepted by iOS. Use private network addresses instead.
+			"VirtualAddrNetworkIPv4": "10.192.0.0/10",
+			"VirtualAddrNetworkIPv6": "[FC00::]/7",
+
+			// Log
+			"LogMessageDomains": "1",
+			"SafeLogging": "1",
+
+			// SOCKS5
+			"SocksPort": "auto",
+
+			// Miscelaneous
+			"MaxMemInQueues": "5MB"]
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
