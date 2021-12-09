@@ -8,7 +8,7 @@
 
 import NetworkExtension
 import Tor
-import IPtProxyUI
+//import IPtProxyUI
 
 
 class TorManager {
@@ -36,33 +36,33 @@ class TorManager {
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
 
-	private var transport = Transport.none
+//	private var transport = Transport.none
+//
+//	private var ipStatus = IpSupport.Status.unavailable
+//
+//
+//	private init() {
+//		IpSupport.shared.start({ [weak self] status in
+//			self?.ipStatus = status
+//
+//			if (self?.torRunning ?? false) && (self?.torController?.isConnected ?? false) {
+//				self?.torController?.setConfs(status.torConf(self?.transport ?? .none, Transport.asConf))
+//				{ success, error in
+//					if let error = error {
+//						print("[\(String(describing: type(of: self)))] error: \(error)")
+//					}
+//
+//					self?.torController?.resetConnection()
+//				}
+//			}
+//		})
+//	}
 
-	private var ipStatus = IpSupport.Status.unavailable
-
-
-	private init() {
-		IpSupport.shared.start({ [weak self] status in
-			self?.ipStatus = status
-
-			if (self?.torRunning ?? false) && (self?.torController?.isConnected ?? false) {
-				self?.torController?.setConfs(status.torConf(self?.transport ?? .none, Transport.asConf))
-				{ success, error in
-					if let error = error {
-						print("[\(String(describing: type(of: self)))] error: \(error)")
-					}
-
-					self?.torController?.resetConnection()
-				}
-			}
-		})
-	}
-
-	func start(_ transport: Transport,
+	func start(/*_ transport: Transport,*/
 			   _ progressCallback: @escaping (Int) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
-		self.transport = transport
+//		self.transport = transport
 
 		if !torRunning {
 			torConf = getTorConf()
@@ -71,31 +71,31 @@ class TorManager {
 
 			torThread?.start()
 		}
-		else {
-			torController?.resetConf(forKey: "UseBridges")
-			{ [weak self] success, error in
-				if !success {
-					return
-				}
-
-				self?.torController?.resetConf(forKey: "ClientTransportPlugin")
-				{ [weak self] success, error in
-					if !success {
-						return
-					}
-
-					self?.torController?.resetConf(forKey: "Bridge")
-					{ [weak self] success, error in
-						if !success {
-							return
-						}
-
-						self?.torController?.setConfs(
-							self?.transportConf(Transport.asConf) ?? [])
-					}
-				}
-			}
-		}
+//		else {
+//			torController?.resetConf(forKey: "UseBridges")
+//			{ [weak self] success, error in
+//				if !success {
+//					return
+//				}
+//
+//				self?.torController?.resetConf(forKey: "ClientTransportPlugin")
+//				{ [weak self] success, error in
+//					if !success {
+//						return
+//					}
+//
+//					self?.torController?.resetConf(forKey: "Bridge")
+//					{ [weak self] success, error in
+//						if !success {
+//							return
+//						}
+//
+//						self?.torController?.setConfs(
+//							self?.transportConf(Transport.asConf) ?? [])
+//					}
+//				}
+//			}
+//		}
 
 		controllerQueue.asyncAfter(deadline: .now() + 0.65) {
 			if self.torController == nil, let url = self.torConf?.controlPortFile {
@@ -210,9 +210,9 @@ class TorManager {
 		conf.geoipFile = Bundle.geoIp?.geoipFile
 		conf.geoip6File = Bundle.geoIp?.geoip6File
 
-		conf.arguments += transportConf(Transport.asArguments).joined()
-
-		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
+//		conf.arguments += transportConf(Transport.asArguments).joined()
+//
+//		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
 
 		conf.options = [
 			// DNS
@@ -244,16 +244,16 @@ class TorManager {
 		return conf
 	}
 
-	private func transportConf<T>(_ cv: (String, String) -> T) -> [T] {
-
-		var arguments = transport.torConf(cv)
-
-		if transport == .custom, let bridgeLines = Settings.customBridges {
-			arguments += bridgeLines.map({ cv("Bridge", $0) })
-		}
-
-		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
-
-		return arguments
-	}
+//	private func transportConf<T>(_ cv: (String, String) -> T) -> [T] {
+//
+//		var arguments = transport.torConf(cv)
+//
+//		if transport == .custom, let bridgeLines = Settings.customBridges {
+//			arguments += bridgeLines.map({ cv("Bridge", $0) })
+//		}
+//
+//		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
+//
+//		return arguments
+//	}
 }

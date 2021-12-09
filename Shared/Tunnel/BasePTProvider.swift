@@ -7,7 +7,7 @@
 //
 
 import NetworkExtension
-import IPtProxyUI
+//import IPtProxyUI
 
 
 class BasePTProvider: NEPacketTunnelProvider {
@@ -32,7 +32,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	private var hostHandler: ((Data?) -> Void)?
 
-	private var transport = Settings.transport
+//	private var transport = Settings.transport
 
 
 	override init() {
@@ -104,7 +104,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		TorManager.shared.stop()
 
-		transport.stop()
+//		transport.stop()
 
 		stopTun2Socks()
 
@@ -133,18 +133,18 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 
 		if request is ConfigChangedMessage {
-			let newTransport = Settings.transport
-
-			// If the old transport is snowflake, stop that. (The new one certainly isn't!)
-			if transport == .snowflake && newTransport != .snowflake {
-				transport.stop()
-			}
-			// If the old transport is obfs4 and the new one not, stop that.
-			else if (transport == .obfs4 || transport == .custom) && newTransport != .obfs4 && newTransport != .custom {
-				transport.stop()
-			}
-
-			transport = newTransport
+//			let newTransport = Settings.transport
+//
+//			// If the old transport is snowflake, stop that. (The new one certainly isn't!)
+//			if transport == .snowflake && newTransport != .snowflake {
+//				transport.stop()
+//			}
+//			// If the old transport is obfs4 and the new one not, stop that.
+//			else if (transport == .obfs4 || transport == .custom) && newTransport != .obfs4 && newTransport != .custom {
+//				transport.stop()
+//			}
+//
+//			transport = newTransport
 
 			startTransportAndTor { error, socksAddr, dnsAddr in
 				completionHandler?(Self.archive(error ?? true))
@@ -188,9 +188,9 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-		transport.start()
+//		transport.start()
 
-		TorManager.shared.start(transport, { progress in
+		TorManager.shared.start(/*transport,*/ { progress in
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
 			self.sendMessages()
 		}, completion)

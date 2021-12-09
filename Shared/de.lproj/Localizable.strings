@@ -7,6 +7,12 @@
 /* No comment provided by engineer. */
 "Auth Cookies" = "Auth Schlüssel";
 
+/* ScanQrViewController */
+"Camera access was not granted or QR Code scanning is not supported by your device." = "Es wurde kein Zugriff auf die Kamera gewährt, oder QR-Code Scanning wird von diesem Gerät nicht unterstützt.";
+
+/* AlertHelper */
+"Cancel" = "Abbruch";
+
 /* No comment provided by engineer. */
 "Circuits" = "Kanäle";
 
@@ -37,6 +43,9 @@
 /* No comment provided by engineer. */
 "enabled" = "aktiviert";
 
+/* AlertHelper */
+"Error" = "Fehler";
+
 /* No comment provided by engineer. */
 "Install" = "Installieren";
 
@@ -55,11 +64,17 @@
 /* No comment provided by engineer. */
 "not installed" = "nicht installiert";
 
+/* AlertHelper */
+"OK" = "OK";
+
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen .onion Link gescannt hast?";
 
 /* No comment provided by engineer. */
 "reasserting" = "wiederherstellen";
+
+/* ScanQrViewController */
+"Scan QR Code" = "QR-Code scannen";
 
 /* No comment provided by engineer. */
 "Start" = "Start";

@@ -8,7 +8,7 @@
 
 import UIKit
 import Tor
-import IPtProxyUI
+//import IPtProxyUI
 
 class AuthViewController: UITableViewController, ScanQrDelegate {
 

@@ -8,16 +8,20 @@
 
 import UIKit
 import Tor
-import IPtProxyUI
+//import IPtProxyUI
 
-class MainViewController: UIViewController, BridgesConfDelegate {
+class MainViewController: UIViewController/*, BridgesConfDelegate*/ {
 
 	private static let purposeFilter = [
 		TorCircuit.purposeGeneral,
 		TorCircuit.purposeHsClientRend,
 		TorCircuit.purposeHsServiceRend]
 
-    @IBOutlet weak var bridgesBt: UIBarButtonItem?
+	@IBOutlet weak var bridgesBt: UIBarButtonItem? {
+		didSet {
+			navigationItem.rightBarButtonItems?.removeAll(where: { $0 == bridgesBt })
+		}
+	}
 	@IBOutlet weak var authBt: UIBarButtonItem?
     @IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
@@ -102,10 +106,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	}
 
 	@IBAction func changeBridges(_ sender: UIBarButtonItem? = nil) {
-		let vc = BridgesConfViewController()
-		vc.delegate = self
-
-		present(inNav: vc, button: sender ?? bridgesBt)
+//		let vc = BridgesConfViewController()
+//		vc.delegate = self
+//
+//		present(inNav: vc, button: sender ?? bridgesBt)
 	}
 
     @IBAction func showAuth(_ sender: UIBarButtonItem) {
@@ -249,46 +253,46 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 				progress = MainViewController.nf.string(from: NSNumber(value: raw)) ?? ""
 			}
 
-			var transport = ""
-
-			switch VpnManager.shared.sessionStatus {
-			case .connected, .connecting, .reasserting:
-				transport = Settings.transport.description
-
-			default:
-				break
-			}
+//			var transport = ""
+//
+//			switch VpnManager.shared.sessionStatus {
+//			case .connected, .connecting, .reasserting:
+//				transport = Settings.transport.description
+//
+//			default:
+//				break
+//			}
 
 			statusLb.textColor = .white
 			statusLb.text = [VpnManager.shared.sessionStatus.description,
-							 transport, progress].joined(separator: " ")
+							 /*transport,*/ progress].joined(separator: " ")
 		}
 	}
 
 
 	// MARK: BridgesConfDelegate
 
-	var transport: Transport {
-		get {
-			Settings.transport
-		}
-		set {
-			Settings.transport = newValue
-		}
-	}
-
-	var customBridges: [String]? {
-		get {
-			Settings.customBridges
-		}
-		set {
-			Settings.customBridges = newValue
-		}
-	}
-
-	func save() {
-		VpnManager.shared.configChanged()
-	}
+//	var transport: Transport {
+//		get {
+//			Settings.transport
+//		}
+//		set {
+//			Settings.transport = newValue
+//		}
+//	}
+//
+//	var customBridges: [String]? {
+//		get {
+//			Settings.customBridges
+//		}
+//		set {
+//			Settings.customBridges = newValue
+//		}
+//	}
+//
+//	func save() {
+//		VpnManager.shared.configChanged()
+//	}
 
 
 	// MARK: Private Methods

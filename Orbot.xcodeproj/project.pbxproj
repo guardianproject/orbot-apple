@@ -28,8 +28,6 @@
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
-		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
-		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -56,6 +54,8 @@
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
+		A0FF8A72276222F5006F8599 /* ScanQrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF8A71276222F5006F8599 /* ScanQrViewController.swift */; };
+		A0FF8A7427622300006F8599 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF8A7327622300006F8599 /* AlertHelper.swift */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
 /* End PBXBuildFile section */
@@ -610,6 +610,8 @@
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FD91A526F36199002C317C /* leaf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
+		A0FF8A71276222F5006F8599 /* ScanQrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanQrViewController.swift; sourceTree = "<group>"; };
+		A0FF8A7327622300006F8599 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1778,6 +1780,7 @@
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
+				A0FF8A70276222D6006F8599 /* IPtProxyUI */,
 				A05B73C124755CE700930C40 /* Info.plist */,
 				A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */,
 				A0A735C024755DCB00073C81 /* Orbot.entitlements */,
@@ -1977,6 +1980,15 @@
 				A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */,
 			);
 			path = Tunnel;
+			sourceTree = "<group>";
+		};
+		A0FF8A70276222D6006F8599 /* IPtProxyUI */ = {
+			isa = PBXGroup;
+			children = (
+				A0FF8A7327622300006F8599 /* AlertHelper.swift */,
+				A0FF8A71276222F5006F8599 /* ScanQrViewController.swift */,
+			);
+			path = IPtProxyUI;
 			sourceTree = "<group>";
 		};
 		A53EFD1654E1809EC93A8DBC /* Pods */ = {
@@ -2254,7 +2266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
@@ -2263,6 +2274,7 @@
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
+				A0FF8A72276222F5006F8599 /* ScanQrViewController.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
@@ -2272,6 +2284,7 @@
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A0FF8A7427622300006F8599 /* AlertHelper.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
 			);
@@ -2297,7 +2310,6 @@
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
-				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
