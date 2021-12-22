@@ -6,12 +6,12 @@ target 'Orbot' do
   platform :ios, '15.0'
 
   pod 'Tor/GeoIP', '~> 406.8'
-  pod 'IPtProxyUI', '~> 1.4'
+  pod 'IPtProxyUI', '~> 1.5'
 end
 
 target 'TorVPN' do
   platform :ios, '15.0'
 
   pod 'Tor/GeoIP', '~> 406.8'
-  pod 'IPtProxyUI', '~> 1.4'
+  pod 'IPtProxyUI', '~> 1.5'
 end
