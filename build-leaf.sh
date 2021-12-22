@@ -33,7 +33,7 @@ if [[ -n "${DEVELOPER_SDK_DIR:-}" ]]; then
 
   # Copy compiled library to BUILT_PRODUCTS_DIR. Use that in your Xcode project
   # settings under General -> Frameworks and Libraries.
-  # You will also need to have tun2tor.h somewhere in your search paths!
+  # You will also need to have leaf.h somewhere in your search paths!
   # (Easiest way: have it referenced in your project files list.)
   if [ -e "${SOURCE}" ]; then
     cp -a "${SOURCE}" "${BUILT_PRODUCTS_DIR}"
@@ -43,7 +43,7 @@ else
 
   # Direct command line usage.
 
-  cargo lipo --manifest-path $DIR/Cargo.toml -p leaf-ffi
+  cargo lipo --manifest-path "$DIR/Cargo.toml" -p leaf-ffi
 
 fi
 

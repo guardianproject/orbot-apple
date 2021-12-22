@@ -18,6 +18,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 
 ```sh
 brew install cocoapods bartycrouch fastlane rustup-init
+rustup-init -y
 rustup target add aarch64-apple-ios x86_64-apple-ios
 cargo install cargo-lipo
 git clone git@github.com:guardianproject/orbot-ios.git
