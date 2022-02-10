@@ -1,3 +1,1 @@
-Copyright: Have received permission to use trademarked word “Tor” generically, within description text and other similar uses. See e-mail exchange with Tor Project Inc.: https://gist.github.com/4732422f84f4e50ca22a
-
 Encryption: Exempt from United States ERN encryption registration; only required a notification sent to U.S. Bureau of Industry and Security. Exemption under Category 5, Part 2 is "'Publicly available' encryption software and source code under license exception TSU (740.13)".
