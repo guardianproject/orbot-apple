@@ -6,7 +6,10 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 
 - Supports Obfs4 and Snowflake bridges, fully configurable.
 - Supports Onion v3 service authentication.
-- Tor 0.4.6.8
+- Tor 0.4.6.9
+- OpenSSL 1.1.1m
+- Obfs4proxy 0.0.13
+- Snowflake 2.1.0
 
 
 ## Build
@@ -17,7 +20,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 - [Homebrew](https://brew.sh)
 
 ```sh
-brew install cocoapods bartycrouch fastlane rustup-init
+brew install cocoapods bartycrouch fastlane rustup-init automake autoconf libtool gettext
 rustup-init -y
 rustup target add aarch64-apple-ios
 cargo install cargo-lipo cbindgen
@@ -88,7 +91,8 @@ You can call these URIs like this:
 
 Benjamin Erhart, [Die Netzarchitekten e.U.](https://die.netzarchitekten.com)
 
-Under the authority of [Guardian Project](https://guardianproject.info).
+Under the authority of [Guardian Project](https://guardianproject.info)
+with friendly support from [The Tor Project](https://torproject.org).
 
 Licensed under [MIT](LICENSE).
 
