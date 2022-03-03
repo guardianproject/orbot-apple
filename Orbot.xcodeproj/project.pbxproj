@@ -12,7 +12,6 @@
 		A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */; };
 		A00F51332745456A0037DD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51322745456A0037DD4A /* Main.storyboard */; };
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
-		A00F5137274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -2037,8 +2036,8 @@
 			buildConfigurationList = A0A735D6247561F200073C81 /* Build configuration list for PBXNativeTarget "TorVPN" */;
 			buildPhases = (
 				C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */,
-				A00F512A274542AE0037DD4A /* ShellScript */,
-				A0E794A526528ECD0052E32E /* ShellScript */,
+				A00F512A274542AE0037DD4A /* BartyCrouch */,
+				A0E794A526528ECD0052E32E /* Build Leaf */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
@@ -2110,7 +2109,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00F5137274545BC0037DD4A /* Localizable.strings in Resources */,
 				A023D82B271986FB00A634B7 /* template.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2157,7 +2155,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A00F512A274542AE0037DD4A /* ShellScript */ = {
+		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2166,6 +2164,7 @@
 			);
 			inputPaths = (
 			);
+			name = BartyCrouch;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -2174,7 +2173,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
-		A0E794A526528ECD0052E32E /* ShellScript */ = {
+		A0E794A526528ECD0052E32E /* Build Leaf */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2183,6 +2182,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Build Leaf";
 			outputFileListPaths = (
 			);
 			outputPaths = (

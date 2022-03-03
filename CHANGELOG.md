@@ -8,7 +8,7 @@
   - Obfs4proxy 0.0.13
   - Snowflake 2.1.0
   - Leaf
-  - Release under Tor Project
+- Release under Tor Project
 
 ## 1.0.0
 
