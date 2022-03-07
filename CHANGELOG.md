@@ -1,5 +1,9 @@
 #  Orbot iOS Changelog
 
+## 1.2.0
+- Updates:
+  - Leaf 0.4.2
+
 ## 1.1.0
 
 - Updates:

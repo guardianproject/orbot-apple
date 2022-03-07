@@ -1,0 +1,19 @@
+diff --git a/leaf-ffi/Cargo.toml b/leaf-ffi/Cargo.toml
+index 583f846..05a019a 100644
+--- a/leaf-ffi/Cargo.toml
++++ b/leaf-ffi/Cargo.toml
+@@ -11,7 +11,13 @@ crate-type = ["staticlib"]
+ 
+ [features]
+ default = [
+-    "default-ring",
++    "leaf/config-conf",
++    "leaf/inbound-tun",
++    "leaf/inbound-socks",
++    "leaf/outbound-socks",
++    "leaf/outbound-redirect",
++    "leaf/outbound-direct",
++    "leaf/outbound-drop"
+ ]
+ 
+ default-ring = [
