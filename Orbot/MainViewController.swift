@@ -17,9 +17,25 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		TorCircuit.purposeHsClientRend,
 		TorCircuit.purposeHsServiceRend]
 
-    @IBOutlet weak var bridgesBt: UIBarButtonItem?
-	@IBOutlet weak var authBt: UIBarButtonItem?
-    @IBOutlet weak var statusIcon: UIImageView!
+	@IBOutlet weak var menuBt: UIBarButtonItem? {
+		didSet {
+			menuBt?.accessibilityLabel = NSLocalizedString("Log", comment: "")
+		}
+	}
+
+	@IBOutlet weak var bridgesBt: UIBarButtonItem? {
+		didSet {
+			bridgesBt?.accessibilityLabel = NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "")
+		}
+	}
+
+	@IBOutlet weak var authBt: UIBarButtonItem? {
+		didSet {
+			authBt?.accessibilityLabel = NSLocalizedString("Auth Cookies", comment: "")
+		}
+	}
+
+	@IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
 	@IBOutlet weak var versionLb: UILabel! {

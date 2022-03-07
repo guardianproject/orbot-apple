@@ -22,11 +22,13 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		navigationItem.leftBarButtonItem = UIBarButtonItem(
 			barButtonSystemItem: .close, target: self, action: #selector(close))
 
-		navigationItem.rightBarButtonItems = [
-			UIBarButtonItem(
-				barButtonSystemItem: .add, target: self, action: #selector(add)),
-			UIBarButtonItem(
-				barButtonSystemItem: .camera, target: self, action: #selector(qr))]
+		let addBt = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+		addBt.accessibilityLabel = NSLocalizedString("Add", comment: "")
+
+		let scanBt = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(qr))
+		scanBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: Bundle.iPtProxyUI, comment: "")
+
+		navigationItem.rightBarButtonItems = [addBt, scanBt]
 
 		if let authDir = FileManager.default.torAuthDir {
 			auth = TorOnionAuth(withPrivateDir: authDir, andPublicDir: nil)
