@@ -23,9 +23,9 @@ EXT_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 
-APP_BUNDLE_ID[config=Release] = app.orbot.ios
-EXT_BUNDLE_ID[config=Release] = app.orbot.ios.ext
-APP_GROUP[config=Release] = group.app.orbot.ios
+APP_BUNDLE_ID[config=Release] = org.torproject.orbot
+EXT_BUNDLE_ID[config=Release] = org.torproject.orbot.ext
+APP_GROUP[config=Release] = group.org.torproject.orbot
 DEVELOPMENT_TEAM[config=Release] =
 CODE_SIGN_IDENTITY[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
@@ -33,7 +33,7 @@ EXT_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
 EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
 
-MARKETING_VERSION = 1.0.0
-CURRENT_PROJECT_VERSION = 1
+MARKETING_VERSION = 1.2.0
+CURRENT_PROJECT_VERSION = 7
 
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) EXT_BUNDLE_ID="$(EXT_BUNDLE_ID)" APP_GROUP="$(APP_GROUP)"

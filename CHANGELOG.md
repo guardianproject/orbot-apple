@@ -3,6 +3,9 @@
 ## 1.2.0
 - Updates:
   - Leaf 0.4.2
+- Improved accessibility/screen reader compatibility.
+- Added UI to configure Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
+- Fixed GeoIP support. 
 
 ## 1.1.0
 
