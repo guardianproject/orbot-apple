@@ -20,6 +20,9 @@
 "Could not connect." = "Could not connect.";
 
 /* No comment provided by engineer. */
+"Delete" = "Delete";
+
+/* No comment provided by engineer. */
 "disabled" = "disabled";
 
 /* No comment provided by engineer. */
@@ -54,6 +57,9 @@
 
 /* No comment provided by engineer. */
 "not installed" = "not installed";
+
+/* No comment provided by engineer. */
+"Open or Close Log" = "Open or Close Log";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";

@@ -20,6 +20,9 @@
 "Could not connect." = "Konnte nicht verbinden.";
 
 /* No comment provided by engineer. */
+"Delete" = "Löschen";
+
+/* No comment provided by engineer. */
 "disabled" = "deaktiviert";
 
 /* No comment provided by engineer. */
@@ -54,6 +57,9 @@
 
 /* No comment provided by engineer. */
 "not installed" = "nicht installiert";
+
+/* No comment provided by engineer. */
+"Open or Close Log" = "Log öffnen oder schließen";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen .onion Link gescannt hast?";

@@ -26,7 +26,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		addBt.accessibilityLabel = NSLocalizedString("Add", comment: "")
 
 		let scanBt = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(qr))
-		scanBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: Bundle.iPtProxyUI, comment: "")
+		scanBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
 
 		navigationItem.rightBarButtonItems = [addBt, scanBt]
 
@@ -69,11 +69,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let key = auth?.keys[indexPath.row]
 
-		showAlert(
-			title: NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: ""),
-			actionTitle: NSLocalizedString("Edit", comment: ""),
-			url: key?.onionAddress,
-			key: key?.key) { [weak self] success in
+		showAlert(url: key?.onionAddress, key: key?.key, indexPath: indexPath) { [weak self] success in
 				if success {
 					self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
 				}
@@ -134,35 +130,43 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	func addKey(_ url: URL?, _ key: String?) {
 		let old = auth?.keys.count ?? 0
 
-		showAlert(
-			title: NSLocalizedString("Add v3 Onion Service Auth Cookie", comment: ""),
-			actionTitle: NSLocalizedString("Add", comment: ""),
-			url: url,
-			key: key) { [weak self] success in
-				if success {
-					if self?.auth?.keys.count ?? 0 > old {
-						self?.tableView?.insertRows(
-							at: [IndexPath(row: (self?.auth?.keys.count ?? 1) - 1, section: 0)],
-							with: .automatic)
-					}
-					else {
-						self?.tableView.reloadData()
-					}
+		showAlert(url: url, key: key, indexPath: nil) { [weak self] success in
+			if success {
+				if self?.auth?.keys.count ?? 0 > old {
+					self?.tableView?.insertRows(
+						at: [IndexPath(row: (self?.auth?.keys.count ?? 1) - 1, section: 0)],
+						with: .automatic)
 				}
-
-				VpnManager.shared.configChanged()
+				else {
+					self?.tableView.reloadData()
+				}
 			}
+
+			VpnManager.shared.configChanged()
+		}
 	}
 
 
 	// MARK: Private Methods
 
-	private func showAlert(title: String, actionTitle: String, url: URL?, key: String?, completion: @escaping (_ success: Bool) -> Void) {
+	private func showAlert(url: URL?, key: String?, indexPath: IndexPath?, completion: @escaping (_ success: Bool) -> Void) {
+		let title: String
+		let actionTitle: String
+
+		if indexPath != nil {
+			title = NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: "")
+			actionTitle = NSLocalizedString("Edit", comment: "")
+		}
+		else {
+			title = NSLocalizedString("Add v3 Onion Service Auth Cookie", comment: "")
+			actionTitle = NSLocalizedString("Add", comment: "")
+		}
+
 		let alert = AlertHelper.build(
 			title: title,
 			actions: [AlertHelper.cancelAction(handler: { _ in completion(false) })])
 
-		alert.addAction(AlertHelper.defaultAction(actionTitle, handler: { [weak self] _ in
+		alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] _ in
 			guard let rawUrl = alert.textFields?.first?.text,
 				  let key = alert.textFields?.last?.text
 			else {
@@ -206,7 +210,13 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 			self?.auth?.set(TorAuthKey(private: key, forDomain: url))
 
 			completion(true)
-		}))
+		})
+
+		if let indexPath = indexPath {
+			alert.addAction(AlertHelper.destructiveAction(NSLocalizedString("Delete", comment: "")) { [weak self] _ in
+				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
+			})
+		}
 
 		AlertHelper.addTextField(alert, placeholder: "http://example.onion", text: url?.absoluteString) { tf in
 			tf.keyboardType = .URL

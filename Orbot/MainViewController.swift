@@ -19,13 +19,13 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var menuBt: UIBarButtonItem? {
 		didSet {
-			menuBt?.accessibilityLabel = NSLocalizedString("Log", comment: "")
+			menuBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
 		}
 	}
 
 	@IBOutlet weak var bridgesBt: UIBarButtonItem? {
 		didSet {
-			bridgesBt?.accessibilityLabel = NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "")
+			bridgesBt?.accessibilityLabel = NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
 		}
 	}
 

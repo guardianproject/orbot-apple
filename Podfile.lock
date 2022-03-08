@@ -1,9 +1,9 @@
 PODS:
-  - Eureka (5.3.4)
+  - Eureka (5.3.5)
   - ImageRow (4.0.0):
     - Eureka (~> 5.0)
-  - IPtProxy (1.5.0)
-  - IPtProxyUI (1.7.0):
+  - IPtProxy (1.5.1)
+  - IPtProxyUI (1.7.2):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
     - IPtProxy (~> 1.5)
@@ -30,10 +30,10 @@ SPEC REPOS:
     - Tor
 
 SPEC CHECKSUMS:
-  Eureka: 60cf058f86a8fb3ed26165ba5292b9850361b0a6
+  Eureka: 7b39a479d074620d43028a0e2bfc3e0d667724df
   ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
-  IPtProxy: 495462962af8a779365581dd5908118af3793e7b
-  IPtProxyUI: d62f08714bb925d2cf3f25967cec4d694e02d381
+  IPtProxy: f9a94b705cdea8474d7fb995a43a2771aa1b7076
+  IPtProxyUI: a47da83b10fd5c00e75fb392b33f253d884559b7
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 628196f1e3d77ea26559e767ab091b784952bb8d
