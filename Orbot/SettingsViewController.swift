@@ -12,9 +12,9 @@ import Eureka
 class SettingsViewController: FormViewController {
 
 	private let explanation = NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
-		+ "* " + String(format: NSLocalizedString("node fingerprints, e.g. \"%@\"", comment: ""), "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
-		+ "* " + String(format: NSLocalizedString("2-letter country codes in braces, e.g. \"%@\"", comment: ""), "{cc}") + "\n"
-		+ "* " + String(format: NSLocalizedString("IP address patterns, e.g. \"%@\"", comment: ""), "255.254.0.0/8") + "\n"
+		+ String(format: NSLocalizedString("%1$@ node fingerprints, e.g. \"%2$@\"", comment: ""), "\u{2022}", "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
+		+ String(format: NSLocalizedString("%1$@ 2-letter country codes in braces, e.g. \"%2$@\"", comment: ""), "\u{2022}", "{cc}") + "\n"
+		+ String(format: NSLocalizedString("%1$@ IP address patterns, e.g. \"%2$@\"", comment: ""), "\u{2022}", "255.254.0.0/8") + "\n"
 		+ "\n"
 		+ NSLocalizedString("Will take effect on restart.", comment: "")
 

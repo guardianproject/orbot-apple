@@ -1,5 +1,11 @@
 /* No comment provided by engineer. */
-"2-letter country codes in braces, e.g. \"%@\"" = "2-Buchstaben Ländercodes in geschweiften Klammern, z.B. \"%@\"";
+"%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 22-Buchstaben Ländercodes in geschweiften Klammern, z.B. \"%2$@\"";
+
+/* No comment provided by engineer. */
+"%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ IP-Adressbereich, z.B. \"%2$@\"";
+
+/* No comment provided by engineer. */
+"%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ Netzknotenfingerabdrücke, z.B. \"%2$@\"";
 
 /* No comment provided by engineer. */
 "Add" = "Hinzufügen";
@@ -68,9 +74,6 @@
 "invalid" = "ungültig";
 
 /* No comment provided by engineer. */
-"IP address patterns, e.g. \"%@\"" = "IP-Adressbereich, z.B. \"%@\"";
-
-/* No comment provided by engineer. */
 "Key" = "Schlüssel";
 
 /* No comment provided by engineer. */
@@ -81,9 +84,6 @@
 
 /* No comment provided by engineer. */
 "Node Configuration" = "Netzknoten-Konfiguration";
-
-/* No comment provided by engineer. */
-"node fingerprints, e.g. \"%@\"" = "Netzknotenfingerabdrücke, z.B. \"%@\"";
 
 /* No comment provided by engineer. */
 "not installed" = "nicht installiert";
