@@ -1,14 +1,23 @@
 /* No comment provided by engineer. */
+"2-letter country codes in braces, e.g. \"%@\"" = "2-Buchstaben Ländercodes in geschweiften Klammern, z.B. \"%@\"";
+
+/* No comment provided by engineer. */
 "Add" = "Hinzufügen";
 
 /* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Onion Service v3 Auth Schlüssel hinzufügen";
 
 /* No comment provided by engineer. */
+"Also don't use excluded nodes for network management" = "Ausgeschlossene Netzknoten auch nicht für Netzmanagement verwenden";
+
+/* No comment provided by engineer. */
 "Auth Cookies" = "Auth Schlüssel";
 
 /* No comment provided by engineer. */
 "Circuits" = "Kanäle";
+
+/* No comment provided by engineer. */
+"Comma-separated lists of:" = "Komma-getrennte Listen mit:";
 
 /* No comment provided by engineer. */
 "connected" = "verbunden";
@@ -32,6 +41,9 @@
 "disconnecting" = "trennen";
 
 /* No comment provided by engineer. */
+"Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Diese Netzknoten nicht verwenden. Überschreibt Eingangs- und Ausgangs-Netzknotenliste. Diese Netzknoten können immer noch für Netzmanagementaufgaben verwendet werden.";
+
+/* No comment provided by engineer. */
 "Edit" = "Ändern";
 
 /* No comment provided by engineer. */
@@ -41,10 +53,22 @@
 "enabled" = "aktiviert";
 
 /* No comment provided by engineer. */
+"Entry Nodes" = "Eingangs-Netzknoten";
+
+/* No comment provided by engineer. */
+"Exclude Nodes" = "Netzknoten ausschließen";
+
+/* No comment provided by engineer. */
+"Exit Nodes" = "Ausgangs-Netzknoten";
+
+/* No comment provided by engineer. */
 "Install" = "Installieren";
 
 /* No comment provided by engineer. */
 "invalid" = "ungültig";
+
+/* No comment provided by engineer. */
+"IP address patterns, e.g. \"%@\"" = "IP-Adressbereich, z.B. \"%@\"";
 
 /* No comment provided by engineer. */
 "Key" = "Schlüssel";
@@ -56,7 +80,19 @@
 "No VPN configuration set." = "Keine VPN-Konfiguration gesetzt.";
 
 /* No comment provided by engineer. */
+"Node Configuration" = "Netzknoten-Konfiguration";
+
+/* No comment provided by engineer. */
+"node fingerprints, e.g. \"%@\"" = "Netzknotenfingerabdrücke, z.B. \"%@\"";
+
+/* No comment provided by engineer. */
 "not installed" = "nicht installiert";
+
+/* No comment provided by engineer. */
+"Only use these nodes as first hop. Ignored, when bridging is used." = "Nur diese Netzknoten als Eingangsknoten verwenden. Wird ignoriert, wenn Brücken verwendet werden.";
+
+/* No comment provided by engineer. */
+"Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "Nur diese Netzknoten verwenden, um aus dem Tor-Netzwerk hinauszuverbinden. Funktionalität wird eingeschränkt, wenn zu wenige angegeben werden!";
 
 /* No comment provided by engineer. */
 "Open or Close Log" = "Log öffnen oder schließen";
@@ -66,6 +102,9 @@
 
 /* No comment provided by engineer. */
 "reasserting" = "wiederherstellen";
+
+/* No comment provided by engineer. */
+"Settings" = "Einstellungen";
 
 /* No comment provided by engineer. */
 "Start" = "Start";
@@ -78,3 +117,6 @@
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
+"Will take effect on restart." = "Tritt nach Neustart in Kraft.";

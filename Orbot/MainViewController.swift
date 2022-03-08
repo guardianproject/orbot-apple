@@ -17,9 +17,9 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		TorCircuit.purposeHsClientRend,
 		TorCircuit.purposeHsServiceRend]
 
-	@IBOutlet weak var menuBt: UIBarButtonItem? {
+	@IBOutlet weak var logBt: UIBarButtonItem? {
 		didSet {
-			menuBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
+			logBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
 		}
 	}
 
@@ -32,6 +32,12 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	@IBOutlet weak var authBt: UIBarButtonItem? {
 		didSet {
 			authBt?.accessibilityLabel = NSLocalizedString("Auth Cookies", comment: "")
+		}
+	}
+
+	@IBOutlet weak var settingsBt: UIBarButtonItem? {
+		didSet {
+			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
 		}
 	}
 
@@ -135,6 +141,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		present(inNav: vc, button: button ?? authBt)
 
 		return vc
+	}
+
+	@IBAction func showSettings(_ sender: UIBarButtonItem? = nil) {
+		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
 	}
 
 	@IBAction func control() {

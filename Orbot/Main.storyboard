@@ -123,13 +123,20 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
-                        <barButtonItem key="leftBarButtonItem" image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
-                            <connections>
-                                <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
+                                <connections>
+                                    <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="gearshape" catalog="system" id="ni1-t3-I0T">
+                                <connections>
+                                    <action selector="showSettings:" destination="BYZ-38-t0r" id="ipt-Fo-mnX"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
+                            <barButtonItem image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
                                 <connections>
                                     <action selector="changeBridges:" destination="BYZ-38-t0r" id="UI4-Vl-1dH"/>
                                 </connections>
@@ -145,10 +152,11 @@
                         <outlet property="authBt" destination="5Vp-J7-qi5" id="0f7-j1-dOt"/>
                         <outlet property="bridgesBt" destination="K2Q-jl-U8h" id="hb2-A4-aQk"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
+                        <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
                         <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>
                         <outlet property="logTv" destination="8i5-ZV-uUu" id="qh4-Jt-saG"/>
-                        <outlet property="menuBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
+                        <outlet property="settingsBt" destination="ni1-t3-I0T" id="9Fk-Cd-K9y"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
                         <outlet property="statusLb" destination="trJ-w6-CDg" id="2On-Ts-emC"/>
                         <outlet property="versionLb" destination="b9e-jY-cnx" id="1ge-vK-0ym"/>
@@ -195,6 +203,7 @@
     <resources>
         <image name="TorOff" width="512" height="512"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="key" catalog="system" width="86" height="128"/>
         <image name="network.badge.shield.half.filled" catalog="system" width="128" height="118"/>
         <namedColor name="BackgroundColor">

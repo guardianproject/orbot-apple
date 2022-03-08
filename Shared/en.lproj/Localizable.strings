@@ -1,14 +1,23 @@
 /* No comment provided by engineer. */
+"2-letter country codes in braces, e.g. \"%@\"" = "2-letter country codes in braces, e.g. \"%@\"";
+
+/* No comment provided by engineer. */
 "Add" = "Add";
 
 /* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Add v3 Onion Service Auth Cookie";
 
 /* No comment provided by engineer. */
+"Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
+
+/* No comment provided by engineer. */
 "Auth Cookies" = "Auth Cookies";
 
 /* No comment provided by engineer. */
 "Circuits" = "Circuits";
+
+/* No comment provided by engineer. */
+"Comma-separated lists of:" = "Comma-separated lists of:";
 
 /* No comment provided by engineer. */
 "connected" = "connected";
@@ -32,6 +41,9 @@
 "disconnecting" = "disconnecting";
 
 /* No comment provided by engineer. */
+"Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
+
+/* No comment provided by engineer. */
 "Edit" = "Edit";
 
 /* No comment provided by engineer. */
@@ -41,10 +53,22 @@
 "enabled" = "enabled";
 
 /* No comment provided by engineer. */
+"Entry Nodes" = "Entry Nodes";
+
+/* No comment provided by engineer. */
+"Exclude Nodes" = "Exclude Nodes";
+
+/* No comment provided by engineer. */
+"Exit Nodes" = "Exit Nodes";
+
+/* No comment provided by engineer. */
 "Install" = "Install";
 
 /* No comment provided by engineer. */
 "invalid" = "invalid";
+
+/* No comment provided by engineer. */
+"IP address patterns, e.g. \"%@\"" = "IP address patterns, e.g. \"%@\"";
 
 /* No comment provided by engineer. */
 "Key" = "Key";
@@ -56,7 +80,19 @@
 "No VPN configuration set." = "No VPN configuration set.";
 
 /* No comment provided by engineer. */
+"Node Configuration" = "Node Configuration";
+
+/* No comment provided by engineer. */
+"node fingerprints, e.g. \"%@\"" = "node fingerprints, e.g. \"%@\"";
+
+/* No comment provided by engineer. */
 "not installed" = "not installed";
+
+/* No comment provided by engineer. */
+"Only use these nodes as first hop. Ignored, when bridging is used." = "Only use these nodes as first hop. Ignored, when bridging is used.";
+
+/* No comment provided by engineer. */
+"Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!";
 
 /* No comment provided by engineer. */
 "Open or Close Log" = "Open or Close Log";
@@ -66,6 +102,9 @@
 
 /* No comment provided by engineer. */
 "reasserting" = "reasserting";
+
+/* No comment provided by engineer. */
+"Settings" = "Settings";
 
 /* No comment provided by engineer. */
 "Start" = "Start";
@@ -78,3 +117,6 @@
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
+"Will take effect on restart." = "Will take effect on restart.";

@@ -7,6 +7,7 @@ target 'Orbot' do
 
   pod 'Tor/GeoIP', '~> 406.9'
   pod 'IPtProxyUI', '~> 1.7'
+  pod 'Eureka', '~> 5.3'
 end
 
 target 'TorVPN' do

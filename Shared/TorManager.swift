@@ -67,6 +67,10 @@ class TorManager {
 		if !torRunning {
 			torConf = getTorConf()
 
+//			if let debug = torConf?.compile().joined(separator: ", ") {
+//				Logger.log(debug, to: FileManager.default.torLogFile)
+//			}
+
 			torThread = TorThread(configuration: torConf)
 
 			torThread?.start()
@@ -232,6 +236,20 @@ class TorManager {
 
 			// Miscelaneous
 			"MaxMemInQueues": "5MB"]
+
+		// Node in-/exclusions
+		if let entryNodes = Settings.entryNodes {
+			conf.options["EntryNodes"] = entryNodes
+		}
+
+		if let exitNodes = Settings.exitNodes {
+			conf.options["ExitNodes"] = exitNodes
+		}
+
+		if let excludeNodes = Settings.excludeNodes {
+			conf.options["ExcludeNodes"] = excludeNodes
+			conf.options["StrictNodes"] = Settings.strictNodes ? "1" : "0"
+		}
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile
