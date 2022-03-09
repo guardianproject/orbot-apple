@@ -1,0 +1,16 @@
+[main]
+host = https://www.transifex.com
+
+[orbot-ios.localizable-strings]
+file_filter = Shared/<lang>.lproj/Localizable.strings
+minimum_perc = 0
+source_file = Shared/en.lproj/Localizable.strings
+source_lang = en
+type = STRINGS
+
+[orbot-ios.infoplist-strings]
+file_filter = Orbot/<lang>.lproj/InfoPlist.strings
+minimum_perc = 0
+source_file = Orbot/en.lproj/InfoPlist.strings
+source_lang = en
+type = STRINGS

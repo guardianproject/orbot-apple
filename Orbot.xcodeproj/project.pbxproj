@@ -146,6 +146,7 @@
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
 		A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A0BBF1AA27D7BA37005BBA3A /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		A0D6162027D8BAC6008E0F3C /* .tx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .tx; sourceTree = "<group>"; };
 		A0F8690027D629B000C9D407 /* leaf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = leaf; sourceTree = "<group>"; };
 		A0F8690727D635D700C9D407 /* build-leaf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-leaf.sh"; sourceTree = "<group>"; };
 		A0F8690827D6372C00C9D407 /* leaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 				A064701A2478170F00311CBE /* README.md */,
 				A0367840274E5E8000344B7F /* CHANGELOG.md */,
 				A064701B24781C5400311CBE /* LICENSE */,
+				A0D6162027D8BAC6008E0F3C /* .tx */,
 			);
 			name = Build;
 			sourceTree = "<group>";
