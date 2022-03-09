@@ -1,5 +1,5 @@
 /* No comment provided by engineer. */
-"%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 22-Buchstaben Ländercodes in geschweiften Klammern, z.B. \"%2$@\"";
+"%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 2-Buchstaben Ländercodes in geschweiften Klammern, z.B. \"%2$@\"";
 
 /* No comment provided by engineer. */
 "%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ IP-Adressbereich, z.B. \"%2$@\"";
