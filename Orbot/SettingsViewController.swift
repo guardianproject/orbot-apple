@@ -27,8 +27,7 @@ class SettingsViewController: FormViewController {
 			barButtonSystemItem: .close, target: self, action: #selector(close))
 
 		form
-		+++ Section(header: NSLocalizedString("Node Configuration", comment: ""),
-					footer: explanation)
+		+++ Section(NSLocalizedString("Node Configuration", comment: ""))
 
 		<<< LabelRow() {
 			$0.title = NSLocalizedString("Entry Nodes", comment: "")
@@ -44,7 +43,7 @@ class SettingsViewController: FormViewController {
 			Settings.entryNodes = row.value
 		})
 
-		<<< LabelRow() {
+		+++ LabelRow() {
 			$0.title = NSLocalizedString("Exit Nodes", comment: "")
 			$0.value = NSLocalizedString("Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!", comment: "")
 			$0.cellStyle = .subtitle
@@ -57,6 +56,8 @@ class SettingsViewController: FormViewController {
 		.onChange({ row in
 			Settings.exitNodes = row.value
 		})
+
+		+++ Section(footer: explanation)
 
 		<<< LabelRow() {
 			$0.title = NSLocalizedString("Exclude Nodes", comment: "")
@@ -75,6 +76,8 @@ class SettingsViewController: FormViewController {
 		<<< SwitchRow() {
 			$0.title = NSLocalizedString("Also don't use excluded nodes for network management", comment: "")
 			$0.cell.textLabel?.numberOfLines = 0
+
+			$0.cell.textLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
 		}
 		.onChange({ row in
 			if let value = row.value {
