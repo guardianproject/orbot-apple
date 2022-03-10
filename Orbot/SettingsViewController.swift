@@ -23,8 +23,10 @@ class SettingsViewController: FormViewController {
 
 		navigationItem.title = NSLocalizedString("Settings", comment: "")
 
-		navigationItem.leftBarButtonItem = UIBarButtonItem(
-			barButtonSystemItem: .close, target: self, action: #selector(close))
+		let closeBt = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
+		closeBt.accessibilityIdentifier = "close_settings"
+
+		navigationItem.leftBarButtonItem = closeBt
 
 		form
 		+++ Section(NSLocalizedString("Node Configuration", comment: ""))

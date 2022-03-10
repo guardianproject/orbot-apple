@@ -19,8 +19,10 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 
 		navigationItem.title = NSLocalizedString("Auth Cookies", comment: "")
 
-		navigationItem.leftBarButtonItem = UIBarButtonItem(
-			barButtonSystemItem: .close, target: self, action: #selector(close))
+		let closeBt = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
+		closeBt.accessibilityIdentifier = "close_auth_cookies"
+
+		navigationItem.leftBarButtonItem = closeBt
 
 		let addBt = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
 		addBt.accessibilityLabel = NSLocalizedString("Add", comment: "")

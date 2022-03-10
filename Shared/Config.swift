@@ -27,7 +27,7 @@ extension Config {
 	 Should positively never end up in production code!
 	 */
 	class var screenshotMode: Bool {
-		return false
+		return UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT")
 	}
 #endif
 }

@@ -6,7 +6,7 @@ target 'Orbot' do
   platform :ios, '15.0'
 
   pod 'Tor/GeoIP', '~> 406.9'
-  pod 'IPtProxyUI', '~> 1.7'
+  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios' #'~> 1.7'
   pod 'Eureka', '~> 5.3'
 end
 
@@ -14,5 +14,5 @@ target 'TorVPN' do
   platform :ios, '15.0'
 
   pod 'Tor/GeoIP', '~> 406.9'
-  pod 'IPtProxyUI', '~> 1.7'
+  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios' #'~> 1.7'
 end

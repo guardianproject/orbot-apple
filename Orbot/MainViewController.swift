@@ -20,24 +20,28 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	@IBOutlet weak var logBt: UIBarButtonItem? {
 		didSet {
 			logBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
+			logBt?.accessibilityIdentifier = "open_close_log"
 		}
 	}
 
 	@IBOutlet weak var bridgesBt: UIBarButtonItem? {
 		didSet {
 			bridgesBt?.accessibilityLabel = NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
+			bridgesBt?.accessibilityIdentifier = "bridge_configuration"
 		}
 	}
 
 	@IBOutlet weak var authBt: UIBarButtonItem? {
 		didSet {
 			authBt?.accessibilityLabel = NSLocalizedString("Auth Cookies", comment: "")
+			authBt?.accessibilityIdentifier = "auth_cookies"
 		}
 	}
 
 	@IBOutlet weak var settingsBt: UIBarButtonItem? {
 		didSet {
 			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
+			settingsBt?.accessibilityIdentifier = "settings"
 		}
 	}
 
