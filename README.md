@@ -80,12 +80,21 @@ You can call these URIs like this:
 ```
 
 
-## Dependencies
+## Direct Dependencies
 
 - [leaf](https://github.com/eycorsican/leaf), licensed under [Apache 2.0](https://github.com/eycorsican/leaf/blob/master/LICENSE)
 - [Tor.framework](https://github.com/iCepa/Tor.framework), licensed under [MIT](https://github.com/iCepa/Tor.framework/blob/master/LICENSE)
 - [IPtProxyUI](https://github.com/tladesignz/IPtProxyUI-ios), licensed under [MIT](https://github.com/tladesignz/IPtProxyUI-ios/blob/master/LICENSE)
 - [ReachabilitySwift](https://github.com/ashleymills/Reachability.swift), licensed under [MIT](https://github.com/ashleymills/Reachability.swift/blob/master/LICENSE)
+- [Eureka](https://github.com/xmartlabs/Eureka), licensed under [MIT](https://github.com/xmartlabs/Eureka/blob/master/LICENSE)
+
+
+## Acknowledgements
+
+These people helped with translations. Thank you so much, folks!
+
+- French: 
+  yahoe.001
 
 
 ## Author, License
