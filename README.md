@@ -60,6 +60,9 @@ These URIs are available to interact with Orbot from other apps:
 
 - `orbot:show`
   Will just start the Orbot app.
+  
+- `orbot:show.settings`
+  Will show the `SettingsViewController`, where users can edit their Tor node configuration.
 
 - `orbot:show.bridges`
   Will show the `BridgeConfViewController`, where users can change their bridge configuration.

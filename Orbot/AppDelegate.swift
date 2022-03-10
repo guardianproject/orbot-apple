@@ -41,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			// Dummy path so other apps can just start this one.
 			break
 
+		case "show.settings":
+			vc.showSettings()
+
 		case "show.bridges":
 			vc.changeBridges()
 
