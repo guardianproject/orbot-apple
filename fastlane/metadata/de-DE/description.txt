@@ -1,6 +1,5 @@
 Orbot ist des offizielle Open Source Tor-VPN für iOS. Orbot ermöglicht, Zensur zu umgehen und verbessert die Sicherheit und Privatsphäre beim Surfen im Internet.
 
-
 FUNKTIONEN:
 - Greife auf das Internet über Tor zu.
 - Sichere Deinen Datentraffic aus unsicheren WLAN-Netzen und ISPs.

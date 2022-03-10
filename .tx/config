@@ -14,3 +14,31 @@ minimum_perc = 0
 source_file = Orbot/en.lproj/InfoPlist.strings
 source_lang = en
 type = STRINGS
+
+[orbot-ios.description-txt]
+file_filter = fastlane/metadata/<lang>/description.txt
+minimum_perc = 0
+source_file = fastlane/metadata/en-US/description.txt
+source_lang = en
+type = TXT
+trans.de = fastlane/metadata/de-DE/description.txt
+trans.fr = fastlane/metadata/fr-FR/description.txt
+
+
+[orbot-ios.keywords-txt]
+file_filter = fastlane/metadata/<lang>/keywords.txt
+minimum_perc = 0
+source_file = fastlane/metadata/en-US/keywords.txt
+source_lang = en
+type = TXT
+trans.de = fastlane/metadata/de-DE/keywords.txt
+trans.fr = fastlane/metadata/fr-FR/keywords.txt
+
+[orbot-ios.release-notes-txt]
+file_filter = fastlane/metadata/<lang>/release_notes.txt
+minimum_perc = 0
+source_file = fastlane/metadata/en-US/release_notes.txt
+source_lang = en
+type = TXT
+trans.de = fastlane/metadata/de-DE/release_notes.txt
+trans.fr = fastlane/metadata/fr-FR/release_notes.txt

@@ -126,6 +126,8 @@
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A06672AB27DA15E200B8E9C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A06672AC27DA15E200B8E9C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				en,
 				Base,
 				de,
+				fr,
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -728,6 +731,7 @@
 			children = (
 				A00F5135274545BC0037DD4A /* en */,
 				A00F513B274546920037DD4A /* de */,
+				A06672AC27DA15E200B8E9C8 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -737,6 +741,7 @@
 			children = (
 				A0A039B2274E9DF400D80FD1 /* en */,
 				A0A039B4274E9E1600D80FD1 /* de */,
+				A06672AB27DA15E200B8E9C8 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
