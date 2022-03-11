@@ -6,6 +6,7 @@
 - Improved accessibility/screen reader compatibility.
 - Added UI to configure Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
 - Fixed GeoIP support. 
+- Added French, Russian, Spanish and Ukrainian translation.
 
 ## 1.1.0
 
