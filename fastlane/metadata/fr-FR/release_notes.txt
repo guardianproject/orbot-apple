@@ -1,4 +1,4 @@
-- Improved accessibility/screen reader compatibility.
-- Added UI to configure Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
-- Fixed GeoIP support.
-- Added French translation.
+– Amélioration de l’accessibilité et de la compatibilité du lecteur d’écran.
+– Ajout d’une IU pour configurer les options « EntryNodes », « ExitNodes », « ExcludeNodes » et « StrictNodes » de Tor.
+– Correctif pour la prise en charge de GeoIP.
+- Added French, Russian, Spanish and Ukrainian translation.

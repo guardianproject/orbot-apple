@@ -1,1 +1,1 @@
-Tor,VPN,Tor VPN,Orbot,anonymous,private,anonymizing VPN,onion
+Tor,RPV,VPN,RPV Tor,VPN Tor,Orbot,anonyme,privé,confidentiel,RPV d’anonymisation,VPN d’anonymisation,oignon,onion

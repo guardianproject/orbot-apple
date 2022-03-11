@@ -35,7 +35,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   IPtProxyUI:
-    :commit: 100cf60de078410b462fbf056366f454123d973d
+    :commit: fd10404e8b9b6725eba970b29cef02b782c3d153
     :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:

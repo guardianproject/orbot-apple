@@ -23,7 +23,7 @@ source_lang = en
 type = TXT
 trans.de = fastlane/metadata/de-DE/description.txt
 trans.fr = fastlane/metadata/fr-FR/description.txt
-
+trans.es = fastlane/metadata/es-ES/description.txt
 
 [orbot-ios.keywords-txt]
 file_filter = fastlane/metadata/<lang>/keywords.txt
@@ -33,6 +33,7 @@ source_lang = en
 type = TXT
 trans.de = fastlane/metadata/de-DE/keywords.txt
 trans.fr = fastlane/metadata/fr-FR/keywords.txt
+trans.es = fastlane/metadata/es-ES/keywords.txt
 
 [orbot-ios.release-notes-txt]
 file_filter = fastlane/metadata/<lang>/release_notes.txt
@@ -42,3 +43,4 @@ source_lang = en
 type = TXT
 trans.de = fastlane/metadata/de-DE/release_notes.txt
 trans.fr = fastlane/metadata/fr-FR/release_notes.txt
+trans.es = fastlane/metadata/es-ES/release_notes.txt

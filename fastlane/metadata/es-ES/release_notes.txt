@@ -1,0 +1,4 @@
+- Accesibilidad mejorada/compatibilidad con lectores de pantalla.
+- Interfaz de usuario agregada para configurar las opciones `EntryNodes`, `ExitNodes`, `ExcludeNodes` y `StrictNodes` de Tor.
+-Soporte GeoIP arreglado.
+- Añadida traducción al francés.
