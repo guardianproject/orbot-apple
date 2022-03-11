@@ -3,7 +3,7 @@ PODS:
   - ImageRow (4.0.0):
     - Eureka (~> 5.0)
   - IPtProxy (1.5.1)
-  - IPtProxyUI (1.7.2):
+  - IPtProxyUI (1.7.3):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
     - IPtProxy (~> 1.5)
@@ -17,7 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Eureka (~> 5.3)
-  - IPtProxyUI (from `https://github.com/tladesignz/IPtProxyUI-ios`)
+  - IPtProxyUI (~> 1.7)
   - Tor/GeoIP (~> 406.9)
 
 SPEC REPOS:
@@ -25,28 +25,20 @@ SPEC REPOS:
     - Eureka
     - ImageRow
     - IPtProxy
+    - IPtProxyUI
     - MBProgressHUD
     - ReachabilitySwift
     - Tor
-
-EXTERNAL SOURCES:
-  IPtProxyUI:
-    :git: https://github.com/tladesignz/IPtProxyUI-ios
-
-CHECKOUT OPTIONS:
-  IPtProxyUI:
-    :commit: fd10404e8b9b6725eba970b29cef02b782c3d153
-    :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:
   Eureka: 7b39a479d074620d43028a0e2bfc3e0d667724df
   ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
   IPtProxy: f9a94b705cdea8474d7fb995a43a2771aa1b7076
-  IPtProxyUI: a47da83b10fd5c00e75fb392b33f253d884559b7
+  IPtProxyUI: 49ac019b70912a7bd460a4955611711e9726095d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 628196f1e3d77ea26559e767ab091b784952bb8d
 
-PODFILE CHECKSUM: 9a18c6faafb0be83dac3448e23657c84273fe8ef
+PODFILE CHECKSUM: 259fa9b94610579a1737573524ba38dce716fa06
 
 COCOAPODS: 1.11.2
