@@ -82,6 +82,8 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	private var logFsObject: DispatchSourceFileSystemObject?
 
+	private var logText = ""
+
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -335,12 +337,14 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			let data = fh.readDataToEndOfFile()
 
 			if let content = String(data: data, encoding: .utf8) {
-				self?.logTv.text.append(content)
+				self?.logText.append(content)
+
+				self?.logTv.text = self?.logText
 				self?.logTv.scrollToBottom()
 			}
 		}
 
-		logTv.text = ""
+		logText = ""
 		ui()
 
 		logFsObject = DispatchSource.makeFileSystemObjectSource(
@@ -356,7 +360,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			if data.contains(.delete) || data.contains(.link) {
 				self?.logFsObject?.cancel()
 				self?.logFsObject = nil
-				self?.createLogFsObject()
+
+				DispatchQueue.main.async {
+					self?.createLogFsObject()
+				}
 			}
 
 			if data.contains(.extend) {
@@ -364,8 +371,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			}
 		}
 
-		logFsObject?.setCancelHandler {
+		logFsObject?.setCancelHandler { [weak self] in
 			try? fh.close()
+
+			self?.logText = ""
 		}
 
 		logFsObject?.resume()
