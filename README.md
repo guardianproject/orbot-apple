@@ -98,7 +98,10 @@ These people helped with translations. Thank you so much, folks!
 
 - French: 
   yahoe.001
-
+- Spanish:
+  Fabiola.mauriceh
+- Ukrainian
+  Kataphan
 
 ## Author, License
 
