@@ -2,10 +2,10 @@
 
 # A list of devices you want to take the screenshots from
 devices([
-  "iPhone 11 Pro Max @ iOS 15.2",
-  "iPhone 8+ @ iOS 15.2",
-  "iPad Pro (12.9-inch) (3rd generation) @ iOS 15.2",
-  "iPad Pro 12.9\" 2gen @ iOS 15.2",
+  "iPhone 11 Pro Max @ iOS 15",
+  "iPhone 8+ @ iOS 15",
+  "iPad Pro (12.9-inch) (3rd generation) @ iOS 15",
+  "iPad Pro 12.9\" 2gen @ iOS 15",
 ])
 
 languages([
@@ -14,6 +14,7 @@ languages([
   "es-ES",
   "fr-FR",
   "uk",
+  "ru",
 ])
 
 # The name of the scheme which contains the UI Tests
