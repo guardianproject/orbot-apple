@@ -25,13 +25,4 @@ public extension Bundle {
 	var build: String {
 		object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown"
 	}
-
-	// Temporary fixes bug in Tor.framework until next release.
-	class var geoIp: Bundle? {
-		guard let url = Bundle(for: TorThread.self).url(forResource: "GeoIP", withExtension: "bundle") else {
-			return nil
-		}
-
-		return Bundle(url: url)
-	}
 }
