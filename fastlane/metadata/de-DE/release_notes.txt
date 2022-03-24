@@ -1,3 +1,4 @@
+- Update auf Tor 0.4.6.10 und Leaf 0.4.2
 - Verbesserte Barrierefreiheit/Screenreader-Kompatibilität.
 - Benutzeroberfläche hinzugefügt, um die Optionen `EntryNodes`, `ExitNodes`, `ExcludeNodes` und `StrictNodes` von Tor zu konfigurieren.
 - Fehler bei GeoIP-Unterstützung behoben.
