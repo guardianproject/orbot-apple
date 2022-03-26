@@ -1,4 +1,5 @@
+– Mise à jour vers Tor 0.4.6.10 et Leaf 0.4.2.
 – Amélioration de l’accessibilité et de la compatibilité du lecteur d’écran.
 – Ajout d’une IU pour configurer les options « EntryNodes », « ExitNodes », « ExcludeNodes » et « StrictNodes » de Tor.
 – Correctif pour la prise en charge de GeoIP.
-- Added French, Russian, Spanish and Ukrainian translation.
+– Ajout de traduction en français, russe, espagnol et ukrainien.
