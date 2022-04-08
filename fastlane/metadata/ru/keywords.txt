@@ -1,1 +1,1 @@
-Tor,VPN,Tor VPN,Orbot,анонимный,личный,обеспечивающий анонимность VPN,onion
+Tor,VPN,Tor VPN,Orbot,анонимный,личный,анонимайзер VPN,onion
