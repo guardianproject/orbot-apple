@@ -8,13 +8,13 @@
 "%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ empreintes de nœud, p. ex. « %2$@ »";
 
 /* No comment provided by engineer. */
+"%1$@ Options need 2 leading minuses: %2$@" = "%1$@ Options need 2 leading minuses: %2$@";
+
+/* No comment provided by engineer. */
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
-
-/* No comment provided by engineer. */
-"%@ Options need 2 leading minuses: --Option" = "%@ Options need 2 leading minuses: --Option";
 
 /* No comment provided by engineer. */
 "Add" = "Ajouter";
