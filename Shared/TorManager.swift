@@ -185,11 +185,21 @@ class TorManager {
 	}
 
 	func getCircuits(_ completion: @escaping ([TorCircuit]) -> Void) {
-		torController?.getCircuits(completion)
+		if let torController = torController {
+			torController.getCircuits(completion)
+		}
+		else {
+			completion([])
+		}
 	}
 
 	func close(_ circuits: [TorCircuit], _ completion: ((Bool) -> Void)?) {
-		torController?.close(circuits, completion: completion)
+		if let torController = torController {
+			torController.close(circuits, completion: completion)
+		}
+		else {
+			completion?(false)
+		}
 	}
 
 

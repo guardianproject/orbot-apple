@@ -9,6 +9,7 @@
 import UIKit
 import Tor
 import IPtProxyUI
+import MBProgressHUD
 
 class MainViewController: UIViewController, BridgesConfDelegate {
 
@@ -42,6 +43,12 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		didSet {
 			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
 			settingsBt?.accessibilityIdentifier = "settings"
+		}
+	}
+
+	@IBOutlet weak var refreshBt: UIBarButtonItem? {
+		didSet {
+			refreshBt?.accessibilityLabel = NSLocalizedString("Build new Circuits", comment: "")
 		}
 	}
 
@@ -153,6 +160,42 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
 	}
 
+	@IBAction func refresh(_ sender: UIBarButtonItem? = nil) {
+		let hud = MBProgressHUD.showAdded(to: view, animated: true)
+		hud.mode = .determinate
+		hud.progress = 0
+		hud.label.text = NSLocalizedString("Build new Circuits", comment: "")
+
+		let showError = { (error: Error) in
+			hud.progress = 1
+			hud.label.text = NSLocalizedString("Error", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
+			hud.detailsLabel.text = error.localizedDescription
+			hud.hide(animated: true, afterDelay: 3)
+		}
+
+		VpnManager.shared.getCircuits { [weak self] circuits, error in
+			if let error = error {
+				return showError(error)
+			}
+
+			hud.progress = 0.5
+
+			VpnManager.shared.closeCircuits(circuits) { success, error in
+				if let error = error {
+					return showError(error)
+				}
+
+				hud.progress = 1
+
+				if self?.logContainer.isHidden == false && self?.logSc.selectedSegmentIndex == 1 {
+					self?.changeLog()
+				}
+
+				hud.hide(animated: true, afterDelay: 0.5)
+			}
+		}
+	}
+
 	@IBAction func control() {
 
 		// Enable, if disabled.
@@ -249,6 +292,8 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	// MARK: Observers
 
 	@objc func updateUi(_ notification: Notification? = nil) {
+
+		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
 		switch VpnManager.shared.sessionStatus {
 		case .connected, .connecting:
