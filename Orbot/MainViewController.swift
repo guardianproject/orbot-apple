@@ -10,6 +10,7 @@ import UIKit
 import Tor
 import IPtProxyUI
 import MBProgressHUD
+import NetworkExtension
 
 class MainViewController: UIViewController, BridgesConfDelegate {
 
@@ -197,15 +198,24 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	}
 
 	@IBAction func control() {
+		control(startOnly: false)
+	}
+
+	func control(startOnly: Bool) {
 
 		// Enable, if disabled.
 		if VpnManager.shared.confStatus == .disabled {
 			return VpnManager.shared.enable { [weak self] success in
 				if success && VpnManager.shared.confStatus == .enabled {
-					self?.control()
+					self?.control(startOnly: startOnly)
 				}
 			}
 		}
+
+		if startOnly && ![NEVPNStatus.disconnected, .disconnecting].contains(VpnManager.shared.sessionStatus) {
+			return
+		}
+
 		// Install first, if not installed.
 		else if VpnManager.shared.confStatus == .notInstalled {
 			return VpnManager.shared.install()

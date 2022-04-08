@@ -61,8 +61,11 @@ These URIs are available to interact with Orbot from other apps:
 - `orbot:show`
   Will just start the Orbot app.
   
+- `orbot:start`
+  Will start the Network Extension, if not already started.
+
 - `orbot:show.settings`
-  Will show the `SettingsViewController`, where users can edit their Tor node configuration.
+  Will show the `SettingsViewController`, where users can edit their Tor configuration.
 
 - `orbot:show.bridges`
   Will show the `BridgeConfViewController`, where users can change their bridge configuration.
@@ -79,7 +82,7 @@ These URIs are available to interact with Orbot from other apps:
 You can call these URIs like this:
 
 ```swift
-	UIApplication.shared.open(URL(string: "orbot:show.bridges")!, options: [:])
+	UIApplication.shared.open(URL(string: "orbot:show.bridges")!)
 ```
 
 
@@ -98,6 +101,8 @@ These people helped with translations. Thank you so much, folks!
 
 - French: 
   yahoe.001
+- Russian:
+  ViktorOnlin, ktchr
 - Spanish:
   Fabiola.mauriceh
 - Ukrainian
