@@ -8,10 +8,22 @@
 "%1$@ node fingerprints, e.g. \"%2$@\"" = "1%1$@ huellas de nodos, ejemplo. \"2 %2$@\"";
 
 /* No comment provided by engineer. */
+"%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
+
+/* No comment provided by engineer. */
+"%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
+
+/* No comment provided by engineer. */
+"%@ Options need 2 leading minuses: --Option" = "%@ Options need 2 leading minuses: --Option";
+
+/* No comment provided by engineer. */
 "Add" = "Añadir";
 
 /* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Agregar cookie de autenticación del servicio Onion v3";
+
+/* No comment provided by engineer. */
+"Advanced Tor Configuration" = "Configuración avanzada de Tor";
 
 /* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Tampoco uses nodos excluidos para la administración de la red.";
@@ -110,16 +122,19 @@
 "Settings" = "Configuración";
 
 /* No comment provided by engineer. */
+"Settings will only take effect after restart." = "Settings will only take effect after restart.";
+
+/* No comment provided by engineer. */
 "Start" = "Iniciar";
 
 /* No comment provided by engineer. */
 "Stop" = "Detener";
 
 /* No comment provided by engineer. */
+"Tor Configuration Reference" = "Tor Configuration Reference";
+
+/* No comment provided by engineer. */
 "unknown" = "desconocido";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Versión %1$@, Desarrollo %2$@";
-
-/* No comment provided by engineer. */
-"Will take effect on restart." = "Tendrá efecto al reiniciar.";

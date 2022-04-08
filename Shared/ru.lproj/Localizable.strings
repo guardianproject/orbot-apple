@@ -8,10 +8,22 @@
 "%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ отпечатки узла, например \"%2$@\"";
 
 /* No comment provided by engineer. */
+"%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
+
+/* No comment provided by engineer. */
+"%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
+
+/* No comment provided by engineer. */
+"%@ Options need 2 leading minuses: --Option" = "%@ Options need 2 leading minuses: --Option";
+
+/* No comment provided by engineer. */
 "Add" = "Добавить";
 
 /* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Добавить cookie аутентификации сервисов onion v3";
+
+/* No comment provided by engineer. */
+"Advanced Tor Configuration" = "Дополнительная конфигурация Tor";
 
 /* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Также не использовать исключенные узлы для управления сетью";
@@ -110,16 +122,19 @@
 "Settings" = "Настройки";
 
 /* No comment provided by engineer. */
+"Settings will only take effect after restart." = "Settings will only take effect after restart.";
+
+/* No comment provided by engineer. */
 "Start" = "Начать";
 
 /* No comment provided by engineer. */
 "Stop" = "Остановить";
 
 /* No comment provided by engineer. */
+"Tor Configuration Reference" = "Tor Configuration Reference";
+
+/* No comment provided by engineer. */
 "unknown" = "неизвестнo";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Версия %1$@, сборка %2$@";
-
-/* No comment provided by engineer. */
-"Will take effect on restart." = "Вступит в силу после перезапуска.";

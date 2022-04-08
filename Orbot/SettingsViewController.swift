@@ -11,12 +11,15 @@ import Eureka
 
 class SettingsViewController: FormViewController {
 
-	private let explanation = NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
+	private let explanation1 = NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
 		+ String(format: NSLocalizedString("%1$@ node fingerprints, e.g. \"%2$@\"", comment: ""), "\u{2022}", "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
 		+ String(format: NSLocalizedString("%1$@ 2-letter country codes in braces, e.g. \"%2$@\"", comment: ""), "\u{2022}", "{cc}") + "\n"
 		+ String(format: NSLocalizedString("%1$@ IP address patterns, e.g. \"%2$@\"", comment: ""), "\u{2022}", "255.254.0.0/8") + "\n"
-		+ "\n"
-		+ NSLocalizedString("Will take effect on restart.", comment: "")
+
+	private let explanation2 = String(format: NSLocalizedString("%@ Options need 2 leading minuses: --Option", comment: ""), "\u{2022}") + "\n"
+		+ String(format: NSLocalizedString("%@ Arguments to an option need to be in a new line.", comment: ""), "\u{2022}") + "\n"
+		+ String(format: NSLocalizedString("%1$@ Some options might get overwritten by %2$@.", comment: ""), "\u{2022}", Bundle.main.displayName)
+
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,6 +32,12 @@ class SettingsViewController: FormViewController {
 		navigationItem.leftBarButtonItem = closeBt
 
 		form
+		+++ LabelRow() {
+			$0.value = NSLocalizedString("Settings will only take effect after restart.", comment: "")
+			$0.cellStyle = .subtitle
+			$0.cell.detailTextLabel?.numberOfLines = 0
+		}
+
 		+++ Section(NSLocalizedString("Node Configuration", comment: ""))
 
 		<<< LabelRow() {
@@ -59,7 +68,7 @@ class SettingsViewController: FormViewController {
 			Settings.exitNodes = row.value
 		})
 
-		+++ Section(footer: explanation)
+		+++ Section(footer: explanation1)
 
 		<<< LabelRow() {
 			$0.title = NSLocalizedString("Exclude Nodes", comment: "")
@@ -86,6 +95,55 @@ class SettingsViewController: FormViewController {
 				Settings.strictNodes = value
 			}
 		})
+
+		+++ Section(NSLocalizedString("Advanced Tor Configuration", comment: ""))
+
+		<<< ButtonRow() {
+			$0.title = NSLocalizedString("Tor Configuration Reference", comment: "")
+		}
+		.onCellSelection({ cell, row in
+			UIApplication.shared.open(URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!)
+		})
+
+		+++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], footer: explanation2) {
+			$0.addButtonProvider = { _ in
+				return ButtonRow()
+			}
+
+			$0.multivaluedRowToInsertAt = { [weak self] index in
+				return TextRow() {
+					$0.tag = String(index)
+
+					self?.turnOffAutoCorrect($0.cell.textField)
+				}
+			}
+
+			if let conf = Settings.advancedTorConf {
+				var i = 0
+				for item in conf {
+					let r = $0.multivaluedRowToInsertAt!(i)
+					r.baseValue = item
+					$0 <<< r
+					i += 1
+				}
+			}
+			else {
+				$0 <<< TextRow() {
+					$0.tag = "0"
+
+					turnOffAutoCorrect($0.cell.textField)
+
+					$0.placeholder = "--ReachableAddresses"
+					}
+					<<< TextRow() {
+						$0.tag = "1"
+
+						turnOffAutoCorrect($0.cell.textField)
+
+						$0.placeholder = "99.0.0.0/8, reject 18.0.0.0/8, accept *:80"
+				}
+			}
+		}
 	}
 
 	// MARK: Actions
@@ -93,4 +151,15 @@ class SettingsViewController: FormViewController {
 	@objc func close() {
 		navigationController?.dismiss(animated: true)
 	}
+
+
+	// MARK: Private Methods
+
+	 private func turnOffAutoCorrect(_ textField: UITextField) {
+		 textField.autocorrectionType = .no
+		 textField.autocapitalizationType = .none
+		 textField.smartDashesType = .no
+		 textField.smartQuotesType = .no
+		 textField.smartInsertDeleteType = .no
+	 }
 }

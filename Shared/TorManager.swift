@@ -224,6 +224,9 @@ class TorManager {
 		conf.geoipFile = Bundle.geoIp?.geoipFile
 		conf.geoip6File = Bundle.geoIp?.geoip6File
 
+		// Add user-defined configuration.
+		conf.arguments += Settings.advancedTorConf ?? []
+
 		conf.arguments += transportConf(Transport.asArguments).joined()
 
 		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()

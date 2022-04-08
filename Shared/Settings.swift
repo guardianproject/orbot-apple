@@ -50,4 +50,13 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "strict_nodes")
 		}
 	}
+
+	class var advancedTorConf: [String]? {
+		get {
+			defaults?.stringArray(forKey: "advanced_tor_conf")
+		}
+		set {
+			defaults?.set(newValue, forKey: "advanced_tor_conf")
+		}
+	}
 }
