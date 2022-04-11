@@ -26,24 +26,29 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		}
 	}
 
-	@IBOutlet weak var bridgesBt: UIBarButtonItem? {
-		didSet {
-			bridgesBt?.accessibilityLabel = NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
-			bridgesBt?.accessibilityIdentifier = "bridge_configuration"
-		}
-	}
-
-	@IBOutlet weak var authBt: UIBarButtonItem? {
-		didSet {
-			authBt?.accessibilityLabel = NSLocalizedString("Auth Cookies", comment: "")
-			authBt?.accessibilityIdentifier = "auth_cookies"
-		}
-	}
-
 	@IBOutlet weak var settingsBt: UIBarButtonItem? {
 		didSet {
 			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
 			settingsBt?.accessibilityIdentifier = "settings"
+
+			settingsBt?.menu = UIMenu(title: "", children: [
+				UIAction(title: NSLocalizedString("Settings", comment: ""),
+						 image: UIImage(systemName: "gearshape"),
+						 handler: { [weak self] _ in
+							 self?.showSettings()
+						 }),
+				UIAction(title: NSLocalizedString("Auth Cookies", comment: ""),
+						 image: UIImage(systemName: "key"),
+						 handler: { [weak self] _ in
+							 self?.showAuth()
+						 }),
+				UIAction(title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
+						 image: UIImage(systemName: "network.badge.shield.half.filled"),
+						 handler: { [weak self] _ in
+							 self?.changeBridges()
+						 }),
+			])
+
 		}
 	}
 
@@ -137,27 +142,23 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		}
 	}
 
-	@IBAction func changeBridges(_ sender: UIBarButtonItem? = nil) {
+	func changeBridges(_ sender: UIBarButtonItem? = nil) {
 		let vc = BridgesConfViewController()
 		vc.delegate = self
 
-		present(inNav: vc, button: sender ?? bridgesBt)
-	}
-
-    @IBAction func showAuth(_ sender: UIBarButtonItem) {
-		showAuth(button: sender)
+		present(inNav: vc, button: sender ?? settingsBt)
 	}
 
 	@discardableResult
-	func showAuth(button: UIBarButtonItem? = nil) -> AuthViewController {
+	func showAuth(_ sender: UIBarButtonItem? = nil) -> AuthViewController {
 		let vc = AuthViewController(style: .grouped)
 
-		present(inNav: vc, button: button ?? authBt)
+		present(inNav: vc, button: sender ?? settingsBt)
 
 		return vc
 	}
 
-	@IBAction func showSettings(_ sender: UIBarButtonItem? = nil) {
+	func showSettings(_ sender: UIBarButtonItem? = nil) {
 		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
 	}
 

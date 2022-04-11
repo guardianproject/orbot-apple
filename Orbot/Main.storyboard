@@ -123,29 +123,13 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
-                        <leftBarButtonItems>
-                            <barButtonItem image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
-                                <connections>
-                                    <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="gearshape" catalog="system" id="ni1-t3-I0T">
-                                <connections>
-                                    <action selector="showSettings:" destination="BYZ-38-t0r" id="ipt-Fo-mnX"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
+                            <connections>
+                                <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="network.badge.shield.half.filled" catalog="system" id="K2Q-jl-U8h">
-                                <connections>
-                                    <action selector="changeBridges:" destination="BYZ-38-t0r" id="UI4-Vl-1dH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="key" catalog="system" id="5Vp-J7-qi5">
-                                <connections>
-                                    <action selector="showAuth:" destination="BYZ-38-t0r" id="0z9-dJ-rgQ"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem image="gearshape" catalog="system" id="ni1-t3-I0T"/>
                             <barButtonItem systemItem="refresh" id="f9G-4q-DsH">
                                 <connections>
                                     <action selector="refresh:" destination="BYZ-38-t0r" id="pHu-ke-0QI"/>
@@ -154,8 +138,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="authBt" destination="5Vp-J7-qi5" id="0f7-j1-dOt"/>
-                        <outlet property="bridgesBt" destination="K2Q-jl-U8h" id="hb2-A4-aQk"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
@@ -210,8 +192,6 @@
         <image name="TorOff" width="512" height="512"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="key" catalog="system" width="86" height="128"/>
-        <image name="network.badge.shield.half.filled" catalog="system" width="128" height="118"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
