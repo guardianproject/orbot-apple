@@ -54,6 +54,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4U2-kP-MdX">
+                                <rect key="frame" x="16" y="373.5" width="343" height="255"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-C6-N3f">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Content Blocker"/>
+                                        <connections>
+                                            <action selector="showContentBlocker" destination="BYZ-38-t0r" eventType="touchUpInside" id="A64-2b-qcT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="i1o-C6-N3f" firstAttribute="leading" secondItem="4U2-kP-MdX" secondAttribute="leading" id="44c-Fk-xRb"/>
+                                    <constraint firstItem="i1o-C6-N3f" firstAttribute="centerY" secondItem="4U2-kP-MdX" secondAttribute="centerY" id="KSa-0u-43u"/>
+                                    <constraint firstAttribute="trailing" secondItem="i1o-C6-N3f" secondAttribute="trailing" id="wev-Q4-7zx"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version %@, Build %@" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9e-jY-cnx">
                                 <rect key="frame" x="16" y="636.5" width="343" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -105,11 +124,15 @@
                         <constraints>
                             <constraint firstItem="VAX-85-q23" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0Rt-3j-kcF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b9e-jY-cnx" secondAttribute="bottom" constant="16" id="0ZU-UY-Xhk"/>
+                            <constraint firstItem="4U2-kP-MdX" firstAttribute="top" secondItem="trJ-w6-CDg" secondAttribute="bottom" constant="8" symbolic="YES" id="4r8-gc-meq"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Jm-94-J7W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="VAX-85-q23" secondAttribute="bottom" constant="16" id="CdO-Hx-sqm"/>
                             <constraint firstItem="VAX-85-q23" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ewv-si-M5D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4U2-kP-MdX" secondAttribute="trailing" constant="16" id="FsG-0i-kds"/>
+                            <constraint firstItem="b9e-jY-cnx" firstAttribute="top" secondItem="4U2-kP-MdX" secondAttribute="bottom" constant="8" symbolic="YES" id="I2G-7s-Z1I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VAX-85-q23" secondAttribute="trailing" constant="16" id="Oo3-Mz-jB9"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="VAX-85-q23" secondAttribute="bottom" constant="8" symbolic="YES" id="SGc-kf-BKI"/>
+                            <constraint firstItem="4U2-kP-MdX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vi5-JD-99Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b9e-jY-cnx" secondAttribute="trailing" constant="16" id="crh-q5-yXK"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
                             <constraint firstItem="b9e-jY-cnx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="prv-SJ-Gl3"/>
@@ -138,6 +161,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="contentBlockerBt" destination="i1o-C6-N3f" id="EhC-3g-7aK"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>

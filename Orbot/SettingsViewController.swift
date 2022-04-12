@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-class SettingsViewController: FormViewController {
+class SettingsViewController: BaseFormViewController {
 
 	private let explanation1 = NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
 		+ String(format: NSLocalizedString("%1$@ node fingerprints, e.g. \"%2$@\"", comment: ""), "\u{2022}", "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
@@ -26,10 +26,7 @@ class SettingsViewController: FormViewController {
 
 		navigationItem.title = NSLocalizedString("Settings", comment: "")
 
-		let closeBt = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
 		closeBt.accessibilityIdentifier = "close_settings"
-
-		navigationItem.leftBarButtonItem = closeBt
 
 		form
 		+++ LabelRow() {
@@ -144,12 +141,6 @@ class SettingsViewController: FormViewController {
 				}
 			}
 		}
-	}
-
-	// MARK: Actions
-
-	@objc func close() {
-		navigationController?.dismiss(animated: true)
 	}
 
 

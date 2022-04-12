@@ -32,21 +32,30 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			settingsBt?.accessibilityIdentifier = "settings"
 
 			settingsBt?.menu = UIMenu(title: "", children: [
-				UIAction(title: NSLocalizedString("Settings", comment: ""),
-						 image: UIImage(systemName: "gearshape"),
-						 handler: { [weak self] _ in
-							 self?.showSettings()
-						 }),
-				UIAction(title: NSLocalizedString("Auth Cookies", comment: ""),
-						 image: UIImage(systemName: "key"),
-						 handler: { [weak self] _ in
-							 self?.showAuth()
-						 }),
-				UIAction(title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
-						 image: UIImage(systemName: "network.badge.shield.half.filled"),
-						 handler: { [weak self] _ in
-							 self?.changeBridges()
-						 }),
+				UIMenu(title: "", options: .displayInline, children: [
+					UIAction(title: NSLocalizedString("Settings", comment: ""),
+							 image: UIImage(systemName: "gearshape"),
+							 handler: { [weak self] _ in
+								 self?.showSettings()
+							 }),
+					UIAction(title: NSLocalizedString("Auth Cookies", comment: ""),
+							 image: UIImage(systemName: "key"),
+							 handler: { [weak self] _ in
+								 self?.showAuth()
+							 }),
+					UIAction(title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
+							 image: UIImage(systemName: "network.badge.shield.half.filled"),
+							 handler: { [weak self] _ in
+								 self?.changeBridges()
+							 }),
+				]),
+				UIMenu(title: "", options: .displayInline, children: [
+					UIAction(title: NSLocalizedString("Content Blocker", comment: ""),
+							 image: UIImage(systemName: "checkerboard.shield"),
+							 handler: { [weak self] _ in
+								 self?.showContentBlocker()
+							 }),
+				])
 			])
 
 		}
@@ -61,6 +70,13 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	@IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
+
+	@IBOutlet weak var contentBlockerBt: UIButton! {
+		didSet {
+			contentBlockerBt.setTitle(NSLocalizedString("Content Blocker", comment: ""))
+		}
+	}
+
 	@IBOutlet weak var versionLb: UILabel! {
 		didSet {
 			versionLb.text = String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
@@ -297,6 +313,11 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		default:
 			createLogFsObject()
 		}
+	}
+
+	@IBAction func showContentBlocker() {
+		present(inNav: ContentBlockerViewController(), button: settingsBt)
+
 	}
 
 

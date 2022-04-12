@@ -27,6 +27,8 @@
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
+		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
+		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
@@ -56,6 +58,13 @@
 		A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
+		A0EF119928043A9200A03017 /* BaseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119828043A9200A03017 /* BaseFormViewController.swift */; };
+		A0EF119C280441C400A03017 /* BlockerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119B280441C400A03017 /* BlockerSource.swift */; };
+		A0EF119E280441E200A03017 /* ChromiumHsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119D280441E200A03017 /* ChromiumHsts.swift */; };
+		A0EF119F28045F6700A03017 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
+		A0EF11A028045F7D00A03017 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
+		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
@@ -63,6 +72,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A06BEC75280090B300351868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A06BEC6D280090B300351868;
+			remoteInfo = ContentBlocker;
+		};
 		A0A735D3247561F200073C81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A05B73A824755CE600930C40 /* Project object */;
@@ -87,6 +103,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */,
+				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +145,10 @@
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A06672AB27DA15E200B8E9C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A06672AC27DA15E200B8E9C8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A06BEC6E280090B300351868 /* ContentBlocker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentBlocker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A08CA2C927DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -167,6 +188,10 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
+		A0EF119828043A9200A03017 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
+		A0EF119B280441C400A03017 /* BlockerSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerSource.swift; sourceTree = "<group>"; };
+		A0EF119D280441E200A03017 /* ChromiumHsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromiumHsts.swift; sourceTree = "<group>"; };
 		A0F8690027D629B000C9D407 /* leaf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = leaf; sourceTree = "<group>"; };
 		A0F8690727D635D700C9D407 /* build-leaf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-leaf.sh"; sourceTree = "<group>"; };
 		A0F8690827D6372C00C9D407 /* leaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -183,6 +208,13 @@
 			files = (
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
 				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06BEC6B280090B300351868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +245,7 @@
 				A0BBF1AA27D7BA37005BBA3A /* fastlane */,
 				A05B73B224755CE600930C40 /* Orbot */,
 				A0A735CE247561F200073C81 /* TorVPN */,
+				A06BEC6F280090B300351868 /* ContentBlocker */,
 				A0A735DA2475621400073C81 /* Shared */,
 				A0F868FE27D6293E00C9D407 /* leaf-ffi-orbot */,
 				A0F8690027D629B000C9D407 /* leaf */,
@@ -230,6 +263,7 @@
 				A05B73B024755CE600930C40 /* Orbot.app */,
 				A0A735CD247561F200073C81 /* TorVPN.appex */,
 				A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */,
+				A06BEC6E280090B300351868 /* ContentBlocker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,8 +274,10 @@
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
+				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
+				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
 				A05B73C124755CE700930C40 /* Info.plist */,
@@ -249,6 +285,16 @@
 				A0A735C024755DCB00073C81 /* Orbot.entitlements */,
 			);
 			path = Orbot;
+			sourceTree = "<group>";
+		};
+		A06BEC6F280090B300351868 /* ContentBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */,
+				A06BEC74280090B300351868 /* Info.plist */,
+				A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */,
+			);
+			path = ContentBlocker;
 			sourceTree = "<group>";
 		};
 		A0A735C324755E0C00073C81 /* Build */ = {
@@ -342,6 +388,16 @@
 			path = Tunnel;
 			sourceTree = "<group>";
 		};
+		A0EF119A28043EF200A03017 /* ContentBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */,
+				A0EF119B280441C400A03017 /* BlockerSource.swift */,
+				A0EF119D280441E200A03017 /* ChromiumHsts.swift */,
+			);
+			path = ContentBlocker;
+			sourceTree = "<group>";
+		};
 		A0F868FE27D6293E00C9D407 /* leaf-ffi-orbot */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,11 +454,29 @@
 			);
 			dependencies = (
 				A0A735D4247561F200073C81 /* PBXTargetDependency */,
+				A06BEC76280090B300351868 /* PBXTargetDependency */,
 			);
 			name = Orbot;
 			productName = iCepa;
 			productReference = A05B73B024755CE600930C40 /* Orbot.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A06BEC6D280090B300351868 /* ContentBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A06BEC7A280090B300351868 /* Build configuration list for PBXNativeTarget "ContentBlocker" */;
+			buildPhases = (
+				A06BEC6A280090B300351868 /* Sources */,
+				A06BEC6B280090B300351868 /* Frameworks */,
+				A06BEC6C280090B300351868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentBlocker;
+			productName = ContentBlocker;
+			productReference = A06BEC6E280090B300351868 /* ContentBlocker.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		A0A735CC247561F200073C81 /* TorVPN */ = {
 			isa = PBXNativeTarget;
@@ -449,13 +523,16 @@
 		A05B73A824755CE600930C40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
 					A05B73AF24755CE600930C40 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
+					};
+					A06BEC6D280090B300351868 = {
+						CreatedOnToolsVersion = 13.3;
 					};
 					A0A735CC247561F200073C81 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -487,6 +564,7 @@
 			targets = (
 				A05B73AF24755CE600930C40 /* Orbot */,
 				A0A735CC247561F200073C81 /* TorVPN */,
+				A06BEC6D280090B300351868 /* ContentBlocker */,
 				A0D6162427D8E4AA008E0F3C /* Screenshots */,
 			);
 		};
@@ -502,6 +580,13 @@
 				A00F51332745456A0037DD4A /* Main.storyboard in Resources */,
 				A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */,
 				A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06BEC6C280090B300351868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +747,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
+				A0EF119C280441C400A03017 /* BlockerSource.swift in Sources */,
+				A0EF119E280441E200A03017 /* ChromiumHsts.swift in Sources */,
+				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -674,6 +762,7 @@
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
+				A0EF119928043A9200A03017 /* BaseFormViewController.swift in Sources */,
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
 				A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */,
@@ -682,6 +771,17 @@
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06BEC6A280090B300351868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */,
+				A0EF11A128045F8200A03017 /* Config.swift in Sources */,
+				A0EF11A028045F7D00A03017 /* Config.m in Sources */,
+				A0EF119F28045F6700A03017 /* FileManager+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +822,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A06BEC76280090B300351868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A06BEC6D280090B300351868 /* ContentBlocker */;
+			targetProxy = A06BEC75280090B300351868 /* PBXContainerItemProxy */;
+		};
 		A0A735D4247561F200073C81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0A735CC247561F200073C81 /* TorVPN */;
@@ -888,6 +993,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -920,6 +1026,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -941,6 +1048,62 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A06BEC78280090B300351868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONTENT_BLOCKER_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A06BEC79280090B300351868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(CONTENT_BLOCKER_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1061,6 +1224,15 @@
 			buildConfigurations = (
 				A05B73C524755CE700930C40 /* Debug */,
 				A05B73C624755CE700930C40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A06BEC7A280090B300351868 /* Build configuration list for PBXNativeTarget "ContentBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06BEC78280090B300351868 /* Debug */,
+				A06BEC79280090B300351868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,8 +8,14 @@
 
 import Foundation
 import IPtProxyUI
+import CoreMedia
 
 class Settings: IPtProxyUI.Settings {
+
+	enum BlockerSourceType: String {
+
+		case chromiumHsts = "chromium-hsts"
+	}
 
 	class override var defaults: UserDefaults? {
 		UserDefaults(suiteName: Config.groupId)
@@ -57,6 +63,15 @@ class Settings: IPtProxyUI.Settings {
 		}
 		set {
 			defaults?.set(newValue, forKey: "advanced_tor_conf")
+		}
+	}
+
+	class var blockSources: [BlockerSourceType] {
+		get {
+			defaults?.stringArray(forKey: "block_sources")?.compactMap({ BlockerSourceType(rawValue: $0) }) ?? [.chromiumHsts]
+		}
+		set {
+			defaults?.set(newValue.map({ $0.rawValue }), forKey: "block_sources")
 		}
 	}
 }
