@@ -9,134 +9,148 @@
 import UIKit
 import Eureka
 import IPtProxyUI
-import MBProgressHUD
+import SafariServices
 
-class ContentBlockerViewController: BaseFormViewController {
-
-	private var sources = [BlockerSource]()
+class ContentBlockerViewController: BaseFormViewController, BlockerViewControllerDelegate {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		sources = Settings.blockSources.compactMap { $0.blockerSource }
 
 		navigationItem.title = NSLocalizedString("Content Blocker", comment: "")
 
 		form
 		+++ LabelRow {
-			$0.value = String(
-				format: NSLocalizedString(
-					"%1$@ provides a \"Content Blocker\" extension for Safari and all other browsers in iOS:",
-					comment: ""),
-				Bundle.main.displayName) + "\n"
-			+ String(
-				format: NSLocalizedString(
-					"A list of domains to block but also to force an upgrade to HTTPS to keep you secure on the net, even when the %1$@ VPN is not running!",
-					comment: ""),
-				Bundle.main.displayName) + "\n\n"
-			+ String(
-				format: NSLocalizedString(
-					"Go to the iOS Settings App -> Safari -> Extensions and activate the %1$@ Content Blocker for this to work!",
-					comment: ""),
-				Bundle.main.displayName) + "\n\n"
-			+ String(
-				format: NSLocalizedString(
-					"Tap the \"%1$@\" button below, to generate the latest block- and upgrade-list.",
-					comment: ""),
-				NSLocalizedString("Update", comment: ""))
+			$0.value = NSLocalizedString(
+				"A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.",
+				comment: "") + "\n\n"
+			+ NSLocalizedString(
+				"Create your own rules here to e.g. block popups or third-party scripts.",
+				comment: "") + "\n\n"
+			+ NSLocalizedString(
+				"To make it work, you will need to activate the blocker:",
+				comment: "") + "\n"
+			+ NSLocalizedString("Go to iOS Settings App -> Safari -> Extensions.", comment: "")
 
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
 
-		+++ SwitchRow {
-			$0.title = NSLocalizedString("HTTPS-Upgrade from Chromium's HSTS list", comment: "")
-			$0.value = sources.contains(where: { $0 is ChromiumHsts })
+		+++ MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete]) { [weak self] in
+			$0.addButtonProvider = { _ in
+				return ButtonRow()
+			}
 
-			$0.cell.textLabel?.numberOfLines = 0
+			$0.multivaluedRowToInsertAt = { index in
+				return ButtonRow() {
+					if index >= BlockList.shared.count {
+						BlockList.shared.append(
+							BlockItem(trigger: BlockTrigger(urlFilter: ".*", resourceType: [.popup]),
+									  action: BlockAction(type: .block)))
+
+						self?.open(index)
+					}
+
+					$0.tag = String(index)
+
+					$0.cell.textLabel?.numberOfLines = 0
+
+					let font = $0.cell.textLabel?.font ?? UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+					$0.cell.textLabel?.font = UIFont(name: font.familyName, size: font.pointSize - 3)
+				}
+				.cellUpdate({ cell, row in
+					let index = Int(string: row.tag ?? "0") ?? 0
+					row.title = BlockList.shared[index].description
+
+					cell.textLabel?.textAlignment = .natural
+				})
+				.onCellSelection { cell, row in
+					let index = Int(string: row.tag ?? "0") ?? 0
+
+					self?.open(index)
+				}
+			}
+
+			for i in 0 ..< BlockList.shared.count {
+				$0 <<< $0.multivaluedRowToInsertAt!(i)
+			}
 		}
-		.onChange { [weak self] row in
-			if row.value ?? false {
-				if !Settings.blockSources.contains(where: { $0 == .chromiumHsts }) {
-					Settings.blockSources.append(.chromiumHsts)
-				}
 
-				if !(self?.sources.contains(where: { $0 is ChromiumHsts }) ?? false) {
-					self?.sources.append(ChromiumHsts())
-				}
+		SFContentBlockerManager.getStateOfContentBlocker(withIdentifier: Config.contentBlockerBundleId) { [weak self] state, error in
+			let value: String
+
+			if let error = error {
+				value = error.localizedDescription
 			}
 			else {
-				(self?.sources.first(where: { $0 is ChromiumHsts }) ?? ChromiumHsts()).remove()
-
-				self?.sources.removeAll { $0 is ChromiumHsts }
-				Settings.blockSources.removeAll { $0 == .chromiumHsts }
+				value = (state?.isEnabled ?? false)
+					? NSLocalizedString("Enabled", comment: "")
+					: NSLocalizedString("Disabled", comment: "")
 			}
 
-			self?.form.rowBy(tag: "chromium-hsts-info")?.updateCell()
+			DispatchQueue.main.async {
+				self?.form.first?.append(LabelRow("state") {
+					$0.title = NSLocalizedString("Current State", comment: "")
+					$0.value = value
+				})
+			}
+		}
+	}
+
+	func update(_ index: Int) {
+		form.last?.allRows[index].updateCell()
+
+		// Wait a little, so `BlockerViewController` has disappeared entirely.
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+			self.write()
+		}
+	}
+
+
+	// MARK: UITableViewDataSource
+
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		super.tableView(tableView, commit: editingStyle, forRowAt: indexPath)
+
+		guard indexPath.section == 1 && editingStyle == .delete else {
+			return
 		}
 
-		<<< LabelRow("chromium-hsts-info") {
-			$0.cellStyle = .subtitle
+		BlockList.shared.remove(at: indexPath.row)
+
+		write()
+	}
+
+	override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		super.tableView(tableView, moveRowAt: sourceIndexPath, to: destinationIndexPath)
+
+		guard sourceIndexPath.section == 1 && destinationIndexPath.section == 1 else {
+			return
 		}
-		.cellUpdate { [weak self] _, row in
-			row.value = String.localizedStringWithFormat(
-				NSLocalizedString("%u domain(s)", comment: ""),
-				self?.sources.first(where: { $0 is ChromiumHsts })?.count ?? 0)
+
+		let blocker = BlockList.shared.remove(at: sourceIndexPath.row)
+		BlockList.shared.insert(blocker, at: destinationIndexPath.row)
+
+		write()
+	}
+
+
+	// MARK: Private Methods
+
+	private func open(_ index: Int) {
+		DispatchQueue.main.async {
+			let vc = BlockerViewController(index: index)
+			vc.delegate = self
+
+			self.navigationController?.pushViewController(vc, animated: true)
 		}
+	}
 
-		+++ ButtonRow {
-			$0.title = NSLocalizedString("Update", comment: "")
+	private func write() {
+		do {
+			try BlockList.shared.write()
 		}
-		.onCellSelection { [weak self] _, _ in
-			let hud: MBProgressHUD?
-
-			if let view = self?.view {
-				hud = MBProgressHUD.showAdded(to: view, animated: true)
-				hud?.label.text = NSLocalizedString("Updating Block List…", comment: "")
-				hud?.removeFromSuperViewOnHide = true
-			}
-			else {
-				hud = nil
-			}
-
-			let dg = DispatchGroup()
-
-			for source in self?.sources ?? [] {
-				dg.enter()
-
-				source.update { [weak self] error in
-					if let error = error {
-						if let self = self {
-							AlertHelper.present(self, message: error.localizedDescription)
-						}
-						else {
-							print("[ContentBlockerViewController] blockerSourceType=\(type(of: source)) error=\(error)")
-						}
-
-						dg.leave()
-					}
-
-					do {
-						try source.write()
-					}
-					catch {
-						if let self = self {
-							AlertHelper.present(self, message: error.localizedDescription)
-						}
-						else {
-							print("[ContentBlockerViewController] blockerSourceType=\(type(of: source)) error=\(error)")
-						}
-					}
-
-					dg.leave()
-				}
-			}
-
-			dg.notify(queue: .main) {
-				hud?.hide(animated: true, afterDelay: 0.5)
-
-				self?.form.rowBy(tag: "chromium-hsts-info")?.updateCell()
-			}
+		catch {
+			AlertHelper.present(self, message: error.localizedDescription)
 		}
 	}
 }

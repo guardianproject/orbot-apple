@@ -14,6 +14,10 @@ extension Config {
         return __extBundleId as String
     }
 
+	class var contentBlockerBundleId: String {
+		return __contentBlockerBundleId as String
+	}
+
     class var groupId: String {
         return __groupId as String
     }

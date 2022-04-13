@@ -1,5 +1,5 @@
 //
-//  BlockerSource.swift
+//  BlockList.swift
 //  Orbot
 //
 //  Created by Benjamin Erhart on 11.04.22.
@@ -7,64 +7,30 @@
 //
 
 import Foundation
+import SafariServices
 
-enum BlockerError: Error, LocalizedError {
+class BlockList {
 
-	case noData
-	case invalidBase64
+	static let shared = BlockList()
 
-	var errorDescription: String? {
-		switch self {
-		case .noData:
-			return NSLocalizedString("No data!", comment: "")
 
-		case .invalidBase64:
-			return NSLocalizedString("Could not decode BASE64!", comment: "")
-		}
-	}
-}
-
-extension Settings.BlockerSourceType {
-
-	var blockerSource: BlockerSource {
-		switch self {
-		case .chromiumHsts:
-			return ChromiumHsts()
-		}
-	}
-}
-
-class BlockerSource {
-
-	static let encoder: JSONEncoder = {
+	private static let encoder: JSONEncoder = {
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
 
 		return encoder
 	}()
 
-	static let decoder: JSONDecoder = {
-		let decoder = JSONDecoder()
-		decoder.keyDecodingStrategy = .convertFromSnakeCase
-		decoder.allowsJSON5 = true
+	private static let decoder = JSONDecoder()
 
-		return decoder
-	}()
+	private static let url = FileManager.default.groupDir?.appendingPathComponent("blockList.json")
 
-	var blockFile: URL? {
-		return nil
-	}
 
-	var blocklist = [BlockItem]()
+	private var blocklist = [BlockItem]()
 
-	var count: Int {
-		assertionFailure("Implement in subclass!")
-
-		return 0
-	}
 
 	init() {
-		guard let url = blockFile else {
+		guard let url = Self.url else {
 			return
 		}
 
@@ -78,36 +44,86 @@ class BlockerSource {
 		}
 	}
 
-	func update(_ completion: @escaping (_ error: Error?) -> Void) {
-		assertionFailure("Implement in subclass!")
+
+	// MARK: Array proxy
+
+	var count: Int {
+		blocklist.count
 	}
+
+	subscript(index: Int) -> BlockItem {
+		get {
+			blocklist[index]
+		}
+		set {
+			blocklist[index] = newValue
+		}
+	}
+
+	func append(_ newElement: BlockItem) {
+		blocklist.append(newElement)
+	}
+
+	@discardableResult
+	func remove(at index: Int) -> BlockItem {
+		return blocklist.remove(at: index)
+	}
+
+	func insert(_ newElement: BlockItem, at index: Int) {
+		blocklist.insert(newElement, at: index)
+	}
+
+
+	// MARK: File Operations
 
 	func write() throws {
-		guard let url = blockFile else {
+		guard let url = Self.url else {
 			return
 		}
 
-		let data = try Self.encoder.encode(blocklist)
+		if blocklist.isEmpty {
+			try FileManager.default.removeItem(at: url)
+		}
+		else {
+			let data = try Self.encoder.encode(blocklist)
 
-		try data.write(to: url, options: .atomic)
-
-		print(url)
-	}
-
-	func remove() {
-		guard let url = blockFile else {
-			return
+			try data.write(to: url, options: .atomic)
 		}
 
-		try? FileManager.default.removeItem(at: url)
+		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Config.contentBlockerBundleId) { error in
+			print("[\(String(describing: type(of: self)))]#write reload bundleId=\(Config.contentBlockerBundleId), error=\(String(describing: error))")
+		}
+
+		print("[\(String(describing: type(of: self)))]#write path=\(url.path)")
 	}
 }
 
-struct BlockItem: Codable {
+struct BlockItem: Codable, CustomStringConvertible {
 
 	var trigger: BlockTrigger
 
 	var action: BlockAction
+
+	var description: String {
+		let regexDesc = trigger.urlFilter.isEmpty || trigger.urlFilter == ".*"
+			? ""
+			: String(format: NSLocalizedString(" where the URL contains the regex \"%@\"", comment: ""), trigger.urlFilter)
+
+		return String(
+			format: NSLocalizedString("Block %1$@ requests for %2$@ on %3$@%4$@.", comment: ""),
+			(trigger.loadType?.first ?? .all).description,
+			description(for: trigger.resourceType, NSLocalizedString("all types", comment: "")),
+			description(for: trigger.ifDomain, NSLocalizedString("all domains", comment: "")),
+			regexDesc)
+	}
+
+	private func description<T: CustomStringConvertible>(for array: [T]?, _ empty: String) -> String {
+		guard let array = array, !array.isEmpty else {
+			return empty
+		}
+
+		return array.map { $0.description }.joined(separator: ", ")
+	}
 }
 
 /**
@@ -128,7 +144,7 @@ struct BlockItem: Codable {
  */
 struct BlockTrigger: Codable {
 
-	enum ResourceType: String, Codable {
+	enum ResourceType: String, Codable, CaseIterable, CustomStringConvertible {
 
 		case document = "document"
 
@@ -161,9 +177,53 @@ struct BlockTrigger: Codable {
 		 Like `raw`, but doesn’t include fetch or websocket
 		 */
 		case other = "other"
+
+		var description: String {
+			switch self {
+			case .document:
+				return NSLocalizedString("Documents", comment: "")
+
+			case .image:
+				return NSLocalizedString("Images", comment: "")
+
+			case .styleSheet:
+				return NSLocalizedString("Style Sheets", comment: "")
+
+			case .script:
+				return NSLocalizedString("Scripts", comment: "")
+
+			case .font:
+				return NSLocalizedString("Fonts", comment: "")
+
+			case .raw:
+				return NSLocalizedString("Raw Data", comment: "")
+
+			case .svgDocument:
+				return NSLocalizedString("SVG Documents", comment: "")
+
+			case .media:
+				return NSLocalizedString("Audio/Video Media", comment: "")
+
+			case .popup:
+				return NSLocalizedString("Popups", comment: "")
+
+			case .ping:
+				return NSLocalizedString("Pings", comment: "")
+
+			case .fetch:
+				return NSLocalizedString("Fetches", comment: "")
+
+			case .websocket:
+				return NSLocalizedString("WebSockets", comment: "")
+
+			case .other:
+				return NSLocalizedString("Other", comment: "")
+			}
+		}
+
 	}
 
-	enum LoadType: String, Codable {
+	enum LoadType: String, Codable, CaseIterable, CustomStringConvertible {
 
 		/**
 		 Is triggered only if the resource has the same scheme, domain, and port as the main page resource.
@@ -174,6 +234,24 @@ struct BlockTrigger: Codable {
 		 Is triggered if the resource isn’t from the same domain as the main page resource.
 		 */
 		case thirdParty = "third-party"
+
+		/**
+		 Don't use that as a value, in `BlockTrigger#loadType`, instead use `nil` there in this case!
+		 */
+		case all = ""
+
+		var description: String {
+			switch self {
+			case .firstParty:
+				return NSLocalizedString("First Party", comment: "")
+
+			case .thirdParty:
+				return NSLocalizedString("Third Party", comment: "")
+
+			case .all:
+				return NSLocalizedString("All", comment: "")
+			}
+		}
 	}
 
 	enum LoadContext: String, Codable {
@@ -246,7 +324,13 @@ struct BlockTrigger: Codable {
 
 	 If not specified, the rule matches all load types.
 	 */
-	var loadType: [LoadType]?
+	var loadType: [LoadType]? {
+		didSet {
+			if loadType?.contains(.all) ?? false {
+				loadType = nil
+			}
+		}
+	}
 
 	/**
 	 An array of strings matched to the entire main document URL; limits the action to a specific list of URL patterns.

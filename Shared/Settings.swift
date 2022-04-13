@@ -65,13 +65,4 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "advanced_tor_conf")
 		}
 	}
-
-	class var blockSources: [BlockerSourceType] {
-		get {
-			defaults?.stringArray(forKey: "block_sources")?.compactMap({ BlockerSourceType(rawValue: $0) }) ?? [.chromiumHsts]
-		}
-		set {
-			defaults?.set(newValue.map({ $0.rawValue }), forKey: "block_sources")
-		}
-	}
 }

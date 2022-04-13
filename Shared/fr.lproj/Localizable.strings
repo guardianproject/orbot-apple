@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+" where the URL contains the regex \"%@\"" = " where the URL contains the regex \"%@\"";
+
+/* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ codes de pays à deux lettres entre accolades, p. ex. « %2$@ »";
 
 /* No comment provided by engineer. */
@@ -17,6 +20,9 @@
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
 /* No comment provided by engineer. */
+"A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
+
+/* No comment provided by engineer. */
 "Add" = "Ajouter";
 
 /* No comment provided by engineer. */
@@ -26,10 +32,34 @@
 "Advanced Tor Configuration" = "Configuration avancée de Tor";
 
 /* No comment provided by engineer. */
+"All" = "All";
+
+/* No comment provided by engineer. */
+"all domains" = "all domains";
+
+/* No comment provided by engineer. */
+"all types" = "all types";
+
+/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Ne pas non plus utiliser de nœuds exclus pour la gestion du réseau";
 
 /* No comment provided by engineer. */
+"anything" = "anything";
+
+/* No comment provided by engineer. */
+"Audio/Video Media" = "Audio/Video Media";
+
+/* No comment provided by engineer. */
 "Auth Cookies" = "Témoins d’authentification";
+
+/* No comment provided by engineer. */
+"Block" = "Block";
+
+/* No comment provided by engineer. */
+"Block %1$@ requests for %2$@ on %3$@%4$@." = "Block %1$@ requests for %2$@ on %3$@%4$@.";
+
+/* No comment provided by engineer. */
+"Blocker" = "Blocker";
 
 /* No comment provided by engineer. */
 "Build new Circuits" = "Build new Circuits";
@@ -47,13 +77,25 @@
 "connecting" = "connexion";
 
 /* No comment provided by engineer. */
+"Content Blocker" = "Content Blocker";
+
+/* No comment provided by engineer. */
 "Could not connect." = "Impossible de se connecter.";
+
+/* No comment provided by engineer. */
+"Create your own rules here to e.g. block popups or third-party scripts." = "Create your own rules here to e.g. block popups or third-party scripts.";
+
+/* No comment provided by engineer. */
+"Current State" = "Current State";
 
 /* No comment provided by engineer. */
 "Delete" = "Supprimer";
 
 /* No comment provided by engineer. */
 "disabled" = "désactivé";
+
+/* No comment provided by engineer. */
+"Disabled" = "Disabled";
 
 /* No comment provided by engineer. */
 "disconnected" = "déconnecté";
@@ -65,6 +107,9 @@
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Ne pas utiliser ces nœuds. Remplace la liste des nœuds d’entrée et de sortie. Peut quand même être utilisé à des fins de gestion.";
 
 /* No comment provided by engineer. */
+"Documents" = "Documents";
+
+/* No comment provided by engineer. */
 "Edit" = "Modifier";
 
 /* No comment provided by engineer. */
@@ -74,6 +119,9 @@
 "enabled" = "activé";
 
 /* No comment provided by engineer. */
+"Enabled" = "Enabled";
+
+/* No comment provided by engineer. */
 "Entry Nodes" = "Nœuds d’entrée";
 
 /* No comment provided by engineer. */
@@ -81,6 +129,21 @@
 
 /* No comment provided by engineer. */
 "Exit Nodes" = "Nœuds de sortie";
+
+/* No comment provided by engineer. */
+"Fetches" = "Fetches";
+
+/* No comment provided by engineer. */
+"First Party" = "First Party";
+
+/* No comment provided by engineer. */
+"Fonts" = "Fonts";
+
+/* No comment provided by engineer. */
+"Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
+
+/* No comment provided by engineer. */
+"Images" = "Images";
 
 /* No comment provided by engineer. */
 "Install" = "Installer";
@@ -104,6 +167,9 @@
 "not installed" = "non installé";
 
 /* No comment provided by engineer. */
+"on" = "on";
+
+/* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "N’utiliser ces nœuds qu’en tant que premier saut. Ignoré si un pont est utilisé.";
 
 /* No comment provided by engineer. */
@@ -113,10 +179,34 @@
 "Open or Close Log" = "Ouvrir ou fermer le journal";
 
 /* No comment provided by engineer. */
+"Other" = "Other";
+
+/* No comment provided by engineer. */
+"Pings" = "Pings";
+
+/* No comment provided by engineer. */
+"Popups" = "Popups";
+
+/* No comment provided by engineer. */
+"Prefix with asterisk (*) to also capture subdomains." = "Prefix with asterisk (*) to also capture subdomains.";
+
+/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Le code QR n’a pas pu être décodé. Êtes-vous certain d’avoir balayé une URL .onion ?";
 
 /* No comment provided by engineer. */
+"Raw Data" = "Raw Data";
+
+/* No comment provided by engineer. */
 "reasserting" = "réaffirmation";
+
+/* No comment provided by engineer. */
+"requests for" = "requests for";
+
+/* No comment provided by engineer. */
+"Scripts" = "Scripts";
+
+/* No comment provided by engineer. */
+"selected domains" = "selected domains";
 
 /* No comment provided by engineer. */
 "Settings" = "Paramètres";
@@ -131,6 +221,21 @@
 "Stop" = "Arrêter";
 
 /* No comment provided by engineer. */
+"Style Sheets" = "Style Sheets";
+
+/* No comment provided by engineer. */
+"SVG Documents" = "SVG Documents";
+
+/* No comment provided by engineer. */
+"Third Party" = "Third Party";
+
+/* No comment provided by engineer. */
+"this regex:" = "this regex:";
+
+/* No comment provided by engineer. */
+"To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
@@ -138,3 +243,9 @@
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, mouture %2$@";
+
+/* No comment provided by engineer. */
+"WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"where the URL contains" = "where the URL contains";

@@ -31,6 +31,8 @@
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
+		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
+		A08C8FF22805FB130065B98D /* TextRow+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* TextRow+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -58,10 +60,10 @@
 		A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
 		A0EF119928043A9200A03017 /* BaseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119828043A9200A03017 /* BaseFormViewController.swift */; };
-		A0EF119C280441C400A03017 /* BlockerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119B280441C400A03017 /* BlockerSource.swift */; };
-		A0EF119E280441E200A03017 /* ChromiumHsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119D280441E200A03017 /* ChromiumHsts.swift */; };
+		A0EF119C280441C400A03017 /* BlockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119B280441C400A03017 /* BlockList.swift */; };
 		A0EF119F28045F6700A03017 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A0EF11A028045F7D00A03017 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
@@ -150,6 +152,8 @@
 		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
+		A08C8FF12805FB130065B98D /* TextRow+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextRow+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A08CA2C927DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A08CA2CA27DB6CFE00F23100 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -188,10 +192,10 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
 		A0EF119828043A9200A03017 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
-		A0EF119B280441C400A03017 /* BlockerSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerSource.swift; sourceTree = "<group>"; };
-		A0EF119D280441E200A03017 /* ChromiumHsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromiumHsts.swift; sourceTree = "<group>"; };
+		A0EF119B280441C400A03017 /* BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockList.swift; sourceTree = "<group>"; };
 		A0F8690027D629B000C9D407 /* leaf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = leaf; sourceTree = "<group>"; };
 		A0F8690727D635D700C9D407 /* build-leaf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-leaf.sh"; sourceTree = "<group>"; };
 		A0F8690827D6372C00C9D407 /* leaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */,
+				A0E5F7622806ECEB00B86AF6 /* noop.json */,
 				A06BEC74280090B300351868 /* Info.plist */,
 				A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */,
 			);
@@ -362,6 +367,7 @@
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
+				A08C8FF12805FB130065B98D /* TextRow+Helpers.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
@@ -392,8 +398,8 @@
 			isa = PBXGroup;
 			children = (
 				A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */,
-				A0EF119B280441C400A03017 /* BlockerSource.swift */,
-				A0EF119D280441E200A03017 /* ChromiumHsts.swift */,
+				A08C8FEF2805D7220065B98D /* BlockerViewController.swift */,
+				A0EF119B280441C400A03017 /* BlockList.swift */,
 			);
 			path = ContentBlocker;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,13 +754,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
-				A0EF119C280441C400A03017 /* BlockerSource.swift in Sources */,
-				A0EF119E280441E200A03017 /* ChromiumHsts.swift in Sources */,
+				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
+				A08C8FF22805FB130065B98D /* TextRow+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
@@ -771,6 +778,7 @@
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,7 +1073,7 @@
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1093,7 +1101,7 @@
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

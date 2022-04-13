@@ -1,0 +1,10 @@
+[
+	{
+		"trigger": {
+			"url-filter": "example.com"
+		},
+		"action": {
+			"type": "ignore-previous-rules"
+		}
+	}
+]

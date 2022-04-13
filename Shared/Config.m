@@ -18,6 +18,10 @@
     return MACRO_STRING(EXT_BUNDLE_ID);
 }
 
++ (NSString *) contentBlockerBundleId {
+	return MACRO_STRING(CONTENT_BLOCKER_BUNDLE_ID);
+}
+
 + (NSString *) groupId {
     return MACRO_STRING(APP_GROUP);
 }

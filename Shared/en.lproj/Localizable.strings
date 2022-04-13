@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+" where the URL contains the regex \"%@\"" = " where the URL contains the regex \"%@\"";
+
+/* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"";
 
 /* No comment provided by engineer. */
@@ -17,6 +20,9 @@
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
 /* No comment provided by engineer. */
+"A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
+
+/* No comment provided by engineer. */
 "Add" = "Add";
 
 /* No comment provided by engineer. */
@@ -26,10 +32,34 @@
 "Advanced Tor Configuration" = "Advanced Tor Configuration";
 
 /* No comment provided by engineer. */
+"All" = "All";
+
+/* No comment provided by engineer. */
+"all domains" = "all domains";
+
+/* No comment provided by engineer. */
+"all types" = "all types";
+
+/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
 
 /* No comment provided by engineer. */
+"anything" = "anything";
+
+/* No comment provided by engineer. */
+"Audio/Video Media" = "Audio/Video Media";
+
+/* No comment provided by engineer. */
 "Auth Cookies" = "Auth Cookies";
+
+/* No comment provided by engineer. */
+"Block" = "Block";
+
+/* No comment provided by engineer. */
+"Block %1$@ requests for %2$@ on %3$@%4$@." = "Block %1$@ requests for %2$@ on %3$@%4$@.";
+
+/* No comment provided by engineer. */
+"Blocker" = "Blocker";
 
 /* No comment provided by engineer. */
 "Build new Circuits" = "Build new Circuits";
@@ -47,13 +77,25 @@
 "connecting" = "connecting";
 
 /* No comment provided by engineer. */
+"Content Blocker" = "Content Blocker";
+
+/* No comment provided by engineer. */
 "Could not connect." = "Could not connect.";
+
+/* No comment provided by engineer. */
+"Create your own rules here to e.g. block popups or third-party scripts." = "Create your own rules here to e.g. block popups or third-party scripts.";
+
+/* No comment provided by engineer. */
+"Current State" = "Current State";
 
 /* No comment provided by engineer. */
 "Delete" = "Delete";
 
 /* No comment provided by engineer. */
 "disabled" = "disabled";
+
+/* No comment provided by engineer. */
+"Disabled" = "Disabled";
 
 /* No comment provided by engineer. */
 "disconnected" = "disconnected";
@@ -65,6 +107,9 @@
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
 
 /* No comment provided by engineer. */
+"Documents" = "Documents";
+
+/* No comment provided by engineer. */
 "Edit" = "Edit";
 
 /* No comment provided by engineer. */
@@ -74,6 +119,9 @@
 "enabled" = "enabled";
 
 /* No comment provided by engineer. */
+"Enabled" = "Enabled";
+
+/* No comment provided by engineer. */
 "Entry Nodes" = "Entry Nodes";
 
 /* No comment provided by engineer. */
@@ -81,6 +129,21 @@
 
 /* No comment provided by engineer. */
 "Exit Nodes" = "Exit Nodes";
+
+/* No comment provided by engineer. */
+"Fetches" = "Fetches";
+
+/* No comment provided by engineer. */
+"First Party" = "First Party";
+
+/* No comment provided by engineer. */
+"Fonts" = "Fonts";
+
+/* No comment provided by engineer. */
+"Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
+
+/* No comment provided by engineer. */
+"Images" = "Images";
 
 /* No comment provided by engineer. */
 "Install" = "Install";
@@ -104,6 +167,9 @@
 "not installed" = "not installed";
 
 /* No comment provided by engineer. */
+"on" = "on";
+
+/* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "Only use these nodes as first hop. Ignored, when bridging is used.";
 
 /* No comment provided by engineer. */
@@ -113,10 +179,34 @@
 "Open or Close Log" = "Open or Close Log";
 
 /* No comment provided by engineer. */
+"Other" = "Other";
+
+/* No comment provided by engineer. */
+"Pings" = "Pings";
+
+/* No comment provided by engineer. */
+"Popups" = "Popups";
+
+/* No comment provided by engineer. */
+"Prefix with asterisk (*) to also capture subdomains." = "Prefix with asterisk (*) to also capture subdomains.";
+
+/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";
 
 /* No comment provided by engineer. */
+"Raw Data" = "Raw Data";
+
+/* No comment provided by engineer. */
 "reasserting" = "reasserting";
+
+/* No comment provided by engineer. */
+"requests for" = "requests for";
+
+/* No comment provided by engineer. */
+"Scripts" = "Scripts";
+
+/* No comment provided by engineer. */
+"selected domains" = "selected domains";
 
 /* No comment provided by engineer. */
 "Settings" = "Settings";
@@ -131,6 +221,21 @@
 "Stop" = "Stop";
 
 /* No comment provided by engineer. */
+"Style Sheets" = "Style Sheets";
+
+/* No comment provided by engineer. */
+"SVG Documents" = "SVG Documents";
+
+/* No comment provided by engineer. */
+"Third Party" = "Third Party";
+
+/* No comment provided by engineer. */
+"this regex:" = "this regex:";
+
+/* No comment provided by engineer. */
+"To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
@@ -138,3 +243,9 @@
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
+"WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"where the URL contains" = "where the URL contains";

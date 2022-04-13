@@ -107,11 +107,10 @@ class SettingsViewController: BaseFormViewController {
 				return ButtonRow()
 			}
 
-			$0.multivaluedRowToInsertAt = { [weak self] index in
+			$0.multivaluedRowToInsertAt = { index in
 				return TextRow() {
 					$0.tag = String(index)
-
-					self?.turnOffAutoCorrect($0.cell.textField)
+					$0.turnOffAutoCorrect()
 				}
 			}
 
@@ -128,29 +127,18 @@ class SettingsViewController: BaseFormViewController {
 				$0 <<< TextRow() {
 					$0.tag = "0"
 
-					turnOffAutoCorrect($0.cell.textField)
+					$0.turnOffAutoCorrect()
 
 					$0.placeholder = "--ReachableAddresses"
 					}
 					<<< TextRow() {
 						$0.tag = "1"
 
-						turnOffAutoCorrect($0.cell.textField)
+						$0.turnOffAutoCorrect()
 
 						$0.placeholder = "99.0.0.0/8, reject 18.0.0.0/8, accept *:80"
 				}
 			}
 		}
 	}
-
-
-	// MARK: Private Methods
-
-	 private func turnOffAutoCorrect(_ textField: UITextField) {
-		 textField.autocorrectionType = .no
-		 textField.autocapitalizationType = .none
-		 textField.smartDashesType = .no
-		 textField.smartQuotesType = .no
-		 textField.smartInsertDeleteType = .no
-	 }
 }

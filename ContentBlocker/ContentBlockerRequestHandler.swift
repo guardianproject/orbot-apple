@@ -11,15 +11,39 @@ import MobileCoreServices
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
 
-    func beginRequest(with context: NSExtensionContext) {
-		let urls = try! FileManager.default.contentsOfDirectory(at: FileManager.default.groupDir!, includingPropertiesForKeys: nil)
+	enum Errors: Error {
+		case groupDirUnavailable
+		case noopProviderCouldNotBeConstructed
+	}
+
+	func beginRequest(with context: NSExtensionContext) {
+		guard let dir = FileManager.default.groupDir else {
+			return context.cancelRequest(withError: Errors.groupDirUnavailable)
+		}
+
+		let urls: [URL]
+
+		do {
+			urls = try FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil)
+		}
+		catch {
+			return context.cancelRequest(withError: error)
+		}
 
 		let item = NSExtensionItem()
 		item.attachments = urls
 			.filter { $0.pathExtension == "json" }
 			.compactMap { NSItemProvider(contentsOf: $0) }
 
-        context.completeRequest(returningItems: [item], completionHandler: nil)
-    }
-    
+		// We need a non-empty list of instructions, otherwise a reload will end with an error.
+		if item.attachments?.isEmpty ?? true {
+			guard let provider = NSItemProvider(contentsOf: Bundle.main.url(forResource: "noop", withExtension: "json")) else {
+				return context.cancelRequest(withError: Errors.noopProviderCouldNotBeConstructed)
+			}
+
+			item.attachments = [provider]
+		}
+
+		context.completeRequest(returningItems: [item])
+	}
 }

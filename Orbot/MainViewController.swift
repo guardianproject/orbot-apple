@@ -317,7 +317,6 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBAction func showContentBlocker() {
 		present(inNav: ContentBlockerViewController(), button: settingsBt)
-
 	}
 
 
