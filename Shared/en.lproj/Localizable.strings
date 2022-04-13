@@ -110,9 +110,6 @@
 "disabled" = "disabled";
 
 /* No comment provided by engineer. */
-"Disabled" = "Disabled";
-
-/* No comment provided by engineer. */
 "disconnected" = "disconnected";
 
 /* No comment provided by engineer. */
@@ -132,9 +129,6 @@
 
 /* No comment provided by engineer. */
 "enabled" = "enabled";
-
-/* No comment provided by engineer. */
-"Enabled" = "Enabled";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Entry Nodes";

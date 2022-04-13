@@ -113,9 +113,6 @@
 "disabled" = "вимкнено";
 
 /* No comment provided by engineer. */
-"Disabled" = "Disabled";
-
-/* No comment provided by engineer. */
 "disconnected" = "від'єднано";
 
 /* No comment provided by engineer. */
@@ -135,9 +132,6 @@
 
 /* No comment provided by engineer. */
 "enabled" = "увімкнено";
-
-/* No comment provided by engineer. */
-"Enabled" = "Enabled";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Вхідні вузли";

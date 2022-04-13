@@ -83,8 +83,8 @@ class ContentBlockerViewController: BaseFormViewController, BlockerViewControlle
 			}
 			else {
 				value = (state?.isEnabled ?? false)
-					? NSLocalizedString("Enabled", comment: "")
-					: NSLocalizedString("Disabled", comment: "")
+					? NSLocalizedString("enabled", comment: "")
+					: NSLocalizedString("disabled", comment: "")
 			}
 
 			DispatchQueue.main.async {

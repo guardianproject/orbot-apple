@@ -110,9 +110,6 @@
 "disabled" = "deaktiviert";
 
 /* No comment provided by engineer. */
-"Disabled" = "Deaktiviert";
-
-/* No comment provided by engineer. */
 "disconnected" = "getrennt";
 
 /* No comment provided by engineer. */
@@ -132,9 +129,6 @@
 
 /* No comment provided by engineer. */
 "enabled" = "aktiviert";
-
-/* No comment provided by engineer. */
-"Enabled" = "Aktiviert";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Eingangs-Netzknoten";
