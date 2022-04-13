@@ -18,3 +18,14 @@ extension TextRow {
 		cell.textField.smartInsertDeleteType = .no
 	}
 }
+
+extension TextAreaRow {
+
+	func turnOffAutoCorrect() {
+		cell.textView.autocorrectionType = .no
+		cell.textView.autocapitalizationType = .none
+		cell.textView.smartDashesType = .no
+		cell.textView.smartQuotesType = .no
+		cell.textView.smartInsertDeleteType = .no
+	}
+}

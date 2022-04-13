@@ -137,6 +137,8 @@ class BlockerViewController: BaseFormViewController {
 			$0.placeholder = "example.com example.org *example.gov"
 			$0.value = blocker.trigger.ifDomain?.joined(separator: " ")
 
+			$0.turnOffAutoCorrect()
+
 			$0.hidden = hiddenWhenAllDomains
 		}
 		.onChange({ [weak self] row in
