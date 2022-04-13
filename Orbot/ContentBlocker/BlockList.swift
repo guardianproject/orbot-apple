@@ -110,7 +110,8 @@ struct BlockItem: Codable, CustomStringConvertible {
 			: String(format: NSLocalizedString(" where the URL contains the regex \"%@\"", comment: ""), trigger.urlFilter)
 
 		return String(
-			format: NSLocalizedString("Block %1$@ requests for %2$@ on %3$@%4$@.", comment: ""),
+			format: NSLocalizedString("%1$@ by %2$@ for %3$@ on %4$@%5$@.", comment: ""),
+			action.type.description,
 			(trigger.loadType?.first ?? .all).description,
 			description(for: trigger.resourceType, NSLocalizedString("all types", comment: "")),
 			description(for: trigger.ifDomain, NSLocalizedString("all domains", comment: "")),
@@ -181,43 +182,43 @@ struct BlockTrigger: Codable {
 		var description: String {
 			switch self {
 			case .document:
-				return NSLocalizedString("Documents", comment: "")
+				return NSLocalizedString("documents", comment: "")
 
 			case .image:
-				return NSLocalizedString("Images", comment: "")
+				return NSLocalizedString("images", comment: "")
 
 			case .styleSheet:
-				return NSLocalizedString("Style Sheets", comment: "")
+				return NSLocalizedString("style sheets", comment: "")
 
 			case .script:
-				return NSLocalizedString("Scripts", comment: "")
+				return NSLocalizedString("scripts", comment: "")
 
 			case .font:
-				return NSLocalizedString("Fonts", comment: "")
+				return NSLocalizedString("fonts", comment: "")
 
 			case .raw:
-				return NSLocalizedString("Raw Data", comment: "")
+				return NSLocalizedString("raw data", comment: "")
 
 			case .svgDocument:
-				return NSLocalizedString("SVG Documents", comment: "")
+				return NSLocalizedString("SVG documents", comment: "")
 
 			case .media:
-				return NSLocalizedString("Audio/Video Media", comment: "")
+				return NSLocalizedString("audio/video media", comment: "")
 
 			case .popup:
-				return NSLocalizedString("Popups", comment: "")
+				return NSLocalizedString("popups", comment: "")
 
 			case .ping:
-				return NSLocalizedString("Pings", comment: "")
+				return NSLocalizedString("pings", comment: "")
 
 			case .fetch:
-				return NSLocalizedString("Fetches", comment: "")
+				return NSLocalizedString("fetches", comment: "")
 
 			case .websocket:
 				return NSLocalizedString("WebSockets", comment: "")
 
 			case .other:
-				return NSLocalizedString("Other", comment: "")
+				return NSLocalizedString("other", comment: "")
 			}
 		}
 
@@ -243,13 +244,13 @@ struct BlockTrigger: Codable {
 		var description: String {
 			switch self {
 			case .firstParty:
-				return NSLocalizedString("First Party", comment: "")
+				return NSLocalizedString("the website", comment: "")
 
 			case .thirdParty:
-				return NSLocalizedString("Third Party", comment: "")
+				return NSLocalizedString("third parties", comment: "")
 
 			case .all:
-				return NSLocalizedString("All", comment: "")
+				return NSLocalizedString("all", comment: "")
 			}
 		}
 	}
@@ -377,7 +378,7 @@ struct BlockTrigger: Codable {
  */
 struct BlockAction: Codable {
 
-	enum BlockType: String, Codable {
+	enum BlockType: String, Codable, CaseIterable, CustomStringConvertible {
 
 		/**
 		 Stops loading of the resource. If the resource was cached, ignores the cache.
@@ -407,6 +408,19 @@ struct BlockAction: Codable {
 		 Changes a URL from http to https. URLs with a specified (nondefault) port and links using other protocols are unaffected.
 		 */
 		case makeHttps = "make-https"
+
+		var description: String {
+			switch self {
+			case .block:
+				return NSLocalizedString("Block requests", comment: "")
+
+			case .blockCookies:
+				return NSLocalizedString("Block cookies", comment: "")
+
+			default:
+				return rawValue
+			}
+		}
 	}
 
 	var type: BlockType

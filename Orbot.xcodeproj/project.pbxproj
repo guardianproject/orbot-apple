@@ -61,6 +61,7 @@
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
+		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
 		A0EF119928043A9200A03017 /* BaseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119828043A9200A03017 /* BaseFormViewController.swift */; };
 		A0EF119C280441C400A03017 /* BlockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF119B280441C400A03017 /* BlockList.swift */; };
@@ -193,6 +194,7 @@
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
 		A0EF119828043A9200A03017 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
 		A0EF119B280441C400A03017 /* BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockList.swift; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
+				A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */,
 				A08C8FF12805FB130065B98D /* TextRow+Helpers.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
@@ -776,6 +779,7 @@
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
 				A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,

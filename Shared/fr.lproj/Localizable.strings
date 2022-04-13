@@ -5,6 +5,9 @@
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ codes de pays à deux lettres entre accolades, p. ex. « %2$@ »";
 
 /* No comment provided by engineer. */
+"%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ by %2$@ for %3$@ on %4$@%5$@.";
+
+/* No comment provided by engineer. */
 "%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ modèles d’adresse IP, p. ex. « %2$@ »";
 
 /* No comment provided by engineer. */
@@ -20,6 +23,21 @@
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
 /* No comment provided by engineer. */
+"__BLOCKER_HEADER_1__" = "__BLOCKER_HEADER_1__";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_2__" = "__BLOCKER_HEADER_2__";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_3__" = "__BLOCKER_HEADER_3__";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_4__" = "__BLOCKER_HEADER_4__";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_5__" = "__BLOCKER_HEADER_5__";
+
+/* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
 
 /* No comment provided by engineer. */
@@ -32,7 +50,7 @@
 "Advanced Tor Configuration" = "Configuration avancée de Tor";
 
 /* No comment provided by engineer. */
-"All" = "All";
+"all" = "all";
 
 /* No comment provided by engineer. */
 "all domains" = "all domains";
@@ -47,16 +65,16 @@
 "anything" = "anything";
 
 /* No comment provided by engineer. */
-"Audio/Video Media" = "Audio/Video Media";
+"audio/video media" = "audio/video media";
 
 /* No comment provided by engineer. */
 "Auth Cookies" = "Témoins d’authentification";
 
 /* No comment provided by engineer. */
-"Block" = "Block";
+"Block cookies" = "Block cookies";
 
 /* No comment provided by engineer. */
-"Block %1$@ requests for %2$@ on %3$@%4$@." = "Block %1$@ requests for %2$@ on %3$@%4$@.";
+"Block requests" = "Block requests";
 
 /* No comment provided by engineer. */
 "Blocker" = "Blocker";
@@ -107,7 +125,7 @@
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Ne pas utiliser ces nœuds. Remplace la liste des nœuds d’entrée et de sortie. Peut quand même être utilisé à des fins de gestion.";
 
 /* No comment provided by engineer. */
-"Documents" = "Documents";
+"documents" = "documents";
 
 /* No comment provided by engineer. */
 "Edit" = "Modifier";
@@ -131,19 +149,16 @@
 "Exit Nodes" = "Nœuds de sortie";
 
 /* No comment provided by engineer. */
-"Fetches" = "Fetches";
+"fetches" = "fetches";
 
 /* No comment provided by engineer. */
-"First Party" = "First Party";
-
-/* No comment provided by engineer. */
-"Fonts" = "Fonts";
+"fonts" = "fonts";
 
 /* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
 
 /* No comment provided by engineer. */
-"Images" = "Images";
+"images" = "images";
 
 /* No comment provided by engineer. */
 "Install" = "Installer";
@@ -167,9 +182,6 @@
 "not installed" = "non installé";
 
 /* No comment provided by engineer. */
-"on" = "on";
-
-/* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "N’utiliser ces nœuds qu’en tant que premier saut. Ignoré si un pont est utilisé.";
 
 /* No comment provided by engineer. */
@@ -179,13 +191,13 @@
 "Open or Close Log" = "Ouvrir ou fermer le journal";
 
 /* No comment provided by engineer. */
-"Other" = "Other";
+"other" = "other";
 
 /* No comment provided by engineer. */
-"Pings" = "Pings";
+"pings" = "pings";
 
 /* No comment provided by engineer. */
-"Popups" = "Popups";
+"popups" = "popups";
 
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Prefix with asterisk (*) to also capture subdomains.";
@@ -194,16 +206,13 @@
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Le code QR n’a pas pu être décodé. Êtes-vous certain d’avoir balayé une URL .onion ?";
 
 /* No comment provided by engineer. */
-"Raw Data" = "Raw Data";
+"raw data" = "raw data";
 
 /* No comment provided by engineer. */
 "reasserting" = "réaffirmation";
 
 /* No comment provided by engineer. */
-"requests for" = "requests for";
-
-/* No comment provided by engineer. */
-"Scripts" = "Scripts";
+"scripts" = "scripts";
 
 /* No comment provided by engineer. */
 "selected domains" = "selected domains";
@@ -221,13 +230,16 @@
 "Stop" = "Arrêter";
 
 /* No comment provided by engineer. */
-"Style Sheets" = "Style Sheets";
+"style sheets" = "style sheets";
 
 /* No comment provided by engineer. */
-"SVG Documents" = "SVG Documents";
+"SVG documents" = "SVG documents";
 
 /* No comment provided by engineer. */
-"Third Party" = "Third Party";
+"the website" = "the website";
+
+/* No comment provided by engineer. */
+"third parties" = "third parties";
 
 /* No comment provided by engineer. */
 "this regex:" = "this regex:";
@@ -246,6 +258,3 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
-
-/* No comment provided by engineer. */
-"where the URL contains" = "where the URL contains";

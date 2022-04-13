@@ -61,8 +61,16 @@ class BlockerViewController: BaseFormViewController {
 		navigationItem.title = NSLocalizedString("Blocker", comment: "")
 
 		form
-		+++ Section(NSLocalizedString("Block", comment: ""))
+		+++ Section(NSLocalizedString("__BLOCKER_HEADER_1__", comment: "").nilOnEmpty)
+		<<< SegmentedRow<BlockAction.BlockType>() {
+			$0.options = [.block, .blockCookies]
+			$0.value = blocker.action.type
+		}
+		.onChange({ [weak self] row in
+			self?.blocker.action.type = row.value ?? .block
+		})
 
+		+++ Section(NSLocalizedString("__BLOCKER_HEADER_2__", comment: "").nilOnEmpty)
 		<<< SegmentedRow<BlockTrigger.LoadType>() {
 			$0.options = BlockTrigger.LoadType.allCases
 			$0.value = blocker.trigger.loadType?.first ?? .all
@@ -81,7 +89,9 @@ class BlockerViewController: BaseFormViewController {
 			self?.blocker.trigger.loadType = value
 		})
 
-		+++ SelectableSection<ListCheckRow<BlockTrigger.ResourceType>>(NSLocalizedString("requests for", comment: ""), selectionType: .multipleSelection)
+		+++ SelectableSection<ListCheckRow<BlockTrigger.ResourceType>>(
+			NSLocalizedString("__BLOCKER_HEADER_3__", comment: "").nilOnEmpty,
+			selectionType: .multipleSelection)
 
 		for type in BlockTrigger.ResourceType.allCases {
 			form.last! <<< ListCheckRow<BlockTrigger.ResourceType>(type.rawValue) { row in
@@ -105,7 +115,7 @@ class BlockerViewController: BaseFormViewController {
 		}
 
 		form
-		+++ Section(NSLocalizedString("on", comment: ""))
+		+++ Section(NSLocalizedString("__BLOCKER_HEADER_4__", comment: "").nilOnEmpty)
 
 		<<< SwitchRow("allDomains") {
 			$0.title = NSLocalizedString("all domains", comment: "")
@@ -148,7 +158,7 @@ class BlockerViewController: BaseFormViewController {
 			$0.hidden = hiddenWhenAllDomains
 		}
 
-		+++ Section(NSLocalizedString("where the URL contains", comment: ""))
+		+++ Section(NSLocalizedString("__BLOCKER_HEADER_5__", comment: "").nilOnEmpty)
 
 		<<< SwitchRow("anything") {
 			$0.title = NSLocalizedString("anything", comment: "")
