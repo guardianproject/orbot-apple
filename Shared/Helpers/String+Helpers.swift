@@ -11,6 +11,14 @@ import Foundation
 extension String {
 
 	var nilOnEmpty: String? {
-		self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : self
+		let text = trimmingCharacters(in: .whitespacesAndNewlines)
+
+		// Transifex just doesn't show empty strings to the translators at all.
+		// BartyCrouch also complains. Ugly. We'll se what translators will do...
+		if text.isEmpty || text == "__empty__" {
+			return nil
+		}
+
+		return self
 	}
 }
