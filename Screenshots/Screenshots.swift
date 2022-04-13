@@ -40,19 +40,23 @@ class Screenshots: XCTestCase {
 
 		navBar/*@START_MENU_TOKEN@*/.buttons["open_close_log"]/*[[".buttons[\"Open or Close Log\"]",".buttons[\"open_close_log\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 
-		navBar.buttons["settings"].tap()
+
+		navBar.buttons["settings_menu"].tap()
+		app.collectionViews.buttons["settings"].tap()
 
 		snapshot("2-Settings")
 
 		app.buttons["close_settings"].tap()
 
-		navBar/*@START_MENU_TOKEN@*/.buttons["auth_cookies"]/*[[".buttons[\"Auth Cookies\"]",".buttons[\"auth_cookies\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+		navBar.buttons["settings_menu"].tap()
+		app.collectionViews/*@START_MENU_TOKEN@*/.buttons["auth_cookies"]/*[[".buttons[\"Auth Cookies\"]",".buttons[\"auth_cookies\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 
 		snapshot("3-Auth-Cookies")
 
 		app.buttons["close_auth_cookies"].tap()
 
-		navBar.buttons["bridge_configuration"].tap()
+		navBar.buttons["settings_menu"].tap()
+		app.collectionViews.buttons["bridge_configuration"].tap()
 
 		snapshot("4-Bridge-Configuration")
 

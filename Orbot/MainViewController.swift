@@ -29,33 +29,39 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	@IBOutlet weak var settingsBt: UIBarButtonItem? {
 		didSet {
 			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
-			settingsBt?.accessibilityIdentifier = "settings"
+			settingsBt?.accessibilityIdentifier = "settings_menu"
+
+			let action1 = UIAction(
+				title: NSLocalizedString("Settings", comment: ""),
+				image: UIImage(systemName: "gearshape")) { [weak self] _ in
+					self?.showSettings()
+				}
+			action1.accessibilityIdentifier = "settings"
+
+			let action2 = UIAction(
+				title: NSLocalizedString("Auth Cookies", comment: ""),
+				image: UIImage(systemName: "key")) { [weak self] _ in
+					self?.showAuth()
+				}
+			action2.accessibilityIdentifier = "auth_cookies"
+
+			let action3 = UIAction(
+				title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
+				image: UIImage(systemName: "network.badge.shield.half.filled")) { [weak self] _ in
+					self?.changeBridges()
+				}
+			action3.accessibilityIdentifier = "bridge_configuration"
+
+			let action4 = UIAction(
+				title: NSLocalizedString("Content Blocker", comment: ""),
+				image: UIImage(systemName: "checkerboard.shield")) { [weak self] _ in
+					self?.showContentBlocker()
+				}
+			action4.accessibilityIdentifier = "content_blocker"
 
 			settingsBt?.menu = UIMenu(title: "", children: [
-				UIMenu(title: "", options: .displayInline, children: [
-					UIAction(title: NSLocalizedString("Settings", comment: ""),
-							 image: UIImage(systemName: "gearshape"),
-							 handler: { [weak self] _ in
-								 self?.showSettings()
-							 }),
-					UIAction(title: NSLocalizedString("Auth Cookies", comment: ""),
-							 image: UIImage(systemName: "key"),
-							 handler: { [weak self] _ in
-								 self?.showAuth()
-							 }),
-					UIAction(title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
-							 image: UIImage(systemName: "network.badge.shield.half.filled"),
-							 handler: { [weak self] _ in
-								 self?.changeBridges()
-							 }),
-				]),
-				UIMenu(title: "", options: .displayInline, children: [
-					UIAction(title: NSLocalizedString("Content Blocker", comment: ""),
-							 image: UIImage(systemName: "checkerboard.shield"),
-							 handler: { [weak self] _ in
-								 self?.showContentBlocker()
-							 }),
-				])
+				UIMenu(title: "", options: .displayInline, children: [action1, action2, action3]),
+				UIMenu(title: "", options: .displayInline, children: [action4])
 			])
 
 		}
