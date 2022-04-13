@@ -109,36 +109,51 @@ class SettingsViewController: BaseFormViewController {
 
 			$0.multivaluedRowToInsertAt = { index in
 				return TextRow() {
-					$0.tag = String(index)
+					$0.tag = "advanced_\(index)"
 					$0.turnOffAutoCorrect()
+					$0.placeholder = index % 2 == 0
+						? "--ReachableAddresses"
+						: "99.0.0.0/8, reject 18.0.0.0/8, accept *:80"
+				}
+				.onChange { [weak self] _ in
+					self?.saveAdvancedConf()
 				}
 			}
 
-			if let conf = Settings.advancedTorConf {
-				var i = 0
-				for item in conf {
+			if let conf = Settings.advancedTorConf, !conf.isEmpty {
+				for i in 0 ..< conf.count {
 					let r = $0.multivaluedRowToInsertAt!(i)
-					r.baseValue = item
+					r.baseValue = conf[i]
 					$0 <<< r
-					i += 1
 				}
 			}
 			else {
-				$0 <<< TextRow() {
-					$0.tag = "0"
-
-					$0.turnOffAutoCorrect()
-
-					$0.placeholder = "--ReachableAddresses"
-					}
-					<<< TextRow() {
-						$0.tag = "1"
-
-						$0.turnOffAutoCorrect()
-
-						$0.placeholder = "99.0.0.0/8, reject 18.0.0.0/8, accept *:80"
-				}
+				$0 <<< $0.multivaluedRowToInsertAt!(0)
+				$0 <<< $0.multivaluedRowToInsertAt!(1)
 			}
 		}
+	}
+
+
+	// MARK: UITableViewDataSource
+
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		super.tableView(tableView, commit: editingStyle, forRowAt: indexPath)
+
+		guard editingStyle == .delete else {
+			return
+		}
+
+		saveAdvancedConf()
+	}
+
+
+	// MARK: Private Methods
+
+	private func saveAdvancedConf() {
+		Settings.advancedTorConf = form.allRows
+			.filter { $0.tag?.starts(with: "advanced_") ?? false }
+			.sorted { Int($0.tag![9...])! < Int($1.tag![9...])! }
+			.compactMap { $0.baseValue as? String }
 	}
 }
