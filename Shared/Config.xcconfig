@@ -3,7 +3,7 @@
 //  Orbot
 //
 //  Created by Benjamin Erhart on 20.05.20.
-//  Copyright © 2021 Guardian Project. All rights reserved.
+//  Copyright © 2022 Guardian Project. All rights reserved.
 //
 
 // Configuration settings file format documentation can be found at:
@@ -15,25 +15,29 @@
 
 APP_BUNDLE_ID[config=Debug] =
 EXT_BUNDLE_ID[config=Debug] =
+CONTENT_BLOCKER_BUNDLE_ID[config=Debug] =
 APP_GROUP[config=Debug] =
 DEVELOPMENT_TEAM[config=Debug] =
 CODE_SIGN_IDENTITY[config=Debug] =
 APP_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
 EXT_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
+CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 
 APP_BUNDLE_ID[config=Release] = org.torproject.orbot
 EXT_BUNDLE_ID[config=Release] = org.torproject.orbot.ext
+CONTENT_BLOCKER_BUNDLE_ID[config=Release] = org.torproject.orbot.ContentBlocker
 APP_GROUP[config=Release] = group.org.torproject.orbot
 DEVELOPMENT_TEAM[config=Release] =
 CODE_SIGN_IDENTITY[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 EXT_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
+CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
 EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
 
-MARKETING_VERSION = 1.2.0
-CURRENT_PROJECT_VERSION = 7
+MARKETING_VERSION = 1.3.0
+CURRENT_PROJECT_VERSION = 11
 
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) EXT_BUNDLE_ID="$(EXT_BUNDLE_ID)" APP_GROUP="$(APP_GROUP)"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) EXT_BUNDLE_ID="$(EXT_BUNDLE_ID)" CONTENT_BLOCKER_BUNDLE_ID="$(CONTENT_BLOCKER_BUNDLE_ID)" APP_GROUP="$(APP_GROUP)"
