@@ -1,5 +1,5 @@
-- Update auf Tor 0.4.6.10 und Leaf 0.4.2
-- Verbesserte Barrierefreiheit/Screenreader-Kompatibilität.
-- Benutzeroberfläche hinzugefügt, um die Optionen `EntryNodes`, `ExitNodes`, `ExcludeNodes` und `StrictNodes` von Tor zu konfigurieren.
-- Fehler bei GeoIP-Unterstützung behoben.
-- Französische, russische, spanische und ukrainische Übersetzung hinzugefügt.
+- Schaltfläche hinzugefügt, um aktuell vorhandene Kanäle durch neue zu ersetzen.
+- Möglichkeit hinzugefügt, beliebige Tor-Konfigurationsoptionen hinzuzufügen.
+- Fernsteuerungsoption für andere Apps hinzugefügt, um das VPN zu starten.
+- Alle Einstellungen in einem Dropdown-Menü gruppiert.
+- Eine "Content Blocker"-Erweiterung mit einem Editor für benutzerdefinierte Regeln hinzugefügt.

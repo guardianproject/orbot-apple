@@ -1,5 +1,5 @@
-- Update to Tor 0.4.6.10 and Leaf 0.4.2
-- Improved accessibility/screen reader compatibility.
-- Added UI to configure Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
-- Fixed GeoIP support.
-- Added French, Russian, Spanish and Ukrainian translation.
+- Added button to replace currently built circuits with fresh ones.
+- Added possibility to add any Tor configuration option.
+- Added remote control option for other apps to start the VPN.
+- Grouped all settings in a drop-down menu.
+- Added a "Content Blocker" extension with an editor for custom rules.
