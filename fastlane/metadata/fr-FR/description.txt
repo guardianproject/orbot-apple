@@ -10,6 +10,6 @@ AVERTISSEMENTS :
 
 – Orbot pourrait ne pas fonctionner sur des réseaux aux restrictions évoluées. Si l’appli ne se connecte pas, essayez d’utiliser des ponts (ou un type de pont différent).
 
-– L’utilisation d’Orbot est à vos propres risques ; gardez à l’esprit que des données sensibles n’ont pas toujours leur place sur un appareil mobile.
+– L’utilisation d’Orbot est à vos propres risques ; gardez à l’esprit que des données sensibles n’ont pas toujours leur place sur un appareil mobile.
 
 ** Orbot est un logiciel gratuit et à code source ouvert. Pour plus de précisions sur Orbot et la façon de soutenir le développement de Tor sur iOS, visiter orbot.app **
