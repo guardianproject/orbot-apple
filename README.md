@@ -54,26 +54,32 @@ Localize these by explicit calls in the code.
 
 ## IPC / Use with Other Apps
 
-Orbot registers the scheme handler "orbot".
+Orbot registers to handle the scheme `orbot` and associates the domain https://orbot.app.
 
-These URIs are available to interact with Orbot from other apps:
+Using the associated domain is preferred, as it protects against other apps trying 
+to hijack the `orbot` scheme and it provides a nice fallback for users who don't 
+have Orbot installed, yet.
 
-- `orbot:show`
+The following URIs are available to interact with Orbot from other apps:
+
+- `https://orbot.app/rc/show` OR `orbot:show` 
   Will just start the Orbot app.
   
-- `orbot:start`
-  Will start the Network Extension, if not already started.
+- `https://orbot.app/rc/start` OR `orbot:start`
+  Will start the Network Extension, if not already started. 
+  (NOTE: There's no "stop" for security reasons!)
 
-- `orbot:show.settings`
+- `https://orbot.app/rc/show/settings` OR `orbot:show/settings`
   Will show the `SettingsViewController`, where users can edit their Tor configuration.
 
-- `orbot:show.bridges`
+- `https://orbot.app/rc/show/bridges` OR `orbot:show/bridges`
   Will show the `BridgeConfViewController`, where users can change their bridge configuration.
 
-- `orbot:show.auth`
+- `https://orbot.app/rc/show/auth` OR `orbot:show/auth`
   Will show the `AuthViewController`, where users can edit their v3 onion service authentication tokens.
 
-- `orbot:add.auth?url=http%3A%2F%2Fexample23472834zasd.onion&key=12345678examplekey12345678`
+- `https://orbot.app/rc/add/auth?url=http%3A%2F%2Fexample23472834zasd.onion&key=12345678examplekey12345678`
+  OR `orbot:add/auth?url=http%3A%2F%2Fexample23472834zasd.onion&key=12345678examplekey12345678`
   Will show the `AuthViewController`, which will display a prefilled "Add" dialog.
   The user can then add that auth key.
   You don't need to provide all pieces. E.g. for the URL the second-level domain would be enough.
@@ -82,7 +88,7 @@ These URIs are available to interact with Orbot from other apps:
 You can call these URIs like this:
 
 ```swift
-	UIApplication.shared.open(URL(string: "orbot:show.bridges")!)
+	UIApplication.shared.open(URL(string: "https://orbot.app/rc/start")!)
 ```
 
 

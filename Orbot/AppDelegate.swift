@@ -36,7 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			return false
 		}
 
-		switch urlc.path {
+		// Allow "/" (slash) or "." (period, legacy) as separators.
+		var pc: ArraySlice<String.SubSequence> = urlc.path.lowercased().split { $0 == "/" || $0 == "." }[...]
+
+		// Remove "rc" pseudo-folder. (From universal link, e.g. "https://orbot.app/rc/start")
+		if pc.first == "rc" {
+			pc = pc.dropFirst()
+		}
+
+		switch pc.joined(separator: "/") {
 		case "show":
 			// Dummy path so other apps can just start this one.
 			break
@@ -44,16 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		case "start":
 			vc.control(startOnly: true)
 
-		case "show.settings":
+		case "show/settings":
 			vc.showSettings()
 
-		case "show.bridges":
+		case "show/bridges":
 			vc.changeBridges()
 
-		case "show.auth":
+		case "show/auth":
 			vc.showAuth()
 
-		case "add.auth":
+		case "add/auth":
 			let url = urlc.queryItems?.first(where: { $0.name == "url" })?.value
 			let key = urlc.queryItems?.first(where: { $0.name == "key" })?.value
 
