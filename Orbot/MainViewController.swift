@@ -102,6 +102,14 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		didSet {
 			logSc.setTitle(NSLocalizedString("Log", comment: ""), forSegmentAt: 0)
 			logSc.setTitle(NSLocalizedString("Circuits", comment: ""), forSegmentAt: 1)
+
+#if DEBUG
+			if Config.extendedLogging {
+				logSc.insertSegment(withTitle: "VPN", at: 2, animated: false)
+				logSc.insertSegment(withTitle: "LL", at: 3, animated: false)
+				logSc.insertSegment(withTitle: "LC", at: 4, animated: false)
+			}
+#endif
 		}
 	}
 
@@ -115,7 +123,11 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		return nf
 	}()
 
-	private var logFsObject: DispatchSourceFileSystemObject?
+	private var logFsObject: DispatchSourceFileSystemObject? {
+		didSet {
+			oldValue?.cancel()
+		}
+	}
 
 	private var logText = ""
 
@@ -158,8 +170,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 				self.logContainer.isHidden = true
 				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
 
-				self.logFsObject?.cancel()
-				self.logFsObject = nil
+				self.tailFile(nil)
 			}
 		}
 	}
@@ -259,8 +270,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
-			logFsObject?.cancel()
-			logFsObject = nil
+			tailFile(nil)
 
 			logTv.text = nil
 
@@ -304,20 +314,22 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 				self?.logTv.scrollToBottom()
 			}
 
+#if DEBUG
 		case 2:
+			// Shows the content of the VPN log file.
+			tailFile(FileManager.default.vpnLogFile)
+
+		case 3:
+			// Shows the content of the VPN log file.
+			tailFile(FileManager.default.leafLogFile)
+
+		case 4:
 			// Shows the content of the leaf config file.
-			// Only for development!
-			logFsObject?.cancel()
-			logFsObject = nil
-
-			logTv.text = nil
-
-			if let url = FileManager.default.leafConfFile {
-				logTv.text = try? String(contentsOf: url)
-			}
+			tailFile(FileManager.default.leafConfFile)
+#endif
 
 		default:
-			createLogFsObject()
+			tailFile(FileManager.default.torLogFile)
 		}
 	}
 
@@ -407,9 +419,13 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	// MARK: Private Methods
 
-	private func createLogFsObject() {
-		guard logFsObject == nil,
-			let url = FileManager.default.torLogFile,
+	private func tailFile(_ url: URL?) {
+
+		// Stop and remove the previous watched content.
+		// (Will implicitely call #stop through `didSet` hook!)
+		logFsObject = nil
+
+		guard let url = url,
 			let fh = try? FileHandle(forReadingFrom: url)
 		else {
 			return
@@ -440,11 +456,8 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			}
 
 			if data.contains(.delete) || data.contains(.link) {
-				self?.logFsObject?.cancel()
-				self?.logFsObject = nil
-
 				DispatchQueue.main.async {
-					self?.createLogFsObject()
+					self?.tailFile(url)
 				}
 			}
 

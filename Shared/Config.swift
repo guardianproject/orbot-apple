@@ -33,5 +33,12 @@ extension Config {
 	class var screenshotMode: Bool {
 		return UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT")
 	}
+
+	/**
+	 Show VPN Log, Leaf Log and Leaf Configuration segments in log view for debugging.
+	 */
+	class var extendedLogging: Bool {
+		return !screenshotMode
+	}
 #endif
 }
