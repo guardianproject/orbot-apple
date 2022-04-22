@@ -13,6 +13,12 @@ import IPtProxyUI
 
 class TorManager {
 
+	enum Status: String {
+		case stopped = "stopped"
+		case starting = "starting"
+		case started = "started"
+	}
+
 	private enum Errors: Error {
 		case cookieUnreadable
 		case noSocksAddr
@@ -23,6 +29,7 @@ class TorManager {
 
 	static let localhost = "127.0.0.1"
 
+	var status = Status.stopped
 
 	private var torThread: TorThread?
 
@@ -62,6 +69,8 @@ class TorManager {
 			   _ progressCallback: @escaping (Int) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
+		status = .starting
+
 		self.transport = transport
 
 		if !torRunning {
@@ -113,6 +122,8 @@ class TorManager {
 				catch let error {
 					self.log("#startTunnel error=\(error)")
 
+					self.status = .stopped
+
 					return completion(error, nil, nil)
 				}
 			}
@@ -120,12 +131,16 @@ class TorManager {
 			guard let cookie = self.torConf?.cookie else {
 				self.log("#startTunnel cookie unreadable")
 
+				self.status = .stopped
+
 				return completion(Errors.cookieUnreadable, nil, nil)
 			}
 
 			self.torController?.authenticate(with: cookie) { success, error in
 				if let error = error {
 					self.log("#startTunnel error=\(error)")
+
+					self.status = .stopped
 
 					return completion(error, nil, nil)
 				}
@@ -160,12 +175,18 @@ class TorManager {
 
 					self.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
 						guard let socksAddr = response.first, !socksAddr.isEmpty else {
+							self.status = .stopped
+
 							return completion(Errors.noSocksAddr, nil, nil)
 						}
 
 						guard let dnsAddr = response.last, !dnsAddr.isEmpty else {
-							return completion(Errors.noDnsAddr, nil, nil)
+							self.status = .stopped
+
+							return completion(Errors.noDnsAddr, socksAddr, nil)
 						}
+
+						self.status = .started
 
 						completion(nil, socksAddr, dnsAddr)
 					}
@@ -175,6 +196,8 @@ class TorManager {
 	}
 
 	func stop() {
+		status = .stopped
+
 		torController?.disconnect()
 		torController = nil
 
@@ -206,7 +229,7 @@ class TorManager {
 	// MARK: Private Methods
 
 	private func log(_ message: String) {
-		Logger.log(message, to: Logger.vpnLogfile)
+		Logger.log(message, to: Logger.vpnLogFile)
 	}
 
 	private func getTorConf() -> TorConfiguration {

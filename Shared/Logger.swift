@@ -12,8 +12,19 @@ class Logger {
 
 	static let ENABLE_LOGGING = true
 
-	static var vpnLogfile: URL? = {
+	static var vpnLogFile: URL? = {
 		if let url = FileManager.default.vpnLogFile {
+			// Reset log on first write.
+			try? "".write(to: url, atomically: true, encoding: .utf8)
+
+			return url
+		}
+
+		return nil
+	}()
+
+	static var wsLogFile: URL? = {
+		if let url = FileManager.default.wsLogFile {
 			// Reset log on first write.
 			try? "".write(to: url, atomically: true, encoding: .utf8)
 

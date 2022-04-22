@@ -11,27 +11,31 @@ import Foundation
 extension FileManager {
 
 	var groupDir: URL? {
-		return containerURL(forSecurityApplicationGroupIdentifier: Config.groupId)
+		containerURL(forSecurityApplicationGroupIdentifier: Config.groupId)
 	}
 
 	var vpnLogFile: URL? {
-		return groupDir?.appendingPathComponent("log")
+		groupDir?.appendingPathComponent("log")
 	}
 
 	var torLogFile: URL? {
-		return groupDir?.appendingPathComponent("tor.log")
+		groupDir?.appendingPathComponent("tor.log")
 	}
 
 	var leafLogFile: URL? {
-		return groupDir?.appendingPathComponent("leaf.log")
+		groupDir?.appendingPathComponent("leaf.log")
 	}
 
 	var leafConfFile: URL? {
-		return groupDir?.appendingPathComponent("leaf.conf")
+		groupDir?.appendingPathComponent("leaf.conf")
 	}
 
 	var leafConfTemplateFile: URL? {
-		return Bundle.main.url(forResource: "template", withExtension: "conf")
+		Bundle.main.url(forResource: "template", withExtension: "conf")
+	}
+
+	var wsLogFile: URL? {
+		groupDir?.appendingPathComponent("ws.log")
 	}
 
 	var torDir: URL? {

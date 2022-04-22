@@ -58,6 +58,7 @@
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */; };
+		A0C53059280F11C20067597F /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
@@ -189,6 +190,7 @@
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
 		A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A0BBF1AA27D7BA37005BBA3A /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		A0C53058280F11C20067597F /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
 		A0D6162027D8BAC6008E0F3C /* .tx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .tx; sourceTree = "<group>"; };
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 		A0A735CE247561F200073C81 /* TorVPN */ = {
 			isa = PBXGroup;
 			children = (
+				A0C53058280F11C20067597F /* WebServer.swift */,
 				A0A735D1247561F200073C81 /* Info.plist */,
 				A0A735D2247561F200073C81 /* TorVPN.entitlements */,
 			);
@@ -812,6 +815,7 @@
 				A0A735EF24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A0A735F324756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
+				A0C53059280F11C20067597F /* WebServer.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
@@ -1005,7 +1009,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -1038,7 +1041,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_ENABLE_MODULES = YES;

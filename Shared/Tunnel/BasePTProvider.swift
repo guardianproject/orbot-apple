@@ -108,6 +108,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		stopTun2Socks()
 
+		WebServer.shared.stop()
+
 		completionHandler()
 	}
 
@@ -194,12 +196,19 @@ class BasePTProvider: NEPacketTunnelProvider {
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
 			self.sendMessages()
 		}, completion)
+
+		do {
+			try WebServer.shared.start()
+		}
+		catch {
+			log(error.localizedDescription)
+		}
 	}
 
 
 	// MARK: Logging
 
 	func log(_ message: String) {
-		Logger.log(message, to: Logger.vpnLogfile)
+		Logger.log(message, to: Logger.vpnLogFile)
 	}
 }

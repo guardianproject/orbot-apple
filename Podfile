@@ -15,4 +15,5 @@ target 'TorVPN' do
 
   pod 'Tor/GeoIP', '~> 406.9'
   pod 'IPtProxyUI', '~> 1.7'
+  pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end

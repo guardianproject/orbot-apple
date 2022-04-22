@@ -11,16 +11,20 @@ import Foundation
 extension Config {
 
     class var extBundleId: String {
-        return __extBundleId as String
+        __extBundleId as String
     }
 
 	class var contentBlockerBundleId: String {
-		return __contentBlockerBundleId as String
+		__contentBlockerBundleId as String
 	}
 
     class var groupId: String {
-        return __groupId as String
+        __groupId as String
     }
+
+	class var webserverPort: Int {
+		15182
+	}
 
 #if DEBUG
 	/**
@@ -31,14 +35,14 @@ extension Config {
 	 Should positively never end up in production code!
 	 */
 	class var screenshotMode: Bool {
-		return UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT")
+		UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT")
 	}
 
 	/**
 	 Show VPN Log, Leaf Log and Leaf Configuration segments in log view for debugging.
 	 */
 	class var extendedLogging: Bool {
-		return !screenshotMode
+		!screenshotMode
 	}
 #endif
 }

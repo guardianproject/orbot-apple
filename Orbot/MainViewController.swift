@@ -108,6 +108,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 				logSc.insertSegment(withTitle: "VPN", at: 2, animated: false)
 				logSc.insertSegment(withTitle: "LL", at: 3, animated: false)
 				logSc.insertSegment(withTitle: "LC", at: 4, animated: false)
+				logSc.insertSegment(withTitle: "WS", at: 5, animated: false)
 			}
 #endif
 		}
@@ -326,6 +327,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		case 4:
 			// Shows the content of the leaf config file.
 			tailFile(FileManager.default.leafConfFile)
+
+		case 5:
+			// Shows the content of the GCD webserver log file.
+			tailFile(FileManager.default.wsLogFile)
 #endif
 
 		default:
