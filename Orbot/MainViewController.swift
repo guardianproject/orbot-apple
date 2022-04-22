@@ -320,7 +320,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			tailFile(FileManager.default.vpnLogFile)
 
 		case 3:
-			// Shows the content of the VPN log file.
+			// Shows the content of the leaf log file.
 			tailFile(FileManager.default.leafLogFile)
 
 		case 4:
