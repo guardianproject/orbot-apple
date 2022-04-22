@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
 	{
 		guard let urlc = URLComponents(url: url, resolvingAgainstBaseURL: true),
-			  let vc = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? MainViewController
+			  let navC = window?.rootViewController as? UINavigationController,
+			  let vc = navC.viewControllers.first as? MainViewController
 		else {
 			return false
 		}
@@ -47,25 +48,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		switch pc.joined(separator: "/") {
 		case "show":
 			// Dummy path so other apps can just start this one.
-			break
+			navC.dismiss(animated: true)
 
 		case "start":
-			vc.control(startOnly: true)
+			navC.dismiss(animated: true) {
+				vc.control(startOnly: true)
+			}
 
 		case "show/settings":
-			vc.showSettings()
+			navC.dismiss(animated: true) {
+				vc.showSettings()
+			}
 
 		case "show/bridges":
-			vc.changeBridges()
+			navC.dismiss(animated: true) {
+				vc.changeBridges()
+			}
 
 		case "show/auth":
-			vc.showAuth()
+			navC.dismiss(animated: true) {
+				vc.showAuth()
+			}
 
 		case "add/auth":
-			let url = urlc.queryItems?.first(where: { $0.name == "url" })?.value
-			let key = urlc.queryItems?.first(where: { $0.name == "key" })?.value
+			navC.dismiss(animated: true) {
+				let url = urlc.queryItems?.first(where: { $0.name == "url" })?.value
+				let key = urlc.queryItems?.first(where: { $0.name == "key" })?.value
 
-			vc.showAuth().addKey(URL(string: url ?? ""), key)
+				vc.showAuth().addKey(URL(string: url ?? ""), key)
+			}
 
 		default:
 			return false
