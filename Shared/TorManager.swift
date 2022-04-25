@@ -225,6 +225,15 @@ class TorManager {
 		}
 	}
 
+	func close(_ ids: [String], _ completion: ((Bool) -> Void)?) {
+		if let torController = torController {
+			torController.closeCircuits(byIds: ids, completion: completion)
+		}
+		else {
+			completion?(false)
+		}
+	}
+
 
 	// MARK: Private Methods
 

@@ -71,11 +71,14 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 		webServer.removeAllHandlers()
 
-		webServer.addHandler(forMethod: "GET", path: "/status", request: GCDWebServerRequest.self,
-							 asyncProcessBlock: processStatus)
+		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/status\\/?$", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: getStatus)
 
-		webServer.addHandler(forMethod: "GET", path: "/circuits", request: GCDWebServerRequest.self,
-							 asyncProcessBlock: processCircuits)
+		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/circuits\\/?$", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: getCircuits)
+
+		webServer.addHandler(forMethod: "DELETE", pathRegex: "^\\/circuits\\/(\\d+)\\/?$", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: closeCircuit)
 
 		try webServer.start(options: [
 			GCDWebServerOption_AutomaticallySuspendInBackground: false,
@@ -95,7 +98,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 	// MARK: Private Methods
 
-	private func processStatus(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+	private func getStatus(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
 		completion(respond([
 			"status": TorManager.shared.status.rawValue,
 			"name": Bundle.main.displayName,
@@ -104,9 +107,8 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		], gzip: req.acceptsGzipContentEncoding))
 	}
 
-	private func processCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		let urlc = URLComponents(url: req.url, resolvingAgainstBaseURL: true)
-		let host = urlc?.queryItems?.first(where: { $0.name == "host" })?.value
+	private func getCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		let host = req.query?["host"]
 
 		TorManager.shared.getCircuits { circuits in
 			var candidates = TorCircuit.filter(circuits)
@@ -143,28 +145,37 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		}
 	}
 
-	private func respond<T: Encodable>(_ data: T? = nil, redirect: URL? = nil, statusCode: Int? = nil, gzip: Bool = false)
+	private func closeCircuit(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		guard let captures = req.attribute(forKey: GCDWebServerRequestAttribute_RegexCaptures) as? [String],
+			  let id = captures.first
+		else {
+			return completion(error())
+		}
+
+		TorManager.shared.close([id]) { success in
+			if success {
+				completion(GCDWebServerResponse(statusCode: 204))
+			}
+			else {
+				completion(self.error(404))
+			}
+		}
+	}
+
+	private func respond<T: Encodable>(_ data: T, statusCode: Int? = nil, gzip: Bool = false)
 	-> GCDWebServerResponse
 	{
 		let res: GCDWebServerResponse
 
-		if let data = data {
-			do {
-				let json = try jsonEncoder.encode(data)
+		do {
+			let json = try jsonEncoder.encode(data)
 
-				res = GCDWebServerDataResponse(data: json, contentType: "application/json")
-			}
-			catch {
-				log(error.localizedDescription)
+			res = GCDWebServerDataResponse(data: json, contentType: "application/json")
+		}
+		catch {
+			log(error.localizedDescription)
 
-				res = GCDWebServerResponse(statusCode: 500)
-			}
-		}
-		else if let redirect = redirect {
-			res = GCDWebServerResponse(redirect: redirect, permanent: false)
-		}
-		else {
-			res = GCDWebServerResponse()
+			res = GCDWebServerResponse(statusCode: 500)
 		}
 
 		res.isGZipContentEncodingEnabled = gzip
@@ -175,6 +186,10 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		}
 
 		return res
+	}
+
+	private func error(_ statusCode: Int = 500) -> GCDWebServerErrorResponse {
+		GCDWebServerErrorResponse(statusCode: statusCode)
 	}
 
 	private func log(_ message: String) {
