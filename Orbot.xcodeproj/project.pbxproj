@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
+		A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
 		A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */; };
@@ -120,6 +122,7 @@
 		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
 		6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
+		A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorCircuit+Helper.swift"; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		A00F512527453EE10037DD4A /* .bartycrouch.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .bartycrouch.toml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
@@ -378,6 +381,7 @@
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
+				A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -764,6 +768,7 @@
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
+				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
@@ -821,6 +826,7 @@
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
+				A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);

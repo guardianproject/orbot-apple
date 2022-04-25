@@ -8,6 +8,7 @@
 
 import Foundation
 import GCDWebServerExtension
+import Tor
 
 open class WebServer: NSObject, GCDWebServerDelegate {
 
@@ -17,6 +18,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		return webServer.isRunning
 	}
 
+	private static let onionAddressRegex = try? NSRegularExpression(pattern: "^(.*)\\.(onion|exit)$", options: .caseInsensitive)
 
 	private lazy var webServer: GCDWebServer = {
 		GCDWebServer.setBuiltInLogger { level, message in
@@ -54,7 +56,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	private lazy var jsonEncoder: JSONEncoder = {
 		let encoder = JSONEncoder()
 		encoder.outputFormatting = .prettyPrinted
-		encoder.dateEncodingStrategy = .iso8601
+		encoder.dateEncodingStrategy = .millisecondsSince1970
 
 		return encoder
 	}()
@@ -71,6 +73,9 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 		webServer.addHandler(forMethod: "GET", path: "/status", request: GCDWebServerRequest.self,
 							 asyncProcessBlock: processStatus)
+
+		webServer.addHandler(forMethod: "GET", path: "/circuits", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: processCircuits)
 
 		try webServer.start(options: [
 			GCDWebServerOption_AutomaticallySuspendInBackground: false,
@@ -99,7 +104,46 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		], gzip: req.acceptsGzipContentEncoding))
 	}
 
-	private func respond<T: Encodable>(_ data: [String: T]? = nil, redirect: URL? = nil, statusCode: Int? = nil, gzip: Bool = false)
+	private func processCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		let urlc = URLComponents(url: req.url, resolvingAgainstBaseURL: true)
+		let host = urlc?.queryItems?.first(where: { $0.name == "host" })?.value
+
+		TorManager.shared.getCircuits { circuits in
+			var candidates = TorCircuit.filter(circuits)
+
+			if let host = host {
+				var query: String?
+
+				let matches = Self.onionAddressRegex?.matches(
+					in: host, options: [],
+					range: NSRange(host.startIndex ..< host.endIndex, in: host))
+
+				if matches?.first?.numberOfRanges ?? 0 > 1,
+					let nsRange = matches?.first?.range(at: 1),
+					let range = Range(nsRange, in: host) {
+					query = String(host[range])
+				}
+
+				// Circuits used for .onion addresses can be identified by their
+				// rendQuery, which is equal to the "domain".
+				if let query = query {
+					candidates = candidates.filter { circuit in
+						circuit.purpose == TorCircuit.purposeHsClientRend
+						&& circuit.rendQuery == query
+					}
+				}
+				else {
+					candidates = candidates.filter { circuit in
+						circuit.purpose == TorCircuit.purposeGeneral
+					}
+				}
+			}
+
+			completion(self.respond(candidates, gzip: req.acceptsGzipContentEncoding))
+		}
+	}
+
+	private func respond<T: Encodable>(_ data: T? = nil, redirect: URL? = nil, statusCode: Int? = nil, gzip: Bool = false)
 	-> GCDWebServerResponse
 	{
 		let res: GCDWebServerResponse

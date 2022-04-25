@@ -14,11 +14,6 @@ import NetworkExtension
 
 class MainViewController: UIViewController, BridgesConfDelegate {
 
-	private static let purposeFilter = [
-		TorCircuit.purposeGeneral,
-		TorCircuit.purposeHsClientRend,
-		TorCircuit.purposeHsServiceRend]
-
 	@IBOutlet weak var logBt: UIBarButtonItem? {
 		didSet {
 			logBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
@@ -276,20 +271,13 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			logTv.text = nil
 
 			VpnManager.shared.getCircuits { [weak self] circuits, error in
+				let circuits = TorCircuit.filter(circuits)
+
 				var text = ""
 
 				var i = 1
 
 				for c in circuits {
-					if c.purpose == nil
-						|| !Self.purposeFilter.contains(c.purpose!)
-						|| c.buildFlags?.contains(TorCircuit.buildFlagIsInternal) ?? false
-						|| c.buildFlags?.contains(TorCircuit.buildFlagOneHopTunnel) ?? false
-						|| c.nodes?.isEmpty ?? true
-					{
-						continue
-					}
-
 					text += "Circuit \(c.circuitId ?? String(i))\n"
 
 					var j = 1
