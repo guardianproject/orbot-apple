@@ -71,8 +71,8 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 		webServer.removeAllHandlers()
 
-		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/status\\/?$", request: GCDWebServerRequest.self,
-							 asyncProcessBlock: getStatus)
+		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/info\\/?$", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: getInfo)
 
 		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/circuits\\/?$", request: GCDWebServerRequest.self,
 							 asyncProcessBlock: getCircuits)
@@ -98,7 +98,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 	// MARK: Private Methods
 
-	private func getStatus(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+	private func getInfo(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
 		completion(respond([
 			"status": TorManager.shared.status.rawValue,
 			"name": Bundle.main.displayName,
