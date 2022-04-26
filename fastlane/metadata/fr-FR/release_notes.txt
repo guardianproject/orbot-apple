@@ -1,5 +1,5 @@
-– Mise à jour vers Tor 0.4.6.10 et Leaf 0.4.2.
-– Amélioration de l’accessibilité et de la compatibilité du lecteur d’écran.
-– Ajout d’une IU pour configurer les options « EntryNodes », « ExitNodes », « ExcludeNodes » et « StrictNodes » de Tor.
-– Correctif pour la prise en charge de GeoIP.
-– Ajout de traduction en français, russe, espagnol et ukrainien.
+– Un bouton a été ajouté pour remplacer les circuits actuellement construits par de nouveaux.
+– Possibilité d’ajouter n’importe quelles configurations de Tor.
+– Une option de contrôle à distance a été ajoutée pour que d’autres applis puissent démarrer le RPV.
+– Tous les paramètres ont été regroupés dans un menu déroulant.
+– Une extension « Bloqueur de contenu » a été ajoutée avec un éditeur de règles personnalisées.
