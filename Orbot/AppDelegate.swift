@@ -28,8 +28,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		VpnManager.shared.reload()
 	}
 
+	func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
+	{
+		guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+			  let url = userActivity.webpageURL
+		else {
+			return false
+		}
+
+		return handle(url: url)
+	}
+
 	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
 	{
+		return handle(url: url)
+	}
+
+
+	// MARK: Private Methods
+
+	private func handle(url: URL) -> Bool {
 		guard let urlc = URLComponents(url: url, resolvingAgainstBaseURL: true),
 			  let navC = window?.rootViewController as? UINavigationController,
 			  let vc = navC.viewControllers.first as? MainViewController
