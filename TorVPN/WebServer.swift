@@ -80,6 +80,9 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		webServer.addHandler(forMethod: "DELETE", pathRegex: "^\\/circuits\\/(\\d+)\\/?$", request: GCDWebServerRequest.self,
 							 asyncProcessBlock: closeCircuit)
 
+		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/poll\\/?$", request: GCDWebServerRequest.self,
+							 asyncProcessBlock: poll)
+
 		try webServer.start(options: [
 			GCDWebServerOption_AutomaticallySuspendInBackground: false,
 			GCDWebServerOption_ConnectedStateCoalescingInterval: 10,
@@ -154,12 +157,20 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 		TorManager.shared.close([id]) { success in
 			if success {
-				completion(GCDWebServerResponse(statusCode: 204))
+				completion(self.respond())
 			}
 			else {
 				completion(self.error(404))
 			}
 		}
+	}
+
+	private func poll(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		let length = req.query?["length"] ?? "20"
+
+		sleep(UInt32(length) ?? 20)
+
+		completion(respond())
 	}
 
 	private func respond<T: Encodable>(_ data: T, statusCode: Int? = nil, gzip: Bool = false)
@@ -186,6 +197,10 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		}
 
 		return res
+	}
+
+	private func respond() -> GCDWebServerResponse {
+		return GCDWebServerResponse(statusCode: 204)
 	}
 
 	private func error(_ statusCode: Int = 500) -> GCDWebServerErrorResponse {
