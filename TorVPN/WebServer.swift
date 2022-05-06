@@ -102,6 +102,10 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	// MARK: Private Methods
 
 	private func getInfo(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		if let error = authenticate(req: req) {
+			return completion(error)
+		}
+
 		completion(respond([
 			"status": TorManager.shared.status.rawValue,
 			"name": Bundle.main.displayName,
@@ -111,6 +115,10 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func getCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		if let error = authenticate(req: req) {
+			return completion(error)
+		}
+
 		let host = req.query?["host"]
 
 		TorManager.shared.getCircuits { circuits in
@@ -149,6 +157,10 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func closeCircuit(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		if let error = authenticate(req: req) {
+			return completion(error)
+		}
+
 		guard let captures = req.attribute(forKey: GCDWebServerRequestAttribute_RegexCaptures) as? [String],
 			  let id = captures.first
 		else {
@@ -166,11 +178,27 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func poll(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		if let error = authenticate(req: req) {
+			return completion(error)
+		}
+
 		let length = req.query?["length"] ?? "20"
 
 		sleep(UInt32(length) ?? 20)
 
 		completion(respond())
+	}
+
+	private func authenticate(req: GCDWebServerRequest) -> GCDWebServerErrorResponse? {
+		guard let key = req.headers.keys.first(where: { $0.lowercased() == "x-token" }),
+			  let token = req.headers[key],
+			  !token.isEmpty,
+			  Settings.apiAccessTokens.contains(where: { $0.key == token })
+		else {
+			return error(403)
+		}
+
+		return nil
 	}
 
 	private func respond<T: Encodable>(_ data: T, statusCode: Int? = nil, gzip: Bool = false)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IPtProxyUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -94,6 +95,72 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				let key = urlc.queryItems?.first(where: { $0.name == "key" })?.value
 
 				vc.showAuth().addKey(URL(string: url ?? ""), key)
+			}
+
+		case "request/token":
+			navC.dismiss(animated: true) {
+				let appId = urlc.queryItems?.first(where: { $0.name == "appId" })?.value
+				let callback = urlc.queryItems?.first(where: { $0.name == "callback" })?.value
+
+				guard let appId = appId,
+					  !appId.isEmpty
+				else {
+					let message = NSLocalizedString("Another app requested an API access token.", comment: "")
+					+ "\n\n"
+					+ NSLocalizedString("It didn't provide a valid app identifier.", comment: "")
+					+ "\n\n"
+					+ NSLocalizedString("Please report this error to the requesting app's developers.", comment: "")
+					+ "\n"
+					+ NSLocalizedString("That app will be unable to access Orbot's API as long as this is not fixed.", comment: "")
+
+					AlertHelper.present(vc, message: message)
+
+					return
+				}
+
+				var urlc: URLComponents? = nil
+
+				if let callback = callback {
+					urlc = URLComponents(string: callback)
+				}
+
+				let apiVc = vc.showApiAccess()
+
+				let completion = { (token: ApiToken?) in
+					apiVc.close()
+
+					if let token = token {
+						if urlc?.queryItems == nil {
+							urlc?.queryItems = []
+						}
+
+						urlc?.queryItems?.append(URLQueryItem(name: "token", value: token.key))
+					}
+
+					let success = { (success: Bool) in
+						if !success && token != nil {
+							let message = NSLocalizedString("Another app requested an API access token.", comment: "")
+							+ "\n\n"
+							+ NSLocalizedString("We could not return to that app, because it didn't provide a valid callback URL.", comment: "")
+							+ "\n\n"
+							+ NSLocalizedString("The API access token was copied to your clipboard.", comment: "")
+							+ "\n"
+							+ NSLocalizedString("Go back to the requesting app and paste the token in the appropriate dialog.", comment: "")
+
+							AlertHelper.present(vc, message: message)
+						}
+					}
+
+					guard let url = urlc?.url else {
+						success(false)
+
+						return
+					}
+
+					UIApplication.shared.open(url, completionHandler: success)
+				}
+
+				apiVc.addToken(appId, completion)
 			}
 
 		default:

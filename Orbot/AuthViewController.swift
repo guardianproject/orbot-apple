@@ -126,7 +126,6 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 				"QR Code could not be decoded! Are you sure you scanned a .onion URL?",
 				comment: ""))
 		}
-
 	}
 
 	func addKey(_ url: URL?, _ key: String?) {

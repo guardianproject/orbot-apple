@@ -63,6 +63,7 @@
 		A0C53059280F11C20067597F /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -198,6 +199,7 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
+				A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
@@ -773,6 +776,7 @@
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
+				A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */,
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,

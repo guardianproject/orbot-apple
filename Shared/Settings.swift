@@ -12,16 +12,11 @@ import CoreMedia
 
 class Settings: IPtProxyUI.Settings {
 
-	enum BlockerSourceType: String {
-
-		case chromiumHsts = "chromium-hsts"
-	}
-
 	class override var defaults: UserDefaults? {
 		UserDefaults(suiteName: Config.groupId)
 	}
 
-	open class var entryNodes: String? {
+	class var entryNodes: String? {
 		get {
 			defaults?.string(forKey: "entry_nodes")
 		}
@@ -30,7 +25,7 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
-	open class var exitNodes: String? {
+	class var exitNodes: String? {
 		get {
 			defaults?.string(forKey: "exit_nodes")
 		}
@@ -39,7 +34,7 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
-	open class var excludeNodes: String? {
+	class var excludeNodes: String? {
 		get {
 			defaults?.string(forKey: "exclude_nodes")
 		}
@@ -48,7 +43,7 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
-	open class var strictNodes: Bool {
+	class var strictNodes: Bool {
 		get {
 			defaults?.bool(forKey: "strict_nodes") ?? false
 		}
@@ -65,4 +60,27 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "advanced_tor_conf")
 		}
 	}
+
+	class var apiAccessTokens: [ApiToken] {
+		get {
+			(defaults?.dictionary(forKey: "api_access_tokens") as? [String: String])?
+				.map { ApiToken(appId: $0, key: $1) } ?? []
+		}
+		set {
+			var data = [String: String]()
+
+			for token in newValue {
+				data[token.appId] = token.key
+			}
+
+			defaults?.set(data, forKey: "api_access_tokens")
+		}
+	}
+}
+
+struct ApiToken {
+
+	var appId: String
+
+	var key: String
 }

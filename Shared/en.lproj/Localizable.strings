@@ -44,6 +44,9 @@
 "Add" = "Add";
 
 /* No comment provided by engineer. */
+"Add API Access Token" = "Add API Access Token";
+
+/* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Add v3 Onion Service Auth Cookie";
 
 /* No comment provided by engineer. */
@@ -59,10 +62,22 @@
 "all types" = "all types";
 
 /* No comment provided by engineer. */
+"Allow Access" = "Allow Access";
+
+/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
 
 /* No comment provided by engineer. */
+"Another app requested an API access token." = "Another app requested an API access token.";
+
+/* No comment provided by engineer. */
 "anything" = "anything";
+
+/* No comment provided by engineer. */
+"API Access" = "API Access";
+
+/* No comment provided by engineer. */
+"API Access Token" = "API Access Token";
 
 /* No comment provided by engineer. */
 "audio/video media" = "audio/video media";
@@ -96,6 +111,9 @@
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Content Blocker";
+
+/* No comment provided by engineer. */
+"Copy to Clipboard" = "Copy to Clipboard";
 
 /* No comment provided by engineer. */
 "Could not connect." = "Could not connect.";
@@ -149,6 +167,9 @@
 "fonts" = "fonts";
 
 /* No comment provided by engineer. */
+"Go back to the requesting app and paste the token in the appropriate dialog." = "Go back to the requesting app and paste the token in the appropriate dialog.";
+
+/* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
 
 /* No comment provided by engineer. */
@@ -159,6 +180,9 @@
 
 /* No comment provided by engineer. */
 "invalid" = "invalid";
+
+/* No comment provided by engineer. */
+"It didn't provide a valid app identifier." = "It didn't provide a valid app identifier.";
 
 /* No comment provided by engineer. */
 "Key" = "Key";
@@ -189,6 +213,9 @@
 
 /* No comment provided by engineer. */
 "pings" = "pings";
+
+/* No comment provided by engineer. */
+"Please report this error to the requesting app's developers." = "Please report this error to the requesting app's developers.";
 
 /* No comment provided by engineer. */
 "popups" = "popups";
@@ -230,6 +257,12 @@
 "SVG documents" = "SVG documents";
 
 /* No comment provided by engineer. */
+"That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";
+
+/* No comment provided by engineer. */
+"The API access token was copied to your clipboard." = "The API access token was copied to your clipboard.";
+
+/* No comment provided by engineer. */
 "the website" = "the website";
 
 /* No comment provided by engineer. */
@@ -249,6 +282,9 @@
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
+"We could not return to that app, because it didn't provide a valid callback URL." = "We could not return to that app, because it didn't provide a valid callback URL.";
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";

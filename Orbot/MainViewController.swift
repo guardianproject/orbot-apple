@@ -26,39 +26,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
 			settingsBt?.accessibilityIdentifier = "settings_menu"
 
-			let action1 = UIAction(
-				title: NSLocalizedString("Settings", comment: ""),
-				image: UIImage(systemName: "gearshape")) { [weak self] _ in
-					self?.showSettings()
-				}
-			action1.accessibilityIdentifier = "settings"
-
-			let action2 = UIAction(
-				title: NSLocalizedString("Auth Cookies", comment: ""),
-				image: UIImage(systemName: "key")) { [weak self] _ in
-					self?.showAuth()
-				}
-			action2.accessibilityIdentifier = "auth_cookies"
-
-			let action3 = UIAction(
-				title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
-				image: UIImage(systemName: "network.badge.shield.half.filled")) { [weak self] _ in
-					self?.changeBridges()
-				}
-			action3.accessibilityIdentifier = "bridge_configuration"
-
-			let action4 = UIAction(
-				title: NSLocalizedString("Content Blocker", comment: ""),
-				image: UIImage(systemName: "checkerboard.shield")) { [weak self] _ in
-					self?.showContentBlocker()
-				}
-			action4.accessibilityIdentifier = "content_blocker"
-
-			settingsBt?.menu = UIMenu(title: "", children: [
-				UIMenu(title: "", options: .displayInline, children: [action1, action2, action3]),
-				UIMenu(title: "", options: .displayInline, children: [action4])
-			])
-
+			updateMenu()
 		}
 	}
 
@@ -171,11 +139,61 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		}
 	}
 
-	func changeBridges(_ sender: UIBarButtonItem? = nil) {
-		let vc = BridgesConfViewController()
-		vc.delegate = self
+	func updateMenu() {
+		var group1 = [UIAction]()
+		var group2 = [UIAction]()
 
-		present(inNav: vc, button: sender ?? settingsBt)
+		group1.append(UIAction(
+			title: NSLocalizedString("Settings", comment: ""),
+			image: UIImage(systemName: "gearshape"),
+			handler: { [weak self] _ in
+				self?.showSettings()
+			}))
+		group1.last?.accessibilityIdentifier = "settings"
+
+		group1.append(UIAction(
+			title: NSLocalizedString("Auth Cookies", comment: ""),
+			image: UIImage(systemName: "key"),
+			handler: { [weak self] _ in
+				self?.showAuth()
+			}))
+		group1.last?.accessibilityIdentifier = "auth_cookies"
+
+		group1.append(UIAction(
+			title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
+			image: UIImage(systemName: "network.badge.shield.half.filled"),
+			handler: { [weak self] _ in
+				self?.changeBridges()
+			}))
+		group1.last?.accessibilityIdentifier = "bridge_configuration"
+
+		if !Settings.apiAccessTokens.isEmpty {
+			group1.append(UIAction(
+				title: NSLocalizedString("API Access", comment: ""),
+				image: UIImage(systemName: "lock.shield"),
+				handler: { [weak self] _ in
+					self?.showApiAccess()
+				}))
+			group1.last?.accessibilityIdentifier = "api_access"
+		}
+
+		group2.append(UIAction(
+			title: NSLocalizedString("Content Blocker", comment: ""),
+			image: UIImage(systemName: "checkerboard.shield")) { [weak self] _ in
+				self?.showContentBlocker()
+			})
+		group2.last?.accessibilityIdentifier = "content_blocker"
+
+		settingsBt?.menu = nil
+
+		settingsBt?.menu = UIMenu(title: "", children: [
+			UIMenu(title: "", options: .displayInline, children: group1),
+			UIMenu(title: "", options: .displayInline, children: group2)
+		])
+	}
+
+	func showSettings(_ sender: UIBarButtonItem? = nil) {
+		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
 	}
 
 	@discardableResult
@@ -187,8 +205,20 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		return vc
 	}
 
-	func showSettings(_ sender: UIBarButtonItem? = nil) {
-		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
+	func changeBridges(_ sender: UIBarButtonItem? = nil) {
+		let vc = BridgesConfViewController()
+		vc.delegate = self
+
+		present(inNav: vc, button: sender ?? settingsBt)
+	}
+
+	@discardableResult
+	func showApiAccess(_ sender: UIBarButtonItem? = nil) -> ApiAccessViewController {
+		let vc = ApiAccessViewController(style: .grouped)
+
+		present(inNav: vc, button: sender ?? settingsBt)
+
+		return vc
 	}
 
 	@IBAction func refresh(_ sender: UIBarButtonItem? = nil) {
