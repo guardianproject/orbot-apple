@@ -458,10 +458,15 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			let data = fh.readDataToEndOfFile()
 
 			if let content = String(data: data, encoding: .utf8) {
+				let atBottom = self?.logTv.isAtBottom ?? false
+
 				self?.logText.append(content)
 
 				self?.logTv.text = self?.logText
-				self?.logTv.scrollToBottom()
+
+				if atBottom {
+					self?.logTv.scrollToBottom()
+				}
 			}
 		}
 

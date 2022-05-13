@@ -10,7 +10,11 @@ import UIKit
 
 extension UITextView {
 
+	var isAtBottom: Bool {
+		contentOffset.y >= contentSize.height - frame.size.height - 96
+	}
+
     func scrollToBottom() {
-        scrollRangeToVisible(NSRange(location: text.count - 1, length: 1))
+		scrollRangeToVisible(NSRange(location: max(0, text.count - 1), length: 1))
     }
 }
