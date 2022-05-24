@@ -8,6 +8,7 @@
 
 import UIKit
 import Eureka
+import IPtProxyUI
 
 class SettingsViewController: BaseFormViewController {
 
@@ -33,6 +34,42 @@ class SettingsViewController: BaseFormViewController {
 			$0.value = NSLocalizedString("Settings will only take effect after restart.", comment: "")
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
+		}
+
+		+++ Section(header: NSLocalizedString("Onion-only Mode", comment: ""), footer: NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: ""))
+		<<< SwitchRow() {
+			$0.title = String(format: NSLocalizedString("Disable %@ for non-onion traffic", comment: ""), Bundle.main.displayName)
+			$0.value = Settings.onionOnly
+			$0.cell.textLabel?.numberOfLines = 0
+		}
+		.onChange { row in
+			if row.value ?? false {
+				let message = NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: "")
+				+ "\n\n"
+				+ NSLocalizedString("Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor.", comment: "")
+				+ "\n\n"
+				+ NSLocalizedString("Traffic to all other domains will be routed through your normal Internet connection.", comment: "")
+				+ "\n\n"
+				+ NSLocalizedString("If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!", comment: "")
+
+				AlertHelper.present(
+					self,
+					message: message,
+					title: NSLocalizedString("Warning", comment: ""),
+					actions: [AlertHelper.cancelAction(handler: { _ in
+						row.value = false
+						row.updateCell()
+					}),
+							  AlertHelper.destructiveAction(NSLocalizedString("Activate", comment: ""), handler: { _ in
+								  Settings.onionOnly = true
+							  })])
+			}
+			else {
+				if Settings.onionOnly {
+					Settings.onionOnly = false
+					VpnManager.shared.disconnect()
+				}
+			}
 		}
 
 		+++ Section(NSLocalizedString("Node Configuration", comment: ""))

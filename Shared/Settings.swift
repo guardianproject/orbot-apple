@@ -16,6 +16,15 @@ class Settings: IPtProxyUI.Settings {
 		UserDefaults(suiteName: Config.groupId)
 	}
 
+	class var onionOnly: Bool {
+		get {
+			defaults?.bool(forKey: "onion_only") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "onion_only")
+		}
+	}
+
 	class var entryNodes: String? {
 		get {
 			defaults?.string(forKey: "entry_nodes")

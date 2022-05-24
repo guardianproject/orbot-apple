@@ -368,8 +368,10 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
 		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting:
-			statusIcon.image = UIImage(named: "TorOn")
+		case .connected, .connecting, .reasserting:
+			statusIcon.image = Settings.onionOnly
+				? UIImage(named: "TorOnionOnly") : UIImage(named: "TorOn")
+
 			controlBt.setTitle(NSLocalizedString("Stop", comment: ""))
 
 		case .invalid:
@@ -390,27 +392,38 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			statusLb.text = VpnManager.shared.confStatus.description
 		}
 		else {
-			var progress = ""
-
-			if notification?.name == .vpnProgress,
-			   let raw = notification?.object as? Float {
-
-				progress = MainViewController.nf.string(from: NSNumber(value: raw)) ?? ""
-			}
-
-			var transport = ""
+			let statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
 
 			switch VpnManager.shared.sessionStatus {
 			case .connected, .connecting, .reasserting:
-				transport = Settings.transport.description
+				let space = NSAttributedString(string: " ")
+				let transport = Settings.transport
+
+				if transport != .none {
+					statusText.append(space)
+					statusText.append(NSAttributedString(string: transport.description))
+				}
+
+				if Settings.onionOnly {
+					statusText.append(space)
+					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Onion-only Mode", comment: "")))",
+														 attributes: [.foregroundColor : UIColor.systemRed]))
+				}
+
+				if notification?.name == .vpnProgress,
+				   let raw = notification?.object as? Float,
+				   let progress = Self.nf.string(from: NSNumber(value: raw))
+				{
+					statusText.append(space)
+					statusText.append(NSAttributedString(string: progress))
+				}
 
 			default:
 				break
 			}
 
 			statusLb.textColor = .white
-			statusLb.text = [VpnManager.shared.sessionStatus.description,
-							 transport, progress].joined(separator: " ")
+			statusLb.attributedText = statusText
 		}
 	}
 

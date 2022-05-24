@@ -34,6 +34,10 @@ extension FileManager {
 		Bundle.main.url(forResource: "template", withExtension: "conf")
 	}
 
+	var leafConfOnionOnlyTemplateFile: URL? {
+		Bundle.main.url(forResource: "template-onion-only", withExtension: "conf")
+	}
+
 	var wsLogFile: URL? {
 		groupDir?.appendingPathComponent("ws.log")
 	}
@@ -56,14 +60,5 @@ extension FileManager {
 		try? createDirectory(at: url, withIntermediateDirectories: true)
 
 		return url
-	}
-
-
-	var leafConfTemplate: String? {
-		if let templateFile = leafConfTemplateFile {
-			return try? String(contentsOf: templateFile)
-		}
-
-		return nil
 	}
 }

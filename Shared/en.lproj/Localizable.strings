@@ -41,6 +41,9 @@
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
 
 /* No comment provided by engineer. */
+"Activate" = "Activate";
+
+/* No comment provided by engineer. */
 "Add" = "Add";
 
 /* No comment provided by engineer. */
@@ -78,6 +81,9 @@
 
 /* No comment provided by engineer. */
 "API Access Token" = "API Access Token";
+
+/* No comment provided by engineer. */
+"ATTENTION: This may harm your anonymity and security!" = "ATTENTION: This may harm your anonymity and security!";
 
 /* No comment provided by engineer. */
 "audio/video media" = "audio/video media";
@@ -128,6 +134,9 @@
 "Delete" = "Delete";
 
 /* No comment provided by engineer. */
+"Disable %@ for non-onion traffic" = "Disable %@ for non-onion traffic";
+
+/* No comment provided by engineer. */
 "disabled" = "disabled";
 
 /* No comment provided by engineer. */
@@ -173,6 +182,9 @@
 "Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
 
 /* No comment provided by engineer. */
+"If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!";
+
+/* No comment provided by engineer. */
 "images" = "images";
 
 /* No comment provided by engineer. */
@@ -198,6 +210,12 @@
 
 /* No comment provided by engineer. */
 "not installed" = "not installed";
+
+/* No comment provided by engineer. */
+"Onion-only Mode" = "Onion-only Mode";
+
+/* No comment provided by engineer. */
+"Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor." = "Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor.";
 
 /* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "Only use these nodes as first hop. Ignored, when bridging is used.";
@@ -278,10 +296,16 @@
 "Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
+"Traffic to all other domains will be routed through your normal Internet connection." = "Traffic to all other domains will be routed through your normal Internet connection.";
+
+/* No comment provided by engineer. */
 "unknown" = "unknown";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* No comment provided by engineer. */
+"Warning" = "Warning";
 
 /* No comment provided by engineer. */
 "We could not return to that app, because it didn't provide a valid callback URL." = "We could not return to that app, because it didn't provide a valid callback URL.";

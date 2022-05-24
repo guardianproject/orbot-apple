@@ -72,6 +72,7 @@
 		A0EF119F28045F6700A03017 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A0EF11A028045F7D00A03017 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
+		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
@@ -205,6 +206,7 @@
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
 		A0EF119828043A9200A03017 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
 		A0EF119B280441C400A03017 /* BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockList.swift; sourceTree = "<group>"; };
+		A0F3FFB4282EA264003096EC /* template-onion-only.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-onion-only.conf"; sourceTree = "<group>"; };
 		A0F8690027D629B000C9D407 /* leaf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = leaf; sourceTree = "<group>"; };
 		A0F8690727D635D700C9D407 /* build-leaf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-leaf.sh"; sourceTree = "<group>"; };
 		A0F8690827D6372C00C9D407 /* leaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A023D82A271983C000A634B7 /* template.conf */,
+				A0F3FFB4282EA264003096EC /* template-onion-only.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
 				A00F5134274545BC0037DD4A /* Localizable.strings */,
 			);
@@ -615,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A023D82B271986FB00A634B7 /* template.conf in Resources */,
+				A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

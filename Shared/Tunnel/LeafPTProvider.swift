@@ -25,7 +25,14 @@ class LeafPTProvider: BasePTProvider {
 			try? "".write(to: url, atomically: true, encoding: .utf8)
 		}
 
-		let conf = FileManager.default.leafConfTemplate?
+		let fm = FileManager.default
+		var conf = ""
+
+		if let file = Settings.onionOnly ? fm.leafConfOnionOnlyTemplateFile : fm.leafConfTemplateFile  {
+			conf = (try? String(contentsOf: file)) ?? ""
+		}
+
+		conf = conf
 			.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile?.path ?? "")
 			.replacingOccurrences(of: "{{tunFd}}", with: tunFd ?? "")
 			.replacingOccurrences(of: "{{dnsHost}}", with: dns?.first ?? "")
@@ -35,7 +42,7 @@ class LeafPTProvider: BasePTProvider {
 
 		let file = FileManager.default.leafConfFile
 
-		try! conf!.write(to: file!, atomically: true, encoding: .utf8)
+		try! conf.write(to: file!, atomically: true, encoding: .utf8)
 
 		setenv("LOG_NO_COLOR", "true", 1)
 
