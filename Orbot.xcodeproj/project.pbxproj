@@ -546,7 +546,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
 					A05B73AF24755CE600930C40 = {
@@ -1085,7 +1085,6 @@
 		A06BEC78280090B300351868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -1113,7 +1112,6 @@
 		A06BEC79280090B300351868 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = ContentBlocker/ContentBlocker.entitlements;
 				CODE_SIGN_STYLE = Manual;
