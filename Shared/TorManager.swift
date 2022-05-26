@@ -13,7 +13,7 @@ import IPtProxyUI
 
 class TorManager {
 
-	enum Status: String {
+	enum Status: String, Codable {
 		case stopped = "stopped"
 		case starting = "starting"
 		case started = "started"

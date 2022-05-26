@@ -106,12 +106,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 			return completion(error)
 		}
 
-		completion(respond([
-			"status": TorManager.shared.status.rawValue,
-			"name": Bundle.main.displayName,
-			"version": Bundle.main.version,
-			"build": Bundle.main.build
-		], gzip: req.acceptsGzipContentEncoding))
+		completion(respond(Info(), gzip: req.acceptsGzipContentEncoding))
 	}
 
 	private func getCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
@@ -238,4 +233,43 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	private func log(_ message: String) {
 		Logger.log(message, to: Logger.vpnLogFile)
 	}
+}
+
+/**
+ Orbot VPN status and metadata.
+ */
+private struct Info: Codable {
+
+	enum CodingKeys: String, CodingKey {
+		case status
+		case name
+		case version
+		case build
+		case onionOnly = "onion-only"
+	}
+
+	/**
+	 The current status of the Orbot Tor VPN.
+	 */
+	public let status = TorManager.shared.status
+
+	/**
+	 The name of the network extension. (Should be "Tor VPN".)
+	 */
+	public let name = Bundle.main.displayName
+
+	/**
+	 The current semantic version of Orbot.
+	 */
+	public let version = Bundle.main.version
+
+	/**
+	 The build ID of Orbot.
+	 */
+	public let build = Bundle.main.build
+
+	/**
+	 If Orbot is running in onion-only mode.
+	 */
+	public let onionOnly = Settings.onionOnly
 }
