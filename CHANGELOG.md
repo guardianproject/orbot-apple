@@ -1,5 +1,18 @@
 #  Orbot iOS Changelog
 
+## 1.3.0
+- Updates:
+  - Tor 0.4.7.7
+  - Snowflake 2.2.0
+  - German, French, Russian, Spanish, Ukrainian translations
+- Added button to replace currently built circuits with fresh ones.
+- Added possibility to add any Tor configuration option.
+- Grouped all settings in a drop-down menu.
+- Added a "Content Blocker" extension with an editor for custom rules.
+- Added a (dangerous!) "onion-only mode".
+- Added bridges auto-configuration option.
+- Extended remote control possibilities. 
+
 ## 1.2.0
 - Updates:
   - Leaf 0.4.2

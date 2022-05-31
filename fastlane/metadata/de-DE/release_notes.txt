@@ -1,5 +1,10 @@
+- Aktualisierungen:
+  - Tor 0.4.7.7
+  - Snowflake 2.2.0
+  - deutsche, französische, russische, spanische, ukrainische Übersetzungen
 - Schaltfläche hinzugefügt, um aktuell vorhandene Kanäle durch neue zu ersetzen.
 - Möglichkeit hinzugefügt, beliebige Tor-Konfigurationsoptionen hinzuzufügen.
-- Fernsteuerungsoption für andere Apps hinzugefügt, um das VPN zu starten.
 - Alle Einstellungen in einem Dropdown-Menü gruppiert.
 - Eine "Content Blocker"-Erweiterung mit einem Editor für benutzerdefinierte Regeln hinzugefügt.
+- Einen (gefährlichen!) "Nur-Onion-Modus" hinzugefügt.
+- Brücken-Auto-Konfigurations-Option hinzugefügt.
