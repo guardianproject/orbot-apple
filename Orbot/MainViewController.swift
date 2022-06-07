@@ -392,7 +392,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 			statusLb.text = VpnManager.shared.confStatus.description
 		}
 		else {
-			let statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
+			var statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
 
 			switch VpnManager.shared.sessionStatus {
 			case .connected, .connecting, .reasserting:
@@ -400,8 +400,9 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 				let transport = Settings.transport
 
 				if transport != .none {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: transport.description))
+					statusText = NSMutableAttributedString(string: String(
+						format: NSLocalizedString("%1$@ via %2$@", comment: ""),
+						VpnManager.shared.sessionStatus.description, transport.description))
 				}
 
 				if Settings.onionOnly {

@@ -20,6 +20,9 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
 
 /* No comment provided by engineer. */
+"%1$@ via %2$@" = "%1$@ via %2$@";
+
+/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
 /* No comment provided by engineer. */
