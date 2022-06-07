@@ -1,5 +1,10 @@
+- Updates:
+  - Tor 0.4.7.7
+  - Snowflake 2.2.0
+  - German, French, Russian, Spanish, Ukrainian translations
 – Un bouton a été ajouté pour remplacer les circuits actuellement construits par de nouveaux.
 – Possibilité d’ajouter n’importe quelles configurations de Tor.
-– Une option de contrôle à distance a été ajoutée pour que d’autres applis puissent démarrer le RPV.
 – Tous les paramètres ont été regroupés dans un menu déroulant.
 – Une extension « Bloqueur de contenu » a été ajoutée avec un éditeur de règles personnalisées.
+- Added a (dangerous!) "onion-only mode".
+- Added bridges auto-configuration option.
