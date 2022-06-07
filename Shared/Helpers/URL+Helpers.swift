@@ -17,4 +17,20 @@ extension URL {
     static var fbOnion = URL(string: "http://fpfjxcrmw437h6z2xl3w4czl55kvkmxpapg37bbopsafdu7q454byxid.onion/")!
 
     static var neverSsl = URL(string: "http://neverssl.com")!
+
+
+	var contents: String? {
+		guard self.isFileURL else {
+			return nil
+		}
+
+		do {
+			return try String(contentsOf: self)
+		}
+		catch {
+			Logger.log(error.localizedDescription, to: Logger.vpnLogFile)
+
+			return nil
+		}
+	}
 }

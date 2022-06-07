@@ -38,6 +38,10 @@ extension FileManager {
 		Bundle.main.url(forResource: "template-onion-only", withExtension: "conf")
 	}
 
+	var leafConfBypassTemplateFile: URL? {
+		Bundle.main.url(forResource: "template-bypass", withExtension: "conf")
+	}
+
 	var wsLogFile: URL? {
 		groupDir?.appendingPathComponent("ws.log")
 	}

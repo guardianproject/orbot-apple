@@ -17,6 +17,7 @@ class LeafPTProvider: BasePTProvider {
 
 	override func startTun2Socks(socksAddr: String?, dnsAddr: String?) {
 		let tunFd = tunnelFd != nil ? String(tunnelFd!) : nil
+		let bypassPort = Settings.bypassPort != nil ? String(Settings.bypassPort!) : nil
 		let socks = socksAddr?.split(separator: ":")
 		let dns = dnsAddr?.split(separator: ":")
 
@@ -26,15 +27,24 @@ class LeafPTProvider: BasePTProvider {
 		}
 
 		let fm = FileManager.default
-		var conf = ""
+		var conf: String
 
-		if let file = Settings.onionOnly ? fm.leafConfOnionOnlyTemplateFile : fm.leafConfTemplateFile  {
-			conf = (try? String(contentsOf: file)) ?? ""
+		if Settings.onionOnly {
+			conf = fm.leafConfOnionOnlyTemplateFile?.contents ?? ""
+		}
+		else {
+			if bypassPort != nil {
+				conf = fm.leafConfBypassTemplateFile?.contents ?? ""
+			}
+			else {
+				conf = fm.leafConfTemplateFile?.contents ?? ""
+			}
 		}
 
 		conf = conf
 			.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile?.path ?? "")
 			.replacingOccurrences(of: "{{tunFd}}", with: tunFd ?? "")
+			.replacingOccurrences(of: "{{bypassPort}}", with: bypassPort ?? "")
 			.replacingOccurrences(of: "{{dnsHost}}", with: dns?.first ?? "")
 			.replacingOccurrences(of: "{{dnsPort}}", with: dns?.last ?? "")
 			.replacingOccurrences(of: "{{socksHost}}", with: socks?.first ?? "")

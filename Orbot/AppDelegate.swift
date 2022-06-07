@@ -99,7 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		case "request/token":
 			navC.dismiss(animated: true) {
-				let appId = urlc.queryItems?.first(where: { $0.name == "appId" })?.value
+				let appId = urlc.queryItems?.first(where: { $0.name == "app-id" })?.value
+				let needsBypass = Bool(urlc.queryItems?.first(where: { $0.name == "need-bypass" })?.value ?? "") ?? false
 				let callback = urlc.queryItems?.first(where: { $0.name == "callback" })?.value
 
 				guard let appId = appId,
@@ -160,7 +161,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 					UIApplication.shared.open(url, completionHandler: success)
 				}
 
-				apiVc.addToken(appId, completion)
+				apiVc.addToken(appId, needsBypass, completion)
 			}
 
 		default:

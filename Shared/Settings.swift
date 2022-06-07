@@ -25,6 +25,32 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
+	class var bypassPort: UInt16? {
+		get {
+			if let port = defaults?.integer(forKey: "bypass_port"),
+				port > 1023 && port != Config.webserverPort
+			{
+				return UInt16(port)
+			}
+
+			return nil
+		}
+		set {
+			if newValue == nil {
+				defaults?.removeObject(forKey: "bypass_port")
+			}
+			else {
+				var port: Int
+
+				repeat {
+					port = Int.random(in: 1024...65535)
+				} while port == Config.webserverPort
+
+				defaults?.set(port, forKey: "bypass_port")
+			}
+		}
+	}
+
 	class var entryNodes: String? {
 		get {
 			defaults?.string(forKey: "entry_nodes")
@@ -72,24 +98,69 @@ class Settings: IPtProxyUI.Settings {
 
 	class var apiAccessTokens: [ApiToken] {
 		get {
-			(defaults?.dictionary(forKey: "api_access_tokens") as? [String: String])?
-				.map { ApiToken(appId: $0, key: $1) } ?? []
-		}
-		set {
-			var data = [String: String]()
-
-			for token in newValue {
-				data[token.appId] = token.key
+			// Legacy support.
+			if let dict = defaults?.dictionary(forKey: "api_access_tokens") as? [String: String] {
+				return dict.map { ApiToken(appId: $0, key: $1, bypass: false) }
 			}
 
-			defaults?.set(data, forKey: "api_access_tokens")
+			NSKeyedUnarchiver.setClass(ApiToken.self, forClassName: "ApiToken")
+
+			if let data = defaults?.data(forKey: "api_access_tokens"),
+			   let tokens = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: ApiToken.self, from: data)
+			{
+				return tokens
+			}
+
+			return []
+		}
+		set {
+			NSKeyedArchiver.setClassName("ApiToken", for: ApiToken.self)
+
+			defaults?.set(
+				try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true),
+				forKey: "api_access_tokens")
 		}
 	}
 }
 
-struct ApiToken {
+class ApiToken: NSObject, NSSecureCoding {
+
+	static var supportsSecureCoding = true
+
 
 	var appId: String
 
 	var key: String
+
+	var bypass: Bool
+
+
+	init(appId: String, key: String, bypass: Bool) {
+		self.appId = appId
+		self.key = key
+		self.bypass = bypass
+	}
+
+	required init?(coder: NSCoder) {
+		guard let appId = coder.decodeObject(forKey: "appId") as? String,
+			  let key = coder.decodeObject(forKey: "key") as? String
+		else {
+			return nil
+		}
+
+		self.appId = appId
+		self.key = key
+		bypass = coder.decodeBool(forKey: "bypass")
+	}
+
+
+	func encode(with coder: NSCoder) {
+		coder.encode(appId, forKey: "appId")
+		coder.encode(key, forKey: "key")
+		coder.encode(bypass, forKey: "bypass")
+	}
+
+	override var description: String {
+		"[\(String(describing: type(of: self))) appId=\(appId), key=\(key), bypass=\(bypass)]"
+	}
 }

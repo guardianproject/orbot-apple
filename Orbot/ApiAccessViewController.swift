@@ -23,6 +23,8 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 		navigationItem.title = NSLocalizedString("API Access", comment: "")
 
 		navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
+
+		tableView.register(ApiAccessCell.nib, forCellReuseIdentifier: ApiAccessCell.reuseId)
 	}
 
 
@@ -37,13 +39,16 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "token-cell")
-		?? UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "token-cell")
+		let cell = tableView.dequeueReusableCell(withIdentifier: ApiAccessCell.reuseId, for: indexPath) as! ApiAccessCell
 
 		let token = tokens[indexPath.row]
 
-		cell.textLabel?.text = token.appId
-		cell.detailTextLabel?.text = token.key
+		cell.appIdLb?.text = token.appId
+		cell.keyLb?.text = token.key
+
+		cell.bypassLb?.text = token.bypass
+			? NSLocalizedString("Bypass: granted", comment: "")
+			: NSLocalizedString("Bypass: denied", comment: "")
 
 		return cell
 	}
@@ -73,8 +78,8 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	}
 
 
-	func addToken(_ appId: String, _ completion: @escaping (_ token: ApiToken?) -> Void) {
-		let token = ApiToken(appId: appId, key: UUID().uuidString)
+	func addToken(_ appId: String, _ needsBypass: Bool, _ completion: @escaping (_ token: ApiToken?) -> Void) {
+		let token = ApiToken(appId: appId, key: UUID().uuidString, bypass: needsBypass)
 
 		showAlert(token, nil) { [weak self] token in
 			if token != nil {
@@ -97,7 +102,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 
 	private func showAlert(_ token: ApiToken, _ indexPath: IndexPath?, _ completion: @escaping (_ token: ApiToken?) -> Void) {
 		let title: String
-		let message: String?
+		var message: String?
 		let actionTitle: String
 
 		if indexPath != nil {
@@ -108,7 +113,16 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 		else {
 			title = NSLocalizedString("Add API Access Token", comment: "")
 			message = NSLocalizedString("Another app requested an API access token.", comment: "")
-			actionTitle = NSLocalizedString("Allow Access", comment: "")
+
+			if token.bypass {
+				message! += "\n\n"
+				+ String(format: NSLocalizedString("That app also wants to bypass %@!", comment: ""), Bundle.main.displayName)
+
+				actionTitle = NSLocalizedString("Allow Access and Bypass", comment: "")
+			}
+			else {
+				actionTitle = NSLocalizedString("Allow Access", comment: "")
+			}
 		}
 
 		let alert = AlertHelper.build(
@@ -116,7 +130,29 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 			title: title,
 			actions: [AlertHelper.cancelAction(handler: { _ in completion(nil) })])
 
-		alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] _ in
+		alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] action in
+
+			if token.bypass {
+				// User granted bypass access. Switch on, if not yet enabled.
+				if Settings.bypassPort == nil {
+					Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
+
+					// Restart with activated bypass.
+					switch VpnManager.shared.sessionStatus {
+					case .connecting, .connected, .reasserting:
+						VpnManager.shared.disconnect()
+						VpnManager.shared.connect()
+
+						// We need to sleep a little, otherwise the queued start on the
+						// main thread will never happen.
+						usleep(500000)
+
+					default:
+						break
+					}
+				}
+			}
+
 			UIPasteboard.general.string = token.key
 
 			if indexPath == nil {

@@ -410,6 +410,11 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Onion-only Mode", comment: "")))",
 														 attributes: [.foregroundColor : UIColor.systemRed]))
 				}
+				else if Settings.bypassPort != nil {
+					statusText.append(space)
+					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Bypass", comment: "")))",
+														 attributes: [.foregroundColor : UIColor.systemRed]))
+				}
 
 				if notification?.name == .vpnProgress,
 				   let raw = notification?.object as? Float,

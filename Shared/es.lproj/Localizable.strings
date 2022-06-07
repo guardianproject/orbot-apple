@@ -20,6 +20,9 @@
 "%1$@ Some options might get overwritten by %2$@." = "1%1$@ Algunas opciones pueden quedar sobrescritas por %2$@.\n ";
 
 /* No comment provided by engineer. */
+"%1$@ via %2$@" = "%1$@ via %2$@";
+
+/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "1%@ Los argumentos de una opción deben estar en una nueva línea.\n ";
 
 /* No comment provided by engineer. */
@@ -68,6 +71,12 @@
 "Allow Access" = "Allow Access";
 
 /* No comment provided by engineer. */
+"Allow Access and Bypass" = "Allow Access and Bypass";
+
+/* No comment provided by engineer. */
+"Allow other apps to bypass %@" = "Allow other apps to bypass %@";
+
+/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Tampoco uses nodos excluidos para la administración de la red.";
 
 /* No comment provided by engineer. */
@@ -102,6 +111,15 @@
 
 /* No comment provided by engineer. */
 "Build new Circuits" = "Crear circuitos nuevos";
+
+/* No comment provided by engineer. */
+"Bypass" = "Bypass";
+
+/* No comment provided by engineer. */
+"Bypass: denied" = "Bypass: denied";
+
+/* No comment provided by engineer. */
+"Bypass: granted" = "Bypass: granted";
 
 /* No comment provided by engineer. */
 "Circuits" = "Circuitos";
@@ -273,6 +291,9 @@
 
 /* No comment provided by engineer. */
 "SVG documents" = "documentos SVG";
+
+/* No comment provided by engineer. */
+"That app also wants to bypass %@!" = "That app also wants to bypass %@!";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";

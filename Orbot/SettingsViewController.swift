@@ -37,7 +37,7 @@ class SettingsViewController: BaseFormViewController {
 		}
 
 		+++ Section(header: NSLocalizedString("Onion-only Mode", comment: ""), footer: NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: ""))
-		<<< SwitchRow() {
+		<<< SwitchRow("onionOnlyMode") {
 			$0.title = String(format: NSLocalizedString("Disable %@ for non-onion traffic", comment: ""), Bundle.main.displayName)
 			$0.value = Settings.onionOnly
 			$0.cell.textLabel?.numberOfLines = 0
@@ -69,6 +69,22 @@ class SettingsViewController: BaseFormViewController {
 					Settings.onionOnly = false
 					VpnManager.shared.disconnect()
 				}
+			}
+		}
+
+		+++ Section(NSLocalizedString("Bypass", comment: ""))
+		<<< SwitchRow() {
+			$0.title = String(format: NSLocalizedString("Allow other apps to bypass %@", comment: ""), Bundle.main.displayName)
+			$0.value = Settings.bypassPort != nil
+			$0.cell.textLabel?.numberOfLines = 0
+			$0.disabled = "$onionOnlyMode == true"
+		}
+		.onChange { row in
+			if row.value ?? false {
+				Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
+			}
+			else {
+				Settings.bypassPort = nil
 			}
 		}
 

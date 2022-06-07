@@ -102,15 +102,19 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	// MARK: Private Methods
 
 	private func getInfo(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		if let error = authenticate(req: req) {
+		let (token, error) = authenticate(req: req)
+
+		if let error = error {
 			return completion(error)
 		}
 
-		completion(respond(Info(), gzip: req.acceptsGzipContentEncoding))
+		let info = Info(bypassPort: (token?.bypass ?? false) ? Settings.bypassPort : nil)
+
+		completion(respond(info, gzip: req.acceptsGzipContentEncoding))
 	}
 
 	private func getCircuits(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		if let error = authenticate(req: req) {
+		if let error = authenticate(req: req).error {
 			return completion(error)
 		}
 
@@ -152,7 +156,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func closeCircuit(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		if let error = authenticate(req: req) {
+		if let error = authenticate(req: req).error {
 			return completion(error)
 		}
 
@@ -173,7 +177,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func poll(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		if let error = authenticate(req: req) {
+		if let error = authenticate(req: req).error {
 			return completion(error)
 		}
 
@@ -184,16 +188,16 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		completion(respond())
 	}
 
-	private func authenticate(req: GCDWebServerRequest) -> GCDWebServerErrorResponse? {
+	private func authenticate(req: GCDWebServerRequest) -> (token: ApiToken?, error: GCDWebServerErrorResponse?) {
 		guard let key = req.headers.keys.first(where: { $0.lowercased() == "x-token" }),
 			  let token = req.headers[key],
 			  !token.isEmpty,
-			  Settings.apiAccessTokens.contains(where: { $0.key == token })
+			  let apiToken = Settings.apiAccessTokens.first(where: { $0.key == token })
 		else {
-			return error(403)
+			return (nil, error(403))
 		}
 
-		return nil
+		return (apiToken, nil)
 	}
 
 	private func respond<T: Encodable>(_ data: T, statusCode: Int? = nil, gzip: Bool = false)
@@ -246,6 +250,7 @@ private struct Info: Codable {
 		case version
 		case build
 		case onionOnly = "onion-only"
+		case bypassPort = "bypass-port"
 	}
 
 	/**
@@ -272,4 +277,9 @@ private struct Info: Codable {
 	 If Orbot is running in onion-only mode.
 	 */
 	public let onionOnly = Settings.onionOnly
+
+	/**
+	 The SOCKS5 port with which Orbot can be bypassed, if activated.
+	 */
+	public let bypassPort: UInt16?
 }
