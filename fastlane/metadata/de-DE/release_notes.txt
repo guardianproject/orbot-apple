@@ -7,4 +7,5 @@
 - Alle Einstellungen in einem Dropdown-Menü gruppiert.
 - Eine "Content Blocker"-Erweiterung mit einem Editor für benutzerdefinierte Regeln hinzugefügt.
 - Einen (gefährlichen!) "Nur-Onion-Modus" hinzugefügt.
+- Eine (abgesicherte) Bypass-Möglichkeit, z.B. für Apps mit eigenem Tor, hinzugefügt.
 - Brücken-Auto-Konfigurations-Option hinzugefügt.

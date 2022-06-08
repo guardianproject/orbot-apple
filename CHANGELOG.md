@@ -10,6 +10,7 @@
 - Grouped all settings in a drop-down menu.
 - Added a "Content Blocker" extension with an editor for custom rules.
 - Added a (dangerous!) "onion-only mode".
+- Added a (secured) bypass feature for e.g. apps with their own Tor.
 - Added bridges auto-configuration option.
 - Extended remote control possibilities. 
 
