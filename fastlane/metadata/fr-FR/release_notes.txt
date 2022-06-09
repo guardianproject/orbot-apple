@@ -1,10 +1,11 @@
-- Updates:
-  - Tor 0.4.7.7
-  - Snowflake 2.2.0
-  - German, French, Russian, Spanish, Ukrainian translations
+– Mises à jour :
+  – Tor 0.4.7.7
+  – Snowflake 2.2.0
+  – Traductions en allemand, français, russe, espagnol et ukrainien
 – Un bouton a été ajouté pour remplacer les circuits actuellement construits par de nouveaux.
 – Possibilité d’ajouter n’importe quelles configurations de Tor.
 – Tous les paramètres ont été regroupés dans un menu déroulant.
 – Une extension « Bloqueur de contenu » a été ajoutée avec un éditeur de règles personnalisées.
-- Added a (dangerous!) "onion-only mode".
-- Added bridges auto-configuration option.
+– Ajout d’un « mode oignon seulement » (dangereux !).
+– Ajout d’une fonction de contournement (sécurisée) pour, p. ex., les applis qui propose leur propre Tor.
+– Ajout d’une option de configuration automatique des ponts.
