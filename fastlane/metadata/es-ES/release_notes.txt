@@ -1,5 +1,11 @@
-- Actualizar Tor 0.4.6.10 y Leaf 0.4.2
-- Accesibilidad mejorada/compatibilidad con lectores de pantalla.
-- Interfaz de usuario agregada para configurar las opciones `EntryNodes`, `ExitNodes`, `ExcludeNodes` y `StrictNodes` de Tor.
-- Soporte GeoIP arreglado.
-- Se agregaron traducciones en Frances, Ruso, Español y Ucraniano.
+- Actualizaciones:
+  - Tor 0.4.7.7
+  - Snowflake 2.2.0
+- Traducciones al Alemán, Francés, Ruso, Español, Ucraniano
+- Botón agregado para reemplazar los circuitos construidos actualmente por otros nuevos.
+- Posibilidad añadida de añadir cualquier opción de configuración de Tor.
+- Todos los ajustes agrupados en un menú desplegable.
+- Se agregó una extensión de "Bloqueador de contenido" con un editor de reglas personalizadas.
+- Se agregó un (¡peligroso!) "modo solo onion".
+- Se agregó una función de derivación (segura) para, ejemplo, aplicaciones con su propio Tor.
+- Añadida opción de autoconfiguración de puentes.
