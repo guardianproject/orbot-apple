@@ -10,7 +10,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 - Tor 0.4.7.7
 - OpenSSL 1.1.1o
 - Obfs4proxy 0.0.13
-- Snowflake 2.1.0
+- Snowflake 2.2.0
 
 
 ## Build
