@@ -102,10 +102,18 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	// MARK: Private Methods
 
 	private func getInfo(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
+		getInfo(req: req, completion: completion, sleepDuration: nil)
+	}
+
+	private func getInfo(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock, sleepDuration: UInt32?) {
 		let (token, error) = authenticate(req: req)
 
 		if let error = error {
 			return completion(error)
+		}
+
+		if let sleepDuration = sleepDuration {
+			sleep(sleepDuration)
 		}
 
 		let info = Info(bypassPort: (token?.bypass ?? false) ? Settings.bypassPort : nil)
@@ -177,15 +185,9 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 	}
 
 	private func poll(req: GCDWebServerRequest, completion: @escaping GCDWebServerCompletionBlock) {
-		if let error = authenticate(req: req).error {
-			return completion(error)
-		}
+		let length = req.query?["length"] ?? ""
 
-		let length = req.query?["length"] ?? "20"
-
-		sleep(UInt32(length) ?? 20)
-
-		completion(respond())
+		getInfo(req: req, completion: completion, sleepDuration: UInt32(length) ?? 20)
 	}
 
 	private func authenticate(req: GCDWebServerRequest) -> (token: ApiToken?, error: GCDWebServerErrorResponse?) {
