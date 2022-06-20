@@ -14,15 +14,15 @@ PODS:
     - ReachabilitySwift (~> 5.0)
   - MBProgressHUD (1.2.0)
   - ReachabilitySwift (5.0.0)
-  - Tor/Core (407.7.1)
-  - Tor/GeoIP (407.7.1):
+  - Tor/Core (407.8.2)
+  - Tor/GeoIP (407.8.2):
     - Tor/Core
 
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
   - IPtProxyUI (~> 1.8)
-  - Tor/GeoIP (~> 407.7)
+  - Tor/GeoIP (~> 407.8)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -51,8 +51,8 @@ SPEC CHECKSUMS:
   IPtProxyUI: 862316bccbca5ad23d871bbbea10e1718254860d
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Tor: 72ca8ae856d474c6676db0cd7a34607998ad4261
+  Tor: 4fcaf1d7458f3b01617d3356a28561a4cc7a6ff5
 
-PODFILE CHECKSUM: 843728da5b0ef6d2c2205737171329560c4ecaaa
+PODFILE CHECKSUM: 67c3c5f86d77202c1ccf7314d894f46fa0a55bd1
 
 COCOAPODS: 1.11.3
