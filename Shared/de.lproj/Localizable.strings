@@ -74,9 +74,6 @@
 "Allow Access and Bypass" = "Erlaube Zugriff und Bypass";
 
 /* No comment provided by engineer. */
-"Allow other apps to bypass %@" = "Erlaube anderen Apps %@ zu umgehen";
-
-/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Ausgeschlossene Netzknoten auch nicht für Netzmanagement verwenden";
 
 /* No comment provided by engineer. */

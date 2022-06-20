@@ -72,22 +72,6 @@ class SettingsViewController: BaseFormViewController {
 			}
 		}
 
-		+++ Section(NSLocalizedString("Bypass", comment: ""))
-		<<< SwitchRow() {
-			$0.title = String(format: NSLocalizedString("Allow other apps to bypass %@", comment: ""), Bundle.main.displayName)
-			$0.value = Settings.bypassPort != nil
-			$0.cell.textLabel?.numberOfLines = 0
-			$0.disabled = "$onionOnlyMode == true"
-		}
-		.onChange { row in
-			if row.value ?? false {
-				Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
-			}
-			else {
-				Settings.bypassPort = nil
-			}
-		}
-
 		+++ Section(NSLocalizedString("Node Configuration", comment: ""))
 
 		<<< LabelRow() {

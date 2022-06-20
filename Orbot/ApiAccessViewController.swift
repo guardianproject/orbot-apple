@@ -58,6 +58,14 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 			tokens.remove(at: indexPath.row)
 
 			tableView.deleteRows(at: [indexPath], with: .automatic)
+
+			// No bypassing apps allowed anymore. Remove bypass, if any.
+			if tokens.first(where: { $0.bypass }) == nil && Settings.bypassPort != nil {
+				Settings.bypassPort = nil
+
+				// Restart with deactivated bypass.
+				restartVpn()
+			}
 		}
 	}
 
@@ -138,18 +146,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 					Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
 
 					// Restart with activated bypass.
-					switch VpnManager.shared.sessionStatus {
-					case .connecting, .connected, .reasserting:
-						VpnManager.shared.disconnect()
-						VpnManager.shared.connect()
-
-						// We need to sleep a little, otherwise the queued start on the
-						// main thread will never happen.
-						usleep(500000)
-
-					default:
-						break
-					}
+					self?.restartVpn()
 				}
 			}
 
@@ -179,5 +176,20 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 		}
 
 		present(alert, animated: true)
+	}
+
+	private func restartVpn() {
+		switch VpnManager.shared.sessionStatus {
+		case .connecting, .connected, .reasserting:
+			VpnManager.shared.disconnect()
+			VpnManager.shared.connect()
+
+			// We need to sleep a little, otherwise the queued start on the
+			// main thread will never happen.
+			usleep(500000)
+
+		default:
+			break
+		}
 	}
 }
