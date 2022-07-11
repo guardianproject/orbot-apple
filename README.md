@@ -7,7 +7,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 - Supports Obfs4 and Snowflake bridges, fully configurable.
 - Supports Onion v3 service authentication.
 - Supports Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
-- Tor 0.4.7.7
+- Tor 0.4.7.8
 - OpenSSL 1.1.1o
 - Obfs4proxy 0.0.13
 - Snowflake 2.2.0
