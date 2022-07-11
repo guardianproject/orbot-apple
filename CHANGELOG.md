@@ -1,5 +1,13 @@
 #  Orbot iOS Changelog
 
+## 1.3.1
+- Updated Tor to 0.4.7.8.
+- Added status to poll response, so `OrbotKit` doesn't have to ask and catches 
+  the transition between `starting` and `started`.
+- Removed explicit bypass setting. Bypass now only gets activated, if there's an app registered, which needs it. 
+  Will be switched off again, after all bypass apps were removed.
+- Fixed rare crash.
+
 ## 1.3.0
 - Updates:
   - Tor 0.4.7.7
