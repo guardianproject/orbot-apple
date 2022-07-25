@@ -109,12 +109,21 @@ struct BlockItem: Codable, CustomStringConvertible {
 			? ""
 			: String(format: NSLocalizedString(" where the URL contains the regex \"%@\"", comment: ""), trigger.urlFilter)
 
+		let domains: String
+
+		if let unlessDomains = trigger.unlessDomain, !unlessDomains.isEmpty {
+			domains = String(format: NSLocalizedString("all domains but %@", comment: ""), description(for: unlessDomains, ""))
+		}
+		else {
+			domains = description(for: trigger.ifDomain, NSLocalizedString("all domains", comment: ""))
+		}
+
 		return String(
 			format: NSLocalizedString("%1$@ by %2$@ for %3$@ on %4$@%5$@.", comment: ""),
 			action.type.description,
 			(trigger.loadType?.first ?? .all).description,
 			description(for: trigger.resourceType, NSLocalizedString("all types", comment: "")),
-			description(for: trigger.ifDomain, NSLocalizedString("all domains", comment: "")),
+			domains,
 			regexDesc)
 	}
 

@@ -119,11 +119,29 @@ class BlockerViewController: BaseFormViewController {
 
 		<<< SwitchRow("allDomains") {
 			$0.title = NSLocalizedString("all domains", comment: "")
-			$0.value = blocker.trigger.ifDomain?.isEmpty ?? true
+			$0.value = blocker.trigger.ifDomain?.isEmpty ?? true && blocker.trigger.unlessDomain?.isEmpty ?? true
 		}
 		.onChange({ [weak self] row in
 			if row.value ?? false {
 				self?.blocker.trigger.ifDomain = nil
+				self?.blocker.trigger.unlessDomain = nil
+			}
+		})
+
+		<<< SwitchRow("allDomainsBut") {
+			$0.title = NSLocalizedString("all domains but", comment: "")
+			$0.value = !(blocker.trigger.unlessDomain?.isEmpty ?? true)
+
+			$0.hidden = hiddenWhenAllDomains
+		}
+		.onChange({ [weak self] row in
+			if row.value ?? false {
+				self?.blocker.trigger.unlessDomain = self?.blocker.trigger.ifDomain
+				self?.blocker.trigger.ifDomain = nil
+			}
+			else {
+				self?.blocker.trigger.ifDomain = self?.blocker.trigger.unlessDomain
+				self?.blocker.trigger.unlessDomain = nil
 			}
 		})
 
@@ -135,20 +153,29 @@ class BlockerViewController: BaseFormViewController {
 
 		<<< TextAreaRow() {
 			$0.placeholder = "example.com example.org *example.gov"
-			$0.value = blocker.trigger.ifDomain?.joined(separator: " ")
+			$0.value = blocker.trigger.ifDomain?.isEmpty ?? true
+				? blocker.trigger.unlessDomain?.joined(separator: " ")
+				: blocker.trigger.ifDomain?.joined(separator: " ")
 
 			$0.turnOffAutoCorrect()
 
 			$0.hidden = hiddenWhenAllDomains
 		}
 		.onChange({ [weak self] row in
-			self?.blocker.trigger.ifDomain = row.value?
+			let value: [String]? = row.value?
 				.components(separatedBy: .whitespacesAndNewlines)
 				.compactMap({
 					let d = $0.trimmingCharacters(in: .whitespacesAndNewlines)
 
 					return d.isEmpty ? nil : d
 				})
+
+			if self?.form.rowBy(tag: "allDomainsBut")?.value ?? false {
+				self?.blocker.trigger.unlessDomain = value
+			}
+			else {
+				self?.blocker.trigger.ifDomain = value
+			}
 		})
 
 		<<< LabelRow() {

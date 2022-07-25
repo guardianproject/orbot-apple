@@ -65,6 +65,12 @@
 "all domains" = "todos los dominios";
 
 /* No comment provided by engineer. */
+"all domains but" = "all domains but";
+
+/* No comment provided by engineer. */
+"all domains but %@" = "all domains but %@";
+
+/* No comment provided by engineer. */
 "all types" = "todos los tipos";
 
 /* No comment provided by engineer. */
