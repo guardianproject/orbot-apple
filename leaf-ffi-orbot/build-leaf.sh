@@ -43,10 +43,18 @@ if [[ -n "${DEVELOPER_SDK_DIR:-}" ]]; then
 
 	TARGET="aarch64-apple-ios"
 
-	if [ $ARCHS = "x86_64" ]; then
-		TARGET="x86_64-apple-ios"
+	if [ $PLATFORM_NAME = "macosx" ]; then
+		if [ $ARCHS = "arm64" ]; then
+			TARGET="aarch64-apple-darwin"
+		else
+			TARGET="x86_64-apple-darwin"
+		fi
 	elif [ $PLATFORM_NAME = "iphonesimulator" ]; then
-		TARGET="aarch64-apple-ios-sim"
+		if [ $ARCHS = "arm64" ]; then
+			TARGET="aarch64-apple-ios-sim"
+		else
+			TARGET="x86_64-apple-ios"
+		fi
 	fi
 
 	cargo lipo $RELEASE --targets $TARGET --manifest-path "$WORKDIR/Cargo.toml" -p leaf-ffi

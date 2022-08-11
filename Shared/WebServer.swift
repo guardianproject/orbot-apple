@@ -83,12 +83,17 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		webServer.addHandler(forMethod: "GET", pathRegex: "^\\/poll\\/?$", request: GCDWebServerRequest.self,
 							 asyncProcessBlock: poll)
 
-		try webServer.start(options: [
-			GCDWebServerOption_AutomaticallySuspendInBackground: false,
+		var options: [String: Any] = [
 			GCDWebServerOption_ConnectedStateCoalescingInterval: 10,
 			GCDWebServerOption_BindToLocalhost: true,
 			GCDWebServerOption_Port: Config.webserverPort,
-			GCDWebServerOption_ServerName: Bundle.main.displayName])
+			GCDWebServerOption_ServerName: Bundle.main.displayName]
+
+		#if os(iOS)
+			options[GCDWebServerOption_AutomaticallySuspendInBackground] = false
+		#endif
+
+		try webServer.start(options: options)
 	}
 
 	open func stop() {

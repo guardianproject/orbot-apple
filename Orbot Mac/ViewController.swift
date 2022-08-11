@@ -8,6 +8,7 @@
 
 import Cocoa
 import IPtProxyUI
+import NetworkExtension
 
 class ViewController: NSViewController {
 
@@ -37,6 +38,45 @@ class ViewController: NSViewController {
 	override var representedObject: Any? {
 		didSet {
 			// Update the view, if already loaded.
+		}
+	}
+
+
+	// MARK: Actions
+
+	@IBAction func control(_ sender: Any) {
+		control(startOnly: false)
+	}
+
+	func control(startOnly: Bool) {
+
+		// Enable, if disabled.
+		if VpnManager.shared.confStatus == .disabled {
+			return VpnManager.shared.enable { [weak self] success in
+				if success && VpnManager.shared.confStatus == .enabled {
+					self?.control(startOnly: startOnly)
+				}
+			}
+		}
+
+		if startOnly && ![NEVPNStatus.disconnected, .disconnecting].contains(VpnManager.shared.sessionStatus) {
+			return
+		}
+
+		// Install first, if not installed.
+		else if VpnManager.shared.confStatus == .notInstalled {
+			return VpnManager.shared.install()
+		}
+
+		switch VpnManager.shared.sessionStatus {
+		case .connected, .connecting:
+			VpnManager.shared.disconnect()
+
+		case .disconnected, .disconnecting:
+			VpnManager.shared.connect()
+
+		default:
+			break
 		}
 	}
 
