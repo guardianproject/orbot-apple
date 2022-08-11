@@ -15,6 +15,23 @@
 		A00F51332745456A0037DD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51322745456A0037DD4A /* Main.storyboard */; };
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
+		A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5F828A53465008A79EE /* AppDelegate.swift */; };
+		A01AB5FB28A53465008A79EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5FA28A53465008A79EE /* ViewController.swift */; };
+		A01AB60028A53465008A79EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01AB5FE28A53465008A79EE /* Main.storyboard */; };
+		A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
+		A01AB60628A54110008A79EE /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
+		A01AB60728A54225008A79EE /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73602247584EE00073C81 /* VpnManager.swift */; };
+		A01AB60828A542EE008A79EE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
+		A01AB60928A542FF008A79EE /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
+		A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F424757FA400073C81 /* ProgressMessage.swift */; };
+		A01AB60B28A5434E008A79EE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E824756CA200073C81 /* Message.swift */; };
+		A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */; };
+		A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
+		A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */; };
+		A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB61128A5457A008A79EE /* NSButton+Helpers.swift */; };
+		A01AB61428A5463C008A79EE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB61328A5463C008A79EE /* Formatters.swift */; };
+		A01AB61528A5463C008A79EE /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB61328A5463C008A79EE /* Formatters.swift */; };
+		A01AB61628A549D0008A79EE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DB2652C7D6008F9912 /* TorManager.swift */; };
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -28,7 +45,6 @@
 		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
-		A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
@@ -56,7 +72,6 @@
 		A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
-		A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -80,6 +95,7 @@
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
+		F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,11 +138,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.release.xcconfig"; sourceTree = "<group>"; };
 		169F99644003AC860683D373 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
 		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
 		6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
+		92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorCircuit+Helper.swift"; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
@@ -135,6 +153,13 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01AB5F628A53465008A79EE /* Orbot Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orbot Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A01AB5FA28A53465008A79EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
+		A01AB5FF28A53465008A79EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot_Mac.entitlements; sourceTree = "<group>"; };
+		A01AB61128A5457A008A79EE /* NSButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Helpers.swift"; sourceTree = "<group>"; };
+		A01AB61328A5463C008A79EE /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
@@ -219,10 +244,19 @@
 		A0F8690927D64F7000C9D407 /* leaf-ffi.patch */ = {isa = PBXFileReference; lastKnownFileType = text; path = "leaf-ffi.patch"; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
+		A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A01AB5F328A53465008A79EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A05B73AD24755CE600930C40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +293,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01AB5F728A53465008A79EE /* Orbot Mac */ = {
+			isa = PBXGroup;
+			children = (
+				A01AB5F828A53465008A79EE /* AppDelegate.swift */,
+				A01AB5FA28A53465008A79EE /* ViewController.swift */,
+				A01AB61028A5456E008A79EE /* Helpers */,
+				A01AB5FE28A53465008A79EE /* Main.storyboard */,
+				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
+			);
+			path = "Orbot Mac";
+			sourceTree = "<group>";
+		};
+		A01AB60F28A54531008A79EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
+				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
+				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A01AB61028A5456E008A79EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A01AB61128A5457A008A79EE /* NSButton+Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A05B73A724755CE600930C40 = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +332,7 @@
 				A0A735CE247561F200073C81 /* TorVPN */,
 				A06BEC6F280090B300351868 /* ContentBlocker */,
 				A0A735DA2475621400073C81 /* Shared */,
+				A01AB5F728A53465008A79EE /* Orbot Mac */,
 				A0F868FE27D6293E00C9D407 /* leaf-ffi-orbot */,
 				A0F8690027D629B000C9D407 /* leaf */,
 				A0D6162627D8E4AA008E0F3C /* Screenshots */,
@@ -285,6 +350,7 @@
 				A0A735CD247561F200073C81 /* TorVPN.appex */,
 				A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */,
 				A06BEC6E280090B300351868 /* ContentBlocker.appex */,
+				A01AB5F628A53465008A79EE /* Orbot Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,8 +368,8 @@
 				A0B167DC284F90560089EB7C /* ApiAccessCell.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
+				A01AB60F28A54531008A79EE /* Helpers */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
-				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
 				A05B73C124755CE700930C40 /* Info.plist */,
 				A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */,
 				A0A735C024755DCB00073C81 /* Orbot.entitlements */,
@@ -358,11 +424,13 @@
 				A0A735DF247566CD00073C81 /* Config.h */,
 				A0A735E0247566CD00073C81 /* Config.m */,
 				A0A735E32475679800073C81 /* Config.swift */,
+				A01AB61328A5463C008A79EE /* Formatters.swift */,
 				A01F34DE2652D082008F9912 /* Logger.swift */,
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
+				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
 				A023D82A271983C000A634B7 /* template.conf */,
 				A0F3FFB4282EA264003096EC /* template-onion-only.conf */,
 				A0B167D9284F63C80089EB7C /* template-bypass.conf */,
@@ -392,9 +460,6 @@
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */,
-				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
-				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
-				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
 				A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */,
 			);
@@ -446,6 +511,8 @@
 				29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */,
 				C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */,
 				77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */,
+				A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */,
+				1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -462,6 +529,7 @@
 				A0FD91A426F36199002C317C /* libleaf.a */,
 				169F99644003AC860683D373 /* Pods_Orbot.framework */,
 				6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */,
+				92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -469,6 +537,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A01AB5F528A53465008A79EE /* Orbot Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A01AB60428A53465008A79EE /* Build configuration list for PBXNativeTarget "Orbot Mac" */;
+			buildPhases = (
+				D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */,
+				A01AB5F228A53465008A79EE /* Sources */,
+				A01AB5F328A53465008A79EE /* Frameworks */,
+				A01AB5F428A53465008A79EE /* Resources */,
+				61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */,
+				B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orbot Mac";
+			productName = "Orbot Mac";
+			productReference = A01AB5F628A53465008A79EE /* Orbot Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A05B73AF24755CE600930C40 /* Orbot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */;
@@ -554,10 +642,13 @@
 		A05B73A824755CE600930C40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
+					A01AB5F528A53465008A79EE = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					A05B73AF24755CE600930C40 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
@@ -597,11 +688,21 @@
 				A0A735CC247561F200073C81 /* TorVPN */,
 				A06BEC6D280090B300351868 /* ContentBlocker */,
 				A0D6162427D8E4AA008E0F3C /* Screenshots */,
+				A01AB5F528A53465008A79EE /* Orbot Mac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A01AB5F428A53465008A79EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */,
+				A01AB60028A53465008A79EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A05B73AE24755CE600930C40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -682,6 +783,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -718,6 +836,23 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
 		};
+		B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,6 +869,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TorVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Orbot Mac-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -777,10 +934,32 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A01AB5F228A53465008A79EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */,
+				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
+				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
+				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
+				A01AB5FB28A53465008A79EE /* ViewController.swift in Sources */,
+				A01AB60928A542FF008A79EE /* Config.m in Sources */,
+				A01AB60628A54110008A79EE /* Bundle+Helpers.swift in Sources */,
+				A01AB60828A542EE008A79EE /* Config.swift in Sources */,
+				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
+				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
+				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
+				A01AB60728A54225008A79EE /* VpnManager.swift in Sources */,
+				A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A05B73AC24755CE600930C40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01AB61428A5463C008A79EE /* Formatters.swift in Sources */,
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
@@ -830,8 +1009,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
-				A0A73609247587D300073C81 /* UIButton+Helpers.swift in Sources */,
-				A06470192477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
 				A0A735E2247566CD00073C81 /* Config.m in Sources */,
@@ -895,6 +1072,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		A01AB5FE28A53465008A79EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A01AB5FF28A53465008A79EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -911,6 +1096,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A01AB60228A53465008A79EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A01AB60328A53465008A79EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		A05B73C224755CE700930C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0A735DC2475628F00073C81 /* Config.xcconfig */;
@@ -1056,7 +1299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1088,7 +1331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1115,7 +1358,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "$(CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1142,7 +1385,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "$(CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Orbot/Orbot-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1248,6 +1491,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A01AB60428A53465008A79EE /* Build configuration list for PBXNativeTarget "Orbot Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01AB60228A53465008A79EE /* Debug */,
+				A01AB60328A53465008A79EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "Orbot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

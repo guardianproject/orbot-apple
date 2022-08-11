@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Tor
 
 public extension Bundle {
 

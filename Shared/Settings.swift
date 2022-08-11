@@ -8,7 +8,6 @@
 
 import Foundation
 import IPtProxyUI
-import CoreMedia
 
 class Settings: IPtProxyUI.Settings {
 
@@ -45,7 +44,7 @@ class Settings: IPtProxyUI.Settings {
 				repeat {
 					port = Int.random(in: 1024...65535)
 				} while port == Config.webserverPort
-				// There might still be a colition with the randomly selected
+				// There might still be a colision with the randomly selected
 				// Tor and Tor Controller ports, but at least we will avoid this one.
 
 				defaults?.set(port, forKey: "bypass_port")

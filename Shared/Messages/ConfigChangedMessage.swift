@@ -6,7 +6,7 @@
 //  Copyright © 2021 Guardian Project. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ConfigChangedMessage: NSObject, Message {
 

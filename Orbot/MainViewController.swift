@@ -79,14 +79,6 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var logTv: UITextView!
 
-	private static let nf: NumberFormatter = {
-		let nf = NumberFormatter()
-		nf.numberStyle = .percent
-		nf.maximumFractionDigits = 1
-
-		return nf
-	}()
-
 	private var logFsObject: DispatchSourceFileSystemObject? {
 		didSet {
 			oldValue?.cancel()
@@ -418,7 +410,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 				if notification?.name == .vpnProgress,
 				   let raw = notification?.object as? Float,
-				   let progress = Self.nf.string(from: NSNumber(value: raw))
+				   let progress = Formatters.format(value: raw)
 				{
 					statusText.append(space)
 					statusText.append(NSAttributedString(string: progress))
