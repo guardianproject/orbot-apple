@@ -114,6 +114,13 @@
 		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
+		A0FF331528B3ADC50079A267 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
+		A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
+		A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
+		A0FF331828B3ADD50079A267 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
+		A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
+		A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
+		A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
 		D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */; };
@@ -798,6 +805,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */,
+				A0FF331828B3ADD50079A267 /* Localizable.strings in Resources */,
 				A01AB60028A53465008A79EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +814,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FF331528B3ADC50079A267 /* template.conf in Resources */,
+				A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */,
+				A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1116,8 @@
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
+				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
+				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* ViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,
@@ -1129,6 +1142,7 @@
 				A01AB6AD28A5573E008A79EE /* WebServer.swift in Sources */,
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
+				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01AB6AF28A558A6008A79EE /* Config.m in Sources */,
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
 				A01AB6AE28A558A3008A79EE /* Config.swift in Sources */,
