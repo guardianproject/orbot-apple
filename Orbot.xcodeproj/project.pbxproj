@@ -57,6 +57,7 @@
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
+		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -223,6 +224,7 @@
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
+		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A0507CF526F9FB9400F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
@@ -370,6 +372,7 @@
 				A01AB5F828A53465008A79EE /* AppDelegate.swift */,
 				A01AB5FA28A53465008A79EE /* MainViewController.swift */,
 				A0FF331C28B3B7F10079A267 /* LogViewController.swift */,
+				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A01AB5FE28A53465008A79EE /* Main.storyboard */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -1124,6 +1127,7 @@
 			files = (
 				A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */,
 				A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */,
+				A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */,
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,

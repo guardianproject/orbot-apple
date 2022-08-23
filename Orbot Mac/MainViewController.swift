@@ -35,6 +35,12 @@ class MainViewController: NSViewController {
 		updateUi()
 	}
 
+	override func viewDidAppear() {
+		super.viewDidAppear()
+
+		view.window?.title = Bundle.main.displayName
+	}
+
 	override var representedObject: Any? {
 		didSet {
 			// Update the view, if already loaded.

@@ -48,6 +48,8 @@ class LogViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
+		view.window?.title = NSLocalizedString("Log", comment: "")
+
 		changeLog(logSc!)
 	}
 
