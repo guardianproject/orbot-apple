@@ -114,13 +114,13 @@
                                         <menuItem title="Orbot" keyEquivalent="1" allowsKeyEquivalentWhenHidden="YES" id="6WO-Dy-p0a">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openMain:" target="Ady-hI-5gd" id="e7w-YM-KPy"/>
+                                                <action selector="openMain:" target="Voe-Tx-rLC" id="4F4-MS-wZW"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Log" keyEquivalent="2" allowsKeyEquivalentWhenHidden="YES" id="5DF-rd-fm5">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openLog:" target="Ady-hI-5gd" id="auC-AV-So1"/>
+                                                <action selector="openLog:" target="Voe-Tx-rLC" id="3fm-j7-NYI"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -148,13 +148,13 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-25" y="-248"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="OrbotWindowController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Orbot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController storyboardIdentifier="MainWindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" identifier="MainWindow" title="Orbot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -174,7 +174,7 @@
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="MainView" id="XfG-lQ-9wD" customClass="MainViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <box key="view" boxType="custom" borderType="none" titlePosition="noTitle" id="Opr-dN-5QT">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="450"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -241,8 +241,8 @@
         <!--Window Controller-->
         <scene sceneID="BND-zG-iIb">
             <objects>
-                <windowController storyboardIdentifier="LogWindow" showSeguePresentationStyle="single" id="Klk-BL-Yvt" sceneMemberID="viewController">
-                    <window key="window" title="Log" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="yEm-UK-PZW">
+                <windowController storyboardIdentifier="LogWindowController" showSeguePresentationStyle="single" id="Klk-BL-Yvt" sceneMemberID="viewController">
+                    <window key="window" identifier="LogWindow" title="Log" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="yEm-UK-PZW">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="322" y="408" width="480" height="270"/>
@@ -290,13 +290,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="465" height="220"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="BeW-4a-IF5">
+                                        <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="BeW-4a-IF5">
                                             <rect key="frame" x="0.0" y="0.0" width="465" height="220"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="465" height="220"/>
-                                            <size key="maxSize" width="465" height="10000000"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
