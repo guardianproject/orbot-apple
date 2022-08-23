@@ -14,7 +14,7 @@ extension UITextView {
 		contentOffset.y >= contentSize.height - frame.size.height - 96
 	}
 
-    func scrollToBottom() {
+	func scrollToBottom() {
 		scrollRangeToVisible(NSRange(location: max(0, text.count - 1), length: 1))
-    }
+	}
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Orbot Mac
 //
 //  Created by Benjamin Erhart on 11.08.22.
@@ -10,7 +10,7 @@ import Cocoa
 import IPtProxyUI
 import NetworkExtension
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!

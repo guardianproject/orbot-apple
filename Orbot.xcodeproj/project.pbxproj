@@ -16,7 +16,7 @@
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
 		A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5F828A53465008A79EE /* AppDelegate.swift */; };
-		A01AB5FB28A53465008A79EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5FA28A53465008A79EE /* ViewController.swift */; };
+		A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5FA28A53465008A79EE /* MainViewController.swift */; };
 		A01AB60028A53465008A79EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01AB5FE28A53465008A79EE /* Main.storyboard */; };
 		A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A01AB60628A54110008A79EE /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
@@ -56,6 +56,8 @@
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
+		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
+		A03CFBB628B4CF2200D7A700 /* OrbotWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB528B4CF2200D7A700 /* OrbotWindowController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -121,6 +123,9 @@
 		A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
+		A0FF331D28B3B7F10079A267 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF331C28B3B7F10079A267 /* LogViewController.swift */; };
+		A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
+		A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
 		D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */; };
@@ -205,7 +210,7 @@
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A01AB5F628A53465008A79EE /* Orbot Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orbot Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A01AB5FA28A53465008A79EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
+		A01AB5FA28A53465008A79EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		A01AB5FF28A53465008A79EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot_Mac.entitlements; sourceTree = "<group>"; };
 		A01AB61128A5457A008A79EE /* NSButton+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Helpers.swift"; sourceTree = "<group>"; };
@@ -218,6 +223,8 @@
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
+		A03CFBB528B4CF2200D7A700 /* OrbotWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbotWindowController.swift; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A0507CF526F9FB9400F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
@@ -298,6 +305,7 @@
 		A0F8690927D64F7000C9D407 /* leaf-ffi.patch */ = {isa = PBXFileReference; lastKnownFileType = text; path = "leaf-ffi.patch"; sourceTree = "<group>"; };
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
+		A0FF331C28B3B7F10079A267 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -362,7 +370,9 @@
 			isa = PBXGroup;
 			children = (
 				A01AB5F828A53465008A79EE /* AppDelegate.swift */,
-				A01AB5FA28A53465008A79EE /* ViewController.swift */,
+				A03CFBB528B4CF2200D7A700 /* OrbotWindowController.swift */,
+				A01AB5FA28A53465008A79EE /* MainViewController.swift */,
+				A0FF331C28B3B7F10079A267 /* LogViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A01AB5FE28A53465008A79EE /* Main.storyboard */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -384,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				A01AB61128A5457A008A79EE /* NSButton+Helpers.swift */,
+				A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -987,6 +998,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1005,6 +1017,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1112,6 +1125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */,
 				A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */,
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
@@ -1119,14 +1133,18 @@
 				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
 				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
-				A01AB5FB28A53465008A79EE /* ViewController.swift in Sources */,
+				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,
+				A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */,
+				A0FF331D28B3B7F10079A267 /* LogViewController.swift in Sources */,
 				A01AB60628A54110008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB60828A542EE008A79EE /* Config.swift in Sources */,
 				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
 				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
 				A01AB60728A54225008A79EE /* VpnManager.swift in Sources */,
+				A03CFBB628B4CF2200D7A700 /* OrbotWindowController.swift in Sources */,
+				A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */,
 				A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
