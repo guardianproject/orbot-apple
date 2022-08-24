@@ -25,25 +25,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
 		return true
 	}
-
-	@IBAction func openMain(_ sender: Any) {
-		frontOrOpen("MainWindowController", windowId: "MainWindow")
-	}
-
-	@IBAction func openLog(_ sender: Any) {
-		frontOrOpen("LogWindowController", windowId: "LogWindow")
-	}
-
-
-	// MARK: Private Methods
-
-	private func frontOrOpen(_ controllerId: String, windowId: String) {
-		if let window = NSApp.windows.first(where: { $0.identifier?.rawValue == windowId }) {
-			window.orderFrontRegardless()
-			window.makeKey()
-		}
-		else {
-			(NSStoryboard.main?.instantiateController(withIdentifier: controllerId) as? NSWindowController)?.showWindow(self)
-		}
-	}
 }

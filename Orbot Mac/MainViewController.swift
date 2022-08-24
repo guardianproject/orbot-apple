@@ -41,11 +41,6 @@ class MainViewController: NSViewController {
 		view.window?.title = Bundle.main.displayName
 	}
 
-	override var representedObject: Any? {
-		didSet {
-			// Update the view, if already loaded.
-		}
-	}
 
 
 	// MARK: Actions

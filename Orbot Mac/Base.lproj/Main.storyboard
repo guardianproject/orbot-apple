@@ -116,15 +116,13 @@
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Wxy-6M-G86"/>
                                         <menuItem title="Orbot" keyEquivalent="1" allowsKeyEquivalentWhenHidden="YES" id="6WO-Dy-p0a">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openMain:" target="Voe-Tx-rLC" id="4F4-MS-wZW"/>
+                                                <segue destination="B8D-0N-5wS" kind="show" id="m3I-Qn-PgH"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Log" keyEquivalent="2" allowsKeyEquivalentWhenHidden="YES" id="5DF-rd-fm5">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="openLog:" target="Voe-Tx-rLC" id="3fm-j7-NYI"/>
+                                                <segue destination="Klk-BL-Yvt" kind="show" id="XVp-Bx-NoT"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -157,7 +155,7 @@
         <!--Window Controller-->
         <scene sceneID="OUF-hL-Nva">
             <objects>
-                <windowController id="Es4-DB-VW9" sceneMemberID="viewController">
+                <windowController id="Es4-DB-VW9" customClass="BaseWindowController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="2Dj-jk-32U">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -407,7 +405,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fan-AM-VwW">
-                                            <rect key="frame" x="335" y="131" width="205" height="32"/>
+                                            <rect key="frame" x="334" y="131" width="206" height="32"/>
                                             <buttonCell key="cell" type="push" title="Tor Configuration Reference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Y3-uR-p1O">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -505,8 +503,8 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="MainWindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" identifier="MainWindow" title="Orbot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="BaseWindowController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Orbot" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -593,8 +591,8 @@
         <!--Window Controller-->
         <scene sceneID="BND-zG-iIb">
             <objects>
-                <windowController storyboardIdentifier="LogWindowController" showSeguePresentationStyle="single" id="Klk-BL-Yvt" sceneMemberID="viewController">
-                    <window key="window" identifier="LogWindow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="yEm-UK-PZW">
+                <windowController showSeguePresentationStyle="single" id="Klk-BL-Yvt" customClass="BaseWindowController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="yEm-UK-PZW">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="322" y="408" width="480" height="270"/>
