@@ -75,6 +75,11 @@
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
+		A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */; };
+		A0A2D8A028B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */; };
+		A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */; };
+		A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */; };
+		A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -105,7 +110,7 @@
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
-		A0E0061B28B646AF00ABC846 /* BaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061A28B646AF00ABC846 /* BaseWindowController.swift */; };
+		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -259,6 +264,10 @@
 		A08CA2CD27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthViewController.swift; sourceTree = "<group>"; };
+		A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorAuthKey+Helpers.swift"; sourceTree = "<group>"; };
+		A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthKeyItem.xib; sourceTree = "<group>"; };
+		A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyItem.swift; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -294,7 +303,7 @@
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
-		A0E0061A28B646AF00ABC846 /* BaseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindowController.swift; sourceTree = "<group>"; };
+		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
@@ -372,12 +381,15 @@
 			isa = PBXGroup;
 			children = (
 				A01AB5F828A53465008A79EE /* AppDelegate.swift */,
-				A0E0061A28B646AF00ABC846 /* BaseWindowController.swift */,
+				A01AB5FE28A53465008A79EE /* Main.storyboard */,
 				A01AB5FA28A53465008A79EE /* MainViewController.swift */,
 				A0FF331C28B3B7F10079A267 /* LogViewController.swift */,
+				A0E0061C28B649F200ABC846 /* AuthViewController.swift */,
+				A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */,
+				A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */,
+				A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */,
 				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
-				A01AB5FE28A53465008A79EE /* Main.storyboard */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
 			);
 			path = "Orbot Mac";
@@ -551,6 +563,7 @@
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
+				A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */,
 				A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */,
 			);
 			path = Helpers;
@@ -820,6 +833,7 @@
 			files = (
 				A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */,
 				A0FF331828B3ADD50079A267 /* Localizable.strings in Resources */,
+				A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */,
 				A01AB60028A53465008A79EE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,16 +1148,19 @@
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
+				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
+				A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */,
 				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
 				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,
 				A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */,
-				A0E0061B28B646AF00ABC846 /* BaseWindowController.swift in Sources */,
 				A0FF331D28B3B7F10079A267 /* LogViewController.swift in Sources */,
 				A01AB60628A54110008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB60828A542EE008A79EE /* Config.swift in Sources */,
+				A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */,
 				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
 				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
@@ -1183,6 +1200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB61428A5463C008A79EE /* Formatters.swift in Sources */,
+				A0A2D8A028B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
 				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
@@ -1328,7 +1346,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1358,7 +1375,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
