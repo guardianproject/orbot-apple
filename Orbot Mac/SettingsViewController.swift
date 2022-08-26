@@ -165,7 +165,7 @@ class SettingsViewController: NSViewController {
 			alert.messageText = NSLocalizedString("Warning", comment: "")
 			alert.informativeText = message
 			alert.addButton(withTitle: NSLocalizedString("Activate", comment: ""))
-			alert.addButton(withTitle: NSLocalizedString("Cancel", bundle: .iPtProxyUI, comment: ""))
+			alert.addButton(withTitle: NSLocalizedString("Cancel", bundle: .iPtProxyUI, comment: "#bc-ignore!"))
 
 			let response = alert.runModal()
 
