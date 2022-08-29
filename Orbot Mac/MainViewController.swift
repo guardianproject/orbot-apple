@@ -10,7 +10,7 @@ import Cocoa
 import IPtProxyUI
 import NetworkExtension
 
-class MainViewController: NSViewController {
+class MainViewController: NSViewController, NSWindowDelegate, BridgesConfDelegate {
 
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!
@@ -41,6 +41,24 @@ class MainViewController: NSViewController {
 		view.window?.title = Bundle.main.displayName
 	}
 
+
+	// MARK: BridgesConfDelegate
+
+	var transport: Transport = Settings.transport
+
+	var customBridges: [String]? = Settings.customBridges
+
+	func save() {
+		Settings.transport = transport
+		Settings.customBridges = customBridges
+	}
+
+
+	// MARK: NSWindowDelegate
+
+	public func windowWillClose(_ notification: Notification) {
+		NSApp.stopModal()
+	}
 
 
 	// MARK: Actions
@@ -79,6 +97,21 @@ class MainViewController: NSViewController {
 		default:
 			break
 		}
+	}
+
+
+	@IBAction func bridgeConfiguration(_ sender: Any) {
+		let vc = BridgesConfMacViewController()
+		vc.transport = Settings.transport
+		vc.customBridges = Settings.customBridges
+		vc.delegate = self
+
+		let window = NSWindow(contentViewController: vc)
+		window.delegate = self
+
+		NSApp.runModal(for: window)
+
+		window.close()
 	}
 
 

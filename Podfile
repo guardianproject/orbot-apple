@@ -4,7 +4,7 @@ use_frameworks!
 
 def shared
   pod 'Tor/GeoIP', '~> 407.8'
-  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios' # :path => '../IPtProxyUI-ios'
 end
 
 def shared_vpn

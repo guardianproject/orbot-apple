@@ -8,6 +8,7 @@
 
 import NetworkExtension
 import IPtProxyUI
+import IPtProxy
 
 
 class BasePTProvider: NEPacketTunnelProvider {
@@ -55,6 +56,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: ConfigChangedMessage.self))")
+
+		// Esp. on MacOS, Obfs4proxy will crash without having this set correctly.
+		if let torDir = FileManager.default.torDir {
+			IPtProxy.setStateLocation(torDir.path)
+		}
 	}
 
 
