@@ -730,6 +730,20 @@ Gw
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="0CAFD6D0-C3D0-44A3-BF50-FCBD2E19A344" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="bcc-Vt-E5X">
                             <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="3C6D5448-5556-4105-A89C-9FCAF0ECB002" label="Log" paletteLabel="Log" tag="-1" image="chart.bar.doc.horizontal" catalog="system" bordered="YES" id="Oco-oC-wai">
+                                    <size key="minSize" width="27" height="25"/>
+                                    <size key="maxSize" width="27" height="25"/>
+                                    <connections>
+                                        <segue destination="Klk-BL-Yvt" kind="show" id="CbE-rS-Pmv"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3A7FD58C-FBCF-4D46-B3E6-3C4E72F5D69E" explicitItemIdentifier="refresh" label="New Circuits" paletteLabel="Build new Circuits" tag="-1" image="arrow.clockwise" catalog="system" bordered="YES" id="5t5-4R-9hr">
+                                    <size key="minSize" width="26" height="25"/>
+                                    <size key="maxSize" width="26" height="25"/>
+                                    <connections>
+                                        <action selector="refresh:" target="Oky-zY-oP4" id="zvn-bw-bex"/>
+                                    </connections>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="491FDCF0-10AB-4E57-9127-06462D9722F0" label="Settings" paletteLabel="Settings" tag="-1" image="gear.circle" catalog="system" bordered="YES" id="XEs-Qn-1zM">
                                     <size key="minSize" width="27" height="25"/>
                                     <size key="maxSize" width="27" height="25"/>
@@ -751,21 +765,15 @@ Gw
                                         <action selector="bridgeConfiguration:" target="Oky-zY-oP4" id="sdW-VT-8Rd"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="3C6D5448-5556-4105-A89C-9FCAF0ECB002" label="Log" paletteLabel="Log" tag="-1" image="chart.bar.doc.horizontal" catalog="system" bordered="YES" id="Oco-oC-wai">
-                                    <size key="minSize" width="27" height="25"/>
-                                    <size key="maxSize" width="27" height="25"/>
-                                    <connections>
-                                        <segue destination="Klk-BL-Yvt" kind="show" id="CbE-rS-Pmv"/>
-                                    </connections>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Bi0-CZ-yEh"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="lwT-0N-rIG"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Oco-oC-wai"/>
+                                <toolbarItem reference="5t5-4R-9hr"/>
+                                <toolbarItem reference="XEs-Qn-1zM"/>
                                 <toolbarItem reference="jWU-k4-zH0"/>
                                 <toolbarItem reference="OcC-bi-CbE"/>
-                                <toolbarItem reference="XEs-Qn-1zM"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -947,6 +955,7 @@ Gw
     <resources>
         <image name="TorOff" width="512" height="512"/>
         <image name="TorOn" width="512" height="512"/>
+        <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
         <image name="gear.circle" catalog="system" width="15" height="15"/>
         <image name="key" catalog="system" width="13" height="18"/>

@@ -10,7 +10,7 @@ import Cocoa
 import IPtProxyUI
 import NetworkExtension
 
-class MainViewController: NSViewController, NSWindowDelegate, BridgesConfDelegate {
+class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation, BridgesConfDelegate {
 
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!
@@ -61,6 +61,17 @@ class MainViewController: NSViewController, NSWindowDelegate, BridgesConfDelegat
 	}
 
 
+	// MARK: NSToolbarItemValidation
+
+	func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
+		if item.itemIdentifier.rawValue == "refresh" {
+			return VpnManager.shared.sessionStatus == .connected
+		}
+
+		return true
+	}
+
+
 	// MARK: Actions
 
 	@IBAction func control(_ sender: Any) {
@@ -99,6 +110,37 @@ class MainViewController: NSViewController, NSWindowDelegate, BridgesConfDelegat
 		}
 	}
 
+	@IBAction func refresh(_ sender: Any) {
+		let hud = MBProgressHUD.showAdded(to: view, animated: true)
+		hud?.mode = MBProgressHUDModeDeterminate
+		hud?.progress = 0
+		hud?.labelText = NSLocalizedString("Build new Circuits", comment: "")
+
+		let showError = { (error: Error) in
+			hud?.progress = 1
+			hud?.labelText = NSLocalizedString("Error", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+			hud?.detailsLabelText = error.localizedDescription
+			hud?.hide(true, afterDelay: 3)
+		}
+
+		VpnManager.shared.getCircuits { circuits, error in
+			if let error = error {
+				return showError(error)
+			}
+
+			hud?.progress = 0.5
+
+			VpnManager.shared.closeCircuits(circuits) { success, error in
+				if let error = error {
+					return showError(error)
+				}
+
+				hud?.progress = 1
+
+				hud?.hide(true, afterDelay: 0.5)
+			}
+		}
+	}
 
 	@IBAction func bridgeConfiguration(_ sender: Any) {
 		let vc = BridgesConfMacViewController()
@@ -118,6 +160,9 @@ class MainViewController: NSViewController, NSWindowDelegate, BridgesConfDelegat
 	// MARK: Observers
 
 	@objc func updateUi(_ notification: Notification? = nil) {
+
+		// Trigger refresh button revalidation.
+		NSApp.setWindowsNeedUpdate(true)
 
 		switch VpnManager.shared.sessionStatus {
 		case .connected, .connecting, .reasserting:
