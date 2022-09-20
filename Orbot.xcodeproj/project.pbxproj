@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,7 +34,7 @@
 		A01AB61628A549D0008A79EE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
 		A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
-		A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A01AB6AD28A5573E008A79EE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A01AB6AE28A558A3008A79EE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A01AB6AF28A558A6008A79EE /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -68,7 +68,7 @@
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
-		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
@@ -81,7 +81,7 @@
 		A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */; };
 		A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
-		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0A735E2247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0A735E42475679800073C81 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
@@ -100,6 +100,8 @@
 		A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
+		A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792028D2253D005D2956 /* libartiorbotios.a */; };
+		A0AC792328D2286F005D2956 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792228D22867005D2956 /* libsqlite3.tbd */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -170,27 +172,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A01AB6AC28A55706008A79EE /* Embed App Extensions */ = {
+		A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed App Extensions */,
+				A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0A735D9247561F200073C81 /* Embed App Extensions */ = {
+		A0A735D9247561F200073C81 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */,
-				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */,
+				A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */,
+				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -231,6 +233,9 @@
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A04DADD028D1F64C00D16F7C /* arti-orbot-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "arti-orbot-ios"; sourceTree = "<group>"; };
+		A04DADD128D1F6D000D16F7C /* build-arti.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-arti.sh"; sourceTree = "<group>"; };
+		A04DADD328D2174200D16F7C /* arti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arti.h; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A0507CF526F9FB9400F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
@@ -291,6 +296,8 @@
 		A0A73602247584EE00073C81 /* VpnManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnManager.swift; sourceTree = "<group>"; };
 		A0A736042475851D00073C81 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		A0A73607247587D300073C81 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
+		A0AC792028D2253D005D2956 /* libartiorbotios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libartiorbotios.a; path = "$(BUILT_PRODUCTS_DIR)/libartiorbotios.a"; sourceTree = "<group>"; };
+		A0AC792228D22867005D2956 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
 		A0B167D9284F63C80089EB7C /* template-bypass.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-bypass.conf"; sourceTree = "<group>"; };
 		A0B167DB284F90560089EB7C /* ApiAccessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApiAccessCell.xib; sourceTree = "<group>"; };
@@ -361,6 +368,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AC792328D2286F005D2956 /* libsqlite3.tbd in Frameworks */,
+				A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */,
 				A0FD91A626F36199002C317C /* libleaf.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
@@ -436,6 +445,7 @@
 				A01AB6A128A55706008A79EE /* TorVPN Mac */,
 				A0F868FE27D6293E00C9D407 /* leaf-ffi-orbot */,
 				A0F8690027D629B000C9D407 /* leaf */,
+				A04DADD028D1F64C00D16F7C /* arti-orbot-ios */,
 				A0D6162627D8E4AA008E0F3C /* Screenshots */,
 				A05B73B124755CE600930C40 /* Products */,
 				A53EFD1654E1809EC93A8DBC /* Pods */,
@@ -601,8 +611,10 @@
 			isa = PBXGroup;
 			children = (
 				A0F8690727D635D700C9D407 /* build-leaf.sh */,
+				A04DADD128D1F6D000D16F7C /* build-arti.sh */,
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
+				A04DADD328D2174200D16F7C /* arti.h */,
 			);
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
@@ -625,6 +637,8 @@
 		B492266852BAC9D548C91D19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0AC792228D22867005D2956 /* libsqlite3.tbd */,
+				A0AC792028D2253D005D2956 /* libartiorbotios.a */,
 				A01AB69928A55512008A79EE /* NetworkExtension.framework */,
 				A0507D0426F9FC2C00F91105 /* Tor.framework */,
 				A0507D0026F9FC2600F91105 /* Tor.framework */,
@@ -654,7 +668,7 @@
 				A01AB5F428A53465008A79EE /* Resources */,
 				61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */,
 				B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */,
-				A01AB6AC28A55706008A79EE /* Embed App Extensions */,
+				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -694,7 +708,7 @@
 				A05B73AC24755CE600930C40 /* Sources */,
 				A05B73AD24755CE600930C40 /* Frameworks */,
 				A05B73AE24755CE600930C40 /* Resources */,
-				A0A735D9247561F200073C81 /* Embed App Extensions */,
+				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
 				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
 				ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */,
 			);
@@ -733,6 +747,7 @@
 				C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* BartyCrouch */,
 				A0E794A526528ECD0052E32E /* Build Leaf */,
+				A04DADD228D1F86100D16F7C /* Build Arti */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
@@ -772,7 +787,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
 					A01AB5F528A53465008A79EE = {
@@ -986,6 +1001,7 @@
 		};
 		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 12;
 			files = (
 			);
@@ -1020,6 +1036,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
+		};
+		A04DADD228D1F86100D16F7C /* Build Arti */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Arti";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/libarti.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-arti.sh\n";
 		};
 		A0E794A526528ECD0052E32E /* Build Leaf */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1352,6 +1387,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1381,6 +1417,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1407,6 +1444,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
@@ -1439,6 +1477,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
