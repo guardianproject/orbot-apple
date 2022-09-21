@@ -143,7 +143,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	}
 
 	@IBAction func bridgeConfiguration(_ sender: Any) {
-		let vc = BridgesConfMacViewController()
+		let vc = BridgesConfViewController()
 		vc.transport = Settings.transport
 		vc.customBridges = Settings.customBridges
 		vc.delegate = self
