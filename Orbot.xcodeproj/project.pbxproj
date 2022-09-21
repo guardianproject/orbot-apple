@@ -101,7 +101,6 @@
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
 		A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792028D2253D005D2956 /* libartiorbotios.a */; };
-		A0AC792328D2286F005D2956 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792228D22867005D2956 /* libsqlite3.tbd */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -368,7 +367,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0AC792328D2286F005D2956 /* libsqlite3.tbd in Frameworks */,
 				A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */,
 				A0FD91A626F36199002C317C /* libleaf.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,

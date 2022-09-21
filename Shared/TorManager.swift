@@ -112,9 +112,7 @@ class TorManager {
 
 		let logfile = (FileManager.default.torLogFile?.path as? NSString)?.utf8String
 
-		DispatchQueue.global(qos: .background).async {
-			arti_listen(12345, 12346, logfile)
-		}
+		arti_listen(12345, 12346, logfile)
 
 		DispatchQueue.global(qos: .userInteractive).async {
 			completion(nil, "127.0.0.1:12345", "127.0.0.1:12346")
