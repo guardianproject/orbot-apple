@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,7 +34,7 @@
 		A01AB61628A549D0008A79EE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
 		A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
-		A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A01AB6AD28A5573E008A79EE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A01AB6AE28A558A3008A79EE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A01AB6AF28A558A6008A79EE /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -68,7 +68,7 @@
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
-		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
@@ -81,7 +81,7 @@
 		A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */; };
 		A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
-		A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0A735E2247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0A735E42475679800073C81 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
@@ -170,27 +170,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A01AB6AC28A55706008A79EE /* Embed App Extensions */ = {
+		A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed App Extensions */,
+				A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0A735D9247561F200073C81 /* Embed App Extensions */ = {
+		A0A735D9247561F200073C81 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A0A735D5247561F200073C81 /* TorVPN.appex in Embed App Extensions */,
-				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed App Extensions */,
+				A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */,
+				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -654,7 +654,7 @@
 				A01AB5F428A53465008A79EE /* Resources */,
 				61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */,
 				B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */,
-				A01AB6AC28A55706008A79EE /* Embed App Extensions */,
+				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -694,7 +694,7 @@
 				A05B73AC24755CE600930C40 /* Sources */,
 				A05B73AD24755CE600930C40 /* Frameworks */,
 				A05B73AE24755CE600930C40 /* Resources */,
-				A0A735D9247561F200073C81 /* Embed App Extensions */,
+				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
 				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
 				ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */,
 			);
@@ -772,7 +772,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
 					A01AB5F528A53465008A79EE = {
@@ -986,6 +986,7 @@
 		};
 		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 12;
 			files = (
 			);
@@ -1352,6 +1353,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1381,6 +1383,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Orbot Mac/Orbot_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1407,6 +1410,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
@@ -1439,6 +1443,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
