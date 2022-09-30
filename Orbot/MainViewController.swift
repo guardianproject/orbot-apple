@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var settingsBt: UIBarButtonItem? {
 		didSet {
-			settingsBt?.accessibilityLabel = settingsText
+			settingsBt?.accessibilityLabel = L10n.settings
 			settingsBt?.accessibilityIdentifier = "settings_menu"
 
 			updateMenu()
@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var refreshBt: UIBarButtonItem? {
 		didSet {
-			refreshBt?.accessibilityLabel = newCircuitsText
+			refreshBt?.accessibilityLabel = L10n.newCircuits
 		}
 	}
 
@@ -48,7 +48,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var versionLb: UILabel! {
 		didSet {
-			versionLb.text = versionText
+			versionLb.text = L10n.version
 		}
 	}
     
@@ -62,8 +62,8 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var logSc: UISegmentedControl! {
 		didSet {
-			logSc.setTitle(Self.logText, forSegmentAt: 0)
-			logSc.setTitle(Self.circuitsText, forSegmentAt: 1)
+			logSc.setTitle(L10n.log, forSegmentAt: 0)
+			logSc.setTitle(L10n.circuits, forSegmentAt: 1)
 
 #if DEBUG
 			if Config.extendedLogging {
@@ -127,7 +127,7 @@ class MainViewController: UIViewController {
 		var group2 = [UIAction]()
 
 		group1.append(UIAction(
-			title: settingsText,
+			title: L10n.settings,
 			image: UIImage(systemName: "gearshape"),
 			handler: { [weak self] _ in
 				self?.showSettings()
@@ -135,7 +135,7 @@ class MainViewController: UIViewController {
 		group1.last?.accessibilityIdentifier = "settings"
 
 		group1.append(UIAction(
-			title: authCookiesText,
+			title: L10n.authCookies,
 			image: UIImage(systemName: "key"),
 			handler: { [weak self] _ in
 				self?.showAuth()
@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
 		group1.last?.accessibilityIdentifier = "auth_cookies"
 
 		group1.append(UIAction(
-			title: bridgeConfText,
+			title: L10n.bridgeConf,
 			image: UIImage(systemName: "network.badge.shield.half.filled"),
 			handler: { [weak self] _ in
 				self?.changeBridges()
@@ -208,11 +208,11 @@ class MainViewController: UIViewController {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud.mode = .determinate
 		hud.progress = 0
-		hud.label.text = newCircuitsText
+		hud.label.text = L10n.newCircuits
 
-		let showError = { [weak self] (error: Error) in
+		let showError = { (error: Error) in
 			hud.progress = 1
-			hud.label.text = self?.errorText
+			hud.label.text = L10n.error
 			hud.detailsLabel.text = error.localizedDescription
 			hud.hide(animated: true, afterDelay: 3)
 		}

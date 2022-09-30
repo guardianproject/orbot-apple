@@ -20,42 +20,6 @@ extension MainViewController : BridgesConfDelegate {
 	#endif
 
 
-	// MARK: Shared Strings
-	
-	public var settingsText: String {
-		NSLocalizedString("Settings", comment: "")
-	}
-
-	public var newCircuitsText: String {
-		NSLocalizedString("Build new Circuits", comment: "")
-	}
-
-	public var versionText: String {
-		String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
-			   Bundle.main.version, Bundle.main.build)
-	}
-
-	public static var logText: String {
-		NSLocalizedString("Log", comment: "")
-	}
-
-	public static var circuitsText: String {
-		NSLocalizedString("Circuits", comment: "")
-	}
-
-	public var authCookiesText: String {
-		NSLocalizedString("Auth Cookies", comment: "")
-	}
-
-	public var bridgeConfText: String {
-		NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
-	}
-
-	public var errorText: String {
-		NSLocalizedString("Error", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
-	}
-
-
 	// MARK: BridgesConfDelegate
 
 	var transport: Transport {

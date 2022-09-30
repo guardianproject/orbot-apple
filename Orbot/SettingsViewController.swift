@@ -12,55 +12,37 @@ import IPtProxyUI
 
 class SettingsViewController: BaseFormViewController {
 
-	private let explanation1 = NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
-		+ String(format: NSLocalizedString("%1$@ node fingerprints, e.g. \"%2$@\"", comment: ""), "\u{2022}", "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
-		+ String(format: NSLocalizedString("%1$@ 2-letter country codes in braces, e.g. \"%2$@\"", comment: ""), "\u{2022}", "{cc}") + "\n"
-		+ String(format: NSLocalizedString("%1$@ IP address patterns, e.g. \"%2$@\"", comment: ""), "\u{2022}", "255.254.0.0/8") + "\n"
-
-	private let explanation2 = String(format: NSLocalizedString("%1$@ Options need 2 leading minuses: %2$@", comment: ""), "\u{2022}", "--Option") + "\n"
-		+ String(format: NSLocalizedString("%@ Arguments to an option need to be in a new line.", comment: ""), "\u{2022}") + "\n"
-		+ String(format: NSLocalizedString("%1$@ Some options might get overwritten by %2$@.", comment: ""), "\u{2022}", Bundle.main.displayName)
-
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Settings", comment: "")
+		navigationItem.title = L10n.settings
 
 		closeBt.accessibilityIdentifier = "close_settings"
 
 		form
 		+++ LabelRow() {
-			$0.value = NSLocalizedString("Settings will only take effect after restart.", comment: "")
+			$0.value = L10n.settingsEfectAfterRestart
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
 
-		+++ Section(header: NSLocalizedString("Onion-only Mode", comment: ""), footer: NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: ""))
+		+++ Section(header: L10n.onionOnlyMode, footer: L10n.attentionAnonymity)
 		<<< SwitchRow("onionOnlyMode") {
-			$0.title = String(format: NSLocalizedString("Disable %@ for non-onion traffic", comment: ""), Bundle.main.displayName)
+			$0.title = L10n.disableForNonOnionTraffic
 			$0.value = Settings.onionOnly
 			$0.cell.textLabel?.numberOfLines = 0
 		}
 		.onChange { row in
 			if row.value ?? false {
-				let message = NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: "")
-				+ "\n\n"
-				+ NSLocalizedString("Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor.", comment: "")
-				+ "\n\n"
-				+ NSLocalizedString("Traffic to all other domains will be routed through your normal Internet connection.", comment: "")
-				+ "\n\n"
-				+ NSLocalizedString("If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!", comment: "")
-
 				AlertHelper.present(
 					self,
-					message: message,
-					title: NSLocalizedString("Warning", comment: ""),
+					message: L10n.settingsExplanation3,
+					title: L10n.warning,
 					actions: [AlertHelper.cancelAction(handler: { _ in
 						row.value = false
 						row.updateCell()
 					}),
-							  AlertHelper.destructiveAction(NSLocalizedString("Activate", comment: ""), handler: { _ in
+							  AlertHelper.destructiveAction(L10n.activate, handler: { _ in
 								  Settings.onionOnly = true
 							  })])
 			}
@@ -72,11 +54,11 @@ class SettingsViewController: BaseFormViewController {
 			}
 		}
 
-		+++ Section(NSLocalizedString("Node Configuration", comment: ""))
+		+++ Section(L10n.nodeConfiguration)
 
 		<<< LabelRow() {
-			$0.title = NSLocalizedString("Entry Nodes", comment: "")
-			$0.value = NSLocalizedString("Only use these nodes as first hop. Ignored, when bridging is used.", comment: "")
+			$0.title = L10n.entryNodes
+			$0.value = L10n.entryNodesExplanation
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
@@ -89,8 +71,8 @@ class SettingsViewController: BaseFormViewController {
 		})
 
 		+++ LabelRow() {
-			$0.title = NSLocalizedString("Exit Nodes", comment: "")
-			$0.value = NSLocalizedString("Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!", comment: "")
+			$0.title = L10n.exitNodes
+			$0.value = L10n.exitNodesExplanation
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
@@ -102,11 +84,11 @@ class SettingsViewController: BaseFormViewController {
 			Settings.exitNodes = row.value
 		})
 
-		+++ Section(footer: explanation1)
+		+++ Section(footer: L10n.settingsExplanation1)
 
 		<<< LabelRow() {
-			$0.title = NSLocalizedString("Exclude Nodes", comment: "")
-			$0.value = NSLocalizedString("Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.", comment: "")
+			$0.title = L10n.excludeNodes
+			$0.value = L10n.excludeNodesExplanation
 			$0.cellStyle = .subtitle
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
@@ -119,7 +101,7 @@ class SettingsViewController: BaseFormViewController {
 		})
 
 		<<< SwitchRow() {
-			$0.title = NSLocalizedString("Also don't use excluded nodes for network management", comment: "")
+			$0.title = L10n.excludeNodesNever
 			$0.cell.textLabel?.numberOfLines = 0
 
 			$0.cell.textLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
@@ -130,16 +112,16 @@ class SettingsViewController: BaseFormViewController {
 			}
 		})
 
-		+++ Section(NSLocalizedString("Advanced Tor Configuration", comment: ""))
+		+++ Section(L10n.advancedTorConf)
 
 		<<< ButtonRow() {
-			$0.title = NSLocalizedString("Tor Configuration Reference", comment: "")
+			$0.title = L10n.torConfReference
 		}
 		.onCellSelection({ cell, row in
-			UIApplication.shared.open(URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!)
+			UIApplication.shared.open(L10n.torConfUrl)
 		})
 
-		+++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], footer: explanation2) {
+		+++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], footer: L10n.settingsExplanation2) {
 			$0.addButtonProvider = { _ in
 				return ButtonRow()
 			}

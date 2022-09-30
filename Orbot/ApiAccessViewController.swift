@@ -162,7 +162,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 		})
 
 		if let indexPath = indexPath {
-			alert.addAction(AlertHelper.destructiveAction(NSLocalizedString("Delete", comment: "")) { [weak self] _ in
+			alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
 				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
 			})
 		}

@@ -17,7 +17,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 	@IBOutlet weak var versionLb: NSTextField! {
 		didSet {
-			versionLb.stringValue = versionText
+			versionLb.stringValue = L10n.version
 		}
 	}
 
@@ -41,19 +41,19 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		for item in view.window?.toolbar?.items ?? [] {
 			switch item.itemIdentifier.rawValue {
 			case "log":
-				item.label = Self.logText
+				item.label = L10n.log
 
 			case "refresh":
-				item.label = newCircuitsText
+				item.label = L10n.newCircuits
 
 			case "settings":
-				item.label = settingsText
+				item.label = L10n.settings
 
 			case "auth-cookies":
-				item.label = authCookiesText
+				item.label = L10n.authCookies
 
 			case "bridges":
-				item.label = bridgeConfText
+				item.label = L10n.bridgeConf
 
 			default:
 				break
@@ -92,11 +92,11 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud?.mode = MBProgressHUDModeDeterminate
 		hud?.progress = 0
-		hud?.labelText = newCircuitsText
+		hud?.labelText = L10n.newCircuits
 
-		let showError = { [weak self] (error: Error) in
+		let showError = { (error: Error) in
 			hud?.progress = 1
-			hud?.labelText = self?.errorText
+			hud?.labelText = L10n.error
 			hud?.detailsLabelText = error.localizedDescription
 			hud?.hide(true, afterDelay: 3)
 		}

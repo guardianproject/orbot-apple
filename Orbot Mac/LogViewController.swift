@@ -13,8 +13,8 @@ class LogViewController: NSViewController {
 
 	@IBOutlet weak var logSc: NSSegmentedControl! {
 		didSet {
-			logSc.setLabel(MainViewController.logText, forSegment: 0)
-			logSc.setLabel(MainViewController.circuitsText, forSegment: 1)
+			logSc.setLabel(L10n.log, forSegment: 0)
+			logSc.setLabel(L10n.circuits, forSegment: 1)
 
 #if DEBUG
 			if Config.extendedLogging {
@@ -40,7 +40,7 @@ class LogViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = MainViewController.logText
+		view.window?.title = L10n.log
 
 		changeLog(logSc!)
 	}
