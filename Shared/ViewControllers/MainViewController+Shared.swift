@@ -9,6 +9,7 @@
 import Foundation
 import IPtProxyUI
 import NetworkExtension
+import Tor
 
 extension MainViewController : BridgesConfDelegate {
 
@@ -34,8 +35,12 @@ extension MainViewController : BridgesConfDelegate {
 			   Bundle.main.version, Bundle.main.build)
 	}
 
-	public var logLabelText: String {
+	public static var logText: String {
 		NSLocalizedString("Log", comment: "")
+	}
+
+	public static var circuitsText: String {
+		NSLocalizedString("Circuits", comment: "")
 	}
 
 	public var authCookiesText: String {
@@ -175,5 +180,39 @@ extension MainViewController : BridgesConfDelegate {
 		}
 
 		return (statusIcon, buttonTitle, statusText)
+	}
+
+	static func getCircuits(_ completed: @escaping (_ text: String) -> Void) {
+		VpnManager.shared.getCircuits { circuits, error in
+			let circuits = TorCircuit.filter(circuits)
+
+			var text = ""
+
+			var i = 1
+
+			for c in circuits {
+				text += "Circuit \(c.circuitId ?? String(i))\n"
+
+				var j = 1
+
+				for n in c.nodes ?? [] {
+					var country = n.localizedCountryName ?? n.countryCode ?? ""
+
+					if !country.isEmpty {
+						country = " (\(country))"
+					}
+
+					text += "\(j): \(n.nickName ?? n.fingerprint ?? n.ipv4Address ?? n.ipv6Address ?? "unknown node")\(country)\n"
+
+					j += 1
+				}
+
+				text += "\n"
+
+				i += 1
+			}
+
+			completed(text)
+		}
 	}
 }

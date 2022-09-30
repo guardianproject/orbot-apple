@@ -62,8 +62,8 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var logSc: UISegmentedControl! {
 		didSet {
-			logSc.setTitle(logLabelText, forSegmentAt: 0)
-			logSc.setTitle(NSLocalizedString("Circuits", comment: ""), forSegmentAt: 1)
+			logSc.setTitle(Self.logText, forSegmentAt: 0)
+			logSc.setTitle(Self.circuitsText, forSegmentAt: 1)
 
 #if DEBUG
 			if Config.extendedLogging {
@@ -77,14 +77,6 @@ class MainViewController: UIViewController {
 	}
 
 	@IBOutlet weak var logTv: UITextView!
-
-	private var logFsObject: DispatchSourceFileSystemObject? {
-		didSet {
-			oldValue?.cancel()
-		}
-	}
-
-	private var logText = ""
 
 
 	override func viewDidLoad() {
@@ -125,7 +117,7 @@ class MainViewController: UIViewController {
 				self.logContainer.isHidden = true
 				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
 
-				self.tailFile(nil)
+				Logger.tailFile(nil)
 			}
 		}
 	}
@@ -255,39 +247,11 @@ class MainViewController: UIViewController {
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
-			tailFile(nil)
+			Logger.tailFile(nil)
 
 			logTv.text = nil
 
-			VpnManager.shared.getCircuits { [weak self] circuits, error in
-				let circuits = TorCircuit.filter(circuits)
-
-				var text = ""
-
-				var i = 1
-
-				for c in circuits {
-					text += "Circuit \(c.circuitId ?? String(i))\n"
-
-					var j = 1
-
-					for n in c.nodes ?? [] {
-						var country = n.localizedCountryName ?? n.countryCode ?? ""
-
-						if !country.isEmpty {
-							country = " (\(country))"
-						}
-
-						text += "\(j): \(n.nickName ?? n.fingerprint ?? n.ipv4Address ?? n.ipv6Address ?? "unknown node")\(country)\n"
-
-						j += 1
-					}
-
-					text += "\n"
-
-					i += 1
-				}
-
+			Self.getCircuits { [weak self] text in
 				self?.logTv.text = text
 				self?.logTv.scrollToBottom()
 			}
@@ -295,23 +259,23 @@ class MainViewController: UIViewController {
 #if DEBUG
 		case 2:
 			// Shows the content of the VPN log file.
-			tailFile(FileManager.default.vpnLogFile)
+			Logger.tailFile(FileManager.default.vpnLogFile, update)
 
 		case 3:
 			// Shows the content of the leaf log file.
-			tailFile(FileManager.default.leafLogFile)
+			Logger.tailFile(FileManager.default.leafLogFile, update)
 
 		case 4:
 			// Shows the content of the leaf config file.
-			tailFile(FileManager.default.leafConfFile)
+			Logger.tailFile(FileManager.default.leafConfFile, update)
 
 		case 5:
 			// Shows the content of the GCD webserver log file.
-			tailFile(FileManager.default.wsLogFile)
+			Logger.tailFile(FileManager.default.wsLogFile, update)
 #endif
 
 		default:
-			tailFile(FileManager.default.torLogFile)
+			Logger.tailFile(FileManager.default.torLogFile, update)
 		}
 	}
 
@@ -336,64 +300,13 @@ class MainViewController: UIViewController {
 
 	// MARK: Private Methods
 
-	private func tailFile(_ url: URL?) {
+	private func update(_ logText: String) {
+		let atBottom = logTv.isAtBottom
 
-		// Stop and remove the previous watched content.
-		// (Will implicitely call #stop through `didSet` hook!)
-		logFsObject = nil
+		logTv.text = logText
 
-		guard let url = url,
-			let fh = try? FileHandle(forReadingFrom: url)
-		else {
-			return
+		if atBottom {
+			logTv.scrollToBottom()
 		}
-
-		let ui = { [weak self] in
-			let data = fh.readDataToEndOfFile()
-
-			if let content = String(data: data, encoding: .utf8) {
-				let atBottom = self?.logTv.isAtBottom ?? false
-
-				self?.logText.append(content)
-
-				self?.logTv.text = self?.logText
-
-				if atBottom {
-					self?.logTv.scrollToBottom()
-				}
-			}
-		}
-
-		logText = ""
-		ui()
-
-		logFsObject = DispatchSource.makeFileSystemObjectSource(
-			fileDescriptor: fh.fileDescriptor,
-			eventMask: [.extend, .delete, .link],
-			queue: .main)
-
-		logFsObject?.setEventHandler { [weak self] in
-			guard let data = self?.logFsObject?.data else {
-				return
-			}
-
-			if data.contains(.delete) || data.contains(.link) {
-				DispatchQueue.main.async {
-					self?.tailFile(url)
-				}
-			}
-
-			if data.contains(.extend) {
-				ui()
-			}
-		}
-
-		logFsObject?.setCancelHandler { [weak self] in
-			try? fh.close()
-
-			self?.logText = ""
-		}
-
-		logFsObject?.resume()
 	}
 }

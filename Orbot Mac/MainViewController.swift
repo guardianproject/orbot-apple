@@ -41,7 +41,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		for item in view.window?.toolbar?.items ?? [] {
 			switch item.itemIdentifier.rawValue {
 			case "log":
-				item.label = logLabelText
+				item.label = Self.logText
 
 			case "refresh":
 				item.label = newCircuitsText

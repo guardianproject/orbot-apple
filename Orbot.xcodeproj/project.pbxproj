@@ -58,6 +58,7 @@
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A0274FED28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */; };
 		A0274FEE28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */; };
+		A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
 		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
@@ -1159,6 +1160,7 @@
 				A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */,
 				A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */,
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
+				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
