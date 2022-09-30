@@ -149,6 +149,13 @@ class SettingsViewController: NSViewController {
 	}
 
 
+	override func viewDidAppear() {
+		super.viewDidAppear()
+
+		view.window?.title = NSLocalizedString("Settings", comment: "")
+	}
+
+
 	// MARK: Actions
 
 	@IBAction func changeOnionOnly(_ sender: NSSwitch) {
@@ -183,12 +190,6 @@ class SettingsViewController: NSViewController {
 				VpnManager.shared.disconnect()
 			}
 		}
-	}
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-		title = NSLocalizedString("Settings", comment: "")
 	}
 
 	@IBAction func changeEntryNodes(_ sender: NSTextField) {

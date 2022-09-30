@@ -38,7 +38,31 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = Bundle.main.displayName
+		view.window?.title = "Orbot"
+
+		for item in view.window?.toolbar?.items ?? [] {
+			switch item.itemIdentifier.rawValue {
+			case "log":
+				item.label = NSLocalizedString("Log", comment: "")
+
+			case "refresh":
+				item.label = NSLocalizedString("Build new Circuits", comment: "")
+
+			case "settings":
+				item.label = NSLocalizedString("Settings", comment: "")
+
+			case "auth-cookies":
+				item.label = NSLocalizedString("Auth Cookies", comment: "")
+
+			case "bridges":
+				item.label = NSLocalizedString("Bridge Configuration", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+
+			default:
+				break
+			}
+
+			item.paletteLabel = item.label
+		}
 	}
 
 

@@ -14,8 +14,8 @@ PODS:
     - ReachabilitySwift (~> 5.0)
   - MBProgressHUD (1.2.0)
   - ReachabilitySwift (5.0.0)
-  - Tor/Core (407.10.1)
-  - Tor/GeoIP (407.10.1):
+  - Tor/Core (407.10.2)
+  - Tor/GeoIP (407.10.2):
     - Tor/Core
 
 DEPENDENCIES:
@@ -44,7 +44,7 @@ CHECKOUT OPTIONS:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
   IPtProxyUI:
-    :commit: 7601c8ef71acbd535e021d8eab04cc4ec27201aa
+    :commit: 252774c91fd76cb888f8faf9917be654ac1cd7eb
     :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:
@@ -52,10 +52,10 @@ SPEC CHECKSUMS:
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
   IPtProxy: f34da94e012b0e9aa73795b5b769578a3325b2fa
-  IPtProxyUI: 703e2c248893e08553516df1aa39d86188e19521
+  IPtProxyUI: 655d0de772031ea37bbbbb1d522c6a5c4c0699a2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Tor: 6b58022ff2a4ce3fe8699153beab10c49b308af1
+  Tor: 77ae825db3972534215777089e00560757e04104
 
 PODFILE CHECKSUM: 406d2c54f96b66cb97eef660d0176d33691c86de
 
