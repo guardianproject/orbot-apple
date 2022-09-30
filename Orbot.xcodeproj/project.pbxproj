@@ -56,8 +56,8 @@
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
-		A0274FED28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */; };
-		A0274FEE28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */; };
+		A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* SharedUtils.swift */; };
+		A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* SharedUtils.swift */; };
 		A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A0274FF128E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
 		A0274FF228E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
@@ -233,7 +233,7 @@
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
-		A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Shared.swift"; sourceTree = "<group>"; };
+		A0274FEC28E70B6300E767E9 /* SharedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtils.swift; sourceTree = "<group>"; };
 		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
@@ -430,14 +430,6 @@
 			path = "TorVPN Mac";
 			sourceTree = "<group>";
 		};
-		A0274FEB28E70B3D00E767E9 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				A0274FEC28E70B6300E767E9 /* MainViewController+Shared.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		A05B73A724755CE600930C40 = {
 			isa = PBXGroup;
 			children = (
@@ -536,7 +528,6 @@
 				A0E1F1BC26834D7300111461 /* Tunnel */,
 				A0A735E624756C8E00073C81 /* Messages */,
 				A0A735F024756D5600073C81 /* Helpers */,
-				A0274FEB28E70B3D00E767E9 /* ViewControllers */,
 				A0A735DC2475628F00073C81 /* Config.xcconfig */,
 				A0A735DF247566CD00073C81 /* Config.h */,
 				A0A735E0247566CD00073C81 /* Config.m */,
@@ -547,6 +538,7 @@
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
+				A0274FEC28E70B6300E767E9 /* SharedUtils.swift */,
 				A0C53058280F11C20067597F /* WebServer.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -1174,7 +1166,7 @@
 				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
-				A0274FEE28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */,
+				A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,
 				A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */,
@@ -1226,7 +1218,7 @@
 				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
-				A0274FED28E70B6300E767E9 /* MainViewController+Shared.swift in Sources */,
+				A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */,
 				A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,

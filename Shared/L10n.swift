@@ -157,8 +157,4 @@ class L10n {
 	public static var torConfReference: String {
 		NSLocalizedString("Tor Configuration Reference", comment: "")
 	}
-
-	public static var torConfUrl: URL {
-		URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!
-	}
 }

@@ -196,7 +196,7 @@ class SettingsViewController: NSViewController {
 	}
 
 	@IBAction func showTorConfRef(_ sender: NSButton) {
-		NSWorkspace.shared.open(L10n.torConfUrl)
+		NSWorkspace.shared.open(SharedUtils.torConfUrl)
 	}
 
 	@IBAction func changeTorConf(_ sender: NSTextField) {

@@ -22,6 +22,9 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	}
 
 
+	private let bridgesConfDelegate = SharedUtils()
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -85,7 +88,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	// MARK: Actions
 
 	@IBAction func control(_ sender: Any) {
-		control(startOnly: false)
+		SharedUtils.control(startOnly: false)
 	}
 
 	@IBAction func refresh(_ sender: Any) {
@@ -122,9 +125,9 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 	@IBAction func bridgeConfiguration(_ sender: Any) {
 		let vc = BridgesConfViewController()
-		vc.transport = transport
-		vc.customBridges = customBridges
-		vc.delegate = self
+		vc.transport = bridgesConfDelegate.transport
+		vc.customBridges = bridgesConfDelegate.customBridges
+		vc.delegate = bridgesConfDelegate
 
 		let window = NSWindow(contentViewController: vc)
 		window.delegate = self
@@ -142,7 +145,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIcon, buttonTitle, statusText) = _updateUi(notification)
+		let (statusIcon, buttonTitle, statusText) = SharedUtils.updateUi(notification)
 
 		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 

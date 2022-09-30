@@ -118,7 +118,7 @@ class SettingsViewController: BaseFormViewController {
 			$0.title = L10n.torConfReference
 		}
 		.onCellSelection({ cell, row in
-			UIApplication.shared.open(L10n.torConfUrl)
+			UIApplication.shared.open(SharedUtils.torConfUrl)
 		})
 
 		+++ MultivaluedSection(multivaluedOptions: [.Insert, .Delete], footer: L10n.settingsExplanation2) {

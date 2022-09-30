@@ -11,13 +11,18 @@ import IPtProxyUI
 import NetworkExtension
 import Tor
 
-extension MainViewController : BridgesConfDelegate {
+class SharedUtils: BridgesConfDelegate {
 
 	#if os(macOS)
 	typealias Color = NSColor
 	#else
 	typealias Color = UIColor
 	#endif
+
+
+	public static var torConfUrl: URL {
+		URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!
+	}
 
 
 	// MARK: BridgesConfDelegate
@@ -47,13 +52,13 @@ extension MainViewController : BridgesConfDelegate {
 
 	// MARK: Shared Methods
 
-	func control(startOnly: Bool) {
+	static func control(startOnly: Bool) {
 
 		// Enable, if disabled.
 		if VpnManager.shared.confStatus == .disabled {
-			return VpnManager.shared.enable { [weak self] success in
+			return VpnManager.shared.enable { success in
 				if success && VpnManager.shared.confStatus == .enabled {
-					self?.control(startOnly: startOnly)
+					control(startOnly: startOnly)
 				}
 			}
 		}
@@ -79,7 +84,7 @@ extension MainViewController : BridgesConfDelegate {
 		}
 	}
 
-	func _updateUi(_ notification: Notification? = nil) -> (statusIcon: String, buttonTitle: String, statusText: NSMutableAttributedString) {
+	static func updateUi(_ notification: Notification? = nil) -> (statusIcon: String, buttonTitle: String, statusText: NSMutableAttributedString) {
 		let statusIcon: String
 		let buttonTitle: String
 		var statusText: NSMutableAttributedString

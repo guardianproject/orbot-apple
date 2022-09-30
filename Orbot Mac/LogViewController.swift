@@ -55,7 +55,7 @@ class LogViewController: NSViewController {
 
 			logTv?.string = ""
 
-			MainViewController.getCircuits { [weak self] text in
+			SharedUtils.getCircuits { [weak self] text in
 				self?.logTv?.string = text
 				self?.logSv.scrollToBottom()
 			}

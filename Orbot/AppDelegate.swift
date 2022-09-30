@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		case "start":
 			navC.dismiss(animated: true) {
-				vc.control(startOnly: true)
+				SharedUtils.control(startOnly: true)
 			}
 
 		case "show/settings":

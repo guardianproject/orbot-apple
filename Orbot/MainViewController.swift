@@ -79,6 +79,9 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var logTv: UITextView!
 
 
+	private let bridgesConfDelegate = SharedUtils()
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -190,7 +193,7 @@ class MainViewController: UIViewController {
 
 	func changeBridges(_ sender: UIBarButtonItem? = nil) {
 		let vc = BridgesConfViewController()
-		vc.delegate = self
+		vc.delegate = bridgesConfDelegate
 
 		present(inNav: vc, button: sender ?? settingsBt)
 	}
@@ -241,7 +244,7 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func control() {
-		control(startOnly: false)
+		SharedUtils.control(startOnly: false)
 	}
 
 	@IBAction func changeLog() {
@@ -251,7 +254,7 @@ class MainViewController: UIViewController {
 
 			logTv.text = nil
 
-			Self.getCircuits { [weak self] text in
+			SharedUtils.getCircuits { [weak self] text in
 				self?.logTv.text = text
 				self?.logTv.scrollToBottom()
 			}
@@ -290,7 +293,7 @@ class MainViewController: UIViewController {
 
 		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
-		let (statusIconName, buttonTitle, statusText) = _updateUi(notification)
+		let (statusIconName, buttonTitle, statusText) = SharedUtils.updateUi(notification)
 
 		statusIcon.image = UIImage(named: statusIconName)
 		controlBt.setTitle(buttonTitle)
