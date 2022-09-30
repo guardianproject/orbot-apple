@@ -10,16 +10,14 @@ import Cocoa
 import IPtProxyUI
 import NetworkExtension
 
-class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation, BridgesConfDelegate {
+class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation {
 
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!
 
 	@IBOutlet weak var versionLb: NSTextField! {
 		didSet {
-			versionLb.stringValue = String(
-				format: NSLocalizedString("Version %@, Build %@", comment: ""),
-				Bundle.main.version, Bundle.main.build)
+			versionLb.stringValue = versionText
 		}
 	}
 
@@ -43,19 +41,19 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		for item in view.window?.toolbar?.items ?? [] {
 			switch item.itemIdentifier.rawValue {
 			case "log":
-				item.label = NSLocalizedString("Log", comment: "")
+				item.label = logLabelText
 
 			case "refresh":
-				item.label = NSLocalizedString("Build new Circuits", comment: "")
+				item.label = newCircuitsText
 
 			case "settings":
-				item.label = NSLocalizedString("Settings", comment: "")
+				item.label = settingsText
 
 			case "auth-cookies":
-				item.label = NSLocalizedString("Auth Cookies", comment: "")
+				item.label = authCookiesText
 
 			case "bridges":
-				item.label = NSLocalizedString("Bridge Configuration", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+				item.label = bridgeConfText
 
 			default:
 				break
@@ -63,18 +61,6 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 			item.paletteLabel = item.label
 		}
-	}
-
-
-	// MARK: BridgesConfDelegate
-
-	var transport: Transport = Settings.transport
-
-	var customBridges: [String]? = Settings.customBridges
-
-	func save() {
-		Settings.transport = transport
-		Settings.customBridges = customBridges
 	}
 
 
@@ -102,47 +88,15 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		control(startOnly: false)
 	}
 
-	func control(startOnly: Bool) {
-
-		// Enable, if disabled.
-		if VpnManager.shared.confStatus == .disabled {
-			return VpnManager.shared.enable { [weak self] success in
-				if success && VpnManager.shared.confStatus == .enabled {
-					self?.control(startOnly: startOnly)
-				}
-			}
-		}
-
-		if startOnly && ![NEVPNStatus.disconnected, .disconnecting].contains(VpnManager.shared.sessionStatus) {
-			return
-		}
-
-		// Install first, if not installed.
-		else if VpnManager.shared.confStatus == .notInstalled {
-			return VpnManager.shared.install()
-		}
-
-		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting:
-			VpnManager.shared.disconnect()
-
-		case .disconnected, .disconnecting:
-			VpnManager.shared.connect()
-
-		default:
-			break
-		}
-	}
-
 	@IBAction func refresh(_ sender: Any) {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud?.mode = MBProgressHUDModeDeterminate
 		hud?.progress = 0
-		hud?.labelText = NSLocalizedString("Build new Circuits", comment: "")
+		hud?.labelText = newCircuitsText
 
-		let showError = { (error: Error) in
+		let showError = { [weak self] (error: Error) in
 			hud?.progress = 1
-			hud?.labelText = NSLocalizedString("Error", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+			hud?.labelText = self?.errorText
 			hud?.detailsLabelText = error.localizedDescription
 			hud?.hide(true, afterDelay: 3)
 		}
@@ -168,8 +122,8 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 	@IBAction func bridgeConfiguration(_ sender: Any) {
 		let vc = BridgesConfViewController()
-		vc.transport = Settings.transport
-		vc.customBridges = Settings.customBridges
+		vc.transport = transport
+		vc.customBridges = customBridges
 		vc.delegate = self
 
 		let window = NSWindow(contentViewController: vc)
@@ -188,69 +142,12 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting, .reasserting:
-			controlBt.image = Settings.onionOnly
-				? NSImage(named: "TorOnionOnly") : NSImage(named: "TorOn")
+		let (statusIcon, buttonTitle, statusText) = _updateUi(notification)
 
-			controlBt.setTitle(NSLocalizedString("Stop", comment: ""))
+		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 
-		case .invalid:
-			controlBt.image = NSImage(named: "TorOff")
-			controlBt.setTitle(NSLocalizedString("Install", comment: ""))
-
-		default:
-			controlBt.image = NSImage(named: "TorOff")
-			controlBt.setTitle(NSLocalizedString("Start", comment: ""))
-		}
-
-		if let error = VpnManager.shared.error {
-			statusLb.textColor = .systemRed
-			statusLb.stringValue = error.localizedDescription
-		}
-		else if VpnManager.shared.confStatus != .enabled {
-			statusLb.textColor = .white
-			statusLb.stringValue = VpnManager.shared.confStatus.description
-		}
-		else {
-			var statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
-
-			switch VpnManager.shared.sessionStatus {
-			case .connected, .connecting, .reasserting:
-				let space = NSAttributedString(string: " ")
-				let transport = Settings.transport
-
-				if transport != .none {
-					statusText = NSMutableAttributedString(string: String(
-						format: NSLocalizedString("%1$@ via %2$@", comment: ""),
-						VpnManager.shared.sessionStatus.description, transport.description))
-				}
-
-				if Settings.onionOnly {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Onion-only Mode", comment: "")))",
-														 attributes: [.foregroundColor : NSColor.systemRed]))
-				}
-				else if Settings.bypassPort != nil {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Bypass", comment: "")))",
-														 attributes: [.foregroundColor : NSColor.systemRed]))
-				}
-
-				if notification?.name == .vpnProgress,
-				   let raw = notification?.object as? Float,
-				   let progress = Formatters.format(value: raw)
-				{
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: progress))
-				}
-
-			default:
-				break
-			}
-
-			statusLb.textColor = .white
-			statusLb.attributedStringValue = statusText
-		}
+		controlBt.image = NSImage(named: statusIcon)
+		controlBt.setTitle(buttonTitle)
+		statusLb.attributedStringValue = statusText
 	}
 }

@@ -12,7 +12,7 @@ import IPtProxyUI
 import MBProgressHUD
 import NetworkExtension
 
-class MainViewController: UIViewController, BridgesConfDelegate {
+class MainViewController: UIViewController {
 
 	@IBOutlet weak var logBt: UIBarButtonItem? {
 		didSet {
@@ -23,7 +23,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var settingsBt: UIBarButtonItem? {
 		didSet {
-			settingsBt?.accessibilityLabel = NSLocalizedString("Settings", comment: "")
+			settingsBt?.accessibilityLabel = settingsText
 			settingsBt?.accessibilityIdentifier = "settings_menu"
 
 			updateMenu()
@@ -32,7 +32,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var refreshBt: UIBarButtonItem? {
 		didSet {
-			refreshBt?.accessibilityLabel = NSLocalizedString("Build new Circuits", comment: "")
+			refreshBt?.accessibilityLabel = newCircuitsText
 		}
 	}
 
@@ -48,8 +48,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var versionLb: UILabel! {
 		didSet {
-			versionLb.text = String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
-									Bundle.main.version, Bundle.main.build)
+			versionLb.text = versionText
 		}
 	}
     
@@ -63,7 +62,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBOutlet weak var logSc: UISegmentedControl! {
 		didSet {
-			logSc.setTitle(NSLocalizedString("Log", comment: ""), forSegmentAt: 0)
+			logSc.setTitle(logLabelText, forSegmentAt: 0)
 			logSc.setTitle(NSLocalizedString("Circuits", comment: ""), forSegmentAt: 1)
 
 #if DEBUG
@@ -136,7 +135,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		var group2 = [UIAction]()
 
 		group1.append(UIAction(
-			title: NSLocalizedString("Settings", comment: ""),
+			title: settingsText,
 			image: UIImage(systemName: "gearshape"),
 			handler: { [weak self] _ in
 				self?.showSettings()
@@ -144,7 +143,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		group1.last?.accessibilityIdentifier = "settings"
 
 		group1.append(UIAction(
-			title: NSLocalizedString("Auth Cookies", comment: ""),
+			title: authCookiesText,
 			image: UIImage(systemName: "key"),
 			handler: { [weak self] _ in
 				self?.showAuth()
@@ -152,7 +151,7 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		group1.last?.accessibilityIdentifier = "auth_cookies"
 
 		group1.append(UIAction(
-			title: NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!"),
+			title: bridgeConfText,
 			image: UIImage(systemName: "network.badge.shield.half.filled"),
 			handler: { [weak self] _ in
 				self?.changeBridges()
@@ -217,11 +216,11 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud.mode = .determinate
 		hud.progress = 0
-		hud.label.text = NSLocalizedString("Build new Circuits", comment: "")
+		hud.label.text = newCircuitsText
 
-		let showError = { (error: Error) in
+		let showError = { [weak self] (error: Error) in
 			hud.progress = 1
-			hud.label.text = NSLocalizedString("Error", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
+			hud.label.text = self?.errorText
 			hud.detailsLabel.text = error.localizedDescription
 			hud.hide(animated: true, afterDelay: 3)
 		}
@@ -251,38 +250,6 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 	@IBAction func control() {
 		control(startOnly: false)
-	}
-
-	func control(startOnly: Bool) {
-
-		// Enable, if disabled.
-		if VpnManager.shared.confStatus == .disabled {
-			return VpnManager.shared.enable { [weak self] success in
-				if success && VpnManager.shared.confStatus == .enabled {
-					self?.control(startOnly: startOnly)
-				}
-			}
-		}
-
-		if startOnly && ![NEVPNStatus.disconnected, .disconnecting].contains(VpnManager.shared.sessionStatus) {
-			return
-		}
-
-		// Install first, if not installed.
-		else if VpnManager.shared.confStatus == .notInstalled {
-			return VpnManager.shared.install()
-		}
-
-		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting:
-			VpnManager.shared.disconnect()
-
-		case .disconnected, .disconnecting:
-			VpnManager.shared.connect()
-
-		default:
-			break
-		}
 	}
 
 	@IBAction func changeLog() {
@@ -359,95 +326,11 @@ class MainViewController: UIViewController, BridgesConfDelegate {
 
 		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
-		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting, .reasserting:
-			statusIcon.image = Settings.onionOnly
-				? UIImage(named: "TorOnionOnly") : UIImage(named: "TorOn")
+		let (statusIconName, buttonTitle, statusText) = _updateUi(notification)
 
-			controlBt.setTitle(NSLocalizedString("Stop", comment: ""))
-
-		case .invalid:
-			statusIcon.image = UIImage(named: "TorOff")
-			controlBt.setTitle(NSLocalizedString("Install", comment: ""))
-
-		default:
-			statusIcon.image = UIImage(named: "TorOff")
-			controlBt.setTitle(NSLocalizedString("Start", comment: ""))
-		}
-
-		if let error = VpnManager.shared.error {
-			statusLb.textColor = .systemRed
-			statusLb.text = error.localizedDescription
-		}
-		else if VpnManager.shared.confStatus != .enabled {
-			statusLb.textColor = .white
-			statusLb.text = VpnManager.shared.confStatus.description
-		}
-		else {
-			var statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
-
-			switch VpnManager.shared.sessionStatus {
-			case .connected, .connecting, .reasserting:
-				let space = NSAttributedString(string: " ")
-				let transport = Settings.transport
-
-				if transport != .none {
-					statusText = NSMutableAttributedString(string: String(
-						format: NSLocalizedString("%1$@ via %2$@", comment: ""),
-						VpnManager.shared.sessionStatus.description, transport.description))
-				}
-
-				if Settings.onionOnly {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Onion-only Mode", comment: "")))",
-														 attributes: [.foregroundColor : UIColor.systemRed]))
-				}
-				else if Settings.bypassPort != nil {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Bypass", comment: "")))",
-														 attributes: [.foregroundColor : UIColor.systemRed]))
-				}
-
-				if notification?.name == .vpnProgress,
-				   let raw = notification?.object as? Float,
-				   let progress = Formatters.format(value: raw)
-				{
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: progress))
-				}
-
-			default:
-				break
-			}
-
-			statusLb.textColor = .white
-			statusLb.attributedText = statusText
-		}
-	}
-
-
-	// MARK: BridgesConfDelegate
-
-	var transport: Transport {
-		get {
-			Settings.transport
-		}
-		set {
-			Settings.transport = newValue
-		}
-	}
-
-	var customBridges: [String]? {
-		get {
-			Settings.customBridges
-		}
-		set {
-			Settings.customBridges = newValue
-		}
-	}
-
-	func save() {
-		VpnManager.shared.configChanged()
+		statusIcon.image = UIImage(named: statusIconName)
+		controlBt.setTitle(buttonTitle)
+		statusLb.attributedText = statusText
 	}
 
 
