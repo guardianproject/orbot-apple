@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Needed for bridge fetching via Meek.
 		if let torDir = FileManager.default.torDir {
 			IPtProxy.setStateLocation(torDir.path)
+
+			print("[\(String(describing: type(of: self))) torDir=\(torDir.path)]")
 		}
 	}
 

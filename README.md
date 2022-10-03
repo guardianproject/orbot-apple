@@ -113,6 +113,11 @@ These people helped with translations. Thank you so much, folks!
   Fabiola.mauriceh
 - Ukrainian
   Kataphan
+  
+## Tech Stuff
+
+Figma template used to create rounded MacOS icons:
+https://www.figma.com/community/file/857303226040719059
 
 ## Author, License
 
