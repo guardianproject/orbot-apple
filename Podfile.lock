@@ -14,8 +14,8 @@ PODS:
     - ReachabilitySwift (~> 5.0)
   - MBProgressHUD (1.2.0)
   - ReachabilitySwift (5.0.0)
-  - Tor/Core (407.10.2)
-  - Tor/GeoIP (407.10.2):
+  - Tor/Core (407.10.3)
+  - Tor/GeoIP (407.10.3):
     - Tor/Core
 
 DEPENDENCIES:
@@ -51,7 +51,7 @@ SPEC CHECKSUMS:
   IPtProxyUI: 3c21adaf6a95bbbd863f335e4545a32b6bb0a4e6
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Tor: 77ae825db3972534215777089e00560757e04104
+  Tor: f9ea045ca159cdfbd185924aa60aef2c08f0f523
 
 PODFILE CHECKSUM: 320277d49b8ac3bfb2c32df6a19eb2c5470f503c
 
