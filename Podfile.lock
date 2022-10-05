@@ -5,11 +5,11 @@ PODS:
   - GCDWebServerExtension/Core (3.5.4)
   - ImageRow (4.1.0):
     - Eureka (~> 5.3.5)
-  - IPtProxy (1.7.1)
-  - IPtProxyUI (1.9.0):
+  - IPtProxy (1.8.0)
+  - IPtProxyUI (1.10.1):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
-    - IPtProxy (~> 1.7)
+    - IPtProxy (~> 1.8)
     - MBProgressHUD (~> 1.2)
     - ReachabilitySwift (~> 5.0)
   - MBProgressHUD (1.2.0)
@@ -21,7 +21,7 @@ PODS:
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - IPtProxyUI (from `https://github.com/tladesignz/IPtProxyUI-ios`)
+  - IPtProxyUI (~> 1.10)
   - Tor/GeoIP (~> 407.10)
 
 SPEC REPOS:
@@ -29,6 +29,7 @@ SPEC REPOS:
     - Eureka
     - ImageRow
     - IPtProxy
+    - IPtProxyUI
     - MBProgressHUD
     - ReachabilitySwift
     - Tor
@@ -36,27 +37,22 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   GCDWebServerExtension:
     :git: https://github.com/tladesignz/GCDWebServer.git
-  IPtProxyUI:
-    :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 CHECKOUT OPTIONS:
   GCDWebServerExtension:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
-  IPtProxyUI:
-    :commit: 252774c91fd76cb888f8faf9917be654ac1cd7eb
-    :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:
   Eureka: 28ad9dec6286cd7cd601fdf8e8df39bb7356a8f4
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
-  IPtProxy: f34da94e012b0e9aa73795b5b769578a3325b2fa
-  IPtProxyUI: 655d0de772031ea37bbbbb1d522c6a5c4c0699a2
+  IPtProxy: e180e0f4381a893b52ae12626fbd0d40cbabe746
+  IPtProxyUI: 3c21adaf6a95bbbd863f335e4545a32b6bb0a4e6
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 77ae825db3972534215777089e00560757e04104
 
-PODFILE CHECKSUM: 406d2c54f96b66cb97eef660d0176d33691c86de
+PODFILE CHECKSUM: 320277d49b8ac3bfb2c32df6a19eb2c5470f503c
 
 COCOAPODS: 1.11.3

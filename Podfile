@@ -4,7 +4,7 @@ use_frameworks!
 
 def shared
   pod 'Tor/GeoIP', '~> 407.10'
-  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios' # :path => '../IPtProxyUI-ios'
+  pod 'IPtProxyUI', '~> 1.10' #:git => 'https://github.com/tladesignz/IPtProxyUI-ios' # :path => '../IPtProxyUI-ios'
 end
 
 def shared_vpn
@@ -20,7 +20,7 @@ target 'Orbot' do
 end
 
 target 'Orbot Mac' do
-	platform :macos, '12.3'
+	platform :macos, '11.0'
 
 	shared
 end
@@ -33,7 +33,7 @@ target 'TorVPN' do
 end
 
 target 'TorVPN Mac' do
-  platform :macos, '12.3'
+  platform :macos, '11.0'
 
   shared
   shared_vpn
