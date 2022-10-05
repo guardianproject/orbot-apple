@@ -56,6 +56,9 @@ if [[ -n "${DEVELOPER_SDK_DIR:-}" ]]; then
 		else
 			TARGETS="x86_64-apple-ios"
 		fi
+	else
+		# Otherwise, compilation of maxminddb dependency will fail. But only when releasing for iOS. WTF!
+		mkdir -p "${WORKDIR}/target/aarch64-apple-ios/release/deps"
 	fi
 
 	cargo lipo $RELEASE --targets $TARGETS --manifest-path "${WORKDIR}/Cargo.toml" -p leaf-ffi
