@@ -114,7 +114,10 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		stopTun2Socks()
 
+// This is only supported on iOS, currently.
+#if os(iOS)
 		WebServer.shared.stop()
+#endif
 
 		completionHandler()
 	}
@@ -203,12 +206,15 @@ class BasePTProvider: NEPacketTunnelProvider {
 			self.sendMessages()
 		}, completion)
 
+// This is only supported on iOS, currently.
+#if os(iOS)
 		do {
 			try WebServer.shared.start()
 		}
 		catch {
 			log(error.localizedDescription)
 		}
+#endif
 	}
 
 
