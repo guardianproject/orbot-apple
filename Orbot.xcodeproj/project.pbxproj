@@ -1366,7 +1366,9 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -1396,7 +1398,9 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -1423,6 +1427,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
@@ -1456,6 +1461,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
