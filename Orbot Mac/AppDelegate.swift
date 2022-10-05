@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if let torDir = FileManager.default.torDir {
 			IPtProxy.setStateLocation(torDir.path)
 
-			print("[\(String(describing: type(of: self))) torDir=\(torDir.path)]")
+//			print("[\(String(describing: type(of: self))) torDir=\(torDir.path)]")
 		}
 	}
 
