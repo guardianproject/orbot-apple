@@ -304,6 +304,7 @@
 		A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A0BBF1AA27D7BA37005BBA3A /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
 		A0C53058280F11C20067597F /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
+		A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Orbot-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A0D6162027D8BAC6008E0F3C /* .tx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .tx; sourceTree = "<group>"; };
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
@@ -386,6 +387,7 @@
 		A01AB5F728A53465008A79EE /* Orbot Mac */ = {
 			isa = PBXGroup;
 			children = (
+				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB5F828A53465008A79EE /* AppDelegate.swift */,
 				A01AB5FE28A53465008A79EE /* Main.storyboard */,
 				A01AB5FA28A53465008A79EE /* MainViewController.swift */,
@@ -1368,6 +1370,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Orbot-Mac-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -1400,6 +1403,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Orbot-Mac-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
