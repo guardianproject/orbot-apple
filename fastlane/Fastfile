@@ -20,4 +20,44 @@ platform :ios do
   lane :screenshots do
     capture_screenshots(workspace: "Orbot.xcworkspace", scheme: "Screenshots")
   end
+
+  desc "Upload App Store Metadata"
+  lane :upload_metadata do
+    deliver(
+      team_id: "118013850",
+
+      skip_binary_upload: true,
+      skip_app_version_update: true,
+
+      skip_screenshots: true,
+    )
+  end
+
+  desc "Upload App Store Screenshots"
+  lane :upload_screenshots do
+    deliver(
+      team_id: "118013850",
+
+      skip_binary_upload: true,
+      skip_app_version_update: true,
+
+      skip_metadata: true,
+      overwrite_screenshots: true,
+    )
+  end
+end
+
+platform :mac do
+  desc "Upload App Store Metadata"
+  lane :upload_metadata do
+    deliver(
+      team_id: "118013850",
+      platform: "osx",
+
+      skip_binary_upload: true,
+      skip_app_version_update: true,
+
+      skip_screenshots: true,
+    )
+  end
 end
