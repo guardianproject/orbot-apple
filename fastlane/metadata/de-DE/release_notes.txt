@@ -1,3 +1,5 @@
-- Tor auf 0.4.7.8 aktualisiert.
-- Explizite Bypass-Einstellung entfernt. Bypass wird jetzt nur aktiviert, wenn eine App registriert ist, die es benötigt.
-   Wird wieder abgeschaltet, nachdem alle Bypass-Apps entfernt wurden.
+- Tor auf 0.4.7.10 aktualisiert.
+- Obfs4proxy auf 0.0.14 aktualisiert.
+- Snowflake auf 2.3.1 aktualisiert.
+- Echte macOS-Version hinzugefügt.
+- Russische Übersetzung aktualisiert.

@@ -1,5 +1,12 @@
 #  Orbot iOS Changelog
 
+## 1.4.0
+- Updated Tor to 0.4.7.10.
+- Updated Obfs4proxy to 0.0.14.
+- Updated Snowflake to 2.3.1.
+- Added a native macOS version.
+- Updated Russian translation.
+
 ## 1.3.1
 - Updated Tor to 0.4.7.8.
 - Added status to poll response, so `OrbotKit` doesn't have to ask and catches 
