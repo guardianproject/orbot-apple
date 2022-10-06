@@ -24,8 +24,6 @@ platform :ios do
   desc "Upload App Store Metadata"
   lane :upload_metadata do
     deliver(
-      team_id: "118013850",
-
       skip_binary_upload: true,
       skip_app_version_update: true,
 
@@ -36,8 +34,6 @@ platform :ios do
   desc "Upload App Store Screenshots"
   lane :upload_screenshots do
     deliver(
-      team_id: "118013850",
-
       skip_binary_upload: true,
       skip_app_version_update: true,
 
@@ -51,7 +47,6 @@ platform :mac do
   desc "Upload App Store Metadata"
   lane :upload_metadata do
     deliver(
-      team_id: "118013850",
       platform: "osx",
 
       skip_binary_upload: true,
