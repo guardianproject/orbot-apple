@@ -163,6 +163,25 @@ class SettingsViewController: BaseFormViewController {
 				$0 <<< $0.multivaluedRowToInsertAt!(1)
 			}
 		}
+
+		+++ Section(L10n.maintenance)
+		<<< ButtonRow("clearCache") {
+			$0.title = L10n.clearTorCache
+			$0.disabled = Condition.function(["clearCache"], { _ in
+				VpnManager.shared.isConnected
+			})
+		}
+		.onCellSelection({ _, row in
+			if row.isDisabled {
+				return
+			}
+
+			SharedUtils.clearTorCache()
+
+			AlertHelper.present(self, message: L10n.cleared, title: L10n.clearTorCache)
+		})
+
+		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
 	}
 
 
@@ -176,6 +195,14 @@ class SettingsViewController: BaseFormViewController {
 		}
 
 		saveAdvancedConf()
+	}
+
+
+	// MARK: Observers
+
+	@objc
+	func statusChanged() {
+		form.rowBy(tag: "clearCache")?.evaluateDisabled()
 	}
 
 

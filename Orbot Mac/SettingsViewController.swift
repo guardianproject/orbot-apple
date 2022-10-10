@@ -17,6 +17,12 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
+	@IBOutlet weak var tab1: NSTabViewItem! {
+		didSet {
+			tab1.label = L10n.general
+		}
+	}
+
 	@IBOutlet weak var box1: NSBox! {
 		didSet {
 			box1.title = L10n.automaticRestart
@@ -59,9 +65,9 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
-	@IBOutlet weak var box3: NSBox! {
+	@IBOutlet weak var tab2: NSTabViewItem! {
 		didSet {
-			box3.title = L10n.nodeConfiguration
+			tab2.label = L10n.nodeConfiguration
 		}
 	}
 
@@ -137,9 +143,9 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
-	@IBOutlet weak var box4: NSBox! {
+	@IBOutlet weak var tab3: NSTabViewItem! {
 		didSet {
-			box4.title = L10n.advancedTorConf
+			tab3.label = L10n.advancedTorConf
 		}
 	}
 
@@ -161,11 +167,35 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
+	@IBOutlet weak var box3: NSBox! {
+		didSet {
+			box3.title = L10n.maintenance
+		}
+	}
+
+	@IBOutlet weak var clearCacheBt: NSButton! {
+		didSet {
+			clearCacheBt.title = L10n.clearTorCache
+		}
+	}
+
 
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
 		view.window?.title = L10n.settings
+
+		statusChanged()
+
+		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
+	}
+
+
+	// MARK: Observers
+
+	@objc
+	func statusChanged() {
+		clearCacheBt.isEnabled = !VpnManager.shared.isConnected
 	}
 
 
@@ -227,5 +257,14 @@ class SettingsViewController: NSViewController {
 		Settings.advancedTorConf = sender.stringValue
 			.components(separatedBy: .newlines)
 			.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+	}
+
+	@IBAction func clearCache(_ sender: NSButton) {
+		SharedUtils.clearTorCache()
+
+		let alert = NSAlert()
+		alert.messageText = L10n.cleared
+
+		alert.runModal()
 	}
 }

@@ -113,8 +113,7 @@ class SharedUtils: BridgesConfDelegate {
 		else {
 			statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
 
-			switch VpnManager.shared.sessionStatus {
-			case .connected, .connecting, .reasserting:
+			if VpnManager.shared.isConnected {
 				let space = NSAttributedString(string: " ")
 				let transport = Settings.transport
 
@@ -142,9 +141,6 @@ class SharedUtils: BridgesConfDelegate {
 					statusText.append(space)
 					statusText.append(NSAttributedString(string: progress))
 				}
-
-			default:
-				break
 			}
 		}
 
@@ -182,6 +178,35 @@ class SharedUtils: BridgesConfDelegate {
 			}
 
 			completed(text)
+		}
+	}
+
+	static func clearTorCache() {
+		let fm = FileManager.default
+
+		guard let torDir = fm.torDir,
+			  let enumerator = fm.enumerator(at: torDir, includingPropertiesForKeys: [.isDirectoryKey])
+		else {
+			return
+		}
+
+		for case let file as URL in enumerator {
+			if (try? file.resourceValues(forKeys: [.isDirectoryKey]).isDirectory) ?? false {
+				if file == fm.torAuthDir {
+					enumerator.skipDescendants()
+				}
+
+				continue
+			}
+
+			do {
+				try fm.removeItem(at: file)
+
+				print("File deleted: \(file.path)")
+			}
+			catch {
+				print("File could not be deleted: \(file.path)")
+			}
 		}
 	}
 }

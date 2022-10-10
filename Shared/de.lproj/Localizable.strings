@@ -134,6 +134,12 @@
 "Circuits" = "Kanäle";
 
 /* No comment provided by engineer. */
+"Clear Tor Cache" = "Tor Cache löschen";
+
+/* No comment provided by engineer. */
+"Cleared!" = "Gelöscht!";
+
+/* No comment provided by engineer. */
 "Comma-separated lists of:" = "Komma-getrennte Listen mit:";
 
 /* No comment provided by engineer. */
@@ -203,6 +209,9 @@
 "fonts" = "Schriftarten";
 
 /* No comment provided by engineer. */
+"General" = "Allgemein";
+
+/* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "Gehe zurück zur anfordernden App und kopiere das Token in das entsprechende Formularfeld.";
 
 /* No comment provided by engineer. */
@@ -228,6 +237,9 @@
 
 /* No comment provided by engineer. */
 "Log" = "Log";
+
+/* No comment provided by engineer. */
+"Maintenance" = "Wartung";
 
 /* No comment provided by engineer. */
 "Most settings will only take effect after restart." = "Die meisten Einstellungen werden erst nach einem Neustart wirksam.";

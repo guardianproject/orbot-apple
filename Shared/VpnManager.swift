@@ -130,6 +130,17 @@ class VpnManager {
 		}
 	}
 
+	var isConnected: Bool {
+		switch sessionStatus {
+		case .connecting, .connected, .reasserting:
+			return true
+
+		default:
+			return false
+		}
+	}
+
+
 	init() {
 		NSKeyedUnarchiver.setClass(ProgressMessage.self, forClassName:
 									"TorVPN.\(String(describing: ProgressMessage.self))")
@@ -198,8 +209,7 @@ class VpnManager {
 	}
 
 	func configChanged() {
-		switch sessionStatus {
-		case .connecting, .connected, .reasserting:
+		if isConnected {
 			sendMessage(ConfigChangedMessage()) { (success: Bool?, error) in
 				print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
 
@@ -207,9 +217,6 @@ class VpnManager {
 
 				self.postChange()
 			}
-
-		default:
-			break
 		}
 	}
 
@@ -281,16 +288,12 @@ class VpnManager {
 	 - else if restart-on-error was just unset and start-on-demand is currently set, unset it.
 	 */
 	func updateRestartOnError() {
-		switch sessionStatus {
-		case .connecting, .connected, .reasserting:
-			if let manager = manager, manager.isOnDemandEnabled != Settings.restartOnError {
-				manager.isOnDemandEnabled = Settings.restartOnError
+		if isConnected,
+			let manager = manager, manager.isOnDemandEnabled != Settings.restartOnError
+		{
+			manager.isOnDemandEnabled = Settings.restartOnError
 
-				save(manager)
-			}
-
-		default:
-			break
+			save(manager)
 		}
 	}
 

@@ -71,6 +71,10 @@ class L10n {
 		NSLocalizedString("Cancel", bundle: .iPtProxyUI, comment: "#bc-ignore!")
 	}
 
+	public static var general: String {
+		NSLocalizedString("General", comment: "")
+	}
+
 	public static var settingsExplanation1: String {
 		NSLocalizedString("Comma-separated lists of:", comment: "") + "\n"
 		+ String(format: NSLocalizedString("%1$@ node fingerprints, e.g. \"%2$@\"", comment: ""), "\u{2022}", "ABCD1234CDEF5678ABCD1234CDEF5678ABCD1234") + "\n"
@@ -164,5 +168,17 @@ class L10n {
 
 	public static var torConfReference: String {
 		NSLocalizedString("Tor Configuration Reference", comment: "")
+	}
+
+	public static var maintenance: String {
+		NSLocalizedString("Maintenance", comment: "")
+	}
+
+	public static var clearTorCache: String {
+		NSLocalizedString("Clear Tor Cache", comment: "")
+	}
+
+	public static var cleared: String {
+		NSLocalizedString("Cleared!", comment: "")
 	}
 }

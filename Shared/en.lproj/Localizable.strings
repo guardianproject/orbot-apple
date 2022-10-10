@@ -134,6 +134,12 @@
 "Circuits" = "Circuits";
 
 /* No comment provided by engineer. */
+"Clear Tor Cache" = "Clear Tor Cache";
+
+/* No comment provided by engineer. */
+"Cleared!" = "Cleared!";
+
+/* No comment provided by engineer. */
 "Comma-separated lists of:" = "Comma-separated lists of:";
 
 /* No comment provided by engineer. */
@@ -203,6 +209,9 @@
 "fonts" = "fonts";
 
 /* No comment provided by engineer. */
+"General" = "General";
+
+/* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "Go back to the requesting app and paste the token in the appropriate dialog.";
 
 /* No comment provided by engineer. */
@@ -228,6 +237,9 @@
 
 /* No comment provided by engineer. */
 "Log" = "Log";
+
+/* No comment provided by engineer. */
+"Maintenance" = "Maintenance";
 
 /* No comment provided by engineer. */
 "Most settings will only take effect after restart." = "Most settings will only take effect after restart.";
