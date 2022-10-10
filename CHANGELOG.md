@@ -6,6 +6,8 @@
 - Updated Snowflake to 2.3.1.
 - Added a native macOS version.
 - Updated Russian translation.
+- Added option to automatically restart on error.
+- Added option to clear the Tor cache.
 
 ## 1.3.1
 - Updated Tor to 0.4.7.8.
