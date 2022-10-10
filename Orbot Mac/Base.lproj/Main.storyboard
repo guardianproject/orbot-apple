@@ -1043,7 +1043,7 @@ Gw
                                         <action selector="refresh:" target="Oky-zY-oP4" id="zvn-bw-bex"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="491FDCF0-10AB-4E57-9127-06462D9722F0" explicitItemIdentifier="settings" label="Settings" paletteLabel="Settings" tag="-1" image="gear.circle" catalog="system" bordered="YES" sizingBehavior="auto" id="XEs-Qn-1zM">
+                                <toolbarItem implicitItemIdentifier="491FDCF0-10AB-4E57-9127-06462D9722F0" explicitItemIdentifier="settings" label="Settings" paletteLabel="Settings" tag="-1" image="gear.circle" bordered="YES" sizingBehavior="auto" id="XEs-Qn-1zM">
                                     <connections>
                                         <segue destination="Es4-DB-VW9" kind="modal" id="0QR-9b-55l"/>
                                     </connections>
@@ -1053,7 +1053,7 @@ Gw
                                         <segue destination="Yl1-vt-3vX" kind="modal" id="lxU-iz-slq"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="C5BAC178-EA79-4F90-8A9D-F0F0660D1DBA" explicitItemIdentifier="bridges" label="Bridge Configuration" paletteLabel="Bridge Configuration" tag="-1" image="network.badge.shield.half.filled" catalog="system" bordered="YES" sizingBehavior="auto" id="OcC-bi-CbE">
+                                <toolbarItem implicitItemIdentifier="C5BAC178-EA79-4F90-8A9D-F0F0660D1DBA" explicitItemIdentifier="bridges" label="Bridge Configuration" paletteLabel="Bridge Configuration" tag="-1" image="network.badge.shield.half.filled" bordered="YES" sizingBehavior="auto" id="OcC-bi-CbE">
                                     <connections>
                                         <action selector="bridgeConfiguration:" target="Oky-zY-oP4" id="sdW-VT-8Rd"/>
                                     </connections>
@@ -1250,9 +1250,9 @@ Gw
         <image name="TorOn" width="512" height="512"/>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
-        <image name="gear.circle" catalog="system" width="15" height="15"/>
+        <image name="gear.circle" width="14" height="14"/>
         <image name="key" catalog="system" width="13" height="18"/>
-        <image name="network.badge.shield.half.filled" catalog="system" width="16" height="16"/>
+        <image name="network.badge.shield.half.filled" width="15" height="14"/>
         <image name="plus" catalog="system" width="15" height="13"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
