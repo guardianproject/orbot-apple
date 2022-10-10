@@ -104,6 +104,12 @@
 "Auth Cookies" = "Auth Schlüssel";
 
 /* No comment provided by engineer. */
+"Automatic Restart" = "Automatischer Neustart";
+
+/* No comment provided by engineer. */
+"Automatically Restart on Error" = "Starte bei Fehlern automatisch neu";
+
+/* No comment provided by engineer. */
 "Block cookies" = "Blockiere Cookies";
 
 /* No comment provided by engineer. */
@@ -224,6 +230,9 @@
 "Log" = "Log";
 
 /* No comment provided by engineer. */
+"Most settings will only take effect after restart." = "Die meisten Einstellungen werden erst nach einem Neustart wirksam.";
+
+/* No comment provided by engineer. */
 "No VPN configuration set." = "Keine VPN-Konfiguration gesetzt.";
 
 /* No comment provided by engineer. */
@@ -279,9 +288,6 @@
 
 /* No comment provided by engineer. */
 "Settings" = "Einstellungen";
-
-/* No comment provided by engineer. */
-"Settings will only take effect after restart." = "Einstellungen werden erst nach einem Neustart wirksam.";
 
 /* No comment provided by engineer. */
 "Start" = "Start";

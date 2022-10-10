@@ -19,7 +19,25 @@ class SettingsViewController: NSViewController {
 
 	@IBOutlet weak var box1: NSBox! {
 		didSet {
-			box1.title = L10n.onionOnlyMode
+			box1.title = L10n.automaticRestart
+		}
+	}
+	
+	@IBOutlet weak var restartOnErrorLb: NSTextField! {
+		didSet {
+			restartOnErrorLb.stringValue = L10n.automaticallyRestartOnError
+		}
+	}
+	
+	@IBOutlet weak var restartOnErrorSw: NSSwitch! {
+		didSet {
+			restartOnErrorSw.state = Settings.restartOnError ? .on : .off
+		}
+	}
+	
+	@IBOutlet weak var box2: NSBox! {
+		didSet {
+			box2.title = L10n.onionOnlyMode
 		}
 	}
 
@@ -41,9 +59,9 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
-	@IBOutlet weak var box2: NSBox! {
+	@IBOutlet weak var box3: NSBox! {
 		didSet {
-			box2.title = L10n.nodeConfiguration
+			box3.title = L10n.nodeConfiguration
 		}
 	}
 
@@ -119,9 +137,9 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
-	@IBOutlet weak var box3: NSBox! {
+	@IBOutlet weak var box4: NSBox! {
 		didSet {
-			box3.title = L10n.advancedTorConf
+			box4.title = L10n.advancedTorConf
 		}
 	}
 
@@ -152,6 +170,12 @@ class SettingsViewController: NSViewController {
 
 
 	// MARK: Actions
+	
+	@IBAction func changeRestartOnError(_ sender: NSSwitch) {
+		Settings.restartOnError = sender.state == .on
+		
+		VpnManager.shared.updateRestartOnError()
+	}
 
 	@IBAction func changeOnionOnly(_ sender: NSSwitch) {
 		if sender.state == .on {
@@ -174,7 +198,7 @@ class SettingsViewController: NSViewController {
 		else {
 			if Settings.onionOnly {
 				Settings.onionOnly = false
-				VpnManager.shared.disconnect()
+				VpnManager.shared.disconnect(explicit: true)
 			}
 		}
 	}

@@ -74,7 +74,7 @@ class SharedUtils: BridgesConfDelegate {
 
 		switch VpnManager.shared.sessionStatus {
 		case .connected, .connecting:
-			VpnManager.shared.disconnect()
+			VpnManager.shared.disconnect(explicit: true)
 
 		case .disconnected, .disconnecting:
 			VpnManager.shared.connect()

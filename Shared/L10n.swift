@@ -95,7 +95,15 @@ class L10n {
 	}
 
 	public static var settingsEfectAfterRestart: String {
-		NSLocalizedString("Settings will only take effect after restart.", comment: "")
+		NSLocalizedString("Most settings will only take effect after restart.", comment: "")
+	}
+
+	public static var automaticRestart: String {
+		NSLocalizedString("Automatic Restart", comment: "")
+	}
+
+	public static var automaticallyRestartOnError: String {
+		NSLocalizedString("Automatically Restart on Error", comment: "")
 	}
 
 	public static var onionOnlyMode: String {

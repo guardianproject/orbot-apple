@@ -214,34 +214,84 @@ class VpnManager {
 	}
 
 	func connect() {
-		guard let session = session else {
-			error = Errors.noConfiguration
+		let completed: Completed = { [weak self] success in
+			guard success,
+				  let session = self?.session
+			else {
+				self?.error = Errors.noConfiguration
 
-			postChange()
+				self?.postChange()
 
-			return
-		}
-
-		DispatchQueue.main.async { [weak self] in
-			guard let self = self else {
 				return
 			}
 
-			do {
-				try session.startVPNTunnel()
-			}
-			catch let error {
-				self.error = error
+			DispatchQueue.main.async {
+				guard let self = self else {
+					return
+				}
 
-				self.postChange()
-			}
+				do {
+					try session.startVPNTunnel()
+				}
+				catch let error {
+					self.error = error
 
-			self.commTunnel()
+					self.postChange()
+
+					return
+				}
+
+				self.commTunnel()
+			}
+		}
+
+		// If user wants to automatically restart on error, but
+		// start-on-demand is not set, set it now and store the config.
+		if Settings.restartOnError, let manager = manager, !manager.isOnDemandEnabled {
+			manager.isOnDemandEnabled = true
+
+			save(manager, completed)
+		}
+		else {
+			completed(true)
 		}
 	}
 
-	func disconnect() {
-		session?.stopTunnel()
+	func disconnect(explicit: Bool) {
+		let completed: Completed = { [weak self] _ in
+			self?.session?.stopTunnel()
+		}
+
+		// If user pressed stop explicitly and  start-on-demand is set, unset it now,
+		// otherwise it would constantly restart.
+		if explicit, let manager = manager, manager.isOnDemandEnabled {
+			manager.isOnDemandEnabled = false
+
+			save(manager, completed)
+		}
+		else {
+			completed(true)
+		}
+	}
+
+	/**
+	 If Network Extension is currently running
+
+	 - then, if  restart-on-error was just set and start-on-demand is currently not set, set it.
+	 - else if restart-on-error was just unset and start-on-demand is currently set, unset it.
+	 */
+	func updateRestartOnError() {
+		switch sessionStatus {
+		case .connecting, .connected, .reasserting:
+			if let manager = manager, manager.isOnDemandEnabled != Settings.restartOnError {
+				manager.isOnDemandEnabled = Settings.restartOnError
+
+				save(manager)
+			}
+
+		default:
+			break
+		}
 	}
 
 	func getCircuits(_ callback: @escaping ((_ circuits: [TorCircuit], _ error: Error?) -> Void)) {

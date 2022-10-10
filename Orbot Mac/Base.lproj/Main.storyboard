@@ -555,7 +555,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-K1-QGp">
-                                <rect key="frame" x="378" y="13" width="59" height="32"/>
+                                <rect key="frame" x="377" y="13" width="60" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tGJ-pH-erF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -565,7 +565,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9zr-ao-UgK">
-                                <rect key="frame" x="306" y="13" width="74" height="32"/>
+                                <rect key="frame" x="305" y="13" width="74" height="32"/>
                                 <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CZQ-oA-noG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -575,7 +575,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-w1-qcJ">
-                                <rect key="frame" x="232" y="13" width="76" height="32"/>
+                                <rect key="frame" x="231" y="13" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="38w-Ae-iOB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -621,11 +621,11 @@ Gw
             <objects>
                 <viewController id="cNi-Fr-8GN" customClass="SettingsViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dV5-ta-aIY">
-                        <rect key="frame" x="0.0" y="0.0" width="593" height="832"/>
+                        <rect key="frame" x="0.0" y="0.0" width="593" height="902"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CGT-6q-nRJ">
-                                <rect key="frame" x="18" y="796" width="577" height="16"/>
+                                <rect key="frame" x="18" y="866" width="577" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Settings will only take effect after restart." id="A7g-MN-TUa">
                                     <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -844,7 +844,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fan-AM-VwW">
-                                            <rect key="frame" x="335" y="131" width="205" height="32"/>
+                                            <rect key="frame" x="334" y="131" width="206" height="32"/>
                                             <buttonCell key="cell" type="push" title="Tor Configuration Reference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Y3-uR-p1O">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -893,27 +893,62 @@ Gw
                                     </constraints>
                                 </view>
                             </box>
+                            <box title="Automatic Restart" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-2r-eGh">
+                                <rect key="frame" x="17" y="792" width="559" height="66"/>
+                                <view key="contentView" id="fAm-8S-yvW">
+                                    <rect key="frame" x="3" y="3" width="553" height="48"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-oB-Ge9">
+                                            <rect key="frame" x="18" y="16" width="471" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Automatically Restart on Error" id="5i4-Ta-WNF">
+                                                <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="xSx-s1-eNA">
+                                            <rect key="frame" x="493" y="11" width="42" height="25"/>
+                                            <connections>
+                                                <action selector="changeRestartOnError:" target="cNi-Fr-8GN" id="GNK-Gy-MPb"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xSx-s1-eNA" firstAttribute="leading" secondItem="pQ8-oB-Ge9" secondAttribute="trailing" constant="8" symbolic="YES" id="2zK-ed-u5C"/>
+                                        <constraint firstItem="xSx-s1-eNA" firstAttribute="centerY" secondItem="pQ8-oB-Ge9" secondAttribute="centerY" id="8U7-Az-49A"/>
+                                        <constraint firstItem="pQ8-oB-Ge9" firstAttribute="top" secondItem="fAm-8S-yvW" secondAttribute="top" constant="16" id="K0o-W3-gHy"/>
+                                        <constraint firstItem="pQ8-oB-Ge9" firstAttribute="leading" secondItem="fAm-8S-yvW" secondAttribute="leading" constant="20" symbolic="YES" id="VP3-zB-sPh"/>
+                                        <constraint firstAttribute="bottom" secondItem="pQ8-oB-Ge9" secondAttribute="bottom" constant="16" id="fZc-JD-taQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="xSx-s1-eNA" secondAttribute="trailing" constant="20" symbolic="YES" id="vWY-9K-3wV"/>
+                                    </constraints>
+                                </view>
+                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="qPU-GF-kUJ" firstAttribute="top" secondItem="ov1-SB-vJr" secondAttribute="bottom" constant="8" symbolic="YES" id="EBj-Ed-tBB"/>
                             <constraint firstItem="CGT-6q-nRJ" firstAttribute="leading" secondItem="dV5-ta-aIY" secondAttribute="leading" constant="20" symbolic="YES" id="FA7-GF-F3K"/>
+                            <constraint firstItem="Oxo-2r-eGh" firstAttribute="leading" secondItem="dV5-ta-aIY" secondAttribute="leading" constant="20" symbolic="YES" id="QeD-dw-itv"/>
                             <constraint firstAttribute="trailing" secondItem="ov1-SB-vJr" secondAttribute="trailing" constant="20" symbolic="YES" id="ZIt-L7-Zr8"/>
                             <constraint firstAttribute="trailing" secondItem="CGT-6q-nRJ" secondAttribute="trailing" id="azc-RM-JoA"/>
+                            <constraint firstAttribute="trailing" secondItem="Oxo-2r-eGh" secondAttribute="trailing" constant="20" symbolic="YES" id="b6q-qZ-Oes"/>
+                            <constraint firstItem="ov1-SB-vJr" firstAttribute="top" secondItem="qMx-R2-l8X" secondAttribute="bottom" constant="8" symbolic="YES" id="dnx-g2-W0h"/>
                             <constraint firstItem="qPU-GF-kUJ" firstAttribute="leading" secondItem="dV5-ta-aIY" secondAttribute="leading" constant="20" symbolic="YES" id="efe-xZ-SYo"/>
                             <constraint firstAttribute="bottom" secondItem="qPU-GF-kUJ" secondAttribute="bottom" constant="20" symbolic="YES" id="mIY-5k-UFt"/>
                             <constraint firstItem="ov1-SB-vJr" firstAttribute="leading" secondItem="dV5-ta-aIY" secondAttribute="leading" constant="20" symbolic="YES" id="ocj-Tw-UQR"/>
-                            <constraint firstItem="ov1-SB-vJr" firstAttribute="top" secondItem="qMx-R2-l8X" secondAttribute="bottom" constant="8" symbolic="YES" id="qEq-cO-L42"/>
+                            <constraint firstItem="qMx-R2-l8X" firstAttribute="top" secondItem="Oxo-2r-eGh" secondAttribute="bottom" constant="8" symbolic="YES" id="pow-JY-EeQ"/>
+                            <constraint firstItem="Oxo-2r-eGh" firstAttribute="top" secondItem="CGT-6q-nRJ" secondAttribute="bottom" constant="8" symbolic="YES" id="qct-SY-QPS"/>
                             <constraint firstAttribute="trailing" secondItem="qMx-R2-l8X" secondAttribute="trailing" constant="20" symbolic="YES" id="tjy-zb-dkf"/>
                             <constraint firstAttribute="trailing" secondItem="qPU-GF-kUJ" secondAttribute="trailing" constant="20" symbolic="YES" id="tp4-Ek-GEG"/>
                             <constraint firstItem="qMx-R2-l8X" firstAttribute="leading" secondItem="dV5-ta-aIY" secondAttribute="leading" constant="20" symbolic="YES" id="wNS-I2-uC0"/>
                             <constraint firstItem="CGT-6q-nRJ" firstAttribute="top" secondItem="dV5-ta-aIY" secondAttribute="top" constant="20" symbolic="YES" id="yL2-k6-2aD"/>
-                            <constraint firstItem="qMx-R2-l8X" firstAttribute="top" secondItem="CGT-6q-nRJ" secondAttribute="bottom" constant="8" symbolic="YES" id="yMN-9t-Lww"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="box1" destination="qMx-R2-l8X" id="Hvv-iy-9dt"/>
-                        <outlet property="box2" destination="ov1-SB-vJr" id="80A-Cy-KIW"/>
-                        <outlet property="box3" destination="qPU-GF-kUJ" id="yXf-Vx-3nO"/>
+                        <outlet property="box1" destination="Oxo-2r-eGh" id="rnE-9h-xUN"/>
+                        <outlet property="box2" destination="qMx-R2-l8X" id="NJb-ff-u9F"/>
+                        <outlet property="box3" destination="ov1-SB-vJr" id="80A-Cy-KIW"/>
+                        <outlet property="box4" destination="qPU-GF-kUJ" id="yXf-Vx-3nO"/>
                         <outlet property="entryNodesExplLb" destination="ZCk-Ga-870" id="CNk-U8-iS4"/>
                         <outlet property="entryNodesLb" destination="Bkr-QE-vWe" id="1MO-Op-Qzq"/>
                         <outlet property="entryNodesTf" destination="h5v-Tw-EiO" id="Ei5-LU-II6"/>
@@ -928,6 +963,8 @@ Gw
                         <outlet property="onionOnlyExplLb" destination="Ein-zp-z6o" id="D1U-DY-yQK"/>
                         <outlet property="onionOnlyLb" destination="u1z-ng-0bG" id="I80-WZ-Mo4"/>
                         <outlet property="onionOnlySw" destination="CpP-DS-jyw" id="mtM-ii-DSM"/>
+                        <outlet property="restartOnErrorLb" destination="pQ8-oB-Ge9" id="9Yc-af-TdG"/>
+                        <outlet property="restartOnErrorSw" destination="xSx-s1-eNA" id="qWV-xv-7Xm"/>
                         <outlet property="strictNodesLb" destination="T2J-Jr-Mcl" id="wj5-w8-x1L"/>
                         <outlet property="strictNodesSw" destination="0HG-kY-LRF" id="M5Q-SQ-e8r"/>
                         <outlet property="torConfExplLb" destination="HqU-4d-vgc" id="cXo-WF-H1f"/>
@@ -937,7 +974,7 @@ Gw
                 </viewController>
                 <customObject id="8mw-8I-2UA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="1002"/>
+            <point key="canvasLocation" x="1377.5" y="1002"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -1166,11 +1203,11 @@ Gw
         <image name="TorOff" width="512" height="512"/>
         <image name="TorOn" width="512" height="512"/>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
         <image name="gear.circle" catalog="system" width="15" height="15"/>
-        <image name="key" catalog="system" width="12" height="18"/>
+        <image name="key" catalog="system" width="13" height="18"/>
         <image name="network.badge.shield.half.filled" catalog="system" width="16" height="16"/>
-        <image name="plus" catalog="system" width="14" height="13"/>
+        <image name="plus" catalog="system" width="15" height="13"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

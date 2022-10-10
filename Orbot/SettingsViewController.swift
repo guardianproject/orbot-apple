@@ -26,6 +26,18 @@ class SettingsViewController: BaseFormViewController {
 			$0.cell.detailTextLabel?.numberOfLines = 0
 		}
 
+		+++ Section(L10n.automaticRestart)
+		<<< SwitchRow() {
+			$0.title = L10n.automaticallyRestartOnError
+			$0.value = Settings.restartOnError
+			$0.cell.textLabel?.numberOfLines = 0
+		}
+		.onChange { row in
+			Settings.restartOnError = row.value ?? false
+
+			VpnManager.shared.updateRestartOnError()
+		}
+
 		+++ Section(header: L10n.onionOnlyMode, footer: L10n.attentionAnonymity)
 		<<< SwitchRow("onionOnlyMode") {
 			$0.title = L10n.disableForNonOnionTraffic
@@ -49,7 +61,7 @@ class SettingsViewController: BaseFormViewController {
 			else {
 				if Settings.onionOnly {
 					Settings.onionOnly = false
-					VpnManager.shared.disconnect()
+					VpnManager.shared.disconnect(explicit: true)
 				}
 			}
 		}

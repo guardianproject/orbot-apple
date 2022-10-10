@@ -181,7 +181,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	private func restartVpn() {
 		switch VpnManager.shared.sessionStatus {
 		case .connecting, .connected, .reasserting:
-			VpnManager.shared.disconnect()
+			VpnManager.shared.disconnect(explicit: false)
 			VpnManager.shared.connect()
 
 			// We need to sleep a little, otherwise the queued start on the

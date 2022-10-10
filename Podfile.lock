@@ -6,7 +6,7 @@ PODS:
   - ImageRow (4.1.0):
     - Eureka (~> 5.3.5)
   - IPtProxy (1.8.0)
-  - IPtProxyUI (1.10.1):
+  - IPtProxyUI (1.10.2):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
     - IPtProxy (~> 1.8)
@@ -48,7 +48,7 @@ SPEC CHECKSUMS:
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
   IPtProxy: e180e0f4381a893b52ae12626fbd0d40cbabe746
-  IPtProxyUI: 3c21adaf6a95bbbd863f335e4545a32b6bb0a4e6
+  IPtProxyUI: 6a4b9ba6d646d093e79e7168206d8b9e34e13665
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: f9ea045ca159cdfbd185924aa60aef2c08f0f523
