@@ -62,15 +62,16 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var logSc: UISegmentedControl! {
 		didSet {
-			logSc.setTitle(L10n.log, forSegmentAt: 0)
-			logSc.setTitle(L10n.circuits, forSegmentAt: 1)
+			logSc.setTitle("Tor", forSegmentAt: 0)
+			logSc.setTitle(L10n.bridges, forSegmentAt: 1)
+			logSc.setTitle(L10n.circuits, forSegmentAt: 2)
 
 #if DEBUG
 			if Config.extendedLogging {
-				logSc.insertSegment(withTitle: "VPN", at: 2, animated: false)
-				logSc.insertSegment(withTitle: "LL", at: 3, animated: false)
-				logSc.insertSegment(withTitle: "LC", at: 4, animated: false)
-				logSc.insertSegment(withTitle: "WS", at: 5, animated: false)
+				logSc.insertSegment(withTitle: "VPN", at: 3, animated: false)
+				logSc.insertSegment(withTitle: "LL", at: 4, animated: false)
+				logSc.insertSegment(withTitle: "LC", at: 5, animated: false)
+				logSc.insertSegment(withTitle: "WS", at: 6, animated: false)
 			}
 #endif
 		}
@@ -250,9 +251,10 @@ class MainViewController: UIViewController {
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
-			Logger.tailFile(nil)
+			Logger.tailFile(Settings.transport.logFile, update)
 
-			logTv.text = nil
+		case 2:
+			Logger.tailFile(nil)
 
 			SharedUtils.getCircuits { [weak self] text in
 				self?.logTv.text = text
@@ -260,19 +262,19 @@ class MainViewController: UIViewController {
 			}
 
 #if DEBUG
-		case 2:
+		case 3:
 			// Shows the content of the VPN log file.
 			Logger.tailFile(FileManager.default.vpnLogFile, update)
 
-		case 3:
+		case 4:
 			// Shows the content of the leaf log file.
 			Logger.tailFile(FileManager.default.leafLogFile, update)
 
-		case 4:
+		case 5:
 			// Shows the content of the leaf config file.
 			Logger.tailFile(FileManager.default.leafConfFile, update)
 
-		case 5:
+		case 6:
 			// Shows the content of the GCD webserver log file.
 			Logger.tailFile(FileManager.default.wsLogFile, update)
 #endif
@@ -298,6 +300,8 @@ class MainViewController: UIViewController {
 		statusIcon.image = UIImage(named: statusIconName)
 		controlBt.setTitle(buttonTitle)
 		statusLb.attributedText = statusText
+
+		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 	}
 
 

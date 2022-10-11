@@ -7,8 +7,6 @@
 //
 
 import NetworkExtension
-import IPtProxyUI
-import IPtProxy
 
 
 class BasePTProvider: NEPacketTunnelProvider {
@@ -57,10 +55,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: ConfigChangedMessage.self))")
 
-		// Esp. on MacOS, Obfs4proxy will crash without having this set correctly.
-		if let torDir = FileManager.default.torDir {
-			IPtProxy.setStateLocation(torDir.path)
-		}
+		Settings.setPtStateLocation()
 	}
 
 
@@ -199,7 +194,13 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-		transport.start()
+		if Logger.ENABLE_LOGGING,
+		   let logfile = transport.logFile
+		{
+			try? "".write(to: logfile, atomically: true, encoding: .utf8)
+		}
+
+		transport.start(log: Logger.ENABLE_LOGGING)
 
 		TorManager.shared.start(transport, { progress in
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))

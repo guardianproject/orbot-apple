@@ -1186,8 +1186,9 @@ Gw
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="dB4-Ev-o9R">
                                     <font key="font" metaFont="system"/>
                                     <segments>
-                                        <segment label="Log" selected="YES"/>
-                                        <segment label="Circuits" tag="1"/>
+                                        <segment label="Tor" selected="YES"/>
+                                        <segment label="Bridges" tag="1"/>
+                                        <segment label="Circuits"/>
                                     </segments>
                                 </segmentedCell>
                                 <connections>

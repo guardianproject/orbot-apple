@@ -27,6 +27,10 @@ class L10n {
 		NSLocalizedString("Log", comment: "")
 	}
 
+	public static var bridges: String {
+		NSLocalizedString("Bridges", comment: "")
+	}
+
 	public static var circuits: String {
 		NSLocalizedString("Circuits", comment: "")
 	}

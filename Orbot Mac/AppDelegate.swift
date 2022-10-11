@@ -7,18 +7,12 @@
 //
 
 import Cocoa
-import IPtProxy
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Needed for bridge fetching via Meek.
-		if let torDir = FileManager.default.torDir {
-			IPtProxy.setStateLocation(torDir.path)
-
-//			print("[\(String(describing: type(of: self))) torDir=\(torDir.path)]")
-		}
+		Settings.setPtStateLocation()
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {

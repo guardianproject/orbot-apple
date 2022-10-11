@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
 	{
+		Settings.setPtStateLocation()
+
 		UIView.appearance().tintColor = .init(named: "DarkGreen")
 
 #if DEBUG

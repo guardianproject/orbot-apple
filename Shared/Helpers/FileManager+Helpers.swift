@@ -65,4 +65,8 @@ extension FileManager {
 
 		return url
 	}
+
+	var ptDir: URL? {
+		groupDir?.appendingPathComponent("pt_state")
+	}
 }

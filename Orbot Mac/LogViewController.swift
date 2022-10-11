@@ -13,17 +13,18 @@ class LogViewController: NSViewController {
 
 	@IBOutlet weak var logSc: NSSegmentedControl! {
 		didSet {
-			logSc.setLabel(L10n.log, forSegment: 0)
-			logSc.setLabel(L10n.circuits, forSegment: 1)
+			logSc.setLabel("Tor", forSegment: 0)
+			logSc.setLabel(L10n.bridges, forSegment: 1)
+			logSc.setLabel(L10n.circuits, forSegment: 2)
 
 #if DEBUG
 			if Config.extendedLogging {
-				logSc.segmentCount = 6
+				logSc.segmentCount = 7
 
-				logSc.setLabel("VPN", forSegment: 2)
-				logSc.setLabel("LL", forSegment: 3)
-				logSc.setLabel("LC", forSegment: 4)
-				logSc.setLabel("WS", forSegment: 5)
+				logSc.setLabel("VPN", forSegment: 3)
+				logSc.setLabel("LL", forSegment: 4)
+				logSc.setLabel("LC", forSegment: 5)
+				logSc.setLabel("WS", forSegment: 6)
 			}
 #endif
 		}
@@ -43,17 +44,29 @@ class LogViewController: NSViewController {
 		view.window?.title = L10n.log
 
 		changeLog(logSc!)
+
+		NotificationCenter.default.addObserver(self, selector: #selector(changeLog), name: .vpnStatusChanged, object: nil)
+	}
+
+	override func viewWillDisappear() {
+		super.viewWillDisappear()
+
+		NotificationCenter.default.removeObserver(self)
 	}
 
 
 	// MARK: Actions
 
 	@IBAction func changeLog(_ view: Any) {
+		logSc.setEnabled(Settings.transport != .none, forSegment: 1)
+
 		switch logSc.selectedSegment {
 		case 1:
-			Logger.tailFile(nil)
+			// Shows the content of the Snowflake log file.
+			Logger.tailFile(Settings.transport.logFile, update)
 
-			logTv?.string = ""
+		case 2:
+			Logger.tailFile(nil)
 
 			SharedUtils.getCircuits { [weak self] text in
 				self?.logTv?.string = text
@@ -61,19 +74,19 @@ class LogViewController: NSViewController {
 			}
 
 #if DEBUG
-		case 2:
+		case 3:
 			// Shows the content of the VPN log file.
 			Logger.tailFile(FileManager.default.vpnLogFile, update)
 
-		case 3:
+		case 4:
 			// Shows the content of the leaf log file.
 			Logger.tailFile(FileManager.default.leafLogFile, update)
 
-		case 4:
+		case 5:
 			// Shows the content of the leaf config file.
 			Logger.tailFile(FileManager.default.leafConfFile, update)
 
-		case 5:
+		case 6:
 			// Shows the content of the GCD webserver log file.
 			Logger.tailFile(FileManager.default.wsLogFile, update)
 #endif
