@@ -4,5 +4,5 @@
 - Echte macOS-Version hinzugefügt.
 - Russische Übersetzung aktualisiert.
 - Option zum automatischen Neustart nach einem Fehler hinzugefügt.
-- Option zum Löschen des Tor-Caches hinzugefügt .
-
+- Option zum Löschen des Tor-Caches hinzugefügt.
+- Log der Pluggable Transports (Brücken) hinzugefügt.

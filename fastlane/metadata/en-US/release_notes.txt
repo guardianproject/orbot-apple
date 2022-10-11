@@ -5,3 +5,4 @@
 - Updated Russian translation.
 - Added option to automatically restart on error.
 - Added option to clear the Tor cache.
+- Added pluggable transports (bridges) log.
