@@ -39,7 +39,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = "Orbot"
+		view.window?.title = Bundle.main.displayName
 
 		for item in view.window?.toolbar?.items ?? [] {
 			switch item.itemIdentifier.rawValue {

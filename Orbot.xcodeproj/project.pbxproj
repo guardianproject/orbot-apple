@@ -218,7 +218,7 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A01AB5F628A53465008A79EE /* Orbot Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orbot Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01AB5F628A53465008A79EE /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01AB5FA28A53465008A79EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		A01AB5FF28A53465008A79EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 				A0A735CD247561F200073C81 /* TorVPN.appex */,
 				A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */,
 				A06BEC6E280090B300351868 /* ContentBlocker.appex */,
-				A01AB5F628A53465008A79EE /* Orbot Mac.app */,
+				A01AB5F628A53465008A79EE /* Orbot.app */,
 				A01AB69F28A55706008A79EE /* TorVPN Mac.appex */,
 			);
 			name = Products;
@@ -673,7 +673,7 @@
 			);
 			name = "Orbot Mac";
 			productName = "Orbot Mac";
-			productReference = A01AB5F628A53465008A79EE /* Orbot Mac.app */;
+			productReference = A01AB5F628A53465008A79EE /* Orbot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A01AB69E28A55706008A79EE /* TorVPN Mac */ = {
@@ -1381,7 +1381,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1414,7 +1414,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
