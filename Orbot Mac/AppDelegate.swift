@@ -46,8 +46,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	private func translate(_ item: NSMenuItem) -> NSMenuItem {
 		item.title = translate(item.title)
 
-		print(item.title)
-
 		item.submenu = translate(item.submenu)
 
 		return item
