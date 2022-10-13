@@ -25,6 +25,9 @@
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Argumente einer Option müssen in einer neue Zeile stehen.";
 
+/* macOS menu item */
+"%@ Help" = "%@ Hilfe";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -42,6 +45,9 @@
 
 /* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "Ein \"Inhaltsblocker\" enthält eine Liste von Dingen die Safari, alle anderen Browser und alle Web-Anzeigen in anderen Apps blockieren müssen.";
+
+/* macOS menu item */
+"About %@" = "Über %@";
 
 /* No comment provided by engineer. */
 "Activate" = "Aktivieren";
@@ -121,6 +127,9 @@
 /* No comment provided by engineer. */
 "Bridges" = "Brücken";
 
+/* macOS menu item */
+"Bring All to Front" = "Alle nach vorne bringen";
+
 /* No comment provided by engineer. */
 "Build new Circuits" = "Erzeuge neue Kanäle";
 
@@ -133,6 +142,9 @@
 /* No comment provided by engineer. */
 "Bypass: granted" = "Bypass: erlaubt";
 
+/* macOS menu item */
+"Capitalize" = "Großschreiben";
+
 /* No comment provided by engineer. */
 "Circuits" = "Kanäle";
 
@@ -141,6 +153,9 @@
 
 /* No comment provided by engineer. */
 "Cleared!" = "Gelöscht!";
+
+/* macOS menu item */
+"Close" = "Schließen";
 
 /* No comment provided by engineer. */
 "Comma-separated lists of:" = "Komma-getrennte Listen mit:";
@@ -154,6 +169,9 @@
 /* No comment provided by engineer. */
 "Content Blocker" = "Inhaltsblocker";
 
+/* macOS menu item */
+"Copy" = "Kopieren";
+
 /* No comment provided by engineer. */
 "Copy to Clipboard" = "In den Zwischenspeicher kopieren";
 
@@ -165,6 +183,12 @@
 
 /* No comment provided by engineer. */
 "Current State" = "Aktueller Zustand";
+
+/* macOS menu item */
+"Customize Toolbar…" = "Werkzeugleiste anpassen…";
+
+/* macOS menu item */
+"Cut" = "Ausschneiden";
 
 /* No comment provided by engineer. */
 "Delete" = "Löschen";
@@ -188,13 +212,16 @@
 "documents" = "Dokumenten";
 
 /* No comment provided by engineer. */
-"Edit" = "Ändern";
+"Edit" = "Bearbeiten";
 
 /* No comment provided by engineer. */
-"Edit v3 Onion Service Auth Cookie" = "Onion Service v3 Auth Schlüssel ändern";
+"Edit v3 Onion Service Auth Cookie" = "Onion Service v3 Auth Schlüssel bearbeiten";
 
 /* No comment provided by engineer. */
 "enabled" = "aktiviert";
+
+/* macOS menu item */
+"Enter Full Screen" = "Vollbildmodus";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Eingangs-Netzknoten";
@@ -208,6 +235,24 @@
 /* No comment provided by engineer. */
 "fetches" = "Fetches";
 
+/* macOS menu item */
+"File" = "Ablage";
+
+/* macOS menu item */
+"Find" = "Suchen";
+
+/* macOS menu item */
+"Find and Replace…" = "Suchen und Ersetzen…";
+
+/* macOS menu item */
+"Find Next" = "Weitersuchen (vorwärts)";
+
+/* macOS menu item */
+"Find Previous" = "Weitersuchen (rückwärts)";
+
+/* macOS menu item */
+"Find…" = "Suchen…";
+
 /* No comment provided by engineer. */
 "fonts" = "Schriftarten";
 
@@ -219,6 +264,15 @@
 
 /* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Gehe zur iOS Einstellungen-App -> Safari -> Erweiterungen.";
+
+/* macOS menu item */
+"Help" = "Hilfe";
+
+/* macOS menu item */
+"Hide %@" = "%@ ausblenden";
+
+/* macOS menu item */
+"Hide Others" = "Andere ausblenden";
 
 /* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über Dein Surfverhalten an Deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
@@ -235,6 +289,9 @@
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Sie hat keine gültige App-ID angegeben.";
 
+/* macOS menu item */
+"Jump to Selection" = "Auswahl anzeigen";
+
 /* No comment provided by engineer. */
 "Key" = "Schlüssel";
 
@@ -243,6 +300,15 @@
 
 /* No comment provided by engineer. */
 "Maintenance" = "Wartung";
+
+/* macOS menu item */
+"Make Lower Case" = "Kleinbuchstaben";
+
+/* macOS menu item */
+"Make Upper Case" = "Großbuchstaben";
+
+/* macOS menu item */
+"Minimize" = "Im Dock ablegen";
 
 /* No comment provided by engineer. */
 "Most settings will only take effect after restart." = "Die meisten Einstellungen werden erst nach einem Neustart wirksam.";
@@ -274,6 +340,12 @@
 /* No comment provided by engineer. */
 "other" = "Anderen";
 
+/* macOS menu item */
+"Paste" = "Einsetzen";
+
+/* macOS menu item */
+"Paste and Match Style" = "Einsetzen und Stil anpassen";
+
 /* No comment provided by engineer. */
 "pings" = "Pings";
 
@@ -283,11 +355,17 @@
 /* No comment provided by engineer. */
 "popups" = "Popups";
 
+/* macOS menu item */
+"Preferences…" = "Einstellungen…";
+
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Sternchen (*) voranstellen, um Subdomains einzuschließen.";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen .onion Link gescannt hast?";
+
+/* macOS menu item */
+"Quit %@" = "%@ beenden";
 
 /* No comment provided by engineer. */
 "raw data" = "Rohdaten";
@@ -295,20 +373,44 @@
 /* No comment provided by engineer. */
 "reasserting" = "wiederherstellen";
 
+/* macOS menu item */
+"Redo" = "Wiederholen";
+
 /* No comment provided by engineer. */
 "scripts" = "Skripten";
+
+/* macOS menu item */
+"Select All" = "Alles auswählen";
 
 /* No comment provided by engineer. */
 "selected domains" = "ausgewählten Domains";
 
+/* macOS menu item */
+"Services" = "Dienste";
+
 /* No comment provided by engineer. */
 "Settings" = "Einstellungen";
+
+/* macOS menu item */
+"Show All" = "Alle einblenden";
+
+/* macOS menu item */
+"Show Toolbar" = "Werkzeugleiste einblenden";
+
+/* macOS menu item */
+"Speech" = "Sprachausgabe";
 
 /* No comment provided by engineer. */
 "Start" = "Start";
 
+/* macOS menu item */
+"Start Speaking" = "Sprachausgabe starten";
+
 /* No comment provided by engineer. */
 "Stop" = "Stopp";
+
+/* macOS menu item */
+"Stop Speaking" = "Sprachausgabe stoppen";
 
 /* No comment provided by engineer. */
 "style sheets" = "Style Sheets";
@@ -343,11 +445,23 @@
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "Datenverkehr zu allen anderen Seiten wird über Deine normale Internetverbindung geleitet.";
 
+/* macOS menu item */
+"Transformations" = "Transformationen";
+
+/* macOS menu item */
+"Undo" = "Eingeben widerrufen";
+
 /* No comment provided by engineer. */
 "unknown" = "unbekannt";
 
+/* macOS menu item */
+"Use Selection for Find" = "Auswahl für Suche übernehmen";
+
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* macOS menu item */
+"View" = "Darstellung";
 
 /* No comment provided by engineer. */
 "Warning" = "Warnung";
@@ -357,3 +471,9 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* macOS menu item */
+"Window" = "Fenster";
+
+/* macOS menu item */
+"Zoom" = "Zoomen";

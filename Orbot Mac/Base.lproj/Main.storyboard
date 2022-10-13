@@ -160,92 +160,6 @@
                                                 </items>
                                             </menu>
                                         </menuItem>
-                                        <menuItem title="Spelling and Grammar" id="Ozu-Uz-l29">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Spelling" id="BaK-eb-mRK">
-                                                <items>
-                                                    <menuItem title="Show Spelling and Grammar" keyEquivalent=":" id="GBL-ot-OF7">
-                                                        <connections>
-                                                            <action selector="showGuessPanel:" target="Ady-hI-5gd" id="hdW-bB-qfb"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Check Document Now" keyEquivalent=";" id="a0j-0D-TjP">
-                                                        <connections>
-                                                            <action selector="checkSpelling:" target="Ady-hI-5gd" id="KGb-D9-qDM"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem isSeparatorItem="YES" id="zqL-4z-4yV"/>
-                                                    <menuItem title="Check Spelling While Typing" id="y83-zq-BSA">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleContinuousSpellChecking:" target="Ady-hI-5gd" id="Fje-zK-cab"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Check Grammar With Spelling" id="NKp-qS-2Ak">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleGrammarChecking:" target="Ady-hI-5gd" id="vv2-R3-IML"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Correct Spelling Automatically" id="Vi7-QL-NsW">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticSpellingCorrection:" target="Ady-hI-5gd" id="Txe-Pj-rbJ"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
-                                        <menuItem title="Substitutions" id="IX5-nZ-bzu">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Substitutions" id="ULY-yM-nh0">
-                                                <items>
-                                                    <menuItem title="Show Substitutions" id="myG-z0-hIj">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="orderFrontSubstitutionsPanel:" target="Ady-hI-5gd" id="jg8-qr-fHl"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem isSeparatorItem="YES" id="enF-Cs-KHX"/>
-                                                    <menuItem title="Smart Copy/Paste" id="CXC-Pg-ZLZ">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleSmartInsertDelete:" target="Ady-hI-5gd" id="11Y-X3-gFU"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Smart Quotes" id="QT6-6R-9Mi">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticQuoteSubstitution:" target="Ady-hI-5gd" id="Mwe-Xs-kju"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Smart Dashes" id="zeb-Km-bUl">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticDashSubstitution:" target="Ady-hI-5gd" id="gMk-EH-XaH"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Smart Links" id="9V3-Jj-vzm">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticLinkDetection:" target="Ady-hI-5gd" id="gsd-VZ-qFL"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Data Detectors" id="ahC-sg-cek">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticDataDetection:" target="Ady-hI-5gd" id="YBp-lm-Tnd"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                    <menuItem title="Text Replacement" id="PkI-dh-iuo">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
-                                                        <connections>
-                                                            <action selector="toggleAutomaticTextReplacement:" target="Ady-hI-5gd" id="bik-Ly-XCj"/>
-                                                        </connections>
-                                                    </menuItem>
-                                                </items>
-                                            </menu>
-                                        </menuItem>
                                         <menuItem title="Transformations" id="hqy-4X-LxO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Transformations" id="JZI-h5-29l">
@@ -310,12 +224,6 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
-                                        <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
-                                            <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="toggleSidebar:" target="Ady-hI-5gd" id="iwa-gc-5KM"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem title="Enter Full Screen" keyEquivalent="f" id="4J7-dP-txa">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
@@ -379,7 +287,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Orbot_Mac" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Orbot" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,7 +387,7 @@
         <!--Auth View Controller-->
         <scene sceneID="sgp-yq-xVd">
             <objects>
-                <viewController id="z1b-L3-EWX" customClass="AuthViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z1b-L3-EWX" customClass="AuthViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="nTp-sg-JHC">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -533,7 +441,7 @@
         <!--Edit Auth View Controller-->
         <scene sceneID="f4v-HI-blG">
             <objects>
-                <viewController id="Q0x-GV-NMb" customClass="EditAuthViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q0x-GV-NMb" customClass="EditAuthViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oxv-mv-fTr">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -619,7 +527,7 @@ Gw
         <!--Settings View Controller-->
         <scene sceneID="9nS-8h-XmQ">
             <objects>
-                <viewController id="cNi-Fr-8GN" customClass="SettingsViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cNi-Fr-8GN" customClass="SettingsViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dV5-ta-aIY">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="584"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1084,7 +992,7 @@ Gw
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <box key="view" boxType="custom" borderType="none" titlePosition="noTitle" id="Opr-dN-5QT">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="450"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1176,7 +1084,7 @@ Gw
         <!--Log View Controller-->
         <scene sceneID="cVt-iF-48F">
             <objects>
-                <viewController id="vLf-ca-EIz" customClass="LogViewController" customModule="Orbot_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vLf-ca-EIz" customClass="LogViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oCd-tD-ss6">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1243,8 +1151,8 @@ Gw
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CbE-rS-Pmv"/>
-        <segue reference="0QR-9b-55l"/>
+        <segue reference="XVp-Bx-NoT"/>
+        <segue reference="7WH-jy-Jfn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="TorOff" width="512" height="512"/>

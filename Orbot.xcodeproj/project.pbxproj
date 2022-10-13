@@ -681,6 +681,7 @@
 			buildConfigurationList = A01AB6A928A55706008A79EE /* Build configuration list for PBXNativeTarget "TorVPN Mac" */;
 			buildPhases = (
 				409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */,
+				A03FC6D528F8468F002142F1 /* BartyCrouch */,
 				A01AB6C328A55E72008A79EE /* Build Leaf */,
 				A01AB69B28A55706008A79EE /* Sources */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
@@ -1031,6 +1032,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
+		};
+		A03FC6D528F8468F002142F1 /* BartyCrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = BartyCrouch;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
 		A0E794A526528ECD0052E32E /* Build Leaf */ = {
 			isa = PBXShellScriptBuildPhase;
