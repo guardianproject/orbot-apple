@@ -78,7 +78,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var entryNodes: String? {
 		get {
-			defaults?.string(forKey: "entry_nodes")
+			let value = defaults?.string(forKey: "entry_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "entry_nodes")
@@ -87,7 +89,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var exitNodes: String? {
 		get {
-			defaults?.string(forKey: "exit_nodes")
+			let value = defaults?.string(forKey: "exit_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "exit_nodes")
@@ -96,7 +100,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var excludeNodes: String? {
 		get {
-			defaults?.string(forKey: "exclude_nodes")
+			let value = defaults?.string(forKey: "exclude_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "exclude_nodes")
@@ -114,7 +120,11 @@ class Settings: IPtProxyUI.Settings {
 
 	class var advancedTorConf: [String]? {
 		get {
-			defaults?.stringArray(forKey: "advanced_tor_conf")
+			let value = defaults?.stringArray(forKey: "advanced_tor_conf")?
+				.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+				.filter({ !$0.isEmpty })
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "advanced_tor_conf")
