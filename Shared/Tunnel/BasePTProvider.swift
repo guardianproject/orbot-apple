@@ -194,10 +194,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-		if Logger.ENABLE_LOGGING,
-		   let logfile = transport.logFile
-		{
-			try? "".write(to: logfile, atomically: true, encoding: .utf8)
+		if Logger.ENABLE_LOGGING {
+			transport.logFile?.truncate()
 		}
 
 		transport.start(log: Logger.ENABLE_LOGGING)

@@ -297,10 +297,8 @@ class TorManager {
 		}
 
 		if Logger.ENABLE_LOGGING,
-		   let logfile = FileManager.default.torLogFile
+		   let logfile = FileManager.default.torLogFile?.truncate()
 		{
-			try? "".write(to: logfile, atomically: true, encoding: .utf8)
-
 			conf.options["Log"] = "notice file \(logfile.path)"
 		}
 

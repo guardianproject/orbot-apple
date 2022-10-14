@@ -13,26 +13,13 @@ class Logger {
 	static let ENABLE_LOGGING = true
 
 	static var vpnLogFile: URL? = {
-		if let url = FileManager.default.vpnLogFile {
-			// Reset log on first write.
-			try? "".write(to: url, atomically: true, encoding: .utf8)
-
-			return url
-		}
-
-		return nil
+		FileManager.default.vpnLogFile?.truncate()
 	}()
 
 	static var wsLogFile: URL? = {
-		if let url = FileManager.default.wsLogFile {
-			// Reset log on first write.
-			try? "".write(to: url, atomically: true, encoding: .utf8)
-
-			return url
-		}
-
-		return nil
+		FileManager.default.wsLogFile?.truncate()
 	}()
+
 
 	static func log(_ message: String, to: URL?) {
 		guard ENABLE_LOGGING,
