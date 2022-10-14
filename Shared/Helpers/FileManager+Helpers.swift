@@ -69,4 +69,8 @@ extension FileManager {
 	var ptDir: URL? {
 		groupDir?.appendingPathComponent("pt_state")
 	}
+
+	var sfpLogFile: URL? {
+		groupDir?.appendingPathComponent("sfp.log")
+	}
 }

@@ -22,7 +22,7 @@ class Settings: IPtProxyUI.Settings {
 		if let ptDir = FileManager.default.ptDir {
 			IPtProxy.setStateLocation(ptDir.path)
 
-			print("[\(String(describing: type(of: self))) ptDir=\(ptDir.path)]")
+//			print("[\(String(describing: type(of: self))) ptDir=\(ptDir.path)]")
 		}
 	}
 
@@ -144,6 +144,15 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(
 				try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true),
 				forKey: "api_access_tokens")
+		}
+	}
+
+	class var snowflakesHelped: Int {
+		get {
+			defaults?.integer(forKey: "snowflakes_helped") ?? 0
+		}
+		set {
+			defaults?.set(newValue, forKey: "snowflakes_helped")
 		}
 	}
 }

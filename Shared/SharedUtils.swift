@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import IPtProxy
 import IPtProxyUI
 import NetworkExtension
 import Tor
 
-class SharedUtils: BridgesConfDelegate {
+class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnectedProtocol {
 
 	#if os(macOS)
 	typealias Color = NSColor
@@ -50,6 +51,17 @@ class SharedUtils: BridgesConfDelegate {
 	}
 
 
+	// MARK: IPtProxySnowflakeClientConnectedProtocol
+
+	private static var selfInstance = SharedUtils()
+
+	func connected() {
+		Settings.snowflakesHelped += 1
+
+		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
+	}
+
+
 	// MARK: Shared Methods
 
 	static func control(startOnly: Bool) {
@@ -84,7 +96,21 @@ class SharedUtils: BridgesConfDelegate {
 		}
 	}
 
-	static func updateUi(_ notification: Notification? = nil) -> (statusIcon: String, buttonTitle: String, statusText: NSMutableAttributedString) {
+	static func controlSnowflakeProxy() {
+		if IPtProxyIsSnowflakeProxyRunning() {
+			IPtProxyStopSnowflakeProxy()
+		}
+		else {
+			IPtProxyStartSnowflakeProxy(1, nil, nil, nil, nil,
+										FileManager.default.sfpLogFile?.truncate().path,
+										false, false, selfInstance)
+		}
+
+		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
+	}
+
+
+	static func updateUi(_ notification: Notification? = nil) -> (statusIcon: String, buttonTitle: String, statusText: NSMutableAttributedString, sfpText: String) {
 		let statusIcon: String
 		let buttonTitle: String
 		var statusText: NSMutableAttributedString
@@ -136,7 +162,7 @@ class SharedUtils: BridgesConfDelegate {
 
 				if notification?.name == .vpnProgress,
 				   let raw = notification?.object as? Float,
-				   let progress = Formatters.format(value: raw)
+				   let progress = Formatters.formatPercent(raw)
 				{
 					statusText.append(space)
 					statusText.append(NSAttributedString(string: progress))
@@ -144,7 +170,11 @@ class SharedUtils: BridgesConfDelegate {
 			}
 		}
 
-		return (statusIcon, buttonTitle, statusText)
+		let sfpText = String(
+			format: IPtProxyIsSnowflakeProxyRunning() ? L10n.snowflakeProxyStarted : L10n.snowflakeProxyStopped,
+			Formatters.format(Settings.snowflakesHelped))
+
+		return (statusIcon, buttonTitle, statusText, sfpText)
 	}
 
 	static func getCircuits(_ completed: @escaping (_ text: String) -> Void) {

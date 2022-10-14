@@ -463,7 +463,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-K1-QGp">
-                                <rect key="frame" x="377" y="13" width="60" height="32"/>
+                                <rect key="frame" x="378" y="13" width="59" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tGJ-pH-erF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -473,7 +473,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9zr-ao-UgK">
-                                <rect key="frame" x="305" y="13" width="74" height="32"/>
+                                <rect key="frame" x="306" y="13" width="74" height="32"/>
                                 <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CZQ-oA-noG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -483,7 +483,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-w1-qcJ">
-                                <rect key="frame" x="231" y="13" width="76" height="32"/>
+                                <rect key="frame" x="232" y="13" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="38w-Ae-iOB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1031,6 +1031,16 @@ Gw
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nG2-J9-nTJ">
+                                    <rect key="frame" x="158" y="83" width="134" height="32"/>
+                                    <buttonCell key="cell" type="push" title="Snowflake Proxy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eZf-tR-MZD">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="controlSnowflakeProxy:" target="XfG-lQ-9wD" id="dC2-1g-hyt"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="jDk-A8-xeA" secondAttribute="trailing" constant="20" symbolic="YES" id="6EH-Ey-YDL"/>
@@ -1038,8 +1048,10 @@ Gw
                                 <constraint firstItem="8Pz-pW-43f" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="9WD-gk-GxU"/>
                                 <constraint firstItem="8Pz-pW-43f" firstAttribute="top" secondItem="Mlp-Wg-mSp" secondAttribute="bottom" constant="8" symbolic="YES" id="ChT-F5-eRE"/>
                                 <constraint firstItem="Mlp-Wg-mSp" firstAttribute="top" secondItem="4hT-SH-e7t" secondAttribute="top" constant="20" symbolic="YES" id="F97-7h-drD"/>
+                                <constraint firstItem="nG2-J9-nTJ" firstAttribute="top" secondItem="8Pz-pW-43f" secondAttribute="bottom" constant="40" id="Fer-BC-eMu"/>
                                 <constraint firstAttribute="trailing" secondItem="8Pz-pW-43f" secondAttribute="trailing" constant="20" symbolic="YES" id="HYj-1j-BrC"/>
                                 <constraint firstItem="Mlp-Wg-mSp" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="YEh-5W-48k"/>
+                                <constraint firstItem="nG2-J9-nTJ" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="l4A-xy-Vqa"/>
                                 <constraint firstItem="jDk-A8-xeA" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="t38-jh-q41"/>
                             </constraints>
                         </view>
@@ -1048,6 +1060,7 @@ Gw
                     </box>
                     <connections>
                         <outlet property="controlBt" destination="Mlp-Wg-mSp" id="fbc-8I-yMS"/>
+                        <outlet property="snowflakeProxyBt" destination="nG2-J9-nTJ" id="gzs-ze-vyl"/>
                         <outlet property="statusLb" destination="8Pz-pW-43f" id="bue-kF-9iF"/>
                         <outlet property="versionLb" destination="jDk-A8-xeA" id="aBV-nw-7ti"/>
                     </connections>
@@ -1086,11 +1099,11 @@ Gw
             <objects>
                 <viewController id="vLf-ca-EIz" customClass="LogViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="oCd-tD-ss6">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="apm-WR-7VU">
-                                <rect key="frame" x="18" y="227" width="444" height="24"/>
+                                <rect key="frame" x="18" y="227" width="456" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="dB4-Ev-o9R">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -1104,18 +1117,18 @@ Gw
                                 </connections>
                             </segmentedControl>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-MZ-wqM">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="220"/>
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="220"/>
                                 <clipView key="contentView" drawsBackground="NO" id="f7k-IN-lEw">
-                                    <rect key="frame" x="0.0" y="0.0" width="465" height="220"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="477" height="220"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="BeW-4a-IF5">
-                                            <rect key="frame" x="0.0" y="0.0" width="465" height="220"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="477" height="220"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="465" height="220"/>
-                                            <size key="maxSize" width="480" height="10000000"/>
+                                            <size key="minSize" width="477" height="220"/>
+                                            <size key="maxSize" width="492" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -1125,7 +1138,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="nRy-65-9eG">
-                                    <rect key="frame" x="465" y="0.0" width="15" height="220"/>
+                                    <rect key="frame" x="477" y="0.0" width="15" height="220"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1158,11 +1171,11 @@ Gw
         <image name="TorOff" width="512" height="512"/>
         <image name="TorOn" width="512" height="512"/>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
         <image name="gear.circle" width="14" height="14"/>
-        <image name="key" catalog="system" width="13" height="18"/>
+        <image name="key" catalog="system" width="12" height="18"/>
         <image name="network.badge.shield.half.filled" width="15" height="14"/>
-        <image name="plus" catalog="system" width="15" height="13"/>
+        <image name="plus" catalog="system" width="14" height="13"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

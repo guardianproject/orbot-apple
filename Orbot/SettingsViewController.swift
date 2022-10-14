@@ -181,7 +181,9 @@ class SettingsViewController: BaseFormViewController {
 			AlertHelper.present(self, message: L10n.cleared, title: L10n.clearTorCache)
 		})
 
-		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
+		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
+			self?.form.rowBy(tag: "clearCache")?.evaluateDisabled()
+		}
 	}
 
 
@@ -195,14 +197,6 @@ class SettingsViewController: BaseFormViewController {
 		}
 
 		saveAdvancedConf()
-	}
-
-
-	// MARK: Observers
-
-	@objc
-	func statusChanged() {
-		form.rowBy(tag: "clearCache")?.evaluateDisabled()
 	}
 
 

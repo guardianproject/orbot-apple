@@ -187,15 +187,9 @@ class SettingsViewController: NSViewController {
 
 		statusChanged()
 
-		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
-	}
-
-
-	// MARK: Observers
-
-	@objc
-	func statusChanged() {
-		clearCacheBt.isEnabled = !VpnManager.shared.isConnected
+		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
+			self?.statusChanged()
+		}
 	}
 
 
@@ -266,5 +260,12 @@ class SettingsViewController: NSViewController {
 		alert.messageText = L10n.cleared
 
 		alert.runModal()
+	}
+
+
+	// MARK: Private Methods
+	
+	private func statusChanged() {
+		clearCacheBt.isEnabled = !VpnManager.shared.isConnected
 	}
 }

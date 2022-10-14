@@ -18,6 +18,14 @@ class L10n {
 		NSLocalizedString("Build new Circuits", comment: "")
 	}
 
+	static var snowflakeProxyStarted: String {
+		"Snowflake Proxy: started (%@ people helped)"
+	}
+
+	static var snowflakeProxyStopped: String {
+		"Snowflake Proxy: stopped (%@ people helped)"
+	}
+
 	static var version: String {
 		String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
 			   Bundle.main.version, Bundle.main.build)

@@ -15,6 +15,16 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!
 
+	@IBOutlet weak var snowflakeProxyBt: NSButton! {
+		didSet {
+#if DEBUG
+			snowflakeProxyBt.isHidden = !Config.snowflakeProxyExperiment
+#else
+			snowflakeProxyBt.isHidden = true
+#endif
+		}
+	}
+
 	@IBOutlet weak var versionLb: NSTextField! {
 		didSet {
 			versionLb.stringValue = L10n.version
@@ -28,10 +38,13 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let nc = NotificationCenter.default
+		let callback: (Notification) -> Void = { [weak self] notification in
+			self?.updateUi(notification)
+		}
 
-		nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
-		nc.addObserver(self, selector: #selector(updateUi), name: .vpnProgress, object: nil)
+		let nc = NotificationCenter.default
+		nc.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main, using: callback)
+		nc.addObserver(forName: .vpnProgress, object: nil, queue: .main, using: callback)
 
 		updateUi()
 	}
@@ -91,6 +104,10 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		SharedUtils.control(startOnly: false)
 	}
 
+	@IBAction func controlSnowflakeProxy(_ sender: Any) {
+		SharedUtils.controlSnowflakeProxy()
+	}
+
 	@IBAction func refresh(_ sender: Any) {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud?.mode = MBProgressHUDModeDeterminate
@@ -145,12 +162,14 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIcon, buttonTitle, statusText) = SharedUtils.updateUi(notification)
+		let (statusIcon, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
 
 		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 
 		controlBt.image = NSImage(named: statusIcon)
 		controlBt.setTitle(buttonTitle)
 		statusLb.attributedStringValue = statusText
+
+		snowflakeProxyBt.title = sfpText
 	}
 }

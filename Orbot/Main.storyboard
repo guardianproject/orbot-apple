@@ -61,9 +61,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-C6-N3f">
                                         <rect key="frame" x="0.0" y="110.5" width="343" height="34.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Content Blocker"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Snowflake Proxy"/>
                                         <connections>
-                                            <action selector="showContentBlocker" destination="BYZ-38-t0r" eventType="touchUpInside" id="A64-2b-qcT"/>
+                                            <action selector="controlSnowflakeProxy" destination="BYZ-38-t0r" eventType="touchUpInside" id="A64-2b-qcT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -164,7 +164,6 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="contentBlockerBt" destination="i1o-C6-N3f" id="EhC-3g-7aK"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
@@ -172,6 +171,7 @@
                         <outlet property="logTv" destination="8i5-ZV-uUu" id="qh4-Jt-saG"/>
                         <outlet property="refreshBt" destination="f9G-4q-DsH" id="OmF-4W-v12"/>
                         <outlet property="settingsBt" destination="ni1-t3-I0T" id="9Fk-Cd-K9y"/>
+                        <outlet property="snowflakeProxyBt" destination="i1o-C6-N3f" id="EhC-3g-7aK"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
                         <outlet property="statusLb" destination="trJ-w6-CDg" id="2On-Ts-emC"/>
                         <outlet property="versionLb" destination="b9e-jY-cnx" id="1ge-vK-0ym"/>

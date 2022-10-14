@@ -40,9 +40,9 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
 
-	@IBOutlet weak var contentBlockerBt: UIButton! {
+	@IBOutlet weak var snowflakeProxyBt: UIButton! {
 		didSet {
-			contentBlockerBt.setTitle(NSLocalizedString("Content Blocker", comment: ""))
+			snowflakeProxyBt.setTitle(NSLocalizedString("Content Blocker", comment: ""))
 		}
 	}
 
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
 			versionLb.text = L10n.version
 		}
 	}
-    
+
 	@IBOutlet weak var logContainer: UIView! {
 		didSet {
 			// Only round top right corner.
@@ -68,10 +68,11 @@ class MainViewController: UIViewController {
 
 #if DEBUG
 			if Config.extendedLogging {
-				logSc.insertSegment(withTitle: "VPN", at: 3, animated: false)
-				logSc.insertSegment(withTitle: "LL", at: 4, animated: false)
-				logSc.insertSegment(withTitle: "LC", at: 5, animated: false)
-				logSc.insertSegment(withTitle: "WS", at: 6, animated: false)
+				logSc.insertSegment(withTitle: "SFP", at: 3, animated: false)
+				logSc.insertSegment(withTitle: "VPN", at: 4, animated: false)
+				logSc.insertSegment(withTitle: "LL", at: 5, animated: false)
+				logSc.insertSegment(withTitle: "LC", at: 6, animated: false)
+				logSc.insertSegment(withTitle: "WS", at: 7, animated: false)
 			}
 #endif
 		}
@@ -86,10 +87,13 @@ class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let nc = NotificationCenter.default
+		let callback: (Notification) -> Void = { [weak self] notification in
+			self?.updateUi(notification)
+		}
 
-		nc.addObserver(self, selector: #selector(updateUi), name: .vpnStatusChanged, object: nil)
-		nc.addObserver(self, selector: #selector(updateUi), name: .vpnProgress, object: nil)
+		let nc = NotificationCenter.default
+		nc.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main, using: callback)
+		nc.addObserver(forName: .vpnProgress, object: nil, queue: .main, using: callback)
 
 		updateUi()
 	}
@@ -251,6 +255,7 @@ class MainViewController: UIViewController {
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
+			// Shows the content of the Snowflake or Obfs4proxy log file.
 			Logger.tailFile(Settings.transport.logFile, update)
 
 		case 2:
@@ -263,18 +268,22 @@ class MainViewController: UIViewController {
 
 #if DEBUG
 		case 3:
+			// Shows the content of the Snowflake Proxy log file.
+			Logger.tailFile(FileManager.default.sfpLogFile, update)
+
+		case 4:
 			// Shows the content of the VPN log file.
 			Logger.tailFile(FileManager.default.vpnLogFile, update)
 
-		case 4:
+		case 5:
 			// Shows the content of the leaf log file.
 			Logger.tailFile(FileManager.default.leafLogFile, update)
 
-		case 5:
+		case 6:
 			// Shows the content of the leaf config file.
 			Logger.tailFile(FileManager.default.leafConfFile, update)
 
-		case 6:
+		case 7:
 			// Shows the content of the GCD webserver log file.
 			Logger.tailFile(FileManager.default.wsLogFile, update)
 #endif
@@ -282,6 +291,19 @@ class MainViewController: UIViewController {
 		default:
 			Logger.tailFile(FileManager.default.torLogFile, update)
 		}
+	}
+
+	@IBAction func controlSnowflakeProxy() {
+#if DEBUG
+		if Config.snowflakeProxyExperiment {
+			SharedUtils.controlSnowflakeProxy()
+		}
+		else {
+			showContentBlocker()
+		}
+#else
+		showContentBlocker()
+#endif
 	}
 
 	@IBAction func showContentBlocker() {
@@ -295,13 +317,19 @@ class MainViewController: UIViewController {
 
 		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
-		let (statusIconName, buttonTitle, statusText) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
 
 		statusIcon.image = UIImage(named: statusIconName)
 		controlBt.setTitle(buttonTitle)
 		statusLb.attributedText = statusText
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
+
+#if DEBUG
+		if Config.snowflakeProxyExperiment {
+			snowflakeProxyBt.setTitle(sfpText)
+		}
+#endif
 	}
 
 

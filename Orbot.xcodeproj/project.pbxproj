@@ -104,6 +104,7 @@
 		A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
+		A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -1196,6 +1197,7 @@
 				A01AB60828A542EE008A79EE /* Config.swift in Sources */,
 				A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */,
 				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
+				A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */,
 				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
 				A01AB60728A54225008A79EE /* VpnManager.swift in Sources */,
