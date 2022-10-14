@@ -186,8 +186,8 @@ class ApiToken: NSObject, NSSecureCoding {
 	}
 
 	required init?(coder: NSCoder) {
-		guard let appId = coder.decodeObject(forKey: "appId") as? String,
-			  let key = coder.decodeObject(forKey: "key") as? String
+		guard let appId = coder.decodeObject(of: NSString.self, forKey: "appId") as? String,
+			  let key = coder.decodeObject(of: NSString.self, forKey: "key") as? String
 		else {
 			return nil
 		}
