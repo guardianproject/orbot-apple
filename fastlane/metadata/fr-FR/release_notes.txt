@@ -1,3 +1,8 @@
-– Mise à jour de Tor vers 0.4.7.8.
-– Suppression du paramètre de contournement explicite. Le contournement n’est désormais activé que si une appli enregistrée en a besoin.
-Sera désactivé de nouveau après retrait de toutes les applis de contournement.
+- Mise à jour de Tor vers 0.4.7.10.
+- Mise à jour d'Obfs4proxy vers 0.0.14.
+- Flocon de neige mis à jour vers 2.3.1.
+- Ajout d'une version native de macOS.
+- Mise à jour de la traduction russe.
+- Ajout d'une option pour redémarrer automatiquement en cas d'erreur.
+- Ajout d'une option pour vider le cache de Tor.
+- Ajout du journal des transports enfichables (ponts).
