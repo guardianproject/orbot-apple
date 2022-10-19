@@ -2,7 +2,7 @@
 
 # Get absolute path to this script.
 SCRIPTDIR=$(cd `dirname $0` && pwd)
-WORKDIR="$SCRIPTDIR/../leaf"
+WORKDIR=$(cd "$SCRIPTDIR/../leaf" && pwd)
 
 FILENAME="libleaf.a"
 
@@ -56,14 +56,19 @@ if [[ -n "${DEVELOPER_SDK_DIR:-}" ]]; then
 		else
 			TARGETS="x86_64-apple-ios"
 		fi
-	else
-		# Otherwise, compilation of maxminddb dependency will fail. But only when releasing for iOS. WTF!
-		mkdir -p "${WORKDIR}/target/aarch64-apple-ios/release/deps"
 	fi
 
-	cargo lipo $RELEASE --targets $TARGETS --manifest-path "${WORKDIR}/Cargo.toml" -p leaf-ffi
-
 	CONF_LOWER="$(echo $CONFIGURATION | tr '[:upper:]' '[:lower:]')"
+
+	# Otherwise, compilation might fail sometimes. Seems to be a race condition.
+	IFS="," read -ra targets <<< "$TARGETS"
+	for target in "${targets[@]}"; do
+		echo "mkdir ${WORKDIR}/target/${target}/${CONF_LOWER}/deps"
+
+		mkdir -p "${WORKDIR}/target/${target}/${CONF_LOWER}/deps"
+	done
+
+	cargo lipo $RELEASE --targets $TARGETS --manifest-path "${WORKDIR}/Cargo.toml" -p leaf-ffi
 
 	# cargo-lipo drops result in different folder, depending on the config.
 	SOURCE="${WORKDIR}/target/universal/${CONF_LOWER}/${FILENAME}"
