@@ -14,11 +14,11 @@ import Tor
 
 class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnectedProtocol {
 
-	#if os(macOS)
+#if os(macOS)
 	typealias Color = NSColor
-	#else
+#else
 	typealias Color = UIColor
-	#endif
+#endif
 
 
 	public static var torConfUrl: URL {
@@ -239,4 +239,30 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			}
 		}
 	}
+
+
+#if DEBUG
+	static func addScreenshotDummies() {
+		guard Config.screenshotMode, let authDir = FileManager.default.torAuthDir else {
+			return
+		}
+
+		do {
+			try "6gk626a5xm3gdyrbezfhiptzegvvc62c3k6y3xbelglgtgqtbai5liqd:descriptor:x25519:EJOYJMYKNS6TYTQ2RSPZYBSBR3RUZA5ZKARKLF6HXVXHTIV76UCQ"
+				.write(to: authDir.appendingPathComponent("6gk626a5xm3gdyrbezfhiptzegvvc62c3k6y3xbelglgtgqtbai5liqd.auth_private"),
+					   atomically: true, encoding: .utf8)
+
+			try "jtb2cwibhkok4f2xejfqbsjb2xcrwwcdj77bjvhofongraxvumudyoid:descriptor:x25519:KC2VJ5JLZ5QLAUUZYMRO4R3JSOYM3TBKXDUMAS3D5BEI5IPYUI4A"
+				.write(to: authDir.appendingPathComponent("jtb2cwibhkok4f2xejfqbsjb2xcrwwcdj77bjvhofongraxvumudyoid.auth_private"),
+					   atomically: true, encoding: .utf8)
+
+			try "pqozr7dey5yellqfwzjppv4q25zbzbwligib7o7g5s6bvrltvy3lfdid:descriptor:x25519:ZHXT5IO2OMJKH3HKPDYDNNXXIPJCXR5EG6MGLQNC56GAF2C75I5A"
+				.write(to: authDir.appendingPathComponent("pqozr7dey5yellqfwzjppv4q25zbzbwligib7o7g5s6bvrltvy3lfdid.auth_private"),
+					   atomically: true, encoding: .utf8)
+		}
+		catch {
+			print(error)
+		}
+	}
+#endif
 }
