@@ -75,7 +75,10 @@
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
-		A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
+		A06D605A29019D33001A2E2C /* libleaf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; };
+		A06D605B29019D33001A2E2C /* libleaf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A06D605D29019D3B001A2E2C /* libleaf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; };
+		A06D605E29019D3B001A2E2C /* libleaf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
@@ -126,7 +129,6 @@
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
-		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A0FF331528B3ADC50079A267 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -158,6 +160,20 @@
 			remoteGlobalIDString = A06BEC6D280090B300351868;
 			remoteInfo = ContentBlocker;
 		};
+		A06D605529019CD5001A2E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A06D605129019C3A001A2E2C;
+			remoteInfo = leaf;
+		};
+		A06D605729019CDA001A2E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A06D605129019C3A001A2E2C;
+			remoteInfo = leaf;
+		};
 		A0A735D3247561F200073C81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A05B73A824755CE600930C40 /* Project object */;
@@ -184,6 +200,28 @@
 				A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06D605C29019D33001A2E2C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A06D605B29019D33001A2E2C /* libleaf.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06D605F29019D3B001A2E2C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A06D605E29019D3B001A2E2C /* libleaf.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A0A735D9247561F200073C81 /* Embed Foundation Extensions */ = {
@@ -261,6 +299,7 @@
 		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A06D605929019D0A001A2E2C /* libleaf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libleaf.xcframework; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -344,8 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
+				A06D605A29019D33001A2E2C /* libleaf.xcframework in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
-				A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,8 +408,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FD91A626F36199002C317C /* libleaf.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
+				A06D605D29019D3B001A2E2C /* libleaf.xcframework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +653,7 @@
 				A0F8690727D635D700C9D407 /* build-leaf.sh */,
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
+				A06D605929019D0A001A2E2C /* libleaf.xcframework */,
 			);
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
@@ -654,6 +694,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		A06D605129019C3A001A2E2C /* leaf */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = A06D605229019C3A001A2E2C /* Build configuration list for PBXLegacyTarget "leaf" */;
+			buildPhases = (
+			);
+			buildToolPath = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh";
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = leaf;
+			passBuildSettingsInEnvironment = 1;
+			productName = leaf;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		A01AB5F528A53465008A79EE /* Orbot Mac */ = {
 			isa = PBXNativeTarget;
@@ -683,8 +740,8 @@
 			buildPhases = (
 				409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */,
 				A03FC6D528F8468F002142F1 /* BartyCrouch */,
-				A01AB6C328A55E72008A79EE /* Build Leaf */,
 				A01AB69B28A55706008A79EE /* Sources */,
+				A06D605C29019D33001A2E2C /* Embed Frameworks */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
 				A01AB69D28A55706008A79EE /* Resources */,
 				390E15C770E5B4A49902D7F6 /* [CP] Copy Pods Resources */,
@@ -692,6 +749,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A06D605829019CDA001A2E2C /* PBXTargetDependency */,
 			);
 			name = "TorVPN Mac";
 			productName = "TorVPN Mac";
@@ -744,8 +802,8 @@
 			buildPhases = (
 				C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* BartyCrouch */,
-				A0E794A526528ECD0052E32E /* Build Leaf */,
 				A0A735C9247561F200073C81 /* Sources */,
+				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
 				16978536BCC6E5D81EE5DC54 /* [CP] Copy Pods Resources */,
@@ -753,6 +811,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A06D605629019CD5001A2E2C /* PBXTargetDependency */,
 			);
 			name = TorVPN;
 			productName = TorVPN;
@@ -800,6 +859,9 @@
 					A06BEC6D280090B300351868 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					A06D605129019C3A001A2E2C = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 					A0A735CC247561F200073C81 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
@@ -834,6 +896,7 @@
 				A0D6162427D8E4AA008E0F3C /* Screenshots */,
 				A01AB5F528A53465008A79EE /* Orbot Mac */,
 				A01AB69E28A55706008A79EE /* TorVPN Mac */,
+				A06D605129019C3A001A2E2C /* leaf */,
 			);
 		};
 /* End PBXProject section */
@@ -1015,25 +1078,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
-		A01AB6C328A55E72008A79EE /* Build Leaf */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Leaf";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
-		};
 		A03FC6D528F8468F002142F1 /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1052,25 +1096,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
-		};
-		A0E794A526528ECD0052E32E /* Build Leaf */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Leaf";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
 		};
 		B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1329,6 +1354,16 @@
 			target = A06BEC6D280090B300351868 /* ContentBlocker */;
 			targetProxy = A06BEC75280090B300351868 /* PBXContainerItemProxy */;
 		};
+		A06D605629019CD5001A2E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A06D605129019C3A001A2E2C /* leaf */;
+			targetProxy = A06D605529019CD5001A2E2C /* PBXContainerItemProxy */;
+		};
+		A06D605829019CDA001A2E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A06D605129019C3A001A2E2C /* leaf */;
+			targetProxy = A06D605729019CDA001A2E2C /* PBXContainerItemProxy */;
+		};
 		A0A735D4247561F200073C81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0A735CC247561F200073C81 /* TorVPN */;
@@ -1468,6 +1503,7 @@
 					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
@@ -1502,6 +1538,7 @@
 					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
@@ -1752,6 +1789,20 @@
 			};
 			name = Release;
 		};
+		A06D605329019C3A001A2E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A06D605429019C3A001A2E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A0A735D7247561F200073C81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */;
@@ -1893,6 +1944,15 @@
 			buildConfigurations = (
 				A06BEC78280090B300351868 /* Debug */,
 				A06BEC79280090B300351868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A06D605229019C3A001A2E2C /* Build configuration list for PBXLegacyTarget "leaf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06D605329019C3A001A2E2C /* Debug */,
+				A06D605429019C3A001A2E2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
