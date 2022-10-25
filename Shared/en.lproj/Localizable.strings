@@ -461,7 +461,7 @@
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
 
 /* macOS menu item */
-"View" = "Ansicht";
+"View" = "View";
 
 /* No comment provided by engineer. */
 "Warning" = "Warning";
@@ -473,7 +473,7 @@
 "WebSockets" = "WebSockets";
 
 /* macOS menu item */
-"Window" = "Fenster";
+"Window" = "Window";
 
 /* macOS menu item */
-"Zoom" = "Zoomen";
+"Zoom" = "Zoom";
