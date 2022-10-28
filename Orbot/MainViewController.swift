@@ -98,6 +98,10 @@ class MainViewController: UIViewController {
 		updateUi()
 	}
 
+	override func selectAll(_ sender: Any?) {
+		logTv.selectAll(sender)
+	}
+
 
 	// MARK: Actions
 
