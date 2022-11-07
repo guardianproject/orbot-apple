@@ -15,9 +15,6 @@
 		A00F51332745456A0037DD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51322745456A0037DD4A /* Main.storyboard */; };
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
-		A01668FA29155D600025E25E /* libleaf-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F629155D240025E25E /* libleaf-ios.xcframework */; };
-		A01668FB29155D600025E25E /* libleaf-ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F629155D240025E25E /* libleaf-ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A01668FC29155D870025E25E /* libleaf-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F929155D4B0025E25E /* libleaf-macos.a */; };
 		A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5F828A53465008A79EE /* AppDelegate.swift */; };
 		A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5FA28A53465008A79EE /* MainViewController.swift */; };
 		A01AB60028A53465008A79EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01AB5FE28A53465008A79EE /* Main.storyboard */; };
@@ -118,6 +115,8 @@
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
+		A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423B62919530F001C31E9 /* libleaf.a */; };
+		A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -217,7 +216,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A01668FB29155D600025E25E /* libleaf-ios.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,8 +253,6 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A01668F629155D240025E25E /* libleaf-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "libleaf-ios.xcframework"; sourceTree = "<group>"; };
-		A01668F929155D4B0025E25E /* libleaf-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libleaf-macos.a"; sourceTree = "<group>"; };
 		A01AB5F628A53465008A79EE /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01AB5FA28A53465008A79EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -350,6 +346,11 @@
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A0E423B62919530F001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleaf.a; sourceTree = "<group>"; };
+		A0E423BA291956A8001C31E9 /* macos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = macos; sourceTree = "<group>"; };
+		A0E423BB291956A8001C31E9 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
+		A0E423BC291956A8001C31E9 /* iossim */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iossim; sourceTree = "<group>"; };
+		A0E423BE291956E9001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "leaf-ffi-orbot/macos/libleaf.a"; sourceTree = "<group>"; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
@@ -383,7 +384,7 @@
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
-				A01668FC29155D870025E25E /* libleaf-macos.a in Frameworks */,
+				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +410,7 @@
 			files = (
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
-				A01668FA29155D600025E25E /* libleaf-ios.xcframework in Frameworks */,
+				A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +637,15 @@
 			path = Tunnel;
 			sourceTree = "<group>";
 		};
+		A0E423B52919530F001C31E9 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A0E423B62919530F001C31E9 /* libleaf.a */,
+			);
+			name = ios;
+			path = "leaf-ffi-orbot/ios";
+			sourceTree = "<group>";
+		};
 		A0EF119A28043EF200A03017 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,8 +662,9 @@
 				A0F8690727D635D700C9D407 /* build-leaf.sh */,
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
-				A01668F629155D240025E25E /* libleaf-ios.xcframework */,
-				A01668F929155D4B0025E25E /* libleaf-macos.a */,
+				A0E423BB291956A8001C31E9 /* ios */,
+				A0E423BC291956A8001C31E9 /* iossim */,
+				A0E423BA291956A8001C31E9 /* macos */,
 			);
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
@@ -676,6 +687,8 @@
 		B492266852BAC9D548C91D19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0E423BE291956E9001C31E9 /* libleaf.a */,
+				A0E423B52919530F001C31E9 /* ios */,
 				A01AB69928A55512008A79EE /* NetworkExtension.framework */,
 				A0507D0426F9FC2C00F91105 /* Tor.framework */,
 				A0507D0026F9FC2600F91105 /* Tor.framework */,
@@ -1500,7 +1513,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/leaf-ffi-orbot",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/macos",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
@@ -1534,7 +1547,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/leaf-ffi-orbot",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/macos",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
@@ -1817,9 +1830,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/ios",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/iossim",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1850,7 +1868,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/ios",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

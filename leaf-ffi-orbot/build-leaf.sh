@@ -1,18 +1,25 @@
 #!/usr/bin/env sh
 
+# This could have been so great, unifying everything in an xcframework.
+# However, as soon as it comes to uploading, Apple starts to hate us for
+# packaging simulator builds alongside.
+# So no xcframework, but instead library archives in different folders
+# with adapted LIBRARY_SEARCH_PATHS.
+
 # Get absolute path to this script.
 SCRIPTDIR=$(cd `dirname $0` && pwd)
 WORKDIR=$(cd "$SCRIPTDIR/../leaf" && pwd)
 
-IOS_XCFRAMEWORK="$SCRIPTDIR/libleaf-ios.xcframework"
-MACOS_LIBFILE="$SCRIPTDIR/libleaf-macos.a"
-
-if [ -r "$IOS_XCFRAMEWORK" ] && [ -r "$MACOS_LIBFILE" ]; then
-	echo "$IOS_XCFRAMEWORK and $MACOS_LIBFILE already exists."
-	exit
-fi
+LIBDIR_MACOS="$SCRIPTDIR/macos"
+LIBDIR_IOSSIM="$SCRIPTDIR/iossim"
+LIBDIR_IOS="$SCRIPTDIR/ios"
 
 FILENAME="libleaf.a"
+
+if [ -r "$LIBDIR_MACOS/$FILENAME" ] && [ -r "$LIBDIR_IOSSIM/$FILENAME" ] && [ -r "$LIBDIR_IOS/$FILENAME" ]; then
+	echo "leaf already exists."
+	exit
+fi
 
 if [[ -n "${DEVELOPER_SDK_DIR:-}" ]]; then
 	# Assume we're in Xcode, which means we're probably cross-compiling.
@@ -37,11 +44,16 @@ function clean {
 	cd "$SCRIPTDIR"
 }
 
-# Do an OPTIMIZED RELEASE build, but WITH DEBUG SYMBOLS for a given target.
+# Do a DEBUG build OR an OPTIMIZED RELEASE build, but WITH DEBUG SYMBOLS for a given target.
 #
 # - parameter $1: The Rust target.
+# - parameter $2: "--release" to do an optimized release build with debug symbols.
 function build {
-	RUSTFLAGS=-g cargo build --target $1 --manifest-path "$WORKDIR/Cargo.toml" -p leaf-ffi --release
+	if [ "${2:-}" = "--release" ]; then
+		RUSTFLAGS=-g cargo build --target $1 --manifest-path "$WORKDIR/Cargo.toml" -p leaf-ffi --release
+	else
+		cargo build --target $1 --manifest-path "$WORKDIR/Cargo.toml" -p leaf-ffi
+	fi
 }
 
 # Create a universal binary.
@@ -49,16 +61,36 @@ function build {
 # - parameter $1: folder name for the universal binary.
 # - parameter $2: Rust target name for the x86_64 build.
 # - parameter $3: Rust target name for the arm64 build.
+# - parameter $4: "--release" to use release builds, else debug builds will be used.
 function fatten {
-	tdir="$WORKDIR/target/$1/release"
+	quality="debug"
+
+	if [ "${4:-}" = "--release" ]; then
+		quality="release"
+	fi
+
+	tdir="$WORKDIR/target/$1/$quality"
 
 	rm -rf "$tdir"
 	mkdir -p "$tdir"
 
 	lipo -create \
-		-arch x86_64 "$WORKDIR/target/$2/release/$FILENAME" \
-		-arch arm64 "$WORKDIR/target/$3/release/$FILENAME" \
+		-arch x86_64 "$WORKDIR/target/$2/$quality/$FILENAME" \
+		-arch arm64 "$WORKDIR/target/$3/$quality/$FILENAME" \
 		-output "$tdir/$FILENAME"
+}
+
+function move {
+	quality="debug"
+
+	if [ "${3:-}" = "--release" ]; then
+		quality="release"
+	fi
+
+	rm -rf "$2"
+	mkdir -p "$2"
+
+	mv "$WORKDIR/target/$1/$quality/$FILENAME" "$2/$FILENAME"
 }
 
 
@@ -68,31 +100,24 @@ patch --directory="$WORKDIR" --strip=1 < "$SCRIPTDIR/leaf-ffi.patch"
 
 
 # Build macOS library.
-# This needs to be stored separately, not in the xcframework, as codesign gets mad at us later,
-# when we try to release a macOS app which contains iOS simulator builds.
-build x86_64-apple-darwin
-build aarch64-apple-darwin
-fatten universal_macos x86_64-apple-darwin aarch64-apple-darwin
-mv "$WORKDIR/target/universal_macos/release/$FILENAME" "$MACOS_LIBFILE"
+build x86_64-apple-darwin --release
+build aarch64-apple-darwin --release
+fatten universal_macos x86_64-apple-darwin aarch64-apple-darwin --release
+move universal_macos "$LIBDIR_MACOS" --release
 
-# Build iOS simulator.
+# Build iOS simulator library.
 build x86_64-apple-ios
 build aarch64-apple-ios-sim
 fatten universal_iossim x86_64-apple-ios aarch64-apple-ios-sim
+move universal_iossim "$LIBDIR_IOSSIM"
 
 # Build iOS.
-build aarch64-apple-ios
+build aarch64-apple-ios --release
+move aarch64-apple-ios "$LIBDIR_IOS" --release
+
 
 # Create header.
 cbindgen --config "$WORKDIR/leaf-ffi/cbindgen.toml" "$WORKDIR/leaf-ffi/src/lib.rs" > "$SCRIPTDIR/leaf.h"
-
-# Create xcframework for iOS.
-xcodebuild -create-xcframework \
-	-library "$WORKDIR/target/universal_iossim/release/$FILENAME" \
-	-headers "$SCRIPTDIR/leaf.h" \
-	-library "$WORKDIR/target/aarch64-apple-ios/release/$FILENAME" \
-	-headers "$SCRIPTDIR/leaf.h" \
-	-output "$IOS_XCFRAMEWORK"
 
 # Clean up behind ourselves.
 clean

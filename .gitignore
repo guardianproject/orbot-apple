@@ -1,6 +1,5 @@
 leaf-ffi-orbot/leaf.h
-leaf-ffi-orbot/libleaf-ios.xcframework
-leaf-ffi-orbot/libleaf-macos.a
+leaf-ffi-orbot/*/libleaf.a
 TorVPN/geoip
 TorVPN/geoip6
 fastlane/screenshots/screenshots.html
