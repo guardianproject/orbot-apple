@@ -30,9 +30,16 @@ class Settings: IPtProxyUI.Settings {
 		UserDefaults(suiteName: Config.groupId)
 	}
 
+	/**
+	 Defaults to `true`!
+	 */
 	class var restartOnError: Bool {
 		get {
-			defaults?.bool(forKey: "restart_on_error") ?? false
+			guard defaults?.object(forKey: "restart_on_error") != nil else {
+				return true
+			}
+
+			return defaults?.bool(forKey: "restart_on_error") ?? true
 		}
 		set {
 			defaults?.set(newValue, forKey: "restart_on_error")
