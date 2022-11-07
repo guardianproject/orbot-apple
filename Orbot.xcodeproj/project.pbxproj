@@ -15,6 +15,9 @@
 		A00F51332745456A0037DD4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51322745456A0037DD4A /* Main.storyboard */; };
 		A00F5136274545BC0037DD4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A00F513A2745464E0037DD4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00F51392745464E0037DD4A /* LaunchScreen.storyboard */; };
+		A01668FA29155D600025E25E /* libleaf-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F629155D240025E25E /* libleaf-ios.xcframework */; };
+		A01668FB29155D600025E25E /* libleaf-ios.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F629155D240025E25E /* libleaf-ios.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A01668FC29155D870025E25E /* libleaf-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A01668F929155D4B0025E25E /* libleaf-macos.a */; };
 		A01AB5F928A53465008A79EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5F828A53465008A79EE /* AppDelegate.swift */; };
 		A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01AB5FA28A53465008A79EE /* MainViewController.swift */; };
 		A01AB60028A53465008A79EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01AB5FE28A53465008A79EE /* Main.storyboard */; };
@@ -75,10 +78,6 @@
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
-		A06D605A29019D33001A2E2C /* libleaf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; };
-		A06D605B29019D33001A2E2C /* libleaf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A06D605D29019D3B001A2E2C /* libleaf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; };
-		A06D605E29019D3B001A2E2C /* libleaf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A06D605929019D0A001A2E2C /* libleaf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
@@ -208,7 +207,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A06D605B29019D33001A2E2C /* libleaf.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +217,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A06D605E29019D3B001A2E2C /* libleaf.xcframework in Embed Frameworks */,
+				A01668FB29155D600025E25E /* libleaf-ios.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +255,8 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A01668F629155D240025E25E /* libleaf-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "libleaf-ios.xcframework"; sourceTree = "<group>"; };
+		A01668F929155D4B0025E25E /* libleaf-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libleaf-macos.a"; sourceTree = "<group>"; };
 		A01AB5F628A53465008A79EE /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01AB5FA28A53465008A79EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -299,7 +299,6 @@
 		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		A06D605929019D0A001A2E2C /* libleaf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = libleaf.xcframework; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -383,8 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
-				A06D605A29019D33001A2E2C /* libleaf.xcframework in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
+				A01668FC29155D870025E25E /* libleaf-macos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +408,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
-				A06D605D29019D3B001A2E2C /* libleaf.xcframework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
+				A01668FA29155D600025E25E /* libleaf-ios.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +652,8 @@
 				A0F8690727D635D700C9D407 /* build-leaf.sh */,
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
-				A06D605929019D0A001A2E2C /* libleaf.xcframework */,
+				A01668F629155D240025E25E /* libleaf-ios.xcframework */,
+				A01668F929155D4B0025E25E /* libleaf-macos.a */,
 			);
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
@@ -1500,10 +1500,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
@@ -1535,10 +1534,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";

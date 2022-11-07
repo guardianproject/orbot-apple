@@ -31,6 +31,7 @@ git clone git@github.com:guardianproject/orbot-ios.git
 cd orbot-ios
 git submodule update --init --recursive
 pod update
+leaf-ffi-orbot/build-leaf.sh
 open Orbot.xcworkspace
 ```
 

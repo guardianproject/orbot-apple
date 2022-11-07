@@ -4,10 +4,11 @@
 SCRIPTDIR=$(cd `dirname $0` && pwd)
 WORKDIR=$(cd "$SCRIPTDIR/../leaf" && pwd)
 
-XCFRAMEWORK="$SCRIPTDIR/libleaf.xcframework"
+IOS_XCFRAMEWORK="$SCRIPTDIR/libleaf-ios.xcframework"
+MACOS_LIBFILE="$SCRIPTDIR/libleaf-macos.a"
 
-if [[ -r "$XCFRAMEWORK" ]]; then
-	echo "$XCFRAMEWORK already exists."
+if [ -r "$IOS_XCFRAMEWORK" ] && [ -r "$MACOS_LIBFILE" ]; then
+	echo "$IOS_XCFRAMEWORK and $MACOS_LIBFILE already exists."
 	exit
 fi
 
@@ -66,31 +67,32 @@ clean
 patch --directory="$WORKDIR" --strip=1 < "$SCRIPTDIR/leaf-ffi.patch"
 
 
-# Build macOS
+# Build macOS library.
+# This needs to be stored separately, not in the xcframework, as codesign gets mad at us later,
+# when we try to release a macOS app which contains iOS simulator builds.
 build x86_64-apple-darwin
 build aarch64-apple-darwin
 fatten universal_macos x86_64-apple-darwin aarch64-apple-darwin
+mv "$WORKDIR/target/universal_macos/release/$FILENAME" "$MACOS_LIBFILE"
 
-# Build iOS simulator
+# Build iOS simulator.
 build x86_64-apple-ios
 build aarch64-apple-ios-sim
 fatten universal_iossim x86_64-apple-ios aarch64-apple-ios-sim
 
-# Build iOS
+# Build iOS.
 build aarch64-apple-ios
 
-# Create header
+# Create header.
 cbindgen --config "$WORKDIR/leaf-ffi/cbindgen.toml" "$WORKDIR/leaf-ffi/src/lib.rs" > "$SCRIPTDIR/leaf.h"
 
-# Create xcframework
+# Create xcframework for iOS.
 xcodebuild -create-xcframework \
-	-library "$WORKDIR/target/universal_macos/release/$FILENAME" \
-	-headers "$SCRIPTDIR/leaf.h" \
 	-library "$WORKDIR/target/universal_iossim/release/$FILENAME" \
 	-headers "$SCRIPTDIR/leaf.h" \
 	-library "$WORKDIR/target/aarch64-apple-ios/release/$FILENAME" \
 	-headers "$SCRIPTDIR/leaf.h" \
-	-output "$XCFRAMEWORK"
+	-output "$IOS_XCFRAMEWORK"
 
 # Clean up behind ourselves.
 clean
