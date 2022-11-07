@@ -19,13 +19,12 @@ class LogViewController: NSViewController {
 
 #if DEBUG
 			if Config.extendedLogging {
-				logSc.segmentCount = 8
+				logSc.segmentCount = 7
 
 				logSc.setLabel("Snowflake Proxy", forSegment: 3)
 				logSc.setLabel("VPN", forSegment: 4)
 				logSc.setLabel("LL", forSegment: 5)
 				logSc.setLabel("LC", forSegment: 6)
-				logSc.setLabel("WS", forSegment: 7)
 			}
 #endif
 		}
@@ -92,10 +91,6 @@ class LogViewController: NSViewController {
 		case 6:
 			// Shows the content of the leaf config file.
 			Logger.tailFile(FileManager.default.leafConfFile, update)
-
-		case 7:
-			// Shows the content of the GCD webserver log file.
-			Logger.tailFile(FileManager.default.wsLogFile, update)
 #endif
 
 		default:
