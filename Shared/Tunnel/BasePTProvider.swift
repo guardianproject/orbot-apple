@@ -67,7 +67,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		let ipv6 = NEIPv6Settings(addresses: ["FC00::0001"], networkPrefixLengths: [7])
 		ipv6.includedRoutes = [NEIPv6Route.default()]
 
-		let dns = NEDNSSettings(servers: ["1.1.1.1"])
+		let dns = NEDNSSettings(servers: ["192.168.20.1"])
 		// https://developer.apple.com/forums/thread/116033
 		// Mention special Tor domains here, so the OS doesn't drop onion domain
 		// resolve requests immediately.
