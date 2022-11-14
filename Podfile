@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def shared
-  pod 'Tor/GeoIP', '~> 407.10'
+  pod 'Tor/GeoIP', '~> 407.11'
   pod 'IPtProxyUI', '~> 1.10.3' #:git => 'https://github.com/tladesignz/IPtProxyUI-ios' # :path => '../IPtProxyUI-ios'
 end
 
