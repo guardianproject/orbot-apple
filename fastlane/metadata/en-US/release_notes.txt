@@ -1,8 +1,4 @@
-- Updated Tor to 0.4.7.10.
-- Updated Obfs4proxy to 0.0.14.
-- Updated Snowflake to 2.3.1.
-- Added a native macOS version.
-- Updated Russian translation.
-- Added option to automatically restart on error.
-- Added option to clear the Tor cache.
-- Added pluggable transports (bridges) log.
+- Updated Tor to 0.4.7.11.
+- Fixed translation bugs in macOS version.
+- "Restart on error" now defaults to on, if never changed.
+- Fixed onion-only mode on iOS 16.

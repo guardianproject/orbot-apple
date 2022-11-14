@@ -1,5 +1,11 @@
 #  Orbot iOS Changelog
 
+## 1.4.1
+- Updated Tor to 0.4.7.11.
+- Fixed translation bugs in macOS version.
+- "Restart on error" now defaults to true, if never changed.
+- Fixed onion-only mode on iOS 16.
+
 ## 1.4.0
 - Updated Tor to 0.4.7.10.
 - Updated Obfs4proxy to 0.0.14.

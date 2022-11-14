@@ -1,8 +1,4 @@
-- Tor auf 0.4.7.10 aktualisiert.
-- Obfs4proxy auf 0.0.14 aktualisiert.
-- Snowflake auf 2.3.1 aktualisiert.
-- Echte macOS-Version hinzugefügt.
-- Russische Übersetzung aktualisiert.
-- Option zum automatischen Neustart nach einem Fehler hinzugefügt.
-- Option zum Löschen des Tor-Caches hinzugefügt.
-- Log der Pluggable Transports (Brücken) hinzugefügt.
+- Tor auf 0.4.7.11 aktualisiert.
+- Übersetzungsfehler in der macOS-Version behoben.
+- "Neustart bei Fehler" ist jetzt standardmäßig an, wenn es nie geändert wurde.
+- Nur-Onion-Modus Fehler auf iOS 16 behoben.
