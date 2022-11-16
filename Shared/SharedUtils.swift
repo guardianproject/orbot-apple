@@ -116,16 +116,20 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 		var statusText: NSMutableAttributedString
 
 		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting, .reasserting:
-			statusIcon = Settings.onionOnly ? "TorOnionOnly" : "TorOn"
+		case .connected:
+			statusIcon = Settings.onionOnly ? .imgOrbieDead : .imgOrbieOn
+			buttonTitle = NSLocalizedString("Stop", comment: "")
+
+		case .connecting, .reasserting:
+			statusIcon = .imgOrbieStarting
 			buttonTitle = NSLocalizedString("Stop", comment: "")
 
 		case .invalid:
-			statusIcon = "TorOff"
+			statusIcon = .imgOrbieDead
 			buttonTitle = NSLocalizedString("Install", comment: "")
 
 		default:
-			statusIcon = "TorOff"
+			statusIcon = .imgOrbieOff
 			buttonTitle = NSLocalizedString("Start", comment: "")
 		}
 

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7XD-Qk-wfr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7XD-Qk-wfr">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,27 +28,36 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H00-0z-dhy">
-                                <rect key="frame" x="16" y="60" width="343" height="279.5"/>
+                                <rect key="frame" x="16" y="60" width="343" height="294.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TorOff" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-Pc-C5e">
-                                        <rect key="frame" x="43.5" y="12" width="256" height="256"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-Pc-C5e">
+                                        <rect key="frame" x="39.5" y="0.0" width="264" height="251"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="256" id="0Ux-iR-fFv"/>
-                                            <constraint firstAttribute="width" secondItem="GcG-Pc-C5e" secondAttribute="height" multiplier="1:1" id="Cxk-Dm-5ST"/>
+                                            <constraint firstAttribute="width" secondItem="GcG-Pc-C5e" secondAttribute="height" multiplier="264:251" id="Cxk-Dm-5ST"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="JAO-Jp-1Qv">
+                                        <rect key="frame" x="43.5" y="259" width="256" height="35.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JAO-Jp-1Qv" secondAttribute="height" multiplier="65:9" id="pCB-o0-r1z"/>
+                                            <constraint firstAttribute="width" constant="256" id="umZ-QA-sGq"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="GcG-Pc-C5e" firstAttribute="top" secondItem="H00-0z-dhy" secondAttribute="top" id="0f0-Wu-2Wa"/>
+                                    <constraint firstItem="JAO-Jp-1Qv" firstAttribute="centerX" secondItem="H00-0z-dhy" secondAttribute="centerX" id="C51-mf-G35"/>
+                                    <constraint firstItem="JAO-Jp-1Qv" firstAttribute="top" secondItem="GcG-Pc-C5e" secondAttribute="bottom" constant="8" symbolic="YES" id="Z9B-SQ-52v"/>
                                     <constraint firstItem="GcG-Pc-C5e" firstAttribute="centerX" secondItem="H00-0z-dhy" secondAttribute="centerX" id="d1j-rn-Ohu"/>
-                                    <constraint firstItem="GcG-Pc-C5e" firstAttribute="centerY" secondItem="H00-0z-dhy" secondAttribute="centerY" id="moz-gP-sXq"/>
+                                    <constraint firstAttribute="bottom" secondItem="JAO-Jp-1Qv" secondAttribute="bottom" id="jbz-nn-keJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -62,13 +72,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="SYC-BI-XgX"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <color key="tintColor" name="DarkGreen"/>
     <resources>
-        <image name="TorOff" width="512" height="512"/>
+        <image name="orbie.off" width="264" height="250"/>
+        <image name="orbie.shadow" width="65" height="9"/>
         <namedColor name="BackgroundColor">
             <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -37,7 +37,8 @@ class MainViewController: UIViewController {
 	}
 
 	@IBOutlet weak var statusIcon: UIImageView!
-	@IBOutlet weak var controlBt: UIButton!
+    @IBOutlet weak var shadowImg: UIImageView!
+    @IBOutlet weak var controlBt: UIButton!
 	@IBOutlet weak var statusLb: UILabel!
 
 	@IBOutlet weak var snowflakeProxyBt: UIButton! {
@@ -323,6 +324,8 @@ class MainViewController: UIViewController {
 
 		let (statusIconName, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
 
+		animateOrbie = statusIconName == .imgOrbieStarting
+
 		statusIcon.image = UIImage(named: statusIconName)
 		controlBt.setTitle(buttonTitle)
 		statusLb.attributedText = statusText
@@ -346,6 +349,35 @@ class MainViewController: UIViewController {
 
 		if atBottom {
 			logTv.scrollToBottom()
+		}
+	}
+
+	private var animateOrbie = false {
+		didSet {
+			if animateOrbie && !oldValue {
+				animateOrbie()
+			}
+		}
+	}
+
+	private func animateOrbie(up: Bool = true) {
+		guard animateOrbie || !up else {
+			return
+		}
+
+		UIView.animate(
+			withDuration: 0.5,
+			delay: 0,
+			options: up ? .curveEaseOut : .curveEaseIn,
+			animations: { [weak self] in
+
+				// Make Orbie jump.
+				self?.statusIcon.transform = .init(translationX: 0, y: up ? -32 : 0)
+
+				// Let the shadow follow along.
+				self?.shadowImg.transform = .init(scaleX: up ? 0.75 : 1, y: up ? 0.75 : 1)
+			}) { [weak self] _ in
+				self?.animateOrbie(up: !up)
 		}
 	}
 }

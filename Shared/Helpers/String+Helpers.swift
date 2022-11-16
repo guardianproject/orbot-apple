@@ -10,6 +10,15 @@ import Foundation
 
 extension String {
 
+	static let imgOrbieOff = "orbie.off"
+
+	static let imgOrbieStarting = "orbie.starting"
+
+	static let imgOrbieOn = "orbie.on"
+
+	static let imgOrbieDead = "orbie.dead"
+
+
 	var nilOnEmpty: String? {
 		let text = trimmingCharacters(in: .whitespacesAndNewlines)
 

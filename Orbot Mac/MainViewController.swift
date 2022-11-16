@@ -12,6 +12,7 @@ import NetworkExtension
 
 class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation {
 
+	@IBOutlet weak var statusIcon: NSButton!
 	@IBOutlet weak var controlBt: NSButton!
 	@IBOutlet weak var statusLb: NSTextField!
 
@@ -162,14 +163,71 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIcon, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
+
+#if DEBUG
+		animateOrbie = statusIconName == .imgOrbieStarting
+#endif
 
 		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 
-		controlBt.image = NSImage(named: statusIcon)
+		statusIcon.image = NSImage(named: statusIconName)
 		controlBt.setTitle(buttonTitle)
 		statusLb.attributedStringValue = statusText
 
 		snowflakeProxyBt.title = sfpText
 	}
+
+
+	// MARK: Private Methods
+
+#if DEBUG
+	private var animateOrbie = false {
+		didSet {
+			if animateOrbie && !oldValue {
+				animateOrbie()
+			}
+		}
+	}
+
+	/**
+	 This sort-of works, but the animation is not stable, so we don't use this in production.
+	 */
+	private func animateOrbie(up: Bool = true) {
+		guard animateOrbie || !up else {
+			statusIcon.needsLayout = true
+			controlBt.needsLayout = true
+
+			return
+		}
+
+		// Make Orbie jump.
+		let b1o = statusIcon.bounds
+		let b1t = NSMakeRect(0, up ? 32 : 0, b1o.width, b1o.height)
+
+		// Let the shadow follow along.
+		let f2o = self.controlBt.frame
+		let r = up ? 0.75 : 1
+		let w = f2o.width / r
+		let h = f2o.height / r
+		let x = (f2o.width - w) / 2
+		let y = (f2o.height - h) / 2
+		let b2t = NSMakeRect(x, y, w, h)
+
+		NSAnimationContext.runAnimationGroup({ [weak self] context in
+			guard let self = self else {
+				return
+			}
+
+			context.duration = 0.5
+			context.timingFunction = up ? .init(name: .easeOut) : .init(name: .easeIn)
+
+			self.statusIcon.animator().bounds = b1t
+			self.controlBt.animator().bounds = b2t
+		})
+		{ [weak self] in
+			self?.animateOrbie(up: !up)
+		}
+	}
+#endif
 }
