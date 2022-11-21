@@ -420,6 +420,9 @@ class VpnManager {
 					if let error = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? Error {
 						callback(nil, error)
 					}
+					else if T.self is Data.Type {
+						callback(response as? T, nil)
+					}
 					else {
 						let payload = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? T
 						callback(payload, nil)
