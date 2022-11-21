@@ -145,12 +145,27 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 			if VpnManager.shared.isConnected {
 				let space = NSAttributedString(string: " ")
+
+				if notification?.name == .vpnProgress,
+				   let raw = notification?.object as? Float,
+				   let progress = Formatters.formatPercent(raw)
+				{
+					statusText.append(space)
+					statusText.append(NSAttributedString(string: progress))
+				}
+
+				statusText.append(NSAttributedString(string: "\n"))
+
 				let transport = Settings.transport
 
-				if transport != .none {
-					statusText = NSMutableAttributedString(string: String(
-						format: NSLocalizedString("%1$@ via %2$@", comment: ""),
-						VpnManager.shared.sessionStatus.description, transport.description))
+				if transport == .none {
+					statusText.append(NSAttributedString(string: "Direct Connection to Tor",
+														 attributes: [.foregroundColor: Color.secondaryLabel]))
+				}
+				else {
+					statusText.append(NSAttributedString(string: String(
+						format: NSLocalizedString("via %1$@", comment: ""), transport.description),
+														 attributes: [.foregroundColor: Color.secondaryLabel]))
 				}
 
 				if Settings.onionOnly {
@@ -162,14 +177,6 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 					statusText.append(space)
 					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Bypass", comment: "")))",
 														 attributes: [.foregroundColor : Color.systemRed]))
-				}
-
-				if notification?.name == .vpnProgress,
-				   let raw = notification?.object as? Float,
-				   let progress = Formatters.formatPercent(raw)
-				{
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: progress))
 				}
 			}
 		}

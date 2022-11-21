@@ -181,6 +181,17 @@ class SettingsViewController: BaseFormViewController {
 			AlertHelper.present(self, message: L10n.cleared, title: L10n.clearTorCache)
 		})
 
+		<<< LabelRow() {
+			$0.title = L10n.version
+			$0.cellStyle = .default
+
+			if let textLabel = $0.cell.textLabel {
+				textLabel.textAlignment = .center
+
+				textLabel.font = textLabel.font.withSize(textLabel.font.pointSize * 0.75)
+			}
+		}
+
 		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
 			self?.form.rowBy(tag: "clearCache")?.evaluateDisabled()
 		}

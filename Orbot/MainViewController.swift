@@ -30,28 +30,17 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBOutlet weak var refreshBt: UIBarButtonItem? {
-		didSet {
-			refreshBt?.accessibilityLabel = L10n.newCircuits
-		}
-	}
-
 	@IBOutlet weak var statusIcon: UIImageView!
     @IBOutlet weak var shadowImg: UIImageView!
+    @IBOutlet weak var statusLb: UILabel!
+
+    @IBOutlet weak var refreshBt: UIButton! {
+        didSet {
+            refreshBt.setTitle(L10n.newCircuits)
+        }
+    }
+
     @IBOutlet weak var controlBt: UIButton!
-	@IBOutlet weak var statusLb: UILabel!
-
-	@IBOutlet weak var snowflakeProxyBt: UIButton! {
-		didSet {
-			snowflakeProxyBt.setTitle(NSLocalizedString("Content Blocker", comment: ""))
-		}
-	}
-
-	@IBOutlet weak var versionLb: UILabel! {
-		didSet {
-			versionLb.text = L10n.version
-		}
-	}
 
 	@IBOutlet weak var logContainer: UIView! {
 		didSet {
@@ -136,56 +125,69 @@ class MainViewController: UIViewController {
 	}
 
 	func updateMenu() {
-		var group1 = [UIAction]()
-		var group2 = [UIAction]()
+		var elements = [UIMenuElement]()
 
-		group1.append(UIAction(
-			title: L10n.settings,
-			image: UIImage(systemName: "gearshape"),
-			handler: { [weak self] _ in
-				self?.showSettings()
+		elements.append(UIAction(
+			title: NSLocalizedString("Kindness Mode", comment: ""),
+			image: UIImage(systemName: "heart.fill"),
+			handler: { _ in
+				// TODO
 			}))
-		group1.last?.accessibilityIdentifier = "settings"
+		elements.last?.accessibilityIdentifier = "kindness_mode"
 
-		group1.append(UIAction(
-			title: L10n.authCookies,
-			image: UIImage(systemName: "key"),
-			handler: { [weak self] _ in
-				self?.showAuth()
-			}))
-		group1.last?.accessibilityIdentifier = "auth_cookies"
-
-		group1.append(UIAction(
+		elements.append(UIAction(
 			title: L10n.bridgeConf,
 			image: UIImage(systemName: "network.badge.shield.half.filled"),
 			handler: { [weak self] _ in
 				self?.changeBridges()
 			}))
-		group1.last?.accessibilityIdentifier = "bridge_configuration"
+		elements.last?.accessibilityIdentifier = "bridge_configuration"
+
+		elements.append(UIAction(
+			title: L10n.authCookies,
+			image: UIImage(systemName: "key"),
+			handler: { [weak self] _ in
+				self?.showAuth()
+			}))
+		elements.last?.accessibilityIdentifier = "auth_cookies"
 
 		if !Settings.apiAccessTokens.isEmpty {
-			group1.append(UIAction(
+			elements.append(UIAction(
 				title: NSLocalizedString("API Access", comment: ""),
 				image: UIImage(systemName: "lock.shield"),
 				handler: { [weak self] _ in
 					self?.showApiAccess()
 				}))
-			group1.last?.accessibilityIdentifier = "api_access"
+			elements.last?.accessibilityIdentifier = "api_access"
 		}
 
-		group2.append(UIAction(
+		elements.append(UIAction(
 			title: NSLocalizedString("Content Blocker", comment: ""),
-			image: UIImage(systemName: "checkerboard.shield")) { [weak self] _ in
+			image: UIImage(systemName: "checkerboard.shield"),
+			handler: { [weak self] _ in
 				self?.showContentBlocker()
-			})
-		group2.last?.accessibilityIdentifier = "content_blocker"
+			}))
+		elements.last?.accessibilityIdentifier = "content_blocker"
+
+		elements.append(UIAction(
+			title: L10n.settings,
+			image: UIImage(systemName: "gearshape"),
+			handler: { [weak self] _ in
+				self?.showSettings()
+			}))
+		elements.last?.accessibilityIdentifier = "settings"
+
+		elements.append(UIAction(
+			title: NSLocalizedString("About", comment: ""),
+			image: nil,
+			handler: { _ in
+				// TODO
+			}))
+		elements.last?.accessibilityIdentifier = "about"
 
 		settingsBt?.menu = nil
 
-		settingsBt?.menu = UIMenu(title: "", children: [
-			UIMenu(title: "", options: .displayInline, children: group1),
-			UIMenu(title: "", options: .displayInline, children: group2)
-		])
+		settingsBt?.menu = UIMenu(title: "", children: elements)
 	}
 
 	func showSettings(_ sender: UIBarButtonItem? = nil) {
@@ -217,7 +219,7 @@ class MainViewController: UIViewController {
 		return vc
 	}
 
-	@IBAction func refresh(_ sender: UIBarButtonItem? = nil) {
+	@IBAction func refresh(_ sender: UIButton? = nil) {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud.mode = .determinate
 		hud.progress = 0
@@ -322,7 +324,7 @@ class MainViewController: UIViewController {
 
 		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
 
-		let (statusIconName, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, _) = SharedUtils.updateUi(notification)
 
 		animateOrbie = statusIconName == .imgOrbieStarting
 
@@ -331,12 +333,6 @@ class MainViewController: UIViewController {
 		statusLb.attributedText = statusText
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
-
-#if DEBUG
-		if Config.snowflakeProxyExperiment {
-			snowflakeProxyBt.setTitle(sfpText)
-		}
-#endif
 	}
 
 

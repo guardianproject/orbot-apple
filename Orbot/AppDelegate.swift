@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	{
 		Settings.setPtStateLocation()
 
-		UIView.appearance().tintColor = .init(named: "DarkGreen")
+		UIView.appearance().tintColor = .label
+		UITableView.appearance().backgroundColor = .init(named: .colorBlack1)
+		UITableViewCell.appearance().backgroundColor = .init(named: .colorBlack2)
 
 #if DEBUG
 		SharedUtils.addScreenshotDummies()
