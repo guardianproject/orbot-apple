@@ -40,11 +40,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
 									"Orbot.\(String(describing: CloseCircuitsMessage.self))")
 
-		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
-									"Orbot.\(String(describing: GetCircuitsMessage.self))")
-
 		NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: CloseCircuitsMessage.self))")
+
+		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
+									"Orbot.\(String(describing: GetCircuitsMessage.self))")
 
 		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: GetCircuitsMessage.self))")
@@ -54,6 +54,12 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: ConfigChangedMessage.self))")
+
+		NSKeyedUnarchiver.setClass(DebugMessage.self, forClassName:
+									"Orbot.\(String(describing: DebugMessage.self))")
+
+		NSKeyedUnarchiver.setClass(DebugMessage.self, forClassName:
+									"Orbot_Mac.\(String(describing: DebugMessage.self))")
 
 		Settings.setPtStateLocation()
 	}

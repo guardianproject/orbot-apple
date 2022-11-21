@@ -75,6 +75,10 @@
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
+		A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
@@ -295,6 +299,7 @@
 		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A06DDCAC29264D0E001F9371 /* DebugMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMessage.swift; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -597,6 +602,7 @@
 			children = (
 				A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */,
 				A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */,
+				A06DDCAC29264D0E001F9371 /* DebugMessage.swift */,
 				A0A735F424757FA400073C81 /* ProgressMessage.swift */,
 				A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */,
 				A0A735E824756CA200073C81 /* Message.swift */,
@@ -1219,6 +1225,7 @@
 				A0274FF228E7223300E767E9 /* L10n.swift in Sources */,
 				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
 				A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */,
@@ -1255,6 +1262,7 @@
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB6AF28A558A6008A79EE /* Config.m in Sources */,
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
 				A01AB6AE28A558A3008A79EE /* Config.swift in Sources */,
@@ -1304,6 +1312,7 @@
 				A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
 			);
@@ -1324,6 +1333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
