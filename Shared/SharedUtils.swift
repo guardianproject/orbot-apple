@@ -117,7 +117,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 		switch VpnManager.shared.sessionStatus {
 		case .connected:
-			statusIcon = Settings.onionOnly ? .imgOrbieDead : .imgOrbieOn
+			statusIcon = Settings.onionOnly ? .imgOrbieOnionOnly : .imgOrbieOn
 			buttonTitle = NSLocalizedString("Stop", comment: "")
 
 		case .connecting, .reasserting:

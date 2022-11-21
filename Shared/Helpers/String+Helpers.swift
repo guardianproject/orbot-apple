@@ -18,6 +18,8 @@ extension String {
 
 	static let imgOrbieDead = "orbie.dead"
 
+	static let imgOrbieOnionOnly = "orbie.onion-only"
+
 
 	var nilOnEmpty: String? {
 		let text = trimmingCharacters(in: .whitespacesAndNewlines)
