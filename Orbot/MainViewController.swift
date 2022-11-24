@@ -31,16 +31,22 @@ class MainViewController: UIViewController {
 	}
 
 	@IBOutlet weak var statusIcon: UIImageView!
-    @IBOutlet weak var shadowImg: UIImageView!
-    @IBOutlet weak var statusLb: UILabel!
+	@IBOutlet weak var shadowImg: UIImageView!
+	@IBOutlet weak var statusLb: UILabel!
 
-    @IBOutlet weak var refreshBt: UIButton! {
-        didSet {
-            refreshBt.setTitle(L10n.newCircuits)
-        }
-    }
+	@IBOutlet weak var refreshBt: UIButton! {
+		didSet {
+			refreshBt.setTitle(L10n.newCircuits)
+		}
+	}
 
-    @IBOutlet weak var controlBt: UIButton!
+	@IBOutlet weak var controlBt: UIButton!
+
+	@IBOutlet weak var configureBt: UIButton! {
+		didSet {
+			configureBt.setTitle(NSLocalizedString("Configure", comment: ""))
+		}
+	}
 
 	@IBOutlet weak var logContainer: UIView! {
 		didSet {
@@ -124,72 +130,6 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	func updateMenu() {
-		var elements = [UIMenuElement]()
-
-		elements.append(UIAction(
-			title: NSLocalizedString("Kindness Mode", comment: ""),
-			image: UIImage(systemName: "heart.fill"),
-			handler: { _ in
-				// TODO
-			}))
-		elements.last?.accessibilityIdentifier = "kindness_mode"
-
-		elements.append(UIAction(
-			title: L10n.bridgeConf,
-			image: UIImage(systemName: "network.badge.shield.half.filled"),
-			handler: { [weak self] _ in
-				self?.changeBridges()
-			}))
-		elements.last?.accessibilityIdentifier = "bridge_configuration"
-
-		elements.append(UIAction(
-			title: L10n.authCookies,
-			image: UIImage(systemName: "key"),
-			handler: { [weak self] _ in
-				self?.showAuth()
-			}))
-		elements.last?.accessibilityIdentifier = "auth_cookies"
-
-		if !Settings.apiAccessTokens.isEmpty {
-			elements.append(UIAction(
-				title: NSLocalizedString("API Access", comment: ""),
-				image: UIImage(systemName: "lock.shield"),
-				handler: { [weak self] _ in
-					self?.showApiAccess()
-				}))
-			elements.last?.accessibilityIdentifier = "api_access"
-		}
-
-		elements.append(UIAction(
-			title: NSLocalizedString("Content Blocker", comment: ""),
-			image: UIImage(systemName: "checkerboard.shield"),
-			handler: { [weak self] _ in
-				self?.showContentBlocker()
-			}))
-		elements.last?.accessibilityIdentifier = "content_blocker"
-
-		elements.append(UIAction(
-			title: L10n.settings,
-			image: UIImage(systemName: "gearshape"),
-			handler: { [weak self] _ in
-				self?.showSettings()
-			}))
-		elements.last?.accessibilityIdentifier = "settings"
-
-		elements.append(UIAction(
-			title: NSLocalizedString("About", comment: ""),
-			image: nil,
-			handler: { _ in
-				// TODO
-			}))
-		elements.last?.accessibilityIdentifier = "about"
-
-		settingsBt?.menu = nil
-
-		settingsBt?.menu = UIMenu(title: "", children: elements)
-	}
-
 	func showSettings(_ sender: UIBarButtonItem? = nil) {
 		present(inNav: SettingsViewController(), button: sender ?? settingsBt)
 	}
@@ -203,11 +143,11 @@ class MainViewController: UIViewController {
 		return vc
 	}
 
-	func changeBridges(_ sender: UIBarButtonItem? = nil) {
+	@IBAction func changeBridges(_ sender: UIButton? = nil) {
 		let vc = BridgesConfViewController()
 		vc.delegate = bridgesConfDelegate
 
-		present(inNav: vc, button: sender ?? settingsBt)
+		present(inNav: vc, view: sender ?? configureBt)
 	}
 
 	@discardableResult
@@ -217,6 +157,10 @@ class MainViewController: UIViewController {
 		present(inNav: vc, button: sender ?? settingsBt)
 
 		return vc
+	}
+
+	@IBAction func changeExit(_ sender: UIButton? = nil) {
+		present(inNav: ChangeExitViewController(), view: sender ?? changeExitBt)
 	}
 
 	@IBAction func refresh(_ sender: UIButton? = nil) {
@@ -336,6 +280,67 @@ class MainViewController: UIViewController {
 	}
 
 
+	// MARK: Public Methods
+
+	func updateMenu() {
+		var elements = [UIMenuElement]()
+
+		elements.append(UIAction(
+			title: NSLocalizedString("Kindness Mode", comment: ""),
+			image: UIImage(systemName: "heart.fill"),
+			handler: { _ in
+				// TODO
+			}))
+		elements.last?.accessibilityIdentifier = "kindness_mode"
+
+		elements.append(UIAction(
+			title: L10n.authCookies,
+			image: UIImage(systemName: "key"),
+			handler: { [weak self] _ in
+				self?.showAuth()
+			}))
+		elements.last?.accessibilityIdentifier = "auth_cookies"
+
+		if !Settings.apiAccessTokens.isEmpty {
+			elements.append(UIAction(
+				title: NSLocalizedString("API Access", comment: ""),
+				image: UIImage(systemName: "lock.shield"),
+				handler: { [weak self] _ in
+					self?.showApiAccess()
+				}))
+			elements.last?.accessibilityIdentifier = "api_access"
+		}
+
+		elements.append(UIAction(
+			title: NSLocalizedString("Content Blocker", comment: ""),
+			image: UIImage(systemName: "checkerboard.shield"),
+			handler: { [weak self] _ in
+				self?.showContentBlocker()
+			}))
+		elements.last?.accessibilityIdentifier = "content_blocker"
+
+		elements.append(UIAction(
+			title: L10n.settings,
+			image: UIImage(systemName: "gearshape"),
+			handler: { [weak self] _ in
+				self?.showSettings()
+			}))
+		elements.last?.accessibilityIdentifier = "settings"
+
+		elements.append(UIAction(
+			title: NSLocalizedString("About", comment: ""),
+			image: nil,
+			handler: { _ in
+				// TODO
+			}))
+		elements.last?.accessibilityIdentifier = "about"
+
+		settingsBt?.menu = nil
+
+		settingsBt?.menu = UIMenu(title: "", children: elements)
+	}
+
+
 	// MARK: Private Methods
 
 	private func update(_ logText: String) {
@@ -374,6 +379,6 @@ class MainViewController: UIViewController {
 				self?.shadowImg.transform = .init(scaleX: up ? 0.75 : 1, y: up ? 0.75 : 1)
 			}) { [weak self] _ in
 				self?.animateOrbie(up: !up)
-		}
+			}
 	}
 }
