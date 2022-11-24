@@ -33,41 +33,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H00-0z-dhy">
-                                <rect key="frame" x="16" y="60" width="343" height="279.5"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-Pc-C5e">
-                                        <rect key="frame" x="63.5" y="48" width="216" height="206"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="128" id="0Ux-iR-fFv"/>
-                                            <constraint firstAttribute="width" secondItem="GcG-Pc-C5e" secondAttribute="height" multiplier="264:251" id="Cxk-Dm-5ST"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="JAO-Jp-1Qv">
-                                        <rect key="frame" x="107.5" y="262" width="128" height="17.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="JAO-Jp-1Qv" secondAttribute="height" multiplier="65:9" id="pCB-o0-r1z"/>
-                                            <constraint firstAttribute="width" constant="128" id="umZ-QA-sGq"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-Pc-C5e">
+                                <rect key="frame" x="123.5" y="92" width="128" height="121.5"/>
                                 <constraints>
-                                    <constraint firstItem="GcG-Pc-C5e" firstAttribute="top" secondItem="H00-0z-dhy" secondAttribute="top" constant="48" id="0f0-Wu-2Wa"/>
-                                    <constraint firstItem="JAO-Jp-1Qv" firstAttribute="centerX" secondItem="H00-0z-dhy" secondAttribute="centerX" id="C51-mf-G35"/>
-                                    <constraint firstItem="JAO-Jp-1Qv" firstAttribute="top" secondItem="GcG-Pc-C5e" secondAttribute="bottom" constant="8" symbolic="YES" id="Z9B-SQ-52v"/>
-                                    <constraint firstItem="GcG-Pc-C5e" firstAttribute="centerX" secondItem="H00-0z-dhy" secondAttribute="centerX" id="d1j-rn-Ohu"/>
-                                    <constraint firstAttribute="bottom" secondItem="JAO-Jp-1Qv" secondAttribute="bottom" id="jbz-nn-keJ"/>
+                                    <constraint firstAttribute="width" constant="128" id="0Ux-iR-fFv"/>
+                                    <constraint firstAttribute="width" secondItem="GcG-Pc-C5e" secondAttribute="height" multiplier="264:251" id="Cxk-Dm-5ST"/>
                                 </constraints>
-                            </view>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="JAO-Jp-1Qv">
+                                <rect key="frame" x="123.5" y="221.5" width="128" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JAO-Jp-1Qv" secondAttribute="height" multiplier="65:9" id="pCB-o0-r1z"/>
+                                    <constraint firstAttribute="width" constant="128" id="umZ-QA-sGq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Black1"/>
                         <constraints>
-                            <constraint firstItem="H00-0z-dhy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8vS-cc-NaX"/>
-                            <constraint firstItem="H00-0z-dhy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="L17-04-bJ6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H00-0z-dhy" secondAttribute="trailing" constant="16" id="hEh-ee-QnA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="H00-0z-dhy" secondAttribute="bottom" constant="16" id="hbb-GQ-XEh"/>
+                            <constraint firstItem="JAO-Jp-1Qv" firstAttribute="top" secondItem="GcG-Pc-C5e" secondAttribute="bottom" constant="8" symbolic="YES" id="4vS-gd-z4U"/>
+                            <constraint firstItem="JAO-Jp-1Qv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UlM-0A-Qn2"/>
+                            <constraint firstItem="GcG-Pc-C5e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="Yo0-67-1Cu"/>
+                            <constraint firstItem="GcG-Pc-C5e" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fUU-js-imi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SYC-BI-XgX"/>
@@ -82,7 +69,7 @@
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <namedColor name="Black1">
-            <color red="0.10980392156862745" green="0.078431372549019607" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10999999940395355" green="0.078000001609325409" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
