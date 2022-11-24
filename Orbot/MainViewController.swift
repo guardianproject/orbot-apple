@@ -34,6 +34,12 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var shadowImg: UIImageView!
 	@IBOutlet weak var statusLb: UILabel!
 
+	@IBOutlet weak var changeExitBt: UIButton! {
+		didSet {
+			changeExitBt.setTitle(NSLocalizedString("Limit Exit Countries", comment: ""))
+		}
+	}
+
 	@IBOutlet weak var refreshBt: UIButton! {
 		didSet {
 			refreshBt.setTitle(L10n.newCircuits)

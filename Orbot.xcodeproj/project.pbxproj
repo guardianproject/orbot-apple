@@ -60,6 +60,8 @@
 		A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A0274FF128E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
 		A0274FF228E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
+		A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
+		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
 		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
@@ -114,6 +116,9 @@
 		A0B167DD284F90560089EB7C /* ApiAccessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B167DB284F90560089EB7C /* ApiAccessCell.xib */; };
 		A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B167DC284F90560089EB7C /* ApiAccessCell.swift */; };
 		A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */; };
+		A0C1D8AA292F840E00EB9DBB /* ChangeExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */; };
+		A0C1D8AC292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */; };
+		A0C1D8AD292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */; };
 		A0C53059280F11C20067597F /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
@@ -182,6 +187,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = A0A735CC247561F200073C81;
 			remoteInfo = TorVPN;
+		};
+		A0C1D8AE292FB15000EB9DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0367016292E66A20012C84A;
+			remoteInfo = "compile-country-list";
+		};
+		A0C1D8B0292FB16200EB9DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0367016292E66A20012C84A;
+			remoteInfo = "compile-country-list";
 		};
 		A0D6162B27D8E4AA008E0F3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -273,6 +292,8 @@
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A0274FEC28E70B6300E767E9 /* SharedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtils.swift; sourceTree = "<group>"; };
 		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A0367015292E65C70012C84A /* compile-country-list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "compile-country-list.swift"; sourceTree = "<group>"; };
+		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +364,8 @@
 		A0B167DC284F90560089EB7C /* ApiAccessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessCell.swift; sourceTree = "<group>"; };
 		A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A0BBF1AA27D7BA37005BBA3A /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeExitViewController.swift; sourceTree = "<group>"; };
+		A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitNodeCountries.swift; sourceTree = "<group>"; };
 		A0C53058280F11C20067597F /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
 		A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Orbot-Mac-Info.plist"; path = "Orbot Mac/Orbot-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A0D6162027D8BAC6008E0F3C /* .tx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .tx; sourceTree = "<group>"; };
@@ -517,6 +540,7 @@
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
+				A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */,
 				A0B167DB284F90560089EB7C /* ApiAccessCell.xib */,
@@ -555,6 +579,7 @@
 				A0367840274E5E8000344B7F /* CHANGELOG.md */,
 				A064701B24781C5400311CBE /* LICENSE */,
 				A0D6162027D8BAC6008E0F3C /* .tx */,
+				A0367015292E65C70012C84A /* compile-country-list.swift */,
 			);
 			name = Build;
 			sourceTree = "<group>";
@@ -578,6 +603,7 @@
 				A0A735DF247566CD00073C81 /* Config.h */,
 				A0A735E0247566CD00073C81 /* Config.m */,
 				A0A735E32475679800073C81 /* Config.swift */,
+				A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */,
 				A01AB61328A5463C008A79EE /* Formatters.swift */,
 				A0274FF028E7223300E767E9 /* L10n.swift */,
 				A01F34DE2652D082008F9912 /* Logger.swift */,
@@ -592,6 +618,7 @@
 				A0F3FFB4282EA264003096EC /* template-onion-only.conf */,
 				A0B167D9284F63C80089EB7C /* template-bypass.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
+				A036701D292E70D60012C84A /* exit-node-countries.plist */,
 				A00F5134274545BC0037DD4A /* Localizable.strings */,
 			);
 			path = Shared;
@@ -714,6 +741,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
+		A0367016292E66A20012C84A /* compile-country-list */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = A0367017292E66A20012C84A /* Build configuration list for PBXLegacyTarget "compile-country-list" */;
+			buildPhases = (
+			);
+			buildToolPath = "${PROJECT_DIR}/compile-country-list.swift";
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "compile-country-list";
+			passBuildSettingsInEnvironment = 0;
+			productName = "compile-country-list";
+		};
 		A06D605129019C3A001A2E2C /* leaf */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "";
@@ -746,6 +787,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A0C1D8B1292FB16200EB9DBB /* PBXTargetDependency */,
 				A01AB6A728A55706008A79EE /* PBXTargetDependency */,
 			);
 			name = "Orbot Mac";
@@ -790,6 +832,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A0C1D8AF292FB15000EB9DBB /* PBXTargetDependency */,
 				A0A735D4247561F200073C81 /* PBXTargetDependency */,
 				A06BEC76280090B300351868 /* PBXTargetDependency */,
 			);
@@ -871,6 +914,9 @@
 					A01AB69E28A55706008A79EE = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					A0367016292E66A20012C84A = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					A05B73AF24755CE600930C40 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
@@ -916,6 +962,7 @@
 				A01AB5F528A53465008A79EE /* Orbot Mac */,
 				A01AB69E28A55706008A79EE /* TorVPN Mac */,
 				A06D605129019C3A001A2E2C /* leaf */,
+				A0367016292E66A20012C84A /* compile-country-list */,
 			);
 		};
 /* End PBXProject section */
@@ -925,6 +972,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */,
 				A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */,
 				A0FF331828B3ADD50079A267 /* Localizable.strings in Resources */,
 				A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */,
@@ -946,6 +994,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */,
 				A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */,
 				A00F5136274545BC0037DD4A /* Localizable.strings in Resources */,
 				A0B167DD284F90560089EB7C /* ApiAccessCell.xib in Resources */,
@@ -1228,6 +1277,7 @@
 				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
+				A0C1D8AD292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
 				A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */,
 				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
 				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
@@ -1312,6 +1362,8 @@
 				A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				A0C1D8AC292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
+				A0C1D8AA292F840E00EB9DBB /* ChangeExitViewController.swift in Sources */,
 				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
@@ -1391,6 +1443,16 @@
 			isa = PBXTargetDependency;
 			target = A0A735CC247561F200073C81 /* TorVPN */;
 			targetProxy = A0A735D3247561F200073C81 /* PBXContainerItemProxy */;
+		};
+		A0C1D8AF292FB15000EB9DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0367016292E66A20012C84A /* compile-country-list */;
+			targetProxy = A0C1D8AE292FB15000EB9DBB /* PBXContainerItemProxy */;
+		};
+		A0C1D8B1292FB16200EB9DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0367016292E66A20012C84A /* compile-country-list */;
+			targetProxy = A0C1D8B0292FB16200EB9DBB /* PBXContainerItemProxy */;
 		};
 		A0D6162C27D8E4AA008E0F3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1570,6 +1632,33 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A0367018292E66A20012C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A0367019292E66A20012C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1945,6 +2034,15 @@
 			buildConfigurations = (
 				A01AB6AA28A55706008A79EE /* Debug */,
 				A01AB6AB28A55706008A79EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0367017292E66A20012C84A /* Build configuration list for PBXLegacyTarget "compile-country-list" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0367018292E66A20012C84A /* Debug */,
+				A0367019292E66A20012C84A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
