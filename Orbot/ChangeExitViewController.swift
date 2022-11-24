@@ -57,6 +57,12 @@ class ChangeExitViewController: BaseFormViewController, UISearchResultsUpdating 
 		form +++ section
 	}
 
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+
+		VpnManager.shared.configChanged()
+	}
+
 
 	// MARK: UISearchResultsUpdating
 

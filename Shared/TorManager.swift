@@ -85,29 +85,26 @@ class TorManager {
 			torThread?.start()
 		}
 		else {
-			torController?.resetConf(forKey: "UseBridges")
-			{ [weak self] success, error in
-				if !success {
-					return
-				}
+			let group = DispatchGroup()
 
-				self?.torController?.resetConf(forKey: "ClientTransportPlugin")
-				{ [weak self] success, error in
-					if !success {
-						return
+			let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
+							 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
+
+			for key in resetKeys {
+				group.enter()
+
+				torController?.resetConf(forKey: key) { _, error in
+					if let error = error {
+						debugPrint(error)
 					}
 
-					self?.torController?.resetConf(forKey: "Bridge")
-					{ [weak self] success, error in
-						if !success {
-							return
-						}
-
-						self?.torController?.setConfs(
-							self?.transportConf(Transport.asConf) ?? [])
-					}
+					group.leave()
 				}
+
+				group.wait()
 			}
+
+			torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
 		}
 
 		controllerQueue.asyncAfter(deadline: .now() + 0.65) {
@@ -259,6 +256,8 @@ class TorManager {
 		// Add user-defined configuration.
 		conf.arguments += Settings.advancedTorConf ?? []
 
+		conf.arguments += nodeConf(Transport.asArguments).joined()
+
 		conf.arguments += transportConf(Transport.asArguments).joined()
 
 		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
@@ -282,24 +281,30 @@ class TorManager {
 			// Miscelaneous
 			"MaxMemInQueues": "5MB"]
 
-		// Node in-/exclusions
-		if let entryNodes = Settings.entryNodes {
-			conf.options["EntryNodes"] = entryNodes
-		}
-
-		if let exitNodes = Settings.exitNodes {
-			conf.options["ExitNodes"] = exitNodes
-		}
-
-		if let excludeNodes = Settings.excludeNodes {
-			conf.options["ExcludeNodes"] = excludeNodes
-			conf.options["StrictNodes"] = Settings.strictNodes ? "1" : "0"
-		}
-
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile?.truncate()
 		{
 			conf.options["Log"] = "notice file \(logfile.path)"
+		}
+
+		return conf
+	}
+
+	private func nodeConf<T>(_ cv: (String, String) ->T) -> [T] {
+		var conf = [T]()
+
+		// Node in-/exclusions
+		if let entryNodes = Settings.entryNodes {
+			conf.append(cv("EntryNodes", entryNodes))
+		}
+
+		if let exitNodes = Settings.exitNodes {
+			conf.append(cv("ExitNodes", exitNodes))
+		}
+
+		if let excludeNodes = Settings.excludeNodes {
+			conf.append(cv("ExcludeNodes", excludeNodes))
+			conf.append(cv("StrictNodes", Settings.strictNodes ? "1" : "0"))
 		}
 
 		return conf

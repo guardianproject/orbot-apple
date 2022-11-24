@@ -34,10 +34,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWd-i7-fjH">
-                                <rect key="frame" x="16" y="271.5" width="343" height="64"/>
+                                <rect key="frame" x="16" y="271.5" width="343" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-w6-CDg">
-                                        <rect key="frame" x="12" y="12" width="319" height="20.5"/>
+                                        <rect key="frame" x="12" y="25.5" width="319" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -45,10 +45,9 @@
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="QWd-i7-fjH" secondAttribute="leading" constant="12" id="CfX-WN-pac"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="trJ-w6-CDg" secondAttribute="bottom" constant="12" id="QIw-Dx-tzS"/>
                                     <constraint firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="12" id="YGj-Ar-IiO"/>
-                                    <constraint firstAttribute="height" constant="64" id="hzB-wM-XQy"/>
-                                    <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="QWd-i7-fjH" secondAttribute="top" constant="12" id="qMg-tG-Bfz"/>
+                                    <constraint firstItem="trJ-w6-CDg" firstAttribute="centerY" secondItem="QWd-i7-fjH" secondAttribute="centerY" id="cxB-Qr-xVn"/>
+                                    <constraint firstAttribute="height" constant="72" id="hzB-wM-XQy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -57,13 +56,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-i0-fDP">
-                                <rect key="frame" x="16" y="339.5" width="343" height="48"/>
+                                <rect key="frame" x="16" y="347.5" width="343" height="48"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="kOJ-L9-379"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Change Exit">
+                                <buttonConfiguration key="configuration" style="plain" title="Change Exit" imagePadding="4">
+                                    <imageReference key="image" image="globe.europe.africa" catalog="system" symbolScale="medium"/>
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRK-d1-4Bz">
-                                <rect key="frame" x="16" y="391.5" width="343" height="48"/>
+                                <rect key="frame" x="16" y="399.5" width="343" height="48"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="5aR-uP-7Vx"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-rR-QxJ">
-                                <rect key="frame" x="16" y="455.5" width="343" height="64"/>
+                                <rect key="frame" x="16" y="463.5" width="343" height="64"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="AOB-AH-cPX"/>
@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D2-gT-gQC">
-                                <rect key="frame" x="140.5" y="527.5" width="94" height="39"/>
+                                <rect key="frame" x="140.5" y="535.5" width="94" height="39"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Configure"/>
@@ -259,6 +259,7 @@
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="globe.europe.africa" catalog="system" width="128" height="123"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <namedColor name="Black1">

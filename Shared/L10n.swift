@@ -96,8 +96,9 @@ class L10n {
 
 	static var settingsExplanation2: String {
 		String(format: NSLocalizedString("%1$@ Options need 2 leading minuses: %2$@", comment: ""), "\u{2022}", "--Option") + "\n"
-			+ String(format: NSLocalizedString("%@ Arguments to an option need to be in a new line.", comment: ""), "\u{2022}") + "\n"
-			+ String(format: NSLocalizedString("%1$@ Some options might get overwritten by %2$@.", comment: ""), "\u{2022}", Bundle.main.displayName)
+		+ String(format: NSLocalizedString("%@ Arguments to an option need to be in a new line.", comment: ""), "\u{2022}") + "\n"
+		+ String(format: NSLocalizedString("%1$@ Some options might get overwritten by %2$@.", comment: ""), "\u{2022}", Bundle.main.displayName) + "\n"
+		+ String(format: NSLocalizedString("%1$@ These settings will only take effect after restart.", comment: ""), "\u{2022}")
 	}
 
 	static var settingsExplanation3: String {

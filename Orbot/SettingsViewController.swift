@@ -20,12 +20,6 @@ class SettingsViewController: BaseFormViewController {
 		closeBt.accessibilityIdentifier = "close_settings"
 
 		form
-		+++ LabelRow() {
-			$0.value = L10n.settingsEfectAfterRestart
-			$0.cellStyle = .subtitle
-			$0.cell.detailTextLabel?.numberOfLines = 0
-		}
-
 		+++ Section(L10n.automaticRestart)
 		<<< SwitchRow() {
 			$0.title = L10n.automaticallyRestartOnError
@@ -195,6 +189,12 @@ class SettingsViewController: BaseFormViewController {
 		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
 			self?.form.rowBy(tag: "clearCache")?.evaluateDisabled()
 		}
+	}
+
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+
+		VpnManager.shared.configChanged()
 	}
 
 
