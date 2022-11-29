@@ -1,8 +1,4 @@
-- Tor actualizado a 0.4.7.10.
-- Obfs4proxy actualizado a 0.0.14.
-- Copo de nieve actualizado a 2.3.1.
-- Se agregó una versión nativa de macOS.
-- Traducción rusa actualizada.
-- Opción agregada para reiniciar automáticamente en caso de error.
-- Opción agregada para borrar el caché de Tor.
-- Se agregó el registro de transportes enchufables (puentes).
+- Tor actualizado a 0.4.7.11.
+- Se corrigieron errores de traducción en la versión macOS.
+- "Reiniciar en caso de error" ahora está activado de forma predeterminada, si nunca se cambió.
+- Se corrigió el modo de solo cebolla en iOS 16.
