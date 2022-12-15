@@ -1,4 +1,1 @@
-- Mise à jour de Tor vers 0.4.7.11.
-- Correction des bugs de traduction dans la version macOS.
-- "Redémarrer en cas d'erreur" est désormais activé par défaut, s'il n'a jamais été modifié.
-- Mode oignon uniquement fixe sur iOS 16.
+- J'ai appliqué un autre correctif pour le mode "oignon seulement".

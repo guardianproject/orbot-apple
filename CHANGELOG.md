@@ -1,5 +1,8 @@
 #  Orbot iOS Changelog
 
+## 1.4.2
+- Applied yet another fix for onion-only mode.
+
 ## 1.4.1
 - Updated Tor to 0.4.7.11.
 - Fixed translation bugs in macOS version.

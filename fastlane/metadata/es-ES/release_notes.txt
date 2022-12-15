@@ -1,4 +1,1 @@
-- Tor actualizado a 0.4.7.11.
-- Se corrigieron errores de traducción en la versión macOS.
-- "Reiniciar en caso de error" ahora está activado de forma predeterminada, si nunca se cambió.
-- Se corrigió el modo de solo cebolla en iOS 16.
+- Aplicada otra corrección para el modo sólo-cebolla.
