@@ -24,9 +24,18 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 #if os(macOS)
 	typealias Color = NSColor
+	typealias Font = NSFont
 #else
 	typealias Color = UIColor
+	typealias Font = UIFont
 #endif
+
+	private static let centered = {
+		let style = NSMutableParagraphStyle()
+		style.alignment = .center
+
+		return style
+	}()
 
 
 	public static var torConfUrl: URL {
@@ -75,25 +84,24 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 	static func control(startOnly: Bool) {
 
 		// Enable, if disabled.
-		if VpnManager.shared.confStatus == .disabled {
+		if VpnManager.shared.status == .disabled {
 			return VpnManager.shared.enable { success in
-				if success && VpnManager.shared.confStatus == .enabled {
+				if success && VpnManager.shared.status != .disabled {
 					control(startOnly: startOnly)
 				}
 			}
 		}
 
-		if startOnly && ![NEVPNStatus.disconnected, .disconnecting].contains(VpnManager.shared.sessionStatus) {
+		if startOnly && ![VpnManager.Status.disconnected, .disconnecting].contains(VpnManager.shared.status) {
 			return
 		}
 
-		// Install first, if not installed.
-		else if VpnManager.shared.confStatus == .notInstalled {
-			return VpnManager.shared.install()
-		}
+		switch VpnManager.shared.status {
+		case .notInstalled:
+			// Install first, if not installed.
+			VpnManager.shared.install()
 
-		switch VpnManager.shared.sessionStatus {
-		case .connected, .connecting:
+		case .evaluating, .connecting, .connected:
 			VpnManager.shared.disconnect(explicit: true)
 
 		case .disconnected, .disconnecting:
@@ -117,39 +125,66 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
 	}
 
+	static func smartConnectButtonLabel(buttonFontSize: CGFloat? = nil) -> NSMutableAttributedString {
+		buttonTitleWithSubtitle(
+			NSLocalizedString("Start", comment: ""),
+			NSLocalizedString("Use Smart Connect", comment: ""),
+			subtitleSize: (buttonFontSize ?? 16) * 0.5)
+	}
 
-	static func updateUi(_ notification: Notification? = nil) -> (statusIcon: String, buttonTitle: String, statusText: NSMutableAttributedString, sfpText: String) {
+	static func updateUi(_ notification: Notification? = nil, buttonFontSize: CGFloat? = nil) -> (
+		statusIcon: String,
+		buttonTitle: NSMutableAttributedString,
+		statusText: NSMutableAttributedString,
+		statusSubtext: String,
+		sfpText: String
+	) {
 		let statusIcon: String
-		let buttonTitle: String
+		let buttonTitle: NSMutableAttributedString
 		var statusText: NSMutableAttributedString
+		var statusSubtext = NSLocalizedString("Hide apps from network monitoring and get access when they are blocked.", comment: "")
 
-		switch VpnManager.shared.sessionStatus {
+		let transport = Settings.transport
+
+		switch VpnManager.shared.status {
 		case .connected:
 			statusIcon = Settings.onionOnly ? .imgOrbieOnionOnly : .imgOrbieOn
-			buttonTitle = NSLocalizedString("Stop", comment: "")
+			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Stop", comment: ""))
 
-		case .connecting, .reasserting:
+		case .evaluating, .connecting, .reasserting:
 			statusIcon = .imgOrbieStarting
-			buttonTitle = NSLocalizedString("Stop", comment: "")
+			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Stop", comment: ""))
 
-		case .invalid:
+		case .notInstalled, .invalid, .unknown:
 			statusIcon = .imgOrbieDead
-			buttonTitle = NSLocalizedString("Install", comment: "")
+			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Install", comment: ""))
 
 		default:
 			statusIcon = .imgOrbieOff
-			buttonTitle = NSLocalizedString("Start", comment: "")
+
+			let subtitle: String
+
+			if Settings.smartConnect {
+				subtitle = NSLocalizedString("Use Smart Connect", comment: "")
+			}
+			else if transport == .none {
+				subtitle = NSLocalizedString("Use Direct Connection to Tor", comment: "")
+			}
+			else {
+				subtitle = String(format: NSLocalizedString("Use %1$@", comment: ""), transport.description)
+			}
+
+			buttonTitle = buttonTitleWithSubtitle(
+				NSLocalizedString("Start", comment: ""), subtitle,
+				subtitleSize: (buttonFontSize ?? 16) * 0.5)
 		}
 
 		if let error = VpnManager.shared.error {
 			statusText = NSMutableAttributedString(string: error.localizedDescription,
 												   attributes: [.foregroundColor: Color.systemRed])
 		}
-		else if VpnManager.shared.confStatus != .enabled {
-			statusText = NSMutableAttributedString(string: VpnManager.shared.confStatus.description)
-		}
 		else {
-			statusText = NSMutableAttributedString(string: VpnManager.shared.sessionStatus.description)
+			statusText = NSMutableAttributedString(string: VpnManager.shared.status.description)
 
 			if VpnManager.shared.isConnected {
 				let space = NSAttributedString(string: " ")
@@ -162,29 +197,24 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 					statusText.append(NSAttributedString(string: progress))
 				}
 
-				statusText.append(NSAttributedString(string: "\n"))
-
-				let transport = Settings.transport
-
-				if transport == .none {
-					statusText.append(NSAttributedString(string: "Direct Connection to Tor",
-														 attributes: [.foregroundColor: Color.secondaryLabel]))
+				if VpnManager.shared.status == .evaluating {
+					statusSubtext = NSLocalizedString("Asking Tor Project what method to best use", comment: "")
+				}
+				else if transport == .none {
+					statusSubtext = NSLocalizedString("Direct Connection to Tor", comment: "")
 				}
 				else {
-					statusText.append(NSAttributedString(string: String(
-						format: NSLocalizedString("via %1$@", comment: ""), transport.description),
-														 attributes: [.foregroundColor: Color.secondaryLabel]))
+					statusSubtext = String(format: NSLocalizedString("via %1$@", comment: ""),
+										   transport.description)
 				}
 
 				if Settings.onionOnly {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Onion-only Mode", comment: "")))",
-														 attributes: [.foregroundColor : Color.systemRed]))
+					statusSubtext.append(space.string)
+					statusSubtext.append(NSLocalizedString("Onion-only Mode", comment: ""))
 				}
 				else if Settings.bypassPort != nil {
-					statusText.append(space)
-					statusText.append(NSAttributedString(string: "(\(NSLocalizedString("Bypass", comment: "")))",
-														 attributes: [.foregroundColor : Color.systemRed]))
+					statusSubtext.append(space.string)
+					statusSubtext.append(NSLocalizedString("Bypass", comment: ""))
 				}
 			}
 		}
@@ -193,7 +223,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			format: IPtProxyIsSnowflakeProxyRunning() ? L10n.snowflakeProxyStarted : L10n.snowflakeProxyStopped,
 			Formatters.format(Settings.snowflakesHelped))
 
-		return (statusIcon, buttonTitle, statusText, sfpText)
+		return (statusIcon, buttonTitle, statusText, statusSubtext, sfpText)
 	}
 
 	static func getCircuits(_ completed: @escaping (_ text: String) -> Void) {
@@ -284,4 +314,18 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 		}
 	}
 #endif
+
+
+	// MARK: Private Methods
+
+	private static func buttonTitleWithSubtitle(_ title: String, _ subtitle: String, subtitleSize: CGFloat) -> NSMutableAttributedString {
+		let label = NSMutableAttributedString(string: String(format: "%@\n", title),
+											  attributes: [.paragraphStyle: centered])
+
+		label.append(NSAttributedString(string: subtitle,
+										attributes: [.paragraphStyle: centered,
+													 .font: Font.systemFont(ofSize: subtitleSize)]))
+
+		return label
+	}
 }

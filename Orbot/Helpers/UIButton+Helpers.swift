@@ -17,4 +17,12 @@ extension UIButton {
 		setTitle(title, for: .focused)
 		setTitle(title, for: .selected)
 	}
+
+	func setAttributedTitle(_ title: NSAttributedString?) {
+		setAttributedTitle(title, for: .normal)
+		setAttributedTitle(title, for: .highlighted)
+		setAttributedTitle(title, for: .disabled)
+		setAttributedTitle(title, for: .focused)
+		setAttributedTitle(title, for: .selected)
+	}
 }

@@ -33,24 +33,32 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var shadowImg: UIImageView!
 	@IBOutlet weak var statusLb: UILabel!
+	@IBOutlet weak var statusSubLb: UILabel!
 
-	@IBOutlet weak var changeExitBt: UIButton! {
+	@IBOutlet weak var changeExitBt: UIButton? {
 		didSet {
-			changeExitBt.setTitle(NSLocalizedString("Limit Exit Countries", comment: ""))
+			changeExitBt?.setTitle(NSLocalizedString("Limit Exit Countries", comment: ""))
 		}
 	}
 
-	@IBOutlet weak var refreshBt: UIButton! {
+	@IBOutlet weak var refreshBt: UIButton? {
 		didSet {
-			refreshBt.setTitle(L10n.newCircuits)
+			refreshBt?.setTitle(L10n.newCircuits)
 		}
 	}
 
 	@IBOutlet weak var controlBt: UIButton!
 
+	@IBOutlet weak var control2Bt: UIButton! {
+		didSet {
+			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.titleLabel?.font.pointSize))
+		}
+	}
+	@IBOutlet weak var control2BtHeight: NSLayoutConstraint!
+
 	@IBOutlet weak var configureBt: UIButton! {
 		didSet {
-			configureBt.setTitle(NSLocalizedString("Configure", comment: ""))
+			configureBt.setTitle(NSLocalizedString("Choose How to Connect", comment: ""))
 		}
 	}
 
@@ -205,7 +213,11 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBAction func control() {
+	@IBAction func control(_ sender: UIButton? = nil) {
+		if sender == control2Bt {
+			Settings.smartConnect = true
+		}
+
 		SharedUtils.control(startOnly: false)
 	}
 
@@ -272,15 +284,17 @@ class MainViewController: UIViewController {
 
 	@objc func updateUi(_ notification: Notification? = nil) {
 
-		refreshBt?.isEnabled = VpnManager.shared.sessionStatus == .connected
+		refreshBt?.isEnabled = VpnManager.shared.status == .connected
 
-		let (statusIconName, buttonTitle, statusText, _) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(notification, buttonFontSize: controlBt.titleLabel?.font.pointSize)
 
 		animateOrbie = statusIconName == .imgOrbieStarting
 
 		statusIcon.image = UIImage(named: statusIconName)
-		controlBt.setTitle(buttonTitle)
+		controlBt.setAttributedTitle(buttonTitle)
+		control2BtHeight.constant = Settings.smartConnect || VpnManager.shared.status != .disconnected ? 0 : 64
 		statusLb.attributedText = statusText
+		statusSubLb.text = statusSubtext
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 	}

@@ -19,10 +19,28 @@ class TorManager {
 		case started = "started"
 	}
 
-	private enum Errors: Error {
+	enum Errors: Error, LocalizedError {
 		case cookieUnreadable
 		case noSocksAddr
 		case noDnsAddr
+		case smartConnectFailed
+
+		var errorDescription: String? {
+			switch self {
+
+			case .cookieUnreadable:
+				return NSLocalizedString("Tor cookie unreadable", comment: "")
+
+			case .noSocksAddr:
+				return NSLocalizedString("No SOCKS port", comment: "")
+
+			case .noDnsAddr:
+				return NSLocalizedString("No DNS port", comment: "")
+
+			case .smartConnectFailed:
+				return NSLocalizedString("Smart Connect failed", comment: "")
+			}
+		}
 	}
 
 	static let shared = TorManager()
@@ -47,6 +65,9 @@ class TorManager {
 
 	private var ipStatus = IpSupport.Status.unavailable
 
+	private var progressObs: Any?
+	private var establishedObs: Any?
+
 
 	private init() {
 		IpSupport.shared.start({ [weak self] status in
@@ -66,7 +87,7 @@ class TorManager {
 	}
 
 	func start(_ transport: Transport,
-			   _ progressCallback: @escaping (Int) -> Void,
+			   _ progressCallback: @escaping (_ progress: Int?) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
 		status = .starting
@@ -85,26 +106,7 @@ class TorManager {
 			torThread?.start()
 		}
 		else {
-			let group = DispatchGroup()
-
-			let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
-							 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
-
-			for key in resetKeys {
-				group.enter()
-
-				torController?.resetConf(forKey: key) { _, error in
-					if let error = error {
-						debugPrint(error)
-					}
-
-					group.leave()
-				}
-
-				group.wait()
-			}
-
-			torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
+			updateConfig(transport)
 		}
 
 		controllerQueue.asyncAfter(deadline: .now() + 0.65) {
@@ -142,18 +144,25 @@ class TorManager {
 					return completion(error, nil, nil)
 				}
 
-				var progressObs: Any?
-				progressObs = self.torController?.addObserver(forStatusEvents: {
-					(type, severity, action, arguments) -> Bool in
+				self.progressObs = self.torController?.addObserver(forStatusEvents: {
+					[weak self] (type, severity, action, arguments) -> Bool in
 
 					if type == "STATUS_CLIENT" && action == "BOOTSTRAP" {
-						let progress = Int(arguments!["PROGRESS"]!)!
-						self.log("#startTunnel progress=\(progress)")
+						let progress: Int?
+
+						if let p = arguments?["PROGRESS"] {
+							progress = Int(p)
+						}
+						else {
+							progress = nil
+						}
+
+						self?.log("#startTunnel progress=\(progress?.description ?? "(nil)")")
 
 						progressCallback(progress)
 
-						if progress >= 100 {
-							self.torController?.removeObserver(progressObs)
+						if progress ?? 0 >= 100 {
+							self?.torController?.removeObserver(self?.progressObs)
 						}
 
 						return true
@@ -162,28 +171,28 @@ class TorManager {
 					return false
 				})
 
-				var observer: Any?
-				observer = self.torController?.addObserver(forCircuitEstablished: { established in
+				self.establishedObs = self.torController?.addObserver(forCircuitEstablished: { [weak self] established in
 					guard established else {
 						return
 					}
 
-					self.torController?.removeObserver(observer)
+					self?.torController?.removeObserver(self?.establishedObs)
+					self?.torController?.removeObserver(self?.progressObs)
 
-					self.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
+					self?.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
 						guard let socksAddr = response.first, !socksAddr.isEmpty else {
-							self.status = .stopped
+							self?.status = .stopped
 
 							return completion(Errors.noSocksAddr, nil, nil)
 						}
 
 						guard let dnsAddr = response.last, !dnsAddr.isEmpty else {
-							self.status = .stopped
+							self?.status = .stopped
 
 							return completion(Errors.noDnsAddr, socksAddr, nil)
 						}
 
-						self.status = .started
+						self?.status = .started
 
 						completion(nil, socksAddr, dnsAddr)
 					}
@@ -192,8 +201,36 @@ class TorManager {
 		}
 	}
 
+	func updateConfig(_ transport: Transport) {
+		self.transport = transport
+
+		let group = DispatchGroup()
+
+		let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
+						 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
+
+		for key in resetKeys {
+			group.enter()
+
+			torController?.resetConf(forKey: key) { _, error in
+				if let error = error {
+					debugPrint(error)
+				}
+
+				group.leave()
+			}
+
+			group.wait()
+		}
+
+		torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
+	}
+
 	func stop() {
 		status = .stopped
+
+		torController?.removeObserver(self.establishedObs)
+		torController?.removeObserver(self.progressObs)
 
 		torController?.disconnect()
 		torController = nil

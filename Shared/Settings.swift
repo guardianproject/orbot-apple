@@ -172,6 +172,19 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "snowflakes_helped")
 		}
 	}
+
+	class var smartConnect: Bool {
+		get {
+			guard defaults?.object(forKey: "smart_connect") != nil else {
+				return true
+			}
+
+			return defaults?.bool(forKey: "smart_connect") ?? true
+		}
+		set {
+			defaults?.set(newValue, forKey: "smart_connect")
+		}
+	}
 }
 
 class ApiToken: NSObject, NSSecureCoding {
