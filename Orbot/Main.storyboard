@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
+                                <rect key="frame" x="123.5" y="52" width="128" height="121.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1N5-w4-uQk" secondAttribute="height" multiplier="264:251" id="Ax5-Yy-XVq"/>
+                                    <constraint firstAttribute="width" constant="128" id="Wnm-LL-BGe"/>
+                                </constraints>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="hc2-uq-S3p">
                                 <rect key="frame" x="123.5" y="181.5" width="128" height="18"/>
                                 <constraints>
@@ -137,13 +144,6 @@ Use Smart Connect</string>
                                     <constraint firstItem="wHn-pb-Y2g" firstAttribute="leading" secondItem="48u-FW-Qyr" secondAttribute="leading" constant="8" id="qms-R7-o1d"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
-                                <rect key="frame" x="123.5" y="52" width="128" height="121.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="1N5-w4-uQk" secondAttribute="height" multiplier="264:251" id="Ax5-Yy-XVq"/>
-                                    <constraint firstAttribute="width" constant="128" id="Wnm-LL-BGe"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Black1"/>
