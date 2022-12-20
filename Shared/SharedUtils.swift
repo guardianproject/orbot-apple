@@ -65,6 +65,8 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 	func save() {
 		VpnManager.shared.configChanged()
+
+		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
 	}
 
 
