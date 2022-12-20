@@ -41,12 +41,6 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var statusLb: UILabel!
 	@IBOutlet weak var statusSubLb: UILabel!
 
-	@IBOutlet weak var changeExitBt: UIButton? {
-		didSet {
-			changeExitBt?.setTitle(NSLocalizedString("Limit Exit Countries", comment: ""))
-		}
-	}
-
 	@IBOutlet weak var controlBt: UIButton!
 
 	@IBOutlet weak var control2Bt: UIButton! {
@@ -173,8 +167,8 @@ class MainViewController: UIViewController {
 		return vc
 	}
 
-	@IBAction func changeExit(_ sender: UIButton? = nil) {
-		present(inNav: ChangeExitViewController(), view: sender ?? changeExitBt)
+	@IBAction func changeExit(_ sender: UIBarButtonItem? = nil) {
+		present(inNav: ChangeExitViewController(), button: sender ?? settingsBt)
 	}
 
 	@IBAction func refresh(_ sender: UIButton? = nil) {
@@ -305,13 +299,13 @@ class MainViewController: UIViewController {
 	func updateMenu() {
 		var elements = [UIMenuElement]()
 
-		elements.append(UIAction(
-			title: NSLocalizedString("Kindness Mode", comment: ""),
-			image: UIImage(systemName: "heart.fill"),
-			handler: { _ in
-				// TODO
-			}))
-		elements.last?.accessibilityIdentifier = "kindness_mode"
+//		elements.append(UIAction(
+//			title: NSLocalizedString("Kindness Mode", comment: ""),
+//			image: UIImage(systemName: "heart.fill"),
+//			handler: { _ in
+//				// TODO
+//			}))
+//		elements.last?.accessibilityIdentifier = "kindness_mode"
 
 		elements.append(UIAction(
 			title: L10n.authCookies,
@@ -340,6 +334,14 @@ class MainViewController: UIViewController {
 		elements.last?.accessibilityIdentifier = "content_blocker"
 
 		elements.append(UIAction(
+			title: NSLocalizedString("Limit Exit Countries", comment: ""),
+			image: UIImage(systemName: "globe.europe.africa"),
+			handler: { [weak self] _ in
+				self?.changeExit()
+			}))
+
+
+		elements.append(UIAction(
 			title: L10n.settings,
 			image: UIImage(systemName: "gearshape"),
 			handler: { [weak self] _ in
@@ -347,13 +349,13 @@ class MainViewController: UIViewController {
 			}))
 		elements.last?.accessibilityIdentifier = "settings"
 
-		elements.append(UIAction(
-			title: NSLocalizedString("About", comment: ""),
-			image: nil,
-			handler: { _ in
-				// TODO
-			}))
-		elements.last?.accessibilityIdentifier = "about"
+//		elements.append(UIAction(
+//			title: NSLocalizedString("About", comment: ""),
+//			image: nil,
+//			handler: { _ in
+//				// TODO
+//			}))
+//		elements.last?.accessibilityIdentifier = "about"
 
 		settingsBt?.menu = nil
 
