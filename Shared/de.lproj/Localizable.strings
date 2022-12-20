@@ -20,7 +20,7 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Manche Optionen könnten von %2$@ überschrieben werden.";
 
 /* No comment provided by engineer. */
-"%1$@ via %2$@" = "%1$@ über %2$@";
+"%1$@ These settings will only take effect after restart." = "%1$@ Diese Einstellungen werden erst nach einem Neustart wirksam.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Argumente einer Option müssen in einer neue Zeile stehen.";
@@ -101,6 +101,9 @@
 "API Access Token" = "API-Zugriffstoken";
 
 /* No comment provided by engineer. */
+"Asking Tor Project's Circumvention Service" = "Umgehungs-Service von Tor Project fragen";
+
+/* No comment provided by engineer. */
 "ATTENTION: This may harm your anonymity and security!" = "ACHTUNG: Dies könnte Deiner Anonymität und Sicherheit schaden!";
 
 /* No comment provided by engineer. */
@@ -146,6 +149,9 @@
 "Capitalize" = "Großschreiben";
 
 /* No comment provided by engineer. */
+"Choose How to Connect" = "Verbindung auswählen";
+
+/* No comment provided by engineer. */
 "Circuits" = "Kanäle";
 
 /* No comment provided by engineer. */
@@ -161,10 +167,10 @@
 "Comma-separated lists of:" = "Komma-getrennte Listen mit:";
 
 /* No comment provided by engineer. */
-"connected" = "verbunden";
+"Connected" = "Verbunden";
 
 /* No comment provided by engineer. */
-"connecting" = "verbinden";
+"Connecting" = "Verbinden";
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Inhaltsblocker";
@@ -200,10 +206,10 @@
 "disabled" = "deaktiviert";
 
 /* No comment provided by engineer. */
-"disconnected" = "getrennt";
+"Disabled" = "Deaktiviert";
 
 /* No comment provided by engineer. */
-"disconnecting" = "trennen";
+"Disconnecting" = "Trennen";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Diese Netzknoten nicht verwenden. Überschreibt Eingangs- und Ausgangs-Netzknotenliste. Diese Netzknoten können immer noch für Netzmanagementaufgaben verwendet werden.";
@@ -227,7 +233,13 @@
 "Entry Nodes" = "Eingangs-Netzknoten";
 
 /* No comment provided by engineer. */
+"Evaluating" = "Evaluieren";
+
+/* No comment provided by engineer. */
 "Exclude Nodes" = "Netzknoten ausschließen";
+
+/* No comment provided by engineer. */
+"Exit Node Countries" = "Exit-Knoten-Länder";
 
 /* No comment provided by engineer. */
 "Exit Nodes" = "Ausgangs-Netzknoten";
@@ -271,6 +283,9 @@
 /* macOS menu item */
 "Hide %@" = "%@ ausblenden";
 
+/* No comment provided by engineer. */
+"Hide apps from network monitoring and get access when they are blocked." = "Verstecke Apps vor Netzwerküberwachung oder bekomme Zugriff, falls sie blockiert werden.";
+
 /* macOS menu item */
 "Hide Others" = "Andere ausblenden";
 
@@ -284,7 +299,7 @@
 "Install" = "Installieren";
 
 /* No comment provided by engineer. */
-"invalid" = "ungültig";
+"Invalid" = "Ungültig";
 
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Sie hat keine gültige App-ID angegeben.";
@@ -294,6 +309,9 @@
 
 /* No comment provided by engineer. */
 "Key" = "Schlüssel";
+
+/* No comment provided by engineer. */
+"Limit Exit Countries" = "Begrenze Exit-Länder";
 
 /* No comment provided by engineer. */
 "Log" = "Log";
@@ -320,7 +338,7 @@
 "Node Configuration" = "Netzknoten-Konfiguration";
 
 /* No comment provided by engineer. */
-"not installed" = "nicht installiert";
+"Not Installed" = "Nicht installiert";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Nur-Onion-Modus";
@@ -371,7 +389,10 @@
 "raw data" = "Rohdaten";
 
 /* No comment provided by engineer. */
-"reasserting" = "wiederherstellen";
+"Ready to Connect" = "Fertig zum Verbinden";
+
+/* No comment provided by engineer. */
+"Reasserting" = "Wiederherstellen";
 
 /* macOS menu item */
 "Redo" = "Wiederholen";
@@ -452,10 +473,19 @@
 "Undo" = "Eingeben widerrufen";
 
 /* No comment provided by engineer. */
-"unknown" = "unbekannt";
+"Unknown" = "Unbekannt";
+
+/* No comment provided by engineer. */
+"Use %1$@" = "Benutze %1$@";
+
+/* No comment provided by engineer. */
+"Use Direct Connection" = "Benutze direkte Verbindung";
 
 /* macOS menu item */
 "Use Selection for Find" = "Auswahl für Suche übernehmen";
+
+/* No comment provided by engineer. */
+"Use Smart Connect" = "Benutze Smart Connect";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";

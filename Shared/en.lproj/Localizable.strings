@@ -20,7 +20,7 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
 
 /* No comment provided by engineer. */
-"%1$@ via %2$@" = "%1$@ via %2$@";
+"%1$@ These settings will only take effect after restart." = "%1$@ These settings will only take effect after restart.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
@@ -101,6 +101,9 @@
 "API Access Token" = "API Access Token";
 
 /* No comment provided by engineer. */
+"Asking Tor Project's Circumvention Service" = "Asking Tor Project's Circumvention Service";
+
+/* No comment provided by engineer. */
 "ATTENTION: This may harm your anonymity and security!" = "ATTENTION: This may harm your anonymity and security!";
 
 /* No comment provided by engineer. */
@@ -146,6 +149,9 @@
 "Capitalize" = "Capitalize";
 
 /* No comment provided by engineer. */
+"Choose How to Connect" = "Choose How to Connect";
+
+/* No comment provided by engineer. */
 "Circuits" = "Circuits";
 
 /* No comment provided by engineer. */
@@ -161,10 +167,10 @@
 "Comma-separated lists of:" = "Comma-separated lists of:";
 
 /* No comment provided by engineer. */
-"connected" = "connected";
+"Connected" = "Connected";
 
 /* No comment provided by engineer. */
-"connecting" = "connecting";
+"Connecting" = "Connecting";
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Content Blocker";
@@ -200,10 +206,10 @@
 "disabled" = "disabled";
 
 /* No comment provided by engineer. */
-"disconnected" = "disconnected";
+"Disabled" = "Disabled";
 
 /* No comment provided by engineer. */
-"disconnecting" = "disconnecting";
+"Disconnecting" = "Disconnecting";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
@@ -227,7 +233,13 @@
 "Entry Nodes" = "Entry Nodes";
 
 /* No comment provided by engineer. */
+"Evaluating" = "Evaluating";
+
+/* No comment provided by engineer. */
 "Exclude Nodes" = "Exclude Nodes";
+
+/* No comment provided by engineer. */
+"Exit Node Countries" = "Exit Node Countries";
 
 /* No comment provided by engineer. */
 "Exit Nodes" = "Exit Nodes";
@@ -271,6 +283,9 @@
 /* macOS menu item */
 "Hide %@" = "Hide %@";
 
+/* No comment provided by engineer. */
+"Hide apps from network monitoring and get access when they are blocked." = "Hide apps from network monitoring and get access when they are blocked.";
+
 /* macOS menu item */
 "Hide Others" = "Hide Others";
 
@@ -284,7 +299,7 @@
 "Install" = "Install";
 
 /* No comment provided by engineer. */
-"invalid" = "invalid";
+"Invalid" = "Invalid";
 
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "It didn't provide a valid app identifier.";
@@ -294,6 +309,9 @@
 
 /* No comment provided by engineer. */
 "Key" = "Key";
+
+/* No comment provided by engineer. */
+"Limit Exit Countries" = "Limit Exit Countries";
 
 /* No comment provided by engineer. */
 "Log" = "Log";
@@ -320,7 +338,7 @@
 "Node Configuration" = "Node Configuration";
 
 /* No comment provided by engineer. */
-"not installed" = "not installed";
+"Not Installed" = "Not Installed";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Onion-only Mode";
@@ -371,7 +389,10 @@
 "raw data" = "raw data";
 
 /* No comment provided by engineer. */
-"reasserting" = "reasserting";
+"Ready to Connect" = "Ready to Connect";
+
+/* No comment provided by engineer. */
+"Reasserting" = "Reasserting";
 
 /* macOS menu item */
 "Redo" = "Redo";
@@ -452,10 +473,19 @@
 "Undo" = "Undo";
 
 /* No comment provided by engineer. */
-"unknown" = "unknown";
+"Unknown" = "Unknown";
+
+/* No comment provided by engineer. */
+"Use %1$@" = "Use %1$@";
+
+/* No comment provided by engineer. */
+"Use Direct Connection" = "Use Direct Connection";
 
 /* macOS menu item */
 "Use Selection for Find" = "Use Selection for Find";
+
+/* No comment provided by engineer. */
+"Use Smart Connect" = "Use Smart Connect";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
