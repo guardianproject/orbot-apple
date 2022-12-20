@@ -181,7 +181,14 @@ Use Smart Connect</string>
                                 <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ellipsis" catalog="system" id="ni1-t3-I0T"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ellipsis" catalog="system" id="ni1-t3-I0T"/>
+                            <barButtonItem systemItem="refresh" id="IAe-hm-hL7">
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" id="hfN-Sa-L70"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="configureBt" destination="4D2-gT-gQC" id="BzC-HQ-bEE"/>
@@ -192,6 +199,7 @@ Use Smart Connect</string>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
                         <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>
                         <outlet property="logTv" destination="8i5-ZV-uUu" id="qh4-Jt-saG"/>
+                        <outlet property="refreshBt" destination="IAe-hm-hL7" id="MII-sD-D9U"/>
                         <outlet property="settingsBt" destination="ni1-t3-I0T" id="9Fk-Cd-K9y"/>
                         <outlet property="shadowImg" destination="hc2-uq-S3p" id="Us5-Lf-lzv"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>

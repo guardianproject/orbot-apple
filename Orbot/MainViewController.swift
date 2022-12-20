@@ -30,6 +30,12 @@ class MainViewController: UIViewController {
 		}
 	}
 
+	@IBOutlet weak var refreshBt: UIBarButtonItem? {
+		didSet {
+			refreshBt?.accessibilityLabel = L10n.newCircuits
+		}
+	}
+
 	@IBOutlet weak var statusIcon: UIImageView!
 	@IBOutlet weak var shadowImg: UIImageView!
 	@IBOutlet weak var statusLb: UILabel!
@@ -38,12 +44,6 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var changeExitBt: UIButton? {
 		didSet {
 			changeExitBt?.setTitle(NSLocalizedString("Limit Exit Countries", comment: ""))
-		}
-	}
-
-	@IBOutlet weak var refreshBt: UIButton? {
-		didSet {
-			refreshBt?.setTitle(L10n.newCircuits)
 		}
 	}
 
