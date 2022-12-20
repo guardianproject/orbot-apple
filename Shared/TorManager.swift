@@ -331,7 +331,8 @@ class TorManager {
 		var conf = [T]()
 
 		// Node in-/exclusions
-		if let entryNodes = Settings.entryNodes {
+		// BUGFIX: Tor doesn't allow EntryNodes and UseBridges at once!
+		if transport == .none, let entryNodes = Settings.entryNodes {
 			conf.append(cv("EntryNodes", entryNodes))
 		}
 
