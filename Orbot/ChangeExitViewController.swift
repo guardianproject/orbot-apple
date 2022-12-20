@@ -18,7 +18,7 @@ class ChangeExitViewController: BaseFormViewController, UISearchResultsUpdating 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Available Exit Nodes", comment: "")
+		navigationItem.title = NSLocalizedString("Exit Node Countries", comment: "")
 
 		navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeAll))
 

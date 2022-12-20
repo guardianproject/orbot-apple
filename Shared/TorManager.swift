@@ -29,16 +29,16 @@ class TorManager {
 			switch self {
 
 			case .cookieUnreadable:
-				return NSLocalizedString("Tor cookie unreadable", comment: "")
+				return "Tor cookie unreadable"
 
 			case .noSocksAddr:
-				return NSLocalizedString("No SOCKS port", comment: "")
+				return "No SOCKS port"
 
 			case .noDnsAddr:
-				return NSLocalizedString("No DNS port", comment: "")
+				return "No DNS port"
 
 			case .smartConnectFailed:
-				return NSLocalizedString("Smart Connect failed", comment: "")
+				return "Smart Connect failed"
 			}
 		}
 	}

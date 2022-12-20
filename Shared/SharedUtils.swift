@@ -173,7 +173,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 				subtitle = NSLocalizedString("Use Smart Connect", comment: "")
 			}
 			else if transport == .none {
-				subtitle = NSLocalizedString("Use Direct Connection to Tor", comment: "")
+				subtitle = NSLocalizedString("Use Direct Connection", comment: "")
 			}
 			else {
 				subtitle = String(format: NSLocalizedString("Use %1$@", comment: ""), transport.description)
@@ -192,33 +192,31 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			statusText = NSMutableAttributedString(string: VpnManager.shared.status.description)
 
 			if VpnManager.shared.isConnected {
-				let space = NSAttributedString(string: " ")
-
 				if notification?.name == .vpnProgress,
 				   let raw = notification?.object as? Float,
 				   let progress = Formatters.formatPercent(raw)
 				{
-					statusText.append(space)
+					statusText.append(NSAttributedString(string: " "))
 					statusText.append(NSAttributedString(string: progress))
 				}
 
 				if VpnManager.shared.status == .evaluating {
-					statusSubtext = NSLocalizedString("Asking Tor Project what method to best use", comment: "")
+					statusSubtext = NSLocalizedString("Asking Tor Project's Circumvention Service", comment: "")
 				}
 				else if transport == .none {
-					statusSubtext = NSLocalizedString("Direct Connection to Tor", comment: "")
+					statusSubtext = NSLocalizedString("Use Direct Connection", comment: "")
 				}
 				else {
-					statusSubtext = String(format: NSLocalizedString("via %1$@", comment: ""),
+					statusSubtext = String(format: NSLocalizedString("Use %1$@", comment: ""),
 										   transport.description)
 				}
 
 				if Settings.onionOnly {
-					statusSubtext.append(space.string)
+					statusSubtext.append("\n")
 					statusSubtext.append(NSLocalizedString("Onion-only Mode", comment: ""))
 				}
 				else if Settings.bypassPort != nil {
-					statusSubtext.append(space.string)
+					statusSubtext.append("\n")
 					statusSubtext.append(NSLocalizedString("Bypass", comment: ""))
 				}
 			}

@@ -300,7 +300,7 @@ class MainViewController: UIViewController {
 		var elements = [UIMenuElement]()
 
 //		elements.append(UIAction(
-//			title: NSLocalizedString("Kindness Mode", comment: ""),
+//			title: LocalizedString("Kindness Mode", comment: ""),
 //			image: UIImage(systemName: "heart.fill"),
 //			handler: { _ in
 //				// TODO
@@ -350,7 +350,7 @@ class MainViewController: UIViewController {
 		elements.last?.accessibilityIdentifier = "settings"
 
 //		elements.append(UIAction(
-//			title: NSLocalizedString("About", comment: ""),
+//			title: LocalizedString("About", comment: ""),
 //			image: nil,
 //			handler: { _ in
 //				// TODO
