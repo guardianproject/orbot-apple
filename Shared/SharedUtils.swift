@@ -50,7 +50,10 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			Settings.transport
 		}
 		set {
-			Settings.transport = newValue
+			if Settings.transport != newValue {
+				Settings.transport = newValue
+				Settings.smartConnect = false
+			}
 		}
 	}
 
