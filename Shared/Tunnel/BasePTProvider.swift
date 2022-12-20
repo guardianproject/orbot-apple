@@ -210,12 +210,19 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 		transport.start(log: Logger.ENABLE_LOGGING)
 
-		TorManager.shared.start(transport, { [weak self] progress in
-			self?.connectionAlive()
+		var oldProgress = -1
 
-			if let progress = progress {
-				Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
+		TorManager.shared.start(transport, { [weak self] progress in
+			guard let progress = progress else {
+				return
 			}
+
+			if progress > oldProgress {
+				self?.connectionAlive()
+				oldProgress = progress
+			}
+
+			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
 
 			self?.sendMessages()
 		}, { [weak self] error, socksAddr, dnsAddr in
