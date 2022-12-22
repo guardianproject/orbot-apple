@@ -1,1 +1,4 @@
-- Nur-Onion-Modus weiter korrigiert.
+- Einführung eines neuen Designs mit unserem neuen Maskottchen "Orbie"!
+- Funktion "Smart Connect" hinzugefügt, um das Finden einer funktionierenden Verbindung zu erleichtern.
+- Exit-Node Länderauswahl hinzugefügt.
+- Tor auf Version 0.4.7.12 aktualisiert.

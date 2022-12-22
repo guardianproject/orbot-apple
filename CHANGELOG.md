@@ -1,5 +1,11 @@
 #  Orbot iOS Changelog
 
+## 1.5.0
+- Introduced new design including our new maskot "Orbie"!
+- Added "Smart Connect" feature to aid in finding a working connection.
+- Added exit-node country selector.
+- Updated Tor to 0.4.7.12.
+
 ## 1.4.2
 - Applied yet another fix for onion-only mode.
 
