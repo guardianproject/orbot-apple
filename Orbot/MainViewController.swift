@@ -53,6 +53,7 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var configureBt: UIButton! {
 		didSet {
 			configureBt.setTitle(NSLocalizedString("Choose How to Connect", comment: ""))
+			configureBt.accessibilityIdentifier = "bridge_configuration"
 		}
 	}
 
