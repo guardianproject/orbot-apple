@@ -22,7 +22,7 @@ DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
   - IPtProxyUI (~> 1.10.3)
-  - Tor/GeoIP (~> 407.11)
+  - Tor/GeoIP (~> 407.12)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -53,6 +53,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 319ca0f3bc42c387736a2d6dc56de75ed0a30eaf
 
-PODFILE CHECKSUM: cbfc1adebe63b919c38364ac6614402fa814c776
+PODFILE CHECKSUM: f8b118e2ed2dff63d26492e1dc10965e23c752b5
 
 COCOAPODS: 1.11.3
