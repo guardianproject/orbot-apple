@@ -1,1 +1,4 @@
-- Aplicada otra corrección para el modo sólo-cebolla.
+- Nuevo diseño que incluye nuestro nuevo maskot "Orbie".
+- Añadida la función "Smart Connect" para ayudar a encontrar una conexión que funcione.
+- Añadido selector de país del nodo de salida.
+- Actualizado Tor a la versión 0.4.7.12.

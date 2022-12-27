@@ -1,1 +1,4 @@
-- J'ai appliqué un autre correctif pour le mode "oignon seulement".
+- Introduction d'un nouveau design incluant notre nouveau masque "Orbie" !
+- Ajout de la fonction "Smart Connect" pour aider à trouver une connexion qui fonctionne.
+- Ajout d'un sélecteur de pays pour les noeuds de sortie.
+- Mise à jour de Tor à la version 0.4.7.12.
