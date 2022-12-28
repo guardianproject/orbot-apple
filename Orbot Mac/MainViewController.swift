@@ -12,23 +12,23 @@ import NetworkExtension
 
 class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation {
 
-	@IBOutlet weak var statusIcon: NSButton!
-	@IBOutlet weak var controlBt: NSButton!
+	@IBOutlet weak var statusIcon: NSImageView!
+	@IBOutlet weak var shadowImg: NSImageView!
 	@IBOutlet weak var statusLb: NSTextField!
+	@IBOutlet weak var statusSubLb: NSTextField!
+	@IBOutlet weak var controlBt: NSButton!
 
-	@IBOutlet weak var snowflakeProxyBt: NSButton! {
+	@IBOutlet weak var control2Bt: NSButton! {
 		didSet {
-#if DEBUG
-			snowflakeProxyBt.isHidden = !Config.snowflakeProxyExperiment
-#else
-			snowflakeProxyBt.isHidden = true
-#endif
+			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.font?.pointSize))
 		}
 	}
+	@IBOutlet weak var control2BtHeight: NSLayoutConstraint!
 
-	@IBOutlet weak var versionLb: NSTextField! {
+	@IBOutlet weak var configureBt: NSButton! {
 		didSet {
-			versionLb.stringValue = L10n.version
+			configureBt.setTitle(NSLocalizedString("Choose How to Connect", comment: ""))
+			configureBt.setAccessibilityIdentifier("bridge_configuration")
 		}
 	}
 
@@ -92,7 +92,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 	func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
 		if item.itemIdentifier.rawValue == "refresh" {
-			return VpnManager.shared.sessionStatus == .connected
+			return VpnManager.shared.status == .connected
 		}
 
 		return true
@@ -163,7 +163,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIconName, buttonTitle, statusText, sfpText) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(notification)
 
 #if DEBUG
 		animateOrbie = statusIconName == .imgOrbieStarting
@@ -172,10 +172,14 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 
 		statusIcon.image = NSImage(named: statusIconName)
-		controlBt.setTitle(buttonTitle)
 		statusLb.attributedStringValue = statusText
+		statusSubLb.stringValue = statusSubtext
+		controlBt.setAttributedTitle(buttonTitle)
 
-		snowflakeProxyBt.title = sfpText
+		let hide = Settings.smartConnect || VpnManager.shared.status != .disconnected
+
+		control2BtHeight.constant = hide ? 0 : 64
+		control2Bt.isHidden = hide
 	}
 
 
@@ -196,17 +200,17 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	private func animateOrbie(up: Bool = true) {
 		guard animateOrbie || !up else {
 			statusIcon.needsLayout = true
-			controlBt.needsLayout = true
+			shadowImg.needsLayout = true
 
 			return
 		}
 
 		// Make Orbie jump.
 		let b1o = statusIcon.bounds
-		let b1t = NSMakeRect(0, up ? 32 : 0, b1o.width, b1o.height)
+		let b1t = NSMakeRect(0, up ? -32 : 0, b1o.width, b1o.height)
 
 		// Let the shadow follow along.
-		let f2o = self.controlBt.frame
+		let f2o = self.shadowImg.frame
 		let r = up ? 0.75 : 1
 		let w = f2o.width / r
 		let h = f2o.height / r
@@ -223,7 +227,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 			context.timingFunction = up ? .init(name: .easeOut) : .init(name: .easeIn)
 
 			self.statusIcon.animator().bounds = b1t
-			self.controlBt.animator().bounds = b2t
+			self.shadowImg.animator().bounds = b2t
 		})
 		{ [weak self] in
 			self?.animateOrbie(up: !up)

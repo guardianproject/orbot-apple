@@ -463,7 +463,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-K1-QGp">
-                                <rect key="frame" x="377" y="13" width="60" height="32"/>
+                                <rect key="frame" x="378" y="13" width="59" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tGJ-pH-erF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -473,7 +473,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9zr-ao-UgK">
-                                <rect key="frame" x="305" y="13" width="74" height="32"/>
+                                <rect key="frame" x="306" y="13" width="74" height="32"/>
                                 <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CZQ-oA-noG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -483,7 +483,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-w1-qcJ">
-                                <rect key="frame" x="231" y="13" width="76" height="32"/>
+                                <rect key="frame" x="232" y="13" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="38w-Ae-iOB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -994,93 +994,125 @@ Gw
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <box key="view" boxType="custom" borderType="none" titlePosition="noTitle" id="Opr-dN-5QT">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="572"/>
+                        <rect key="frame" x="0.0" y="0.0" width="497" height="572"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <view key="contentView" id="4hT-SH-e7t">
-                            <rect key="frame" x="0.0" y="0.0" width="450" height="572"/>
+                            <rect key="frame" x="0.0" y="0.0" width="497" height="572"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-A8-xeA">
-                                    <rect key="frame" x="18" y="20" width="414" height="14"/>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version %@, Build %@" id="cjf-HS-ELa">
-                                        <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                </textField>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="V3q-MA-VbV">
-                                    <rect key="frame" x="93" y="301" width="264" height="251"/>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-b1-4cC">
+                                    <rect key="frame" x="185" y="401" width="128" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="V3q-MA-VbV" secondAttribute="height" multiplier="264:251" id="UBH-7Y-qkO"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="z6t-pX-GBU"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="6xE-fc-bIs"/>
+                                        <constraint firstAttribute="width" secondItem="vfY-b1-4cC" secondAttribute="height" multiplier="65:9" id="tMX-mb-WcI"/>
                                     </constraints>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="orbie.off" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="57r-LV-zJb">
-                                        <behavior key="behavior" lightByContents="YES"/>
-                                        <font key="font" metaFont="systemBold" size="25"/>
-                                    </buttonCell>
-                                    <color key="contentTintColor" name="DarkGreen"/>
-                                    <connections>
-                                        <action selector="control:" target="XfG-lQ-9wD" id="9c6-lF-Ca7"/>
-                                    </connections>
-                                </button>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="Mlp-Wg-mSp">
-                                    <rect key="frame" x="97" y="256" width="256" height="35"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="5pH-95-JiU"/>
-                                        <constraint firstAttribute="width" secondItem="Mlp-Wg-mSp" secondAttribute="height" multiplier="65:9" id="rVl-LZ-D9U"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="square" title="Install" bezelStyle="shadowlessSquare" image="orbie.shadow" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="k3Q-Td-fSf">
-                                        <behavior key="behavior" lightByContents="YES"/>
-                                        <font key="font" metaFont="systemBold" size="25"/>
-                                    </buttonCell>
-                                    <color key="contentTintColor" name="DarkGreen"/>
-                                    <connections>
-                                        <action selector="control:" target="XfG-lQ-9wD" id="ebE-ua-sJf"/>
-                                    </connections>
-                                </button>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="orbie.shadow" id="C9v-er-g7m"/>
+                                </imageView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-pW-43f">
-                                    <rect key="frame" x="18" y="232" width="414" height="16"/>
+                                    <rect key="frame" x="18" y="362" width="461" height="31"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Status" usesSingleLineMode="YES" id="ZVW-FL-Qxq">
-                                        <font key="font" metaFont="system"/>
+                                        <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nG2-J9-nTJ">
-                                    <rect key="frame" x="158" y="165" width="134" height="32"/>
-                                    <buttonCell key="cell" type="push" title="Snowflake Proxy" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eZf-tR-MZD">
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-zr-4vf">
+                                    <rect key="frame" x="18" y="338" width="461" height="16"/>
+                                    <textFieldCell key="cell" alignment="center" title="Hide apps from network monitoring and get access when they are blocked." id="IED-sZ-Fbn">
+                                        <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="qtn-Z1-mXi">
+                                    <rect key="frame" x="118" y="190" width="262" height="71"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="64" id="Nzv-d5-LF0"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="lKw-rM-Zml"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="1si-ZV-r6Y">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
+                                        <string key="title">Start
+Use Smart Connect</string>
+                                        <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     </buttonCell>
+                                    <color key="bezelColor" name="Black3"/>
+                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
-                                        <action selector="controlSnowflakeProxy:" target="XfG-lQ-9wD" id="dC2-1g-hyt"/>
+                                        <action selector="control:" target="XfG-lQ-9wD" id="mDW-1q-uES"/>
+                                    </connections>
+                                </button>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="SCW-6H-lfh" userLabel="Start Use Smart Connect">
+                                    <rect key="frame" x="121" y="122" width="256" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="Bcl-1U-M7C"/>
+                                        <constraint firstAttribute="height" constant="64" id="Yu2-NJ-kga"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" title="Choose How to Connect" bezelStyle="shadowlessSquare" alignment="center" inset="2" id="dAQ-Oh-D8C">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" textStyle="title3" name=".SFNS-Regular"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="0.84716473509933776" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="bridgeConfiguration:" target="XfG-lQ-9wD" id="eiT-gG-VJy"/>
+                                    </connections>
+                                </button>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yK9-o5-mYS">
+                                    <rect key="frame" x="183" y="427" width="132" height="125"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="yK9-o5-mYS" secondAttribute="height" multiplier="264:251" id="pF5-d7-Egm"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="tgt-oQ-tb5"/>
+                                    </constraints>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="orbie.off" id="WTu-r9-Rsh"/>
+                                </imageView>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="zgK-dt-bdd">
+                                    <rect key="frame" x="118" y="262" width="262" height="71"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="W4z-1U-dAk"/>
+                                        <constraint firstAttribute="height" constant="64" id="skF-bS-0yq"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" title="Install" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="aNJ-Pk-Jc3">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" textStyle="title1" name=".SFNS-Regular"/>
+                                    </buttonCell>
+                                    <color key="bezelColor" name="Accent1"/>
+                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="control:" target="XfG-lQ-9wD" id="wOO-iU-aca"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="jDk-A8-xeA" secondAttribute="trailing" constant="20" symbolic="YES" id="6EH-Ey-YDL"/>
-                                <constraint firstAttribute="bottom" secondItem="jDk-A8-xeA" secondAttribute="bottom" constant="20" symbolic="YES" id="7Ph-lM-Jdf"/>
+                                <constraint firstItem="Jbv-zr-4vf" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="00u-xz-gH2"/>
+                                <constraint firstItem="qtn-Z1-mXi" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="92g-Zb-D5B"/>
                                 <constraint firstItem="8Pz-pW-43f" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="9WD-gk-GxU"/>
-                                <constraint firstItem="nG2-J9-nTJ" firstAttribute="top" secondItem="8Pz-pW-43f" secondAttribute="bottom" constant="40" id="Fer-BC-eMu"/>
+                                <constraint firstItem="zgK-dt-bdd" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="BuJ-kV-skR"/>
+                                <constraint firstItem="zgK-dt-bdd" firstAttribute="top" secondItem="Jbv-zr-4vf" secondAttribute="bottom" constant="8" symbolic="YES" id="Ebu-UJ-MaF"/>
+                                <constraint firstItem="vfY-b1-4cC" firstAttribute="top" secondItem="yK9-o5-mYS" secondAttribute="bottom" constant="8" symbolic="YES" id="Gsi-Fi-Ib1"/>
                                 <constraint firstAttribute="trailing" secondItem="8Pz-pW-43f" secondAttribute="trailing" constant="20" symbolic="YES" id="HYj-1j-BrC"/>
-                                <constraint firstItem="V3q-MA-VbV" firstAttribute="top" secondItem="4hT-SH-e7t" secondAttribute="top" constant="20" symbolic="YES" id="UVh-rj-9X5"/>
-                                <constraint firstItem="Mlp-Wg-mSp" firstAttribute="top" secondItem="V3q-MA-VbV" secondAttribute="bottom" constant="10" symbolic="YES" id="UvH-7c-lrO"/>
-                                <constraint firstItem="8Pz-pW-43f" firstAttribute="top" secondItem="Mlp-Wg-mSp" secondAttribute="bottom" constant="8" symbolic="YES" id="VRw-aX-ZXP"/>
-                                <constraint firstItem="Mlp-Wg-mSp" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="YEh-5W-48k"/>
-                                <constraint firstItem="nG2-J9-nTJ" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="l4A-xy-Vqa"/>
-                                <constraint firstItem="jDk-A8-xeA" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="t38-jh-q41"/>
-                                <constraint firstItem="V3q-MA-VbV" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="vds-Gr-yxv"/>
+                                <constraint firstItem="qtn-Z1-mXi" firstAttribute="top" secondItem="zgK-dt-bdd" secondAttribute="bottom" constant="8" symbolic="YES" id="Kh6-HQ-JBF"/>
+                                <constraint firstAttribute="trailing" secondItem="Jbv-zr-4vf" secondAttribute="trailing" constant="20" symbolic="YES" id="Q7S-nq-DEM"/>
+                                <constraint firstItem="SCW-6H-lfh" firstAttribute="top" secondItem="qtn-Z1-mXi" secondAttribute="bottom" constant="8" symbolic="YES" id="T9Z-Jz-f6Q"/>
+                                <constraint firstItem="8Pz-pW-43f" firstAttribute="top" secondItem="vfY-b1-4cC" secondAttribute="bottom" constant="8" symbolic="YES" id="Xvg-v6-y5i"/>
+                                <constraint firstItem="Jbv-zr-4vf" firstAttribute="top" secondItem="8Pz-pW-43f" secondAttribute="bottom" constant="8" symbolic="YES" id="aBh-f5-mri"/>
+                                <constraint firstItem="yK9-o5-mYS" firstAttribute="top" secondItem="4hT-SH-e7t" secondAttribute="top" constant="20" symbolic="YES" id="bgd-yz-MgP"/>
+                                <constraint firstItem="yK9-o5-mYS" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="kJ1-3X-Ion"/>
+                                <constraint firstItem="vfY-b1-4cC" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="mdt-T0-Cla"/>
+                                <constraint firstItem="SCW-6H-lfh" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="seg-oq-Fre"/>
                             </constraints>
                         </view>
-                        <color key="borderColor" name="BackgroundColor"/>
-                        <color key="fillColor" name="BackgroundColor"/>
+                        <color key="borderColor" name="Black1"/>
+                        <color key="fillColor" name="Black1"/>
                     </box>
                     <connections>
-                        <outlet property="controlBt" destination="Mlp-Wg-mSp" id="fbc-8I-yMS"/>
-                        <outlet property="snowflakeProxyBt" destination="nG2-J9-nTJ" id="gzs-ze-vyl"/>
-                        <outlet property="statusIcon" destination="V3q-MA-VbV" id="TCU-qG-DcX"/>
+                        <outlet property="configureBt" destination="SCW-6H-lfh" id="6mk-I3-4WQ"/>
+                        <outlet property="control2Bt" destination="qtn-Z1-mXi" id="1gV-fg-Ex1"/>
+                        <outlet property="control2BtHeight" destination="Nzv-d5-LF0" id="P9Z-ab-X9T"/>
+                        <outlet property="controlBt" destination="zgK-dt-bdd" id="nQc-Fy-Bzf"/>
+                        <outlet property="shadowImg" destination="vfY-b1-4cC" id="3Uk-0a-kUM"/>
+                        <outlet property="statusIcon" destination="yK9-o5-mYS" id="ztO-Cx-ahu"/>
                         <outlet property="statusLb" destination="8Pz-pW-43f" id="bue-kF-9iF"/>
-                        <outlet property="versionLb" destination="jDk-A8-xeA" id="aBV-nw-7ti"/>
+                        <outlet property="statusSubLb" destination="Jbv-zr-4vf" id="kDY-AP-28G"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1187,18 +1219,21 @@ Gw
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
         <image name="gear.circle" width="14" height="14"/>
-        <image name="key" catalog="system" width="13" height="18"/>
+        <image name="key" catalog="system" width="12" height="18"/>
         <image name="network.badge.shield.half.filled" width="15" height="14"/>
-        <image name="orbie.off" width="264" height="250"/>
+        <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
-        <image name="plus" catalog="system" width="15" height="13"/>
-        <namedColor name="BackgroundColor">
-            <color red="0.31000000238418579" green="0.21199999749660492" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="plus" catalog="system" width="14" height="13"/>
+        <namedColor name="Accent1">
+            <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DarkGreen">
-            <color red="0.40000000596046448" green="0.60000002384185791" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Black1">
+            <color red="0.10999999940395355" green="0.078000001609325409" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Black3">
+            <color red="0.24300000071525574" green="0.21600000560283661" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

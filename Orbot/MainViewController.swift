@@ -286,10 +286,10 @@ class MainViewController: UIViewController {
 		animateOrbie = statusIconName == .imgOrbieStarting
 
 		statusIcon.image = UIImage(named: statusIconName)
-		controlBt.setAttributedTitle(buttonTitle)
-		control2BtHeight.constant = Settings.smartConnect || VpnManager.shared.status != .disconnected ? 0 : 64
 		statusLb.attributedText = statusText
 		statusSubLb.text = statusSubtext
+		controlBt.setAttributedTitle(buttonTitle)
+		control2BtHeight.constant = Settings.smartConnect || VpnManager.shared.status != .disconnected ? 0 : 64
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 	}
