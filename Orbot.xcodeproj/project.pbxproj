@@ -122,6 +122,7 @@
 		A0C53059280F11C20067597F /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
 		A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423B62919530F001C31E9 /* libleaf.a */; };
@@ -372,6 +373,7 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCountryViewController.swift; sourceTree = "<group>"; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0E423B62919530F001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleaf.a; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 				A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */,
 				A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */,
 				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
+				A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -1274,6 +1277,7 @@
 				A0274FF228E7223300E767E9 /* L10n.swift in Sources */,
 				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */,
 				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,

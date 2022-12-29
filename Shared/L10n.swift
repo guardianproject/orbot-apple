@@ -163,6 +163,10 @@ class L10n {
 		NSLocalizedString("Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!", comment: "")
 	}
 
+	static var exitNodeCountries: String {
+		NSLocalizedString("Exit Node Countries", comment: "")
+	}
+
 	static var excludeNodes: String {
 		NSLocalizedString("Exclude Nodes", comment: "")
 	}

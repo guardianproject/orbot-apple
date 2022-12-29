@@ -65,6 +65,12 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
+	@IBOutlet weak var versionLb: NSTextField! {
+		didSet {
+			versionLb.stringValue = L10n.version
+		}
+	}
+
 	@IBOutlet weak var tab2: NSTabViewItem! {
 		didSet {
 			tab2.label = L10n.nodeConfiguration
@@ -100,6 +106,8 @@ class SettingsViewController: NSViewController {
 			exitNodesExplLb.stringValue = L10n.exitNodesExplanation
 		}
 	}
+
+	@IBOutlet weak var exitNodeBt: NSButton!
 
 	@IBOutlet weak var exitNodesTf: NSTextField! {
 		didSet {
@@ -187,8 +195,18 @@ class SettingsViewController: NSViewController {
 
 		statusChanged()
 
-		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
+		let nc = NotificationCenter.default
+
+		nc.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
 			self?.statusChanged()
+		}
+
+		nc.addObserver(forName: .exitNodesChanged, object: nil, queue: .main) { [weak self] _ in
+			self?.exitNodesTf.stringValue = Settings.exitNodes ?? ""
+		}
+
+		nc.addObserver(forName: .exitCountrySelectorClosed, object: nil, queue: .main) { [weak self] _ in
+			self?.exitNodeBt.state = .on
 		}
 	}
 
