@@ -323,7 +323,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 	 Give connection guard another 30 seconds to assume everything's ok.
 	 */
 	private func connectionAlive() {
-		connectionTimeout = .now() + 30
+		connectionTimeout = .now() + Settings.smartConnectTimeout
 	}
 
 	private func stopConnectionGuard() {

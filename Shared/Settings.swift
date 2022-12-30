@@ -185,6 +185,19 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "smart_connect")
 		}
 	}
+
+	class var smartConnectTimeout: Double {
+		get {
+			guard defaults?.object(forKey: "smart_connect_timeout") != nil else {
+				return 30
+			}
+
+			return defaults?.double(forKey: "smart_connect_timeout") ?? 30
+		}
+		set {
+			defaults?.set(newValue, forKey: "smart_connect_timeout")
+		}
+	}
 }
 
 class ApiToken: NSObject, NSSecureCoding {

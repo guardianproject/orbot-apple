@@ -957,17 +957,60 @@ Gw
                                                         </constraints>
                                                     </view>
                                                 </box>
+                                                <box title="Expert" translatesAutoresizingMaskIntoConstraints="NO" id="7fN-9r-Dj6">
+                                                    <rect key="frame" x="17" y="163" width="460" height="79"/>
+                                                    <view key="contentView" id="mUF-JV-bBU">
+                                                        <rect key="frame" x="3" y="3" width="454" height="61"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-3M-djm">
+                                                                <rect key="frame" x="18" y="23" width="314" height="16"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Smart Connect Timeout" id="nfZ-fk-czk">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-w0-a0D">
+                                                                <rect key="frame" x="338" y="20" width="96" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="96" id="oBl-xp-hwb"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="rG2-fm-A11"/>
+                                                                </constraints>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="ih4-mC-PgL">
+                                                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" formatWidth="-1" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" id="yA2-T0-x9H">
+                                                                        <real key="minimum" value="5"/>
+                                                                    </numberFormatter>
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="RtK-3M-djm" firstAttribute="leading" secondItem="mUF-JV-bBU" secondAttribute="leading" constant="20" symbolic="YES" id="G1a-g1-Qau"/>
+                                                            <constraint firstItem="FfK-w0-a0D" firstAttribute="leading" secondItem="RtK-3M-djm" secondAttribute="trailing" constant="8" symbolic="YES" id="MF0-9g-ZIb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="FfK-w0-a0D" secondAttribute="bottom" constant="20" symbolic="YES" id="hMo-0f-obb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="FfK-w0-a0D" secondAttribute="trailing" constant="20" symbolic="YES" id="kQW-XC-NIw"/>
+                                                            <constraint firstItem="FfK-w0-a0D" firstAttribute="top" secondItem="mUF-JV-bBU" secondAttribute="top" constant="20" symbolic="YES" id="rbB-z6-Ckp"/>
+                                                            <constraint firstItem="RtK-3M-djm" firstAttribute="centerY" secondItem="FfK-w0-a0D" secondAttribute="centerY" id="s85-HF-lQa"/>
+                                                        </constraints>
+                                                    </view>
+                                                </box>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YkU-Gc-PX2" firstAttribute="top" secondItem="HqU-4d-vgc" secondAttribute="bottom" constant="8" symbolic="YES" id="55X-xg-9Mr"/>
                                                 <constraint firstAttribute="trailing" secondItem="HqU-4d-vgc" secondAttribute="trailing" constant="20" symbolic="YES" id="AFo-Cp-03D"/>
+                                                <constraint firstItem="7fN-9r-Dj6" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="B8b-FR-Fwm"/>
                                                 <constraint firstAttribute="trailing" secondItem="e7u-Z7-wRV" secondAttribute="trailing" constant="20" symbolic="YES" id="Hpd-hL-461"/>
                                                 <constraint firstItem="HqU-4d-vgc" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="Hrw-71-cfi"/>
+                                                <constraint firstAttribute="trailing" secondItem="7fN-9r-Dj6" secondAttribute="trailing" constant="20" symbolic="YES" id="Q3V-iy-euI"/>
+                                                <constraint firstItem="7fN-9r-Dj6" firstAttribute="top" secondItem="YkU-Gc-PX2" secondAttribute="bottom" constant="8" symbolic="YES" id="Q6f-BR-jks"/>
                                                 <constraint firstItem="e7u-Z7-wRV" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="Sqc-pY-QRs"/>
                                                 <constraint firstItem="YkU-Gc-PX2" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="WoI-5b-L8X"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7fN-9r-Dj6" secondAttribute="bottom" constant="20" symbolic="YES" id="a2h-jp-LKo"/>
                                                 <constraint firstItem="HqU-4d-vgc" firstAttribute="top" secondItem="e7u-Z7-wRV" secondAttribute="bottom" constant="8" symbolic="YES" id="aY6-4U-sby"/>
                                                 <constraint firstItem="e7u-Z7-wRV" firstAttribute="top" secondItem="fan-AM-VwW" secondAttribute="bottom" constant="8" symbolic="YES" id="cdu-Vu-07d"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YkU-Gc-PX2" secondAttribute="bottom" constant="20" symbolic="YES" id="fVl-JY-Sfx"/>
                                                 <constraint firstItem="fan-AM-VwW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="h65-GL-iIq"/>
                                                 <constraint firstAttribute="trailing" secondItem="YkU-Gc-PX2" secondAttribute="trailing" constant="20" symbolic="YES" id="lX3-Dh-3GI"/>
                                                 <constraint firstItem="fan-AM-VwW" firstAttribute="top" secondItem="r8F-Gu-3jx" secondAttribute="top" constant="20" symbolic="YES" id="tGR-I9-agA"/>
@@ -992,6 +1035,7 @@ Gw
                         <outlet property="box1" destination="Oxo-2r-eGh" id="rnE-9h-xUN"/>
                         <outlet property="box2" destination="qMx-R2-l8X" id="NJb-ff-u9F"/>
                         <outlet property="box3" destination="YkU-Gc-PX2" id="aA8-89-CI9"/>
+                        <outlet property="box4" destination="7fN-9r-Dj6" id="Amp-MB-gI3"/>
                         <outlet property="clearCacheBt" destination="dWv-cE-Bzx" id="uio-dm-Z0h"/>
                         <outlet property="entryNodesExplLb" destination="ZCk-Ga-870" id="CNk-U8-iS4"/>
                         <outlet property="entryNodesLb" destination="Bkr-QE-vWe" id="1MO-Op-Qzq"/>
@@ -1010,6 +1054,8 @@ Gw
                         <outlet property="onionOnlySw" destination="CpP-DS-jyw" id="mtM-ii-DSM"/>
                         <outlet property="restartOnErrorLb" destination="pQ8-oB-Ge9" id="9Yc-af-TdG"/>
                         <outlet property="restartOnErrorSw" destination="xSx-s1-eNA" id="qWV-xv-7Xm"/>
+                        <outlet property="smartConnectTimeoutLb" destination="RtK-3M-djm" id="szl-Jx-yXV"/>
+                        <outlet property="smartConnectTimeoutTf" destination="FfK-w0-a0D" id="RjU-BG-3BT"/>
                         <outlet property="strictNodesLb" destination="T2J-Jr-Mcl" id="wj5-w8-x1L"/>
                         <outlet property="strictNodesSw" destination="0HG-kY-LRF" id="M5Q-SQ-e8r"/>
                         <outlet property="tab1" destination="KgC-0C-aRO" id="YMk-hW-Gle"/>

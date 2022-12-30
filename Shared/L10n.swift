@@ -199,6 +199,14 @@ class L10n {
 		NSLocalizedString("Cleared!", comment: "")
 	}
 
+	static var expert: String {
+		NSLocalizedString("Expert", comment: "")
+	}
+
+	static var smartConnectTimeout: String {
+		NSLocalizedString("Smart Connect Timeout", comment: "")
+	}
+
 	static let menu: [String: () -> String] = [
 		"Orbot" : { Bundle.main.displayName },
 		"About Orbot": { String(format: NSLocalizedString("About %@",  comment: "macOS menu item"), Bundle.main.displayName) },

@@ -187,6 +187,24 @@ class SettingsViewController: NSViewController {
 		}
 	}
 
+	@IBOutlet weak var box4: NSBox! {
+		didSet {
+			box3.title = L10n.expert
+		}
+	}
+
+	@IBOutlet weak var smartConnectTimeoutLb: NSTextField! {
+		didSet {
+			smartConnectTimeoutLb.stringValue = L10n.smartConnectTimeout
+		}
+	}
+
+	@IBOutlet weak var smartConnectTimeoutTf: NSTextField! {
+		didSet {
+			smartConnectTimeoutTf.stringValue = String(Int(Settings.smartConnectTimeout))
+		}
+	}
+
 
 	override func viewDidAppear() {
 		super.viewDidAppear()

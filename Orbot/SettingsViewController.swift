@@ -44,13 +44,14 @@ class SettingsViewController: BaseFormViewController {
 					self,
 					message: L10n.settingsExplanation3,
 					title: L10n.warning,
-					actions: [AlertHelper.cancelAction(handler: { _ in
-						row.value = false
-						row.updateCell()
-					}),
-							  AlertHelper.destructiveAction(L10n.activate, handler: { _ in
-								  Settings.onionOnly = true
-							  })])
+					actions: [
+						AlertHelper.cancelAction(handler: { _ in
+							row.value = false
+							row.updateCell()
+						}),
+						AlertHelper.destructiveAction(L10n.activate, handler: { _ in
+							Settings.onionOnly = true
+						})])
 			}
 			else {
 				if Settings.onionOnly {
@@ -157,6 +158,17 @@ class SettingsViewController: BaseFormViewController {
 				$0 <<< $0.multivaluedRowToInsertAt!(1)
 			}
 		}
+
+		+++ Section(L10n.expert)
+		<<< IntRow() {
+			$0.title = L10n.smartConnectTimeout
+			$0.value = Int(Settings.smartConnectTimeout)
+		}
+		.onChange({ row in
+			if let value = row.value {
+				Settings.smartConnectTimeout = Double(value)
+			}
+		})
 
 		+++ Section(L10n.maintenance)
 		<<< ButtonRow("clearCache") {
