@@ -16,11 +16,22 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	@IBOutlet weak var shadowImg: NSImageView!
 	@IBOutlet weak var statusLb: NSTextField!
 	@IBOutlet weak var statusSubLb: NSTextField!
-	@IBOutlet weak var controlBt: NSButton!
+	@IBOutlet weak var controlBt: NSButton! {
+		didSet {
+			controlBt.isBordered = false
+			controlBt.wantsLayer = true
+			controlBt.layer?.backgroundColor = NSColor(named: "Accent1")?.cgColor
+			controlBt.layer?.cornerRadius = 5
+		}
+	}
 
 	@IBOutlet weak var control2Bt: NSButton! {
 		didSet {
 			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.font?.pointSize))
+			control2Bt.isBordered = false
+			control2Bt.wantsLayer = true
+			control2Bt.layer?.backgroundColor = NSColor(named: "Black3")?.cgColor
+			control2Bt.layer?.cornerRadius = 5
 		}
 	}
 	@IBOutlet weak var control2BtHeight: NSLayoutConstraint!

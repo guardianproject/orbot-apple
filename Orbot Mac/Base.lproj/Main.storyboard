@@ -1177,7 +1177,6 @@ Gw
 Use Smart Connect</string>
                                         <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     </buttonCell>
-                                    <color key="bezelColor" name="Black3"/>
                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <action selector="control:" target="XfG-lQ-9wD" id="mDW-1q-uES"/>
@@ -1216,7 +1215,6 @@ Use Smart Connect</string>
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     </buttonCell>
-                                    <color key="bezelColor" name="Accent1"/>
                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <action selector="control:" target="XfG-lQ-9wD" id="wOO-iU-aca"/>
@@ -1367,14 +1365,8 @@ Use Smart Connect</string>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="plus" catalog="system" width="14" height="13"/>
-        <namedColor name="Accent1">
-            <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Black1">
             <color red="0.10999999940395355" green="0.078000001609325409" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Black3">
-            <color red="0.24300000071525574" green="0.21600000560283661" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
