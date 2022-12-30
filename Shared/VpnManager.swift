@@ -269,13 +269,15 @@ class VpnManager: BridgesConfDelegate {
 				AutoConf(self).do { [weak self] error in
 					if let error = error {
 						self?.error = error
-						self?.evaluating = false
 
 						self?.postChange()
+
+						// If the API is broken, we continue with our own smart-connect logic.
+						Settings.transport = .none
 					}
-					else {
-						self?.connect(autoConfDone: true)
-					}
+
+					// Continue in any case, don't let us stop because of a broken config API.
+					self?.connect(autoConfDone: true)
 				}
 			}
 
