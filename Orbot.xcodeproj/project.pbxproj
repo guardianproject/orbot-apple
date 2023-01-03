@@ -1518,7 +1518,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Orbot Mac/Orbot-Mac-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -1552,7 +1552,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Orbot Mac/Orbot-Mac-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -1583,7 +1583,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1617,7 +1617,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1860,7 +1860,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1887,7 +1887,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
