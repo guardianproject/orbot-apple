@@ -174,7 +174,8 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(notification)
+		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(
+			notification, buttonFontSize: controlBt.font?.pointSize)
 
 #if DEBUG
 		animateOrbie = statusIconName == .imgOrbieStarting

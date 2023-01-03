@@ -1165,6 +1165,21 @@ Gw
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
+                                <button translatesAutoresizingMaskIntoConstraints="NO" id="zgK-dt-bdd">
+                                    <rect key="frame" x="118" y="262" width="262" height="71"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="W4z-1U-dAk"/>
+                                        <constraint firstAttribute="height" constant="64" id="skF-bS-0yq"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="bevel" title="Install" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="aNJ-Pk-Jc3">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" textStyle="title1" name=".SFNS-Regular"/>
+                                    </buttonCell>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="control:" target="XfG-lQ-9wD" id="wOO-iU-aca"/>
+                                    </connections>
+                                </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="qtn-Z1-mXi">
                                     <rect key="frame" x="118" y="190" width="262" height="71"/>
                                     <constraints>
@@ -1177,7 +1192,7 @@ Gw
 Use Smart Connect</string>
                                         <font key="font" textStyle="title1" name=".SFNS-Regular"/>
                                     </buttonCell>
-                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="control:" target="XfG-lQ-9wD" id="mDW-1q-uES"/>
                                     </connections>
@@ -1205,21 +1220,6 @@ Use Smart Connect</string>
                                     </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="orbie.off" id="WTu-r9-Rsh"/>
                                 </imageView>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="zgK-dt-bdd">
-                                    <rect key="frame" x="118" y="262" width="262" height="71"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="W4z-1U-dAk"/>
-                                        <constraint firstAttribute="height" constant="64" id="skF-bS-0yq"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="bevel" title="Install" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="aNJ-Pk-Jc3">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" textStyle="title1" name=".SFNS-Regular"/>
-                                    </buttonCell>
-                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <connections>
-                                        <action selector="control:" target="XfG-lQ-9wD" id="wOO-iU-aca"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Jbv-zr-4vf" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="00u-xz-gH2"/>
