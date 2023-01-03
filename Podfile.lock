@@ -6,7 +6,7 @@ PODS:
   - ImageRow (4.1.0):
     - Eureka (~> 5.3.5)
   - IPtProxy (1.8.1)
-  - IPtProxyUI (1.10.3):
+  - IPtProxyUI (1.10.4):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
     - IPtProxy (~> 1.8.1)
@@ -21,7 +21,7 @@ PODS:
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - IPtProxyUI (~> 1.10.3)
+  - IPtProxyUI (~> 1.10)
   - Tor/GeoIP (~> 407.12)
 
 SPEC REPOS:
@@ -48,11 +48,11 @@ SPEC CHECKSUMS:
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
   IPtProxy: d0b15e7ed4fc83d8eb9247bf413c2dafcbae46e5
-  IPtProxyUI: 309cfd15554826cc467aa7f1b9db03430f14122c
+  IPtProxyUI: 34ecccb18ab48f065429834e58f1ac58fc693c37
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Tor: 319ca0f3bc42c387736a2d6dc56de75ed0a30eaf
 
-PODFILE CHECKSUM: f8b118e2ed2dff63d26492e1dc10965e23c752b5
+PODFILE CHECKSUM: ca6c37197cc6e6a02b5d7b795b3aa76f599594ee
 
 COCOAPODS: 1.11.3
