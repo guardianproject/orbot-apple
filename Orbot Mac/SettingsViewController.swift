@@ -11,12 +11,6 @@ import IPtProxyUI
 
 class SettingsViewController: NSViewController {
 
-	@IBOutlet weak var infoLb: NSTextField! {
-		didSet {
-			infoLb.stringValue = L10n.settingsEfectAfterRestart
-		}
-	}
-
 	@IBOutlet weak var tab1: NSTabViewItem! {
 		didSet {
 			tab1.label = L10n.general

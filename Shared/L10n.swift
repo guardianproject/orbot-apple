@@ -111,10 +111,6 @@ class L10n {
 		+ NSLocalizedString("If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!", comment: "")
 	}
 
-	static var settingsEfectAfterRestart: String {
-		NSLocalizedString("Most settings will only take effect after restart.", comment: "")
-	}
-
 	static var automaticRestart: String {
 		NSLocalizedString("Automatic Restart", comment: "")
 	}
