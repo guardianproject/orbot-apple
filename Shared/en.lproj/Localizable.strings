@@ -245,6 +245,9 @@
 "Exit Nodes" = "Exit Nodes";
 
 /* No comment provided by engineer. */
+"Expert" = "Expert";
+
+/* No comment provided by engineer. */
 "fetches" = "fetches";
 
 /* macOS menu item */
@@ -417,6 +420,9 @@
 
 /* macOS menu item */
 "Show Toolbar" = "Show Toolbar";
+
+/* No comment provided by engineer. */
+"Smart Connect Timeout (s)" = "Smart Connect Timeout (s)";
 
 /* macOS menu item */
 "Speech" = "Speech";

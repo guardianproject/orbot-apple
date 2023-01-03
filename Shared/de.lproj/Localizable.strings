@@ -245,6 +245,9 @@
 "Exit Nodes" = "Ausgangs-Netzknoten";
 
 /* No comment provided by engineer. */
+"Expert" = "Experte";
+
+/* No comment provided by engineer. */
 "fetches" = "Fetches";
 
 /* macOS menu item */
@@ -417,6 +420,9 @@
 
 /* macOS menu item */
 "Show Toolbar" = "Werkzeugleiste einblenden";
+
+/* No comment provided by engineer. */
+"Smart Connect Timeout (s)" = "Smart Connect Zeitüberschreitung (s)";
 
 /* macOS menu item */
 "Speech" = "Sprachausgabe";
