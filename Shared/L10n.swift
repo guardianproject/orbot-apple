@@ -204,7 +204,7 @@ class L10n {
 	}
 
 	static var smartConnectTimeout: String {
-		NSLocalizedString("Smart Connect Timeout", comment: "")
+		NSLocalizedString("Smart Connect Timeout (s)", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [

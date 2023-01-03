@@ -189,7 +189,7 @@ class SettingsViewController: NSViewController {
 
 	@IBOutlet weak var box4: NSBox! {
 		didSet {
-			box3.title = L10n.expert
+			box4.title = L10n.expert
 		}
 	}
 

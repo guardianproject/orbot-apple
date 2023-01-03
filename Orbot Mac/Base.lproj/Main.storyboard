@@ -1034,7 +1034,7 @@ Gw
                     <connections>
                         <outlet property="box1" destination="Oxo-2r-eGh" id="rnE-9h-xUN"/>
                         <outlet property="box2" destination="qMx-R2-l8X" id="NJb-ff-u9F"/>
-                        <outlet property="box3" destination="YkU-Gc-PX2" id="aA8-89-CI9"/>
+                        <outlet property="box3" destination="YkU-Gc-PX2" id="GFK-Yt-odV"/>
                         <outlet property="box4" destination="7fN-9r-Dj6" id="Amp-MB-gI3"/>
                         <outlet property="clearCacheBt" destination="dWv-cE-Bzx" id="uio-dm-Z0h"/>
                         <outlet property="entryNodesExplLb" destination="ZCk-Ga-870" id="CNk-U8-iS4"/>
