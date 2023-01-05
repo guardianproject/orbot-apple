@@ -113,6 +113,10 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	// MARK: Actions
 
 	@IBAction func control(_ sender: Any) {
+		if let sender = sender as? NSButton, sender == control2Bt {
+			Settings.smartConnect = true
+		}
+
 		SharedUtils.control(startOnly: false)
 	}
 
