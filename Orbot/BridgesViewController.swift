@@ -74,29 +74,18 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate {
 		}
 	}
 
-	var transport: IPtProxyUI.Transport {
-		get {
-			Settings.transport
-		}
-		set {
-			Settings.transport = newValue
-		}
-	}
+	var transport: Transport = .none
 
-	var customBridges: [String]? {
-		get {
-			Settings.customBridges
-		}
-		set {
-			Settings.customBridges = newValue
-		}
-	}
+	var customBridges: [String]? = nil
 
 	private let section = SelectableSection<ListCheckRow<Option>>(nil, selectionType: .singleSelection(enableDeselection: false))
 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		transport = Settings.transport
+		customBridges = Settings.customBridges
 
 		tableView.separatorStyle = .none
 
@@ -140,7 +129,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate {
 				row.title = NSLocalizedString("Next", comment: "")
 
 			default:
-				row.title = NSLocalizedString("Save", comment: "")
+				row.title = NSLocalizedString("Save", bundle: .iPtProxyUI, comment: "#bc-ignore!")
 			}
 		})
 		.onCellSelection({ [weak self] cell, row in
@@ -151,11 +140,25 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate {
 				self?.navigationController?.pushViewController(vc, animated: true)
 
 			case .custom:
-				let vc = CustomBridgesViewController()
+				let vc = CustomBridgesViewController.make()
 				vc.delegate = self
 				self?.navigationController?.pushViewController(vc, animated: true)
 
 			default:
+				switch self?.section.selectedRow()?.value ?? .direct {
+				case .direct:
+					self?.transport = .none
+
+				case .snowflake:
+					self?.transport = .snowflake
+
+				case .snowflakeAmp:
+					self?.transport = .snowflakeAmp
+
+				default:
+					break
+				}
+
 				self?.save()
 			}
 		})
@@ -164,20 +167,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate {
 	@objc
 	func save() {
 		Settings.smartConnect = false
-
-		switch section.selectedRow()?.value ?? .direct {
-		case .direct:
-			Settings.transport = .none
-
-		case .snowflake:
-			Settings.transport = .snowflake
-
-		case .snowflakeAmp:
-			Settings.transport = .snowflakeAmp
-
-		case .request, .custom:
-			Settings.transport = .custom
-		}
+		Settings.transport = transport
+		Settings.customBridges = customBridges
 
 		navigationController?.dismiss(animated: true)
 

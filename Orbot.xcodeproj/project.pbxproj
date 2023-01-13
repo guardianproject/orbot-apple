@@ -74,6 +74,8 @@
 		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
 		A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD03297191760017B36A /* RoundedButtonRow.swift */; };
+		A05DCD06297198540017B36A /* CustomBridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD05297198540017B36A /* CustomBridgesViewController.swift */; };
+		A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD0729719A1B0017B36A /* UIStoryboard.swift */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -315,6 +317,8 @@
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73C124755CE700930C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05DCD03297191760017B36A /* RoundedButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonRow.swift; sourceTree = "<group>"; };
+		A05DCD05297198540017B36A /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
+		A05DCD0729719A1B0017B36A /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -549,6 +553,7 @@
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
 				A04672E9296DC85400BD0F2F /* BridgesViewController.swift */,
+				A05DCD05297198540017B36A /* CustomBridgesViewController.swift */,
 				A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */,
@@ -694,6 +699,7 @@
 				A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */,
 				A08C8FEF2805D7220065B98D /* BlockerViewController.swift */,
 				A0EF119B280441C400A03017 /* BlockList.swift */,
+				A05DCD0729719A1B0017B36A /* UIStoryboard.swift */,
 			);
 			path = ContentBlocker;
 			sourceTree = "<group>";
@@ -1350,6 +1356,7 @@
 				A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */,
 				A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */,
 				A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */,
+				A05DCD06297198540017B36A /* CustomBridgesViewController.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -1361,6 +1368,7 @@
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
+				A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
