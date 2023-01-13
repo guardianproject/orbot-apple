@@ -64,6 +64,7 @@
 		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
 		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
+		A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04672E9296DC85400BD0F2F /* BridgesViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -72,6 +73,7 @@
 		A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B324755CE600930C40 /* AppDelegate.swift */; };
 		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
+		A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD03297191760017B36A /* RoundedButtonRow.swift */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -298,6 +300,7 @@
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A04672E9296DC85400BD0F2F /* BridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesViewController.swift; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A0507CF526F9FB9400F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
@@ -311,6 +314,7 @@
 		A05B73B724755CE600930C40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73C124755CE700930C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05DCD03297191760017B36A /* RoundedButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonRow.swift; sourceTree = "<group>"; };
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -480,6 +484,7 @@
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
+				A05DCD03297191760017B36A /* RoundedButtonRow.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
+				A04672E9296DC85400BD0F2F /* BridgesViewController.swift */,
 				A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */,
@@ -1341,6 +1347,8 @@
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */,
+				A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */,
+				A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */,
 				A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,

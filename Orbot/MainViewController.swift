@@ -86,9 +86,6 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var logTv: UITextView!
 
 
-	private let bridgesConfDelegate = SharedUtils()
-
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -153,10 +150,7 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func changeBridges(_ sender: UIButton? = nil) {
-		let vc = BridgesConfViewController()
-		vc.delegate = bridgesConfDelegate
-
-		present(inNav: vc, view: sender ?? configureBt)
+		present(inNav: BridgesViewController(), view: sender ?? configureBt)
 	}
 
 	@discardableResult
