@@ -102,9 +102,11 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 
 	// MARK: ScanQrDelegate
 
-	func scanned(value: String?) {
-		if let value = value,
-		   var urlc = URLComponents(string: value),
+	func scanned(raw: String?) {
+		navigationController?.popViewController(animated: true)
+
+		if let raw = raw,
+		   var urlc = URLComponents(string: raw),
 		   urlc.host?.lowercased().hasSuffix(".onion") ?? false
 		{
 			// Either use the URL password or the first "key" query item as the key.

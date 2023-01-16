@@ -66,6 +66,12 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
 	}
 
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let scanVc = segue.destination as? ScanViewController {
+			scanVc.delegate = self
+		}
+	}
+
 
 	// MARK: UITextViewDelegate
 
@@ -82,20 +88,16 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 
 	// MARK: ScanQrDelegate
 
-	func scanned(value raw: String?) {
-		// They really had to use JSON for content encoding but with illegal single quotes instead
-		// of double quotes as per JSON standard. Srsly?
-		if let data = raw?.replacingOccurrences(of: "'", with: "\"").data(using: .utf8),
-			let newBridges = try? JSONSerialization.jsonObject(with: data, options: []) as? [String] {
+	func scanned(bridges: [String]) {
+		navigationController?.popViewController(animated: true)
 
-			bridgeLinesTv?.text = newBridges.joined(separator: "\n")
-		}
-		else {
-			AlertHelper.present(self, message:
-				String(format: NSLocalizedString(
-					"QR Code could not be decoded! Are you sure you scanned a QR code from %@?",
-					bundle: .iPtProxyUI, comment: ""), IPtProxyUI.CustomBridgesViewController.bridgesUrl))
-		}
+		bridgeLinesTv?.text = bridges.joined(separator: "\n")
+	}
+
+	func scanned(error: Error) {
+		navigationController?.popViewController(animated: true)
+
+		AlertHelper.present(self, message: error.localizedDescription)
 	}
 
 
@@ -120,14 +122,6 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		}
 
 		delegate?.save()
-	}
-
-	@IBAction
-	func scan() {
-		let vc = ScanQrViewController()
-		vc.delegate = self
-
-		navigationController?.pushViewController(vc, animated: true)
 	}
 
 
