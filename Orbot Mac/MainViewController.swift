@@ -81,7 +81,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 				item.label = L10n.authCookies
 
 			case "bridges":
-				item.label = L10n.bridgeConf
+				item.label = IPtProxyUI.L10n.bridgeConfiguration
 
 			default:
 				break
@@ -132,7 +132,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 		let showError = { (error: Error) in
 			hud?.progress = 1
-			hud?.labelText = L10n.error
+			hud?.labelText = IPtProxyUI.L10n.error
 			hud?.detailsLabelText = error.localizedDescription
 			hud?.hide(true, afterDelay: 3)
 		}

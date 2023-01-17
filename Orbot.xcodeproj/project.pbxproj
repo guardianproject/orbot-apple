@@ -802,8 +802,8 @@
 				A01AB5F328A53465008A79EE /* Frameworks */,
 				A01AB5F428A53465008A79EE /* Resources */,
 				61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */,
-				B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */,
 				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
+				A8CC658E10E591DC6C1D0A6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -826,7 +826,7 @@
 				A06D605C29019D33001A2E2C /* Embed Frameworks */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
 				A01AB69D28A55706008A79EE /* Resources */,
-				390E15C770E5B4A49902D7F6 /* [CP] Copy Pods Resources */,
+				021E681CE032ED2489488CC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -848,7 +848,7 @@
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
 				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
-				ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */,
+				329E559D33FDBA00740F2EDE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -889,7 +889,6 @@
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
-				16978536BCC6E5D81EE5DC54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1053,24 +1052,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16978536BCC6E5D81EE5DC54 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		390E15C770E5B4A49902D7F6 /* [CP] Copy Pods Resources */ = {
+		021E681CE032ED2489488CC7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1085,6 +1067,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		329E559D33FDBA00740F2EDE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */ = {
@@ -1186,7 +1185,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
-		B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */ = {
+		A8CC658E10E591DC6C1D0A6E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1262,23 +1261,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

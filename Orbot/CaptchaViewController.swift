@@ -16,7 +16,7 @@ class CaptchaViewController: UIViewController {
 
 	@IBOutlet weak var captchaIv: UIImageView! {
 		didSet {
-			captchaIv.accessibilityLabel = MoatViewController.captchaImageText
+			captchaIv.accessibilityLabel = IPtProxyUI.L10n.captchaImage
 		}
 	}
 
@@ -28,7 +28,7 @@ class CaptchaViewController: UIViewController {
 
 	@IBOutlet weak var saveBt: UIButton! {
 		didSet {
-			saveBt.setTitle(NSLocalizedString("Save", bundle: .iPtProxyUI, comment: "#bc-ignore!"))
+			saveBt.setTitle(IPtProxyUI.L10n.save)
 		}
 	}
 

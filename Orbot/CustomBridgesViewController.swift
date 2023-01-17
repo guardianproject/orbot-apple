@@ -53,7 +53,7 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 
 	@IBOutlet weak var saveBt: UIButton! {
 		didSet {
-			saveBt.setTitle(NSLocalizedString("Save", bundle: .iPtProxyUI, comment: "#bc-ignore!"))
+			saveBt.setTitle(IPtProxyUI.L10n.save)
 		}
 	}
 

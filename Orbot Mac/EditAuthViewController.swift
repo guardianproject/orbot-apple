@@ -42,7 +42,7 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 
 	@IBOutlet weak var cancelBt: NSButton! {
 		didSet {
-			cancelBt.title = L10n.cancel
+			cancelBt.title = IPtProxyUI.L10n.cancel
 		}
 	}
 

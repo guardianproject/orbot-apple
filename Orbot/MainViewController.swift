@@ -174,7 +174,7 @@ class MainViewController: UIViewController {
 
 		let showError = { (error: Error) in
 			hud.progress = 1
-			hud.label.text = L10n.error
+			hud.label.text = IPtProxyUI.L10n.error
 			hud.detailsLabel.text = error.localizedDescription
 			hud.hide(animated: true, afterDelay: 3)
 		}

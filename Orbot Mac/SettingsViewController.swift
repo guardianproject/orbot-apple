@@ -237,7 +237,7 @@ class SettingsViewController: NSViewController {
 			alert.messageText = L10n.warning
 			alert.informativeText = L10n.settingsExplanation3
 			alert.addButton(withTitle: L10n.activate)
-			alert.addButton(withTitle: L10n.cancel)
+			alert.addButton(withTitle: IPtProxyUI.L10n.cancel)
 
 			let response = alert.runModal()
 

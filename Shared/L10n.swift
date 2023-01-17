@@ -47,14 +47,6 @@ class L10n {
 		NSLocalizedString("Auth Cookies", comment: "")
 	}
 
-	static var bridgeConf: String {
-		NSLocalizedString("Bridge Configuration", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
-	}
-
-	static var error: String {
-		NSLocalizedString("Error", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
-	}
-
 	static var add: String {
 		NSLocalizedString("Add", comment: "")
 	}
@@ -77,10 +69,6 @@ class L10n {
 
 	static var key: String {
 		NSLocalizedString("Key", comment: "")
-	}
-
-	static var cancel: String {
-		NSLocalizedString("Cancel", bundle: .iPtProxyUI, comment: "#bc-ignore!")
 	}
 
 	static var general: String {
