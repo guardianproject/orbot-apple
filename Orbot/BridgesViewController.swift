@@ -135,7 +135,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate {
 		.onCellSelection({ [weak self] cell, row in
 			switch self?.section.selectedRow()?.value ?? .direct {
 			case .request:
-				let vc = MoatViewController()
+				let vc =  CaptchaViewController.make()
 				vc.delegate = self
 				self?.navigationController?.pushViewController(vc, animated: true)
 

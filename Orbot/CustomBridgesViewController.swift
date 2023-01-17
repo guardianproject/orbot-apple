@@ -11,8 +11,8 @@ import IPtProxyUI
 
 class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrDelegate {
 
-	static func make() -> CustomBridgesViewController {
-		UIStoryboard.main.instantiateViewController(withIdentifier: "custom_bridges_vc") as! CustomBridgesViewController
+	static func make() -> Self {
+		UIStoryboard.main.instantiateViewController(withIdentifier: "custom_bridges_vc") as! Self
 	}
 
 

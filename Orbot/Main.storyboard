@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zOy-O2-NNl">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -15,30 +15,30 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
-                                <rect key="frame" x="123.5" y="52" width="128" height="121.5"/>
+                                <rect key="frame" x="96" y="52" width="128" height="121.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1N5-w4-uQk" secondAttribute="height" multiplier="264:251" id="Ax5-Yy-XVq"/>
                                     <constraint firstAttribute="width" constant="128" id="Wnm-LL-BGe"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="hc2-uq-S3p">
-                                <rect key="frame" x="123.5" y="181.5" width="128" height="18"/>
+                                <rect key="frame" x="96" y="181.5" width="128" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hc2-uq-S3p" secondAttribute="height" multiplier="65:9" id="Qgb-ab-SrY"/>
                                     <constraint firstAttribute="width" constant="128" id="wZQ-5B-37E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to Connect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trJ-w6-CDg">
-                                <rect key="frame" x="16" y="207.5" width="343" height="41"/>
+                                <rect key="frame" x="16" y="207.5" width="288" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide apps from network monitoring and get access when they are blocked." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-Rp-xCs">
-                                <rect key="frame" x="16" y="256.5" width="343" height="48"/>
+                                <rect key="frame" x="16" y="256.5" width="288" height="64.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="2p9-kx-aVO"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-rR-QxJ">
-                                <rect key="frame" x="59.5" y="336.5" width="256" height="64"/>
+                                <rect key="frame" x="32" y="353" width="256" height="64"/>
                                 <color key="backgroundColor" name="Accent1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="AOB-AH-cPX"/>
@@ -57,7 +57,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Install"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-oq-v3K">
-                                <rect key="frame" x="59.5" y="408.5" width="256" height="64"/>
+                                <rect key="frame" x="32" y="425" width="256" height="64"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="8Aj-Zd-c5X"/>
@@ -79,7 +79,7 @@
 Use Smart Connect</string>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -88,7 +88,7 @@ Use Smart Connect</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D2-gT-gQC">
-                                <rect key="frame" x="59.5" y="480.5" width="256" height="48"/>
+                                <rect key="frame" x="32" y="497" width="256" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="KGe-ln-kBc"/>
                                     <constraint firstAttribute="width" constant="256" id="bqX-o7-8Ig"/>
@@ -97,7 +97,7 @@ Use Smart Connect</string>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Choose How to Connect"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -106,7 +106,7 @@ Use Smart Connect</string>
                                 </connections>
                             </button>
                             <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48u-FW-Qyr">
-                                <rect key="frame" x="0.0" y="44" width="256" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="256" height="524"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-pb-Y2g">
                                         <rect key="frame" x="8" y="8" width="240" height="32"/>
@@ -120,7 +120,7 @@ Use Smart Connect</string>
                                         </connections>
                                     </segmentedControl>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8i5-ZV-uUu">
-                                        <rect key="frame" x="8" y="47" width="240" height="568"/>
+                                        <rect key="frame" x="8" y="47" width="240" height="469"/>
                                         <color key="backgroundColor" name="Black2"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -221,18 +221,18 @@ Use Smart Connect</string>
             <objects>
                 <viewController storyboardIdentifier="custom_bridges_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6kb-zv-6wX" customClass="CustomBridgesViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="56J-yO-fdk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKe-Uw-2gL">
-                                <rect key="frame" x="16" y="20" width="343" height="64.5"/>
+                                <rect key="frame" x="16" y="20" width="288" height="86.5"/>
                                 <string key="text">A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mX-7j-zgh">
-                                <rect key="frame" x="16" y="100.5" width="343" height="128"/>
+                                <rect key="frame" x="16" y="122.5" width="288" height="128"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Ei3-yR-axo"/>
@@ -250,13 +250,13 @@ Use Smart Connect</string>
                                 </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter bridge address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-qF-0Bs">
-                                <rect key="frame" x="24" y="108.5" width="327" height="20.5"/>
+                                <rect key="frame" x="24" y="130.5" width="272" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-W0-xpo">
-                                <rect key="frame" x="317" y="186.5" width="34" height="34"/>
+                                <rect key="frame" x="262" y="208.5" width="34" height="34"/>
                                 <color key="backgroundColor" name="Accent1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CZg-5h-cXg"/>
@@ -265,7 +265,7 @@ Use Smart Connect</string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -274,13 +274,13 @@ Use Smart Connect</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can enter multiple bridge addresses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-0r-KNm">
-                                <rect key="frame" x="16" y="236.5" width="343" height="14.5"/>
+                                <rect key="frame" x="16" y="258.5" width="288" height="14.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s44-F2-HgM">
-                                <rect key="frame" x="16" y="283" width="343" height="48"/>
+                                <rect key="frame" x="16" y="305" width="288" height="48"/>
                                 <color key="backgroundColor" name="Accent1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="0Ni-Py-yLC"/>
@@ -288,7 +288,7 @@ Use Smart Connect</string>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -332,25 +332,107 @@ Use Smart Connect</string>
             </objects>
             <point key="canvasLocation" x="1213.5999999999999" y="136.28185907046478"/>
         </scene>
+        <!--Captcha View Controller-->
+        <scene sceneID="fPf-dc-P1i">
+            <objects>
+                <viewController storyboardIdentifier="captcha_vc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gEp-PQ-LNn" customClass="CaptchaViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qfX-ze-W0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noise" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-FN-Wn0">
+                                <rect key="frame" x="16" y="20" width="288" height="125"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-0o-cdy">
+                                <rect key="frame" x="16" y="20" width="288" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="zmd-qe-cLE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text above" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-Bt-9fU">
+                                <rect key="frame" x="16" y="153" width="288" height="34"/>
+                                <color key="backgroundColor" name="Black3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="save" destination="gEp-PQ-LNn" eventType="primaryActionTriggered" id="CDp-Xe-6Ix"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-Sr-KGQ">
+                                <rect key="frame" x="16" y="219" width="288" height="48"/>
+                                <color key="backgroundColor" name="Accent1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="UFy-95-zOO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="save" destination="gEp-PQ-LNn" eventType="touchUpInside" id="wcS-JW-mnh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cn2-dK-bq8"/>
+                        <color key="backgroundColor" name="Black2"/>
+                        <constraints>
+                            <constraint firstItem="IlD-FN-Wn0" firstAttribute="leading" secondItem="aoJ-0o-cdy" secondAttribute="leading" id="2bg-qB-L6H"/>
+                            <constraint firstItem="dTa-Sr-KGQ" firstAttribute="top" secondItem="ljY-Bt-9fU" secondAttribute="bottom" constant="32" id="2ho-pq-ONh"/>
+                            <constraint firstItem="IlD-FN-Wn0" firstAttribute="bottom" secondItem="aoJ-0o-cdy" secondAttribute="bottom" id="4hZ-o6-Vcp"/>
+                            <constraint firstItem="ljY-Bt-9fU" firstAttribute="leading" secondItem="Cn2-dK-bq8" secondAttribute="leading" constant="16" id="7Yf-Y1-E69"/>
+                            <constraint firstItem="aoJ-0o-cdy" firstAttribute="leading" secondItem="Cn2-dK-bq8" secondAttribute="leading" constant="16" id="A7X-vW-mgf"/>
+                            <constraint firstItem="aoJ-0o-cdy" firstAttribute="top" secondItem="Cn2-dK-bq8" secondAttribute="top" constant="20" id="BuC-86-VfC"/>
+                            <constraint firstItem="Cn2-dK-bq8" firstAttribute="trailing" secondItem="dTa-Sr-KGQ" secondAttribute="trailing" constant="16" id="HJS-QM-jD6"/>
+                            <constraint firstItem="IlD-FN-Wn0" firstAttribute="trailing" secondItem="aoJ-0o-cdy" secondAttribute="trailing" id="ITa-hB-fXk"/>
+                            <constraint firstItem="Cn2-dK-bq8" firstAttribute="trailing" secondItem="aoJ-0o-cdy" secondAttribute="trailing" constant="16" id="V1H-Wn-eEz"/>
+                            <constraint firstItem="IlD-FN-Wn0" firstAttribute="top" secondItem="aoJ-0o-cdy" secondAttribute="top" id="WLL-QU-iff"/>
+                            <constraint firstItem="dTa-Sr-KGQ" firstAttribute="leading" secondItem="Cn2-dK-bq8" secondAttribute="leading" constant="16" id="YrF-qa-SY0"/>
+                            <constraint firstItem="Cn2-dK-bq8" firstAttribute="trailing" secondItem="ljY-Bt-9fU" secondAttribute="trailing" constant="16" id="tSZ-5d-Iv6"/>
+                            <constraint firstItem="ljY-Bt-9fU" firstAttribute="top" secondItem="aoJ-0o-cdy" secondAttribute="bottom" constant="8" symbolic="YES" id="x1Q-i4-4JK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captchaIv" destination="aoJ-0o-cdy" id="peN-Ea-aUH"/>
+                        <outlet property="saveBt" destination="dTa-Sr-KGQ" id="H3S-y3-nFU"/>
+                        <outlet property="solutionTf" destination="ljY-Bt-9fU" id="nnK-a0-BFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBi-Lm-TX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1211.25" y="924.29577464788736"/>
+        </scene>
         <!--Scan View Controller-->
         <scene sceneID="P8y-fK-N28">
             <objects>
                 <viewController id="7Mr-rh-Yxd" customClass="ScanViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O4r-Bt-czx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan a bridge QR code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysm-Cu-qlp">
-                                <rect key="frame" x="16" y="123" width="343" height="21"/>
+                                <rect key="frame" x="16" y="101" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0I-d3-rWg">
-                                <rect key="frame" x="16" y="152" width="343" height="343"/>
+                                <rect key="frame" x="16" y="130" width="288" height="288"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-We-ezk">
-                                        <rect key="frame" x="0.0" y="161.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="134" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
@@ -370,7 +452,7 @@ Use Smart Connect</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-AC-6yf">
-                                <rect key="frame" x="16" y="322" width="343" height="3"/>
+                                <rect key="frame" x="16" y="272.5" width="288" height="3"/>
                                 <color key="backgroundColor" name="Accent2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="1u3-zf-pIH"/>
@@ -408,7 +490,7 @@ Use Smart Connect</string>
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -430,6 +512,7 @@ Use Smart Connect</string>
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="noise" width="64" height="64"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
