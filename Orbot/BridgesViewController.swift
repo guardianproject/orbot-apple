@@ -104,10 +104,10 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		var isEnabled: Bool {
 			switch self {
 			case .requestMail:
-				return MFMailComposeViewController.canSendMail()
+				return MFMailComposeViewController.canSendMail() || Config.screenshotMode
 
 			case .requestTelegram:
-				return UIApplication.shared.canOpenURL(Constants.telegramBot)
+				return UIApplication.shared.canOpenURL(Constants.telegramBot) || Config.screenshotMode
 
 			default:
 				return true
