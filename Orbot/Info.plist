@@ -48,6 +48,13 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Needed to read bridge addresses from displayed QR codes.</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict/>
+	</dict>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
