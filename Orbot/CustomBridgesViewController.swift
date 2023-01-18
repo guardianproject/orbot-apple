@@ -8,8 +8,9 @@
 
 import UIKit
 import IPtProxyUI
+import PhotosUI
 
-class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrDelegate {
+class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrDelegate, PHPickerViewControllerDelegate {
 
 	static func make() -> Self {
 		UIStoryboard.main.instantiateViewController(withIdentifier: "custom_bridges_vc") as! Self
@@ -27,8 +28,7 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 
 	@IBOutlet weak var bridgeLinesTv: UITextView? {
 		didSet {
-			bridgeLinesTv?.text = delegate?.customBridges?.joined(separator: "\n")
-			hintLb?.isHidden = !(bridgeLinesTv?.text.isEmpty ?? true)
+			set(bridges: delegate?.customBridges)
 		}
 	}
 
@@ -39,9 +39,15 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		}
 	}
 
+	@IBOutlet weak var fileBt: UIButton! {
+		didSet {
+			fileBt.accessibilityLabel  = IPtProxyUI.L10n.uploadQrCode
+		}
+	}
+
 	@IBOutlet weak var qrBt: UIButton! {
 		didSet {
-			qrBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+			qrBt.accessibilityLabel = IPtProxyUI.L10n.scanQrCode
 		}
 	}
 
@@ -91,7 +97,7 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 	func scanned(bridges: [String]) {
 		navigationController?.popViewController(animated: true)
 
-		bridgeLinesTv?.text = bridges.joined(separator: "\n")
+		set(bridges: bridges)
 	}
 
 	func scanned(error: Error) {
@@ -107,21 +113,45 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 	func save() {
 		navigationController?.popViewController(animated: true)
 
-		delegate?.customBridges = bridgeLinesTv?.text?
-				.components(separatedBy: "\n")
-				.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
-				.filter({ !$0.isEmpty && !$0.hasPrefix("//") && !$0.hasPrefix("#") })
-
-		if delegate?.customBridges?.isEmpty ?? true {
-			if delegate?.transport == .custom {
-				delegate?.transport = .none
-			}
-		}
-		else {
-			delegate?.transport = .custom
-		}
+		Helpers.update(delegate: delegate, bridgeLinesTv?.text)
 
 		delegate?.save()
+	}
+
+	@IBAction
+	func pickImage() {
+		var conf = PHPickerConfiguration()
+		conf.filter = PHPickerFilter.images
+
+		let vc = PHPickerViewController(configuration: conf)
+		vc.delegate = self
+
+		present(vc, animated: true)
+	}
+
+
+	// MARK: PHPickerViewControllerDelegate
+
+	func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+		picker.dismiss(animated: true)
+
+		results.first?.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
+			guard let self = self
+			else {
+				return
+			}
+
+			let bridges = BaseScanViewController.extractBridges(from: object as? UIImage)
+
+			DispatchQueue.main.async {
+				if let bridges = bridges {
+					self.set(bridges: bridges)
+				}
+				else {
+					AlertHelper.present(self, message: ScanError.notBridges.localizedDescription)
+				}
+			}
+		}
 	}
 
 
@@ -130,5 +160,10 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 	@objc
 	private func dismissKeyboard() {
 		view.endEditing(true)
+	}
+
+	private func set(bridges: [String]?) {
+		bridgeLinesTv?.text = bridges?.joined(separator: "\n")
+		hintLb?.isHidden = !(bridgeLinesTv?.text.isEmpty ?? true)
 	}
 }

@@ -28,7 +28,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		addBt.accessibilityLabel = L10n.add
 
 		let scanBt = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(qr))
-		scanBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
+		scanBt.accessibilityLabel = IPtProxyUI.L10n.scanQrCode
 
 		navigationItem.rightBarButtonItems = [addBt, scanBt]
 

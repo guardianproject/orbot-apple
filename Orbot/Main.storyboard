@@ -255,6 +255,24 @@ Use Smart Connect</string>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt3-rU-Mu7">
+                                <rect key="frame" x="262" y="166.5" width="34" height="34"/>
+                                <color key="backgroundColor" name="Accent1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="KcC-Iq-TT3"/>
+                                    <constraint firstAttribute="height" constant="34" id="z49-cR-5Rh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pickImage" destination="6kb-zv-6wX" eventType="touchUpInside" id="CTt-wk-Qmr"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-W0-xpo">
                                 <rect key="frame" x="262" y="208.5" width="34" height="34"/>
                                 <color key="backgroundColor" name="Accent1"/>
@@ -263,7 +281,7 @@ Use Smart Connect</string>
                                     <constraint firstAttribute="width" constant="34" id="Mnz-BY-bik"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="qrcode.viewfinder" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="9"/>
@@ -309,6 +327,8 @@ Use Smart Connect</string>
                             <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="16" id="f9b-L2-ek9"/>
                             <constraint firstItem="HJK-0r-KNm" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="8" symbolic="YES" id="gj7-Z8-eo2"/>
                             <constraint firstItem="gJk-qF-0Bs" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="top" constant="8" id="k53-VX-vus"/>
+                            <constraint firstItem="Lt3-rU-Mu7" firstAttribute="bottom" secondItem="VRb-W0-xpo" secondAttribute="top" constant="-8" id="kBg-ZQ-hoy"/>
+                            <constraint firstItem="Lt3-rU-Mu7" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="keG-sz-sJt"/>
                             <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="s44-F2-HgM" secondAttribute="trailing" constant="16" id="klZ-hD-Wpb"/>
                             <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="TKe-Uw-2gL" secondAttribute="trailing" constant="16" id="lmz-JU-pJR"/>
                             <constraint firstItem="VRb-W0-xpo" firstAttribute="bottom" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="-8" id="mOk-Yz-keb"/>
@@ -323,6 +343,7 @@ Use Smart Connect</string>
                         <outlet property="bridgeLinesTv" destination="4mX-7j-zgh" id="lsx-RM-dc3"/>
                         <outlet property="captionLb" destination="HJK-0r-KNm" id="vNV-q5-7pi"/>
                         <outlet property="explanationLb" destination="TKe-Uw-2gL" id="fSE-Ck-ppz"/>
+                        <outlet property="fileBt" destination="Lt3-rU-Mu7" id="K6K-oN-1qY"/>
                         <outlet property="hintLb" destination="gJk-qF-0Bs" id="nt3-6u-9jP"/>
                         <outlet property="qrBt" destination="VRb-W0-xpo" id="W4U-Mx-38h"/>
                         <outlet property="saveBt" destination="s44-F2-HgM" id="q6p-ZS-jlx"/>
@@ -512,10 +533,11 @@ Use Smart Connect</string>
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="noise" width="64" height="64"/>
+        <image name="noise" width="32" height="32"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <namedColor name="Accent1">
             <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,7 +7,10 @@ def tor
 end
 
 def iptproxy
-  pod 'IPtProxyUI', :git => 'https://github.com/tladesignz/IPtProxyUI-ios' #'~> 1.10' #:git => 'https://github.com/tladesignz/IPtProxyUI-ios' # :path => '../IPtProxyUI-ios'
+  pod 'IPtProxyUI/AppEx', :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+  # '~> 1.10'
+  # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+  # :path => '../IPtProxyUI-ios'
 end
 
 target 'Orbot' do
@@ -30,8 +33,8 @@ target 'TorVPN' do
   platform :ios, '15.0'
 
   tor
+  iptproxy
 
-  pod 'IPtProxyUI/AppEx', :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end
 
