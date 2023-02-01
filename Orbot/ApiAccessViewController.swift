@@ -162,7 +162,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 		})
 
 		if let indexPath = indexPath {
-			alert.addAction(AlertHelper.destructiveAction(NSLocalizedString("Delete", comment: "")) { [weak self] _ in
+			alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
 				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
 			})
 		}
@@ -179,17 +179,13 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	}
 
 	private func restartVpn() {
-		switch VpnManager.shared.sessionStatus {
-		case .connecting, .connected, .reasserting:
-			VpnManager.shared.disconnect()
+		if VpnManager.shared.isConnected {
+			VpnManager.shared.disconnect(explicit: false)
 			VpnManager.shared.connect()
 
 			// We need to sleep a little, otherwise the queued start on the
 			// main thread will never happen.
 			usleep(500000)
-
-		default:
-			break
 		}
 	}
 }

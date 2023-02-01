@@ -1,5 +1,30 @@
 #  Orbot iOS Changelog
 
+## 1.5.0
+- Introduced new design including our new maskot "Orbie"!
+- Added "Smart Connect" feature to aid in finding a working connection.
+- Added exit-node country selector.
+- Updated Tor to 0.4.7.12.
+
+## 1.4.2
+- Applied yet another fix for onion-only mode.
+
+## 1.4.1
+- Updated Tor to 0.4.7.11.
+- Fixed translation bugs in macOS version.
+- "Restart on error" now defaults to true, if never changed.
+- Fixed onion-only mode on iOS 16.
+
+## 1.4.0
+- Updated Tor to 0.4.7.10.
+- Updated Obfs4proxy to 0.0.14.
+- Updated Snowflake to 2.3.1.
+- Added a native macOS version.
+- Updated Russian translation.
+- Added option to automatically restart on error.
+- Added option to clear the Tor cache.
+- Added pluggable transports (bridges) log.
+
 ## 1.3.1
 - Updated Tor to 0.4.7.8.
 - Added status to poll response, so `OrbotKit` doesn't have to ask and catches 

@@ -22,9 +22,7 @@ class LeafPTProvider: BasePTProvider {
 		let dns = dnsAddr?.split(separator: ":")
 
 		// Reset log file.
-		if let url = FileManager.default.leafLogFile {
-			try? "".write(to: url, atomically: true, encoding: .utf8)
-		}
+		FileManager.default.leafLogFile?.truncate()
 
 		let fm = FileManager.default
 		var conf: String

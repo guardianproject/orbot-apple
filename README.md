@@ -1,16 +1,18 @@
-#  Orbot iOS
+#  Orbot iOS / macOS
 
-Torifies your iOS device running iOS 15 and newer.
+Torifies your iOS / macOS device running iOS 15 or macOS 11 and newer.
+
+Find links to official releases, beta tests etc. here: https://orbot.app/download
 
 Provides a "VPN" which tunnels all your device network traffic through Tor.
 
 - Supports Obfs4 and Snowflake bridges, fully configurable.
 - Supports Onion v3 service authentication.
 - Supports Tor's `EntryNodes`, `ExitNodes`, `ExcludeNodes` and `StrictNodes` options.
-- Tor 0.4.7.8
-- OpenSSL 1.1.1o
-- Obfs4proxy 0.0.13
-- Snowflake 2.2.0
+- Tor 0.4.7.12
+- OpenSSL 1.1.1s
+- Obfs4proxy 0.0.14
+- Snowflake 2.3.1
 
 
 ## Build
@@ -24,11 +26,12 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 brew install cocoapods bartycrouch fastlane rustup-init automake autoconf libtool gettext
 rustup-init -y
 rustup target add aarch64-apple-ios aarch64-apple-ios-sim x86_64-apple-ios aarch64-apple-darwin x86_64-apple-darwin
-cargo install cargo-lipo cbindgen
+cargo install cbindgen
 git clone git@github.com:guardianproject/orbot-ios.git
 cd orbot-ios
 git submodule update --init --recursive
 pod update
+leaf-ffi-orbot/build-leaf.sh
 open Orbot.xcworkspace
 ```
 
@@ -111,8 +114,13 @@ These people helped with translations. Thank you so much, folks!
   ViktorOnlin, ktchr
 - Spanish:
   Fabiola.mauriceh
-- Ukrainian
+- Ukrainian:
   Kataphan
+  
+## Tech Stuff
+
+Figma template used to create rounded MacOS icons:
+https://www.figma.com/community/file/857303226040719059
 
 ## Author, License
 

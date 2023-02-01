@@ -10,7 +10,7 @@ import Foundation
 
 class Formatters {
 
-	private static let nf: NumberFormatter = {
+	private static let pnf: NumberFormatter = {
 		let nf = NumberFormatter()
 		nf.numberStyle = .percent
 		nf.maximumFractionDigits = 1
@@ -18,8 +18,20 @@ class Formatters {
 		return nf
 	}()
 
+	private static let nf: NumberFormatter = {
+		let nf = NumberFormatter()
+		nf.numberStyle = .decimal
+		nf.maximumFractionDigits = 0
 
-	class func format(value: Float) -> String? {
-		nf.string(from: NSNumber(value: value))
+		return nf
+	}()
+
+
+	class func formatPercent(_ value: Float) -> String? {
+		pnf.string(from: NSNumber(value: value))
+	}
+
+	class func format(_ value: Int) -> String {
+		nf.string(from: NSNumber(value: value)) ?? String(value)
 	}
 }

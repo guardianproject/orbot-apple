@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "orbie-onion-only.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

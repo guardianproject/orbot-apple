@@ -8,60 +8,64 @@
 
 import NetworkExtension
 import Tor
+import IPtProxyUI
 
 extension Notification.Name {
 	static let vpnStatusChanged = Notification.Name("vpn-status-changed")
 	static let vpnProgress = Notification.Name("vpn-progress")
 }
 
-extension NEVPNStatus: CustomStringConvertible {
-	public var description: String {
-		switch self {
-		case .connected:
-			return NSLocalizedString("connected", comment: "")
-
-		case .connecting:
-			return NSLocalizedString("connecting", comment: "")
-
-		case .disconnected:
-			return NSLocalizedString("disconnected", comment: "")
-
-		case .disconnecting:
-			return NSLocalizedString("disconnecting", comment: "")
-
-		case .invalid:
-			return NSLocalizedString("invalid", comment: "")
-
-		case .reasserting:
-			return NSLocalizedString("reasserting", comment: "")
-
-		@unknown default:
-			return NSLocalizedString("unknown", comment: "")
-		}
-	}
-}
-
-class VpnManager {
+class VpnManager: BridgesConfDelegate {
 
 	typealias Completed = (_ success: Bool) -> Void
 
-	enum ConfStatus: CustomStringConvertible {
-		var description: String {
-			switch self {
-			case .notInstalled:
-				return NSLocalizedString("not installed", comment: "")
-
-			case .disabled:
-				return NSLocalizedString("disabled", comment: "")
-
-			case .enabled:
-				return NSLocalizedString("enabled", comment: "")
-			}
-		}
+	enum Status: CustomStringConvertible {
 
 		case notInstalled
 		case disabled
-		case enabled
+		case invalid
+		case disconnected
+		case evaluating
+		case connecting
+		case connected
+		case reasserting
+		case disconnecting
+		case unknown
+
+
+		var description: String {
+			switch self {
+			case .notInstalled:
+				return NSLocalizedString("Not Installed", comment: "")
+
+			case .disabled:
+				return NSLocalizedString("Disabled", comment: "")
+
+			case .invalid:
+				return NSLocalizedString("Invalid", comment: "")
+
+			case .disconnected:
+				return NSLocalizedString("Ready to Connect", comment: "")
+
+			case .evaluating:
+				return NSLocalizedString("Evaluating", comment: "")
+
+			case .connecting:
+				return NSLocalizedString("Connecting", comment: "")
+
+			case .connected:
+				return NSLocalizedString("Connected", comment: "")
+
+			case .reasserting:
+				return NSLocalizedString("Reasserting", comment: "")
+
+			case .disconnecting:
+				return NSLocalizedString("Disconnecting", comment: "")
+
+			case .unknown:
+				return NSLocalizedString("Unknown", comment: "")
+			}
+		}
 	}
 
 	enum Errors: LocalizedError {
@@ -90,28 +94,49 @@ class VpnManager {
 
 	private var poll = false
 
-	var confStatus: ConfStatus {
-#if DEBUG
-		if Config.screenshotMode {
-			return .enabled
-		}
-#endif
+	private var evaluating = false
 
-		return manager == nil ? .notInstalled : manager!.isEnabled ? .enabled : .disabled
-	}
-
-	var sessionStatus: NEVPNStatus {
+	var status: Status {
 #if DEBUG
 		if Config.screenshotMode {
 			return .connected
 		}
 #endif
 
-		if confStatus == .notInstalled {
-			return .invalid
+		guard let manager = manager else {
+			return .notInstalled
 		}
 
-		return session?.status ?? .disconnected
+		guard manager.isEnabled else {
+			return .disabled
+		}
+
+		guard !evaluating else {
+			return .evaluating
+		}
+
+		switch session?.status ?? .invalid {
+		case .invalid:
+			return .invalid
+
+		case .disconnected:
+			return .disconnected
+
+		case .connecting:
+			return .connecting
+
+		case .connected:
+			return .connected
+
+		case .reasserting:
+			return .reasserting
+
+		case .disconnecting:
+			return .disconnecting
+
+		@unknown default:
+			return .unknown
+		}
 	}
 
 	private var _error: Error?
@@ -130,12 +155,29 @@ class VpnManager {
 		}
 	}
 
+	var isConnected: Bool {
+		switch status {
+		case  .evaluating, .connecting, .connected, .reasserting:
+			return true
+
+		default:
+			return false
+		}
+	}
+
+
 	init() {
 		NSKeyedUnarchiver.setClass(ProgressMessage.self, forClassName:
 									"TorVPN.\(String(describing: ProgressMessage.self))")
 
 		NSKeyedUnarchiver.setClass(ProgressMessage.self, forClassName:
 									"TorVPN_Mac.\(String(describing: ProgressMessage.self))")
+
+		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
+									"TorVPN.\(String(describing: ConfigChangedMessage.self))")
+
+		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
+									"TorVPN_Mac.\(String(describing: ConfigChangedMessage.self))")
 
 		NotificationCenter.default.addObserver(
 			self, selector: #selector(statusDidChange),
@@ -198,8 +240,7 @@ class VpnManager {
 	}
 
 	func configChanged() {
-		switch sessionStatus {
-		case .connecting, .connected, .reasserting:
+		if isConnected {
 			sendMessage(ConfigChangedMessage()) { (success: Bool?, error) in
 				print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
 
@@ -207,41 +248,119 @@ class VpnManager {
 
 				self.postChange()
 			}
-
-		default:
-			break
 		}
 	}
 
-	func connect() {
-		guard let session = session else {
-			error = Errors.noConfiguration
+	func connect(autoConfDone: Bool = false) {
+		if Settings.smartConnect && !autoConfDone {
+			// Has to be switched off, first, otherwise AutoConf request would trigger a connection
+			// which we're trying to configure first!
+			if let manager = manager, manager.isOnDemandEnabled {
+				manager.isOnDemandEnabled = false
 
-			postChange()
+				save(manager) { [weak self] success in
+					self?.connect()
+				}
+			}
+			else {
+				evaluating = true
+				postChange()
+
+				AutoConf(self).do { [weak self] error in
+					if let error = error {
+						self?.error = error
+
+						self?.postChange()
+
+						// If the API is broken, we continue with our own smart-connect logic.
+						Settings.transport = .none
+					}
+
+					// Continue in any case, don't let us stop because of a broken config API.
+					self?.connect(autoConfDone: true)
+				}
+			}
 
 			return
 		}
 
-		DispatchQueue.main.async { [weak self] in
-			guard let self = self else {
+		let completed: Completed = { [weak self] success in
+			guard success,
+				  let session = self?.session
+			else {
+				self?.error = Errors.noConfiguration
+				self?.evaluating = false
+
+				self?.postChange()
+
 				return
 			}
 
-			do {
-				try session.startVPNTunnel()
-			}
-			catch let error {
-				self.error = error
+			DispatchQueue.main.async {
+				guard let self = self else {
+					return
+				}
 
-				self.postChange()
-			}
+				self.evaluating = false
 
-			self.commTunnel()
+				do {
+					try session.startVPNTunnel()
+				}
+				catch let error {
+					self.error = error
+
+					self.postChange()
+
+					return
+				}
+
+				self.commTunnel()
+			}
+		}
+
+		// If user wants to automatically restart on error, but
+		// start-on-demand is not set, set it now and store the config.
+		if Settings.restartOnError, let manager = manager, !manager.isOnDemandEnabled {
+			manager.isOnDemandEnabled = true
+
+			save(manager, completed)
+		}
+		else {
+			completed(true)
 		}
 	}
 
-	func disconnect() {
-		session?.stopTunnel()
+	func disconnect(explicit: Bool) {
+		let completed: Completed = { [weak self] _ in
+			self?.session?.stopTunnel()
+		}
+
+		// If user pressed stop explicitly and  start-on-demand is set, unset it now,
+		// otherwise it would constantly restart.
+		if explicit, let manager = manager, manager.isOnDemandEnabled {
+			manager.isOnDemandEnabled = false
+
+			save(manager, completed)
+		}
+		else {
+			completed(true)
+		}
+	}
+
+	/**
+	 If Network Extension is currently running
+
+	 - then, if  restart-on-error was just set and start-on-demand is currently not set, set it.
+	 - else if restart-on-error was just unset and start-on-demand is currently set, unset it.
+	 */
+	func updateRestartOnError() {
+		if isConnected,
+			let manager = manager, manager.isOnDemandEnabled != Settings.restartOnError
+		{
+			manager.isOnDemandEnabled = Settings.restartOnError
+
+			save(manager)
+		}
 	}
 
 	func getCircuits(_ callback: @escaping ((_ circuits: [TorCircuit], _ error: Error?) -> Void)) {
@@ -254,6 +373,31 @@ class VpnManager {
 		sendMessage(CloseCircuitsMessage(circuits)) { (success: Bool?, error) in
 			callback(success ?? false, error)
 		}
+	}
+
+
+	// MARK: BridgesConfDelegate
+
+	var transport: Transport {
+		get {
+			Settings.transport
+		}
+		set {
+			Settings.transport = newValue
+		}
+	}
+
+	var customBridges: [String]? {
+		get {
+			Settings.customBridges
+		}
+		set {
+			Settings.customBridges = newValue
+		}
+	}
+
+	func save() {
+		// Ignored.
 	}
 
 
@@ -271,7 +415,7 @@ class VpnManager {
 
 	@objc
 	private func statusDidChange(_ notification: Notification) {
-		switch sessionStatus {
+		switch session?.status ?? .invalid {
 		case .invalid:
 			// Provider not installed/enabled
 
@@ -320,6 +464,13 @@ class VpnManager {
 										NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)
 									}
 								}
+								else if message is ConfigChangedMessage {
+									print("[\(String(describing: type(of: self)))] ConfigChangedMessage")
+
+									DispatchQueue.main.async {
+										NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
+									}
+								}
 							}
 						}
 					}
@@ -366,6 +517,9 @@ class VpnManager {
 				do {
 					if let error = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? Error {
 						callback(nil, error)
+					}
+					else if T.self is Data.Type {
+						callback(response as? T, nil)
 					}
 					else {
 						let payload = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? T

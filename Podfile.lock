@@ -5,31 +5,30 @@ PODS:
   - GCDWebServerExtension/Core (3.5.4)
   - ImageRow (4.1.0):
     - Eureka (~> 5.3.5)
-  - IPtProxy (1.7.1)
-  - IPtProxyUI (1.9.0):
+  - IPtProxy (1.9.0)
+  - IPtProxyUI/AppEx (1.11.0):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
-    - IPtProxy (~> 1.7)
+    - IPtProxy (~> 1.9.0)
     - MBProgressHUD (~> 1.2)
     - ReachabilitySwift (~> 5.0)
   - MBProgressHUD (1.2.0)
   - ReachabilitySwift (5.0.0)
-  - Tor/Core (407.10.1)
-  - Tor/GeoIP (407.10.1):
+  - Tor/Core (407.12.1)
+  - Tor/GeoIP (407.12.1):
     - Tor/Core
 
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - IPtProxyUI
-  - Tor/GeoIP (~> 407.10)
+  - IPtProxyUI/AppEx (from `https://github.com/tladesignz/IPtProxyUI-ios`)
+  - Tor/GeoIP (~> 407.12)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Eureka
     - ImageRow
     - IPtProxy
-    - IPtProxyUI
     - MBProgressHUD
     - ReachabilitySwift
     - Tor
@@ -37,22 +36,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   GCDWebServerExtension:
     :git: https://github.com/tladesignz/GCDWebServer.git
+  IPtProxyUI:
+    :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 CHECKOUT OPTIONS:
   GCDWebServerExtension:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
+  IPtProxyUI:
+    :commit: dd2e2585c79c2989a17df4ff01a8b41a2dddb312
+    :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:
   Eureka: 28ad9dec6286cd7cd601fdf8e8df39bb7356a8f4
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
-  IPtProxy: f34da94e012b0e9aa73795b5b769578a3325b2fa
-  IPtProxyUI: 703e2c248893e08553516df1aa39d86188e19521
+  IPtProxy: 1a871c46b4c877ed284183404803b1666781c3b8
+  IPtProxyUI: f63ebddcd948d33f441b1f2af9b1546f922da9a0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Tor: 6b58022ff2a4ce3fe8699153beab10c49b308af1
+  Tor: 319ca0f3bc42c387736a2d6dc56de75ed0a30eaf
 
-PODFILE CHECKSUM: 385224023090fc0f965058d6a5474e9459219230
+PODFILE CHECKSUM: eb930b89ebd21fef7ccf6ab8e8d25435c33b8738
 
 COCOAPODS: 1.11.3

@@ -1,3 +1,4 @@
-- Tor actualizado a 0.4.7.8.
-- Se eliminó la configuración de omisión explícita. Omitir ahora solo se activa si hay una aplicación registrada que lo necesita.
-   Se apagará nuevamente, después de que se eliminen todas las aplicaciones de omisión.
+- Nuevo diseño que incluye nuestro nuevo maskot "Orbie".
+- Añadida la función "Smart Connect" para ayudar a encontrar una conexión que funcione.
+- Añadido selector de país del nodo de salida.
+- Actualizado Tor a la versión 0.4.7.12.

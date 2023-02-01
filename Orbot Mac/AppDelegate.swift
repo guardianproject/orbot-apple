@@ -7,16 +7,18 @@
 //
 
 import Cocoa
-import IPtProxy
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		// Needed for bridge fetching via Meek.
-		if let torDir = FileManager.default.torDir {
-			IPtProxy.setStateLocation(torDir.path)
-		}
+		Settings.setPtStateLocation()
+
+#if DEBUG
+		SharedUtils.addScreenshotDummies()
+#endif
+
+		NSApp.mainMenu = translate(NSApp.mainMenu)
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {
@@ -25,5 +27,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
 		return true
+	}
+
+
+	// MARK: Private Methods
+
+	private func translate(_ menu: NSMenu?) -> NSMenu? {
+		guard let menu = menu else {
+			return nil
+		}
+
+		let newMenu = NSMenu(title: translate(menu.title))
+
+		for item in menu.items {
+			menu.removeItem(item)
+			newMenu.addItem(translate(item))
+		}
+
+		return newMenu
+	}
+
+	private func translate(_ item: NSMenuItem) -> NSMenuItem {
+		item.title = translate(item.title)
+
+		item.submenu = translate(item.submenu)
+
+		return item
+	}
+
+	private func translate(_ title: String) -> String {
+		if let localized = L10n.menu[title]?(), !localized.isEmpty {
+			return localized
+		}
+
+		return title
 	}
 }

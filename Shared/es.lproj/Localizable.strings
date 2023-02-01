@@ -20,10 +20,13 @@
 "%1$@ Some options might get overwritten by %2$@." = "1%1$@ Algunas opciones pueden quedar sobrescritas por %2$@.\n ";
 
 /* No comment provided by engineer. */
-"%1$@ via %2$@" = "%1$@ a través de %2$@";
+"%1$@ These settings will only take effect after restart." = "%1$@ These settings will only take effect after restart.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "1%@ Los argumentos de una opción deben estar en una nueva línea.\n ";
+
+/* macOS menu item */
+"%@ Help" = "%@ Help";
 
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__\n ";
@@ -42,6 +45,9 @@
 
 /* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "Un \"Bloqueador de contenido\" proporciona una lista de cosas para bloquear en Safari, todos los demás navegadores y todas las vistas web utilizadas en las aplicaciones.";
+
+/* macOS menu item */
+"About %@" = "Acerca de %@";
 
 /* No comment provided by engineer. */
 "Activate" = "Activar";
@@ -95,6 +101,9 @@
 "API Access Token" = "Token de acceso a la API";
 
 /* No comment provided by engineer. */
+"Asking Tor Project's Circumvention Service" = "Asking Tor Project's Circumvention Service";
+
+/* No comment provided by engineer. */
 "ATTENTION: This may harm your anonymity and security!" = "Token de acceso a la API";
 
 /* No comment provided by engineer. */
@@ -104,6 +113,12 @@
 "Auth Cookies" = "Cookies de autenticación";
 
 /* No comment provided by engineer. */
+"Automatic Restart" = "Automatic Restart";
+
+/* No comment provided by engineer. */
+"Automatically Restart on Error" = "Automatically Restart on Error";
+
+/* No comment provided by engineer. */
 "Block cookies" = "Cookies de bloqueo";
 
 /* No comment provided by engineer. */
@@ -111,6 +126,12 @@
 
 /* No comment provided by engineer. */
 "Blocker" = "Bloqueador";
+
+/* No comment provided by engineer. */
+"Bridges" = "Puentes";
+
+/* macOS menu item */
+"Bring All to Front" = "Bring All to Front";
 
 /* No comment provided by engineer. */
 "Build new Circuits" = "Crear circuitos nuevos";
@@ -124,20 +145,38 @@
 /* No comment provided by engineer. */
 "Bypass: granted" = "Bypass: concedido";
 
+/* macOS menu item */
+"Capitalize" = "Capitalize";
+
+/* No comment provided by engineer. */
+"Choose How to Connect" = "Choose How to Connect";
+
 /* No comment provided by engineer. */
 "Circuits" = "Circuitos";
+
+/* No comment provided by engineer. */
+"Clear Tor Cache" = "Clear Tor Cache";
+
+/* No comment provided by engineer. */
+"Cleared!" = "Cleared!";
+
+/* macOS menu item */
+"Close" = "Cerrar";
 
 /* No comment provided by engineer. */
 "Comma-separated lists of:" = "Listas separadas por comas de:";
 
 /* No comment provided by engineer. */
-"connected" = "Conectado";
+"Connected" = "Conectado";
 
 /* No comment provided by engineer. */
-"connecting" = "Conectando";
+"Connecting" = "Conectando";
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Bloqueador de contenido";
+
+/* macOS menu item */
+"Copy" = "Copiar";
 
 /* No comment provided by engineer. */
 "Copy to Clipboard" = "Copiar al portapapeles";
@@ -151,6 +190,12 @@
 /* No comment provided by engineer. */
 "Current State" = "Estado actual";
 
+/* macOS menu item */
+"Customize Toolbar…" = "Customize Toolbar…";
+
+/* macOS menu item */
+"Cut" = "Cortar";
+
 /* No comment provided by engineer. */
 "Delete" = "Eliminar";
 
@@ -161,10 +206,10 @@
 "disabled" = "Deshabilitar";
 
 /* No comment provided by engineer. */
-"disconnected" = "desconectado";
+"Disabled" = "Deshabilitado";
 
 /* No comment provided by engineer. */
-"disconnecting" = "Desconectando";
+"Disconnecting" = "Desconectando";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "No utilice estos nodos. Anula la lista de nodos de entrada y salida. Todavía se puede utilizar con fines de gestión.";
@@ -181,26 +226,71 @@
 /* No comment provided by engineer. */
 "enabled" = "Habilitado";
 
+/* macOS menu item */
+"Enter Full Screen" = "Enter Full Screen";
+
 /* No comment provided by engineer. */
 "Entry Nodes" = "Nodos de entrada";
+
+/* No comment provided by engineer. */
+"Evaluating" = "Evaluating";
 
 /* No comment provided by engineer. */
 "Exclude Nodes" = "Excluír nodos";
 
 /* No comment provided by engineer. */
+"Exit Node Countries" = "Exit Node Countries";
+
+/* No comment provided by engineer. */
 "Exit Nodes" = "Nodos de salida";
+
+/* No comment provided by engineer. */
+"Expert" = "Expert";
 
 /* No comment provided by engineer. */
 "fetches" = "recupera";
 
+/* macOS menu item */
+"File" = "Archivo";
+
+/* macOS menu item */
+"Find" = "Buscar";
+
+/* macOS menu item */
+"Find and Replace…" = "Find and Replace…";
+
+/* macOS menu item */
+"Find Next" = "Buscar siguiente";
+
+/* macOS menu item */
+"Find Previous" = "Buscar anterior";
+
+/* macOS menu item */
+"Find…" = "Find…";
+
 /* No comment provided by engineer. */
 "fonts" = "fonts";
+
+/* No comment provided by engineer. */
+"General" = "General";
 
 /* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "Vuelve a la aplicación solicitante y pega el token en el cuadro de diálogo correspondiente.";
 
 /* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Ve a la aplicación de configuración de iOS -> Safari -> Extensiones.";
+
+/* macOS menu item */
+"Help" = "Ayuda";
+
+/* macOS menu item */
+"Hide %@" = "Hide %@";
+
+/* No comment provided by engineer. */
+"Hide apps from network monitoring and get access when they are blocked." = "Hide apps from network monitoring and get access when they are blocked.";
+
+/* macOS menu item */
+"Hide Others" = "Hide Others";
 
 /* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Si estos servicios de cebolla no están configurados correctamente, filtrará información a su proveedor de servicios de Internet y a cualquier otra persona que escuche ese tráfico.";
@@ -212,16 +302,34 @@
 "Install" = "Instalar";
 
 /* No comment provided by engineer. */
-"invalid" = "inválido";
+"Invalid" = "No válido";
 
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "No proporcionó un identificador de aplicación válido.";
+
+/* macOS menu item */
+"Jump to Selection" = "Jump to Selection";
 
 /* No comment provided by engineer. */
 "Key" = "Clave";
 
 /* No comment provided by engineer. */
+"Limit Exit Countries" = "Limit Exit Countries";
+
+/* No comment provided by engineer. */
 "Log" = "Registro (log) ";
+
+/* No comment provided by engineer. */
+"Maintenance" = "Mantenimiento";
+
+/* macOS menu item */
+"Make Lower Case" = "Make Lower Case";
+
+/* macOS menu item */
+"Make Upper Case" = "Make Upper Case";
+
+/* macOS menu item */
+"Minimize" = "Minimize";
 
 /* No comment provided by engineer. */
 "No VPN configuration set." = "No hay una comfiguracion establecida de VPN.";
@@ -230,7 +338,7 @@
 "Node Configuration" = "Configuración de nodos";
 
 /* No comment provided by engineer. */
-"not installed" = "No esta instalado";
+"Not Installed" = "Not Installed";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Solo Modo Cebolla";
@@ -250,6 +358,12 @@
 /* No comment provided by engineer. */
 "other" = "otros";
 
+/* macOS menu item */
+"Paste" = "Pegar";
+
+/* macOS menu item */
+"Paste and Match Style" = "Paste and Match Style";
+
 /* No comment provided by engineer. */
 "pings" = "pings";
 
@@ -259,35 +373,68 @@
 /* No comment provided by engineer. */
 "popups" = "ventanas emergentes";
 
+/* macOS menu item */
+"Preferences…" = "Preferences…";
+
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Prefijo con asterisco (*) para capturar también subdominios.";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "¡El código QR no se pudo decodificar! ¿Estás seguro de haber escaneado una URL .onion?";
 
+/* macOS menu item */
+"Quit %@" = "Quit %@";
+
 /* No comment provided by engineer. */
 "raw data" = "datos sin procesar";
 
 /* No comment provided by engineer. */
-"reasserting" = "reafirmando";
+"Ready to Connect" = "Ready to Connect";
+
+/* No comment provided by engineer. */
+"Reasserting" = "Reasserting";
+
+/* macOS menu item */
+"Redo" = "Rehacer";
 
 /* No comment provided by engineer. */
 "scripts" = "scripts\n ";
 
+/* macOS menu item */
+"Select All" = "Seleccionar todos";
+
 /* No comment provided by engineer. */
 "selected domains" = "dominios selecionados";
+
+/* macOS menu item */
+"Services" = "Servicios";
 
 /* No comment provided by engineer. */
 "Settings" = "Configuración";
 
+/* macOS menu item */
+"Show All" = "Mostrar todos";
+
+/* macOS menu item */
+"Show Toolbar" = "Show Toolbar";
+
 /* No comment provided by engineer. */
-"Settings will only take effect after restart." = "La configuración solo tendrá efecto después de reiniciar.";
+"Smart Connect Timeout (s)" = "Smart Connect Timeout (s)";
+
+/* macOS menu item */
+"Speech" = "Speech";
 
 /* No comment provided by engineer. */
 "Start" = "Iniciar";
 
+/* macOS menu item */
+"Start Speaking" = "Start Speaking";
+
 /* No comment provided by engineer. */
 "Stop" = "Detener";
+
+/* macOS menu item */
+"Stop Speaking" = "Stop Speaking";
 
 /* No comment provided by engineer. */
 "style sheets" = "hojas de estilo";
@@ -322,11 +469,32 @@
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "El tráfico a todos los demás dominios se enrutará a través de su conexión normal a Internet.";
 
+/* macOS menu item */
+"Transformations" = "Transformations";
+
+/* macOS menu item */
+"Undo" = "Deshacer";
+
 /* No comment provided by engineer. */
-"unknown" = "desconocido";
+"Unknown" = "Desconocido";
+
+/* No comment provided by engineer. */
+"Use %1$@" = "Use %1$@";
+
+/* No comment provided by engineer. */
+"Use Direct Connection" = "Use Direct Connection";
+
+/* macOS menu item */
+"Use Selection for Find" = "Use Selection for Find";
+
+/* No comment provided by engineer. */
+"Use Smart Connect" = "Use Smart Connect";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Versión %1$@, Desarrollo %2$@";
+
+/* macOS menu item */
+"View" = "Ver";
 
 /* No comment provided by engineer. */
 "Warning" = "Advertencia";
@@ -336,3 +504,9 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* macOS menu item */
+"Window" = "Window";
+
+/* macOS menu item */
+"Zoom" = "Zoom";

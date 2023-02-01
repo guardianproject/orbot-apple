@@ -35,7 +35,12 @@ class AuthViewController: NSViewController, NSCollectionViewDelegate, NSCollecti
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = NSLocalizedString("Auth Cookies", comment: "")
+		view.window?.title = L10n.authCookies
+
+		if let item = view.window?.toolbar?.items.first(where: { $0.itemIdentifier.rawValue == "add" }) {
+			item.label = L10n.add
+			item.paletteLabel = item.label
+		}
 	}
 
 

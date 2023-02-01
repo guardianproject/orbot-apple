@@ -23,4 +23,18 @@ extension UIViewController {
 
 		present(navC, animated: true)
 	}
+
+	func present(inNav vc: UIViewController, view: UIView?) {
+		let navC = UINavigationController(rootViewController: vc)
+
+		if let view = view {
+			navC.modalPresentationStyle = .popover
+			navC.popoverPresentationController?.sourceView = view
+		}
+		else {
+			navC.modalPresentationStyle = .formSheet
+		}
+
+		present(navC, animated: true)
+	}
 }

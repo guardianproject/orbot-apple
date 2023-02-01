@@ -1,3 +1,4 @@
-- Updated Tor to 0.4.7.8.
-- Removed explicit bypass setting. Bypass now only gets activated, if there's an app registered, which needs it.
-  Will be switched off again, after all bypass apps were removed.
+- Introduced new design including our new maskot "Orbie"!
+- Added "Smart Connect" feature to aid in finding a working connection.
+- Added exit-node country selector.
+- Updated Tor to version 0.4.7.12.

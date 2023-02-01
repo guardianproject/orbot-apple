@@ -33,4 +33,13 @@ extension URL {
 			return nil
 		}
 	}
+
+	@discardableResult
+	func truncate() -> Self {
+		if isFileURL {
+			try? "".write(to: self, atomically: true, encoding: .utf8)
+		}
+
+		return self
+	}
 }

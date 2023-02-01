@@ -14,4 +14,9 @@ extension NSButton {
 		self.title = title ?? ""
 		alternateTitle = title ?? ""
 	}
+
+	func setAttributedTitle(_ title: NSAttributedString?) {
+		attributedTitle = title ?? NSAttributedString(string: "")
+		attributedAlternateTitle = title ?? NSAttributedString(string: "")
+	}
 }

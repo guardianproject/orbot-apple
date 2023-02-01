@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B4AE50703FABD0A55830FF4 /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EEE31EFA35DCBF303E04057 /* Pods_TorVPN_Mac.framework */; };
+		1545A00A8C713448D95F0EA5 /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E4DE578F9108A989AED4CF3 /* Pods_Orbot.framework */; };
+		43098D4DB9115D809C1A6937 /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C95C1E56E5D6CFA89018B097 /* Pods_TorVPN.framework */; };
 		A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
@@ -35,7 +38,6 @@
 		A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
 		A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
 		A01AB6A828A55706008A79EE /* TorVPN Mac.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A01AB6AD28A5573E008A79EE /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A01AB6AE28A558A3008A79EE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A01AB6AF28A558A6008A79EE /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A01AB6B028A558D1008A79EE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
@@ -56,8 +58,16 @@
 		A01F34DF2652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A01F34E02652D082008F9912 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A023D82B271986FB00A634B7 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
+		A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* SharedUtils.swift */; };
+		A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FEC28E70B6300E767E9 /* SharedUtils.swift */; };
+		A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
+		A0274FF128E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
+		A0274FF228E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
+		A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
+		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
 		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
+		A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04672E9296DC85400BD0F2F /* BridgesViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -66,12 +76,20 @@
 		A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B324755CE600930C40 /* AppDelegate.swift */; };
 		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
+		A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD03297191760017B36A /* RoundedButtonRow.swift */; };
+		A05DCD06297198540017B36A /* CustomBridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD05297198540017B36A /* CustomBridgesViewController.swift */; };
+		A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05DCD0729719A1B0017B36A /* UIStoryboard.swift */; };
 		A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06470172477F7E900311CBE /* UITextView+Helpers.swift */; };
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
-		A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
+		A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A08688172975A2310032B141 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08688162975A2310032B141 /* ScanViewController.swift */; };
+		A086881B2975B4F80032B141 /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086881A2975B4F80032B141 /* CaptchaViewController.swift */; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
@@ -101,17 +119,24 @@
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
 		A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792028D2253D005D2956 /* libartiorbotios.a */; };
+		A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
 		A0B167DD284F90560089EB7C /* ApiAccessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B167DB284F90560089EB7C /* ApiAccessCell.xib */; };
 		A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B167DC284F90560089EB7C /* ApiAccessCell.swift */; };
 		A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */; };
+		A0C1D8AA292F840E00EB9DBB /* ChangeExitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */; };
+		A0C1D8AC292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */; };
+		A0C1D8AD292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */; };
 		A0C53059280F11C20067597F /* WebServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C53058280F11C20067597F /* WebServer.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
+		A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423B62919530F001C31E9 /* libleaf.a */; };
+		A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -122,7 +147,6 @@
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
-		A0FD91A626F36199002C317C /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0FD91A426F36199002C317C /* libleaf.a */; };
 		A0FF331528B3ADC50079A267 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
@@ -133,10 +157,7 @@
 		A0FF331D28B3B7F10079A267 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF331C28B3B7F10079A267 /* LogViewController.swift */; };
 		A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
-		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
-		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
-		D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */; };
-		F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */; };
+		CDEEAB31FAC303169F218B2B /* Pods_Orbot_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5BD25F251F0C46713EE6CC2 /* Pods_Orbot_Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,12 +175,40 @@
 			remoteGlobalIDString = A06BEC6D280090B300351868;
 			remoteInfo = ContentBlocker;
 		};
+		A06D605529019CD5001A2E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A06D605129019C3A001A2E2C;
+			remoteInfo = leaf;
+		};
+		A06D605729019CDA001A2E2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A06D605129019C3A001A2E2C;
+			remoteInfo = leaf;
+		};
 		A0A735D3247561F200073C81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A05B73A824755CE600930C40 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A0A735CC247561F200073C81;
 			remoteInfo = TorVPN;
+		};
+		A0C1D8AE292FB15000EB9DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0367016292E66A20012C84A;
+			remoteInfo = "compile-country-list";
+		};
+		A0C1D8B0292FB16200EB9DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0367016292E66A20012C84A;
+			remoteInfo = "compile-country-list";
 		};
 		A0D6162B27D8E4AA008E0F3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -182,6 +231,26 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A06D605C29019D33001A2E2C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A06D605F29019D3B001A2E2C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0A735D9247561F200073C81 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,16 +266,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.release.xcconfig"; sourceTree = "<group>"; };
-		169F99644003AC860683D373 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
-		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
-		667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
-		82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.release.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.release.xcconfig"; sourceTree = "<group>"; };
-		92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27681C86F5E7FEE37221FB20 /* Pods-TorVPN Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.release.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.release.xcconfig"; sourceTree = "<group>"; };
+		55972F8B5940690523A5B6E3 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
+		5E4DE578F9108A989AED4CF3 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		611D991257BC9B9409212F82 /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		7167DC7A67A2A94C9CE997FA /* Pods-TorVPN Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		7F2877B5E623C5303633E6E5 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
+		8DB36C963834ADCD07D2FADF /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		9EEE31EFA35DCBF303E04057 /* Pods_TorVPN_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorCircuit+Helper.swift"; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
@@ -215,7 +282,7 @@
 		A00F5135274545BC0037DD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A00F51392745464E0037DD4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A00F513B274546920037DD4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A01AB5F628A53465008A79EE /* Orbot Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orbot Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01AB5F628A53465008A79EE /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01AB5F828A53465008A79EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A01AB5FA28A53465008A79EE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		A01AB5FF28A53465008A79EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -229,9 +296,14 @@
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
+		A0274FEC28E70B6300E767E9 /* SharedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtils.swift; sourceTree = "<group>"; };
+		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A0367015292E65C70012C84A /* compile-country-list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "compile-country-list.swift"; sourceTree = "<group>"; };
+		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A04672E9296DC85400BD0F2F /* BridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesViewController.swift; sourceTree = "<group>"; };
 		A04DADD028D1F64C00D16F7C /* arti-orbot-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "arti-orbot-ios"; sourceTree = "<group>"; };
 		A04DADD128D1F6D000D16F7C /* build-arti.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-arti.sh"; sourceTree = "<group>"; };
 		A04DADD328D2174200D16F7C /* arti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arti.h; sourceTree = "<group>"; };
@@ -248,6 +320,9 @@
 		A05B73B724755CE600930C40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73C124755CE700930C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05DCD03297191760017B36A /* RoundedButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonRow.swift; sourceTree = "<group>"; };
+		A05DCD05297198540017B36A /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
+		A05DCD0729719A1B0017B36A /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		A06470172477F7E900311CBE /* UITextView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Helpers.swift"; sourceTree = "<group>"; };
 		A064701A2478170F00311CBE /* README.md */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		A064701B24781C5400311CBE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -258,6 +333,9 @@
 		A06BEC74280090B300351868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A06DDCAC29264D0E001F9371 /* DebugMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMessage.swift; sourceTree = "<group>"; };
+		A08688162975A2310032B141 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		A086881A2975B4F80032B141 /* CaptchaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaViewController.swift; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -303,13 +381,22 @@
 		A0B167DC284F90560089EB7C /* ApiAccessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessCell.swift; sourceTree = "<group>"; };
 		A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A0BBF1AA27D7BA37005BBA3A /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = "<group>"; };
+		A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeExitViewController.swift; sourceTree = "<group>"; };
+		A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitNodeCountries.swift; sourceTree = "<group>"; };
 		A0C53058280F11C20067597F /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
+		A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Orbot-Mac-Info.plist"; path = "Orbot Mac/Orbot-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A0D6162027D8BAC6008E0F3C /* .tx */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .tx; sourceTree = "<group>"; };
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCountryViewController.swift; sourceTree = "<group>"; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A0E423B62919530F001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleaf.a; sourceTree = "<group>"; };
+		A0E423BA291956A8001C31E9 /* macos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = macos; sourceTree = "<group>"; };
+		A0E423BB291956A8001C31E9 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
+		A0E423BC291956A8001C31E9 /* iossim */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iossim; sourceTree = "<group>"; };
+		A0E423BE291956E9001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "leaf-ffi-orbot/macos/libleaf.a"; sourceTree = "<group>"; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
@@ -323,8 +410,10 @@
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FF331C28B3B7F10079A267 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		B90C1C0B2E58CBEB3138A4E1 /* Pods-Orbot Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.release.xcconfig"; sourceTree = "<group>"; };
+		C95C1E56E5D6CFA89018B097 /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB8841E016DD22990DB55A08 /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
+		D5BD25F251F0C46713EE6CC2 /* Pods_Orbot_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,8 +421,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
+				CDEEAB31FAC303169F218B2B /* Pods_Orbot_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,8 +431,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
-				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
-				A088849728AA7CED00E1E6F4 /* libleaf.a in Frameworks */,
+				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
+				0B4AE50703FABD0A55830FF4 /* Pods_TorVPN_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
-				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
+				1545A00A8C713448D95F0EA5 /* Pods_Orbot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */,
-				A0FD91A626F36199002C317C /* libleaf.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
-				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
+				A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */,
+				43098D4DB9115D809C1A6937 /* Pods_TorVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +485,9 @@
 				A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */,
 				A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */,
 				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
+				A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
+				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
 			);
 			path = "Orbot Mac";
@@ -408,6 +499,7 @@
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
+				A05DCD03297191760017B36A /* RoundedButtonRow.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -459,7 +551,7 @@
 				A0A735CD247561F200073C81 /* TorVPN.appex */,
 				A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */,
 				A06BEC6E280090B300351868 /* ContentBlocker.appex */,
-				A01AB5F628A53465008A79EE /* Orbot Mac.app */,
+				A01AB5F628A53465008A79EE /* Orbot.app */,
 				A01AB69F28A55706008A79EE /* TorVPN Mac.appex */,
 			);
 			name = Products;
@@ -472,6 +564,11 @@
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
+				A04672E9296DC85400BD0F2F /* BridgesViewController.swift */,
+				A086881A2975B4F80032B141 /* CaptchaViewController.swift */,
+				A05DCD05297198540017B36A /* CustomBridgesViewController.swift */,
+				A08688162975A2310032B141 /* ScanViewController.swift */,
+				A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */,
 				A04E3678273D4BF100578FD4 /* AuthViewController.swift */,
 				A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */,
 				A0B167DB284F90560089EB7C /* ApiAccessCell.xib */,
@@ -510,6 +607,7 @@
 				A0367840274E5E8000344B7F /* CHANGELOG.md */,
 				A064701B24781C5400311CBE /* LICENSE */,
 				A0D6162027D8BAC6008E0F3C /* .tx */,
+				A0367015292E65C70012C84A /* compile-country-list.swift */,
 			);
 			name = Build;
 			sourceTree = "<group>";
@@ -533,11 +631,14 @@
 				A0A735DF247566CD00073C81 /* Config.h */,
 				A0A735E0247566CD00073C81 /* Config.m */,
 				A0A735E32475679800073C81 /* Config.swift */,
+				A0C1D8AB292F8D2B00EB9DBB /* ExitNodeCountries.swift */,
 				A01AB61328A5463C008A79EE /* Formatters.swift */,
+				A0274FF028E7223300E767E9 /* L10n.swift */,
 				A01F34DE2652D082008F9912 /* Logger.swift */,
 				A01F34DB2652C7D6008F9912 /* TorManager.swift */,
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
+				A0274FEC28E70B6300E767E9 /* SharedUtils.swift */,
 				A0C53058280F11C20067597F /* WebServer.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -545,6 +646,7 @@
 				A0F3FFB4282EA264003096EC /* template-onion-only.conf */,
 				A0B167D9284F63C80089EB7C /* template-bypass.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
+				A036701D292E70D60012C84A /* exit-node-countries.plist */,
 				A00F5134274545BC0037DD4A /* Localizable.strings */,
 			);
 			path = Shared;
@@ -555,6 +657,7 @@
 			children = (
 				A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */,
 				A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */,
+				A06DDCAC29264D0E001F9371 /* DebugMessage.swift */,
 				A0A735F424757FA400073C81 /* ProgressMessage.swift */,
 				A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */,
 				A0A735E824756CA200073C81 /* Message.swift */,
@@ -595,12 +698,22 @@
 			path = Tunnel;
 			sourceTree = "<group>";
 		};
+		A0E423B52919530F001C31E9 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				A0E423B62919530F001C31E9 /* libleaf.a */,
+			);
+			name = ios;
+			path = "leaf-ffi-orbot/ios";
+			sourceTree = "<group>";
+		};
 		A0EF119A28043EF200A03017 /* ContentBlocker */ = {
 			isa = PBXGroup;
 			children = (
 				A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */,
 				A08C8FEF2805D7220065B98D /* BlockerViewController.swift */,
 				A0EF119B280441C400A03017 /* BlockList.swift */,
+				A05DCD0729719A1B0017B36A /* UIStoryboard.swift */,
 			);
 			path = ContentBlocker;
 			sourceTree = "<group>";
@@ -613,6 +726,9 @@
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
 				A04DADD328D2174200D16F7C /* arti.h */,
+				A0E423BB291956A8001C31E9 /* ios */,
+				A0E423BC291956A8001C31E9 /* iossim */,
+				A0E423BA291956A8001C31E9 /* macos */,
 			);
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
@@ -620,14 +736,14 @@
 		A53EFD1654E1809EC93A8DBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */,
-				29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */,
-				C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */,
-				77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */,
-				A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */,
-				1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */,
-				245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */,
-				82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */,
+				55972F8B5940690523A5B6E3 /* Pods-Orbot.debug.xcconfig */,
+				7F2877B5E623C5303633E6E5 /* Pods-Orbot.release.xcconfig */,
+				8DB36C963834ADCD07D2FADF /* Pods-Orbot Mac.debug.xcconfig */,
+				B90C1C0B2E58CBEB3138A4E1 /* Pods-Orbot Mac.release.xcconfig */,
+				611D991257BC9B9409212F82 /* Pods-TorVPN.debug.xcconfig */,
+				CB8841E016DD22990DB55A08 /* Pods-TorVPN.release.xcconfig */,
+				7167DC7A67A2A94C9CE997FA /* Pods-TorVPN Mac.debug.xcconfig */,
+				27681C86F5E7FEE37221FB20 /* Pods-TorVPN Mac.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -637,6 +753,8 @@
 			children = (
 				A0AC792228D22867005D2956 /* libsqlite3.tbd */,
 				A0AC792028D2253D005D2956 /* libartiorbotios.a */,
+				A0E423BE291956E9001C31E9 /* libleaf.a */,
+				A0E423B52919530F001C31E9 /* ios */,
 				A01AB69928A55512008A79EE /* NetworkExtension.framework */,
 				A0507D0426F9FC2C00F91105 /* Tor.framework */,
 				A0507D0026F9FC2600F91105 /* Tor.framework */,
@@ -645,53 +763,87 @@
 				A0507CF226F9FB8200F91105 /* NetworkExtension.framework */,
 				A0507CF526F9FB9400F91105 /* NetworkExtension.framework */,
 				A0FD91A426F36199002C317C /* libleaf.a */,
-				169F99644003AC860683D373 /* Pods_Orbot.framework */,
-				6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */,
-				92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */,
-				667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */,
+				5E4DE578F9108A989AED4CF3 /* Pods_Orbot.framework */,
+				D5BD25F251F0C46713EE6CC2 /* Pods_Orbot_Mac.framework */,
+				C95C1E56E5D6CFA89018B097 /* Pods_TorVPN.framework */,
+				9EEE31EFA35DCBF303E04057 /* Pods_TorVPN_Mac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		A0367016292E66A20012C84A /* compile-country-list */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = A0367017292E66A20012C84A /* Build configuration list for PBXLegacyTarget "compile-country-list" */;
+			buildPhases = (
+			);
+			buildToolPath = "${PROJECT_DIR}/compile-country-list.swift";
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "compile-country-list";
+			passBuildSettingsInEnvironment = 0;
+			productName = "compile-country-list";
+		};
+		A06D605129019C3A001A2E2C /* leaf */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "";
+			buildConfigurationList = A06D605229019C3A001A2E2C /* Build configuration list for PBXLegacyTarget "leaf" */;
+			buildPhases = (
+			);
+			buildToolPath = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh";
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = leaf;
+			passBuildSettingsInEnvironment = 1;
+			productName = leaf;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		A01AB5F528A53465008A79EE /* Orbot Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01AB60428A53465008A79EE /* Build configuration list for PBXNativeTarget "Orbot Mac" */;
 			buildPhases = (
-				D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */,
+				F2731AF68E6217F5E1B06C87 /* [CP] Check Pods Manifest.lock */,
 				A01AB5F228A53465008A79EE /* Sources */,
 				A01AB5F328A53465008A79EE /* Frameworks */,
 				A01AB5F428A53465008A79EE /* Resources */,
-				61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */,
-				B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */,
 				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
+				55B76514D787A0663EBA925A /* [CP] Embed Pods Frameworks */,
+				F750D4D04DD31317A624EE69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0C1D8B1292FB16200EB9DBB /* PBXTargetDependency */,
 				A01AB6A728A55706008A79EE /* PBXTargetDependency */,
 			);
 			name = "Orbot Mac";
 			productName = "Orbot Mac";
-			productReference = A01AB5F628A53465008A79EE /* Orbot Mac.app */;
+			productReference = A01AB5F628A53465008A79EE /* Orbot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A01AB69E28A55706008A79EE /* TorVPN Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01AB6A928A55706008A79EE /* Build configuration list for PBXNativeTarget "TorVPN Mac" */;
 			buildPhases = (
-				409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */,
-				A01AB6C328A55E72008A79EE /* Build Leaf */,
+				10992B3985B06DDC2C7B65A2 /* [CP] Check Pods Manifest.lock */,
+				A03FC6D528F8468F002142F1 /* BartyCrouch */,
 				A01AB69B28A55706008A79EE /* Sources */,
+				A06D605C29019D33001A2E2C /* Embed Frameworks */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
 				A01AB69D28A55706008A79EE /* Resources */,
-				390E15C770E5B4A49902D7F6 /* [CP] Copy Pods Resources */,
+				4A4581E3FED3DEB0CE0E90EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A06D605829019CDA001A2E2C /* PBXTargetDependency */,
 			);
 			name = "TorVPN Mac";
 			productName = "TorVPN Mac";
@@ -702,17 +854,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */;
 			buildPhases = (
-				5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */,
+				76E3921E42E36C113E0EF9D3 /* [CP] Check Pods Manifest.lock */,
 				A05B73AC24755CE600930C40 /* Sources */,
 				A05B73AD24755CE600930C40 /* Frameworks */,
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
-				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
-				ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */,
+				CFECBEA930359CB032083D3A /* [CP] Embed Pods Frameworks */,
+				49E344066E175796153911FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0C1D8AF292FB15000EB9DBB /* PBXTargetDependency */,
 				A0A735D4247561F200073C81 /* PBXTargetDependency */,
 				A06BEC76280090B300351868 /* PBXTargetDependency */,
 			);
@@ -742,18 +895,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A735D6247561F200073C81 /* Build configuration list for PBXNativeTarget "TorVPN" */;
 			buildPhases = (
-				C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */,
+				5E14FF234312BD4A3EB54CDF /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* BartyCrouch */,
-				A0E794A526528ECD0052E32E /* Build Leaf */,
 				A04DADD228D1F86100D16F7C /* Build Arti */,
 				A0A735C9247561F200073C81 /* Sources */,
+				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
-				16978536BCC6E5D81EE5DC54 /* [CP] Copy Pods Resources */,
+				0B3CC78BAABAB501E0C68AC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A06D605629019CD5001A2E2C /* PBXTargetDependency */,
 			);
 			name = TorVPN;
 			productName = TorVPN;
@@ -785,7 +939,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Guardian Project";
 				TargetAttributes = {
 					A01AB5F528A53465008A79EE = {
@@ -794,12 +948,18 @@
 					A01AB69E28A55706008A79EE = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					A0367016292E66A20012C84A = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					A05B73AF24755CE600930C40 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
 					};
 					A06BEC6D280090B300351868 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					A06D605129019C3A001A2E2C = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 					A0A735CC247561F200073C81 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -835,6 +995,8 @@
 				A0D6162427D8E4AA008E0F3C /* Screenshots */,
 				A01AB5F528A53465008A79EE /* Orbot Mac */,
 				A01AB69E28A55706008A79EE /* TorVPN Mac */,
+				A06D605129019C3A001A2E2C /* leaf */,
+				A0367016292E66A20012C84A /* compile-country-list */,
 			);
 		};
 /* End PBXProject section */
@@ -844,6 +1006,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */,
 				A01AB60528A535C6008A79EE /* Assets.xcassets in Resources */,
 				A0FF331828B3ADD50079A267 /* Localizable.strings in Resources */,
 				A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */,
@@ -865,6 +1028,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */,
 				A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */,
 				A00F5136274545BC0037DD4A /* Localizable.strings in Resources */,
 				A0B167DD284F90560089EB7C /* ApiAccessCell.xib in Resources */,
@@ -902,7 +1066,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16978536BCC6E5D81EE5DC54 /* [CP] Copy Pods Resources */ = {
+		0B3CC78BAABAB501E0C68AC7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -919,24 +1083,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		390E15C770E5B4A49902D7F6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */ = {
+		10992B3985B06DDC2C7B65A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -958,7 +1105,80 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
+		49E344066E175796153911FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A4581E3FED3DEB0CE0E90EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55B76514D787A0663EBA925A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E14FF234312BD4A3EB54CDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TorVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76E3921E42E36C113E0EF9D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -980,23 +1200,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		61AE61C4AE5791BF2DBDCC61 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1016,8 +1219,9 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
-		A01AB6C328A55E72008A79EE /* Build Leaf */ = {
+		A03FC6D528F8468F002142F1 /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1025,11 +1229,10 @@
 			);
 			inputPaths = (
 			);
-			name = "Build Leaf";
+			name = BartyCrouch;
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1054,65 +1257,24 @@
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-arti.sh\n";
 		};
-		A0E794A526528ECD0052E32E /* Build Leaf */ = {
+		CFECBEA930359CB032083D3A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
-			name = "Build Leaf";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libleaf.a",
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
-		};
-		B8D8CA9AB89FD71BC834A5D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorVPN-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */ = {
+		F2731AF68E6217F5E1B06C87 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1134,38 +1296,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */ = {
+		F750D4D04DD31317A624EE69 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED8A4F585C565CFB646DACF1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1179,14 +1324,20 @@
 				A01AB61228A54599008A79EE /* NSButton+Helpers.swift in Sources */,
 				A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */,
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
+				A0274FF228E7223300E767E9 /* L10n.swift in Sources */,
+				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */,
+				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
+				A0C1D8AD292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
 				A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */,
 				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
 				A0FF331A28B3AE050079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
+				A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,
 				A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */,
@@ -1195,6 +1346,7 @@
 				A01AB60828A542EE008A79EE /* Config.swift in Sources */,
 				A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */,
 				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
+				A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */,
 				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
 				A01AB60728A54225008A79EE /* VpnManager.swift in Sources */,
@@ -1211,10 +1363,10 @@
 				A01AB6B528A55941008A79EE /* TorCircuit+Helper.swift in Sources */,
 				A01AB6BC28A55DA4008A79EE /* BasePTProvider.swift in Sources */,
 				A01AB6BF28A55DD0008A79EE /* GetCircuitsMessage.swift in Sources */,
-				A01AB6AD28A5573E008A79EE /* WebServer.swift in Sources */,
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB6AF28A558A6008A79EE /* Config.m in Sources */,
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
 				A01AB6AE28A558A3008A79EE /* Config.swift in Sources */,
@@ -1238,7 +1390,11 @@
 				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
+				A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */,
+				A05DCD04297191760017B36A /* RoundedButtonRow.swift in Sources */,
+				A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */,
 				A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */,
+				A05DCD06297198540017B36A /* CustomBridgesViewController.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -1250,12 +1406,15 @@
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
+				A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */,
+				A086881B2975B4F80032B141 /* CaptchaViewController.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,
 				A0EF119928043A9200A03017 /* BaseFormViewController.swift in Sources */,
 				A0A735E42475679800073C81 /* Config.swift in Sources */,
 				A0A735F524757FA400073C81 /* ProgressMessage.swift in Sources */,
+				A08688172975A2310032B141 /* ScanViewController.swift in Sources */,
 				A00F5124274529B30037DD4A /* UIViewController+Helpers.swift in Sources */,
 				A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */,
 				A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */,
@@ -1263,6 +1422,10 @@
 				A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */,
 				A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 				A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */,
+				A0C1D8AC292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
+				A0C1D8AA292F840E00EB9DBB /* ChangeExitViewController.swift in Sources */,
+				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
+				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1282,6 +1445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
@@ -1325,10 +1489,30 @@
 			target = A06BEC6D280090B300351868 /* ContentBlocker */;
 			targetProxy = A06BEC75280090B300351868 /* PBXContainerItemProxy */;
 		};
+		A06D605629019CD5001A2E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A06D605129019C3A001A2E2C /* leaf */;
+			targetProxy = A06D605529019CD5001A2E2C /* PBXContainerItemProxy */;
+		};
+		A06D605829019CDA001A2E2C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A06D605129019C3A001A2E2C /* leaf */;
+			targetProxy = A06D605729019CDA001A2E2C /* PBXContainerItemProxy */;
+		};
 		A0A735D4247561F200073C81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0A735CC247561F200073C81 /* TorVPN */;
 			targetProxy = A0A735D3247561F200073C81 /* PBXContainerItemProxy */;
+		};
+		A0C1D8AF292FB15000EB9DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0367016292E66A20012C84A /* compile-country-list */;
+			targetProxy = A0C1D8AE292FB15000EB9DBB /* PBXContainerItemProxy */;
+		};
+		A0C1D8B1292FB16200EB9DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0367016292E66A20012C84A /* compile-country-list */;
+			targetProxy = A0C1D8B0292FB16200EB9DBB /* PBXContainerItemProxy */;
 		};
 		A0D6162C27D8E4AA008E0F3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1377,7 +1561,7 @@
 /* Begin XCBuildConfiguration section */
 		A01AB60228A53465008A79EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */;
+			baseConfigurationReference = 8DB36C963834ADCD07D2FADF /* Pods-Orbot Mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1386,17 +1570,21 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_FILE = "Orbot Mac/Orbot-Mac-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1407,7 +1595,7 @@
 		};
 		A01AB60328A53465008A79EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */;
+			baseConfigurationReference = B90C1C0B2E58CBEB3138A4E1 /* Pods-Orbot Mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1416,17 +1604,21 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_FILE = "Orbot Mac/Orbot-Mac-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1437,16 +1629,17 @@
 		};
 		A01AB6AA28A55706008A79EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */;
+			baseConfigurationReference = 7167DC7A67A2A94C9CE997FA /* Pods-TorVPN Mac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1454,7 +1647,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/macos",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
@@ -1470,16 +1663,17 @@
 		};
 		A01AB6AB28A55706008A79EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */;
+			baseConfigurationReference = 27681C86F5E7FEE37221FB20 /* Pods-TorVPN Mac.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
 				CODE_SIGN_STYLE = Manual;
 				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1487,7 +1681,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/$(BUILT_PRODUCTS_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/macos",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
@@ -1498,6 +1692,33 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A0367018292E66A20012C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A0367019292E66A20012C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1555,6 +1776,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1612,6 +1834,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1623,7 +1846,7 @@
 		};
 		A05B73C524755CE700930C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */;
+			baseConfigurationReference = 55972F8B5940690523A5B6E3 /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1655,7 +1878,7 @@
 		};
 		A05B73C624755CE700930C40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */;
+			baseConfigurationReference = 7F2877B5E623C5303633E6E5 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -1693,7 +1916,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1720,7 +1943,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ContentBlocker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ContentBlocker;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Guardian Project. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1738,9 +1961,23 @@
 			};
 			name = Release;
 		};
+		A06D605329019C3A001A2E2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A06D605429019C3A001A2E2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		A0A735D7247561F200073C81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */;
+			baseConfigurationReference = 611D991257BC9B9409212F82 /* Pods-TorVPN.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -1754,9 +1991,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/ios",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/iossim",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1771,7 +2013,7 @@
 		};
 		A0A735D8247561F200073C81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */;
+			baseConfigurationReference = CB8841E016DD22990DB55A08 /* Pods-TorVPN.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -1787,7 +2029,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/leaf-ffi-orbot/ios",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1856,6 +2098,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A0367017292E66A20012C84A /* Build configuration list for PBXLegacyTarget "compile-country-list" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0367018292E66A20012C84A /* Debug */,
+				A0367019292E66A20012C84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A05B73AB24755CE600930C40 /* Build configuration list for PBXProject "Orbot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1879,6 +2130,15 @@
 			buildConfigurations = (
 				A06BEC78280090B300351868 /* Debug */,
 				A06BEC79280090B300351868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A06D605229019C3A001A2E2C /* Build configuration list for PBXLegacyTarget "leaf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A06D605329019C3A001A2E2C /* Debug */,
+				A06D605429019C3A001A2E2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

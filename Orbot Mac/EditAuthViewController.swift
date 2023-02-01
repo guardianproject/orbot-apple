@@ -28,7 +28,7 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 
 	@IBOutlet weak var keyTf: NSTextField! {
 		didSet {
-			keyTf.placeholderString = NSLocalizedString("Key", comment: "")
+			keyTf.placeholderString = L10n.key
 		}
 	}
 
@@ -36,13 +36,13 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 
 	@IBOutlet weak var deleteBt: NSButton! {
 		didSet {
-			deleteBt.title = NSLocalizedString("Delete", comment: "")
+			deleteBt.title = L10n.delete
 		}
 	}
 
 	@IBOutlet weak var cancelBt: NSButton! {
 		didSet {
-			cancelBt.title = NSLocalizedString("Cancel", bundle: .iPtProxyUI, comment: "#bc-ignore!")
+			cancelBt.title = IPtProxyUI.L10n.cancel
 		}
 	}
 
@@ -55,10 +55,10 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 		view.window?.defaultButtonCell = addBt.cell as? NSButtonCell
 
 		if key == nil {
-			view.window?.title = NSLocalizedString("Add v3 Onion Service Auth Cookie", comment: "")
+			view.window?.title = L10n.addAuthCookie
 		}
 		else {
-			view.window?.title = NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: "")
+			view.window?.title = L10n.editAuthCookie
 		}
 
 		addressTf.stringValue = key?.onionAddress?.absoluteString ?? ""
@@ -66,9 +66,7 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 
 		deleteBt.isHidden = key == nil
 
-		addBt.title = key == nil
-			? NSLocalizedString("Add", comment: "")
-			: NSLocalizedString("Edit", comment: "")
+		addBt.title = key == nil ? L10n.add : L10n.edit
 	}
 
 

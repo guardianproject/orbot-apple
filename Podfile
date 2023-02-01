@@ -2,41 +2,47 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-def shared
-  pod 'Tor/GeoIP', '~> 407.10'
-  pod 'IPtProxyUI' #, :path => '../IPtProxyUI-ios' # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+def tor
+  pod 'Tor/GeoIP', '~> 407.12'
 end
 
-def shared_vpn
-  pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
+def iptproxy
+  pod 'IPtProxyUI/AppEx', :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+  # '~> 1.10'
+  # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+  # :path => '../IPtProxyUI-ios'
 end
 
 target 'Orbot' do
   platform :ios, '15.0'
 
-  shared
+  tor
+  iptproxy
 
   pod 'Eureka', '~> 5.3'
 end
 
 target 'Orbot Mac' do
-	platform :macos, '12.3'
+  platform :macos, '11.0'
 
-	shared
+  tor
+  iptproxy
 end
 
 target 'TorVPN' do
   platform :ios, '15.0'
 
-  shared
-  shared_vpn
+  tor
+  iptproxy
+
+  pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end
 
 target 'TorVPN Mac' do
-  platform :macos, '12.3'
+  platform :macos, '11.0'
 
-  shared
-  shared_vpn
+  tor
+  iptproxy
 end
 
 # Fix Xcode 14 code signing issues with bundles.

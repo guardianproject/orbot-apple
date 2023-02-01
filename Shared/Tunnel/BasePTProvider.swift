@@ -7,8 +7,6 @@
 //
 
 import NetworkExtension
-import IPtProxyUI
-import IPtProxy
 
 
 class BasePTProvider: NEPacketTunnelProvider {
@@ -35,6 +33,9 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	private var transport = Settings.transport
 
+	private var connectionGuard: DispatchSourceTimer?
+	private var connectionTimeout = DispatchTime.now()
+
 
 	override init() {
 		super.init()
@@ -42,11 +43,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
 									"Orbot.\(String(describing: CloseCircuitsMessage.self))")
 
-		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
-									"Orbot.\(String(describing: GetCircuitsMessage.self))")
-
 		NSKeyedUnarchiver.setClass(CloseCircuitsMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: CloseCircuitsMessage.self))")
+
+		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
+									"Orbot.\(String(describing: GetCircuitsMessage.self))")
 
 		NSKeyedUnarchiver.setClass(GetCircuitsMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: GetCircuitsMessage.self))")
@@ -57,10 +58,13 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(ConfigChangedMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: ConfigChangedMessage.self))")
 
-		// Esp. on MacOS, Obfs4proxy will crash without having this set correctly.
-		if let torDir = FileManager.default.torDir {
-			IPtProxy.setStateLocation(torDir.path)
-		}
+		NSKeyedUnarchiver.setClass(DebugMessage.self, forClassName:
+									"Orbot.\(String(describing: DebugMessage.self))")
+
+		NSKeyedUnarchiver.setClass(DebugMessage.self, forClassName:
+									"Orbot_Mac.\(String(describing: DebugMessage.self))")
+
+		Settings.setPtStateLocation()
 	}
 
 
@@ -72,7 +76,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		let ipv6 = NEIPv6Settings(addresses: ["FC00::0001"], networkPrefixLengths: [7])
 		ipv6.includedRoutes = [NEIPv6Route.default()]
 
-		let dns = NEDNSSettings(servers: ["1.1.1.1"])
+		let dns = NEDNSSettings(servers: ["192.168.20.1"])
 		// https://developer.apple.com/forums/thread/116033
 		// Mention special Tor domains here, so the OS doesn't drop onion domain
 		// resolve requests immediately.
@@ -114,7 +118,10 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		stopTun2Socks()
 
+// This is only supported on iOS, currently.
+#if os(iOS)
 		WebServer.shared.stop()
+#endif
 
 		completionHandler()
 	}
@@ -143,8 +150,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 		if request is ConfigChangedMessage {
 			let newTransport = Settings.transport
 
-			// If the old transport is snowflake, stop that. (The new one certainly isn't!)
-			if transport == .snowflake && newTransport != .snowflake {
+			// If the old transport is snowflake and the new one not, stop that.
+			if (transport == .snowflake || transport == .snowflakeAmp) && newTransport != .snowflake && newTransport != .snowflakeAmp {
 				transport.stop()
 			}
 			// If the old transport is obfs4 and the new one not, stop that.
@@ -196,19 +203,132 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
-		transport.start()
+		stopConnectionGuard()
 
-		TorManager.shared.start(transport, { progress in
+		if Logger.ENABLE_LOGGING {
+			transport.logFile?.truncate()
+		}
+		transport.start(log: Logger.ENABLE_LOGGING)
+
+		var oldProgress = -1
+
+		TorManager.shared.start(transport, { [weak self] progress in
+			guard let progress = progress else {
+				return
+			}
+
+			if progress > oldProgress {
+				self?.connectionAlive()
+				oldProgress = progress
+			}
+
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
-			self.sendMessages()
-		}, completion)
 
+			self?.sendMessages()
+		}, { [weak self] error, socksAddr, dnsAddr in
+			self?.stopConnectionGuard()
+
+			// Since we seem to have a working connection now, disable smart connect.
+			if error == nil && Settings.smartConnect {
+				Settings.smartConnect = false
+			}
+
+			completion(error, socksAddr, dnsAddr)
+		})
+
+
+		if Settings.smartConnect {
+
+			// Assume everything's fine for the next 30 seconds.
+			connectionAlive()
+
+			// Create new connection guard.
+			connectionGuard = DispatchSource.makeTimerSource(queue: .global(qos: .background))
+			connectionGuard?.schedule(deadline: .now() + 1, repeating: .seconds(1))
+
+			// If Tor's progress doesn't move within 30 seconds, try (another) bridge.
+			connectionGuard?.setEventHandler { [weak self] in
+				guard let self = self, DispatchTime.now() > self.connectionTimeout else {
+					return
+				}
+
+				self.connectionAlive()
+
+				switch self.transport {
+
+				// If direct connection didn't work, try Snowflake bridge.
+				case .none:
+					self.transport = .snowflake
+
+					if Logger.ENABLE_LOGGING {
+						self.transport.logFile?.truncate()
+					}
+					self.transport.start(log: Logger.ENABLE_LOGGING)
+
+				// If Snowflake didn't work, try custom or default Obfs4 bridges.
+				case .snowflake, .snowflakeAmp:
+					self.transport.stop()
+
+					if !(Settings.customBridges?.isEmpty ?? true) {
+						self.transport = .custom
+					}
+					else {
+						self.transport = .obfs4
+					}
+
+					if Logger.ENABLE_LOGGING {
+						self.transport.logFile?.truncate()
+					}
+					self.transport.start(log: Logger.ENABLE_LOGGING)
+
+				// If custom Obfs4 bridges didn't work, try default ones.
+				case .custom:
+					self.transport = .obfs4
+
+				// If Obfs4 bridges didn't work, give up.
+				case .obfs4:
+					self.stopConnectionGuard()
+
+					TorManager.shared.stop()
+
+					self.transport.stop()
+
+					completion(TorManager.Errors.smartConnectFailed, nil, nil)
+					return
+				}
+
+				TorManager.shared.updateConfig(self.transport)
+
+				Settings.transport = self.transport
+				Self.messageQueue.append(ConfigChangedMessage())
+				self.sendMessages()
+			}
+
+			connectionGuard?.resume()
+		}
+
+
+// This is only supported on iOS, currently.
+#if os(iOS)
 		do {
 			try WebServer.shared.start()
 		}
 		catch {
 			log(error.localizedDescription)
 		}
+#endif
+	}
+
+	/**
+	 Give connection guard another 30 seconds to assume everything's ok.
+	 */
+	private func connectionAlive() {
+		connectionTimeout = .now() + Settings.smartConnectTimeout
+	}
+
+	private func stopConnectionGuard() {
+		connectionGuard?.cancel()
+		connectionGuard = nil
 	}
 
 

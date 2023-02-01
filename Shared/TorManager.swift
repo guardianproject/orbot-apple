@@ -19,10 +19,28 @@ class TorManager {
 		case started = "started"
 	}
 
-	private enum Errors: Error {
+	enum Errors: Error, LocalizedError {
 		case cookieUnreadable
 		case noSocksAddr
 		case noDnsAddr
+		case smartConnectFailed
+
+		var errorDescription: String? {
+			switch self {
+
+			case .cookieUnreadable:
+				return "Tor cookie unreadable"
+
+			case .noSocksAddr:
+				return "No SOCKS port"
+
+			case .noDnsAddr:
+				return "No DNS port"
+
+			case .smartConnectFailed:
+				return "Smart Connect failed"
+			}
+		}
 	}
 
 	static let shared = TorManager()
@@ -47,6 +65,9 @@ class TorManager {
 
 	private var ipStatus = IpSupport.Status.unavailable
 
+	private var progressObs: Any?
+	private var establishedObs: Any?
+
 
 	private init() {
 //		IpSupport.shared.start({ [weak self] status in
@@ -66,7 +87,7 @@ class TorManager {
 	}
 
 	func start(_ transport: Transport,
-			   _ progressCallback: @escaping (Int) -> Void,
+			   _ progressCallback: @escaping (_ progress: Int?) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
 		status = .starting
@@ -82,33 +103,11 @@ class TorManager {
 //
 //			torThread = TorThread(configuration: torConf)
 //
-//			torThread?.start()
-//		}
-//		else {
-//			torController?.resetConf(forKey: "UseBridges")
-//			{ [weak self] success, error in
-//				if !success {
-//					return
-//				}
-//
-//				self?.torController?.resetConf(forKey: "ClientTransportPlugin")
-//				{ [weak self] success, error in
-//					if !success {
-//						return
-//					}
-//
-//					self?.torController?.resetConf(forKey: "Bridge")
-//					{ [weak self] success, error in
-//						if !success {
-//							return
-//						}
-//
-//						self?.torController?.setConfs(
-//							self?.transportConf(Transport.asConf) ?? [])
-//					}
-//				}
-//			}
-//		}
+//          torThread?.start()
+//      }
+//      else {
+//          updateConfig(transport)
+//      }
 
 		let logfile = (FileManager.default.torLogFile?.path as? NSString)?.utf8String
 
@@ -153,18 +152,25 @@ class TorManager {
 //					return completion(error, nil, nil)
 //				}
 //
-//				var progressObs: Any?
-//				progressObs = self.torController?.addObserver(forStatusEvents: {
-//					(type, severity, action, arguments) -> Bool in
+//				self.progressObs = self.torController?.addObserver(forStatusEvents: {
+//					[weak self] (type, severity, action, arguments) -> Bool in
 //
 //					if type == "STATUS_CLIENT" && action == "BOOTSTRAP" {
-//						let progress = Int(arguments!["PROGRESS"]!)!
-//						self.log("#startTunnel progress=\(progress)")
+//						let progress: Int?
+//
+//						if let p = arguments?["PROGRESS"] {
+//							progress = Int(p)
+//						}
+//						else {
+//							progress = nil
+//						}
+//
+//						self?.log("#startTunnel progress=\(progress?.description ?? "(nil)")")
 //
 //						progressCallback(progress)
 //
-//						if progress >= 100 {
-//							self.torController?.removeObserver(progressObs)
+//						if progress ?? 0 >= 100 {
+//							self?.torController?.removeObserver(self?.progressObs)
 //						}
 //
 //						return true
@@ -173,28 +179,28 @@ class TorManager {
 //					return false
 //				})
 //
-//				var observer: Any?
-//				observer = self.torController?.addObserver(forCircuitEstablished: { established in
+//				self.establishedObs = self.torController?.addObserver(forCircuitEstablished: { [weak self] established in
 //					guard established else {
 //						return
 //					}
 //
-//					self.torController?.removeObserver(observer)
+//					self?.torController?.removeObserver(self?.establishedObs)
+//					self?.torController?.removeObserver(self?.progressObs)
 //
-//					self.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
+//					self?.torController?.getInfoForKeys(["net/listeners/socks", "net/listeners/dns"]) { response in
 //						guard let socksAddr = response.first, !socksAddr.isEmpty else {
-//							self.status = .stopped
+//							self?.status = .stopped
 //
 //							return completion(Errors.noSocksAddr, nil, nil)
 //						}
 //
 //						guard let dnsAddr = response.last, !dnsAddr.isEmpty else {
-//							self.status = .stopped
+//							self?.status = .stopped
 //
 //							return completion(Errors.noDnsAddr, socksAddr, nil)
 //						}
 //
-//						self.status = .started
+//						self?.status = .started
 //
 //						completion(nil, socksAddr, dnsAddr)
 //					}
@@ -203,9 +209,37 @@ class TorManager {
 //		}
 	}
 
+	func updateConfig(_ transport: Transport) {
+		self.transport = transport
+
+		let group = DispatchGroup()
+
+		let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
+						 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
+
+		for key in resetKeys {
+			group.enter()
+
+			torController?.resetConf(forKey: key) { _, error in
+				if let error = error {
+					debugPrint(error)
+				}
+
+				group.leave()
+			}
+
+			group.wait()
+		}
+
+		torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
+	}
+
 	func stop() {
 		status = .stopped
 
+//		torController?.removeObserver(self.establishedObs)
+//		torController?.removeObserver(self.progressObs)
+//
 //		torController?.disconnect()
 //		torController = nil
 //
@@ -267,6 +301,8 @@ class TorManager {
 //		// Add user-defined configuration.
 //		conf.arguments += Settings.advancedTorConf ?? []
 //
+//		conf.arguments += nodeConf(Transport.asArguments).joined()
+//
 //		conf.arguments += transportConf(Transport.asArguments).joined()
 //
 //		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
@@ -290,26 +326,31 @@ class TorManager {
 //			// Miscelaneous
 //			"MaxMemInQueues": "5MB"]
 //
+//		if Logger.ENABLE_LOGGING,
+//		   let logfile = FileManager.default.torLogFile?.truncate()
+//		{
+//			conf.options["Log"] = "notice file \(logfile.path)"
+//		}
+//
+//		return conf
+//	}
+//
+//	private func nodeConf<T>(_ cv: (String, String) ->T) -> [T] {
+//		var conf = [T]()
+//
 //		// Node in-/exclusions
-//		if let entryNodes = Settings.entryNodes {
-//			conf.options["EntryNodes"] = entryNodes
+//		// BUGFIX: Tor doesn't allow EntryNodes and UseBridges at once!
+//		if transport == .none, let entryNodes = Settings.entryNodes {
+//			conf.append(cv("EntryNodes", entryNodes))
 //		}
 //
 //		if let exitNodes = Settings.exitNodes {
-//			conf.options["ExitNodes"] = exitNodes
+//			conf.append(cv("ExitNodes", exitNodes))
 //		}
 //
 //		if let excludeNodes = Settings.excludeNodes {
-//			conf.options["ExcludeNodes"] = excludeNodes
-//			conf.options["StrictNodes"] = Settings.strictNodes ? "1" : "0"
-//		}
-//
-//		if Logger.ENABLE_LOGGING,
-//		   let logfile = FileManager.default.torLogFile
-//		{
-//			try? "".write(to: logfile, atomically: true, encoding: .utf8)
-//
-//			conf.options["Log"] = "notice file \(logfile.path)"
+//			conf.append(cv("ExcludeNodes", excludeNodes))
+//			conf.append(cv("StrictNodes", Settings.strictNodes ? "1" : "0"))
 //		}
 //
 //		return conf

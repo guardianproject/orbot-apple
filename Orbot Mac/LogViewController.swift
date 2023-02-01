@@ -13,17 +13,18 @@ class LogViewController: NSViewController {
 
 	@IBOutlet weak var logSc: NSSegmentedControl! {
 		didSet {
-			logSc.setLabel(NSLocalizedString("Log", comment: ""), forSegment: 0)
-			logSc.setLabel(NSLocalizedString("Circuits", comment: ""), forSegment: 1)
+			logSc.setLabel("Tor", forSegment: 0)
+			logSc.setLabel(L10n.bridges, forSegment: 1)
+			logSc.setLabel(L10n.circuits, forSegment: 2)
 
 #if DEBUG
 			if Config.extendedLogging {
-				logSc.segmentCount = 6
+				logSc.segmentCount = 7
 
-				logSc.setLabel("VPN", forSegment: 2)
-				logSc.setLabel("LL", forSegment: 3)
-				logSc.setLabel("LC", forSegment: 4)
-				logSc.setLabel("WS", forSegment: 5)
+				logSc.setLabel("Snowflake Proxy", forSegment: 3)
+				logSc.setLabel("VPN", forSegment: 4)
+				logSc.setLabel("LL", forSegment: 5)
+				logSc.setLabel("LC", forSegment: 6)
 			}
 #endif
 		}
@@ -37,150 +38,76 @@ class LogViewController: NSViewController {
 	}
 
 
-	private var logFsObject: DispatchSourceFileSystemObject? {
-		didSet {
-			oldValue?.cancel()
-		}
-	}
-
-	private var logText = ""
-
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = NSLocalizedString("Log", comment: "")
+		view.window?.title = L10n.log
 
 		changeLog(logSc!)
+
+		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
+			self?.changeLog((self?.logSc)!)
+		}
+	}
+
+	override func viewWillDisappear() {
+		super.viewWillDisappear()
+
+		NotificationCenter.default.removeObserver(self)
 	}
 
 
 	// MARK: Actions
 
 	@IBAction func changeLog(_ view: Any) {
+		logSc.setEnabled(Settings.transport != .none, forSegment: 1)
+
 		switch logSc.selectedSegment {
 		case 1:
-			tailFile(nil)
+			// Shows the content of the Snowflake or Obfs4proxy log file.
+			Logger.tailFile(Settings.transport.logFile, update)
 
-			logTv?.string = ""
+		case 2:
+			Logger.tailFile(nil)
 
-			VpnManager.shared.getCircuits { [weak self] circuits, error in
-				let circuits = TorCircuit.filter(circuits)
-
-				var text = ""
-
-				var i = 1
-
-				for c in circuits {
-					text += "Circuit \(c.circuitId ?? String(i))\n"
-
-					var j = 1
-
-					for n in c.nodes ?? [] {
-						var country = n.localizedCountryName ?? n.countryCode ?? ""
-
-						if !country.isEmpty {
-							country = " (\(country))"
-						}
-
-						text += "\(j): \(n.nickName ?? n.fingerprint ?? n.ipv4Address ?? n.ipv6Address ?? "unknown node")\(country)\n"
-
-						j += 1
-					}
-
-					text += "\n"
-
-					i += 1
-				}
-
+			SharedUtils.getCircuits { [weak self] text in
 				self?.logTv?.string = text
 				self?.logSv.scrollToBottom()
 			}
 
 #if DEBUG
-		case 2:
-			// Shows the content of the VPN log file.
-			tailFile(FileManager.default.vpnLogFile)
-
 		case 3:
-			// Shows the content of the leaf log file.
-			tailFile(FileManager.default.leafLogFile)
+			// Shows the content of the Snowflake Proxy log file.
+			Logger.tailFile(FileManager.default.sfpLogFile, update)
 
 		case 4:
-			// Shows the content of the leaf config file.
-			tailFile(FileManager.default.leafConfFile)
+			// Shows the content of the VPN log file.
+			Logger.tailFile(FileManager.default.vpnLogFile, update)
 
 		case 5:
-			// Shows the content of the GCD webserver log file.
-			tailFile(FileManager.default.wsLogFile)
+			// Shows the content of the leaf log file.
+			Logger.tailFile(FileManager.default.leafLogFile, update)
+
+		case 6:
+			// Shows the content of the leaf config file.
+			Logger.tailFile(FileManager.default.leafConfFile, update)
 #endif
 
 		default:
-			tailFile(FileManager.default.torLogFile)
+			Logger.tailFile(FileManager.default.torLogFile, update)
 		}
 	}
 
 
 	// MARK: Private Methods
 
-	private func tailFile(_ url: URL?) {
+	private func update(_ logText: String) {
+		let atBottom = logSv.isAtBottom
 
-		// Stop and remove the previous watched content.
-		// (Will implicitely call #stop through `didSet` hook!)
-		logFsObject = nil
+		logTv?.string = logText
 
-		guard let url = url,
-			  let fh = try? FileHandle(forReadingFrom: url)
-		else {
-			return
+		if atBottom {
+			logSv.scrollToBottom()
 		}
-
-
-		let ui = { [weak self] in
-			let data = fh.readDataToEndOfFile()
-
-			if let content = String(data: data, encoding: .utf8) {
-				let atBottom = self?.logSv.isAtBottom ?? false
-
-				self?.logText.append(content)
-
-				self?.logTv?.string = self?.logText ?? ""
-
-				if atBottom {
-					self?.logSv.scrollToBottom()
-				}
-			}
-		}
-
-		logText = ""
-		ui()
-
-		logFsObject = DispatchSource.makeFileSystemObjectSource(
-			fileDescriptor: fh.fileDescriptor,
-			eventMask: [.extend, .delete, .link],
-			queue: .main)
-
-		logFsObject?.setEventHandler { [weak self] in
-			guard let data = self?.logFsObject?.data else {
-				return
-			}
-
-			if data.contains(.delete) || data.contains(.link) {
-				DispatchQueue.main.async {
-					self?.tailFile(url)
-				}
-			}
-
-			if data.contains(.extend) {
-				ui()
-			}
-		}
-
-		logFsObject?.setCancelHandler { [weak self] in
-			try? fh.close()
-
-			self?.logText = ""
-		}
-
-		logFsObject?.resume()
 	}
 }

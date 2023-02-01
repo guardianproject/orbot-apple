@@ -1,3 +1,4 @@
-– Mise à jour de Tor vers 0.4.7.8.
-– Suppression du paramètre de contournement explicite. Le contournement n’est désormais activé que si une appli enregistrée en a besoin.
-Sera désactivé de nouveau après retrait de toutes les applis de contournement.
+- Introduction d'un nouveau design incluant notre nouveau masque "Orbie" !
+- Ajout de la fonction "Smart Connect" pour aider à trouver une connexion qui fonctionne.
+- Ajout d'un sélecteur de pays pour les noeuds de sortie.
+- Mise à jour de Tor à la version 0.4.7.12.

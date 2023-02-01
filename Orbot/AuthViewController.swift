@@ -17,7 +17,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Auth Cookies", comment: "")
+		navigationItem.title = L10n.authCookies
 
 		let closeBt = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
 		closeBt.accessibilityIdentifier = "close_auth_cookies"
@@ -25,10 +25,10 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		navigationItem.leftBarButtonItem = closeBt
 
 		let addBt = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
-		addBt.accessibilityLabel = NSLocalizedString("Add", comment: "")
+		addBt.accessibilityLabel = L10n.add
 
 		let scanBt = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(qr))
-		scanBt.accessibilityLabel = NSLocalizedString("Scan QR Code", bundle: Bundle.iPtProxyUI, comment: "#bc-ignore!")
+		scanBt.accessibilityLabel = IPtProxyUI.L10n.scanQrCode
 
 		navigationItem.rightBarButtonItems = [addBt, scanBt]
 
@@ -102,9 +102,11 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 
 	// MARK: ScanQrDelegate
 
-	func scanned(value: String?) {
-		if let value = value,
-		   var urlc = URLComponents(string: value),
+	func scanned(raw: String?) {
+		navigationController?.popViewController(animated: true)
+
+		if let raw = raw,
+		   var urlc = URLComponents(string: raw),
 		   urlc.host?.lowercased().hasSuffix(".onion") ?? false
 		{
 			// Either use the URL password or the first "key" query item as the key.
@@ -155,12 +157,12 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		let actionTitle: String
 
 		if indexPath != nil {
-			title = NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: "")
-			actionTitle = NSLocalizedString("Edit", comment: "")
+			title = L10n.editAuthCookie
+			actionTitle = L10n.edit
 		}
 		else {
-			title = NSLocalizedString("Add v3 Onion Service Auth Cookie", comment: "")
-			actionTitle = NSLocalizedString("Add", comment: "")
+			title = L10n.addAuthCookie
+			actionTitle = L10n.add
 		}
 
 		let alert = AlertHelper.build(
@@ -184,7 +186,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		})
 
 		if let indexPath = indexPath {
-			alert.addAction(AlertHelper.destructiveAction(NSLocalizedString("Delete", comment: "")) { [weak self] _ in
+			alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
 				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
 			})
 		}
@@ -193,7 +195,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 			tf.keyboardType = .URL
 		}
 
-		AlertHelper.addTextField(alert, placeholder: NSLocalizedString("Key", comment: ""), text: key)
+		AlertHelper.addTextField(alert, placeholder: L10n.key, text: key)
 
 		present(alert, animated: true)
 	}

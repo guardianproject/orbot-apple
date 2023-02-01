@@ -7,12 +7,43 @@
 //
 
 import Foundation
+import IPtProxy
 import IPtProxyUI
 
 class Settings: IPtProxyUI.Settings {
 
+	/**
+	 Sets the Pluggable Transport's `TOR_PT_STATE_LOCATION` to a proper well-known value.
+
+	 `IPtProxy` cannot determine that on its own, so we need to override the default `TMPDIR` folder,
+	 because transports need a proper folder to write to, esp. for logging.
+	 */
+	class func setPtStateLocation() {
+		if let ptDir = FileManager.default.ptDir {
+			IPtProxy.setStateLocation(ptDir.path)
+
+//			print("[\(String(describing: type(of: self))) ptDir=\(ptDir.path)]")
+		}
+	}
+
 	class override var defaults: UserDefaults? {
 		UserDefaults(suiteName: Config.groupId)
+	}
+
+	/**
+	 Defaults to `true`!
+	 */
+	class var restartOnError: Bool {
+		get {
+			guard defaults?.object(forKey: "restart_on_error") != nil else {
+				return true
+			}
+
+			return defaults?.bool(forKey: "restart_on_error") ?? true
+		}
+		set {
+			defaults?.set(newValue, forKey: "restart_on_error")
+		}
 	}
 
 	class var onionOnly: Bool {
@@ -54,7 +85,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var entryNodes: String? {
 		get {
-			defaults?.string(forKey: "entry_nodes")
+			let value = defaults?.string(forKey: "entry_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "entry_nodes")
@@ -63,7 +96,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var exitNodes: String? {
 		get {
-			defaults?.string(forKey: "exit_nodes")
+			let value = defaults?.string(forKey: "exit_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "exit_nodes")
@@ -72,7 +107,9 @@ class Settings: IPtProxyUI.Settings {
 
 	class var excludeNodes: String? {
 		get {
-			defaults?.string(forKey: "exclude_nodes")
+			let value = defaults?.string(forKey: "exclude_nodes")?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "exclude_nodes")
@@ -90,7 +127,11 @@ class Settings: IPtProxyUI.Settings {
 
 	class var advancedTorConf: [String]? {
 		get {
-			defaults?.stringArray(forKey: "advanced_tor_conf")
+			let value = defaults?.stringArray(forKey: "advanced_tor_conf")?
+				.map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+				.filter({ !$0.isEmpty })
+
+			return value?.isEmpty ?? true ? nil : value
 		}
 		set {
 			defaults?.set(newValue, forKey: "advanced_tor_conf")
@@ -122,6 +163,41 @@ class Settings: IPtProxyUI.Settings {
 				forKey: "api_access_tokens")
 		}
 	}
+
+	class var snowflakesHelped: Int {
+		get {
+			defaults?.integer(forKey: "snowflakes_helped") ?? 0
+		}
+		set {
+			defaults?.set(newValue, forKey: "snowflakes_helped")
+		}
+	}
+
+	class var smartConnect: Bool {
+		get {
+			guard defaults?.object(forKey: "smart_connect") != nil else {
+				return true
+			}
+
+			return defaults?.bool(forKey: "smart_connect") ?? true
+		}
+		set {
+			defaults?.set(newValue, forKey: "smart_connect")
+		}
+	}
+
+	class var smartConnectTimeout: Double {
+		get {
+			guard defaults?.object(forKey: "smart_connect_timeout") != nil else {
+				return 30
+			}
+
+			return defaults?.double(forKey: "smart_connect_timeout") ?? 30
+		}
+		set {
+			defaults?.set(newValue, forKey: "smart_connect_timeout")
+		}
+	}
 }
 
 class ApiToken: NSObject, NSSecureCoding {
@@ -143,8 +219,8 @@ class ApiToken: NSObject, NSSecureCoding {
 	}
 
 	required init?(coder: NSCoder) {
-		guard let appId = coder.decodeObject(forKey: "appId") as? String,
-			  let key = coder.decodeObject(forKey: "key") as? String
+		guard let appId = coder.decodeObject(of: NSString.self, forKey: "appId") as? String,
+			  let key = coder.decodeObject(of: NSString.self, forKey: "key") as? String
 		else {
 			return nil
 		}
