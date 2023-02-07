@@ -109,9 +109,7 @@ class TorManager {
 //          updateConfig(transport)
 //      }
 
-		let logfile = (FileManager.default.torLogFile?.path as? NSString)?.utf8String
-
-		arti_listen(12345, 12346, logfile)
+		TorArti.start(withSocksPort: 12345, dnsPort: 12346, logfile: FileManager.default.torLogFile?.truncate())
 
 		DispatchQueue.global(qos: .userInteractive).async {
 			completion(nil, "127.0.0.1:12345", "127.0.0.1:12346")
@@ -212,26 +210,26 @@ class TorManager {
 	func updateConfig(_ transport: Transport) {
 		self.transport = transport
 
-		let group = DispatchGroup()
-
-		let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
-						 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
-
-		for key in resetKeys {
-			group.enter()
-
-			torController?.resetConf(forKey: key) { _, error in
-				if let error = error {
-					debugPrint(error)
-				}
-
-				group.leave()
-			}
-
-			group.wait()
-		}
-
-		torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
+//		let group = DispatchGroup()
+//
+//		let resetKeys = ["UseBridges", "ClientTransportPlugin", "Bridge",
+//						 "EntryNodes", "ExitNodes", "ExcludeNodes", "StrictNodes"]
+//
+//		for key in resetKeys {
+//			group.enter()
+//
+//			torController?.resetConf(forKey: key) { _, error in
+//				if let error = error {
+//					debugPrint(error)
+//				}
+//
+//				group.leave()
+//			}
+//
+//			group.wait()
+//		}
+//
+//		torController?.setConfs(nodeConf(Transport.asConf) + transportConf(Transport.asConf))
 	}
 
 	func stop() {

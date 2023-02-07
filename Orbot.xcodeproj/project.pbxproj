@@ -118,7 +118,6 @@
 		A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
 		A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73607247587D300073C81 /* UIButton+Helpers.swift */; };
-		A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AC792028D2253D005D2956 /* libartiorbotios.a */; };
 		A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
@@ -304,9 +303,6 @@
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A04672E9296DC85400BD0F2F /* BridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesViewController.swift; sourceTree = "<group>"; };
-		A04DADD028D1F64C00D16F7C /* arti-orbot-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "arti-orbot-ios"; sourceTree = "<group>"; };
-		A04DADD128D1F6D000D16F7C /* build-arti.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-arti.sh"; sourceTree = "<group>"; };
-		A04DADD328D2174200D16F7C /* arti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arti.h; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		A0507CF526F9FB9400F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/NetworkExtension.framework; sourceTree = DEVELOPER_DIR; };
@@ -456,7 +452,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0AC792128D2256E005D2956 /* libartiorbotios.a in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */,
 				43098D4DB9115D809C1A6937 /* Pods_TorVPN.framework in Frameworks */,
@@ -535,7 +530,6 @@
 				A01AB6A128A55706008A79EE /* TorVPN Mac */,
 				A0F868FE27D6293E00C9D407 /* leaf-ffi-orbot */,
 				A0F8690027D629B000C9D407 /* leaf */,
-				A04DADD028D1F64C00D16F7C /* arti-orbot-ios */,
 				A0D6162627D8E4AA008E0F3C /* Screenshots */,
 				A05B73B124755CE600930C40 /* Products */,
 				A53EFD1654E1809EC93A8DBC /* Pods */,
@@ -722,10 +716,8 @@
 			isa = PBXGroup;
 			children = (
 				A0F8690727D635D700C9D407 /* build-leaf.sh */,
-				A04DADD128D1F6D000D16F7C /* build-arti.sh */,
 				A0F8690927D64F7000C9D407 /* leaf-ffi.patch */,
 				A0F8690827D6372C00C9D407 /* leaf.h */,
-				A04DADD328D2174200D16F7C /* arti.h */,
 				A0E423BB291956A8001C31E9 /* ios */,
 				A0E423BC291956A8001C31E9 /* iossim */,
 				A0E423BA291956A8001C31E9 /* macos */,
@@ -897,7 +889,6 @@
 			buildPhases = (
 				5E14FF234312BD4A3EB54CDF /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* BartyCrouch */,
-				A04DADD228D1F86100D16F7C /* Build Arti */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
@@ -1237,25 +1228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-leaf.sh\n";
-		};
-		A04DADD228D1F86100D16F7C /* Build Arti */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Build Arti";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/libarti.a",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PROJECT_DIR}/leaf-ffi-orbot/build-arti.sh\n";
 		};
 		CFECBEA930359CB032083D3A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -1,6 +1,3 @@
 [submodule "leaf"]
 	path = leaf
 	url = https://github.com/tladesignz/leaf.git
-[submodule "arti-orbot-ios"]
-	path = arti-orbot-ios
-	url = https://gitlab.torproject.org/ahf/arti-orbot-ios.git
