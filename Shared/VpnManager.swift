@@ -340,6 +340,10 @@ class VpnManager: BridgesConfDelegate {
 		if explicit, let manager = manager, manager.isOnDemandEnabled {
 			manager.isOnDemandEnabled = false
 
+			if Settings.disableOnStop {
+				manager.isEnabled = false
+			}
+
 			save(manager, completed)
 		}
 		else {
