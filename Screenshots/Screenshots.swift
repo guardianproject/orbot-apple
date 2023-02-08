@@ -59,7 +59,8 @@ class Screenshots: XCTestCase {
 
 		snapshot("4-Bridge-Configuration")
 
-		app.tables.cells["transport_3"].tap()
+		app.tables.cells["transport_custom"].tap()
+		app.tables.cells["next_button"].tap()
 
 		snapshot("5-Custom-Bridges")
 
