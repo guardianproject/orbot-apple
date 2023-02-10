@@ -59,7 +59,7 @@ class Screenshots: XCTestCase {
 
 		snapshot("4-Bridge-Configuration")
 
-		app.tables.cells["transport_3"].tap()
+//		app.tables.cells["transport_3"].tap()
 
 		snapshot("5-Custom-Bridges")
 
