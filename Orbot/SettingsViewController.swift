@@ -20,7 +20,7 @@ class SettingsViewController: BaseFormViewController {
 		closeBt.accessibilityIdentifier = "close_settings"
 
 		form
-		+++ Section(L10n.automaticRestart)
+		+++ Section()
 		<<< SwitchRow() {
 			$0.title = L10n.automaticallyRestartOnError
 			$0.value = Settings.restartOnError
@@ -30,6 +30,15 @@ class SettingsViewController: BaseFormViewController {
 			Settings.restartOnError = row.value ?? false
 
 			VpnManager.shared.updateRestartOnError()
+		}
+
+		<<< SwitchRow() {
+			$0.title = L10n.switchBackToLastUsedVpnAfterStop
+			$0.value = Settings.disableOnStop
+			$0.cell.textLabel?.numberOfLines = 0
+		}
+		.onChange { row in
+			Settings.disableOnStop = row.value ?? false
 		}
 
 		+++ Section(header: L10n.onionOnlyMode, footer: L10n.attentionAnonymity)

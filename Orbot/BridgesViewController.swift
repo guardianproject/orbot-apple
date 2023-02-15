@@ -163,7 +163,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		}
 
 		form
-		+++ RoundedButtonRow()
+		+++ RoundedButtonRow() {
+			$0.cell.accessibilityIdentifier = "next_button"
+		}
 		.cellUpdate({ [weak self] _, row in
 			switch self?.section.selectedRow()?.value ?? .direct {
 			case .request, .requestMail, .requestTelegram, .custom:

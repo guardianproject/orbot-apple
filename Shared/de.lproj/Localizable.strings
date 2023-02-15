@@ -443,6 +443,9 @@
 "SVG documents" = "SVG-Dokumenten";
 
 /* No comment provided by engineer. */
+"Switch back to last used VPN after stop" = "Nach Stopp zum letzten verwendeten VPN zurückwechseln";
+
+/* No comment provided by engineer. */
 "That app also wants to bypass %@!" = "Diese App will auch %@ umgehen!";
 
 /* No comment provided by engineer. */

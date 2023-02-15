@@ -67,13 +67,19 @@ final class RoundedButtonRow: Row<RoundedButtonCell>, RowType {
 	fileprivate var topBottomPadding: CGFloat = 0
 
 
-	convenience init(tag: String?, height: CGFloat = 48, cornerRadius: CGFloat = 9, leadingTrailingPadding: CGFloat = 16, topBottomPadding: CGFloat = 0) {
+	convenience init(
+		tag: String?, height: CGFloat = 48, cornerRadius: CGFloat = 9,
+		leadingTrailingPadding: CGFloat = 16, topBottomPadding: CGFloat = 0,
+		_ initializer: (RoundedButtonRow) -> Void = { _ in })
+	{
 		self.init(tag: tag)
 
 		self.height = height
 		self.cornerRadius = cornerRadius
 		self.leadingTrailingPadding = leadingTrailingPadding
 		self.topBottomPadding = topBottomPadding
+
+		initializer(self)
 	}
 
 	required init(tag: String?) {

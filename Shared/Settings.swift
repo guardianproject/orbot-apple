@@ -46,6 +46,15 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
+	class var disableOnStop: Bool {
+		get {
+			defaults?.bool(forKey: "disable_on_stop") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "disable_on_stop")
+		}
+	}
+
 	class var onionOnly: Bool {
 		get {
 			defaults?.bool(forKey: "onion_only") ?? false

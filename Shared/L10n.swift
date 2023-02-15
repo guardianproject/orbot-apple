@@ -107,6 +107,10 @@ class L10n {
 		NSLocalizedString("Automatically Restart on Error", comment: "")
 	}
 
+	static var switchBackToLastUsedVpnAfterStop: String {
+		NSLocalizedString("Switch back to last used VPN after stop", comment: "")
+	}
+
 	static var onionOnlyMode: String {
 		NSLocalizedString("Onion-only Mode", comment: "")
 	}
