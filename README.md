@@ -17,6 +17,8 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 
 ## Build
 
+[![Build Status](https://app.bitrise.io/app/a3aef149696bf539/status.svg?token=2UMfQwzQheD_TMZjJBpMyQ&branch=master)](https://app.bitrise.io/app/a3aef149696bf539)
+
 ### Prerequisits:
 - MacOS Big Sur or later
 - Xcode 13 or later
