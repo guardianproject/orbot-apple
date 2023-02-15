@@ -20,6 +20,12 @@ class CaptchaViewController: UIViewController {
 		}
 	}
 
+	@IBOutlet weak var refreshBt: UIButton! {
+		didSet {
+			refreshBt.accessibilityLabel = NSLocalizedString("Refresh", comment: "")
+		}
+	}
+
 	@IBOutlet weak var solutionTf: UITextField! {
 		didSet {
 			solutionTf.placeholder = NSLocalizedString("Enter text above", comment: "")
@@ -29,6 +35,7 @@ class CaptchaViewController: UIViewController {
 	@IBOutlet weak var saveBt: UIButton! {
 		didSet {
 			saveBt.setTitle(IPtProxyUI.L10n.save)
+			saveBt.isEnabled = false
 		}
 	}
 
@@ -45,6 +52,8 @@ class CaptchaViewController: UIViewController {
 		super.viewDidLoad()
 
 		navigationItem.title = NSLocalizedString("Solve CAPTCHA", comment: "")
+
+		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +75,7 @@ class CaptchaViewController: UIViewController {
 
 	@IBAction
 	func save() {
+		dismissKeyboard()
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 
 		MoatViewController.requestBridges(delegate, challenge, solutionTf.text) { [weak self] bridges, error in
@@ -95,10 +105,10 @@ class CaptchaViewController: UIViewController {
 		}
 	}
 
-
-	// MARK: Private Methods
-
-	@objc private func fetchCaptcha(_ sender: Any?) {
+	@IBAction
+	func fetchCaptcha(_ sender: Any?) {
+		refreshBt.isEnabled = false
+		saveBt.isEnabled = false
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 
 		MoatViewController.fetchCaptcha(delegate) { [weak self] challenge, captcha, error in
@@ -108,6 +118,8 @@ class CaptchaViewController: UIViewController {
 				}
 
 				hud.hide(animated: true)
+				self.refreshBt.isEnabled = true
+				self.solutionDidChange()
 
 				if let error = error {
 					AlertHelper.present(self, message: error.localizedDescription)
@@ -121,5 +133,19 @@ class CaptchaViewController: UIViewController {
 				}
 			}
 		}
+	}
+
+
+	@IBAction
+	func solutionDidChange() {
+		saveBt.isEnabled = !(solutionTf.text?.isEmpty ?? true)
+	}
+
+
+	// MARK: Private Methods
+
+	@objc
+	private func dismissKeyboard() {
+		view.endEditing(true)
 	}
 }

@@ -1,4 +1,4 @@
-Orbot es el VPN original gratuito y de código abierto impulsada por Tor para iOS. Orbot te ayuda a acceder a Internet con más seguridad y privacidad, y sin costo adicional para ti.
+Orbot es la VPN original gratuita y de código abierto impulsada por Tor para iOS y macOS. Orbot te ayuda a acceder a Internet con más seguridad y privacidad, y sin costo adicional para ti.
 
 CARACTERÍSTICAS:
 -Navega por Internet a través de Tor.

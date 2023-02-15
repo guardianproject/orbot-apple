@@ -380,13 +380,32 @@ Use Smart Connect</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text above" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-Bt-9fU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-0J-cNq">
+                                <rect key="frame" x="262" y="103" width="34" height="34"/>
+                                <color key="backgroundColor" name="Accent1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Cnr-oZ-VMA"/>
+                                    <constraint firstAttribute="height" constant="34" id="XYZ-1c-qaj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fetchCaptcha:" destination="gEp-PQ-LNn" eventType="touchUpInside" id="q5c-gd-WC8"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text above" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ljY-Bt-9fU">
                                 <rect key="frame" x="16" y="153" width="288" height="34"/>
                                 <color key="backgroundColor" name="Black3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
                                 <connections>
                                     <action selector="save" destination="gEp-PQ-LNn" eventType="primaryActionTriggered" id="CDp-Xe-6Ix"/>
+                                    <action selector="solutionDidChange" destination="gEp-PQ-LNn" eventType="editingChanged" id="sSw-UF-nnt"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTa-Sr-KGQ">
@@ -410,6 +429,7 @@ Use Smart Connect</string>
                         <viewLayoutGuide key="safeArea" id="Cn2-dK-bq8"/>
                         <color key="backgroundColor" name="Black2"/>
                         <constraints>
+                            <constraint firstItem="Lfm-0J-cNq" firstAttribute="bottom" secondItem="aoJ-0o-cdy" secondAttribute="bottom" constant="-8" id="1oE-6a-SWr"/>
                             <constraint firstItem="IlD-FN-Wn0" firstAttribute="leading" secondItem="aoJ-0o-cdy" secondAttribute="leading" id="2bg-qB-L6H"/>
                             <constraint firstItem="dTa-Sr-KGQ" firstAttribute="top" secondItem="ljY-Bt-9fU" secondAttribute="bottom" constant="32" id="2ho-pq-ONh"/>
                             <constraint firstItem="IlD-FN-Wn0" firstAttribute="bottom" secondItem="aoJ-0o-cdy" secondAttribute="bottom" id="4hZ-o6-Vcp"/>
@@ -421,12 +441,14 @@ Use Smart Connect</string>
                             <constraint firstItem="Cn2-dK-bq8" firstAttribute="trailing" secondItem="aoJ-0o-cdy" secondAttribute="trailing" constant="16" id="V1H-Wn-eEz"/>
                             <constraint firstItem="IlD-FN-Wn0" firstAttribute="top" secondItem="aoJ-0o-cdy" secondAttribute="top" id="WLL-QU-iff"/>
                             <constraint firstItem="dTa-Sr-KGQ" firstAttribute="leading" secondItem="Cn2-dK-bq8" secondAttribute="leading" constant="16" id="YrF-qa-SY0"/>
+                            <constraint firstItem="Lfm-0J-cNq" firstAttribute="trailing" secondItem="aoJ-0o-cdy" secondAttribute="trailing" constant="-8" id="hqn-jk-cFg"/>
                             <constraint firstItem="Cn2-dK-bq8" firstAttribute="trailing" secondItem="ljY-Bt-9fU" secondAttribute="trailing" constant="16" id="tSZ-5d-Iv6"/>
                             <constraint firstItem="ljY-Bt-9fU" firstAttribute="top" secondItem="aoJ-0o-cdy" secondAttribute="bottom" constant="8" symbolic="YES" id="x1Q-i4-4JK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="captchaIv" destination="aoJ-0o-cdy" id="peN-Ea-aUH"/>
+                        <outlet property="refreshBt" destination="Lfm-0J-cNq" id="zYX-1f-AsF"/>
                         <outlet property="saveBt" destination="dTa-Sr-KGQ" id="H3S-y3-nFU"/>
                         <outlet property="solutionTf" destination="ljY-Bt-9fU" id="nnK-a0-BFM"/>
                     </connections>
@@ -511,7 +533,7 @@ Use Smart Connect</string>
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -531,6 +553,7 @@ Use Smart Connect</string>
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="noise" width="32" height="32"/>
