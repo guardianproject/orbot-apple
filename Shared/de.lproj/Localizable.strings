@@ -46,9 +46,6 @@
 /* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "Ein \"Inhaltsblocker\" enthält eine Liste von Dingen die Safari, alle anderen Browser und alle Web-Anzeigen in anderen Apps blockieren müssen.";
 
-/* No comment provided by engineer. */
-"A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one." = "A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one.";
-
 /* macOS menu item */
 "About %@" = "Über %@";
 
@@ -128,9 +125,6 @@
 "Block requests" = "Blockiere Anfragen";
 
 /* No comment provided by engineer. */
-"Blocked in some countries, but great otherwise when you don't trust the network you're in." = "Blocked in some countries, but great otherwise when you don't trust the network you're in.";
-
-/* No comment provided by engineer. */
 "Blocker" = "Blocker";
 
 /* No comment provided by engineer. */
@@ -166,9 +160,6 @@
 /* No comment provided by engineer. */
 "Cleared!" = "Gelöscht!";
 
-/* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking." = "Cloaks your traffic. Gets around some Tor blocking.";
-
 /* macOS menu item */
 "Close" = "Schließen";
 
@@ -180,9 +171,6 @@
 
 /* No comment provided by engineer. */
 "Connecting" = "Verbinden";
-
-/* No comment provided by engineer. */
-"Connects through Tor volunteers. Gets around some Tor blocking." = "Connects through Tor volunteers. Gets around some Tor blocking.";
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Inhaltsblocker";
@@ -202,12 +190,6 @@
 /* No comment provided by engineer. */
 "Current State" = "Aktueller Zustand";
 
-/* No comment provided by engineer. */
-"Custom Bridge" = "Custom Bridge";
-
-/* No comment provided by engineer. */
-"Custom bridges" = "Custom bridges";
-
 /* macOS menu item */
 "Customize Toolbar…" = "Werkzeugleiste anpassen…";
 
@@ -216,9 +198,6 @@
 
 /* No comment provided by engineer. */
 "Delete" = "Löschen";
-
-/* No comment provided by engineer. */
-"Direct connection to Tor" = "Direct connection to Tor";
 
 /* No comment provided by engineer. */
 "Disable %@ for non-onion traffic" = "Deaktiviere %@ bei nicht-Onion Seiten";
@@ -247,14 +226,8 @@
 /* No comment provided by engineer. */
 "enabled" = "aktiviert";
 
-/* No comment provided by engineer. */
-"Enter bridge address" = "Enter bridge address";
-
 /* macOS menu item */
 "Enter Full Screen" = "Vollbildmodus";
-
-/* No comment provided by engineer. */
-"Enter text above" = "Enter text above";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Eingangs-Netzknoten";
@@ -292,9 +265,6 @@
 /* macOS menu item */
 "Find Previous" = "Weitersuchen (rückwärts)";
 
-/* No comment provided by engineer. */
-"Find Snowflake volunteers through another mechanism." = "Find Snowflake volunteers through another mechanism.";
-
 /* macOS menu item */
 "Find…" = "Suchen…";
 
@@ -303,15 +273,6 @@
 
 /* No comment provided by engineer. */
 "General" = "Allgemein";
-
-/* No comment provided by engineer. */
-"Get bridges from Tor (Obfs4)" = "Get bridges from Tor (Obfs4)";
-
-/* No comment provided by engineer. */
-"Get bridges via Mail" = "Get bridges via Mail";
-
-/* No comment provided by engineer. */
-"Get bridges via Telegram" = "Get bridges via Telegram";
 
 /* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "Gehe zurück zur anfordernden App und kopiere das Token in das entsprechende Formularfeld.";
@@ -332,16 +293,10 @@
 "Hide Others" = "Andere ausblenden";
 
 /* No comment provided by engineer. */
-"If Telegram works for you, you can ask the Telgram Tor Bot for bridges. Tap on 'Start' or write '/start' or '/bridges' in the chat." = "If Telegram works for you, you can ask the Telgram Tor Bot for bridges. Tap on 'Start' or write '/start' or '/bridges' in the chat.";
-
-/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über Dein Surfverhalten an Deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
 
 /* No comment provided by engineer. */
 "images" = "Bildern";
-
-/* No comment provided by engineer. */
-"In case you cannot reach Tor's bridge distribution website, you can try via mail. Has to be from a Gmail or Riseup account." = "In case you cannot reach Tor's bridge distribution website, you can try via mail. Has to be from a Gmail or Riseup account.";
 
 /* No comment provided by engineer. */
 "Install" = "Installieren";
@@ -375,12 +330,6 @@
 
 /* macOS menu item */
 "Minimize" = "Im Dock ablegen";
-
-/* No comment provided by engineer. */
-"Most likely to keep you connected if Tor is severly blocked. Requires a bridge address from someone you trust." = "Most likely to keep you connected if Tor is severly blocked. Requires a bridge address from someone you trust.";
-
-/* No comment provided by engineer. */
-"Next" = "Next";
 
 /* No comment provided by engineer. */
 "No VPN configuration set." = "Keine VPN-Konfiguration gesetzt.";
@@ -449,12 +398,6 @@
 "Redo" = "Wiederholen";
 
 /* No comment provided by engineer. */
-"Refresh" = "Refresh";
-
-/* No comment provided by engineer. */
-"Scan a bridge QR code" = "Scan a bridge QR code";
-
-/* No comment provided by engineer. */
 "scripts" = "Skripten";
 
 /* macOS menu item */
@@ -477,15 +420,6 @@
 
 /* No comment provided by engineer. */
 "Smart Connect Timeout (s)" = "Smart Connect Zeitüberschreitung (s)";
-
-/* No comment provided by engineer. */
-"Snowflake" = "Snowflake";
-
-/* No comment provided by engineer. */
-"Snowflake (AMP rendezvous)" = "Snowflake (AMP rendezvous)";
-
-/* No comment provided by engineer. */
-"Solve CAPTCHA" = "Solve CAPTCHA";
 
 /* macOS menu item */
 "Speech" = "Sprachausgabe";
@@ -519,9 +453,6 @@
 
 /* No comment provided by engineer. */
 "The API access token was copied to your clipboard." = "Das API-Zugriffstoken wurde in deine Zwischenablage kopiert.";
-
-/* No comment provided by engineer. */
-"The best way to connect to Tor. Use if Tor is not blocked." = "The best way to connect to Tor. Use if Tor is not blocked.";
 
 /* No comment provided by engineer. */
 "the website" = "der Webseite";
@@ -577,14 +508,8 @@
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
 
-/* No comment provided by engineer. */
-"Well-known Obfs4 bridges" = "Well-known Obfs4 bridges";
-
 /* macOS menu item */
 "Window" = "Fenster";
-
-/* No comment provided by engineer. */
-"You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
 
 /* macOS menu item */
 "Zoom" = "Zoomen";

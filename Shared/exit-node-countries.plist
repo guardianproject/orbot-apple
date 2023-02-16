@@ -17,10 +17,12 @@
 	<string>cz</string>
 	<string>de</string>
 	<string>dk</string>
+	<string>ee</string>
 	<string>es</string>
 	<string>fi</string>
 	<string>fr</string>
 	<string>gb</string>
+	<string>gr</string>
 	<string>hk</string>
 	<string>hr</string>
 	<string>hu</string>
@@ -30,8 +32,8 @@
 	<string>in</string>
 	<string>is</string>
 	<string>it</string>
-	<string>jp</string>
 	<string>kr</string>
+	<string>kz</string>
 	<string>lt</string>
 	<string>lu</string>
 	<string>lv</string>
@@ -40,14 +42,17 @@
 	<string>my</string>
 	<string>nl</string>
 	<string>no</string>
+	<string>pa</string>
 	<string>pe</string>
 	<string>pk</string>
 	<string>pl</string>
 	<string>ro</string>
+	<string>rs</string>
 	<string>ru</string>
 	<string>se</string>
 	<string>sg</string>
 	<string>sk</string>
+	<string>th</string>
 	<string>tr</string>
 	<string>tw</string>
 	<string>ua</string>

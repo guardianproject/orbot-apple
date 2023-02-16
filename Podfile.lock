@@ -44,7 +44,7 @@ CHECKOUT OPTIONS:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
   IPtProxyUI:
-    :commit: 08f2bcedec491afc7442d06642e7244ec8322cd3
+    :commit: dd2e2585c79c2989a17df4ff01a8b41a2dddb312
     :git: https://github.com/tladesignz/IPtProxyUI-ios
 
 SPEC CHECKSUMS:
