@@ -51,5 +51,10 @@ extension Config {
 	class var extendedLogging: Bool {
 		!screenshotMode && true
 	}
+#else
+	class var screenshotMode: Bool {
+		false
+	}
 #endif
+
 }
