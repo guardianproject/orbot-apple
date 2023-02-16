@@ -25,17 +25,17 @@ CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER[config=Debug] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Debug] =
 
-APP_BUNDLE_ID[config=Release] = com.jthess.guardianproject.ci.orbot
-EXT_BUNDLE_ID[config=Release] = com.jthess.guardianproject.ci.orbot.ext
-CONTENT_BLOCKER_BUNDLE_ID[config=Release] = com.jthess.guardianproject.ci.orbot.ContentBlocker
-APP_GROUP[config=Release] = group.com.jthess.guardianproject.ci
+APP_BUNDLE_ID[config=Release] = org.torproject.orbot
+EXT_BUNDLE_ID[config=Release] = org.torproject.orbot.ext
+CONTENT_BLOCKER_BUNDLE_ID[config=Release] = org.torproject.orbot.ContentBlocker
+APP_GROUP[config=Release] = group.org.torproject.orbot
 DEVELOPMENT_TEAM[config=Release] = 7AERKXM2KD
 CODE_SIGN_IDENTITY[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 EXT_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 CONTENT_BLOCKER_PROVISIONING_PROFILE_SPECIFIER[config=Release] =
 APP_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
-EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] = 
+EXT_PROVISIONING_PROFILE_SPECIFIER_MAC[config=Release] =
 
 MARKETING_VERSION = 1.5.0
 CURRENT_PROJECT_VERSION = 27
