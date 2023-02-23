@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		Settings.setPtStateLocation()
+		Settings.stateLocation = FileManager.default.ptDir!
 
 #if DEBUG
 		SharedUtils.addScreenshotDummies()

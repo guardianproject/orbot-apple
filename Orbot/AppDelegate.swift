@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
 	{
-		Settings.setPtStateLocation()
+		Settings.stateLocation = FileManager.default.ptDir!
 
 		UIView.appearance().tintColor = .label
 		UITableView.appearance().backgroundColor = .init(named: .colorBlack2)

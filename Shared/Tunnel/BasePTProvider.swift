@@ -64,8 +64,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 		NSKeyedUnarchiver.setClass(DebugMessage.self, forClassName:
 									"Orbot_Mac.\(String(describing: DebugMessage.self))")
 
-		Settings.setPtStateLocation()
-	}
+		Settings.stateLocation = FileManager.default.ptDir!
+}
 
 
 	override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)

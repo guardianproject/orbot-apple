@@ -12,20 +12,6 @@ import IPtProxyUI
 
 class Settings: IPtProxyUI.Settings {
 
-	/**
-	 Sets the Pluggable Transport's `TOR_PT_STATE_LOCATION` to a proper well-known value.
-
-	 `IPtProxy` cannot determine that on its own, so we need to override the default `TMPDIR` folder,
-	 because transports need a proper folder to write to, esp. for logging.
-	 */
-	class func setPtStateLocation() {
-		if let ptDir = FileManager.default.ptDir {
-			IPtProxy.setStateLocation(ptDir.path)
-
-//			print("[\(String(describing: type(of: self))) ptDir=\(ptDir.path)]")
-		}
-	}
-
 	class override var defaults: UserDefaults? {
 		UserDefaults(suiteName: Config.groupId)
 	}
