@@ -178,7 +178,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(
+		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, _, showConfButton) = SharedUtils.updateUi(
 			notification, buttonFontSize: controlBt.font?.pointSize)
 
 #if DEBUG
@@ -188,6 +188,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		statusText.setAlignment(.center, range: NSRange(location: 0, length: statusText.length))
 
 		statusIcon.image = NSImage(named: statusIconName)
+		shadowImg.isHidden = !showShadow
 		statusLb.attributedStringValue = statusText
 		statusSubLb.stringValue = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
@@ -196,6 +197,8 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 		control2BtHeight.constant = hide ? 0 : 64
 		control2Bt.isHidden = hide
+
+		configureBt.isHidden = !showConfButton
 	}
 
 

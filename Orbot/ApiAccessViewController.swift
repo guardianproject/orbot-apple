@@ -43,7 +43,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 
 		let token = tokens[indexPath.row]
 
-		cell.appIdLb?.text = token.appId
+		cell.appIdLb?.text = token.friendlyName
 		cell.keyLb?.text = token.key
 
 		cell.bypassLb?.text = token.bypass
@@ -79,22 +79,44 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	// MARK: Actions
 
 	@objc func close() {
-		navigationController?.dismiss(animated: true) {
-			((UIApplication.shared.delegate?.window??.rootViewController as? UINavigationController)?.viewControllers.first as? MainViewController)?
-				.updateMenu()
-		}
+		navigationController?.dismiss(animated: true)
+
+		((UIApplication.shared.delegate?.window??.rootViewController as? UINavigationController)?
+			.viewControllers.first as? MainViewController)?
+			.updateMenu()
 	}
 
 
-	func addToken(_ appId: String, _ needsBypass: Bool, _ completion: @escaping (_ token: ApiToken?) -> Void) {
-		let token = ApiToken(appId: appId, key: UUID().uuidString, bypass: needsBypass)
+	func addToken(_ appId: String, _ appName: String?, _ needsBypass: Bool, _ completion: @escaping (_ token: ApiToken?) -> Void) {
+		let token = ApiToken(appId: appId, key: UUID().uuidString, appName: appName, bypass: needsBypass)
 
-		showAlert(token, nil) { [weak self] token in
-			if token != nil {
-				self?.tableView?.reloadData()
+		if let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "accessRequest") as? AccessRequestViewController {
+			vc.token = token
+			vc.completion = { granted in
+				self.tokens.removeAll(where: { $0.appId == token.appId })
+
+				if granted {
+					self.tokens.append(token)
+
+					UIPasteboard.general.string = token.key
+
+					// User granted bypass access. Switch on, if not yet enabled.
+					if token.bypass && Settings.bypassPort == nil {
+						Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
+
+						// Restart with activated bypass.
+						self.restartVpn()
+					}
+				}
+
+				// Since we removed ourselves, we need to find the navigationController on the AccessRequestViewController.
+				vc.navigationController?.dismiss(animated: true)
+				self.close()
+
+				completion(token)
 			}
 
-			completion(token)
+			navigationController?.viewControllers = [vc]
 		}
 	}
 
@@ -108,66 +130,22 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 
 	// MARK: Private Methods
 
-	private func showAlert(_ token: ApiToken, _ indexPath: IndexPath?, _ completion: @escaping (_ token: ApiToken?) -> Void) {
-		let title: String
-		var message: String?
-		let actionTitle: String
-
-		if indexPath != nil {
-			title = NSLocalizedString("API Access Token", comment: "")
-			message = nil
-			actionTitle = NSLocalizedString("Copy to Clipboard", comment: "")
-		}
-		else {
-			title = NSLocalizedString("Add API Access Token", comment: "")
-			message = NSLocalizedString("Another app requested an API access token.", comment: "")
-
-			if token.bypass {
-				message! += "\n\n"
-				+ String(format: NSLocalizedString("That app also wants to bypass %@!", comment: ""), Bundle.main.displayName)
-
-				actionTitle = NSLocalizedString("Allow Access and Bypass", comment: "")
-			}
-			else {
-				actionTitle = NSLocalizedString("Allow Access", comment: "")
-			}
-		}
-
+	private func showAlert(_ token: ApiToken, _ indexPath: IndexPath, _ completion: @escaping (_ token: ApiToken?) -> Void) {
 		let alert = AlertHelper.build(
-			message: message,
-			title: title,
+			title: NSLocalizedString("API Access Token", comment: ""),
 			actions: [AlertHelper.cancelAction(handler: { _ in completion(nil) })])
 
-		alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] action in
-
-			if token.bypass {
-				// User granted bypass access. Switch on, if not yet enabled.
-				if Settings.bypassPort == nil {
-					Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
-
-					// Restart with activated bypass.
-					self?.restartVpn()
-				}
-			}
-
+		alert.addAction(AlertHelper.defaultAction(NSLocalizedString("Copy to Clipboard", comment: "")) { action in
 			UIPasteboard.general.string = token.key
-
-			if indexPath == nil {
-				self?.tokens.removeAll(where: { $0.appId == token.appId })
-
-				self?.tokens.append(token)
-			}
 
 			completion(token)
 		})
 
-		if let indexPath = indexPath {
-			alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
-				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
-			})
-		}
+		alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
+			self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
+		})
 
-		AlertHelper.addTextField(alert, text: token.appId) { tf in
+		AlertHelper.addTextField(alert, text: token.friendlyName) { tf in
 			tf.delegate = self
 		}
 

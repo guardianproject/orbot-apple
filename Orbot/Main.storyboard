@@ -28,7 +28,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.shadow" translatesAutoresizingMaskIntoConstraints="NO" id="hc2-uq-S3p">
                                 <rect key="frame" x="96" y="181.5" width="128" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hc2-uq-S3p" secondAttribute="height" multiplier="65:9" id="Qgb-ab-SrY"/>
+                                    <constraint firstAttribute="height" constant="18" id="0OM-UZ-cSx"/>
                                     <constraint firstAttribute="width" constant="128" id="wZQ-5B-37E"/>
                                 </constraints>
                             </imageView>
@@ -177,13 +177,17 @@ Use Smart Connect</string>
                     </view>
                     <navigationItem key="navigationItem" title="Orbot" id="zMH-CW-kWH">
                         <barButtonItem key="leftBarButtonItem" image="chart.bar.doc.horizontal" catalog="system" id="2Pk-78-bJO">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="toggleLogs" destination="BYZ-38-t0r" id="LIU-0x-Sq4"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="ellipsis" catalog="system" id="ni1-t3-I0T"/>
+                            <barButtonItem image="ellipsis" catalog="system" id="ni1-t3-I0T">
+                                <color key="tintColor" systemColor="labelColor"/>
+                            </barButtonItem>
                             <barButtonItem systemItem="refresh" id="IAe-hm-hL7">
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <connections>
                                     <action selector="refresh:" destination="BYZ-38-t0r" id="hfN-Sa-L70"/>
                                 </connections>
@@ -202,7 +206,9 @@ Use Smart Connect</string>
                         <outlet property="refreshBt" destination="IAe-hm-hL7" id="MII-sD-D9U"/>
                         <outlet property="settingsBt" destination="ni1-t3-I0T" id="9Fk-Cd-K9y"/>
                         <outlet property="shadowImg" destination="hc2-uq-S3p" id="Us5-Lf-lzv"/>
+                        <outlet property="shadowImgHeight" destination="0OM-UZ-cSx" id="CUt-0D-Cy6"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
+                        <outlet property="statusIconWidth" destination="Wnm-LL-BGe" id="HIB-BT-gjB"/>
                         <outlet property="statusLb" destination="trJ-w6-CDg" id="2On-Ts-emC"/>
                         <outlet property="statusSubLb" destination="eEm-Rp-xCs" id="aIA-Rq-sK0"/>
                     </connections>
@@ -215,6 +221,159 @@ Use Smart Connect</string>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Access Request View Controller-->
+        <scene sceneID="pAc-Hf-2db">
+            <objects>
+                <viewController storyboardIdentifier="accessRequest" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qyh-95-plC" customClass="AccessRequestViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fw7-PF-UlP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPj-sx-dLM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnw-uB-n5Y">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="538.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.office" translatesAutoresizingMaskIntoConstraints="NO" id="BIO-1I-rPI">
+                                                <rect key="frame" x="64" y="20" width="192" height="192"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="192" id="Tn3-M3-jrc"/>
+                                                    <constraint firstAttribute="width" secondItem="BIO-1I-rPI" secondAttribute="height" multiplier="1:1" id="liI-X5-B7g"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%1$@ wants to access %2$@." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-ti-nKA">
+                                                <rect key="frame" x="20" y="220" width="280" height="50.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Get updates on the status of the connection." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEc-5e-Nkh">
+                                                <rect key="frame" x="20" y="307" width="280" height="42.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Get information about Tor circuits." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRi-2E-mtg">
+                                                <rect key="frame" x="20" y="357.5" width="280" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Bypass %1$@." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOQ-31-pR0">
+                                                <rect key="frame" x="20" y="386" width="280" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkC-BX-eRj">
+                                                <rect key="frame" x="20" y="414.5" width="280" height="48"/>
+                                                <color key="backgroundColor" name="Black3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="sw9-It-n2x"/>
+                                                </constraints>
+                                                <color key="tintColor" name="DarkGreen"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system" title="Grant"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="grant" destination="Qyh-95-plC" eventType="touchUpInside" id="im1-lj-5qs"/>
+                                                    <action selector="save" destination="6kb-zv-6wX" eventType="touchUpInside" id="csu-cR-aSk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnW-dY-WLS">
+                                                <rect key="frame" x="20" y="470.5" width="280" height="48"/>
+                                                <color key="backgroundColor" name="Black3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="Czi-qn-wQM"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="systemRedColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="xmark.shield" catalog="system" title="Deny"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="deny" destination="Qyh-95-plC" eventType="touchUpInside" id="OsG-dj-LgD"/>
+                                                    <action selector="save" destination="6kb-zv-6wX" eventType="touchUpInside" id="om8-2q-vTZ"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will allow %1$@ to:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ce-bF-fTJ">
+                                                <rect key="frame" x="20" y="278.5" width="280" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vOQ-31-pR0" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="0Kh-JT-ZA6"/>
+                                            <constraint firstItem="EEc-5e-Nkh" firstAttribute="top" secondItem="7ce-bF-fTJ" secondAttribute="bottom" constant="8" symbolic="YES" id="1Aj-0W-h32"/>
+                                            <constraint firstItem="BRi-2E-mtg" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="4rb-Ap-P9P"/>
+                                            <constraint firstAttribute="trailing" secondItem="VkC-BX-eRj" secondAttribute="trailing" constant="20" symbolic="YES" id="GSD-ju-6i5"/>
+                                            <constraint firstItem="7ce-bF-fTJ" firstAttribute="top" secondItem="cJt-ti-nKA" secondAttribute="bottom" constant="8" symbolic="YES" id="GgP-fX-sc0"/>
+                                            <constraint firstItem="BIO-1I-rPI" firstAttribute="centerX" secondItem="Gnw-uB-n5Y" secondAttribute="centerX" id="KYK-Bm-Jg6"/>
+                                            <constraint firstAttribute="trailing" secondItem="vOQ-31-pR0" secondAttribute="trailing" constant="20" symbolic="YES" id="RtN-EJ-fK9"/>
+                                            <constraint firstAttribute="trailing" secondItem="7ce-bF-fTJ" secondAttribute="trailing" constant="20" symbolic="YES" id="U9O-2A-kjl"/>
+                                            <constraint firstItem="EEc-5e-Nkh" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="Vxi-Fm-CII"/>
+                                            <constraint firstItem="VkC-BX-eRj" firstAttribute="top" secondItem="vOQ-31-pR0" secondAttribute="bottom" constant="8" symbolic="YES" id="VyG-Ug-Esr"/>
+                                            <constraint firstAttribute="trailing" secondItem="EEc-5e-Nkh" secondAttribute="trailing" constant="20" symbolic="YES" id="YhF-A5-kgt"/>
+                                            <constraint firstAttribute="trailing" secondItem="cJt-ti-nKA" secondAttribute="trailing" constant="20" symbolic="YES" id="b8C-Ck-QBx"/>
+                                            <constraint firstAttribute="bottom" secondItem="CnW-dY-WLS" secondAttribute="bottom" constant="20" symbolic="YES" id="bNm-VY-TyI"/>
+                                            <constraint firstItem="vOQ-31-pR0" firstAttribute="top" secondItem="BRi-2E-mtg" secondAttribute="bottom" constant="8" symbolic="YES" id="ceK-ea-QNQ"/>
+                                            <constraint firstItem="cJt-ti-nKA" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="fOS-hA-QW8"/>
+                                            <constraint firstItem="CnW-dY-WLS" firstAttribute="top" secondItem="VkC-BX-eRj" secondAttribute="bottom" constant="8" symbolic="YES" id="gZL-yG-vFe"/>
+                                            <constraint firstItem="CnW-dY-WLS" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="gcA-96-ZRe"/>
+                                            <constraint firstItem="7ce-bF-fTJ" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="hER-ar-nUy"/>
+                                            <constraint firstAttribute="trailing" secondItem="BRi-2E-mtg" secondAttribute="trailing" constant="20" symbolic="YES" id="hox-ip-8Kk"/>
+                                            <constraint firstItem="BIO-1I-rPI" firstAttribute="top" secondItem="Gnw-uB-n5Y" secondAttribute="top" constant="20" symbolic="YES" id="k9p-lo-Tt1"/>
+                                            <constraint firstItem="BRi-2E-mtg" firstAttribute="top" secondItem="EEc-5e-Nkh" secondAttribute="bottom" constant="8" symbolic="YES" id="nzv-l2-PCM"/>
+                                            <constraint firstAttribute="trailing" secondItem="CnW-dY-WLS" secondAttribute="trailing" constant="20" symbolic="YES" id="rHH-B8-3hz"/>
+                                            <constraint firstItem="cJt-ti-nKA" firstAttribute="top" secondItem="BIO-1I-rPI" secondAttribute="bottom" constant="8" symbolic="YES" id="wrC-Yd-tWG"/>
+                                            <constraint firstItem="VkC-BX-eRj" firstAttribute="leading" secondItem="Gnw-uB-n5Y" secondAttribute="leading" constant="20" symbolic="YES" id="yv1-jd-3FC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gnw-uB-n5Y" firstAttribute="leading" secondItem="fX2-RG-iBc" secondAttribute="leading" id="0HW-aK-eqA"/>
+                                    <constraint firstItem="Gnw-uB-n5Y" firstAttribute="bottom" secondItem="fX2-RG-iBc" secondAttribute="bottom" id="BFu-HQ-lwp"/>
+                                    <constraint firstItem="Gnw-uB-n5Y" firstAttribute="top" secondItem="fX2-RG-iBc" secondAttribute="top" id="NmF-FU-IkZ"/>
+                                    <constraint firstItem="Gnw-uB-n5Y" firstAttribute="trailing" secondItem="fX2-RG-iBc" secondAttribute="trailing" id="W3C-xE-EiD"/>
+                                    <constraint firstItem="Gnw-uB-n5Y" firstAttribute="width" secondItem="vRX-Xm-hqI" secondAttribute="width" id="YVo-b3-KrW"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="fX2-RG-iBc"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="vRX-Xm-hqI"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nnJ-By-VEK"/>
+                        <color key="backgroundColor" name="Black2"/>
+                        <constraints>
+                            <constraint firstItem="nnJ-By-VEK" firstAttribute="trailing" secondItem="HPj-sx-dLM" secondAttribute="trailing" id="FRf-8V-1bn"/>
+                            <constraint firstItem="nnJ-By-VEK" firstAttribute="bottom" secondItem="HPj-sx-dLM" secondAttribute="bottom" id="JNJ-Ip-xcY"/>
+                            <constraint firstItem="nnJ-By-VEK" firstAttribute="top" secondItem="HPj-sx-dLM" secondAttribute="top" id="aab-PR-WH7"/>
+                            <constraint firstItem="nnJ-By-VEK" firstAttribute="leading" secondItem="HPj-sx-dLM" secondAttribute="leading" id="vor-Ea-aP2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="E6z-9a-Iac"/>
+                    <connections>
+                        <outlet property="denyBt" destination="CnW-dY-WLS" id="TIc-EQ-5v1"/>
+                        <outlet property="desc1Lb" destination="7ce-bF-fTJ" id="4lO-0Z-pZ9"/>
+                        <outlet property="desc2Lb" destination="EEc-5e-Nkh" id="2PR-0b-6D3"/>
+                        <outlet property="desc3Lb" destination="BRi-2E-mtg" id="JtE-CU-mnK"/>
+                        <outlet property="desc4Lb" destination="vOQ-31-pR0" id="GVP-Ir-dtC"/>
+                        <outlet property="grantBt" destination="VkC-BX-eRj" id="VZ4-ib-mgq"/>
+                        <outlet property="subtitleLb" destination="cJt-ti-nKA" id="H3K-mU-FCl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pv-1w-7qH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1211.25" y="-661.26760563380287"/>
         </scene>
         <!--Custom Bridges View Controller-->
         <scene sceneID="PVP-7x-lwh">
@@ -533,7 +692,7 @@ Use Smart Connect</string>
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -555,12 +714,15 @@ Use Smart Connect</string>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="noise" width="32" height="32"/>
         <image name="orbie.off" width="132" height="125"/>
+        <image name="orbie.office" width="256" height="256"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="qrcode" catalog="system" width="128" height="114"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="xmark.shield" catalog="system" width="128" height="119"/>
         <namedColor name="Accent1">
             <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -576,11 +738,17 @@ Use Smart Connect</string>
         <namedColor name="Black3">
             <color red="0.24300000071525574" green="0.21600000560283661" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="DarkGreen">
+            <color red="0.40000000596046448" green="0.60000002384185791" blue="0.0040000001899898052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -137,7 +137,7 @@ class Settings: IPtProxyUI.Settings {
 		get {
 			// Legacy support.
 			if let dict = defaults?.dictionary(forKey: "api_access_tokens") as? [String: String] {
-				return dict.map { ApiToken(appId: $0, key: $1, bypass: false) }
+				return dict.map { ApiToken(appId: $0, key: $1, appName: nil, bypass: false) }
 			}
 
 			NSKeyedUnarchiver.setClass(ApiToken.self, forClassName: "ApiToken")
@@ -204,12 +204,23 @@ class ApiToken: NSObject, NSSecureCoding {
 
 	var key: String
 
+	var appName: String?
+
 	var bypass: Bool
 
+	var friendlyName: String {
+		if let appName = appName, !appName.isEmpty {
+			return "\(appName) (\(appId))"
+		}
 
-	init(appId: String, key: String, bypass: Bool) {
+		return appId
+	}
+
+
+	init(appId: String, key: String, appName: String?, bypass: Bool) {
 		self.appId = appId
 		self.key = key
+		self.appName = appName
 		self.bypass = bypass
 	}
 

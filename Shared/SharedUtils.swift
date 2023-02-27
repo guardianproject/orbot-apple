@@ -129,33 +129,48 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 	static func updateUi(_ notification: Notification? = nil, buttonFontSize: CGFloat? = nil) -> (
 		statusIcon: String,
+		showShadow: Bool,
 		buttonTitle: NSMutableAttributedString,
 		statusText: NSMutableAttributedString,
 		statusSubtext: String,
-		sfpText: String
+		sfpText: String,
+		showConfButton: Bool
 	) {
 		let statusIcon: String
+		let showShadow: Bool
 		let buttonTitle: NSMutableAttributedString
 		var statusText: NSMutableAttributedString
 		var statusSubtext = NSLocalizedString("Hide apps from network monitoring and get access when they are blocked.", comment: "")
+		var showConfButton = true
 
 		let transport = Settings.transport
 
 		switch VpnManager.shared.status {
 		case .connected:
 			statusIcon = Settings.onionOnly ? .imgOrbieOnionOnly : .imgOrbieOn
+			showShadow = true
 			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Stop", comment: ""))
 
 		case .evaluating, .connecting, .reasserting:
 			statusIcon = .imgOrbieStarting
+			showShadow = true
 			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Stop", comment: ""))
 
-		case .notInstalled, .invalid, .unknown:
+		case .notInstalled:
+			statusIcon = .imgOrbieCharging
+			showShadow = false
+			statusSubtext = NSLocalizedString("Install Orbot as a VPN on your device to continue.", comment: "")
+			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Install", comment: ""))
+			showConfButton = false
+
+		case .invalid, .unknown:
 			statusIcon = .imgOrbieDead
+			showShadow = true
 			buttonTitle = NSMutableAttributedString(string: NSLocalizedString("Install", comment: ""))
 
 		default:
 			statusIcon = .imgOrbieOff
+			showShadow = true
 
 			let subtitle: String
 
@@ -179,7 +194,12 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 												   attributes: [.foregroundColor: Color.systemRed])
 		}
 		else {
-			statusText = NSMutableAttributedString(string: VpnManager.shared.status.description)
+			if VpnManager.shared.status == .notInstalled {
+				statusText = NSMutableAttributedString(string: NSLocalizedString("Welcome!", comment: ""))
+			}
+			else {
+				statusText = NSMutableAttributedString(string: VpnManager.shared.status.description)
+			}
 
 			if VpnManager.shared.isConnected {
 				if notification?.name == .vpnProgress,
@@ -216,7 +236,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			format: IPtProxyIsSnowflakeProxyRunning() ? L10n.snowflakeProxyStarted : L10n.snowflakeProxyStopped,
 			Formatters.format(Settings.snowflakesHelped))
 
-		return (statusIcon, buttonTitle, statusText, statusSubtext, sfpText)
+		return (statusIcon, showShadow, buttonTitle, statusText, statusSubtext, sfpText, showConfButton)
 	}
 
 	static func getCircuits(_ completed: @escaping (_ text: String) -> Void) {

@@ -37,7 +37,9 @@ class MainViewController: UIViewController {
 	}
 
 	@IBOutlet weak var statusIcon: UIImageView!
+	@IBOutlet weak var statusIconWidth: NSLayoutConstraint!
 	@IBOutlet weak var shadowImg: UIImageView!
+	@IBOutlet weak var shadowImgHeight: NSLayoutConstraint!
 	@IBOutlet weak var statusLb: UILabel!
 	@IBOutlet weak var statusSubLb: UILabel!
 
@@ -275,17 +277,32 @@ class MainViewController: UIViewController {
 
 		refreshBt?.isEnabled = VpnManager.shared.status == .connected
 
-		let (statusIconName, buttonTitle, statusText, statusSubtext, _) = SharedUtils.updateUi(notification, buttonFontSize: controlBt.titleLabel?.font.pointSize)
+		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, _, showConfButton) = SharedUtils.updateUi(
+			notification, buttonFontSize: controlBt.titleLabel?.font.pointSize)
 
 		animateOrbie = statusIconName == .imgOrbieStarting
 
 		statusIcon.image = UIImage(named: statusIconName)
+
+		if showShadow {
+			statusIconWidth.constant = 128
+			shadowImg.isHidden = false
+			shadowImgHeight.constant = 18
+		}
+		else {
+			statusIconWidth.constant = 192
+			shadowImg.isHidden = true
+			shadowImgHeight.constant = 0
+		}
+
 		statusLb.attributedText = statusText
 		statusSubLb.text = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
 		control2BtHeight.constant = Settings.smartConnect || VpnManager.shared.status != .disconnected ? 0 : 64
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
+
+		configureBt.isHidden = !showConfButton
 	}
 
 
