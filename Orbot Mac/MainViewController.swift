@@ -20,7 +20,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		didSet {
 			controlBt.isBordered = false
 			controlBt.wantsLayer = true
-			controlBt.layer?.backgroundColor = NSColor(named: "Accent1")?.cgColor
+			controlBt.layer?.backgroundColor = NSColor.accent1.cgColor
 			controlBt.layer?.cornerRadius = 5
 		}
 	}
@@ -30,7 +30,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.font?.pointSize))
 			control2Bt.isBordered = false
 			control2Bt.wantsLayer = true
-			control2Bt.layer?.backgroundColor = NSColor(named: "Black3")?.cgColor
+			control2Bt.layer?.backgroundColor = NSColor.black3.cgColor
 			control2Bt.layer?.cornerRadius = 5
 		}
 	}

@@ -18,7 +18,7 @@ class RoundedButtonCell: ButtonCellOf<String> {
 
 		button.translatesAutoresizingMaskIntoConstraints = false
 
-		button.backgroundColor = .init(named: .colorAccent1)
+		button.backgroundColor = .accent1
 
 		return button
 	}()
@@ -43,7 +43,7 @@ class RoundedButtonCell: ButtonCellOf<String> {
 
 		button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
 
-		backgroundColor = .init(named: .colorBlack2)
+		backgroundColor = .black2
 	}
 
 	override func update() {

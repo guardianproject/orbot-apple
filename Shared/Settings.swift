@@ -222,6 +222,7 @@ class ApiToken: NSObject, NSSecureCoding {
 
 		self.appId = appId
 		self.key = key
+		appName = coder.decodeObject(of: NSString.self, forKey: "appName") as? String
 		bypass = coder.decodeBool(forKey: "bypass")
 	}
 
@@ -229,10 +230,11 @@ class ApiToken: NSObject, NSSecureCoding {
 	func encode(with coder: NSCoder) {
 		coder.encode(appId, forKey: "appId")
 		coder.encode(key, forKey: "key")
+		coder.encode(appName, forKey: "appName")
 		coder.encode(bypass, forKey: "bypass")
 	}
 
 	override var description: String {
-		"[\(String(describing: type(of: self))) appId=\(appId), key=\(key), bypass=\(bypass)]"
+		"[\(String(describing: type(of: self))) appId=\(appId), key=\(key), appName=\(appName ?? "(nil)"), bypass=\(bypass)]"
 	}
 }

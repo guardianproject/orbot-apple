@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	{
 		Settings.stateLocation = FileManager.default.ptDir!
 
-		UIView.appearance().tintColor = .label
-		UITableView.appearance().backgroundColor = .init(named: .colorBlack2)
-		UITableViewCell.appearance().backgroundColor = .init(named: .colorBlack3)
+		UIBarButtonItem.appearance().tintColor = .label
+		UITableViewCell.appearance().tintColor = .label
+		UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .label
+		UITableView.appearance().backgroundColor = .black2
+		UITableViewCell.appearance().backgroundColor = .black3
 
 #if DEBUG
 		SharedUtils.addScreenshotDummies()

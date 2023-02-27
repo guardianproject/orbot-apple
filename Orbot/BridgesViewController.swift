@@ -163,7 +163,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 				$0.cell.accessibilityIdentifier = option.rawValue
 				$0.cell.detailTextLabel?.numberOfLines = 0
-				$0.cell.backgroundColor = .init(named: .colorBlack2)
+				$0.cell.backgroundColor = .black2
 			}
 			.cellUpdate({ cell, row in
 				cell.detailTextLabel?.text = row.value != nil ? row.selectableValue?.longDescription : nil

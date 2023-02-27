@@ -12,21 +12,11 @@ import IPtProxyUI
 import NetworkExtension
 import Tor
 
-#if os(macOS)
-extension NSColor {
-	class var secondaryLabel: NSColor {
-		NSColor.secondaryLabelColor
-	}
-}
-#endif
-
 class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnectedProtocol {
 
 #if os(macOS)
-	typealias Color = NSColor
 	typealias Font = NSFont
 #else
-	typealias Color = UIColor
 	typealias Font = UIFont
 #endif
 
