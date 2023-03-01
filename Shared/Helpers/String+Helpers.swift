@@ -57,4 +57,12 @@ extension String {
 	subscript(value: PartialRangeFrom<Int>) -> Substring {
 		self[index(startIndex, offsetBy: value.lowerBound)...]
 	}
+
+	func nsRange(of aString: any StringProtocol) -> NSRange? {
+		if let range = range(of: aString) {
+			return NSRange(range, in: self)
+		}
+
+		return nil
+	}
 }
