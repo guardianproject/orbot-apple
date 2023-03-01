@@ -17,10 +17,23 @@ class RoundedButtonCell: ButtonCellOf<String> {
 		let button = UIButton(type: .system)
 
 		button.translatesAutoresizingMaskIntoConstraints = false
-
-		button.backgroundColor = .accent1
+		button.titleLabel?.allowsDefaultTighteningForTruncation = true
+		button.titleLabel?.adjustsFontSizeToFitWidth = true
+		button.titleLabel?.minimumScaleFactor = 0.5
+		button.configuration = .bordered()
 
 		return button
+	}()
+
+	private lazy var label: UILabel = {
+		let label = UILabel(frame: .zero)
+
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.adjustsFontSizeToFitWidth = true
+		label.minimumScaleFactor = 0.5
+		label.allowsDefaultTighteningForTruncation = true
+
+		return label
 	}()
 
 	override func setup() {
@@ -33,21 +46,39 @@ class RoundedButtonCell: ButtonCellOf<String> {
 		let ltp = row?.leadingTrailingPadding ?? 16
 		let tbp = row?.topBottomPadding ?? 0
 
+		if !(row?.label?.isEmpty ?? true) {
+			contentView.addSubview(label)
+
+			label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ltp).isActive = true
+			label.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
+			label.trailingAnchor.constraint(lessThanOrEqualTo: button.leadingAnchor, constant: -ltp).isActive = true
+		}
+		else {
+			button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ltp).isActive = true
+		}
+
 		button.heightAnchor.constraint(equalToConstant: row?.height ?? 48).isActive = true
 		button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: tbp).isActive = true
-		button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ltp).isActive = true
 		button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ltp).isActive = true
 		button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -tbp).isActive = true
 
-		button.layer.cornerRadius = row?.cornerRadius ?? 9
-
 		button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-
-		backgroundColor = .black2
 	}
 
 	override func update() {
 		button.setTitle(row.title)
+
+		let row = row as? RoundedButtonRow
+
+		label.text = row?.label
+
+		button.setAttributedTitle(row?.attributedTitle)
+		button.configuration?.image = row?.image
+		button.configuration?.background.cornerRadius = row?.cornerRadius ?? 9
+		button.configuration?.background.backgroundColor = row?.color
+		button.tintColor = row?.tintColor
+
+		backgroundColor = row?.backgroundColor
 	}
 
 	@objc
@@ -58,26 +89,32 @@ class RoundedButtonCell: ButtonCellOf<String> {
 
 final class RoundedButtonRow: Row<RoundedButtonCell>, RowType {
 
-	fileprivate var height: CGFloat = 48
+	var attributedTitle: NSAttributedString?
 
-	fileprivate var cornerRadius: CGFloat = 9
+	var label: String?
 
-	fileprivate var leadingTrailingPadding: CGFloat = 16
+	var image: UIImage?
 
-	fileprivate var topBottomPadding: CGFloat = 0
+	var color: UIColor? = .accent1
+
+	var backgroundColor: UIColor = .black2
+
+	var tintColor: UIColor? = .label
+
+	var height: CGFloat = 48
+
+	var cornerRadius: CGFloat = 9
+
+	var leadingTrailingPadding: CGFloat = 16
+
+	var topBottomPadding: CGFloat = 0
 
 
 	convenience init(
-		tag: String?, height: CGFloat = 48, cornerRadius: CGFloat = 9,
-		leadingTrailingPadding: CGFloat = 16, topBottomPadding: CGFloat = 0,
+		tag: String? = nil,
 		_ initializer: (RoundedButtonRow) -> Void = { _ in })
 	{
 		self.init(tag: tag)
-
-		self.height = height
-		self.cornerRadius = cornerRadius
-		self.leadingTrailingPadding = leadingTrailingPadding
-		self.topBottomPadding = topBottomPadding
 
 		initializer(self)
 	}

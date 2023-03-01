@@ -10,44 +10,64 @@ import UIKit
 import Eureka
 import IPtProxyUI
 import MessageUI
+import MBProgressHUD
 
 class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMailComposeViewControllerDelegate {
 
 	enum Option: String, CaseIterable {
 		case direct = "transport_none"
-		case obfs4 = "transport_obfs4"
 		case snowflake = "transport_snowflake"
 		case snowflakeAmp = "transport_snowflake_amp"
-		case request = "request"
-		case requestMail = "request_mail"
 		case requestTelegram = "request_telegram"
+		case request = "request"
+		case obfs4 = "transport_obfs4"
+		case requestMail = "request_mail"
 		case custom = "transport_custom"
+
+		static func from(_ transport: Transport) -> Option {
+			switch transport {
+			case .none:
+				return .direct
+
+			case .obfs4:
+				return .obfs4
+
+			case .snowflake:
+				return .snowflake
+
+			case .custom:
+				return .custom
+
+			case .snowflakeAmp:
+				return .snowflakeAmp
+			}
+		}
 
 		var localizedDescription: String {
 			switch self {
 			case .direct:
-				return NSLocalizedString("Direct connection to Tor", comment: "")
-
-			case .obfs4:
-				return NSLocalizedString("Well-known Obfs4 bridges", comment: "")
+				return NSLocalizedString("Direct Connection", comment: "")
 
 			case .snowflake:
-				return NSLocalizedString("Snowflake", comment: "")
+				return NSLocalizedString("Snowflake (original)", comment: "")
 
 			case .snowflakeAmp:
-				return NSLocalizedString("Snowflake (AMP rendezvous)", comment: "")
-
-			case .request:
-				return NSLocalizedString("Get bridges from Tor (Obfs4)", comment: "")
-
-			case .requestMail:
-				return NSLocalizedString("Get bridges via Mail", comment: "")
+				return NSLocalizedString("Snowflake (AMP)", comment: "")
 
 			case .requestTelegram:
-				return NSLocalizedString("Get bridges via Telegram", comment: "")
+				return NSLocalizedString("Bridges from Tor (obfs4) via Telegram", comment: "")
+
+			case .request:
+				return NSLocalizedString("Bridges from Tor (obfs4) after Captcha", comment: "")
+
+			case .obfs4:
+				return NSLocalizedString("Built-in Bridges (obfs4)", comment: "")
+
+			case .requestMail:
+				return NSLocalizedString("Bridges from Tor (obfs4) via Email", comment: "")
 
 			case .custom:
-				return NSLocalizedString("Custom bridges", comment: "")
+				return NSLocalizedString("Custom Bridges", comment: "")
 			}
 		}
 
@@ -56,26 +76,26 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .direct:
 				return NSLocalizedString("The best way to connect to Tor. Use if Tor is not blocked.", comment: "")
 
-			case .obfs4:
-				return NSLocalizedString("Blocked in some countries, but great otherwise when you don't trust the network you're in.", comment: "")
-
 			case .snowflake:
 				return NSLocalizedString("Connects through Tor volunteers. Gets around some Tor blocking.", comment: "")
 
 			case .snowflakeAmp:
-				return NSLocalizedString("Find Snowflake volunteers through another mechanism.", comment: "")
+				return NSLocalizedString("Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.", comment: "")
+
+			case .requestTelegram:
+				return NSLocalizedString("Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses.", comment: "")
 
 			case .request:
 				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking.", comment: "")
 
-			case .requestMail:
-				return NSLocalizedString("In case you cannot reach Tor's bridge distribution website, you can try via mail. Has to be from a Gmail or Riseup account.", comment: "")
+			case .obfs4:
+				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.", comment: "")
 
-			case .requestTelegram:
-				return NSLocalizedString("If Telegram works for you, you can ask the Telgram Tor Bot for bridges. Tap on 'Start' or write '/start' or '/bridges' in the chat.", comment: "")
+			case .requestMail:
+				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.", comment: "")
 
 			case .custom:
-				return NSLocalizedString("Most likely to keep you connected if Tor is severly blocked. Requires a bridge address from someone you trust.", comment: "")
+				return NSLocalizedString("Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust.", comment: "")
 			}
 		}
 
@@ -123,7 +143,22 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		}
 	}
 
-	var transport: Transport = .none
+	var transport: Transport = .none {
+		didSet {
+			if let row = form.rowBy(tag: Option.from(transport).rawValue) as? ListCheckRow<Option>, row.value == nil {
+				DispatchQueue.main.async { [weak self] in
+					for row in self?.section.allRows ?? [] {
+						(row as? ListCheckRow<Option>)?.value = nil
+					}
+
+					row.value = row.selectableValue
+
+					// Needed, otherwise rows don't get resized due to changing subtitle.
+					self?.tableView.reloadData()
+				}
+			}
+		}
+	}
 
 	var customBridges: [String]? = nil
 
@@ -150,11 +185,56 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		}
 
 		form
+		+++ RoundedButtonRow() {
+			$0.label = NSLocalizedString("Not sure?", comment: "")
+			$0.title = NSLocalizedString("Ask Tor", comment: "")
+			$0.color = .black3
+			$0.backgroundColor = .black1
+			$0.height = 32
+			$0.topBottomPadding = 8
+		}
+		.onCellSelection({ [weak self] cell, row in
+			guard let self = self else {
+				return
+			}
+
+			MBProgressHUD.showAdded(to: self.view, animated: true)
+
+			AutoConf(self).do(cannotConnectWithoutPt: true) { [weak self] error in
+				guard let self = self else {
+					return
+				}
+
+				DispatchQueue.main.async {
+					MBProgressHUD.hide(for: self.view, animated: true)
+
+					if let error = error {
+						AlertHelper.present(self, message: error.localizedDescription)
+					}
+					else {
+						row.title = nil
+						row.attributedTitle = NSAttributedString(string: Option.from(self.transport).localizedDescription, attributes: [.foregroundColor: UIColor.label])
+						row.image = .init(systemName: "checkmark")
+						row.tintColor = .systemGreen
+						row.updateCell()
+
+						DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+							row.title = NSLocalizedString("Ask Tor", comment: "")
+							row.attributedTitle = nil
+							row.image = nil
+							row.tintColor = .label
+							row.updateCell()
+						}
+					}
+				}
+			}
+		})
+
 		+++ section
 
 		for option in Option.allCases.filter({ $0.isEnabled }) {
 			form.last!
-			<<< ListCheckRow<Option>() {
+			<<< ListCheckRow<Option>(option.rawValue) {
 				$0.cellStyle = .subtitle
 				$0.title = option.localizedDescription
 

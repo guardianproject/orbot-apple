@@ -383,134 +383,163 @@ Use Smart Connect</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKe-Uw-2gL">
-                                <rect key="frame" x="16" y="20" width="288" height="86.5"/>
-                                <string key="text">A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mX-7j-zgh">
-                                <rect key="frame" x="16" y="122.5" width="288" height="128"/>
-                                <color key="backgroundColor" name="Black3"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-Dc-0pm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dab-zs-iQ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="426.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="20o-n4-gmN">
+                                                <rect key="frame" x="20" y="20" width="280" height="148"/>
+                                                <string key="text">A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from https://bridges.torproject.org/.</string>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4mX-7j-zgh">
+                                                <rect key="frame" x="20" y="176" width="280" height="128"/>
+                                                <color key="backgroundColor" name="Black3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="Ei3-yR-axo"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="6kb-zv-6wX" id="doa-Ws-1EN"/>
+                                                </connections>
+                                            </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter bridge address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-qF-0Bs">
+                                                <rect key="frame" x="28" y="184" width="264" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt3-rU-Mu7">
+                                                <rect key="frame" x="258" y="220" width="34" height="34"/>
+                                                <color key="backgroundColor" name="Accent1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="KcC-Iq-TT3"/>
+                                                    <constraint firstAttribute="height" constant="34" id="z49-cR-5Rh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="pickImage" destination="6kb-zv-6wX" eventType="touchUpInside" id="CTt-wk-Qmr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-W0-xpo">
+                                                <rect key="frame" x="258" y="262" width="34" height="34"/>
+                                                <color key="backgroundColor" name="Accent1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="CZg-5h-cXg"/>
+                                                    <constraint firstAttribute="width" constant="34" id="Mnz-BY-bik"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="qrcode.viewfinder" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="7Mr-rh-Yxd" kind="show" id="LXj-FJ-nrv"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can enter multiple bridge addresses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-0r-KNm">
+                                                <rect key="frame" x="20" y="312" width="280" height="14.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s44-F2-HgM">
+                                                <rect key="frame" x="20" y="358.5" width="280" height="48"/>
+                                                <color key="backgroundColor" name="Accent1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="0Ni-Py-yLC"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="save" destination="6kb-zv-6wX" eventType="touchUpInside" id="LD9-RV-nfV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="20o-n4-gmN" firstAttribute="leading" secondItem="Dab-zs-iQ9" secondAttribute="leading" constant="20" symbolic="YES" id="2w2-P7-rxz"/>
+                                            <constraint firstItem="HJK-0r-KNm" firstAttribute="leading" secondItem="Dab-zs-iQ9" secondAttribute="leading" constant="20" symbolic="YES" id="4va-4A-46S"/>
+                                            <constraint firstItem="20o-n4-gmN" firstAttribute="top" secondItem="Dab-zs-iQ9" secondAttribute="top" constant="20" symbolic="YES" id="52Z-j1-YiB"/>
+                                            <constraint firstAttribute="trailing" secondItem="20o-n4-gmN" secondAttribute="trailing" constant="20" symbolic="YES" id="6PW-s8-xMR"/>
+                                            <constraint firstItem="VRb-W0-xpo" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="7mI-hV-X21"/>
+                                            <constraint firstItem="s44-F2-HgM" firstAttribute="top" secondItem="HJK-0r-KNm" secondAttribute="bottom" constant="32" id="CMO-BH-PBo"/>
+                                            <constraint firstItem="Lt3-rU-Mu7" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="Ihy-Yf-ZfF"/>
+                                            <constraint firstItem="4mX-7j-zgh" firstAttribute="top" secondItem="20o-n4-gmN" secondAttribute="bottom" constant="8" symbolic="YES" id="NGU-0U-A5i"/>
+                                            <constraint firstAttribute="trailing" secondItem="s44-F2-HgM" secondAttribute="trailing" constant="20" symbolic="YES" id="NV8-uO-f9X"/>
+                                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="top" constant="8" id="OUj-MA-f49"/>
+                                            <constraint firstItem="VRb-W0-xpo" firstAttribute="bottom" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="-8" id="PtP-Ux-HXx"/>
+                                            <constraint firstItem="HJK-0r-KNm" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="8" symbolic="YES" id="PvA-6S-Ec2"/>
+                                            <constraint firstAttribute="bottom" secondItem="s44-F2-HgM" secondAttribute="bottom" constant="20" symbolic="YES" id="Qqu-kf-BKM"/>
+                                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="UbZ-b4-9Xy"/>
+                                            <constraint firstItem="4mX-7j-zgh" firstAttribute="leading" secondItem="Dab-zs-iQ9" secondAttribute="leading" constant="20" symbolic="YES" id="e6x-2B-iYP"/>
+                                            <constraint firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="20" symbolic="YES" id="fU4-WC-yH8"/>
+                                            <constraint firstItem="s44-F2-HgM" firstAttribute="leading" secondItem="Dab-zs-iQ9" secondAttribute="leading" constant="20" symbolic="YES" id="tkx-0H-24D"/>
+                                            <constraint firstAttribute="trailing" secondItem="HJK-0r-KNm" secondAttribute="trailing" constant="20" symbolic="YES" id="v4Y-2p-c8o"/>
+                                            <constraint firstItem="VRb-W0-xpo" firstAttribute="top" secondItem="Lt3-rU-Mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="wA0-gH-0AJ"/>
+                                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="leading" secondItem="4mX-7j-zgh" secondAttribute="leading" constant="8" id="xhN-4Y-KnJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Ei3-yR-axo"/>
+                                    <constraint firstItem="Dab-zs-iQ9" firstAttribute="width" secondItem="yHu-dp-KXv" secondAttribute="width" id="PcH-v0-lEQ"/>
+                                    <constraint firstItem="Dab-zs-iQ9" firstAttribute="bottom" secondItem="Nid-Fu-tgF" secondAttribute="bottom" id="aYY-bC-rRu"/>
+                                    <constraint firstItem="Dab-zs-iQ9" firstAttribute="leading" secondItem="Nid-Fu-tgF" secondAttribute="leading" id="gLz-nP-yw5"/>
+                                    <constraint firstItem="Dab-zs-iQ9" firstAttribute="top" secondItem="Nid-Fu-tgF" secondAttribute="top" id="mcK-cj-SKo"/>
+                                    <constraint firstItem="Dab-zs-iQ9" firstAttribute="trailing" secondItem="Nid-Fu-tgF" secondAttribute="trailing" id="vUg-vM-4NS"/>
                                 </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="url"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="6kb-zv-6wX" id="doa-Ws-1EN"/>
-                                </connections>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter bridge address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-qF-0Bs">
-                                <rect key="frame" x="24" y="130.5" width="272" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt3-rU-Mu7">
-                                <rect key="frame" x="262" y="166.5" width="34" height="34"/>
-                                <color key="backgroundColor" name="Accent1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="KcC-Iq-TT3"/>
-                                    <constraint firstAttribute="height" constant="34" id="z49-cR-5Rh"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="qrcode" catalog="system"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="pickImage" destination="6kb-zv-6wX" eventType="touchUpInside" id="CTt-wk-Qmr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-W0-xpo">
-                                <rect key="frame" x="262" y="208.5" width="34" height="34"/>
-                                <color key="backgroundColor" name="Accent1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="CZg-5h-cXg"/>
-                                    <constraint firstAttribute="width" constant="34" id="Mnz-BY-bik"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="qrcode.viewfinder" catalog="system"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="7Mr-rh-Yxd" kind="show" id="LXj-FJ-nrv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can enter multiple bridge addresses." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-0r-KNm">
-                                <rect key="frame" x="16" y="258.5" width="288" height="14.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s44-F2-HgM">
-                                <rect key="frame" x="16" y="305" width="288" height="48"/>
-                                <color key="backgroundColor" name="Accent1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="0Ni-Py-yLC"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="save" destination="6kb-zv-6wX" eventType="touchUpInside" id="LD9-RV-nfV"/>
-                                </connections>
-                            </button>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Nid-Fu-tgF"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="yHu-dp-KXv"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tDF-LV-ID2"/>
                         <color key="backgroundColor" name="Black2"/>
                         <constraints>
-                            <constraint firstItem="4mX-7j-zgh" firstAttribute="top" secondItem="TKe-Uw-2gL" secondAttribute="bottom" constant="16" id="5Mi-l9-ZiD"/>
-                            <constraint firstItem="VRb-W0-xpo" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="C7T-QJ-BFD"/>
-                            <constraint firstItem="s44-F2-HgM" firstAttribute="leading" secondItem="tDF-LV-ID2" secondAttribute="leading" constant="16" id="JSp-df-0OH"/>
-                            <constraint firstItem="TKe-Uw-2gL" firstAttribute="leading" secondItem="tDF-LV-ID2" secondAttribute="leading" constant="16" id="SyT-qp-tYZ"/>
-                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="leading" secondItem="4mX-7j-zgh" secondAttribute="leading" constant="8" id="TF9-EI-cM3"/>
-                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="X3E-VH-mau"/>
-                            <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="16" id="f9b-L2-ek9"/>
-                            <constraint firstItem="HJK-0r-KNm" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="8" symbolic="YES" id="gj7-Z8-eo2"/>
-                            <constraint firstItem="gJk-qF-0Bs" firstAttribute="top" secondItem="4mX-7j-zgh" secondAttribute="top" constant="8" id="k53-VX-vus"/>
-                            <constraint firstItem="Lt3-rU-Mu7" firstAttribute="bottom" secondItem="VRb-W0-xpo" secondAttribute="top" constant="-8" id="kBg-ZQ-hoy"/>
-                            <constraint firstItem="Lt3-rU-Mu7" firstAttribute="trailing" secondItem="4mX-7j-zgh" secondAttribute="trailing" constant="-8" id="keG-sz-sJt"/>
-                            <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="s44-F2-HgM" secondAttribute="trailing" constant="16" id="klZ-hD-Wpb"/>
-                            <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="TKe-Uw-2gL" secondAttribute="trailing" constant="16" id="lmz-JU-pJR"/>
-                            <constraint firstItem="VRb-W0-xpo" firstAttribute="bottom" secondItem="4mX-7j-zgh" secondAttribute="bottom" constant="-8" id="mOk-Yz-keb"/>
-                            <constraint firstItem="TKe-Uw-2gL" firstAttribute="top" secondItem="tDF-LV-ID2" secondAttribute="top" constant="20" id="ovp-XI-MTi"/>
-                            <constraint firstItem="4mX-7j-zgh" firstAttribute="leading" secondItem="tDF-LV-ID2" secondAttribute="leading" constant="16" id="sbq-cR-WDk"/>
-                            <constraint firstItem="HJK-0r-KNm" firstAttribute="leading" secondItem="tDF-LV-ID2" secondAttribute="leading" constant="16" id="w3p-YK-Ni9"/>
-                            <constraint firstItem="s44-F2-HgM" firstAttribute="top" secondItem="HJK-0r-KNm" secondAttribute="bottom" constant="32" id="wk6-sS-RW5"/>
-                            <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="HJK-0r-KNm" secondAttribute="trailing" constant="16" id="zuE-ol-Gyd"/>
+                            <constraint firstItem="tDF-LV-ID2" firstAttribute="trailing" secondItem="rrz-Dc-0pm" secondAttribute="trailing" id="F3f-Uz-Irl"/>
+                            <constraint firstItem="rrz-Dc-0pm" firstAttribute="top" secondItem="tDF-LV-ID2" secondAttribute="top" id="Yrv-JJ-E2j"/>
+                            <constraint firstItem="rrz-Dc-0pm" firstAttribute="leading" secondItem="tDF-LV-ID2" secondAttribute="leading" id="dR4-oK-VUl"/>
+                            <constraint firstItem="tDF-LV-ID2" firstAttribute="bottom" secondItem="rrz-Dc-0pm" secondAttribute="bottom" placeholder="YES" id="rg1-8A-Kc8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bridgeLinesTv" destination="4mX-7j-zgh" id="lsx-RM-dc3"/>
                         <outlet property="captionLb" destination="HJK-0r-KNm" id="vNV-q5-7pi"/>
-                        <outlet property="explanationLb" destination="TKe-Uw-2gL" id="fSE-Ck-ppz"/>
+                        <outlet property="explanationTv" destination="20o-n4-gmN" id="Z1W-01-Stb"/>
                         <outlet property="fileBt" destination="Lt3-rU-Mu7" id="K6K-oN-1qY"/>
                         <outlet property="hintLb" destination="gJk-qF-0Bs" id="nt3-6u-9jP"/>
                         <outlet property="qrBt" destination="VRb-W0-xpo" id="W4U-Mx-38h"/>
                         <outlet property="saveBt" destination="s44-F2-HgM" id="q6p-ZS-jlx"/>
+                        <outlet property="scrollView" destination="rrz-Dc-0pm" id="Pof-q9-hcK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66N-y6-dVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.5999999999999" y="136.28185907046478"/>
+            <point key="canvasLocation" x="1213.125" y="136.26760563380282"/>
         </scene>
         <!--Captcha View Controller-->
         <scene sceneID="fPf-dc-P1i">
@@ -692,7 +721,7 @@ Use Smart Connect</string>
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -746,6 +775,9 @@ Use Smart Connect</string>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

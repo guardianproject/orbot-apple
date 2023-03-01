@@ -27,7 +27,7 @@ class ScanViewController: BaseScanViewController {
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Custom Bridge", comment: "")
+		navigationItem.title = NSLocalizedString("Custom Bridges", comment: "")
 	}
 
 	open override func viewDidAppear(_ animated: Bool) {

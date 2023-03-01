@@ -8,6 +8,15 @@
 "%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ by %2$@ for %3$@ on %4$@%5$@.";
 
 /* No comment provided by engineer. */
+"%1$@ Bypass %2$@" = "%1$@ Bypass %2$@";
+
+/* No comment provided by engineer. */
+"%1$@ Get information about Tor circuits." = "%1$@ Get information about Tor circuits.";
+
+/* No comment provided by engineer. */
+"%1$@ Get updates on the status of the connection." = "%1$@ Get updates on the status of the connection.";
+
+/* No comment provided by engineer. */
 "%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ IP address patterns, e.g. \"%2$@\"";
 
 /* No comment provided by engineer. */
@@ -21,6 +30,9 @@
 
 /* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ These settings will only take effect after restart.";
+
+/* No comment provided by engineer. */
+"%1$@ wants to access %2$@." = "%1$@ wants to access %2$@.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
@@ -46,17 +58,20 @@
 /* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
 
+/* No comment provided by engineer. */
+"A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@." = "A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@.";
+
 /* macOS menu item */
 "About %@" = "About %@";
+
+/* No comment provided by engineer. */
+"Access Request" = "Access Request";
 
 /* No comment provided by engineer. */
 "Activate" = "Activate";
 
 /* No comment provided by engineer. */
 "Add" = "Add";
-
-/* No comment provided by engineer. */
-"Add API Access Token" = "Add API Access Token";
 
 /* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Add v3 Onion Service Auth Cookie";
@@ -80,12 +95,6 @@
 "all types" = "all types";
 
 /* No comment provided by engineer. */
-"Allow Access" = "Allow Access";
-
-/* No comment provided by engineer. */
-"Allow Access and Bypass" = "Allow Access and Bypass";
-
-/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
 
 /* No comment provided by engineer. */
@@ -99,6 +108,9 @@
 
 /* No comment provided by engineer. */
 "API Access Token" = "API Access Token";
+
+/* No comment provided by engineer. */
+"Ask Tor" = "Ask Tor";
 
 /* No comment provided by engineer. */
 "Asking Tor Project's Circumvention Service" = "Asking Tor Project's Circumvention Service";
@@ -130,11 +142,23 @@
 /* No comment provided by engineer. */
 "Bridges" = "Bridges";
 
+/* No comment provided by engineer. */
+"Bridges from Tor (obfs4) after Captcha" = "Bridges from Tor (obfs4) after Captcha";
+
+/* No comment provided by engineer. */
+"Bridges from Tor (obfs4) via Email" = "Bridges from Tor (obfs4) via Email";
+
+/* No comment provided by engineer. */
+"Bridges from Tor (obfs4) via Telegram" = "Bridges from Tor (obfs4) via Telegram";
+
 /* macOS menu item */
 "Bring All to Front" = "Bring All to Front";
 
 /* No comment provided by engineer. */
 "Build new Circuits" = "Build new Circuits";
+
+/* No comment provided by engineer. */
+"Built-in Bridges (obfs4)" = "Built-in Bridges (obfs4)";
 
 /* No comment provided by engineer. */
 "Bypass" = "Bypass";
@@ -160,6 +184,15 @@
 /* No comment provided by engineer. */
 "Cleared!" = "Cleared!";
 
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking." = "Cloaks your traffic. Gets around some Tor blocking.";
+
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.";
+
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.";
+
 /* macOS menu item */
 "Close" = "Close";
 
@@ -171,6 +204,12 @@
 
 /* No comment provided by engineer. */
 "Connecting" = "Connecting";
+
+/* No comment provided by engineer. */
+"Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking." = "Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.";
+
+/* No comment provided by engineer. */
+"Connects through Tor volunteers. Gets around some Tor blocking." = "Connects through Tor volunteers. Gets around some Tor blocking.";
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Content Blocker";
@@ -190,6 +229,9 @@
 /* No comment provided by engineer. */
 "Current State" = "Current State";
 
+/* No comment provided by engineer. */
+"Custom Bridges" = "Custom Bridges";
+
 /* macOS menu item */
 "Customize Toolbar…" = "Customize Toolbar…";
 
@@ -198,6 +240,12 @@
 
 /* No comment provided by engineer. */
 "Delete" = "Delete";
+
+/* No comment provided by engineer. */
+"Deny" = "Deny";
+
+/* No comment provided by engineer. */
+"Direct Connection" = "Direct Connection";
 
 /* No comment provided by engineer. */
 "Disable %@ for non-onion traffic" = "Disable %@ for non-onion traffic";
@@ -226,8 +274,14 @@
 /* No comment provided by engineer. */
 "enabled" = "enabled";
 
+/* No comment provided by engineer. */
+"Enter bridge address" = "Enter bridge address";
+
 /* macOS menu item */
 "Enter Full Screen" = "Enter Full Screen";
+
+/* No comment provided by engineer. */
+"Enter text above" = "Enter text above";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Entry Nodes";
@@ -280,6 +334,9 @@
 /* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
 
+/* No comment provided by engineer. */
+"Grant" = "Grant";
+
 /* macOS menu item */
 "Help" = "Help";
 
@@ -302,6 +359,9 @@
 "Install" = "Install";
 
 /* No comment provided by engineer. */
+"Install Orbot as a VPN on your device to continue." = "Install Orbot as a VPN on your device to continue.";
+
+/* No comment provided by engineer. */
 "Invalid" = "Invalid";
 
 /* No comment provided by engineer. */
@@ -312,6 +372,9 @@
 
 /* No comment provided by engineer. */
 "Key" = "Key";
+
+/* No comment provided by engineer. */
+"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses.";
 
 /* No comment provided by engineer. */
 "Limit Exit Countries" = "Limit Exit Countries";
@@ -332,6 +395,12 @@
 "Minimize" = "Minimize";
 
 /* No comment provided by engineer. */
+"Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust." = "Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust.";
+
+/* No comment provided by engineer. */
+"Next" = "Next";
+
+/* No comment provided by engineer. */
 "No VPN configuration set." = "No VPN configuration set.";
 
 /* No comment provided by engineer. */
@@ -339,6 +408,9 @@
 
 /* No comment provided by engineer. */
 "Not Installed" = "Not Installed";
+
+/* No comment provided by engineer. */
+"Not sure?" = "Not sure?";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Onion-only Mode";
@@ -398,6 +470,12 @@
 "Redo" = "Redo";
 
 /* No comment provided by engineer. */
+"Refresh" = "Refresh";
+
+/* No comment provided by engineer. */
+"Scan a bridge QR code" = "Scan a bridge QR code";
+
+/* No comment provided by engineer. */
 "scripts" = "scripts";
 
 /* macOS menu item */
@@ -420,6 +498,15 @@
 
 /* No comment provided by engineer. */
 "Smart Connect Timeout (s)" = "Smart Connect Timeout (s)";
+
+/* No comment provided by engineer. */
+"Snowflake (AMP)" = "Snowflake (AMP)";
+
+/* No comment provided by engineer. */
+"Snowflake (original)" = "Snowflake (original)";
+
+/* No comment provided by engineer. */
+"Solve CAPTCHA" = "Solve CAPTCHA";
 
 /* macOS menu item */
 "Speech" = "Speech";
@@ -446,13 +533,13 @@
 "Switch back to last used VPN after stop" = "Switch back to last used VPN after stop";
 
 /* No comment provided by engineer. */
-"That app also wants to bypass %@!" = "That app also wants to bypass %@!";
-
-/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";
 
 /* No comment provided by engineer. */
 "The API access token was copied to your clipboard." = "The API access token was copied to your clipboard.";
+
+/* No comment provided by engineer. */
+"The best way to connect to Tor. Use if Tor is not blocked." = "The best way to connect to Tor. Use if Tor is not blocked.";
 
 /* No comment provided by engineer. */
 "the website" = "the website";
@@ -462,6 +549,9 @@
 
 /* No comment provided by engineer. */
 "this regex:" = "this regex:";
+
+/* No comment provided by engineer. */
+"This will allow %1$@ to:" = "This will allow %1$@ to:";
 
 /* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
@@ -508,8 +598,14 @@
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
 
+/* No comment provided by engineer. */
+"Welcome!" = "Welcome!";
+
 /* macOS menu item */
 "Window" = "Window";
+
+/* No comment provided by engineer. */
+"You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
 
 /* macOS menu item */
 "Zoom" = "Zoom";

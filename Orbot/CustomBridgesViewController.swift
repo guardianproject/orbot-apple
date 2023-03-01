@@ -20,9 +20,14 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 	weak var delegate: BridgesConfDelegate?
 
 
-	@IBOutlet weak var explanationLb: UILabel! {
+	@IBOutlet weak var scrollView: UIScrollView!
+
+	@IBOutlet weak var explanationTv: UITextView! {
 		didSet {
-			explanationLb.text = NSLocalizedString("A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one.", comment: "")
+			explanationTv.text = String(
+				format: NSLocalizedString(
+					"A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@.",
+					comment: ""), Constants.bridgesUrl.absoluteString)
 		}
 	}
 
@@ -67,9 +72,11 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Custom Bridge", comment: "")
+		navigationItem.title = NSLocalizedString("Custom Bridges", comment: "")
 
 		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+
+		view.keyboardLayoutGuide.topAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
