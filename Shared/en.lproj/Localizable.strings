@@ -374,7 +374,7 @@
 "Key" = "Key";
 
 /* No comment provided by engineer. */
-"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses.";
+"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.";
 
 /* No comment provided by engineer. */
 "Limit Exit Countries" = "Limit Exit Countries";

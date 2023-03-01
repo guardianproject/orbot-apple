@@ -83,7 +83,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				return NSLocalizedString("Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.", comment: "")
 
 			case .requestTelegram:
-				return NSLocalizedString("Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '/start' in the chat to get bridge addresses.", comment: "")
+				return String(format: NSLocalizedString(
+					"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.",
+					comment: ""), "/start")
 
 			case .request:
 				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking.", comment: "")
