@@ -7,8 +7,8 @@ def tor
 end
 
 def iptproxy
-  pod 'IPtProxyUI/AppEx', '~> 2.0'
-  # '~> 1.10'
+  pod 'IPtProxyUI/AppEx', '~> 2.1'
+  # '~> 2.1'
   # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
   # :path => '../IPtProxyUI-ios'
 end
