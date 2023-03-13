@@ -23,10 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .label
 		UITableView.appearance().backgroundColor = .black2
 		UITableViewCell.appearance().backgroundColor = .black3
+		UISwitch.appearance(whenContainedInInstancesOf: [BaseFormViewController.self]).onTintColor = .darkGreen
 
 #if DEBUG
 		SharedUtils.addScreenshotDummies()
 #endif
+
+//		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//			UIApplication.shared.open(URL(string: "orbot:request/token?app-id=foobar&need-bypass=true")!)
+//		}
 
 		return true
 	}

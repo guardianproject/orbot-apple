@@ -32,4 +32,7 @@ extension Color {
 
 	static let accent1 = Color(named: "Accent1")!
 	static let accent2 = Color(named: "Accent2")!
+
+	static let brightGreen = Color(named: "BrightGreen")!
+	static let darkGreen = Color(named: "DarkGreen")!
 }
