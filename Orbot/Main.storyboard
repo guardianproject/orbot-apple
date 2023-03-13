@@ -65,30 +65,42 @@
                                     <action selector="control:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ydS-c1-J2s"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="l6h-oq-v3K">
-                                <rect key="frame" x="32" y="425" width="256" height="64"/>
-                                <color key="backgroundColor" name="Black3"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oag-Ga-fc5">
+                                <rect key="frame" x="16" y="433" width="288" height="34"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTl-GO-uMk">
+                                        <rect key="frame" x="20" y="1.5" width="51" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="nwy-i2-zYn"/>
+                                        </constraints>
+                                        <color key="onTintColor" systemColor="labelColor"/>
+                                        <color key="thumbTintColor" name="Black1"/>
+                                        <connections>
+                                            <action selector="toggleSmartConnect:" destination="BYZ-38-t0r" eventType="valueChanged" id="8np-OU-qdM"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Smart Connect to find the best way" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzM-gx-Huz">
+                                        <rect key="frame" x="77" y="0.0" width="191" height="34"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="20l-7Y-KB6" appends="YES" id="MWd-1d-0Rh"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="8Aj-Zd-c5X"/>
-                                    <constraint firstAttribute="height" constant="64" id="T3P-lN-hzs"/>
+                                    <constraint firstItem="NTl-GO-uMk" firstAttribute="leading" secondItem="Oag-Ga-fc5" secondAttribute="leading" constant="20" symbolic="YES" id="6K1-J1-uqJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bzM-gx-Huz" secondAttribute="trailing" constant="20" symbolic="YES" id="EO1-kp-Ahh"/>
+                                    <constraint firstAttribute="bottom" secondItem="bzM-gx-Huz" secondAttribute="bottom" id="bAg-2d-9My"/>
+                                    <constraint firstItem="bzM-gx-Huz" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="top" id="ddU-hU-GMN"/>
+                                    <constraint firstItem="NTl-GO-uMk" firstAttribute="centerY" secondItem="Oag-Ga-fc5" secondAttribute="centerY" id="ghr-c5-1QR"/>
+                                    <constraint firstItem="bzM-gx-Huz" firstAttribute="leading" secondItem="NTl-GO-uMk" secondAttribute="trailing" constant="8" symbolic="YES" id="nrd-Kh-evF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <string key="title">Start
-Use Smart Connect</string>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="control:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tj9-JA-yz0"/>
-                                </connections>
-                            </button>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D2-gT-gQC">
-                                <rect key="frame" x="32" y="497" width="256" height="48"/>
+                                <rect key="frame" x="32" y="499" width="256" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="KGe-ln-kBc"/>
                                     <constraint firstAttribute="width" constant="256" id="bqX-o7-8Ig"/>
@@ -150,7 +162,6 @@ Use Smart Connect</string>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0oq-dk-hja"/>
-                            <constraint firstItem="l6h-oq-v3K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="25v-SK-qy0"/>
                             <constraint firstItem="4D2-gT-gQC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Hp-RR-Xwb"/>
                             <constraint firstItem="eEm-Rp-xCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DGb-sI-OMr"/>
                             <constraint firstItem="RHK-rR-QxJ" firstAttribute="top" secondItem="eEm-Rp-xCs" secondAttribute="bottom" constant="32" id="Ez5-F4-IIt"/>
@@ -159,13 +170,16 @@ Use Smart Connect</string>
                             <constraint firstItem="hc2-uq-S3p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S0N-A6-A5V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="Smj-HX-Vt1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eEm-Rp-xCs" secondAttribute="trailing" constant="16" id="Um4-Z8-Lnu"/>
-                            <constraint firstItem="4D2-gT-gQC" firstAttribute="top" secondItem="l6h-oq-v3K" secondAttribute="bottom" constant="8" symbolic="YES" id="WH2-kO-x5e"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wk8-Jf-aT6"/>
+                            <constraint firstItem="4D2-gT-gQC" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="bottom" constant="32" id="Yxs-5U-Vhz"/>
+                            <constraint firstItem="Oag-Ga-fc5" firstAttribute="top" secondItem="RHK-rR-QxJ" secondAttribute="bottom" constant="16" id="Zng-zT-ock"/>
                             <constraint firstItem="eEm-Rp-xCs" firstAttribute="top" secondItem="trJ-w6-CDg" secondAttribute="bottom" constant="8" symbolic="YES" id="eGL-ef-JqZ"/>
                             <constraint firstItem="hc2-uq-S3p" firstAttribute="top" secondItem="1N5-w4-uQk" secondAttribute="bottom" constant="8" symbolic="YES" id="fNW-xw-N94"/>
+                            <constraint firstItem="Oag-Ga-fc5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fV5-q1-W9a"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="hc2-uq-S3p" secondAttribute="bottom" constant="8" symbolic="YES" id="jkI-FK-1uP"/>
+                            <constraint firstItem="Oag-Ga-fc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kg1-Gm-WEF"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
-                            <constraint firstItem="l6h-oq-v3K" firstAttribute="top" secondItem="RHK-rR-QxJ" secondAttribute="bottom" constant="8" symbolic="YES" id="rmO-ju-YlO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Oag-Ga-fc5" secondAttribute="trailing" constant="16" id="ofl-Qt-bFe"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="stN-RM-dne"/>
                             <constraint firstAttribute="centerX" relation="lessThanOrEqual" secondItem="48u-FW-Qyr" secondAttribute="trailing" constant="32" id="v0O-35-Pck"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ybe-1K-dUF"/>
@@ -196,8 +210,6 @@ Use Smart Connect</string>
                     </navigationItem>
                     <connections>
                         <outlet property="configureBt" destination="4D2-gT-gQC" id="BzC-HQ-bEE"/>
-                        <outlet property="control2Bt" destination="l6h-oq-v3K" id="vEm-sI-OE5"/>
-                        <outlet property="control2BtHeight" destination="T3P-lN-hzs" id="xkP-FG-Y21"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
@@ -207,6 +219,8 @@ Use Smart Connect</string>
                         <outlet property="settingsBt" destination="ni1-t3-I0T" id="9Fk-Cd-K9y"/>
                         <outlet property="shadowImg" destination="hc2-uq-S3p" id="Us5-Lf-lzv"/>
                         <outlet property="shadowImgHeight" destination="0OM-UZ-cSx" id="CUt-0D-Cy6"/>
+                        <outlet property="smartConnectLb" destination="bzM-gx-Huz" id="h1u-nH-FLY"/>
+                        <outlet property="smartConnectSw" destination="NTl-GO-uMk" id="elE-2x-CHE"/>
                         <outlet property="statusIcon" destination="1N5-w4-uQk" id="RXg-Gg-tqm"/>
                         <outlet property="statusIconWidth" destination="Wnm-LL-BGe" id="HIB-BT-gjB"/>
                         <outlet property="statusLb" destination="trJ-w6-CDg" id="2On-Ts-emC"/>
@@ -217,6 +231,11 @@ Use Smart Connect</string>
                 <tapGestureRecognizer id="brJ-t9-Xqj" userLabel="background-dismiss-recognizer">
                     <connections>
                         <action selector="hideLogs" destination="BYZ-38-t0r" id="D1N-8l-KRA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="20l-7Y-KB6" userLabel="toggle-smart-connect-on-label">
+                    <connections>
+                        <action selector="toggleSmartConnect:" destination="BYZ-38-t0r" id="b2B-at-m0n"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -721,7 +740,7 @@ Use Smart Connect</string>
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

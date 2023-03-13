@@ -175,7 +175,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 		tableView.separatorStyle = .none
 
-		navigationItem.title = NSLocalizedString("Choose How to Connect", comment: "")
+		navigationItem.title = L10n.chooseHowToConnect
 
 		section.onSelectSelectableRow = { [weak self] _, row in
 			guard let self = self else {

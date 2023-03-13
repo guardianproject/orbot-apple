@@ -31,6 +31,14 @@ class L10n {
 			   Bundle.main.version, Bundle.main.build)
 	}
 
+	static var runSmartConnectToFindTheBestWay: String {
+		NSLocalizedString("Run Smart Connect to find the best way", comment: "")
+	}
+
+	static var chooseHowToConnect: String {
+		NSLocalizedString("Choose How to Connect", comment: "")
+	}
+
 	static var log: String {
 		NSLocalizedString("Log", comment: "")
 	}

@@ -20,3 +20,10 @@ extension NSButton {
 		attributedAlternateTitle = title ?? NSAttributedString(string: "")
 	}
 }
+
+class NonDimmingNSButtonCell: NSButtonCell {
+
+	override func drawTitle(_ title: NSAttributedString, withFrame frame: NSRect, in controlView: NSView) -> NSRect {
+		return super.drawTitle(isEnabled ? title : attributedTitle, withFrame: frame, in: controlView)
+	}
+}

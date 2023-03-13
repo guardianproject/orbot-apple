@@ -45,16 +45,16 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var controlBt: UIButton!
 
-	@IBOutlet weak var control2Bt: UIButton! {
+	@IBOutlet weak var smartConnectSw: UISwitch!
+	@IBOutlet weak var smartConnectLb: UILabel! {
 		didSet {
-			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.titleLabel?.font.pointSize))
+			smartConnectLb.text = L10n.runSmartConnectToFindTheBestWay
 		}
 	}
-	@IBOutlet weak var control2BtHeight: NSLayoutConstraint!
 
 	@IBOutlet weak var configureBt: UIButton! {
 		didSet {
-			configureBt.setTitle(NSLocalizedString("Choose How to Connect", comment: ""))
+			configureBt.setTitle(L10n.chooseHowToConnect)
 			configureBt.accessibilityIdentifier = "bridge_configuration"
 		}
 	}
@@ -205,11 +205,21 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func control(_ sender: UIButton? = nil) {
-		if sender == control2Bt {
-			Settings.smartConnect = true
+		SharedUtils.control(startOnly: false)
+	}
+
+	@IBAction func toggleSmartConnect(_ sender: UIView) {
+		guard smartConnectSw.isEnabled else {
+			return
 		}
 
-		SharedUtils.control(startOnly: false)
+		if sender != smartConnectSw {
+			smartConnectSw.setOn(!smartConnectSw.isOn, animated: true)
+		}
+
+		Settings.smartConnect = smartConnectSw.isOn
+
+		updateUi()
 	}
 
 	@IBAction func changeLog() {
@@ -298,7 +308,9 @@ class MainViewController: UIViewController {
 		statusLb.attributedText = statusText
 		statusSubLb.text = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
-		control2BtHeight.constant = Settings.smartConnect || VpnManager.shared.status != .disconnected ? 0 : 64
+
+		smartConnectSw.isOn = Settings.smartConnect
+		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 

@@ -533,7 +533,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-K1-QGp">
-                                <rect key="frame" x="378" y="13" width="59" height="32"/>
+                                <rect key="frame" x="377" y="13" width="60" height="32"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tGJ-pH-erF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -543,7 +543,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9zr-ao-UgK">
-                                <rect key="frame" x="306" y="13" width="74" height="32"/>
+                                <rect key="frame" x="305" y="13" width="74" height="32"/>
                                 <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CZQ-oA-noG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -553,7 +553,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-w1-qcJ">
-                                <rect key="frame" x="232" y="13" width="76" height="32"/>
+                                <rect key="frame" x="231" y="13" width="76" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="38w-Ae-iOB">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -615,13 +615,13 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box title="Automatic Restart" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-2r-eGh">
-                                                    <rect key="frame" x="17" y="436" width="460" height="66"/>
+                                                    <rect key="frame" x="17" y="434" width="460" height="68"/>
                                                     <view key="contentView" id="fAm-8S-yvW">
-                                                        <rect key="frame" x="3" y="3" width="454" height="48"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="48"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-oB-Ge9">
-                                                                <rect key="frame" x="18" y="16" width="372" height="16"/>
+                                                                <rect key="frame" x="18" y="16" width="370" height="16"/>
                                                                 <textFieldCell key="cell" title="Automatically Restart on Error" id="5i4-Ta-WNF">
                                                                     <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -629,7 +629,7 @@ Gw
                                                                 </textFieldCell>
                                                             </textField>
                                                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="xSx-s1-eNA">
-                                                                <rect key="frame" x="394" y="11" width="42" height="25"/>
+                                                                <rect key="frame" x="392" y="11" width="42" height="25"/>
                                                                 <connections>
                                                                     <action selector="changeRestartOnError:" target="cNi-Fr-8GN" id="GNK-Gy-MPb"/>
                                                                 </connections>
@@ -646,13 +646,13 @@ Gw
                                                     </view>
                                                 </box>
                                                 <box title="Onion-only Mode" translatesAutoresizingMaskIntoConstraints="NO" id="qMx-R2-l8X">
-                                                    <rect key="frame" x="17" y="345" width="460" height="87"/>
+                                                    <rect key="frame" x="17" y="341" width="460" height="89"/>
                                                     <view key="contentView" id="O36-6J-lTJ">
-                                                        <rect key="frame" x="3" y="3" width="454" height="69"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="69"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1z-ng-0bG">
-                                                                <rect key="frame" x="18" y="37" width="372" height="16"/>
+                                                                <rect key="frame" x="18" y="37" width="370" height="16"/>
                                                                 <textFieldCell key="cell" title="Disable %@ for non-onion traffic" id="kg8-QH-3mj">
                                                                     <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -660,13 +660,13 @@ Gw
                                                                 </textFieldCell>
                                                             </textField>
                                                             <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="CpP-DS-jyw">
-                                                                <rect key="frame" x="394" y="32" width="42" height="25"/>
+                                                                <rect key="frame" x="392" y="32" width="42" height="25"/>
                                                                 <connections>
                                                                     <action selector="changeOnionOnly:" target="cNi-Fr-8GN" id="yyr-PL-Mcr"/>
                                                                 </connections>
                                                             </switch>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ein-zp-z6o">
-                                                                <rect key="frame" x="18" y="16" width="418" height="13"/>
+                                                                <rect key="frame" x="18" y="16" width="416" height="13"/>
                                                                 <textFieldCell key="cell" title="ATTENTION: This may harm your anonymity and security!" id="mi6-k4-2jP">
                                                                     <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -927,11 +927,11 @@ Gw
                                                 <box title="Maintenance" translatesAutoresizingMaskIntoConstraints="NO" id="YkU-Gc-PX2">
                                                     <rect key="frame" x="17" y="246" width="460" height="78"/>
                                                     <view key="contentView" id="9Bt-kF-c6b">
-                                                        <rect key="frame" x="3" y="3" width="454" height="60"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="58"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dWv-cE-Bzx">
-                                                                <rect key="frame" x="310" y="13" width="131" height="32"/>
+                                                                <rect key="frame" x="310" y="11" width="131" height="32"/>
                                                                 <buttonCell key="cell" type="push" title="Clear Tor Cache" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QWG-Za-13e">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
@@ -952,11 +952,11 @@ Gw
                                                 <box title="Expert" translatesAutoresizingMaskIntoConstraints="NO" id="7fN-9r-Dj6">
                                                     <rect key="frame" x="17" y="163" width="460" height="79"/>
                                                     <view key="contentView" id="mUF-JV-bBU">
-                                                        <rect key="frame" x="3" y="3" width="454" height="61"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="59"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-3M-djm">
-                                                                <rect key="frame" x="18" y="23" width="314" height="16"/>
+                                                                <rect key="frame" x="18" y="21" width="314" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Smart Connect Timeout" id="nfZ-fk-czk">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -964,7 +964,7 @@ Gw
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-w0-a0D">
-                                                                <rect key="frame" x="338" y="20" width="96" height="21"/>
+                                                                <rect key="frame" x="338" y="18" width="96" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="oBl-xp-hwb"/>
                                                                     <constraint firstAttribute="height" constant="21" id="rG2-fm-A11"/>
@@ -1067,7 +1067,7 @@ Gw
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3840" height="2135"/>
                         <toolbar key="toolbar" implicitIdentifier="0CAFD6D0-C3D0-44A3-BF50-FCBD2E19A344" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="bcc-Vt-E5X">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="3C6D5448-5556-4105-A89C-9FCAF0ECB002" explicitItemIdentifier="log" label="Log" paletteLabel="Log" tag="-1" image="chart.bar.doc.horizontal" catalog="system" bordered="YES" sizingBehavior="auto" id="Oco-oC-wai">
@@ -1168,25 +1168,19 @@ Gw
                                         <action selector="control:" target="XfG-lQ-9wD" id="wOO-iU-aca"/>
                                     </connections>
                                 </button>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="qtn-Z1-mXi">
-                                    <rect key="frame" x="118" y="190" width="262" height="71"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="64" id="Nzv-d5-LF0"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="lKw-rM-Zml"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="1si-ZV-r6Y">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <string key="title">Start
-Use Smart Connect</string>
-                                        <font key="font" textStyle="title1" name=".SFNS-Regular"/>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EdY-Ic-2ZG">
+                                    <rect key="frame" x="114" y="241" width="267" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Run Smart Connect to find the best way" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Dy6-HH-KGd" customClass="NonDimmingNSButtonCell" customModule="Orbot" customModuleProvider="target">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
                                     </buttonCell>
-                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="contentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <action selector="control:" target="XfG-lQ-9wD" id="mDW-1q-uES"/>
+                                        <action selector="toggleSmartConnect:" target="XfG-lQ-9wD" id="u7S-HA-xfH"/>
                                     </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="SCW-6H-lfh" userLabel="Start Use Smart Connect">
-                                    <rect key="frame" x="121" y="122" width="256" height="64"/>
+                                    <rect key="frame" x="121" y="170" width="256" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="Bcl-1U-M7C"/>
                                         <constraint firstAttribute="height" constant="64" id="Yu2-NJ-kga"/>
@@ -1211,20 +1205,20 @@ Use Smart Connect</string>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Jbv-zr-4vf" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="00u-xz-gH2"/>
-                                <constraint firstItem="qtn-Z1-mXi" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="92g-Zb-D5B"/>
                                 <constraint firstItem="8Pz-pW-43f" firstAttribute="leading" secondItem="4hT-SH-e7t" secondAttribute="leading" constant="20" symbolic="YES" id="9WD-gk-GxU"/>
+                                <constraint firstItem="EdY-Ic-2ZG" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="AZE-Kd-E1k"/>
                                 <constraint firstItem="zgK-dt-bdd" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="BuJ-kV-skR"/>
                                 <constraint firstItem="zgK-dt-bdd" firstAttribute="top" secondItem="Jbv-zr-4vf" secondAttribute="bottom" constant="8" symbolic="YES" id="Ebu-UJ-MaF"/>
                                 <constraint firstItem="vfY-b1-4cC" firstAttribute="top" secondItem="yK9-o5-mYS" secondAttribute="bottom" constant="8" symbolic="YES" id="Gsi-Fi-Ib1"/>
                                 <constraint firstAttribute="trailing" secondItem="8Pz-pW-43f" secondAttribute="trailing" constant="20" symbolic="YES" id="HYj-1j-BrC"/>
-                                <constraint firstItem="qtn-Z1-mXi" firstAttribute="top" secondItem="zgK-dt-bdd" secondAttribute="bottom" constant="8" symbolic="YES" id="Kh6-HQ-JBF"/>
+                                <constraint firstItem="SCW-6H-lfh" firstAttribute="top" secondItem="EdY-Ic-2ZG" secondAttribute="bottom" constant="8" symbolic="YES" id="KhR-d8-6Q5"/>
                                 <constraint firstAttribute="trailing" secondItem="Jbv-zr-4vf" secondAttribute="trailing" constant="20" symbolic="YES" id="Q7S-nq-DEM"/>
-                                <constraint firstItem="SCW-6H-lfh" firstAttribute="top" secondItem="qtn-Z1-mXi" secondAttribute="bottom" constant="8" symbolic="YES" id="T9Z-Jz-f6Q"/>
                                 <constraint firstItem="8Pz-pW-43f" firstAttribute="top" secondItem="vfY-b1-4cC" secondAttribute="bottom" constant="8" symbolic="YES" id="Xvg-v6-y5i"/>
                                 <constraint firstItem="Jbv-zr-4vf" firstAttribute="top" secondItem="8Pz-pW-43f" secondAttribute="bottom" constant="8" symbolic="YES" id="aBh-f5-mri"/>
                                 <constraint firstItem="yK9-o5-mYS" firstAttribute="top" secondItem="4hT-SH-e7t" secondAttribute="top" constant="20" symbolic="YES" id="bgd-yz-MgP"/>
                                 <constraint firstItem="yK9-o5-mYS" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="kJ1-3X-Ion"/>
                                 <constraint firstItem="vfY-b1-4cC" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="mdt-T0-Cla"/>
+                                <constraint firstItem="EdY-Ic-2ZG" firstAttribute="top" secondItem="zgK-dt-bdd" secondAttribute="bottom" constant="8" symbolic="YES" id="qOM-QK-6QT"/>
                                 <constraint firstItem="SCW-6H-lfh" firstAttribute="centerX" secondItem="4hT-SH-e7t" secondAttribute="centerX" id="seg-oq-Fre"/>
                             </constraints>
                         </view>
@@ -1233,10 +1227,9 @@ Use Smart Connect</string>
                     </box>
                     <connections>
                         <outlet property="configureBt" destination="SCW-6H-lfh" id="6mk-I3-4WQ"/>
-                        <outlet property="control2Bt" destination="qtn-Z1-mXi" id="1gV-fg-Ex1"/>
-                        <outlet property="control2BtHeight" destination="Nzv-d5-LF0" id="P9Z-ab-X9T"/>
                         <outlet property="controlBt" destination="zgK-dt-bdd" id="nQc-Fy-Bzf"/>
                         <outlet property="shadowImg" destination="vfY-b1-4cC" id="3Uk-0a-kUM"/>
+                        <outlet property="smartConnectSw" destination="EdY-Ic-2ZG" id="uge-XC-cje"/>
                         <outlet property="statusIcon" destination="yK9-o5-mYS" id="ztO-Cx-ahu"/>
                         <outlet property="statusLb" destination="8Pz-pW-43f" id="bue-kF-9iF"/>
                         <outlet property="statusSubLb" destination="Jbv-zr-4vf" id="kDY-AP-28G"/>
@@ -1346,13 +1339,13 @@ Use Smart Connect</string>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
-        <image name="gear.circle" width="14" height="14"/>
-        <image name="key" catalog="system" width="12" height="18"/>
-        <image name="network.badge.shield.half.filled" width="15" height="14"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
+        <image name="gear.circle" width="11" height="11"/>
+        <image name="key" catalog="system" width="13" height="18"/>
+        <image name="network.badge.shield.half.filled" width="12" height="11"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
-        <image name="plus" catalog="system" width="14" height="13"/>
+        <image name="plus" catalog="system" width="15" height="13"/>
         <namedColor name="Black1">
             <color red="0.10999999940395355" green="0.078000001609325409" blue="0.14499999582767487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

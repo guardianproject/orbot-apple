@@ -25,20 +25,17 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		}
 	}
 
-	@IBOutlet weak var control2Bt: NSButton! {
+	@IBOutlet weak var smartConnectSw: NSButton! {
 		didSet {
-			control2Bt.setAttributedTitle(SharedUtils.smartConnectButtonLabel(buttonFontSize: control2Bt.font?.pointSize))
-			control2Bt.isBordered = false
-			control2Bt.wantsLayer = true
-			control2Bt.layer?.backgroundColor = NSColor.black3.cgColor
-			control2Bt.layer?.cornerRadius = 5
+			smartConnectSw.setAttributedTitle(NSAttributedString(
+				string: L10n.runSmartConnectToFindTheBestWay,
+				attributes: [.foregroundColor: NSColor.white]))
 		}
 	}
-	@IBOutlet weak var control2BtHeight: NSLayoutConstraint!
 
 	@IBOutlet weak var configureBt: NSButton! {
 		didSet {
-			configureBt.setTitle(NSLocalizedString("Choose How to Connect", comment: ""))
+			configureBt.setTitle(L10n.chooseHowToConnect)
 			configureBt.setAccessibilityIdentifier("bridge_configuration")
 		}
 	}
@@ -113,11 +110,21 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	// MARK: Actions
 
 	@IBAction func control(_ sender: Any) {
-		if let sender = sender as? NSButton, sender == control2Bt {
-			Settings.smartConnect = true
+		SharedUtils.control(startOnly: false)
+	}
+
+	@IBAction func toggleSmartConnect(_ sender: NSView) {
+		guard smartConnectSw.isEnabled else {
+			return
 		}
 
-		SharedUtils.control(startOnly: false)
+		if sender != smartConnectSw {
+			smartConnectSw.state = smartConnectSw.state == .on ? .off : .on
+		}
+
+		Settings.smartConnect = smartConnectSw.state == .on
+
+		updateUi()
 	}
 
 	@IBAction func controlSnowflakeProxy(_ sender: Any) {
@@ -193,10 +200,8 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		statusSubLb.stringValue = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
 
-		let hide = Settings.smartConnect || VpnManager.shared.status != .disconnected
-
-		control2BtHeight.constant = hide ? 0 : 64
-		control2Bt.isHidden = hide
+		smartConnectSw.state = Settings.smartConnect ? .on : .off
+		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
 
 		configureBt.isHidden = !showConfButton
 	}
