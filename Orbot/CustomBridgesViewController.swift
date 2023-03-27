@@ -16,6 +16,16 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		UIStoryboard.main.instantiateViewController(withIdentifier: "custom_bridges_vc") as! Self
 	}
 
+	class var bridgesUrl: String {
+		var urlc = URLComponents(url: Constants.bridgesUrl,
+								 resolvingAgainstBaseURL: false)
+
+		urlc?.path = "/bridges"
+		urlc?.queryItems = [.init(name: "transport", value: "obfs4")]
+
+		return urlc?.string ?? Constants.bridgesUrl.absoluteString
+	}
+
 
 	weak var delegate: BridgesConfDelegate?
 
@@ -26,8 +36,8 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		didSet {
 			explanationTv.text = String(
 				format: NSLocalizedString(
-					"A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@.",
-					comment: ""), Constants.bridgesUrl.absoluteString)
+					"Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@.",
+					comment: ""), Self.bridgesUrl)
 		}
 	}
 

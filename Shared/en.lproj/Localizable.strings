@@ -58,9 +58,6 @@
 /* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
 
-/* No comment provided by engineer. */
-"A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@." = "A custom bridge is provided by someone you know. Ask within your trusted networks and organizations to see if anyone is hosting one or can help you to get one from %@.";
-
 /* macOS menu item */
 "About %@" = "About %@";
 
@@ -111,6 +108,9 @@
 
 /* No comment provided by engineer. */
 "Ask Tor" = "Ask Tor";
+
+/* No comment provided by engineer. */
+"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you.";
 
 /* No comment provided by engineer. */
 "Asking Tor Project's Circumvention Service" = "Asking Tor Project's Circumvention Service";
@@ -395,9 +395,6 @@
 "Minimize" = "Minimize";
 
 /* No comment provided by engineer. */
-"Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust." = "Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust.";
-
-/* No comment provided by engineer. */
 "Next" = "Next";
 
 /* No comment provided by engineer. */
@@ -435,6 +432,9 @@
 
 /* macOS menu item */
 "Paste and Match Style" = "Paste and Match Style";
+
+/* No comment provided by engineer. */
+"Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@.";
 
 /* No comment provided by engineer. */
 "pings" = "pings";

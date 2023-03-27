@@ -74,13 +74,19 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		var longDescription: String {
 			switch self {
 			case .direct:
-				return NSLocalizedString("The best way to connect to Tor. Use if Tor is not blocked.", comment: "")
+				return NSLocalizedString(
+					"The best way to connect to Tor. Use if Tor is not blocked.",
+					comment: "")
 
 			case .snowflake:
-				return NSLocalizedString("Connects through Tor volunteers. Gets around some Tor blocking.", comment: "")
+				return NSLocalizedString(
+					"Connects through Tor volunteers. Gets around some Tor blocking.",
+					comment: "")
 
 			case .snowflakeAmp:
-				return NSLocalizedString("Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.", comment: "")
+				return NSLocalizedString(
+					"Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.",
+					comment: "")
 
 			case .requestTelegram:
 				return String(format: NSLocalizedString(
@@ -88,16 +94,24 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 					comment: ""), "/start")
 
 			case .request:
-				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking.", comment: "")
+				return NSLocalizedString(
+					"Cloaks your traffic. Gets around some Tor blocking.",
+					comment: "")
 
 			case .obfs4:
-				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.", comment: "")
+				return NSLocalizedString(
+					"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.",
+					comment: "")
 
 			case .requestMail:
-				return NSLocalizedString("Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.", comment: "")
+				return NSLocalizedString(
+					"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.",
+					comment: "")
 
 			case .custom:
-				return NSLocalizedString("Most likely to keep you connected if Tor is severely blocked. Requires bridge addresses from someone you trust.", comment: "")
+				return NSLocalizedString(
+					"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you.",
+					comment: "")
 			}
 		}
 
