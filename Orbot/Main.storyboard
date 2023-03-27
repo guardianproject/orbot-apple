@@ -66,10 +66,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oag-Ga-fc5">
-                                <rect key="frame" x="16" y="433" width="288" height="34"/>
+                                <rect key="frame" x="32" y="433" width="256" height="34"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTl-GO-uMk">
-                                        <rect key="frame" x="20" y="1.5" width="51" height="31"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="nwy-i2-zYn"/>
                                         </constraints>
@@ -80,7 +80,7 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run Smart Connect to find the best way" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzM-gx-Huz">
-                                        <rect key="frame" x="77" y="0.0" width="191" height="34"/>
+                                        <rect key="frame" x="57" y="0.0" width="199" height="34"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <nil key="textColor"/>
@@ -91,8 +91,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="NTl-GO-uMk" firstAttribute="leading" secondItem="Oag-Ga-fc5" secondAttribute="leading" constant="20" symbolic="YES" id="6K1-J1-uqJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="bzM-gx-Huz" secondAttribute="trailing" constant="20" symbolic="YES" id="EO1-kp-Ahh"/>
+                                    <constraint firstItem="NTl-GO-uMk" firstAttribute="leading" secondItem="Oag-Ga-fc5" secondAttribute="leading" id="6K1-J1-uqJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bzM-gx-Huz" secondAttribute="trailing" id="EO1-kp-Ahh"/>
+                                    <constraint firstAttribute="width" constant="256" id="Sgs-jF-pIc"/>
                                     <constraint firstAttribute="bottom" secondItem="bzM-gx-Huz" secondAttribute="bottom" id="bAg-2d-9My"/>
                                     <constraint firstItem="bzM-gx-Huz" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="top" id="ddU-hU-GMN"/>
                                     <constraint firstItem="NTl-GO-uMk" firstAttribute="centerY" secondItem="Oag-Ga-fc5" secondAttribute="centerY" id="ghr-c5-1QR"/>
@@ -175,11 +176,9 @@
                             <constraint firstItem="Oag-Ga-fc5" firstAttribute="top" secondItem="RHK-rR-QxJ" secondAttribute="bottom" constant="16" id="Zng-zT-ock"/>
                             <constraint firstItem="eEm-Rp-xCs" firstAttribute="top" secondItem="trJ-w6-CDg" secondAttribute="bottom" constant="8" symbolic="YES" id="eGL-ef-JqZ"/>
                             <constraint firstItem="hc2-uq-S3p" firstAttribute="top" secondItem="1N5-w4-uQk" secondAttribute="bottom" constant="8" symbolic="YES" id="fNW-xw-N94"/>
-                            <constraint firstItem="Oag-Ga-fc5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fV5-q1-W9a"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="hc2-uq-S3p" secondAttribute="bottom" constant="8" symbolic="YES" id="jkI-FK-1uP"/>
                             <constraint firstItem="Oag-Ga-fc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kg1-Gm-WEF"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Oag-Ga-fc5" secondAttribute="trailing" constant="16" id="ofl-Qt-bFe"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="stN-RM-dne"/>
                             <constraint firstAttribute="centerX" relation="lessThanOrEqual" secondItem="48u-FW-Qyr" secondAttribute="trailing" constant="32" id="v0O-35-Pck"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ybe-1K-dUF"/>

@@ -311,6 +311,7 @@ class MainViewController: UIViewController {
 
 		smartConnectSw.isOn = Settings.smartConnect
 		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
+		smartConnectSw.superview?.isHidden = !showConfButton
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 
