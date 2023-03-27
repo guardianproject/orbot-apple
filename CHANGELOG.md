@@ -1,5 +1,19 @@
 #  Orbot iOS Changelog
 
+## 1.6.0
+- Improved Smart Connect: Don't stop, if auto-config server cannot be reached.
+- Improved Smart Connect UI.
+- Improved manual bridge configuration UI.
+- Added configurable Smart Connect timeout for user testing.
+- Updated Obfs4proxy and Snowflake libraries.
+- Support multiple Snowflake bridges.
+- Added setting: Switch back to the last VPN after Tor stops.
+- New app icon.
+- New illustrations.
+- Improved access request scene.
+- Updated translations. 
+
+
 ## 1.5.0
 - Introduced new design including our new maskot "Orbie"!
 - Added "Smart Connect" feature to aid in finding a working connection.

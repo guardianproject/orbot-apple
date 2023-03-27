@@ -1,4 +1,10 @@
-- Einführung eines neuen Designs mit unserem neuen Maskottchen "Orbie"!
-- Funktion "Smart Connect" hinzugefügt, um das Finden einer funktionierenden Verbindung zu erleichtern.
-- Exit-Node Länderauswahl hinzugefügt.
-- Tor auf Version 0.4.7.12 aktualisiert.
+- Verbessertes Smart Connect: Hält nicht an, wenn der Auto-Konfigurations-Server nicht erreicht werden kann.
+- Verbessertes Smart Connect UI.
+- Verbessertes manuelle Brückenkonfigurations-UI.
+- Konfigurierbares Smart Connect Timeout für Benutzertests hinzugefügt.
+- Aktualisierte Obfs4proxy- und Snowflake-Bibliotheken.
+- Unterstützung mehrerer Snowflake-Bridges.
+- Neue Einstellung: Zurückschalten zum letzten VPN, nachdem Tor stoppt.
+- Neues Anwendungssymbol.
+- Neue Illustrationen.
+- Aktualisierte Übersetzungen.
