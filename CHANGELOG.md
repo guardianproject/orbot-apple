@@ -12,6 +12,7 @@
 - New illustrations.
 - Improved access request scene.
 - Updated translations. 
+- Updated Tor to 0.4.7.13.
 
 
 ## 1.5.0

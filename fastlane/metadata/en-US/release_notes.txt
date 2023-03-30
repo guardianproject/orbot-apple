@@ -8,3 +8,4 @@
 - New app icon.
 - New illustrations.
 - Updated translations.
+- Updated Tor to 0.4.7.13.

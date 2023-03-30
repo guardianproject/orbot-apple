@@ -8,3 +8,4 @@
 - Neues Anwendungssymbol.
 - Neue Illustrationen.
 - Aktualisierte Übersetzungen.
+- Tor auf 0.4.7.13 aktualisiert.
