@@ -29,17 +29,17 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .none:
 				return .direct
 
-			case .obfs4:
-				return .obfs4
-
 			case .snowflake:
 				return .snowflake
+
+			case .snowflakeAmp:
+				return .snowflakeAmp
 
 			case .custom:
 				return .custom
 
-			case .snowflakeAmp:
-				return .snowflakeAmp
+			default:
+				return .obfs4
 			}
 		}
 

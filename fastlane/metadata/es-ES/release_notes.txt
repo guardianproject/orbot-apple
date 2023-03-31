@@ -1,4 +1,11 @@
-- Nuevo diseño que incluye nuestro nuevo maskot "Orbie".
-- Añadida la función "Smart Connect" para ayudar a encontrar una conexión que funcione.
-- Añadido selector de país del nodo de salida.
-- Actualizado Tor a la versión 0.4.7.12.
+-Conexión inteligente mejorada: no detenerse si no se puede acceder al servidor de configuración automática.
+-Interfaz de Usuario de Conexión inteligente mejorada
+-Interfaz de usuario de configuración manual de puentes mejorada.
+-Se agregó el tiempo de espera configurable de la conexion inteligente para las pruebas de usuario.
+- Librerias actializadas de Obfs4 proxy y Snowflake.
+-Soporte de Puentes de Snowflake multiples.
+-Configuración agregada: volver el ultimo VPN después de que Tor se detenga.
+-Nuevo icono de la aplicacion.
+-Ilustraciones nuevas.
+- Traducciones actualizadas.
+-Actualizado a Tor 0.4.7.13.

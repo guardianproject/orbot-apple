@@ -286,7 +286,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 					self.transport = .obfs4
 
 				// If Obfs4 bridges didn't work, give up.
-				case .obfs4:
+				default:
 					self.stopConnectionGuard()
 
 					TorManager.shared.stop()
