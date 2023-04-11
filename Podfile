@@ -7,8 +7,10 @@ def tor
 end
 
 def iptproxy
-  pod 'IPtProxyUI/AppEx', '~> 2.1'
-  # '~> 2.1'
+  pod 'ReachabilitySwift', :git => 'https://github.com/tladesignz/Reachability.swift'
+
+  pod 'IPtProxyUI/AppEx',
+  '~> 2.1'
   # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
   # :path => '../IPtProxyUI-ios'
 end

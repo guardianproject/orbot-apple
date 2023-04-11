@@ -24,6 +24,7 @@ DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
   - IPtProxyUI/AppEx (~> 2.1)
+  - ReachabilitySwift (from `https://github.com/tladesignz/Reachability.swift`)
   - Tor/GeoIP (~> 407.13)
 
 SPEC REPOS:
@@ -33,17 +34,21 @@ SPEC REPOS:
     - IPtProxy
     - IPtProxyUI
     - MBProgressHUD
-    - ReachabilitySwift
     - Tor
 
 EXTERNAL SOURCES:
   GCDWebServerExtension:
     :git: https://github.com/tladesignz/GCDWebServer.git
+  ReachabilitySwift:
+    :git: https://github.com/tladesignz/Reachability.swift
 
 CHECKOUT OPTIONS:
   GCDWebServerExtension:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
+  ReachabilitySwift:
+    :commit: 277210cb6c9d1e2ded24c0729fcb77dd62e1e30c
+    :git: https://github.com/tladesignz/Reachability.swift
 
 SPEC CHECKSUMS:
   Eureka: 28ad9dec6286cd7cd601fdf8e8df39bb7356a8f4
@@ -52,9 +57,9 @@ SPEC CHECKSUMS:
   IPtProxy: d33e998c68686b1e706612c310d246187c06c907
   IPtProxyUI: 95e83b717f89a682a601b4f244c40393ecf29c08
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  ReachabilitySwift: 639a14aabcad9d368f9bb0e29903840de36c90d9
   Tor: 1664d036a03ea9bd6851b76ce09550872c54ca98
 
-PODFILE CHECKSUM: 281da9083a69f53999408d7f35e4e97ccbe722a8
+PODFILE CHECKSUM: a3a004060c8a5fab28f09baa8c385f0ca7df3811
 
 COCOAPODS: 1.12.0
