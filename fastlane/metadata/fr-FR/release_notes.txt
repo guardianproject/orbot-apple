@@ -1,4 +1,11 @@
-- Introduction d'un nouveau design incluant notre nouveau masque "Orbie" !
-- Ajout de la fonction "Smart Connect" pour aider à trouver une connexion qui fonctionne.
-- Ajout d'un sélecteur de pays pour les noeuds de sortie.
-- Mise à jour de Tor à la version 0.4.7.12.
+- Amélioration de Smart Connect : Ne s'arrête pas si le serveur d'auto-configuration ne peut être atteint.
+- Amélioration de l'interface utilisateur de Smart Connect.
+- Amélioration de l'interface utilisateur pour la configuration manuelle des ponts.
+- Ajout d'un délai d'attente configurable pour Smart Connect pour les tests des utilisateurs.
+- Mise à jour des bibliothèques Obfs4proxy et Snowflake.
+- Prise en charge de plusieurs ponts Snowflake.
+- Ajout d'un paramètre : Revenir au dernier VPN après l'arrêt de Tor.
+- Nouvelle icône de l'application.
+- Nouvelles illustrations.
+- Mise à jour des traductions.
+- Mise à jour de Tor vers la version 0.4.7.13.
