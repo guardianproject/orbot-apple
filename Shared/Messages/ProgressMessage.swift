@@ -8,9 +8,11 @@
 
 import Foundation
 
-class ProgressMessage: NSObject, Message {
+class ProgressMessage: Message {
 
-	static var supportsSecureCoding = true
+	override class var supportsSecureCoding: Bool {
+		true
+	}
 
 	let progress: Float
 
@@ -23,10 +25,12 @@ class ProgressMessage: NSObject, Message {
 	required init?(coder: NSCoder) {
 		progress = coder.decodeFloat(forKey: "progress")
 
-		super.init()
+		super.init(coder: coder)
 	}
 
-	func encode(with coder: NSCoder) {
+	override func encode(with coder: NSCoder) {
+		super.encode(with: coder)
+
 		coder.encode(progress, forKey: "progress")
 	}
 }

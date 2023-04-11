@@ -9,9 +9,11 @@
 import Foundation
 import Tor
 
-class CloseCircuitsMessage: NSObject, Message {
+class CloseCircuitsMessage: Message {
 
-	static var supportsSecureCoding = true
+	override class var supportsSecureCoding: Bool {
+		true
+	}
 
 	let circuits: [TorCircuit]
 
@@ -25,10 +27,12 @@ class CloseCircuitsMessage: NSObject, Message {
 		circuits = coder.decodeObject(of: [NSArray.self, TorCircuit.self],
 									  forKey: "circuits") as? [TorCircuit] ?? []
 
-		super.init()
+		super.init(coder: coder)
 	}
 
-	func encode(with coder: NSCoder) {
+	override func encode(with coder: NSCoder) {
+		super.encode(with: coder)
+
 		coder.encode(circuits, forKey: "circuits")
 	}
 }

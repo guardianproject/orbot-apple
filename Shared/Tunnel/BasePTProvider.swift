@@ -127,7 +127,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 	}
 
 	override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
-		let request = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(messageData)
+		let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: messageData)
+		let request = unarchiver?.decodeObject(of: Message.self, forKey: NSKeyedArchiveRootObjectKey)
 
 		log("#handleAppMessage messageData=\(messageData), request=\(String(describing: request))")
 

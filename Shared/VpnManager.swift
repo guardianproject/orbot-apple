@@ -455,42 +455,7 @@ class VpnManager: BridgesConfDelegate {
 	}
 
 	private func commTunnel() {
-		if (session?.status ?? .invalid) != .invalid {
-			do {
-				try session?.sendProviderMessage(Data()) { response in
-					if let response = response {
-						if let response = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? [Message] {
-							for message in response {
-								if let pm = message as? ProgressMessage {
-									print("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
-
-									DispatchQueue.main.async {
-										NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)
-									}
-								}
-								else if message is ConfigChangedMessage {
-									print("[\(String(describing: type(of: self)))] ConfigChangedMessage")
-
-									DispatchQueue.main.async {
-										NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			catch {
-				NSLog("[\(String(describing: type(of: self)))] "
-					  + "Could not establish communications channel with extension. "
-					  + "Error: \(error)")
-			}
-
-			if poll {
-				DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: self.commTunnel)
-			}
-		}
-		else {
+		if (session?.status ?? .invalid) == .invalid {
 			NSLog("[\(String(describing: type(of: self)))] "
 				  + "Could not establish communications channel with extension. "
 				  + "VPN configuration does not exist or is not enabled. "
@@ -499,6 +464,45 @@ class VpnManager: BridgesConfDelegate {
 			error = Errors.couldNotConnect
 
 			postChange()
+
+			return
+		}
+
+		do {
+			try session?.sendProviderMessage(Data()) { response in
+				guard let response = response,
+					  let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: response),
+					  let response = unarchiver.decodeArrayOfObjects(ofClass: Message.self, forKey: NSKeyedArchiveRootObjectKey)
+				else {
+					return
+				}
+
+				for message in response {
+					if let pm = message as? ProgressMessage {
+						print("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
+
+						DispatchQueue.main.async {
+							NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)
+						}
+					}
+					else if message is ConfigChangedMessage {
+						print("[\(String(describing: type(of: self)))] ConfigChangedMessage")
+
+						DispatchQueue.main.async {
+							NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
+						}
+					}
+				}
+			}
+		}
+		catch {
+			NSLog("[\(String(describing: type(of: self)))] "
+				  + "Could not establish communications channel with extension. "
+				  + "Error: \(error)")
+		}
+
+		if poll {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: self.commTunnel)
 		}
 	}
 
@@ -518,15 +522,19 @@ class VpnManager: BridgesConfDelegate {
 					return callback(nil, nil)
 				}
 
+				if T.self is Data.Type {
+					return callback(response as? T, nil)
+				}
+
 				do {
-					if let error = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? Error {
+					let unarchiver = try NSKeyedUnarchiver(forReadingFrom: response)
+					unarchiver.requiresSecureCoding = false
+
+					if let error = unarchiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? Error {
 						callback(nil, error)
 					}
-					else if T.self is Data.Type {
-						callback(response as? T, nil)
-					}
 					else {
-						let payload = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(response) as? T
+						let payload = unarchiver.decodeObject(forKey: NSKeyedArchiveRootObjectKey) as? T
 						callback(payload, nil)
 					}
 				}

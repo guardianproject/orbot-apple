@@ -8,18 +8,9 @@
 
 import Foundation
 
-class GetCircuitsMessage: NSObject, Message {
+class GetCircuitsMessage: Message {
 
-	static var supportsSecureCoding = true
-
-	override init() {
-		super.init()
-	}
-
-	required init?(coder: NSCoder) {
-		super.init()
-	}
-
-	func encode(with coder: NSCoder) {
+	override class var supportsSecureCoding: Bool {
+		true
 	}
 }

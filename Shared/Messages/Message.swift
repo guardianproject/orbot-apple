@@ -8,5 +8,21 @@
 
 import Foundation
 
-protocol Message: NSObject, NSSecureCoding {
+class Message: NSObject, NSSecureCoding {
+
+	class var supportsSecureCoding: Bool {
+		true
+	}
+
+	override init() {
+		super.init()
+	}
+
+	required init?(coder: NSCoder) {
+		super.init()
+	}
+
+
+	func encode(with coder: NSCoder) {
+	}
 }
