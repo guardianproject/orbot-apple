@@ -306,6 +306,8 @@
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
 		A0274FEC28E70B6300E767E9 /* SharedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtils.swift; sourceTree = "<group>"; };
 		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+		A02DEDAC29E6B030004CB113 /* prepare-devid-publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepare-devid-publication.swift"; sourceTree = "<group>"; };
+		A02DEDAD29E6D296004CB113 /* create-dmg.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-dmg.sh"; sourceTree = "<group>"; };
 		A0367015292E65C70012C84A /* compile-country-list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "compile-country-list.swift"; sourceTree = "<group>"; };
 		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -611,6 +613,8 @@
 				A064701B24781C5400311CBE /* LICENSE */,
 				A0D6162027D8BAC6008E0F3C /* .tx */,
 				A0367015292E65C70012C84A /* compile-country-list.swift */,
+				A02DEDAC29E6B030004CB113 /* prepare-devid-publication.swift */,
+				A02DEDAD29E6D296004CB113 /* create-dmg.sh */,
 			);
 			name = Build;
 			sourceTree = "<group>";
