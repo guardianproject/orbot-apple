@@ -202,6 +202,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 		smartConnectSw.state = Settings.smartConnect ? .on : .off
 		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
+		smartConnectSw.isHidden = !showConfButton
 
 		configureBt.isHidden = !showConfButton
 	}
