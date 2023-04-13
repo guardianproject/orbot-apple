@@ -1,46 +1,47 @@
 [main]
 host = https://www.transifex.com
 
-[orbot-ios.localizable-strings]
-file_filter = Shared/<lang>.lproj/Localizable.strings
+[o:otf:p:orbot-ios:r:localizable-strings]
+file_filter  = Shared/<lang>.lproj/Localizable.strings
+source_file  = Shared/en.lproj/Localizable.strings
+source_lang  = en
+type         = STRINGS
 minimum_perc = 0
-source_file = Shared/en.lproj/Localizable.strings
-source_lang = en
-type = STRINGS
 
-[orbot-ios.infoplist-strings]
-file_filter = Orbot/<lang>.lproj/InfoPlist.strings
+[o:otf:p:orbot-ios:r:infoplist-strings]
+file_filter  = Orbot/<lang>.lproj/InfoPlist.strings
+source_file  = Orbot/en.lproj/InfoPlist.strings
+source_lang  = en
+type         = STRINGS
 minimum_perc = 0
-source_file = Orbot/en.lproj/InfoPlist.strings
-source_lang = en
-type = STRINGS
 
-[orbot-ios.description-txt]
-file_filter = fastlane/metadata/<lang>/description.txt
+[o:otf:p:orbot-ios:r:description-txt]
+file_filter  = fastlane/metadata/<lang>/description.txt
+source_file  = fastlane/metadata/en-US/description.txt
+source_lang  = en
+type         = TXT
 minimum_perc = 0
-source_file = fastlane/metadata/en-US/description.txt
-source_lang = en
-type = TXT
-trans.de = fastlane/metadata/de-DE/description.txt
-trans.fr = fastlane/metadata/fr-FR/description.txt
-trans.es = fastlane/metadata/es-ES/description.txt
+trans.es     = fastlane/metadata/es-ES/description.txt
+trans.de     = fastlane/metadata/de-DE/description.txt
+trans.fr     = fastlane/metadata/fr-FR/description.txt
 
-[orbot-ios.keywords-txt]
-file_filter = fastlane/metadata/<lang>/keywords.txt
+[o:otf:p:orbot-ios:r:keywords-txt]
+file_filter  = fastlane/metadata/<lang>/keywords.txt
+source_file  = fastlane/metadata/en-US/keywords.txt
+source_lang  = en
+type         = TXT
 minimum_perc = 0
-source_file = fastlane/metadata/en-US/keywords.txt
-source_lang = en
-type = TXT
-trans.de = fastlane/metadata/de-DE/keywords.txt
-trans.fr = fastlane/metadata/fr-FR/keywords.txt
-trans.es = fastlane/metadata/es-ES/keywords.txt
+trans.es     = fastlane/metadata/es-ES/keywords.txt
+trans.de     = fastlane/metadata/de-DE/keywords.txt
+trans.fr     = fastlane/metadata/fr-FR/keywords.txt
 
-[orbot-ios.release-notes-txt]
-file_filter = fastlane/metadata/<lang>/release_notes.txt
+[o:otf:p:orbot-ios:r:release-notes-txt]
+file_filter  = fastlane/metadata/<lang>/release_notes.txt
+source_file  = fastlane/metadata/en-US/release_notes.txt
+source_lang  = en
+type         = TXT
 minimum_perc = 0
-source_file = fastlane/metadata/en-US/release_notes.txt
-source_lang = en
-type = TXT
-trans.de = fastlane/metadata/de-DE/release_notes.txt
-trans.fr = fastlane/metadata/fr-FR/release_notes.txt
-trans.es = fastlane/metadata/es-ES/release_notes.txt
+trans.de     = fastlane/metadata/de-DE/release_notes.txt
+trans.fr     = fastlane/metadata/fr-FR/release_notes.txt
+trans.es     = fastlane/metadata/es-ES/release_notes.txt
+
