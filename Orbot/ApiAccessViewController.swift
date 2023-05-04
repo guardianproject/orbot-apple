@@ -113,7 +113,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 				vc.navigationController?.dismiss(animated: true)
 				self.close()
 
-				completion(token)
+				completion(granted ? token : nil)
 			}
 
 			navigationController?.viewControllers = [vc]
