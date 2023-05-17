@@ -249,6 +249,9 @@ class VpnManager: BridgesConfDelegate {
 				self.postChange()
 			}
 		}
+		else {
+			postChange()
+		}
 	}
 
 	func connect(autoConfDone: Bool = false) {
@@ -488,9 +491,7 @@ class VpnManager: BridgesConfDelegate {
 					else if message is ConfigChangedMessage {
 						print("[\(String(describing: type(of: self)))] ConfigChangedMessage")
 
-						DispatchQueue.main.async {
-							NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
-						}
+						self.postChange()
 					}
 				}
 			}

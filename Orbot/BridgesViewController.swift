@@ -340,8 +340,6 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		navigationController?.dismiss(animated: true)
 
 		VpnManager.shared.configChanged()
-
-		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
 	}
 
 
