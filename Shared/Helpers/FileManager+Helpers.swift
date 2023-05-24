@@ -73,4 +73,12 @@ extension FileManager {
 	var sfpLogFile: URL? {
 		groupDir?.appendingPathComponent("sfp.log")
 	}
+
+	var artiStateDir: URL? {
+		groupDir?.appendingPathComponent("arti-state")
+	}
+
+	var artiCacheDir: URL? {
+		groupDir?.appendingPathComponent("arti-cache")
+	}
 }

@@ -3,7 +3,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def tor
-  pod 'Tor/GeoIP', '~> 407.13'
+  pod 'Tor/GeoIP',
+  '~> 407.13'
+  # :path => '../Tor.framework'
 end
 
 def iptproxy

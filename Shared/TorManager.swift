@@ -47,16 +47,20 @@ class TorManager {
 
 	static let localhost = "127.0.0.1"
 
+	private static let artiSocksPort: UInt = 9050
+	private static let artiDnsPort: UInt = 9051
+
 	var status = Status.stopped
 
-	private var torThread: TorThread?
+	private var torThread: Thread?
 
 	private var torController: TorController?
 
 	private var torConf: TorConfiguration?
 
+	private var _torRunning = false
 	private var torRunning: Bool {
-		(torThread?.isExecuting ?? false) && (torConf?.isLocked ?? false)
+		 ((torThread?.isExecuting ?? false) && (torConf?.isLocked ?? false)) || _torRunning
 	}
 
 	private lazy var controllerQueue = DispatchQueue.global(qos: .userInitiated)
@@ -94,6 +98,32 @@ class TorManager {
 
 		self.transport = transport
 
+#if USE_ARTI
+		if !torRunning {
+			let fm = FileManager.default
+
+			let conf = TorConfiguration()
+			conf.socksPort = Self.artiSocksPort
+			conf.dnsPort = Self.artiDnsPort
+			conf.dataDirectory = fm.artiStateDir
+			conf.cacheDirectory = fm.artiCacheDir
+			conf.logfile = fm.torLogFile?.truncate()
+
+			TorArti.start(with: conf) { [weak self] in
+				self?.status = .started
+				self?._torRunning = true
+
+				completion(nil, "\(Self.localhost):\(Self.artiSocksPort)", "\(Self.localhost):\(Self.artiDnsPort)")
+			}
+		}
+		else {
+			status = .started
+
+			completion(nil, "\(Self.localhost):\(Self.artiSocksPort)", "\(Self.localhost):\(Self.artiDnsPort)")
+		}
+
+		return
+#else
 		if !torRunning {
 			torConf = getTorConf()
 
@@ -199,6 +229,7 @@ class TorManager {
 				})
 			}
 		}
+#endif
 	}
 
 	func updateConfig(_ transport: Transport) {
