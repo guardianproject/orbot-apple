@@ -61,15 +61,23 @@ class AccessRequestViewController: UIViewController {
 
 	@IBOutlet weak var desc4Lb: UILabel! {
 		didSet {
+			desc4Lb.text = String(
+				format: NSLocalizedString("%1$@ Stop Tor.", comment: ""),
+				"\u{2022}")
+		}
+	}
+
+	@IBOutlet weak var desc5Lb: UILabel! {
+		didSet {
 			if token?.bypass ?? false {
-				desc4Lb.text = String(
+				desc5Lb.text = String(
 					format: NSLocalizedString("%1$@ Bypass %2$@", comment: ""),
 					"\u{2022}",
 					Bundle.main.displayName)
 			}
 			else {
-				desc4Lb.isHidden = true
-				desc4Lb.heightAnchor.constraint(equalToConstant: 0).isActive = true
+				desc5Lb.isHidden = true
+				desc5Lb.heightAnchor.constraint(equalToConstant: 0).isActive = true
 			}
 		}
 	}

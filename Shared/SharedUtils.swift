@@ -74,18 +74,22 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 
 	// MARK: Shared Methods
 
-	static func control(startOnly: Bool) {
+	static func control(onlyTo status: VpnManager.Status? = nil) {
 
 		// Enable, if disabled.
 		if VpnManager.shared.status == .disabled {
 			return VpnManager.shared.enable { success in
 				if success && VpnManager.shared.status != .disabled {
-					control(startOnly: startOnly)
+					control(onlyTo: status)
 				}
 			}
 		}
 
-		if startOnly && ![VpnManager.Status.disconnected, .disconnecting].contains(VpnManager.shared.status) {
+		if status == .connected && ![VpnManager.Status.disconnected, .disconnecting].contains(VpnManager.shared.status) {
+			return
+		}
+
+		if status == .disconnected && ![VpnManager.Status.connected, .connecting, .evaluating, .reasserting].contains(VpnManager.shared.status) {
 			return
 		}
 
@@ -94,7 +98,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			// Install first, if not installed.
 			VpnManager.shared.install()
 
-		case .evaluating, .connecting, .connected:
+		case .evaluating, .connecting, .connected, .reasserting:
 			VpnManager.shared.disconnect(explicit: true)
 
 		case .disconnected, .disconnecting:

@@ -205,7 +205,7 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func control(_ sender: UIButton? = nil) {
-		SharedUtils.control(startOnly: false)
+		SharedUtils.control()
 	}
 
 	@IBAction func toggleSmartConnect(_ sender: UIView) {

@@ -29,6 +29,9 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Manche Optionen könnten von %2$@ überschrieben werden.";
 
 /* No comment provided by engineer. */
+"%1$@ Stop Tor." = "%1$@ Tor stoppen.";
+
+/* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ Diese Einstellungen werden erst nach einem Neustart wirksam.";
 
 /* No comment provided by engineer. */
@@ -93,6 +96,9 @@
 
 /* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Ausgeschlossene Netzknoten auch nicht für Netzmanagement verwenden";
+
+/* No comment provided by engineer. */
+"An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Eine App hat versucht, %1$@ zu stoppen, aber Du hast das noch nicht erlaubt.";
 
 /* No comment provided by engineer. */
 "Another app requested an API access token." = "Eine andere App hat ein API-Zugriffstoken angefordert.";
@@ -351,6 +357,9 @@
 
 /* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über Dein Surfverhalten an Deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
+
+/* No comment provided by engineer. */
+"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Wenn Du willst, daß die App %1$@ automatisch stoppen kann, geh bitte zurück in diese App und laß sie den Authorisierungsprozess erneut starten!";
 
 /* No comment provided by engineer. */
 "images" = "Bildern";

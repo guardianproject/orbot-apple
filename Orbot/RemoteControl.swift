@@ -104,6 +104,16 @@ class RemoteControl {
 				self?.start(url)
 			}
 
+		case "stop":
+			let token = args?.first(where: { $0.name == "token"} )?.value
+
+			let callback = args?.first(where: { $0.name == "callback" })?.value
+			let url = callback != nil ? URL(string: callback!) : nil
+
+			return { [weak self] in
+				self?.stop(token, url)
+			}
+
 		case "show/settings":
 			return dismiss { [weak self] in
 				self?.mainVc?.showSettings()
@@ -198,7 +208,7 @@ class RemoteControl {
 				}
 
 				rootVc.dismiss(animated: true) {
-					SharedUtils.control(startOnly: true)
+					SharedUtils.control(onlyTo: .connected)
 				}
 
 			// Ok, we're already running. Just call back other app after a small delay.
@@ -211,7 +221,111 @@ class RemoteControl {
 		// No callback. Just try to connect.
 		else {
 			rootVc?.dismiss(animated: true) {
-				SharedUtils.control(startOnly: true)
+				SharedUtils.control(onlyTo: .connected)
+			}
+		}
+	}
+
+	/**
+	 Stops the VPN, if not already stopped and if in a state to do so.
+
+	 Redirects the user to the transmitted callback URL, on successful stop, if available.
+
+	 - parameter token: App access token. Only properly authorized apps are allowed to stop the VPN.
+	 - parameter callback: A callback URL to redirect the user to after a *successful* start.
+	 */
+	private func stop(_ token: String?, _ callback: URL?) {
+		guard let token = token,
+			  !token.isEmpty,
+			  Settings.apiAccessTokens.first(where: { $0.key == token }) != nil
+		else {
+			if let mainVc = mainVc {
+				let message = String(
+					format: NSLocalizedString(
+						"An app tried to stop %1$@, but you didn't allow it to do this, yet.",
+						comment: ""),
+					Bundle.main.displayName)
+				+ "\n\n"
+				+ String(
+					format: NSLocalizedString(
+						"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!",
+						comment: ""),
+					Bundle.main.displayName)
+
+				AlertHelper.present(mainVc, message: message, actions: [
+					AlertHelper.cancelAction(),
+					AlertHelper.destructiveAction(NSLocalizedString("Stop", comment: ""), handler: { _ in
+						self.rootVc?.dismiss(animated: true) {
+							SharedUtils.control(onlyTo: .disconnected)
+						}
+					})])
+			}
+
+			return
+		}
+
+		if let callback = callback {
+			switch VpnManager.shared.status {
+
+			// Ignore callback in failure modes to not create seemingly erratic behaviour.
+			case .notInstalled, .invalid, .unknown:
+				return
+
+			// Modes from where a successful stop is possible.
+			// Hook up state change observer and try to stop VPN.
+			case .disabled, .evaluating, .connecting, .connected, .reasserting, .disconnecting:
+
+				guard let rootVc = rootVc else {
+					return
+				}
+
+				observerToken = NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main)
+				{ _ in
+					switch VpnManager.shared.status {
+
+					case .notInstalled, .disabled, .invalid, .unknown:
+						// Something went very wrong when we changed to here.
+						// Remove observer and forget callback.
+						self.observerToken = nil
+
+					case .connected, .evaluating, .disconnecting:
+						// Ignore. This is the happy path.
+						// Yeah, even `connected`. Even when it starts from `connected`,
+						// We'll get a status change to `connected`, anyway.
+						break
+
+					case .disconnected:
+						// We're disconnected! remove observer and call back other app.
+						self.observerToken = nil
+
+						UIApplication.shared.open(callback)
+
+					case .reasserting:
+						// Still ignore. Doesn't look good, but maybe?
+						break
+
+					case .connecting:
+						// Ok, this is not going to fly.
+						// Remove observer, forget callback.
+						self.observerToken = nil
+					}
+				}
+
+				rootVc.dismiss(animated: true) {
+					SharedUtils.control(onlyTo: .disconnected)
+				}
+
+			// Ok, we're already stopped. Just call back other app after a small delay.
+			case .disconnected:
+				DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+					UIApplication.shared.open(callback)
+				}
+			}
+		}
+		// No callback. Just try to disconnect.
+		else {
+			rootVc?.dismiss(animated: true) {
+				SharedUtils.control(onlyTo: .disconnected)
 			}
 		}
 	}

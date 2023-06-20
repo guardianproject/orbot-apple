@@ -29,6 +29,9 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
 
 /* No comment provided by engineer. */
+"%1$@ Stop Tor." = "%1$@ Stop Tor.";
+
+/* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ These settings will only take effect after restart.";
 
 /* No comment provided by engineer. */
@@ -93,6 +96,9 @@
 
 /* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
+
+/* No comment provided by engineer. */
+"An app tried to stop %1$@, but you didn't allow it to do this, yet." = "An app tried to stop %1$@, but you didn't allow it to do this, yet.";
 
 /* No comment provided by engineer. */
 "Another app requested an API access token." = "Another app requested an API access token.";
@@ -351,6 +357,9 @@
 
 /* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!";
+
+/* No comment provided by engineer. */
+"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!";
 
 /* No comment provided by engineer. */
 "images" = "images";

@@ -110,7 +110,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 	// MARK: Actions
 
 	@IBAction func control(_ sender: Any) {
-		SharedUtils.control(startOnly: false)
+		SharedUtils.control()
 	}
 
 	@IBAction func toggleSmartConnect(_ sender: NSView) {
