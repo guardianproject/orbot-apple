@@ -101,9 +101,9 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D2-gT-gQC">
-                                <rect key="frame" x="32" y="519" width="256" height="48"/>
+                                <rect key="frame" x="32" y="503" width="256" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="KGe-ln-kBc"/>
+                                    <constraint firstAttribute="height" constant="40" id="KGe-ln-kBc"/>
                                     <constraint firstAttribute="width" constant="256" id="bqX-o7-8Ig"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -116,6 +116,24 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeBridges:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgA-DT-DTj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiL-Tb-333">
+                                <rect key="frame" x="32" y="551" width="256" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="AOj-A8-dFW"/>
+                                    <constraint firstAttribute="width" constant="256" id="HEA-dh-hn6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Clear Tor Cache"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearCache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSr-2e-8zA"/>
                                 </connections>
                             </button>
                             <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48u-FW-Qyr">
@@ -172,13 +190,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="Smj-HX-Vt1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eEm-Rp-xCs" secondAttribute="trailing" constant="16" id="Um4-Z8-Lnu"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wk8-Jf-aT6"/>
-                            <constraint firstItem="4D2-gT-gQC" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="bottom" constant="32" id="Yxs-5U-Vhz"/>
+                            <constraint firstItem="4D2-gT-gQC" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="bottom" constant="16" id="Yxs-5U-Vhz"/>
                             <constraint firstItem="Oag-Ga-fc5" firstAttribute="top" secondItem="RHK-rR-QxJ" secondAttribute="bottom" constant="16" id="Zng-zT-ock"/>
                             <constraint firstItem="eEm-Rp-xCs" firstAttribute="top" secondItem="trJ-w6-CDg" secondAttribute="bottom" constant="8" symbolic="YES" id="eGL-ef-JqZ"/>
                             <constraint firstItem="hc2-uq-S3p" firstAttribute="top" secondItem="1N5-w4-uQk" secondAttribute="bottom" constant="8" symbolic="YES" id="fNW-xw-N94"/>
+                            <constraint firstItem="OiL-Tb-333" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jNm-DP-szz"/>
                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="hc2-uq-S3p" secondAttribute="bottom" constant="8" symbolic="YES" id="jkI-FK-1uP"/>
                             <constraint firstItem="Oag-Ga-fc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kg1-Gm-WEF"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n3U-aF-Z1D"/>
+                            <constraint firstItem="OiL-Tb-333" firstAttribute="top" secondItem="4D2-gT-gQC" secondAttribute="bottom" constant="8" symbolic="YES" id="nty-gv-y5C"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="stN-RM-dne"/>
                             <constraint firstAttribute="centerX" relation="lessThanOrEqual" secondItem="48u-FW-Qyr" secondAttribute="trailing" constant="32" id="v0O-35-Pck"/>
                             <constraint firstItem="48u-FW-Qyr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ybe-1K-dUF"/>
@@ -208,6 +228,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearCacheBt" destination="OiL-Tb-333" id="zqd-hZ-IxD"/>
                         <outlet property="configureBt" destination="4D2-gT-gQC" id="BzC-HQ-bEE"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>

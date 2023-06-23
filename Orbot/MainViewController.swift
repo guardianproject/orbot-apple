@@ -59,6 +59,12 @@ class MainViewController: UIViewController {
 		}
 	}
 
+	@IBOutlet weak var clearCacheBt: UIButton! {
+		didSet {
+			clearCacheBt.setTitle(NSLocalizedString("Clear Tor Cache", comment: ""))
+		}
+	}
+
 	@IBOutlet weak var logContainer: UIView! {
 		didSet {
 			// Only round top right corner.
@@ -222,6 +228,16 @@ class MainViewController: UIViewController {
 		updateUi()
 	}
 
+	@IBAction func clearCache(_ sender: UIButton? = nil) {
+		SharedUtils.clearTorCache()
+
+		clearCacheBt.setTitle(NSLocalizedString("Cleared!", comment: ""))
+
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+			self?.clearCacheBt.setTitle(NSLocalizedString("Clear Tor Cache", comment: ""))
+		}
+	}
+
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
@@ -312,6 +328,9 @@ class MainViewController: UIViewController {
 		smartConnectSw.isOn = Settings.smartConnect
 		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
 		smartConnectSw.superview?.isHidden = !showConfButton
+
+		clearCacheBt.isEnabled = VpnManager.shared.status == .disconnected
+		clearCacheBt.isHidden = !showConfButton
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 
