@@ -60,6 +60,24 @@
 		A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A0274FF128E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
 		A0274FF228E7223300E767E9 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0274FF028E7223300E767E9 /* L10n.swift */; };
+		A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03394C32A45BEC200012811 /* WidgetKit.framework */; };
+		A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03394C52A45BEC200012811 /* SwiftUI.framework */; };
+		A03394C92A45BEC200012811 /* OrbotWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03394C82A45BEC200012811 /* OrbotWidgetBundle.swift */; };
+		A03394CB2A45BEC200012811 /* OrbotWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03394CA2A45BEC200012811 /* OrbotWidget.swift */; };
+		A03394D12A45BEC200012811 /* StatusWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A03394C22A45BEC200012811 /* StatusWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A03394D52A45C2D800012811 /* VpnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A73602247584EE00073C81 /* VpnManager.swift */; };
+		A03394D62A45C5BF00012811 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E824756CA200073C81 /* Message.swift */; };
+		A03394DC2A45C5E300012811 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
+		A03394DD2A45C5E700012811 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
+		A03394DE2A45C5F800012811 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
+		A03394DF2A45C67000012811 /* Bundle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A736042475851D00073C81 /* Bundle+Helpers.swift */; };
+		A03394E12A45C9B400012811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
+		A03394EB2A45CBD300012811 /* ProgressMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F424757FA400073C81 /* ProgressMessage.swift */; };
+		A03394EC2A45CBDA00012811 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
+		A03394ED2A45CBE100012811 /* GetCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E924756CA200073C81 /* GetCircuitsMessage.swift */; };
+		A03394EE2A45CBE700012811 /* CloseCircuitsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E724756CA200073C81 /* CloseCircuitsMessage.swift */; };
+		A03394EF2A45CF8200012811 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
+		A03394F02A45E5DF00012811 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
@@ -162,6 +180,7 @@
 		A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
+		C59B4EC689F98C4FE46E9746 /* Pods_StatusWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
 		D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */; };
 		F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */; };
@@ -174,6 +193,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A01AB69E28A55706008A79EE;
 			remoteInfo = "TorVPN Mac";
+		};
+		A03394CF2A45BEC200012811 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A05B73A824755CE600930C40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A03394C12A45BEC200012811;
+			remoteInfo = StatusWidgetExtension;
 		};
 		A06BEC75280090B300351868 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -264,6 +290,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A03394D12A45BEC200012811 /* StatusWidget.appex in Embed Foundation Extensions */,
 				A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */,
 				A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */,
 			);
@@ -274,8 +301,10 @@
 
 /* Begin PBXFileReference section */
 		1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.release.xcconfig"; sourceTree = "<group>"; };
+		168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusWidget.release.xcconfig"; path = "Target Support Files/Pods-StatusWidget/Pods-StatusWidget.release.xcconfig"; sourceTree = "<group>"; };
 		169F99644003AC860683D373 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusWidget.debug.xcconfig"; path = "Target Support Files/Pods-StatusWidget/Pods-StatusWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
 		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
 		667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +338,13 @@
 		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A02DEDAC29E6B030004CB113 /* prepare-devid-publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepare-devid-publication.swift"; sourceTree = "<group>"; };
 		A02DEDAD29E6D296004CB113 /* create-dmg.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-dmg.sh"; sourceTree = "<group>"; };
+		A03394C22A45BEC200012811 /* StatusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StatusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A03394C32A45BEC200012811 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A03394C52A45BEC200012811 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A03394C82A45BEC200012811 /* OrbotWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbotWidgetBundle.swift; sourceTree = "<group>"; };
+		A03394CA2A45BEC200012811 /* OrbotWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbotWidget.swift; sourceTree = "<group>"; };
+		A03394CE2A45BEC200012811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A03394E02A45C71400012811 /* StatusWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StatusWidget.entitlements; sourceTree = "<group>"; };
 		A0367015292E65C70012C84A /* compile-country-list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "compile-country-list.swift"; sourceTree = "<group>"; };
 		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -422,6 +458,7 @@
 		A0FF331C28B3B7F10079A267 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StatusWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +478,16 @@
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
 				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A03394BF2A45BEC200012811 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */,
+				A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */,
+				C59B4EC689F98C4FE46E9746 /* Pods_StatusWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +576,17 @@
 			path = "TorVPN Mac";
 			sourceTree = "<group>";
 		};
+		A03394C72A45BEC200012811 /* StatusWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A03394E02A45C71400012811 /* StatusWidget.entitlements */,
+				A03394C82A45BEC200012811 /* OrbotWidgetBundle.swift */,
+				A03394CA2A45BEC200012811 /* OrbotWidget.swift */,
+				A03394CE2A45BEC200012811 /* Info.plist */,
+			);
+			path = StatusWidget;
+			sourceTree = "<group>";
+		};
 		A05B73A724755CE600930C40 = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +595,7 @@
 				A05B73B224755CE600930C40 /* Orbot */,
 				A0A735CE247561F200073C81 /* TorVPN */,
 				A06BEC6F280090B300351868 /* ContentBlocker */,
+				A03394C72A45BEC200012811 /* StatusWidget */,
 				A0A735DA2475621400073C81 /* Shared */,
 				A01AB5F728A53465008A79EE /* Orbot Mac */,
 				A01AB6A128A55706008A79EE /* TorVPN Mac */,
@@ -559,6 +618,7 @@
 				A06BEC6E280090B300351868 /* ContentBlocker.appex */,
 				A01AB5F628A53465008A79EE /* Orbot.app */,
 				A01AB69F28A55706008A79EE /* TorVPN Mac.appex */,
+				A03394C22A45BEC200012811 /* StatusWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -754,6 +814,8 @@
 				1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */,
 				245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */,
 				82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */,
+				2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */,
+				168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -775,6 +837,9 @@
 				6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */,
 				92643EA5868D10604333DFD9 /* Pods_Orbot_Mac.framework */,
 				667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */,
+				A03394C32A45BEC200012811 /* WidgetKit.framework */,
+				A03394C52A45BEC200012811 /* SwiftUI.framework */,
+				F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -858,6 +923,25 @@
 			productReference = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		A03394C12A45BEC200012811 /* StatusWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A03394D42A45BEC200012811 /* Build configuration list for PBXNativeTarget "StatusWidget" */;
+			buildPhases = (
+				A51CE320AC168D6E37166DD0 /* [CP] Check Pods Manifest.lock */,
+				A03394BE2A45BEC200012811 /* Sources */,
+				A03394BF2A45BEC200012811 /* Frameworks */,
+				A03394C02A45BEC200012811 /* Resources */,
+				453EB5FC50940CD1C1572067 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StatusWidget;
+			productName = StatusWidgetExtension;
+			productReference = A03394C22A45BEC200012811 /* StatusWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A05B73AF24755CE600930C40 /* Orbot */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */;
@@ -876,6 +960,7 @@
 				A0C1D8AF292FB15000EB9DBB /* PBXTargetDependency */,
 				A0A735D4247561F200073C81 /* PBXTargetDependency */,
 				A06BEC76280090B300351868 /* PBXTargetDependency */,
+				A03394D02A45BEC200012811 /* PBXTargetDependency */,
 			);
 			name = Orbot;
 			productName = iCepa;
@@ -956,6 +1041,9 @@
 					A01AB69E28A55706008A79EE = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
+					A03394C12A45BEC200012811 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					A0367016292E66A20012C84A = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -1000,6 +1088,7 @@
 				A05B73AF24755CE600930C40 /* Orbot */,
 				A0A735CC247561F200073C81 /* TorVPN */,
 				A06BEC6D280090B300351868 /* ContentBlocker */,
+				A03394C12A45BEC200012811 /* StatusWidget */,
 				A0D6162427D8E4AA008E0F3C /* Screenshots */,
 				A01AB5F528A53465008A79EE /* Orbot Mac */,
 				A01AB69E28A55706008A79EE /* TorVPN Mac */,
@@ -1029,6 +1118,15 @@
 				A0FF331528B3ADC50079A267 /* template.conf in Resources */,
 				A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */,
 				A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A03394C02A45BEC200012811 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03394E12A45C9B400012811 /* Assets.xcassets in Resources */,
+				A03394F02A45E5DF00012811 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1211,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		453EB5FC50940CD1C1572067 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1189,6 +1304,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
+		A51CE320AC168D6E37166DD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StatusWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1372,6 +1509,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A03394BE2A45BEC200012811 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03394EF2A45CF8200012811 /* String+Helpers.swift in Sources */,
+				A03394ED2A45CBE100012811 /* GetCircuitsMessage.swift in Sources */,
+				A03394EC2A45CBDA00012811 /* ConfigChangedMessage.swift in Sources */,
+				A03394EE2A45CBE700012811 /* CloseCircuitsMessage.swift in Sources */,
+				A03394C92A45BEC200012811 /* OrbotWidgetBundle.swift in Sources */,
+				A03394D62A45C5BF00012811 /* Message.swift in Sources */,
+				A03394CB2A45BEC200012811 /* OrbotWidget.swift in Sources */,
+				A03394DE2A45C5F800012811 /* Settings.swift in Sources */,
+				A03394DC2A45C5E300012811 /* Config.swift in Sources */,
+				A03394DD2A45C5E700012811 /* Config.m in Sources */,
+				A03394DF2A45C67000012811 /* Bundle+Helpers.swift in Sources */,
+				A03394EB2A45CBD300012811 /* ProgressMessage.swift in Sources */,
+				A03394D52A45C2D800012811 /* VpnManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A05B73AC24755CE600930C40 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1480,6 +1637,11 @@
 			isa = PBXTargetDependency;
 			target = A01AB69E28A55706008A79EE /* TorVPN Mac */;
 			targetProxy = A01AB6A628A55706008A79EE /* PBXContainerItemProxy */;
+		};
+		A03394D02A45BEC200012811 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A03394C12A45BEC200012811 /* StatusWidget */;
+			targetProxy = A03394CF2A45BEC200012811 /* PBXContainerItemProxy */;
 		};
 		A06BEC76280090B300351868 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1689,6 +1851,66 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Shared/TorVPN-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A03394D22A45BEC200012811 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = StatusWidget/StatusWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StatusWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Orbot Status";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(STATUS_WIDGET_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(STATUS_WIDGET_PROVISIONING_PROFILE_SPECIFIER)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A03394D32A45BEC200012811 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = StatusWidget/StatusWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StatusWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Orbot Status";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 Guardian Project. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(STATUS_WIDGET_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "$(STATUS_WIDGET_PROVISIONING_PROFILE_SPECIFIER)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Shared/Orbot-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -2091,6 +2313,15 @@
 			buildConfigurations = (
 				A01AB6AA28A55706008A79EE /* Debug */,
 				A01AB6AB28A55706008A79EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A03394D42A45BEC200012811 /* Build configuration list for PBXNativeTarget "StatusWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A03394D22A45BEC200012811 /* Debug */,
+				A03394D32A45BEC200012811 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

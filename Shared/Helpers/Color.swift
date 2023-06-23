@@ -26,11 +26,11 @@ typealias Color = UIColor
 
 extension Color {
 
-	static let black1 = Color(named: "Black1")!
+	static let black1 = Color(named: "WidgetBackground")!
 	static let black2 = Color(named: "Black2")!
 	static let black3 = Color(named: "Black3")!
 
-	static let accent1 = Color(named: "Accent1")!
+	static let accent1 = Color(named: "AccentColor")!
 	static let accent2 = Color(named: "Accent2")!
 
 	static let brightGreen = Color(named: "BrightGreen")!

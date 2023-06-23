@@ -9,6 +9,7 @@
 import NetworkExtension
 import Tor
 import IPtProxyUI
+import WidgetKit
 
 extension Notification.Name {
 	static let vpnStatusChanged = Notification.Name("vpn-status-changed")
@@ -553,5 +554,7 @@ class VpnManager: BridgesConfDelegate {
 		DispatchQueue.main.async {
 			NotificationCenter.default.post(name: .vpnStatusChanged, object: self)
 		}
+
+		WidgetCenter.shared.reloadAllTimelines()
 	}
 }

@@ -42,6 +42,13 @@ target 'TorVPN' do
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end
 
+target 'StatusWidget' do
+  platform :ios, '15.0'
+
+  tor
+  iptproxy
+end
+
 target 'TorVPN Mac' do
   platform :macos, '11.0'
 

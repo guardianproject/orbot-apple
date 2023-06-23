@@ -24,4 +24,18 @@ public extension Bundle {
 	var build: String {
 		object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "unknown"
 	}
+
+	class var app: Bundle {
+		var bundle = Self.main
+
+		if bundle.bundleURL.pathExtension == "appex" {
+			let url = bundle.bundleURL.deletingLastPathComponent().deletingLastPathComponent()
+
+			if let appBundle = Bundle(url: url) {
+				bundle = appBundle
+			}
+		}
+
+		return bundle
+	}
 }

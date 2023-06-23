@@ -43,6 +43,9 @@
 /* macOS menu item */
 "%@ Help" = "%@ Hilfe";
 
+/* Placeholder is app name */
+"%@ Status" = "%@ Status";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -507,6 +510,9 @@
 
 /* macOS menu item */
 "Show Toolbar" = "Werkzeugleiste einblenden";
+
+/* Placeholder is app name */
+"Shows the connection status of %@." = "Zeigt den Verbindungsstatus von %@.";
 
 /* No comment provided by engineer. */
 "Smart Connect Timeout (s)" = "Smart Connect Zeitüberschreitung (s)";

@@ -7,6 +7,7 @@
 //
 
 import NetworkExtension
+import WidgetKit
 
 
 class BasePTProvider: NEPacketTunnelProvider {
@@ -70,6 +71,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void)
 	{
+		updateWidget()
+
 		let ipv4 = NEIPv4Settings(addresses: ["192.168.20.2"], subnetMasks: ["255.255.255.0"])
 		ipv4.includedRoutes = [NEIPv4Route.default()]
 
@@ -90,18 +93,26 @@ class BasePTProvider: NEPacketTunnelProvider {
 		setTunnelNetworkSettings(settings) { error in
 			if let error = error {
 				self.log("#startTunnel error=\(error)")
-				return completionHandler(error)
+
+				self.updateWidget()
+				completionHandler(error)
+
+				return
 			}
 
 			let completion = { (error: Error?, socksAddr: String?, dnsAddr: String?) -> Void in
 				if let error = error {
-					return completionHandler(error)
+					self.updateWidget()
+					completionHandler(error)
+
+					return
 				}
 
 				self.startTun2Socks(socksAddr: socksAddr, dnsAddr: dnsAddr)
 
 				self.log("#startTunnel successful")
 
+				self.updateWidget()
 				completionHandler(nil)
 			}
 
@@ -123,6 +134,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		WebServer.shared.stop()
 #endif
 
+		updateWidget()
 		completionHandler()
 	}
 
@@ -330,6 +342,10 @@ class BasePTProvider: NEPacketTunnelProvider {
 	private func stopConnectionGuard() {
 		connectionGuard?.cancel()
 		connectionGuard = nil
+	}
+
+	private func updateWidget() {
+		WidgetCenter.shared.reloadAllTimelines()
 	}
 
 
