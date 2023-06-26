@@ -3,7 +3,6 @@
 <plist version="1.0">
 <array>
 	<string>al</string>
-	<string>ar</string>
 	<string>at</string>
 	<string>au</string>
 	<string>be</string>
@@ -17,7 +16,6 @@
 	<string>de</string>
 	<string>dk</string>
 	<string>es</string>
-	<string>eu</string>
 	<string>fi</string>
 	<string>fr</string>
 	<string>gb</string>
@@ -25,17 +23,15 @@
 	<string>hr</string>
 	<string>hu</string>
 	<string>id</string>
-	<string>ie</string>
 	<string>il</string>
 	<string>is</string>
 	<string>it</string>
-	<string>jp</string>
 	<string>kr</string>
+	<string>kz</string>
 	<string>lt</string>
 	<string>lu</string>
 	<string>lv</string>
 	<string>md</string>
-	<string>mx</string>
 	<string>my</string>
 	<string>nl</string>
 	<string>no</string>
@@ -45,7 +41,6 @@
 	<string>ru</string>
 	<string>se</string>
 	<string>sg</string>
-	<string>sk</string>
 	<string>tr</string>
 	<string>tw</string>
 	<string>ua</string>
