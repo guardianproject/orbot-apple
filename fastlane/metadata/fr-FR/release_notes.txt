@@ -1,11 +1,5 @@
-- Amélioration de Smart Connect : Ne s'arrête pas si le serveur d'auto-configuration ne peut être atteint.
-- Amélioration de l'interface utilisateur de Smart Connect.
-- Amélioration de l'interface utilisateur pour la configuration manuelle des ponts.
-- Ajout d'un délai d'attente configurable pour Smart Connect pour les tests des utilisateurs.
-- Mise à jour des bibliothèques Obfs4proxy et Snowflake.
-- Prise en charge de plusieurs ponts Snowflake.
-- Ajout d'un paramètre : Revenir au dernier VPN après l'arrêt de Tor.
-- Nouvelle icône de l'application.
-- Nouvelles illustrations.
-- Mise à jour des traductions.
-- Mise à jour de Tor vers la version 0.4.7.13.
+- Solution pour les problèmes sur iOS 16.5 : Ajout d'un chien de garde qui essaie de redémarrer si le démarrage a échoué.
+- Ajout d'un bouton "Vider le cache Tor" bien visible pour un accès plus facile afin de remédier plus facilement aux problèmes.
+- Contrôle à distance : Amélioration de la fiabilité du démarrage de Tor par d'autres applications.
+- Contrôle à distance : Permet aux applications autorisées d'arrêter Tor.
+- Ajout d'un widget d'état Tor. (Fiabilité limitée en raison des limitations d'iOS !)

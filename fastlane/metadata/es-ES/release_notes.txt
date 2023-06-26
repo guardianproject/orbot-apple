@@ -1,11 +1,5 @@
--Conexión inteligente mejorada: no detenerse si no se puede acceder al servidor de configuración automática.
--Interfaz de Usuario de Conexión inteligente mejorada
--Interfaz de usuario de configuración manual de puentes mejorada.
--Se agregó el tiempo de espera configurable de la conexion inteligente para las pruebas de usuario.
-- Librerias actializadas de Obfs4 proxy y Snowflake.
--Soporte de Puentes de Snowflake multiples.
--Configuración agregada: volver el ultimo VPN después de que Tor se detenga.
--Nuevo icono de la aplicacion.
--Ilustraciones nuevas.
-- Traducciones actualizadas.
--Actualizado a Tor 0.4.7.13.
+- Solución para problemas en iOS 16.5: Añadido watchdog que intenta arrancar de nuevo, si el arranque falla.
+- Añadido un prominente botón "Borrar Tor Cache" para un acceso más fácil para remediar problemas más fácilmente.
+- Control Remoto: Mejorada la fiabilidad de otras aplicaciones que inician Tor.
+- Control Remoto: Permitir a apps autorizadas detener Tor.
+- Añadido widget de estado de Tor. (¡Fiabilidad limitada debido a limitaciones de iOS!)

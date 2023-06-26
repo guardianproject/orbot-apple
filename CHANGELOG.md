@@ -1,5 +1,12 @@
 #  Orbot iOS Changelog
 
+## 1.6.1
+- Workaround for problems on iOS 16.5: Added watchdog which tries to start again, if start failed.
+- Added a prominent "Clear Tor Cache" button for easier access to remedy problems easier.
+- Remote Control: Improved reliability of other apps starting Tor.
+- Remote Control: Allow authorized apps to stop Tor.
+- Added Tor status widget. (Reliability limited due to iOS limitations!)
+
 ## 1.6.0
 - Improved Smart Connect: Don't stop, if auto-config server cannot be reached.
 - Improved Smart Connect UI.
