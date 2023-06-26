@@ -97,6 +97,8 @@ class VpnManager: BridgesConfDelegate {
 
 	private var evaluating = false
 
+	private var watchdog: Timer?
+
 	var status: Status {
 #if DEBUG
 		if Config.screenshotMode {
@@ -320,6 +322,27 @@ class VpnManager: BridgesConfDelegate {
 
 				self.commTunnel()
 			}
+
+			// Workaround for iOS 16.5: Restarting is unreliably there.
+			// Check after 2 seconds and start again, if not starting.
+			if self?.watchdog == nil {
+				self?.watchdog = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+					guard let self = self else {
+						return
+					}
+
+					print("[\(String(describing: type(of: self)))] Connection watchdog check")
+
+					if self.watchdog == timer {
+						self.watchdog = nil
+					}
+
+					if ![Status.connecting, .connected].contains(self.status) {
+						print("[\(String(describing: type(of: self)))] Connection watchdog retry!")
+						self.connect(autoConfDone: true)
+					}
+				}
+			}
 		}
 
 		// If user wants to automatically restart on error, but
@@ -335,6 +358,9 @@ class VpnManager: BridgesConfDelegate {
 	}
 
 	func disconnect(explicit: Bool) {
+		watchdog?.invalidate()
+		watchdog = nil
+
 		let completed: Completed = { [weak self] _ in
 			self?.session?.stopTunnel()
 		}
