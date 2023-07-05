@@ -96,13 +96,11 @@ class ContentBlockerViewController: BaseFormViewController, BlockerViewControlle
 		}
 	}
 
+
+	// MARK: BlockerViewControllerDelegate
+
 	func update(_ index: Int) {
 		form.last?.allRows[index].updateCell()
-
-		// Wait a little, so `BlockerViewController` has disappeared entirely.
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-			self.write()
-		}
 	}
 
 

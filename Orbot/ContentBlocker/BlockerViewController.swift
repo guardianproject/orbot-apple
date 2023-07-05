@@ -17,18 +17,28 @@ protocol BlockerViewControllerDelegate: AnyObject {
 
 class BlockerViewController: BaseFormViewController {
 
-	let index: Int
+	weak var delegate: BlockerViewControllerDelegate?
 
-	var blocker: BlockItem {
+
+	private let index: Int
+
+	private var blocker: BlockItem {
 		get {
 			BlockList.shared[index]
 		}
 		set {
 			BlockList.shared[index] = newValue
+
+			write()
 		}
 	}
 
-	weak var delegate: BlockerViewControllerDelegate?
+	private var timer: Timer?
+
+	private let hiddenWhenAllDomains = Condition.function(["allDomains"], { form in
+		return form.rowBy(tag: "allDomains")?.value ?? false
+	})
+
 
 	init(index: Int) {
 		self.index = index
@@ -42,6 +52,7 @@ class BlockerViewController: BaseFormViewController {
 		super.init(coder: coder)
 	}
 
+
 	override func encode(with coder: NSCoder) {
 		coder.encode(index, forKey: "index")
 		coder.encode(blocker, forKey: "blocker")
@@ -49,10 +60,6 @@ class BlockerViewController: BaseFormViewController {
 		super.encode(with: coder)
 	}
 
-
-	private let hiddenWhenAllDomains = Condition.function(["allDomains"], { form in
-		return form.rowBy(tag: "allDomains")?.value ?? false
-	})
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -217,5 +224,33 @@ class BlockerViewController: BaseFormViewController {
 		super.viewWillDisappear(animated)
 
 		delegate?.update(index)
+	}
+
+	/**
+	 Persist block list after a delay of 1 second - if the user didn't change anything in the meantime.
+	 */
+	private func write() {
+		timer?.invalidate()
+
+		timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] timer in
+			guard timer.isValid else {
+				return
+			}
+
+			DispatchQueue.global(qos: .userInitiated).async {
+				do {
+					try BlockList.shared.write()
+				}
+				catch {
+					guard let self = self else {
+						return
+					}
+
+					DispatchQueue.main.async {
+						AlertHelper.present(self, message: error.localizedDescription)
+					}
+				}
+			}
+		}
 	}
 }
