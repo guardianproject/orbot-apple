@@ -9,10 +9,8 @@ def tor
 end
 
 def iptproxy
-  pod 'ReachabilitySwift', :git => 'https://github.com/tladesignz/Reachability.swift'
-
   pod 'IPtProxyUI/AppEx',
-  '~> 2.1'
+  '~> 3.0.1'
   # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
   # :path => '../IPtProxyUI-ios'
 end
@@ -24,6 +22,7 @@ target 'Orbot' do
   iptproxy
 
   pod 'Eureka', '~> 5.3'
+  pod 'ProgressHUD', '~> 13.6'
 end
 
 target 'Orbot Mac' do

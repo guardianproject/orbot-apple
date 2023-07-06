@@ -10,7 +10,7 @@ import UIKit
 import Eureka
 import IPtProxyUI
 import MessageUI
-import MBProgressHUD
+import ProgressHUD
 
 class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMailComposeViewControllerDelegate {
 
@@ -214,7 +214,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				return
 			}
 
-			MBProgressHUD.showAdded(to: self.view, animated: true)
+			ProgressHUD.show()
 
 			AutoConf(self).do(cannotConnectWithoutPt: true) { [weak self] error in
 				guard let self = self else {
@@ -222,7 +222,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				}
 
 				DispatchQueue.main.async {
-					MBProgressHUD.hide(for: self.view, animated: true)
+					ProgressHUD.dismiss()
 
 					if let error = error {
 						AlertHelper.present(self, message: error.localizedDescription)

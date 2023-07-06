@@ -9,7 +9,7 @@
 import UIKit
 import Tor
 import IPtProxyUI
-import MBProgressHUD
+import ProgressHUD
 import NetworkExtension
 
 class MainViewController: UIViewController {
@@ -175,16 +175,10 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func refresh(_ sender: UIButton? = nil) {
-		let hud = MBProgressHUD.showAdded(to: view, animated: true)
-		hud.mode = .determinate
-		hud.progress = 0
-		hud.label.text = L10n.newCircuits
+		ProgressHUD.showProgress(L10n.newCircuits, 0)
 
 		let showError = { (error: Error) in
-			hud.progress = 1
-			hud.label.text = IPtProxyUI.L10n.error
-			hud.detailsLabel.text = error.localizedDescription
-			hud.hide(animated: true, afterDelay: 3)
+			ProgressHUD.showError(error.localizedDescription, delay: 3)
 		}
 
 		VpnManager.shared.getCircuits { [weak self] circuits, error in
@@ -192,20 +186,18 @@ class MainViewController: UIViewController {
 				return showError(error)
 			}
 
-			hud.progress = 0.5
+			ProgressHUD.showProgress(0.5)
 
 			VpnManager.shared.closeCircuits(circuits) { success, error in
 				if let error = error {
 					return showError(error)
 				}
 
-				hud.progress = 1
+				ProgressHUD.showSucceed()
 
 				if self?.logContainer.isHidden == false && self?.logSc.selectedSegmentIndex == 1 {
 					self?.changeLog()
 				}
-
-				hud.hide(animated: true, afterDelay: 0.5)
 			}
 		}
 	}

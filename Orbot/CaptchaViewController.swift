@@ -8,7 +8,7 @@
 
 import UIKit
 import IPtProxyUI
-import MBProgressHUD
+import ProgressHUD
 
 class CaptchaViewController: UIViewController {
 
@@ -76,15 +76,15 @@ class CaptchaViewController: UIViewController {
 	@IBAction
 	func save() {
 		dismissKeyboard()
-		let hud = MBProgressHUD.showAdded(to: view, animated: true)
+		ProgressHUD.show()
 
-		MoatViewController.requestBridges(delegate, challenge, solutionTf.text) { [weak self] bridges, error in
+		MoatViewControllerHelper.requestBridges(delegate, challenge, solutionTf.text) { [weak self] bridges, error in
 			DispatchQueue.main.async {
 				guard let self = self else {
 					return
 				}
 
-				hud.hide(animated: true)
+				ProgressHUD.dismiss()
 
 				if let error = error {
 					AlertHelper.present(self, message: error.localizedDescription)
@@ -109,15 +109,15 @@ class CaptchaViewController: UIViewController {
 	func fetchCaptcha(_ sender: Any?) {
 		refreshBt.isEnabled = false
 		saveBt.isEnabled = false
-		let hud = MBProgressHUD.showAdded(to: view, animated: true)
+		ProgressHUD.show()
 
-		MoatViewController.fetchCaptcha(delegate) { [weak self] challenge, captcha, error in
+		MoatViewControllerHelper.fetchCaptcha(delegate) { [weak self] challenge, captcha, error in
 			DispatchQueue.main.async {
 				guard let self = self else {
 					return
 				}
 
-				hud.hide(animated: true)
+				ProgressHUD.dismiss()
 				self.refreshBt.isEnabled = true
 				self.solutionDidChange()
 

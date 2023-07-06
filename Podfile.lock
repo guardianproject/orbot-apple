@@ -5,26 +5,23 @@ PODS:
   - GCDWebServerExtension/Core (3.5.4)
   - ImageRow (4.1.0):
     - Eureka (~> 5.3.5)
-  - IPtProxy (2.0.0)
-  - IPtProxyUI/AppEx (2.1.1):
+  - IPtProxy (3.1.1)
+  - IPtProxyUI/AppEx (3.0.1):
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
-    - IPtProxy (~> 2.0.0)
-    - MBProgressHUD (~> 1.2)
-    - ReachabilitySwift (~> 5.0)
-  - MBProgressHUD (1.2.0)
-  - ReachabilitySwift (5.0.0)
-  - Tor/Core (407.13.1)
-  - Tor/CTor (407.13.1):
+    - IPtProxy (~> 3.1.1)
+  - ProgressHUD (13.6.2)
+  - Tor/Core (407.13.2)
+  - Tor/CTor (407.13.2):
     - Tor/Core
-  - Tor/GeoIP (407.13.1):
+  - Tor/GeoIP (407.13.2):
     - Tor/CTor
 
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - IPtProxyUI/AppEx (~> 2.1)
-  - ReachabilitySwift (from `https://github.com/tladesignz/Reachability.swift`)
+  - IPtProxyUI/AppEx (~> 3.0.1)
+  - ProgressHUD (~> 13.6)
   - Tor/GeoIP (~> 407.13)
 
 SPEC REPOS:
@@ -33,33 +30,27 @@ SPEC REPOS:
     - ImageRow
     - IPtProxy
     - IPtProxyUI
-    - MBProgressHUD
+    - ProgressHUD
     - Tor
 
 EXTERNAL SOURCES:
   GCDWebServerExtension:
     :git: https://github.com/tladesignz/GCDWebServer.git
-  ReachabilitySwift:
-    :git: https://github.com/tladesignz/Reachability.swift
 
 CHECKOUT OPTIONS:
   GCDWebServerExtension:
     :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
     :git: https://github.com/tladesignz/GCDWebServer.git
-  ReachabilitySwift:
-    :commit: 277210cb6c9d1e2ded24c0729fcb77dd62e1e30c
-    :git: https://github.com/tladesignz/Reachability.swift
 
 SPEC CHECKSUMS:
   Eureka: 28ad9dec6286cd7cd601fdf8e8df39bb7356a8f4
   GCDWebServerExtension: dd9ca142fd4063d0ffc0944f716646be3c5689b1
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
-  IPtProxy: d33e998c68686b1e706612c310d246187c06c907
-  IPtProxyUI: 95e83b717f89a682a601b4f244c40393ecf29c08
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  ReachabilitySwift: 639a14aabcad9d368f9bb0e29903840de36c90d9
-  Tor: 1664d036a03ea9bd6851b76ce09550872c54ca98
+  IPtProxy: 264799227d5d83a4a583e66bd4ea846510554025
+  IPtProxyUI: a52edf104d5f4e42b111d07dd7d0f682c321347c
+  ProgressHUD: 355915c8f033e626788fa9b0d99d06e8691595ab
+  Tor: 7bfe99b1c4a250ca0de56a4873fced120a3b417a
 
-PODFILE CHECKSUM: 7773b896f5b370d8d902692e5798c30fb3c7541c
+PODFILE CHECKSUM: ccdcaa23466380b895af276ec540e3631b22f23e
 
 COCOAPODS: 1.12.1
