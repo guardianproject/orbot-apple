@@ -18,6 +18,10 @@ extension URL {
 
     static var neverSsl = URL(string: "http://neverssl.com")!
 
+	static var obCheckTor = URL(string: "onionhttps://check.torproject.org/")!
+
+	static var obAppStore = URL(string: "itms-apps://apple.com/app/id519296448")!
+
 
 	var contents: String? {
 		guard self.isFileURL else {

@@ -94,6 +94,13 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var logTv: UITextView!
 
 
+	private static let obName = "Onion Browser"
+
+	private var obInstalled: Bool {
+		UIApplication.shared.canOpenURL(URL.obCheckTor)
+	}
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -376,7 +383,6 @@ class MainViewController: UIViewController {
 				self?.changeExit()
 			}))
 
-
 		elements.append(UIAction(
 			title: L10n.settings,
 			image: UIImage(systemName: "gearshape"),
@@ -384,6 +390,15 @@ class MainViewController: UIViewController {
 				self?.showSettings()
 			}))
 		elements.last?.accessibilityIdentifier = "settings"
+
+//		elements.append(UIMenu(options: .displayInline, children: [UIAction(
+//			title: obInstalled
+//				? String(format: NSLocalizedString("Open %@", comment: "Placeholder is 'Onion Browser'"), Self.obName)
+//				: String(format: NSLocalizedString("Install %@", comment: "Placeholder is 'Onion Browser'"), Self.obName),
+//			image: UIImage(systemName: "network.badge.shield.half.filled"),
+//			handler: { [weak self] _ in
+//				UIApplication.shared.open(self?.obInstalled ?? false ? URL.obCheckTor : URL.obAppStore)
+//			})]))
 
 //		elements.append(UIAction(
 //			title: LocalizedString("About", comment: ""),
@@ -395,7 +410,7 @@ class MainViewController: UIViewController {
 
 		settingsBt?.menu = nil
 
-		settingsBt?.menu = UIMenu(title: "", children: elements)
+		settingsBt?.menu = UIMenu(children: elements)
 	}
 
 

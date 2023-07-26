@@ -370,6 +370,9 @@
 /* No comment provided by engineer. */
 "Install" = "Installer";
 
+/* Placeholder is 'Onion Browser' */
+"Install %@" = "Install %@";
+
 /* No comment provided by engineer. */
 "Install Orbot as a VPN on your device to continue." = "Install Orbot as a VPN on your device to continue.";
 
@@ -432,6 +435,9 @@
 
 /* No comment provided by engineer. */
 "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "N’utiliser ces nœuds que pour se connecter à l’extérieur du réseau Tor. La fonctionnalité sera diminuée si vous en indiquez trop peu.";
+
+/* Placeholder is 'Onion Browser' */
+"Open %@" = "Open %@";
 
 /* No comment provided by engineer. */
 "Open or Close Log" = "Ouvrir ou fermer le journal";
