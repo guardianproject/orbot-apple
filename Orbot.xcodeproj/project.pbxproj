@@ -435,6 +435,8 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0D8FBAC2A7135BD001791B2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A0D8FBAD2A7135BD001791B2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCountryViewController.swift; sourceTree = "<group>"; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -1079,6 +1081,7 @@
 				es,
 				uk,
 				ru,
+				ar,
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1690,6 +1693,7 @@
 				A08CA2C927DB697500F23100 /* es */,
 				A08CA2CB27DB6CFF00F23100 /* uk */,
 				A08CA2CD27DB6D0900F23100 /* ru */,
+				A0D8FBAD2A7135BD001791B2 /* ar */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1711,6 +1715,7 @@
 				A08CA2C827DB697500F23100 /* es */,
 				A08CA2CA27DB6CFE00F23100 /* uk */,
 				A08CA2CC27DB6D0900F23100 /* ru */,
+				A0D8FBAC2A7135BD001791B2 /* ar */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
