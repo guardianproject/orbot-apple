@@ -344,10 +344,13 @@ class TorManager {
 			"SafeLogging": "1",
 
 			// SOCKS5
-			"SocksPort": "auto",
+			"SocksPort": "auto"]
 
-			// Miscelaneous
-			"MaxMemInQueues": "5MB"]
+		// Reduce Tor's memory footprint.
+		// Allow users to play with that number themselves.
+		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
+			conf.options["MaxMemInQueues"] = "5MB"
+		}
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile?.truncate()
