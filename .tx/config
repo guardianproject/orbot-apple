@@ -1,5 +1,6 @@
 [main]
 host = https://www.transifex.com
+lang_map = es_CU: es-CU
 
 [o:otf:p:orbot-ios:r:localizable-strings]
 file_filter  = Shared/<lang>.lproj/Localizable.strings
