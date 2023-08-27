@@ -7,6 +7,7 @@
 - Allow to override `MaxMemInQueues`, so advanced users can experiment with it.
 - Added Arabic translation.
 - Content blocker: Persist changes right away.
+- Removed LZMA library to save some RAM.
 
 ## 1.6.1
 - Workaround for problems on iOS 16.5: Added watchdog which tries to start again, if start failed.

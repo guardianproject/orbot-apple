@@ -4,3 +4,4 @@
 - Permet de surcharger MaxMemInQueues, afin que les utilisateurs avancés puissent l'expérimenter.
 - Ajout d'une traduction en arabe.
 - Bloqueur de contenu : Persiste les changements immédiatement.
+- Suppression de la bibliothèque LZMA pour économiser de la RAM.

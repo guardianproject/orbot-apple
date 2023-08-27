@@ -4,3 +4,4 @@
 - Permitir anular MaxMemInQueues, para que los usuarios avanzados puedan experimentar con ello.
 - Añadida traducción al árabe.
 - Bloqueador de contenido: Persiste los cambios de inmediato.
+- Eliminada la librería LZMA para ahorrar algo de RAM.

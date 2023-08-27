@@ -4,3 +4,4 @@
 - Erlaube es, `MaxMemInQueues` zu überschreiben, so dass fortgeschrittene Benutzer damit experimentieren können.
 - Arabische Übersetzung hinzugefügt.
 - Inhaltsblocker: Änderungen werden sofort übernommen.
+- LZMA-Bibliothek entfernt, um etwas RAM zu sparen.

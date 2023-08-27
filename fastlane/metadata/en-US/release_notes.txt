@@ -4,3 +4,4 @@
 - Allow to override `MaxMemInQueues`, so advanced users can experiment with it.
 - Added Arabic translation.
 - Content blocker: Persist changes right away.
+- Removed LZMA library to save some RAM.
