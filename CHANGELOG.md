@@ -1,4 +1,12 @@
-#  Orbot iOS Changelog
+#  Orbot Apple Changelog
+
+## 1.6.2
+- Updated Tor to 0.4.7.14, updated Snowflake and Obfs4proxy now known as "Lyrebird".
+- iOS: Always clear Tor cache on startup to increase reliability. Removed explicit buttons to clear the cache.
+- macOS: No RAM limit there, so removed unneeded `MaxMemInQueues` limitation.
+- Allow to override `MaxMemInQueues`, so advanced users can experiment with it.
+- Added Arabic translation.
+- Content blocker: Persist changes right away.
 
 ## 1.6.1
 - Workaround for problems on iOS 16.5: Added watchdog which tries to start again, if start failed.

@@ -1,5 +1,6 @@
-- Solución para problemas en iOS 16.5: Añadido watchdog que intenta arrancar de nuevo, si el arranque falla.
-- Añadido un prominente botón "Borrar Tor Cache" para un acceso más fácil para remediar problemas más fácilmente.
-- Control Remoto: Mejorada la fiabilidad de otras aplicaciones que inician Tor.
-- Control Remoto: Permitir a apps autorizadas detener Tor.
-- Añadido widget de estado de Tor. (¡Fiabilidad limitada debido a limitaciones de iOS!)
+- Actualizado Tor a 0.4.7.14, actualizado Snowflake y Obfs4proxy ahora conocido como "Lyrebird".
+- iOS: Borrar siempre la caché de Tor al iniciar para aumentar la fiabilidad. Eliminados los botones explícitos para borrar la caché.
+- macOS: No hay límite de RAM, así que se ha eliminado la innecesaria limitación `MaxMemInQueues`.
+- Permitir anular MaxMemInQueues, para que los usuarios avanzados puedan experimentar con ello.
+- Añadida traducción al árabe.
+- Bloqueador de contenido: Persiste los cambios de inmediato.
