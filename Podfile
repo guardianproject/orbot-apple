@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 def tor
-  pod 'Tor/GeoIP',
+  pod 'Tor/GeoIP-NoLZMA',
   '~> 407.14'
   # :path => '../Tor.framework'
 end

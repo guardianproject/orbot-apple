@@ -11,18 +11,18 @@ PODS:
     - ImageRow (~> 4.0)
     - IPtProxy (~> 3.1.1)
   - ProgressHUD (13.7.2)
-  - Tor/Core (407.14.1)
-  - Tor/CTor (407.14.1):
+  - Tor/Core (407.14.2)
+  - Tor/CTor-NoLZMA (407.14.2):
     - Tor/Core
-  - Tor/GeoIP (407.14.1):
-    - Tor/CTor
+  - Tor/GeoIP-NoLZMA (407.14.2):
+    - Tor/CTor-NoLZMA
 
 DEPENDENCIES:
   - Eureka (~> 5.3)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
   - IPtProxyUI/AppEx (~> 3.0.1)
   - ProgressHUD (~> 13.6)
-  - Tor/GeoIP (~> 407.14)
+  - Tor/GeoIP-NoLZMA (~> 407.14)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -49,8 +49,8 @@ SPEC CHECKSUMS:
   IPtProxy: 264799227d5d83a4a583e66bd4ea846510554025
   IPtProxyUI: a52edf104d5f4e42b111d07dd7d0f682c321347c
   ProgressHUD: 093d24ca970f191744017bee2649e37d0cd1c5b9
-  Tor: 049f581f01953163b13effa212fc9e027448496a
+  Tor: 9f6f21a72873f01936b537a52bac13a26290b098
 
-PODFILE CHECKSUM: 06ef60ed7aa33e753d9812167503de7bd35efc50
+PODFILE CHECKSUM: 0eaafc361cc544bfb8250c33d44816e91cd35b5e
 
 COCOAPODS: 1.12.1
