@@ -284,7 +284,7 @@ class SettingsViewController: NSViewController {
 	}
 
 	@IBAction func clearCache(_ sender: NSButton) {
-		SharedUtils.clearTorCache()
+		TorHelpers.clearCache()
 
 		let alert = NSAlert()
 		alert.messageText = L10n.cleared

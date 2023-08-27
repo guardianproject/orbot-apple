@@ -179,24 +179,7 @@ class SettingsViewController: BaseFormViewController {
 			}
 		})
 
-		+++ Section(L10n.maintenance)
-		<<< ButtonRow("clearCache") {
-			$0.title = L10n.clearTorCache
-			$0.disabled = Condition.function(["clearCache"], { _ in
-				VpnManager.shared.isConnected
-			})
-		}
-		.onCellSelection({ _, row in
-			if row.isDisabled {
-				return
-			}
-
-			SharedUtils.clearTorCache()
-
-			AlertHelper.present(self, message: L10n.cleared, title: L10n.clearTorCache)
-		})
-
-		<<< LabelRow() {
+		+++ LabelRow() {
 			$0.title = L10n.version
 			$0.cellStyle = .default
 
@@ -205,10 +188,6 @@ class SettingsViewController: BaseFormViewController {
 
 				textLabel.font = textLabel.font.withSize(textLabel.font.pointSize * 0.75)
 			}
-		}
-
-		NotificationCenter.default.addObserver(forName: .vpnStatusChanged, object: nil, queue: .main) { [weak self] _ in
-			self?.form.rowBy(tag: "clearCache")?.evaluateDisabled()
 		}
 	}
 

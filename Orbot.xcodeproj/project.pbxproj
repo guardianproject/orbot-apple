@@ -154,6 +154,10 @@
 		A0D0F1032A14F54500293A1A /* RemoteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0F1022A14F54500293A1A /* RemoteControl.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
+		A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
+		A0D9021D2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
+		A0D9021E2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
 		A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
@@ -439,6 +443,7 @@
 		A0D8FBAD2A7135BD001791B2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0D902172A98B2EF0032BDD2 /* es-CU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-CU"; path = "es-CU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A0D902182A98B2EF0032BDD2 /* es-CU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-CU"; path = "es-CU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorHelpers.swift; sourceTree = "<group>"; };
 		A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCountryViewController.swift; sourceTree = "<group>"; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -752,6 +757,7 @@
 				A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */,
 				A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */,
 				A053994E26822C4F00A19969 /* URL+Helpers.swift */,
+				A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1464,6 +1470,7 @@
 				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
 				A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
+				A0D9021D2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A0C1D8AD292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
 				A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */,
 				A0FF331B28B3AE0F0079A267 /* String+Helpers.swift in Sources */,
@@ -1500,6 +1507,7 @@
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
+				A0D9021E2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB6AF28A558A6008A79EE /* Config.m in Sources */,
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
@@ -1554,6 +1562,7 @@
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
+				A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A08CA43B29ACE76400B01C1F /* Color.swift in Sources */,
@@ -1616,6 +1625,7 @@
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0C53059280F11C20067597F /* WebServer.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
+				A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A08CA43C29ACE76400B01C1F /* Color.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,

@@ -125,6 +125,13 @@ class TorManager {
 		return
 #else
 		if !torRunning {
+	// When running on iOS, always delete the cache before starting.
+	// Something with the network happened and now Tor almost always uses too much
+	// memory when starting with cached microdescriptors.
+	#if os(iOS)
+			TorHelpers.clearCache()
+	#endif
+
 			torConf = getTorConf()
 
 //			if let debug = torConf?.compile().joined(separator: ", ") {
@@ -346,11 +353,13 @@ class TorManager {
 			// SOCKS5
 			"SocksPort": "auto"]
 
+#if os(iOS)
 		// Reduce Tor's memory footprint.
 		// Allow users to play with that number themselves.
 		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
 			conf.options["MaxMemInQueues"] = "5MB"
 		}
+#endif
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile?.truncate()
