@@ -4,7 +4,7 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP',
-  '~> 407.13'
+  '~> 407.14'
   # :path => '../Tor.framework'
 end
 
