@@ -50,7 +50,7 @@
 "__BLOCKER_HEADER_1__" = "__empty__";
 
 /* No comment provided by engineer. */
-"__BLOCKER_HEADER_2__" = "by";
+"__BLOCKER_HEADER_2__" = "بواسطة";
 
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_3__" = "for";
@@ -65,7 +65,7 @@
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "يوفر \"Content Blocker\" قائمة بالأشياء التي يجب حظرها في Safari وجميع المتصفحات الأخرى وجميع طرق عرض الويب المستخدمة في التطبيقات.";
 
 /* macOS menu item */
-"About %@" = "About %@";
+"About %@" = "عن %@";
 
 /* No comment provided by engineer. */
 "Access Request" = "طلب الدخول";
@@ -83,7 +83,7 @@
 "Advanced Tor Configuration" = "Advanced Tor Configuration";
 
 /* No comment provided by engineer. */
-"all" = "all";
+"all" = "جمبع";
 
 /* No comment provided by engineer. */
 "all domains" = "all domains";
@@ -149,7 +149,7 @@
 "Blocker" = "Blocker";
 
 /* No comment provided by engineer. */
-"Bridges" = "Bridges";
+"Bridges" = "الجسور";
 
 /* No comment provided by engineer. */
 "Bridges from Tor (obfs4) after Captcha" = "Bridges from Tor (obfs4) after Captcha";
@@ -203,16 +203,16 @@
 "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض أنواع حظر Tor. يتطلب رسالة بريد إلكتروني مرسلة من حساب Gmail أو Riseup.";
 
 /* macOS menu item */
-"Close" = "Close";
+"Close" = "أغلق";
 
 /* No comment provided by engineer. */
 "Comma-separated lists of:" = "Comma-separated lists of:";
 
 /* No comment provided by engineer. */
-"Connected" = "Connected";
+"Connected" = "متصل";
 
 /* No comment provided by engineer. */
-"Connecting" = "Connecting";
+"Connecting" = "جار الاتصال";
 
 /* No comment provided by engineer. */
 "Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking." = "تتصل من خلال متطوعي Tor. لكنها تستخدم طريقة مختلفة عن \"الأصلية\" للعثور على المتطوع الأول. تلتف حول بعض انواع حظر Tor.";
@@ -224,10 +224,10 @@
 "Content Blocker" = "Content Blocker";
 
 /* macOS menu item */
-"Copy" = "Copy";
+"Copy" = "نسخ";
 
 /* No comment provided by engineer. */
-"Copy to Clipboard" = "Copy to Clipboard";
+"Copy to Clipboard" = "نسخ في الحافظة";
 
 /* No comment provided by engineer. */
 "Could not connect." = "Could not connect.";
@@ -239,19 +239,19 @@
 "Current State" = "Current State";
 
 /* No comment provided by engineer. */
-"Custom Bridges" = "Custom Bridges";
+"Custom Bridges" = "الجسور المخصّصة";
 
 /* macOS menu item */
 "Customize Toolbar…" = "Customize Toolbar…";
 
 /* macOS menu item */
-"Cut" = "Cut";
+"Cut" = "قُص";
 
 /* No comment provided by engineer. */
-"Delete" = "Delete";
+"Delete" = "احدف";
 
 /* No comment provided by engineer. */
-"Deny" = "Deny";
+"Deny" = "رفض";
 
 /* No comment provided by engineer. */
 "Direct Connection" = "Direct Connection";
@@ -260,13 +260,13 @@
 "Disable %@ for non-onion traffic" = "Disable %@ for non-onion traffic";
 
 /* No comment provided by engineer. */
-"disabled" = "disabled";
+"disabled" = "غير مفعَّل";
 
 /* No comment provided by engineer. */
-"Disabled" = "Disabled";
+"Disabled" = "معطل";
 
 /* No comment provided by engineer. */
-"Disconnecting" = "Disconnecting";
+"Disconnecting" = "جاري قطع الإتصال ";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "لا تستخدم هذه العقد. يتجاوز الدخول والخروج من قائمة العقد. قد لا يزال يستخدم لأغراض الإدارة.";
@@ -275,7 +275,7 @@
 "documents" = "documents";
 
 /* No comment provided by engineer. */
-"Edit" = "Edit";
+"Edit" = "عدّل";
 
 /* No comment provided by engineer. */
 "Edit v3 Onion Service Auth Cookie" = "Edit v3 Onion Service Auth Cookie";
@@ -299,13 +299,13 @@
 "Evaluating" = "Evaluating";
 
 /* No comment provided by engineer. */
-"Exclude Nodes" = "Exclude Nodes";
+"Exclude Nodes" = "استثني النقاط";
 
 /* No comment provided by engineer. */
 "Exit Node Countries" = "Exit Node Countries";
 
 /* No comment provided by engineer. */
-"Exit Nodes" = "Exit Nodes";
+"Exit Nodes" = "نقاط الخروج";
 
 /* No comment provided by engineer. */
 "Expert" = "Expert";
@@ -314,19 +314,19 @@
 "fetches" = "fetches";
 
 /* macOS menu item */
-"File" = "File";
+"File" = "ملفّ";
 
 /* macOS menu item */
-"Find" = "Find";
+"Find" = "ابحث";
 
 /* macOS menu item */
 "Find and Replace…" = "Find and Replace…";
 
 /* macOS menu item */
-"Find Next" = "Find Next";
+"Find Next" = "ابحث عن اللاحق";
 
 /* macOS menu item */
-"Find Previous" = "Find Previous";
+"Find Previous" = "ابحث عن السابق";
 
 /* macOS menu item */
 "Find…" = "Find…";
@@ -335,7 +335,7 @@
 "fonts" = "fonts";
 
 /* No comment provided by engineer. */
-"General" = "General";
+"General" = "عام";
 
 /* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "ارجع إلى التطبيق المطلوب والصق الرمز المميز في مربع الحوار المناسب.";
@@ -347,7 +347,7 @@
 "Grant" = "Grant";
 
 /* macOS menu item */
-"Help" = "Help";
+"Help" = "المساعدة";
 
 /* macOS menu item */
 "Hide %@" = "Hide %@";
@@ -368,7 +368,7 @@
 "images" = "images";
 
 /* No comment provided by engineer. */
-"Install" = "Install";
+"Install" = "تثبيت";
 
 /* Placeholder is 'Onion Browser' */
 "Install %@" = "Install %@";
@@ -386,7 +386,7 @@
 "Jump to Selection" = "Jump to Selection";
 
 /* No comment provided by engineer. */
-"Key" = "Key";
+"Key" = "مفتاح";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.";
@@ -395,7 +395,7 @@
 "Limit Exit Countries" = "Limit Exit Countries";
 
 /* No comment provided by engineer. */
-"Log" = "Log";
+"Log" = "السجل";
 
 /* No comment provided by engineer. */
 "Maintenance" = "Maintenance";
@@ -410,13 +410,13 @@
 "Minimize" = "Minimize";
 
 /* No comment provided by engineer. */
-"Next" = "Next";
+"Next" = "التالي";
 
 /* No comment provided by engineer. */
 "No VPN configuration set." = "No VPN configuration set.";
 
 /* No comment provided by engineer. */
-"Node Configuration" = "Node Configuration";
+"Node Configuration" = "تكوين نقطة الاتصال";
 
 /* No comment provided by engineer. */
 "Not Installed" = "Not Installed";
@@ -443,10 +443,10 @@
 "Open or Close Log" = "Open or Close Log";
 
 /* No comment provided by engineer. */
-"other" = "other";
+"other" = "أخر";
 
 /* macOS menu item */
-"Paste" = "Paste";
+"Paste" = "لصق";
 
 /* macOS menu item */
 "Paste and Match Style" = "Paste and Match Style";
@@ -485,10 +485,10 @@
 "Reasserting" = "Reasserting";
 
 /* macOS menu item */
-"Redo" = "Redo";
+"Redo" = "كرِّر";
 
 /* No comment provided by engineer. */
-"Refresh" = "Refresh";
+"Refresh" = "تحديث";
 
 /* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Run Smart Connect to find the best way";
@@ -500,19 +500,19 @@
 "scripts" = "scripts";
 
 /* macOS menu item */
-"Select All" = "Select All";
+"Select All" = "حدد الكل";
 
 /* No comment provided by engineer. */
 "selected domains" = "selected domains";
 
 /* macOS menu item */
-"Services" = "Services";
+"Services" = "الخدمات";
 
 /* No comment provided by engineer. */
-"Settings" = "Settings";
+"Settings" = "الإعدادات";
 
 /* macOS menu item */
-"Show All" = "Show All";
+"Show All" = "إظهار الكل";
 
 /* macOS menu item */
 "Show Toolbar" = "Show Toolbar";
@@ -536,13 +536,13 @@
 "Speech" = "Speech";
 
 /* No comment provided by engineer. */
-"Start" = "Start";
+"Start" = "ابدأ";
 
 /* macOS menu item */
 "Start Speaking" = "Start Speaking";
 
 /* No comment provided by engineer. */
-"Stop" = "Stop";
+"Stop" = "قف";
 
 /* macOS menu item */
 "Stop Speaking" = "Stop Speaking";
@@ -590,10 +590,10 @@
 "Transformations" = "Transformations";
 
 /* macOS menu item */
-"Undo" = "Undo";
+"Undo" = "تراجَع";
 
 /* No comment provided by engineer. */
-"Unknown" = "Unknown";
+"Unknown" = "غير معروف";
 
 /* No comment provided by engineer. */
 "Use %1$@" = "Use %1$@";
@@ -611,10 +611,10 @@
 "Version %@, Build %@" = "Version %1$@, Build %2$@";
 
 /* macOS menu item */
-"View" = "View";
+"View" = "عرض";
 
 /* No comment provided by engineer. */
-"Warning" = "Warning";
+"Warning" = "تحذير";
 
 /* No comment provided by engineer. */
 "We could not return to that app, because it didn't provide a valid callback URL." = "We could not return to that app, because it didn't provide a valid callback URL.";
@@ -623,7 +623,7 @@
 "WebSockets" = "WebSockets";
 
 /* No comment provided by engineer. */
-"Welcome!" = "Welcome!";
+"Welcome!" = "مرحبا!";
 
 /* macOS menu item */
 "Window" = "Window";
@@ -632,4 +632,4 @@
 "You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
 
 /* macOS menu item */
-"Zoom" = "Zoom";
+"Zoom" = "‮كبَّر";
