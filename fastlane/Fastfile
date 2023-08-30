@@ -28,6 +28,8 @@ platform :ios do
       skip_app_version_update: true,
 
       skip_screenshots: true,
+
+      force: true,
     )
   end
 
@@ -53,6 +55,8 @@ platform :mac do
       skip_app_version_update: true,
 
       skip_screenshots: true,
+
+      force: true,
     )
   end
 end
