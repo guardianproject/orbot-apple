@@ -1,5 +1,10 @@
 #  Orbot Apple Changelog
 
+## 1.6.3
+- Updated Tor to latest 0.4.8.4 with a patch to keep RAM usage under control when it starts with a warm cache.
+- iOS: Removed automatic cache clearing before every start.
+- iOS: Reintroduced a manual "Clear Tor Cache" button in settings menu.
+
 ## 1.6.2
 - Updated Tor to 0.4.7.14, updated Snowflake and Obfs4proxy now known as "Lyrebird".
 - iOS: Always clear Tor cache on startup to increase reliability. Removed explicit buttons to clear the cache.

@@ -1,7 +1,3 @@
-- Mise à jour de Tor vers la version 0.4.7.14, mise à jour de Snowflake et Obfs4proxy maintenant connu sous le nom de "Lyrebird".
-- iOS : Toujours vider le cache de Tor au démarrage pour augmenter la fiabilité. Suppression des boutons explicites pour vider le cache.
-- macOS : Pas de limite de RAM, donc suppression de la limitation inutile `MaxMemInQueues`.
-- Permet de surcharger MaxMemInQueues, afin que les utilisateurs avancés puissent l'expérimenter.
-- Ajout d'une traduction en arabe.
-- Bloqueur de contenu : Persiste les changements immédiatement.
-- Suppression de la bibliothèque LZMA pour économiser de la RAM.
+- Mise à jour de Tor vers la dernière version 0.4.8.4.
+- Ajout d'un correctif à Tor qui améliore la consommation de mémoire avec un cache chaud au démarrage.
+- Les redémarrages devraient maintenant être beaucoup plus rapides si le cache contient des données valides.
