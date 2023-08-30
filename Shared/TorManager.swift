@@ -125,13 +125,6 @@ class TorManager {
 		return
 #else
 		if !torRunning {
-	// When running on iOS, always delete the cache before starting.
-	// Something with the network happened and now Tor almost always uses too much
-	// memory when starting with cached microdescriptors.
-	#if os(iOS)
-			TorHelpers.clearCache()
-	#endif
-
 			torConf = getTorConf()
 
 //			if let debug = torConf?.compile().joined(separator: ", ") {
