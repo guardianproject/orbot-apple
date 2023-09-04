@@ -16,6 +16,8 @@ LIBDIR_IOS="$SCRIPTDIR/ios"
 
 FILENAME="libleaf.a"
 
+export MACOSX_DEPLOYMENT_TARGET=11.0
+
 if [ -r "$LIBDIR_MACOS/$FILENAME" ] && [ -r "$LIBDIR_IOSSIM/$FILENAME" ] && [ -r "$LIBDIR_IOS/$FILENAME" ]; then
 	echo "leaf already exists."
 	exit
