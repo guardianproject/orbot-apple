@@ -204,9 +204,8 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 			}
 
 			if VpnManager.shared.isConnected {
-				if notification?.name == .vpnProgress,
-				   let raw = notification?.object as? Float,
-				   let progress = Formatters.formatPercent(raw)
+				if VpnManager.shared.status == .connecting,
+				   let progress = Formatters.formatPercent(VpnManager.shared.progress)
 				{
 					statusText.append(NSAttributedString(string: " "))
 					statusText.append(NSAttributedString(string: progress))

@@ -96,6 +96,7 @@ class VpnManager: BridgesConfDelegate {
 	private var poll = false
 
 	private var evaluating = false
+	private(set) var progress: Float = 0
 
 	private var watchdog: Timer?
 
@@ -129,6 +130,10 @@ class VpnManager: BridgesConfDelegate {
 			return .connecting
 
 		case .connected:
+			if progress > 0 /* Safeguard against situations, where communication with NE sometimes fails. */ && progress < 1 {
+				return .connecting
+			}
+
 			return .connected
 
 		case .reasserting:
@@ -308,6 +313,7 @@ class VpnManager: BridgesConfDelegate {
 				}
 
 				self.evaluating = false
+				self.progress = 0
 
 				do {
 					try session.startVPNTunnel()
@@ -510,6 +516,8 @@ class VpnManager: BridgesConfDelegate {
 				for message in response {
 					if let pm = message as? ProgressMessage {
 						print("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
+
+						self.progress = pm.progress
 
 						DispatchQueue.main.async {
 							NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)

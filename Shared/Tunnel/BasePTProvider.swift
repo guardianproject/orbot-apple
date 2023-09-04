@@ -100,10 +100,32 @@ class BasePTProvider: NEPacketTunnelProvider {
 				return
 			}
 
+			var completionHandlerCalled = false
+
+#if os(iOS)
+			// Avoid getting killed by the a new watchdog timer built
+			// into iOS 16.5 and up: If we don't call the `completionHandler`
+			// within a minute, we get killed again.
+			// Esp. Snowflake starts are often long and winding, and
+			// take more than one minute. See #77
+			DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: .now() + 55) {
+				if !completionHandlerCalled {
+					completionHandlerCalled = true
+
+					completionHandler(nil)
+				}
+			}
+#endif
+
 			let completion = { (error: Error?, socksAddr: String?, dnsAddr: String?) -> Void in
 				if let error = error {
 					self.updateWidget()
-					completionHandler(error)
+
+					if !completionHandlerCalled {
+						completionHandlerCalled = true
+
+						completionHandler(error)
+					}
 
 					return
 				}
@@ -113,7 +135,12 @@ class BasePTProvider: NEPacketTunnelProvider {
 				self.log("#startTunnel successful")
 
 				self.updateWidget()
-				completionHandler(nil)
+
+				if !completionHandlerCalled {
+					completionHandlerCalled = true
+
+					completionHandler(nil)
+				}
 			}
 
 			self.startTransportAndTor(completion)
@@ -225,7 +252,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		var oldProgress = -1
 
-		TorManager.shared.start(transport, { [weak self] progress in
+		TorManager.shared.start(transport, fd: tunnelFd, { [weak self] progress in
 			guard let progress = progress else {
 				return
 			}
