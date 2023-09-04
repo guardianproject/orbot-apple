@@ -82,6 +82,8 @@
 		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
 		A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB728B5206500D7A700 /* SettingsViewController.swift */; };
+		A0463DBA2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */; };
+		A0463DBB2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */; };
 		A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04672E9296DC85400BD0F2F /* BridgesViewController.swift */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -354,6 +356,7 @@
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnionmasqPTProvider.swift; sourceTree = "<group>"; };
 		A04672E9296DC85400BD0F2F /* BridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesViewController.swift; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A0507CF226F9FB8200F91105 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -776,6 +779,7 @@
 			children = (
 				A0A735CF247561F200073C81 /* BasePTProvider.swift */,
 				A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */,
+				A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */,
 			);
 			path = Tunnel;
 			sourceTree = "<group>";
@@ -1509,6 +1513,7 @@
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0D9021E2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */,
+				A0463DBB2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */,
 				A01AB6AF28A558A6008A79EE /* Config.m in Sources */,
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
 				A01AB6AE28A558A3008A79EE /* Config.swift in Sources */,
@@ -1615,6 +1620,7 @@
 			files = (
 				A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */,
+				A0463DBA2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */,
 				A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */,
 				A01F34DD2652C7D6008F9912 /* TorManager.swift in Sources */,
 				A0A735E2247566CD00073C81 /* Config.m in Sources */,
