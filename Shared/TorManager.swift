@@ -91,6 +91,7 @@ class TorManager {
 	}
 
 	func start(_ transport: Transport,
+			   fd: Int32? = nil,
 			   _ progressCallback: @escaping (_ progress: Int?) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
@@ -123,6 +124,46 @@ class TorManager {
 		}
 
 		return
+
+#elseif USE_ONIONMASQ
+		if !torRunning {
+			let fm = FileManager.default
+
+			fm.torLogFile?.truncate()
+
+			Logger.log("groupDir=\(fm.groupDir?.path ?? "(nil)")", to: fm.torLogFile)
+			Logger.log("fd=\(String(describing: fd))", to: fm.torLogFile)
+
+			Onionmasq.start(withFd: fd!, stateDir: fm.groupDir, cacheDir: fm.groupDir) { [weak self] event in
+				if let event = event as? String {
+					return Logger.log(event, to: FileManager.default.torLogFile)
+				}
+
+				if let event = event as? Dictionary<String, Any> {
+					switch event["type"] as? String {
+					case "Bootstrap":
+						progressCallback(event["bootstrap_percent"] as? Int)
+
+						if event["is_ready_for_traffic"] as? Bool ?? false {
+							self?.status = .started
+							self?._torRunning = true
+
+							completion(nil, nil, nil)
+						}
+
+					default:
+						break
+					}
+				}
+
+				Logger.log(String(describing: event), to: FileManager.default.torLogFile)
+			}
+		}
+		else {
+			status = .started
+
+			completion(nil, nil, nil)
+		}
 #else
 		if !torRunning {
 			torConf = getTorConf()
@@ -270,6 +311,10 @@ class TorManager {
 		torThread = nil
 
 		torConf = nil
+
+#if USE_ONIONMASQ
+		Onionmasq.stop()
+#endif
 	}
 
 	func getCircuits(_ completion: @escaping ([TorCircuit]) -> Void) {
@@ -350,7 +395,7 @@ class TorManager {
 		// Reduce Tor's memory footprint.
 		// Allow users to play with that number themselves.
 		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
-			conf.options["MaxMemInQueues"] = "5MB"
+			conf.options["MaxMemInQueues"] = "10MB"
 		}
 #endif
 
