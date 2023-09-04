@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.6.4
+- Improved reliability of Snowflake:
+  - Updated built-in bridge list (incl. Snowflake configuration).
+  - iOS: Keep iOS from killing the VPN, when the start takes longer.
+  - iOS: Increased default `MaxMemInQueues` from 5 to 10 MB, as it looks like we have more headroom now due to the Tor patch. 
+
 ## 1.6.3
 - Updated Tor to latest 0.4.8.4 with a patch to keep RAM usage under control when it starts with a warm cache.
 - iOS: Removed automatic cache clearing before every start.

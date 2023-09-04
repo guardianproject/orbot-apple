@@ -1,3 +1,4 @@
-- Tor wurde auf die neueste Version 0.4.8.4 aktualisiert.
-- Es wurde ein Patch zu Tor hinzugefügt, der den Speicherverbrauch mit einem warmen Cache beim Start verbessert.
-- Neustarts sollten nun wieder viel schneller sein, wenn der Cache gültige Daten enthält.
+- Zuverlässigkeit von Snowflake verbessert:
+  - Eingebaute Bridge-Liste (inkl. Snowflake-Konfiguration) aktualisiert.
+  - iOS: iOS daran hindern, das VPN abzubrechen, wenn der Start länger dauert.
+  - iOS: Voreinstellung `MaxMemInQueues` von 5 auf 10 MB erhöht, da es so aussieht, als ob wir durch den Tor-Patch nun mehr Spielraum haben.
