@@ -4,13 +4,13 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-  '~> 408.4'
-  # :path => '../Tor.framework'
+  # '~> 408.4'
+  :path => '../Tor.framework'
 end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
-  '~> 3.0.1'
+  '~> 3.0.2'
   # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
   # :path => '../IPtProxyUI-ios'
 end
