@@ -121,6 +121,8 @@ class SettingsViewController: BaseFormViewController {
 			$0.cell.textLabel?.numberOfLines = 0
 
 			$0.cell.textLabel?.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+
+			$0.value = Settings.strictNodes
 		}
 		.onChange({ row in
 			if let value = row.value {
