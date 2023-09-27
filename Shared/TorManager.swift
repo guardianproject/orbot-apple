@@ -405,7 +405,7 @@ class TorManager {
 		// Reduce Tor's memory footprint.
 		// Allow users to play with that number themselves.
 		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
-			conf.options["MaxMemInQueues"] = "10MB"
+			conf.options["MaxMemInQueues"] = "5MB"
 		}
 #endif
 
