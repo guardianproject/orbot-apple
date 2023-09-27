@@ -152,9 +152,6 @@
 "Bridges" = "Brücken";
 
 /* No comment provided by engineer. */
-"Bridges from Tor (obfs4) after Captcha" = "Brücken von Tor (obfs4) durch CAPTCHA lösen";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Email" = "Brücken von Tor (obfs4) via E-Mail";
 
 /* No comment provided by engineer. */
@@ -194,10 +191,10 @@
 "Cleared!" = "Gelöscht!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Gut für öffentliche WLANs in einem Land, in dem Tor nicht blockiert wird.";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Gut für öffentliche WLANs in einem Land, in dem Tor nicht blockiert wird.";
+"Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Könnte sehr langsam sein.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Benötigt eine E-Mail, die von einem Google-Mail- oder Riseup-Konto kommt.";
@@ -288,9 +285,6 @@
 
 /* macOS menu item */
 "Enter Full Screen" = "Vollbildmodus";
-
-/* No comment provided by engineer. */
-"Enter text above" = "Text oben eingeben";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Eingangs-Netzknoten";
@@ -406,6 +400,9 @@
 /* macOS menu item */
 "Make Upper Case" = "Großbuchstaben";
 
+/* No comment provided by engineer. */
+"Meek Azure" = "Meek Azure";
+
 /* macOS menu item */
 "Minimize" = "Im Dock ablegen";
 
@@ -488,9 +485,6 @@
 "Redo" = "Wiederholen";
 
 /* No comment provided by engineer. */
-"Refresh" = "Aktualisieren";
-
-/* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Smart Connect ausführen, um den besten Weg zu finden";
 
 /* No comment provided by engineer. */
@@ -528,9 +522,6 @@
 
 /* No comment provided by engineer. */
 "Snowflake (original)" = "Snowflake (Original)";
-
-/* No comment provided by engineer. */
-"Solve CAPTCHA" = "Löse CAPTCHA";
 
 /* macOS menu item */
 "Speech" = "Sprachausgabe";
@@ -612,6 +603,9 @@
 
 /* macOS menu item */
 "View" = "Darstellung";
+
+/* No comment provided by engineer. */
+"VPN in a strange state" = "VPN hat einen seltsamen Status";
 
 /* No comment provided by engineer. */
 "Warning" = "Warnung";

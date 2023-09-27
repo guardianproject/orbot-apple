@@ -106,7 +106,6 @@
 		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A08688172975A2310032B141 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08688162975A2310032B141 /* ScanViewController.swift */; };
-		A086881B2975B4F80032B141 /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A086881A2975B4F80032B141 /* CaptchaViewController.swift */; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
 		A08CA43B29ACE76400B01C1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CA43A29ACE76400B01C1F /* Color.swift */; };
@@ -386,7 +385,6 @@
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A06DDCAC29264D0E001F9371 /* DebugMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMessage.swift; sourceTree = "<group>"; };
 		A08688162975A2310032B141 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		A086881A2975B4F80032B141 /* CaptchaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaViewController.swift; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
 		A08CA2C827DB697500F23100 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -644,7 +642,6 @@
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
 				A0EF119828043A9200A03017 /* BaseFormViewController.swift */,
 				A04672E9296DC85400BD0F2F /* BridgesViewController.swift */,
-				A086881A2975B4F80032B141 /* CaptchaViewController.swift */,
 				A05DCD05297198540017B36A /* CustomBridgesViewController.swift */,
 				A08688162975A2310032B141 /* ScanViewController.swift */,
 				A0C1D8A9292F840E00EB9DBB /* ChangeExitViewController.swift */,
@@ -1578,7 +1575,6 @@
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
 				A0CC771F29A79E1B0053CB53 /* AccessRequestViewController.swift in Sources */,
 				A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */,
-				A086881B2975B4F80032B141 /* CaptchaViewController.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,
 				A0A735EC24756CA200073C81 /* Message.swift in Sources */,
 				A0A735F224756D6B00073C81 /* FileManager+Helpers.swift in Sources */,

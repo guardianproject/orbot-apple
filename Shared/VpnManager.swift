@@ -77,11 +77,15 @@ class VpnManager: BridgesConfDelegate {
 
 			case .couldNotConnect:
 				return NSLocalizedString("Could not connect.", comment: "")
+
+			case .strangeState:
+				return NSLocalizedString("VPN in a strange state", comment: "")
 			}
 		}
 
 		case noConfiguration
 		case couldNotConnect
+		case strangeState
 	}
 
 
@@ -455,13 +459,22 @@ class VpnManager: BridgesConfDelegate {
 
 	@objc
 	private func statusDidChange(_ notification: Notification) {
-		switch session?.status ?? .invalid {
-		case .invalid:
+		switch status {
+		case .notInstalled, .disabled:
 			// Provider not installed/enabled
 
 			poll = false
 
 			error = Errors.couldNotConnect
+
+		case .invalid, .unknown:
+			poll = false
+
+			error = Errors.strangeState
+
+		case .evaluating:
+			// Not, yet.
+			poll = false
 
 		case .connecting:
 			poll = true
@@ -482,9 +495,6 @@ class VpnManager: BridgesConfDelegate {
 		case .disconnected:
 			// Circuit not established
 			poll = false
-
-		default:
-			assert(session == nil)
 		}
 
 		postChange()

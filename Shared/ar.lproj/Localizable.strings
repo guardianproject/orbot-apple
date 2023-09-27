@@ -152,9 +152,6 @@
 "Bridges" = "الجسور";
 
 /* No comment provided by engineer. */
-"Bridges from Tor (obfs4) after Captcha" = "Bridges from Tor (obfs4) after Captcha";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Email" = "Bridges from Tor (obfs4) via Email";
 
 /* No comment provided by engineer. */
@@ -194,10 +191,10 @@
 "Cleared!" = "Cleared!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض أنواع حظر Tor.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض حظر Tor. جيد إذا كنت تستخدم شبكة WiFi عامة، ولكن في بلد لا يتم حظر فيه Tor.";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض حظر Tor. جيد إذا كنت تستخدم شبكة WiFi عامة، ولكن في بلد لا يتم حظر فيه Tor.";
+"Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Cloaks your traffic. Gets around some Tor blocking. May be very slow.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض أنواع حظر Tor. يتطلب رسالة بريد إلكتروني مرسلة من حساب Gmail أو Riseup.";
@@ -288,9 +285,6 @@
 
 /* macOS menu item */
 "Enter Full Screen" = "Enter Full Screen";
-
-/* No comment provided by engineer. */
-"Enter text above" = "Enter text above";
 
 /* No comment provided by engineer. */
 "Entry Nodes" = "Entry Nodes";
@@ -406,6 +400,9 @@
 /* macOS menu item */
 "Make Upper Case" = "Make Upper Case";
 
+/* No comment provided by engineer. */
+"Meek Azure" = "Meek Azure";
+
 /* macOS menu item */
 "Minimize" = "Minimize";
 
@@ -488,9 +485,6 @@
 "Redo" = "كرِّر";
 
 /* No comment provided by engineer. */
-"Refresh" = "تحديث";
-
-/* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Run Smart Connect to find the best way";
 
 /* No comment provided by engineer. */
@@ -528,9 +522,6 @@
 
 /* No comment provided by engineer. */
 "Snowflake (original)" = "Snowflake (original)";
-
-/* No comment provided by engineer. */
-"Solve CAPTCHA" = "Solve CAPTCHA";
 
 /* macOS menu item */
 "Speech" = "Speech";
@@ -612,6 +603,9 @@
 
 /* macOS menu item */
 "View" = "عرض";
+
+/* No comment provided by engineer. */
+"VPN in a strange state" = "VPN in a strange state";
 
 /* No comment provided by engineer. */
 "Warning" = "تحذير";

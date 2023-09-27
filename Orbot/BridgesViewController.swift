@@ -19,9 +19,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		case snowflake = "transport_snowflake"
 		case snowflakeAmp = "transport_snowflake_amp"
 		case requestTelegram = "request_telegram"
-		case request = "request"
 		case obfs4 = "transport_obfs4"
 		case requestMail = "request_mail"
+		case meekAzure = "transport_meek_azure"
 		case custom = "transport_custom"
 
 		static func from(_ transport: Transport) -> Option {
@@ -34,6 +34,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .snowflakeAmp:
 				return .snowflakeAmp
+
+			case .meekAzure:
+				return .meekAzure
 
 			case .custom:
 				return .custom
@@ -57,14 +60,14 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .requestTelegram:
 				return NSLocalizedString("Bridges from Tor (obfs4) via Telegram", comment: "")
 
-			case .request:
-				return NSLocalizedString("Bridges from Tor (obfs4) after Captcha", comment: "")
-
 			case .obfs4:
 				return NSLocalizedString("Built-in Bridges (obfs4)", comment: "")
 
 			case .requestMail:
 				return NSLocalizedString("Bridges from Tor (obfs4) via Email", comment: "")
+
+			case .meekAzure:
+				return NSLocalizedString("Meek Azure", comment: "")
 
 			case .custom:
 				return NSLocalizedString("Custom Bridges", comment: "")
@@ -93,11 +96,6 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 					"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.",
 					comment: ""), "/start")
 
-			case .request:
-				return NSLocalizedString(
-					"Cloaks your traffic. Gets around some Tor blocking.",
-					comment: "")
-
 			case .obfs4:
 				return NSLocalizedString(
 					"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.",
@@ -106,6 +104,11 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .requestMail:
 				return NSLocalizedString(
 					"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.",
+					comment: "")
+
+			case .meekAzure:
+				return NSLocalizedString(
+					"Cloaks your traffic. Gets around some Tor blocking. May be very slow.",
 					comment: "")
 
 			case .custom:
@@ -128,6 +131,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .snowflakeAmp:
 				return Settings.transport == .snowflakeAmp
+
+			case .meekAzure:
+				return Settings.transport == .meekAzure
 
 			case .custom:
 				return Settings.transport == .custom
@@ -272,7 +278,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		}
 		.cellUpdate({ [weak self] _, row in
 			switch self?.section.selectedRow()?.value ?? .direct {
-			case .request, .requestMail, .requestTelegram, .custom:
+			case .requestMail, .requestTelegram, .custom:
 				row.title = NSLocalizedString("Next", comment: "")
 
 			default:
@@ -281,12 +287,6 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		})
 		.onCellSelection({ [weak self] cell, row in
 			switch self?.section.selectedRow()?.value ?? .direct {
-			case .request:
-				let vc =  CaptchaViewController.make()
-				vc.delegate = self
-
-				self?.navigationController?.pushViewController(vc, animated: true)
-
 			case .requestMail:
 				let vc = MFMailComposeViewController()
 				vc.mailComposeDelegate = self
@@ -321,6 +321,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 				case .snowflakeAmp:
 					self?.transport = .snowflakeAmp
+
+				case .meekAzure:
+					self?.transport = .meekAzure
 
 				default:
 					break
