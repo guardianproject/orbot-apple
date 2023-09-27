@@ -16,17 +16,23 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 
 	var tunnelFd: Int32? {
-		var buf = [CChar](repeating: 0, count: Int(IFNAMSIZ))
-
 		for fd: Int32 in 0 ... 1024 {
+			var buf = [CChar](repeating: 0, count: Int(IFNAMSIZ))
 			var len = socklen_t(buf.count)
 
-			if getsockopt(fd, 2 /* IGMP */, 2, &buf, &len) == 0 && String(cString: buf).hasPrefix("utun") {
+			if getsockopt(fd, 2 /* IGMP */, 2, &buf, &len) == 0 &&
+				String(cString: buf).hasPrefix("utun")
+			{
 				return fd
 			}
 		}
 
-		return packetFlow.value(forKey: "socket.fileDescriptor") as? Int32
+		// This will crash on newer iOS, hence the check. Ignore the warning, that's a linter bug.
+		if packetFlow.responds(to: Selector("socket.fileDescriptor")) {
+			return packetFlow.value(forKey: "socket.fileDescriptor") as? Int32
+		}
+
+		return nil
 	}
 
 
