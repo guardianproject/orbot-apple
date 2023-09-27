@@ -15,11 +15,21 @@ class LeafPTProvider: BasePTProvider {
 
 	private static let leafId: UInt16 = 666
 
-	override func startTun2Socks(socksAddr: String?, dnsAddr: String?) {
-		let tunFd = tunnelFd != nil ? String(tunnelFd!) : nil
+	override func startTun2Socks(socksAddr: String?, dnsAddr: String?) throws {
+		guard let tunFd = tunnelFd else {
+			throw Errors.tunnelFdNotFound
+		}
+
+		guard let socks = socksAddr?.split(separator: ":"), socks.count == 2 else {
+			throw Errors.socksPortUnparsable
+		}
+
+		guard let dns = dnsAddr?.split(separator: ":"), dns.count == 2 else {
+			throw Errors.dnsPortUnparsable
+		}
+
 		let bypassPort = Settings.bypassPort != nil ? String(Settings.bypassPort!) : nil
-		let socks = socksAddr?.split(separator: ":")
-		let dns = dnsAddr?.split(separator: ":")
+
 
 		// Reset log file.
 		FileManager.default.leafLogFile?.truncate()
@@ -41,12 +51,12 @@ class LeafPTProvider: BasePTProvider {
 
 		conf = conf
 			.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile?.path ?? "")
-			.replacingOccurrences(of: "{{tunFd}}", with: tunFd ?? "")
+			.replacingOccurrences(of: "{{tunFd}}", with: String(tunFd))
 			.replacingOccurrences(of: "{{bypassPort}}", with: bypassPort ?? "")
-			.replacingOccurrences(of: "{{dnsHost}}", with: dns?.first ?? "")
-			.replacingOccurrences(of: "{{dnsPort}}", with: dns?.last ?? "")
-			.replacingOccurrences(of: "{{socksHost}}", with: socks?.first ?? "")
-			.replacingOccurrences(of: "{{socksPort}}", with: socks?.last ?? "")
+			.replacingOccurrences(of: "{{dnsHost}}", with: dns.first!)
+			.replacingOccurrences(of: "{{dnsPort}}", with: dns.last!)
+			.replacingOccurrences(of: "{{socksHost}}", with: socks.first!)
+			.replacingOccurrences(of: "{{socksPort}}", with: socks.last!)
 
 		let file = FileManager.default.leafConfFile
 

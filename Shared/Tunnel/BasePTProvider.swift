@@ -12,6 +12,23 @@ import WidgetKit
 
 class BasePTProvider: NEPacketTunnelProvider {
 
+	enum Errors: LocalizedError {
+		case tunnelFdNotFound
+		case socksPortUnparsable
+		case dnsPortUnparsable
+
+		var errorDescription: String? {
+			switch self {
+			case .tunnelFdNotFound:
+				return "utun file descriptor could not be found."
+			case .socksPortUnparsable:
+				return "Error while trying to parse the provided Tor SOCKS5 port."
+			case .dnsPortUnparsable:
+				return "Error while trying to parse the provided Tor DNS port."
+			}
+		}
+	}
+
 	private static var messageQueue = [Message]()
 
 
@@ -136,7 +153,25 @@ class BasePTProvider: NEPacketTunnelProvider {
 					return
 				}
 
-				self.startTun2Socks(socksAddr: socksAddr, dnsAddr: dnsAddr)
+				do {
+					try self.startTun2Socks(socksAddr: socksAddr, dnsAddr: dnsAddr)
+				}
+				catch {
+					self.log("#startTunnel error=\(error)")
+
+					if !completionHandlerCalled {
+						completionHandlerCalled = true
+
+						completionHandler(error)
+					}
+					else {
+						self.stopTunnel(with: .noNetworkAvailable) {
+							// Ignored
+						}
+					}
+
+					return
+				}
 
 				self.log("#startTunnel successful")
 
@@ -227,7 +262,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 	// MARK: Abstract Methods
 
-	func startTun2Socks(socksAddr: String?, dnsAddr: String?) {
+	func startTun2Socks(socksAddr: String?, dnsAddr: String?) throws {
 		assertionFailure("Method needs to be implemented in subclass!")
 	}
 
