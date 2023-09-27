@@ -101,6 +101,9 @@
 "Also don't use excluded nodes for network management" = "Ausgeschlossene Netzknoten auch nicht für Netzmanagement verwenden";
 
 /* No comment provided by engineer. */
+"Always clear cache before start" = "Cache vor Start immer löschen";
+
+/* No comment provided by engineer. */
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Eine App hat versucht, %1$@ zu stoppen, aber Du hast das noch nicht erlaubt.";
 
 /* No comment provided by engineer. */

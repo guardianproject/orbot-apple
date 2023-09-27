@@ -193,6 +193,15 @@ class Settings: IPtProxyUI.Settings {
 			defaults?.set(newValue, forKey: "smart_connect_timeout")
 		}
 	}
+
+	class var alwaysClearCache: Bool {
+		get {
+			defaults?.bool(forKey: "always_clear_cache") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "always_clear_cache")
+		}
+	}
 }
 
 class ApiToken: NSObject, NSSecureCoding {

@@ -329,7 +329,7 @@ class MainViewController: UIViewController {
 		smartConnectSw.superview?.isHidden = !showConfButton
 
 		clearCacheBt.isEnabled = VpnManager.shared.status == .disconnected
-		clearCacheBt.isHidden = !showConfButton
+		clearCacheBt.isHidden = !showConfButton || Settings.alwaysClearCache
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 

@@ -176,6 +176,13 @@ class TorManager {
 		}
 #else
 		if !torRunning {
+
+			// This is only configurable on iOS, currently, as starting with a valid
+			// cache may use too much memory.
+			if Settings.alwaysClearCache {
+				TorHelpers.clearCache()
+			}
+
 			torConf = getTorConf()
 
 //			if let debug = torConf?.compile().joined(separator: ", ") {

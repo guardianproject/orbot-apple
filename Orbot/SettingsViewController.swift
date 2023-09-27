@@ -197,6 +197,14 @@ class SettingsViewController: BaseFormViewController {
 
 			AlertHelper.present(self, message: L10n.cleared, title: L10n.clearTorCache)
 		})
+		<<< SwitchRow() {
+			$0.title = NSLocalizedString("Always clear cache before start", comment: "")
+			$0.value = Settings.alwaysClearCache
+			$0.cell.textLabel?.numberOfLines = 0
+		}
+		.onChange { row in
+			Settings.alwaysClearCache = row.value ?? false
+		}
 
 		<<< LabelRow() {
 			$0.title = L10n.version
