@@ -132,32 +132,42 @@ class TorManager {
 			fm.torLogFile?.truncate()
 
 			Logger.log("groupDir=\(fm.groupDir?.path ?? "(nil)")", to: fm.torLogFile)
-			Logger.log("fd=\(String(describing: fd))", to: fm.torLogFile)
 
-			Onionmasq.start(withFd: fd!, stateDir: fm.groupDir, cacheDir: fm.groupDir) { [weak self] event in
-				if let event = event as? String {
-					return Logger.log(event, to: FileManager.default.torLogFile)
-				}
+			let tracefile = fm.groupDir?.appendingPathComponent("trace.pcap")
+			Logger.log("tracefile=\(tracefile?.path ?? "(nil)")", to: fm.torLogFile)
 
-				if let event = event as? Dictionary<String, Any> {
-					switch event["type"] as? String {
-					case "Bootstrap":
-						progressCallback(event["bootstrap_percent"] as? Int)
-
-						if event["is_ready_for_traffic"] as? Bool ?? false {
-							self?.status = .started
-							self?._torRunning = true
-
-							completion(nil, nil, nil)
-						}
-
-					default:
-						break
+			Onionmasq.start(
+				withFd: fd!, stateDir: fm.groupDir, cacheDir: fm.groupDir, pcapFile: tracefile,
+				onEvent: { [weak self] event in
+					if let event = event as? String {
+						return Logger.log(event, to: FileManager.default.torLogFile)
 					}
-				}
 
-				Logger.log(String(describing: event), to: FileManager.default.torLogFile)
-			}
+					if let event = event as? Dictionary<String, Any> {
+						switch event["type"] as? String {
+						case "Bootstrap":
+							let progress = event["bootstrap_percent"] as? Int
+
+							self?.log("#startTunnel progress=\(progress?.description ?? "(nil)")")
+
+							progressCallback(progress)
+
+							if event["is_ready_for_traffic"] as? Bool ?? false {
+								self?.status = .started
+								self?._torRunning = true
+
+								completion(nil, nil, nil)
+							}
+
+						default:
+							break
+						}
+					}
+
+					Logger.log(String(describing: event), to: FileManager.default.torLogFile)
+				}, onLog: { log in
+					Logger.log(log, to: FileManager.default.torLogFile)
+				})
 		}
 		else {
 			status = .started
