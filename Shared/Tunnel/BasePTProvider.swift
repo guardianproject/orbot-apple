@@ -169,7 +169,9 @@ class BasePTProvider: NEPacketTunnelProvider {
 		let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: messageData)
 		let request = unarchiver?.decodeObject(of: Message.self, forKey: NSKeyedArchiveRootObjectKey)
 
-		log("#handleAppMessage messageData=\(messageData), request=\(String(describing: request))")
+		if !messageData.isEmpty || request != nil {
+			log("#handleAppMessage messageData=\(messageData), request=\(String(describing: request))")
+		}
 
 		if request is GetCircuitsMessage {
 			TorManager.shared.getCircuits { circuits in
@@ -207,7 +209,13 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 
 		// Wait for progress updates.
-		hostHandler = completionHandler
+		DispatchQueue.main.async {
+			self.hostHandler = completionHandler
+		}
+
+		if !Self.messageQueue.isEmpty {
+			sendMessages()
+		}
 	}
 
 
@@ -230,6 +238,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 				let response = Self.archive(Self.messageQueue)
 
 				Self.messageQueue.removeAll()
+
+				self.log("#sendMessages response=\(String(describing: response))")
 
 				handler(response)
 
