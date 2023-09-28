@@ -1,5 +1,18 @@
 #  Orbot Apple Changelog
 
+## 1.6.5
+- Brought back "Clear Cache" button on the home screen.
+- Added setting to always clear the cache automatically before start.
+- Reduced `MaxMemInQueues` to 5 MB again.
+- Updated Snowflake configuration to make it work again.
+- Added Meek Azure support, since it still works, albeight often slowly.
+- Removed deprecated CAPTCHA support which is now completely replaced by automatic configuration.
+- Improved "Ask Tor" auto-configuration:
+  - Update built-in Obfs4 and Snowflake configuration on the fly without the need for a new app release.
+  - Store private Obfs4 bridges for later use if we happen to receive any. 
+- Fixed minor issue where the "strict nodes" setting didn't show its real state.
+- Improved minor details in edge cases.
+
 ## 1.6.4
 - Improved reliability of Snowflake:
   - Updated built-in bridge list (incl. Snowflake configuration).

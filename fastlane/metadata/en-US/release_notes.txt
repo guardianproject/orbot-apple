@@ -1,4 +1,19 @@
-- Improved reliability of Snowflake:
-  - Updated built-in bridge list (incl. Snowflake configuration).
-  - iOS: Keep iOS from killing the VPN, when the start takes longer.
-  - iOS: Increased default `MaxMemInQueues` from 5 to 10 MB, as it looks like we have more headroom now due to the Tor patch.
+The growth of the Tor network unfortunately makes the client use a lot of RAM,
+which brings us near the limit of 50 MB RAM, a "Network Extension" (also known as "VPN")
+is allowed to use. This limit is in iOS only, Hence the following changes are iOS only:
+
+- Brought back "Clear Cache" button on the home screen.
+- Added setting to always clear the cache automatically before start.
+- Reduced `MaxMemInQueues` to 5 MB again.
+
+Recent problems with bridges are also addressed:
+- Updated Snowflake configuration to make it work again.
+- Added Meek Azure support, since it still works, albeight often slowly.
+- Removed deprecated CAPTCHA support which is now completely replaced by automatic configuration.
+- Improved "Ask Tor" auto-configuration:
+  - Update built-in Obfs4 and Snowflake configuration on the fly without the need for a new app release.
+  - Store private Obfs4 bridges for later use if we happen to receive any.
+    (Check out "Custom bridges" after you pressed "Ask Tor", it might contain bridge lines.)
+
+- Fixed minor issue where the "strict nodes" setting didn't show its real state.
+- Improved minor details in edge cases.
