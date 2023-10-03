@@ -96,13 +96,21 @@ class BasePTProvider: NEPacketTunnelProvider {
 	{
 		updateWidget()
 
-		let ipv4 = NEIPv4Settings(addresses: ["192.168.20.2"], subnetMasks: ["255.255.255.0"])
+#if USE_ONIONMASQ
+		let addressRange = "169.254.42.1"
+		let dnsIp = "169.254.42.53"
+#else
+		let addressRange = "192.168.20.2"
+		let dnsIp = "192.168.20.1"
+#endif
+
+		let ipv4 = NEIPv4Settings(addresses: [addressRange], subnetMasks: ["255.255.255.0"])
 		ipv4.includedRoutes = [NEIPv4Route.default()]
 
 		let ipv6 = NEIPv6Settings(addresses: ["FC00::0001"], networkPrefixLengths: [7])
 		ipv6.includedRoutes = [NEIPv6Route.default()]
 
-		let dns = NEDNSSettings(servers: ["192.168.20.1"])
+		let dns = NEDNSSettings(servers: [dnsIp])
 		// https://developer.apple.com/forums/thread/116033
 		// Mention special Tor domains here, so the OS doesn't drop onion domain
 		// resolve requests immediately.
@@ -303,7 +311,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		var oldProgress = -1
 
-		TorManager.shared.start(transport, fd: tunnelFd, { [weak self] progress in
+		TorManager.shared.start(transport, packetFlow, { [weak self] progress in
 			guard let progress = progress else {
 				return
 			}

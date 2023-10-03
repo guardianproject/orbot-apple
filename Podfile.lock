@@ -10,7 +10,7 @@ PODS:
     - Eureka (~> 5.3)
     - ImageRow (~> 4.0)
     - IPtProxy (~> 3.1.1)
-  - ProgressHUD (13.7.2)
+  - ProgressHUD (13.8.3)
   - Tor/Core (408.4.1)
   - Tor/CTor-NoLZMA (408.4.1):
     - Tor/Core
@@ -49,9 +49,9 @@ SPEC CHECKSUMS:
   ImageRow: 880c0f052c5a89c80521b485c86ccf723a124e99
   IPtProxy: 264799227d5d83a4a583e66bd4ea846510554025
   IPtProxyUI: c606e88ec4d7e8ffda4eea8640dcdde909489374
-  ProgressHUD: 093d24ca970f191744017bee2649e37d0cd1c5b9
-  Tor: 5fb3cd5e663aa1d6f19b1ade30f8b208b21d26ea
+  ProgressHUD: 21d61d0581ea6ed01d0b2c632033ab4381e75e9e
+  Tor: f0d002b308ad4b853eef8d93200bb94941f70130
 
-PODFILE CHECKSUM: 177bedbb0ed79309396cbb81837e20996adf5684
+PODFILE CHECKSUM: db3e2b99f35fed681a486070957adb34bb86fced
 
 COCOAPODS: 1.13.0

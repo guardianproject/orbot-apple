@@ -91,7 +91,7 @@ class TorManager {
 	}
 
 	func start(_ transport: Transport,
-			   fd: Int32? = nil,
+			   _ packetFlow: NEPacketTunnelFlow,
 			   _ progressCallback: @escaping (_ progress: Int?) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
@@ -137,7 +137,25 @@ class TorManager {
 			Logger.log("tracefile=\(tracefile?.path ?? "(nil)")", to: fm.torLogFile)
 
 			Onionmasq.start(
-				withFd: fd!, stateDir: fm.groupDir, cacheDir: fm.groupDir, pcapFile: tracefile,
+				reader: {
+					Logger.log("[Read] Try read from TUN", to: FileManager.default.torLogFile)
+
+					packetFlow.readPackets(completionHandler: { packets, _ in
+						Logger.log("[Read] Successfully read \(packets.count) packets", to: FileManager.default.torLogFile)
+
+						DispatchQueue.main.async {
+							Onionmasq.receive(packets)
+						}
+					})
+				}, 
+				writer: { packet, version in
+					Logger.log("[Write] v\(version) packet of size \(packet)", to: FileManager.default.torLogFile)
+
+					return packetFlow.writePackets([packet], withProtocols: [version])
+				},
+				stateDir: fm.groupDir,
+				cacheDir: fm.groupDir,
+				pcapFile: tracefile,
 				onEvent: { [weak self] event in
 					if let event = event as? String {
 						return Logger.log(event, to: FileManager.default.torLogFile)
@@ -165,7 +183,8 @@ class TorManager {
 					}
 
 					Logger.log(String(describing: event), to: FileManager.default.torLogFile)
-				}, onLog: { log in
+				}, 
+				onLog: { log in
 					Logger.log(log, to: FileManager.default.torLogFile)
 				})
 		}

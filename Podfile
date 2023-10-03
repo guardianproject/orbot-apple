@@ -5,6 +5,7 @@ use_frameworks!
 def tor
   pod 'Tor/GeoIP-NoLZMA',
   # '~> 408.4'
+  # :git => 'https://github.com/iCepa/Tor.framework'
   :path => '../Tor.framework'
 end
 

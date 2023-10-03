@@ -122,6 +122,22 @@ These people helped with translations. Thank you so much, folks!
 Figma template used to create rounded MacOS icons:
 https://www.figma.com/community/file/857303226040719059
 
+### How to use experimental Onionmasq/Arti
+- Change the reference to Tor in the Podfile to `Tor/Onionmasq` and use the `:git` master or download 
+  into another directory and reference that. Run `pod update` after that.
+- Change the key `NSExtensionPrincipalClass` from `$(PRODUCT_MODULE_NAME).LeafPTProvider` 
+  to `$(PRODUCT_MODULE_NAME).OnionmasqPTProvider` in `TorVPN/Info.plist` and/or `TorVPN Mac/Info.plist`.
+- Configure your code signing credentials in [`Config.xcconfig`](Shared/Config.xcconfig).
+
+=> You should be good to go. 
+
+Look out for `USE_ONIONMASQ` references in the code: there you'll find the 
+special handling necessary for Onionmasq.
+
+NOTE: No bridge support, yet! iOS 50 MB memory limit might crash Onionmasq. 
+There's no limit on macOS. 
+
+
 ## Author, License
 
 Benjamin Erhart, [Die Netzarchitekten e.U.](https://die.netzarchitekten.com)
