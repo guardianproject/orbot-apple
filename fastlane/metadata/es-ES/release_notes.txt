@@ -1,4 +1,19 @@
-- Mejora de la fiabilidad de Snowflake:
-  - Actualizada la lista de puentes incorporados (incluida la configuración de Snowflake).
-  - iOS: Evitar que iOS mate la VPN, cuando el inicio tarda más.
-  - iOS: Incrementado el `MaxMemInQueues` por defecto de 5 a 10 MB, ya que parece que tenemos más espacio ahora debido al parche de Tor.
+El crecimiento de la red Tor desafortunadamente hace que el cliente use mucha RAM,
+lo que nos acerca al límite de 50 MB de RAM que una "Extensión de Red" (también conocida como "VPN")
+se le permite utilizar. Este límite es sólo en iOS, Por lo tanto, los siguientes cambios son sólo iOS:
+
+- Se ha recuperado el botón "Borrar caché" en la pantalla de inicio.
+- Se ha añadido la opción de borrar la caché automáticamente antes de iniciar.
+- Reducido `MaxMemInQueues` a 5 MB de nuevo.
+
+También se han solucionado los problemas recientes con los puentes:
+- Actualizada la configuración de Snowflake para que vuelva a funcionar.
+- Añadido soporte para Meek Azure, ya que aún funciona, aunque a menudo lentamente.
+- Eliminado el soporte de CAPTCHA obsoleto que ahora está completamente reemplazado por la configuración automática.
+- Mejorada la auto-configuración "Ask Tor":
+  - Actualiza la configuración incorporada de Obfs4 y Snowflake sobre la marcha sin necesidad de una nueva versión de la app.
+  - Almacenar puentes Obfs4 privados para su uso posterior si recibimos alguno.
+    (Echa un vistazo a "Puentes personalizados" después de pulsar "Preguntar a Tor", podría contener líneas de puentes).
+
+- Arreglado un problema menor por el que el ajuste "nodos estrictos" no mostraba su estado real.
+- Mejorados detalles menores en casos extremos.
