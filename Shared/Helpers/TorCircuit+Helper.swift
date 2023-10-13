@@ -33,7 +33,7 @@ extension TorCircuit: Encodable {
 		circuits.filter({ circuit in
 			!(circuit.nodes?.isEmpty ?? true)
 			&& (
-				circuit.purpose == TorCircuit.purposeGeneral
+				(circuit.purpose == TorCircuit.purposeGeneral || circuit.purpose == "CONFLUX_LINKED")
 				&& !(circuit.buildFlags?.contains(TorCircuit.buildFlagIsInternal) ?? false)
 				&& !(circuit.buildFlags?.contains(TorCircuit.buildFlagOneHopTunnel) ?? false)
 			) || (

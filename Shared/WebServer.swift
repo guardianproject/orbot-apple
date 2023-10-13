@@ -159,7 +159,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 				}
 				else {
 					candidates = candidates.filter { circuit in
-						circuit.purpose == TorCircuit.purposeGeneral
+						circuit.purpose == TorCircuit.purposeGeneral || circuit.purpose == "CONFLUX_LINKED"
 					}
 				}
 			}
