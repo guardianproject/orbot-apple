@@ -109,13 +109,26 @@ You can call these URIs like this:
 These people helped with translations. Thank you so much, folks!
 
 - French: 
-  yahoe.001
+  yahoe.001, Guirlandia
+
 - Russian:
-  ViktorOnlin, ktchr
+  ViktorOnlin, ktchr, Ifti, Pihjun, ZiPERR, anm, dianazryn, foxing29, keelzhanke,
+  neocaching, sloncocs, userNameIsBoris, emedvedev
+
 - Spanish:
-  Fabiola.mauriceh
+  Fabiola.mauriceh, Aetheria, Fitoschido, Maria_Jose, NorwegianFox, cacu, kodachi,
+  lenazun, m_rey, nosense, strel, supermigue2000, vareli, zakooch, Elos, antonela_,
+  arielbarbosa, emmapeel
+
 - Ukrainian:
-  Kataphan
+  Kataphan, Herenko, MykolaBubelich, Pihjun, gr3ttle, lyubomyr
+  
+- Arabic:
+  AboShanab, BNasr, Bild96, Hujairi, Israel.K, LU_er, MissPeace, Souffex, 
+  ahmedessamdev, nouribram, zer0x, mada19
+  
+- Croatian:
+  paranatox, tomislav.capan, milotype
   
 ## Tech Stuff
 

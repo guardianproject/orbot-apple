@@ -339,6 +339,7 @@
 		A01F34DB2652C7D6008F9912 /* TorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorManager.swift; sourceTree = "<group>"; };
 		A01F34DE2652D082008F9912 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A023D82A271983C000A634B7 /* template.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = template.conf; sourceTree = "<group>"; };
+		A02680A92AE1249700B71DFB /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0274FEC28E70B6300E767E9 /* SharedUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtils.swift; sourceTree = "<group>"; };
 		A0274FF028E7223300E767E9 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		A02DEDAC29E6B030004CB113 /* prepare-devid-publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "prepare-devid-publication.swift"; sourceTree = "<group>"; };
@@ -1092,6 +1093,7 @@
 				ru,
 				ar,
 				"es-CU",
+				hr,
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1710,6 +1712,7 @@
 				A08CA2CD27DB6D0900F23100 /* ru */,
 				A0D8FBAD2A7135BD001791B2 /* ar */,
 				A0D902182A98B2EF0032BDD2 /* es-CU */,
+				A02680A92AE1249700B71DFB /* hr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
