@@ -11,9 +11,9 @@ end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
-  '~> 4.0'
+  '~> 4.1'
   # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
-  # :path => '../IPtProxyUI-ios'
+  # :path => '../IPtProxyUI'
 end
 
 target 'Orbot' do
