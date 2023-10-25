@@ -4,16 +4,16 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-  # '~> 408.4'
-  # :git => 'https://github.com/iCepa/Tor.framework'
-  :path => '../Tor.framework'
+   '~> 408.7'
+#   :git => 'https://github.com/iCepa/Tor.framework'
+#  :path => '../Tor.framework'
 end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
   '~> 4.1'
-  # :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
-  # :path => '../IPtProxyUI'
+#   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
+#   :path => '../IPtProxyUI'
 end
 
 target 'Orbot' do
