@@ -1,5 +1,13 @@
 #  Orbot Apple Changelog
 
+## 1.6.6
+- Added Croatian translation.
+- Updated Spanish translation.
+- Updated Snowflake to latest version 2.7.0.
+- Fixed Snowflake AMP support.
+- Updated Tor to latest version 0.4.8.7.
+- Show new circuit type "CONFLUX_LINKED" in circuits list. 
+
 ## 1.6.5
 - Brought back "Clear Cache" button on the home screen.
 - Added setting to always clear the cache automatically before start.

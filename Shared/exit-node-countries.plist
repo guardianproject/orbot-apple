@@ -2,14 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
+	<string>al</string>
 	<string>ap</string>
 	<string>at</string>
 	<string>au</string>
 	<string>be</string>
 	<string>bg</string>
+	<string>br</string>
 	<string>ca</string>
 	<string>ch</string>
 	<string>cl</string>
+	<string>co</string>
 	<string>cr</string>
 	<string>cz</string>
 	<string>de</string>
@@ -22,7 +25,6 @@
 	<string>hr</string>
 	<string>hu</string>
 	<string>id</string>
-	<string>ie</string>
 	<string>il</string>
 	<string>is</string>
 	<string>it</string>
@@ -34,7 +36,6 @@
 	<string>lv</string>
 	<string>md</string>
 	<string>mx</string>
-	<string>my</string>
 	<string>nl</string>
 	<string>no</string>
 	<string>pe</string>
@@ -43,6 +44,7 @@
 	<string>ru</string>
 	<string>se</string>
 	<string>sg</string>
+	<string>tr</string>
 	<string>tw</string>
 	<string>ua</string>
 	<string>us</string>

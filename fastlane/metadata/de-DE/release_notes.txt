@@ -1,19 +1,6 @@
-Das Wachstum des Tor-Netzwerks führt leider dazu, dass der Client sehr viel RAM verbraucht,
-was uns an die Grenze von 50 MB RAM bringt, die eine "Network Extension" (auch bekannt als "VPN")
-verwenden darf. Dieses Limit gilt nur für iOS, daher sind die folgenden Änderungen nur für iOS:
-
-- Die Schaltfläche "Cache löschen" auf dem Startbildschirm wurde wieder eingeführt.
-- Einstellung hinzugefügt, dass der Cache vor dem Start immer automatisch geleert wird.
-- `MaxMemInQueues` wurde wieder auf 5 MB reduziert.
-
-Aktuelle Probleme mit Bridges wurden ebenfalls behoben:
-- Snowflake-Konfiguration aktualisiert, damit sie wieder funktioniert.
-- Meek Azure Unterstützung hinzugefügt, da es immer noch funktioniert, wenn auch oft langsam.
-- Die veraltete CAPTCHA-Unterstützung wurde entfernt und wird nun vollständig durch die automatische Konfiguration ersetzt.
-- Verbesserte "Ask Tor"-Autokonfiguration:
-  - Aktualisiert die eingebaute Obfs4- und Snowflake-Konfiguration automatisch, ohne eine neue App-Version zu benötigen.
-  - Speichert private Obfs4-Brücken für spätere Verwendung, falls wir welche erhalten.
-    (Schau dir "Benutzerdefinierte Brücken" an, nachdem du "Frag Tor" gedrückt hast, es könnte Brückenzeilen enthalten).
-
-- Kleines Problem behoben, bei dem die Einstellung "Strict Nodes" nicht den tatsächlichen Zustand anzeigte.
-- Kleinere Details in Randfällen wurden verbessert.
+- Kroatische Übersetzung hinzugefügt.
+- Spanische Übersetzung aktualisiert.
+- Snowflake auf die neueste Version 2.7.0 aktualisiert.
+- Snowflake AMP-Unterstützung behoben.
+- Tor auf die neueste Version 0.4.8.7 aktualisiert.
+- Anzeige des neuen Kanaltyps "CONFLUX_LINKED" in der Kanalliste.
