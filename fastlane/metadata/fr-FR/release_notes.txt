@@ -1,19 +1,6 @@
-La croissance du réseau Tor fait que le client utilise malheureusement beaucoup de RAM,
-ce qui nous rapproche de la limite de 50 Mo de RAM qu'une "extension réseau" (également connue sous le nom de "VPN") est autorisée à utiliser.
-est autorisée à utiliser. Cette limite ne s'applique qu'à iOS, c'est pourquoi les changements suivants ne s'appliquent qu'à iOS :
-
-- Rétablissement du bouton "Vider le cache" sur l'écran d'accueil.
-- Ajout d'un paramètre permettant de toujours vider le cache automatiquement avant le démarrage.
-- Réduction de `MaxMemInQueues` à 5 MB à nouveau.
-
-Les problèmes récents avec les ponts ont également été résolus :
-- Mise à jour de la configuration de Snowflake pour qu'il fonctionne à nouveau.
-- Ajout du support de Meek Azure, puisqu'il fonctionne toujours, bien que souvent lentement.
-- Suppression du support CAPTCHA qui est maintenant complètement remplacé par la configuration automatique.
-- Amélioration de l'auto-configuration "Ask Tor" :
-  - Mise à jour de la configuration intégrée Obfs4 et Snowflake à la volée sans avoir besoin d'une nouvelle version de l'application.
-  - Stockage des passerelles Obfs4 privées pour une utilisation ultérieure si nous en recevons.
-    (Vérifiez "Custom bridges" après avoir appuyé sur "Ask Tor", cela peut contenir des lignes de ponts).
-
-- Correction d'un problème mineur où le paramètre "noeuds stricts" n'affichait pas son état réel.
-- Amélioration de détails mineurs dans des cas particuliers.
+- Ajout de la traduction en croate.
+- Mise à jour de la traduction espagnole.
+- Mise à jour de Snowflake vers la dernière version 2.7.0.
+- Correction de la prise en charge de Snowflake AMP.
+- Mise à jour de Tor vers la dernière version 0.4.8.7.
+- Affichage du nouveau type de circuit "CONFLUX_LINKED" dans la liste des circuits.
