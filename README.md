@@ -130,6 +130,7 @@ These people helped with translations. Thank you so much, folks!
 - Croatian:
   paranatox, tomislav.capan, milotype
   
+
 ## Tech Stuff
 
 Figma template used to create rounded MacOS icons:
@@ -149,6 +150,11 @@ special handling necessary for Onionmasq.
 
 NOTE: No bridge support, yet! iOS 50 MB memory limit might crash Onionmasq. 
 There's no limit on macOS. 
+
+
+## Further reading
+
+https://tordev.guardianproject.info
 
 
 ## Author, License
