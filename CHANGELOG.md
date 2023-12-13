@@ -1,5 +1,9 @@
 #  Orbot Apple Changelog
 
+## 1.6.7
+- Updated Tor to latest version 0.4.8.10.
+- Updated Ukrainian translation.
+
 ## 1.6.6
 - Added Croatian translation.
 - Updated Spanish translation.
