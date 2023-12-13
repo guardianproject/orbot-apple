@@ -4,9 +4,12 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-   '~> 408.7'
+   '~> 408.10'
 #   :git => 'https://github.com/iCepa/Tor.framework'
 #  :path => '../Tor.framework'
+
+#  pod 'Tor/Onionmasq',
+#    :podspec => 'https://raw.githubusercontent.com/iCepa/Tor.framework/pure_pod/Arti.podspec'
 end
 
 def iptproxy
