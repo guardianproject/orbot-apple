@@ -1,6 +1,2 @@
-- Kroatische Übersetzung hinzugefügt.
-- Spanische Übersetzung aktualisiert.
-- Snowflake auf die neueste Version 2.7.0 aktualisiert.
-- Snowflake AMP-Unterstützung behoben.
-- Tor auf die neueste Version 0.4.8.7 aktualisiert.
-- Anzeige des neuen Kanaltyps "CONFLUX_LINKED" in der Kanalliste.
+- Tor auf die neueste Version 0.4.8.10 aktualisiert.
+- Ukrainische Übersetzung aktualisiert.
