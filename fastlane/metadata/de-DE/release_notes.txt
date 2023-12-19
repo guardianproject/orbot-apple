@@ -1,2 +1,3 @@
 - Tor auf die neueste Version 0.4.8.10 aktualisiert.
 - Ukrainische Übersetzung aktualisiert.
+- Snowflake auf die neueste Version to 2.8.0 aktualisiert.

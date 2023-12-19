@@ -12,7 +12,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 - Tor 0.4.8.10
 - OpenSSL 3.2.0
 - Lyrebird 0.1.0 (Obfs4proxy)
-- Snowflake 2.7.0
+- Snowflake 2.8.0
 
 
 ## Build

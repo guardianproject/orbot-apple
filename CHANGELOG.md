@@ -2,6 +2,7 @@
 
 ## 1.6.7
 - Updated Tor to latest version 0.4.8.10.
+- Updated Snowflake to latest version 2.8.0.
 - Updated Ukrainian translation.
 
 ## 1.6.6
