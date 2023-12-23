@@ -1,6 +1,3 @@
-- Añadida traducción al croata.
-- Actualizada la traducción al español.
-- Actualizado Snowflake a la última versión 2.7.0.
-- Corregido el soporte de Snowflake AMP.
-- Actualizado Tor a la última versión 0.4.8.7.
-- Mostrar nuevo tipo de circuito "CONFLUX_LINKED" en la lista de circuitos.
+- Actualizado Tor a la última versión 0.4.8.10.
+- Actualizada la traducción al ucraniano.
+- Actualizado Snowflake a la última versión 2.8.0.
