@@ -25,7 +25,7 @@ class AccessRequestViewController: UIViewController {
 				appName,
 				Bundle.main.displayName))
 
-			text.color(substring: appName, with: .accent1)
+			text.color(substring: appName, with: .accent)
 
 			subtitleLb.attributedText = text
 		}
@@ -37,7 +37,7 @@ class AccessRequestViewController: UIViewController {
 				format: NSLocalizedString("This will allow %1$@ to:", comment: ""),
 				appName))
 
-			text.color(substring: appName, with: .accent1)
+			text.color(substring: appName, with: .accent)
 
 			desc1Lb.attributedText = text
 		}

@@ -20,7 +20,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		didSet {
 			controlBt.isBordered = false
 			controlBt.wantsLayer = true
-			controlBt.layer?.backgroundColor = NSColor.accent1.cgColor
+			controlBt.layer?.backgroundColor = NSColor.accent.cgColor
 			controlBt.layer?.cornerRadius = 5
 		}
 	}

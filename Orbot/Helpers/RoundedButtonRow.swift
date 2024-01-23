@@ -95,11 +95,11 @@ final class RoundedButtonRow: Row<RoundedButtonCell>, RowType {
 
 	var image: UIImage?
 
-	var color: UIColor? = .accent1
+	var color: UIColor = .accent
 
 	var backgroundColor: UIColor = .black2
 
-	var tintColor: UIColor? = .label
+	var tintColor: UIColor = .label
 
 	var height: CGFloat = 48
 

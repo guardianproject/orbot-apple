@@ -211,7 +211,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			$0.label = NSLocalizedString("Not sure?", comment: "")
 			$0.title = NSLocalizedString("Ask Tor", comment: "")
 			$0.color = .black3
-			$0.backgroundColor = .black1
+			$0.backgroundColor = .widgetBackground
 			$0.height = 32
 			$0.topBottomPadding = 8
 		}
