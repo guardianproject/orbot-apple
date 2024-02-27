@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 class Logger {
 
@@ -20,10 +21,17 @@ class Logger {
 		FileManager.default.wsLogFile?.truncate()
 	}()
 
+	private static let osLogger = os.Logger(subsystem: Bundle.main.bundleIdentifier!, category: "main")
+
 
 	static func log(_ message: String, to: URL?) {
-		guard ENABLE_LOGGING,
-			  let url = to,
+		guard ENABLE_LOGGING else {
+			return
+		}
+
+		osLogger.log(level: .debug, "\(message, privacy: .public)")
+
+		guard let url = to,
 			  let data = message.trimmingCharacters(in: .whitespacesAndNewlines).appending("\n").data(using: .utf8),
 			  let fh = try? FileHandle(forUpdating: url)
 		else {
