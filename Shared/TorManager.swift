@@ -399,8 +399,10 @@ class TorManager {
 		conf.clientAuthDirectory = FileManager.default.torAuthDir
 
 		// GeoIP files for circuit node country display.
-		conf.geoipFile = Bundle.geoIp?.geoipFile
-		conf.geoip6File = Bundle.geoIp?.geoip6File
+		if !Settings.disableGeoIp {
+			conf.geoipFile = Bundle.geoIp?.geoipFile
+			conf.geoip6File = Bundle.geoIp?.geoip6File
+		}
 
 		// Add user-defined configuration.
 		conf.arguments += Settings.advancedTorConf ?? []

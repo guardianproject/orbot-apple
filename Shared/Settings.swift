@@ -120,6 +120,15 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
+	class var disableGeoIp: Bool {
+		get {
+			defaults?.bool(forKey: "disable_geo_ip") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "disable_geo_ip")
+		}
+	}
+
 	class var advancedTorConf: [String]? {
 		get {
 			let value = defaults?.stringArray(forKey: "advanced_tor_conf")?

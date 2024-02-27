@@ -132,7 +132,19 @@ class SettingsViewController: BaseFormViewController {
 
 		+++ Section(L10n.advancedTorConf)
 
-		<<< ButtonRow() {
+		<<< SwitchRow {
+			$0.title = NSLocalizedString("Disable GeoIP lookup for nodes (reduces RAM usage)", comment: "")
+			$0.cell.textLabel?.numberOfLines = 0
+
+			$0.value = Settings.disableGeoIp
+		}
+		.onChange({ row in
+			if let value = row.value {
+				Settings.disableGeoIp = value
+			}
+		})
+
+		+++ ButtonRow() {
 			$0.title = L10n.torConfReference
 		}
 		.onCellSelection({ cell, row in

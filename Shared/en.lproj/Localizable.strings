@@ -260,6 +260,9 @@
 "Disable %@ for non-onion traffic" = "Disable %@ for non-onion traffic";
 
 /* No comment provided by engineer. */
+"Disable GeoIP lookup for nodes (reduces RAM usage)" = "Disable GeoIP lookup for nodes (reduces RAM usage)";
+
+/* No comment provided by engineer. */
 "disabled" = "disabled";
 
 /* No comment provided by engineer. */
