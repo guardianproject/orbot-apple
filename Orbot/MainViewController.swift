@@ -45,10 +45,18 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var controlBt: UIButton!
 
-	@IBOutlet weak var smartConnectSw: UISwitch!
+	@IBOutlet weak var smartConnectSw: UISwitch! {
+		didSet {
+			smartConnectSw.isHidden = true
+			smartConnectSw.heightAnchor.constraint(equalToConstant: 0).isActive = true
+			Settings.smartConnect = false
+		}
+	}
 	@IBOutlet weak var smartConnectLb: UILabel! {
 		didSet {
 			smartConnectLb.text = L10n.runSmartConnectToFindTheBestWay
+			smartConnectLb.isHidden = true
+			smartConnectLb.heightAnchor.constraint(equalToConstant: 0).isActive = true
 		}
 	}
 
@@ -56,6 +64,7 @@ class MainViewController: UIViewController {
 		didSet {
 			configureBt.setTitle(L10n.chooseHowToConnect)
 			configureBt.accessibilityIdentifier = "bridge_configuration"
+			configureBt.heightAnchor.constraint(equalToConstant: 0).isActive = true
 		}
 	}
 
@@ -333,7 +342,7 @@ class MainViewController: UIViewController {
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
 
-		configureBt.isHidden = !showConfButton
+		configureBt.isHidden = true //!showConfButton
 	}
 
 

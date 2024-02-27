@@ -100,7 +100,6 @@
 		A06BEC73280090B300351868 /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06BEC72280090B300351868 /* ContentBlockerRequestHandler.swift */; };
 		A06BEC77280090B300351868 /* ContentBlocker.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A06BEC6E280090B300351868 /* ContentBlocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
-		A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C96F5273C36AE0019ABE5 /* Settings.swift */; };
 		A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
@@ -162,6 +161,11 @@
 		A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
+		A0E048052B8E1BF700348ED4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048042B8E1BEA00348ED4 /* Settings.swift */; };
+		A0E048072B8E1E8000348ED4 /* IpSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048062B8E1E8000348ED4 /* IpSupport.swift */; };
+		A0E048092B8E1F1200348ED4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048082B8E1F1200348ED4 /* Reachability.swift */; };
+		A0E0480A2B8E1F3E00348ED4 /* IpSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048062B8E1E8000348ED4 /* IpSupport.swift */; };
+		A0E0480B2B8E1F4200348ED4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048082B8E1F1200348ED4 /* Reachability.swift */; };
 		A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423B62919530F001C31E9 /* libleaf.a */; };
 		A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
@@ -449,6 +453,9 @@
 		A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCountryViewController.swift; sourceTree = "<group>"; };
 		A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessViewController.swift; sourceTree = "<group>"; };
 		A0E0061C28B649F200ABC846 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A0E048042B8E1BEA00348ED4 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		A0E048062B8E1E8000348ED4 /* IpSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpSupport.swift; sourceTree = "<group>"; };
+		A0E048082B8E1F1200348ED4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A0E423B62919530F001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleaf.a; sourceTree = "<group>"; };
 		A0E423BA291956A8001C31E9 /* macos */ = {isa = PBXFileReference; lastKnownFileType = folder; path = macos; sourceTree = "<group>"; };
 		A0E423BB291956A8001C31E9 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
@@ -695,6 +702,7 @@
 		A0A735CE247561F200073C81 /* TorVPN */ = {
 			isa = PBXGroup;
 			children = (
+				A0E048042B8E1BEA00348ED4 /* Settings.swift */,
 				A0A735D1247561F200073C81 /* Info.plist */,
 				A0A735D2247561F200073C81 /* TorVPN.entitlements */,
 			);
@@ -752,8 +760,10 @@
 				A08CA43A29ACE76400B01C1F /* Color.swift */,
 				A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
+				A0E048062B8E1E8000348ED4 /* IpSupport.swift */,
 				A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */,
 				A0CC772229A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift */,
+				A0E048082B8E1F1200348ED4 /* Reachability.swift */,
 				A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */,
 				A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */,
 				A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */,
@@ -1006,7 +1016,6 @@
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
-				D3E635B33EF710F6A8858CE4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1364,23 +1373,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D3E635B33EF710F6A8858CE4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1509,6 +1501,7 @@
 				A01AB6BF28A55DD0008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
+				A0E0480A2B8E1F3E00348ED4 /* IpSupport.swift in Sources */,
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0D9021E2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */,
@@ -1517,6 +1510,7 @@
 				A01AB6B428A55926008A79EE /* TorManager.swift in Sources */,
 				A01AB6AE28A558A3008A79EE /* Config.swift in Sources */,
 				A08CA43E29ACE76400B01C1F /* Color.swift in Sources */,
+				A0E0480B2B8E1F4200348ED4 /* Reachability.swift in Sources */,
 				A01AB6B328A55918008A79EE /* Settings.swift in Sources */,
 				A01AB6C128A55DDD008A79EE /* ProgressMessage.swift in Sources */,
 				A01AB6C028A55DD7008A79EE /* ConfigChangedMessage.swift in Sources */,
@@ -1629,6 +1623,8 @@
 				A0A735ED24756CA200073C81 /* Message.swift in Sources */,
 				A0C53059280F11C20067597F /* WebServer.swift in Sources */,
 				A0A735EB24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
+				A0E048072B8E1E8000348ED4 /* IpSupport.swift in Sources */,
+				A0E048092B8E1F1200348ED4 /* Reachability.swift in Sources */,
 				A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A08CA43C29ACE76400B01C1F /* Color.swift in Sources */,
@@ -1636,7 +1632,7 @@
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
 				A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
-				A06C96F7273C36AE0019ABE5 /* Settings.swift in Sources */,
+				A0E048052B8E1BF700348ED4 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

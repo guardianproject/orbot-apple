@@ -40,7 +40,7 @@ target 'TorVPN' do
   platform :ios, '15.0'
 
   tor
-  iptproxy
+#  iptproxy
 
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end

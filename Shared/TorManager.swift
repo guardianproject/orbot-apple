@@ -8,7 +8,6 @@
 
 import NetworkExtension
 import Tor
-import IPtProxyUI
 
 
 class TorManager {
@@ -433,7 +432,7 @@ class TorManager {
 		// Reduce Tor's memory footprint.
 		// Allow users to play with that number themselves.
 		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
-			conf.options["MaxMemInQueues"] = "5MB"
+			conf.options["MaxMemInQueues"] = "10MB"
 		}
 #endif
 
