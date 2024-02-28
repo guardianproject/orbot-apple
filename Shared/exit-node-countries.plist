@@ -7,7 +7,6 @@
 	<string>au</string>
 	<string>be</string>
 	<string>bg</string>
-	<string>br</string>
 	<string>ca</string>
 	<string>ch</string>
 	<string>cl</string>
@@ -23,6 +22,7 @@
 	<string>fi</string>
 	<string>fr</string>
 	<string>gb</string>
+	<string>gr</string>
 	<string>hk</string>
 	<string>hr</string>
 	<string>hu</string>
@@ -33,22 +33,25 @@
 	<string>jp</string>
 	<string>kr</string>
 	<string>kz</string>
+	<string>la</string>
 	<string>lt</string>
 	<string>lu</string>
 	<string>lv</string>
 	<string>md</string>
 	<string>mx</string>
-	<string>my</string>
 	<string>nl</string>
 	<string>no</string>
+	<string>nz</string>
+	<string>pa</string>
 	<string>pe</string>
 	<string>pl</string>
+	<string>pt</string>
 	<string>ro</string>
 	<string>ru</string>
 	<string>sc</string>
 	<string>se</string>
 	<string>sg</string>
-	<string>tr</string>
+	<string>si</string>
 	<string>tw</string>
 	<string>ua</string>
 	<string>us</string>
