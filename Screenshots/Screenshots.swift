@@ -23,7 +23,8 @@ class Screenshots: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testScreenshots() throws {
+	@MainActor 
+	func testScreenshots() throws {
 
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
@@ -55,14 +56,14 @@ class Screenshots: XCTestCase {
 
 		app.buttons["close_auth_cookies"].tap()
 
-		app.buttons["bridge_configuration"].tap()
-
-		snapshot("4-Bridge-Configuration")
-
-		app.tables.cells["transport_custom"].tap()
-		app.tables.cells["next_button"].tap()
-
-		snapshot("5-Custom-Bridges")
+//		app.buttons["bridge_configuration"].tap()
+//
+//		snapshot("4-Bridge-Configuration")
+//
+//		app.tables.cells["transport_custom"].tap()
+//		app.tables.cells["next_button"].tap()
+//
+//		snapshot("5-Custom-Bridges")
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
