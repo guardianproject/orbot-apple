@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.7.0
+- Removed support for Obfs4proxy and Snowflake on iOS to reduce RAM usage.
+- Added toggle to disable GeoIP which reduces RAM usage on iOS.
+- Updated leaf dependency used for routing traffic.
+- Updated Snowflake support for macOS.
+
 ## 1.6.7
 - Updated Tor to latest version 0.4.8.10.
 - Updated Snowflake to latest version 2.8.0.
