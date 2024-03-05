@@ -4,6 +4,7 @@ To reduce RAM usage (and hence don't let it get killed by the iOS memory watchdo
 - Clear the Tor cache on every start. (There's a setting which does that automatically!)
 - Disable GeoIP usage. (That's a new setting, also.)
 - Unfortunately, we had to remove bridge support (Obfs4proxy and Snowflake), that also uses too much RAM.
+- iOS 17.3.1 seems to have a bug with VPNs. A device restart might help.
 
 
 The macOS version still has all the features, including bridge support, since there's no RAM limit there.

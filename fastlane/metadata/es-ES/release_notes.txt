@@ -4,6 +4,7 @@ Para reducir el uso de RAM (y por lo tanto no dejar que lo mate el perro guardi�
 - Borre la caché de Tor en cada inicio. (¡Hay un ajuste que lo hace automáticamente!)
 - Deshabilite el uso de GeoIP. (También hay un nuevo ajuste.)
 - Desafortunadamente, tuvimos que quitar el soporte de puentes (Obfs4proxy y Snowflake), que también usa demasiada RAM.
+- iOS 17.3.1 parece tener un error con las VPN. Un reinicio del dispositivo podría ayudar.
 
 
 La versión para macOS sigue teniendo todas las características, incluido el soporte para puentes, ya que no hay límite de RAM.

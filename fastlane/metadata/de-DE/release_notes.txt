@@ -4,6 +4,7 @@ Um die RAM-Nutzung zu reduzieren (und damit zu verhindern, dass der iOS-Speicher
 - Lösche den Tor-Cache bei jedem Start. (Es gibt eine Einstellung, die das automatisch macht!)
 - Deaktiviere die GeoIP-Nutzung. (Auch das ist eine neue Einstellung.)
 - Leider mussten wir die Bridge-Unterstützung (Obfs4proxy und Snowflake) entfernen, die ebenfalls zu viel RAM verbraucht.
+- iOS 17.3.1 scheint einen Fehler mit VPNs zu haben. Ein Neustart des Geräts kann Abhilfe schaffen.
 
 
 Die macOS-Version hat weiterhin alle Funktionen, einschließlich der Bridge-Unterstützung, da es dort keine RAM-Beschränkung gibt.
