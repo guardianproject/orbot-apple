@@ -31,10 +31,11 @@ class LeafPTProvider: BasePTProvider {
 		let bypassPort = Settings.bypassPort != nil ? String(Settings.bypassPort!) : nil
 
 
-		// Reset log file.
-		FileManager.default.leafLogFile?.truncate()
-
 		let fm = FileManager.default
+
+		// Reset log file.
+		fm.leafLogFile?.truncate()
+
 		var conf: String
 
 		if Settings.onionOnly {
@@ -50,7 +51,7 @@ class LeafPTProvider: BasePTProvider {
 		}
 
 		conf = conf
-			.replacingOccurrences(of: "{{leafLogFile}}", with: FileManager.default.leafLogFile?.path ?? "")
+			.replacingOccurrences(of: "{{leafLogFile}}", with: fm.leafLogFile?.path ?? "")
 			.replacingOccurrences(of: "{{tunFd}}", with: String(tunFd))
 			.replacingOccurrences(of: "{{bypassPort}}", with: bypassPort ?? "")
 			.replacingOccurrences(of: "{{dnsHost}}", with: dns.first!)
@@ -58,7 +59,7 @@ class LeafPTProvider: BasePTProvider {
 			.replacingOccurrences(of: "{{socksHost}}", with: socks.first!)
 			.replacingOccurrences(of: "{{socksPort}}", with: socks.last!)
 
-		let file = FileManager.default.leafConfFile
+		let file = fm.leafConfFile
 
 		try! conf.write(to: file!, atomically: true, encoding: .utf8)
 
