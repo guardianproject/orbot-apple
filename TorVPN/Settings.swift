@@ -247,7 +247,14 @@ class Settings {
 
 	class var disableGeoIp: Bool {
 		get {
-			defaults?.bool(forKey: "disable_geo_ip") ?? false
+#if os(iOS)
+			// On iOS, this defaults to true, to maximize the change of a successful start.
+			guard defaults?.object(forKey: "disable_geo_ip") != nil else {
+				return true
+			}
+#endif
+
+			return defaults?.bool(forKey: "disable_geo_ip") ?? false
 		}
 		set {
 			defaults?.set(newValue, forKey: "disable_geo_ip")
@@ -330,7 +337,14 @@ class Settings {
 
 	class var alwaysClearCache: Bool {
 		get {
-			defaults?.bool(forKey: "always_clear_cache") ?? false
+#if os(iOS)
+			// On iOS, this defaults to true, to maximize the change of a successful start.
+			guard defaults?.object(forKey: "always_clear_cache") != nil else {
+				return true
+			}
+#endif
+
+			return defaults?.bool(forKey: "always_clear_cache") ?? false
 		}
 		set {
 			defaults?.set(newValue, forKey: "always_clear_cache")
