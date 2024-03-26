@@ -113,7 +113,7 @@ These people helped with translations. Thank you so much, folks!
 
 - Russian:
   ViktorOnlin, ktchr, Ifti, Pihjun, ZiPERR, anm, dianazryn, foxing29, keelzhanke,
-  neocaching, sloncocs, userNameIsBoris, emedvedev
+  neocaching, sloncocs, userNameIsBoris, emedvedev, ktchr
 
 - Spanish:
   Fabiola.mauriceh, Aetheria, Fitoschido, Maria_Jose, NorwegianFox, cacu, kodachi,
@@ -122,14 +122,21 @@ These people helped with translations. Thank you so much, folks!
 
 - Ukrainian:
   Kataphan, Herenko, MykolaBubelich, Pihjun, gr3ttle, lyubomyr
-  
+
 - Arabic:
   AboShanab, BNasr, Bild96, Hujairi, Israel.K, LU_er, MissPeace, Souffex, 
   ahmedessamdev, nouribram, zer0x, mada19
-  
+
 - Croatian:
   paranatox, tomislav.capan, milotype
   
+- Spanish (Cuba)
+  raulitopatry, kata91
+  
+- Portuguese (Brazil)
+  Bk__13, CRCF, CypherZnnb, MarvinSilc, cauan_zorzenon, darkcrystal, eduaddadbr, 
+  leovasone, rdd15, shazaum, vic.toria, vmattos, Communia, nopum
+
 
 ## Tech Stuff
 

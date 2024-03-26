@@ -8,6 +8,7 @@ source_file  = Shared/en.lproj/Localizable.strings
 source_lang  = en
 type         = STRINGS
 minimum_perc = 0
+trans.pt_BR  = Shared/pt-BR.lproj/Localizable.strings
 
 [o:otf:p:orbot-ios:r:infoplist-strings]
 file_filter  = Orbot/<lang>.lproj/InfoPlist.strings
@@ -15,6 +16,7 @@ source_file  = Orbot/en.lproj/InfoPlist.strings
 source_lang  = en
 type         = STRINGS
 minimum_perc = 0
+trans.pt_BR  = Orbot/pt-BR.lproj/InfoPlist.strings
 
 [o:otf:p:orbot-ios:r:description-txt]
 file_filter  = fastlane/metadata/<lang>/description.txt
@@ -26,6 +28,7 @@ trans.ar     = fastlane/metadata/ar-SA/description.txt
 trans.de     = fastlane/metadata/de-DE/description.txt
 trans.es     = fastlane/metadata/es-ES/description.txt
 trans.fr     = fastlane/metadata/fr-FR/description.txt
+trans.pt_BR  = fastlane/metadata/pt-BR/description.txt
 
 [o:otf:p:orbot-ios:r:keywords-txt]
 file_filter  = fastlane/metadata/<lang>/keywords.txt
@@ -37,6 +40,7 @@ trans.ar     = fastlane/metadata/ar-SA/keywords.txt
 trans.de     = fastlane/metadata/de-DE/keywords.txt
 trans.es     = fastlane/metadata/es-ES/keywords.txt
 trans.fr     = fastlane/metadata/fr-FR/keywords.txt
+trans.pt_BR  = fastlane/metadata/pt-BR/keywords.txt
 
 [o:otf:p:orbot-ios:r:release-notes-txt]
 file_filter  = fastlane/metadata/<lang>/release_notes.txt
@@ -48,4 +52,4 @@ trans.ar     = fastlane/metadata/ar-SA/release_notes.txt
 trans.de     = fastlane/metadata/de-DE/release_notes.txt
 trans.es     = fastlane/metadata/es-ES/release_notes.txt
 trans.fr     = fastlane/metadata/fr-FR/release_notes.txt
-
+trans.pt_BR  = fastlane/metadata/pt-BR/release_notes.txt

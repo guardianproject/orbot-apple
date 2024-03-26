@@ -429,6 +429,8 @@
 		A0A736042475851D00073C81 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		A0A73607247587D300073C81 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
+		A0B11E642BB33B55003061E1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A0B11E652BB33B55003061E1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A0B167D9284F63C80089EB7C /* template-bypass.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-bypass.conf"; sourceTree = "<group>"; };
 		A0B167DB284F90560089EB7C /* ApiAccessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ApiAccessCell.xib; sourceTree = "<group>"; };
 		A0B167DC284F90560089EB7C /* ApiAccessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAccessCell.swift; sourceTree = "<group>"; };
@@ -1103,6 +1105,7 @@
 				ar,
 				"es-CU",
 				hr,
+				"pt-BR",
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1709,6 +1712,7 @@
 				A0D8FBAD2A7135BD001791B2 /* ar */,
 				A0D902182A98B2EF0032BDD2 /* es-CU */,
 				A02680A92AE1249700B71DFB /* hr */,
+				A0B11E652BB33B55003061E1 /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1732,6 +1736,7 @@
 				A08CA2CC27DB6D0900F23100 /* ru */,
 				A0D8FBAC2A7135BD001791B2 /* ar */,
 				A0D902172A98B2EF0032BDD2 /* es-CU */,
+				A0B11E642BB33B55003061E1 /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
