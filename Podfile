@@ -14,7 +14,7 @@ end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
-  '~> 4.2'
+  '~> 4.4'
 #   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
 #   :path => '../IPtProxyUI'
 end
