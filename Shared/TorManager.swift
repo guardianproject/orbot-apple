@@ -141,10 +141,10 @@ class TorManager {
 
 			Onionmasq.start(
 				reader: {
-					Logger.log("[Read] Try read from TUN", to: FileManager.default.torLogFile)
+//					Logger.log("[Read] Try read from TUN", to: FileManager.default.torLogFile)
 
 					packetFlow.readPackets(completionHandler: { packets, _ in
-						Logger.log("[Read] Successfully read \(packets.count) packets", to: FileManager.default.torLogFile)
+//						Logger.log("[Read] Successfully read \(packets.count) packets", to: FileManager.default.torLogFile)
 
 						DispatchQueue.main.async {
 							Onionmasq.receive(packets)
@@ -152,7 +152,7 @@ class TorManager {
 					})
 				}, 
 				writer: { packet, version in
-					Logger.log("[Write] v\(version) packet of size \(packet)", to: FileManager.default.torLogFile)
+//					Logger.log("[Write] v\(version) packet of size \(packet)", to: FileManager.default.torLogFile)
 
 					return packetFlow.writePackets([packet], withProtocols: [version])
 				},
@@ -408,15 +408,15 @@ class TorManager {
 		}
 
 		// Add user-defined configuration.
-		conf.arguments += Settings.advancedTorConf ?? []
+		var arguments = Settings.advancedTorConf ?? []
+		arguments += nodeConf(Transport.asArguments).joined()
+		arguments += transportConf(Transport.asArguments).joined()
+		arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
 
-		conf.arguments += nodeConf(Transport.asArguments).joined()
+		// Very weird. Suddenly Array doesn't convert to NSMutableArray anymore.
+		conf.arguments.addObjects(from: arguments)
 
-		conf.arguments += transportConf(Transport.asArguments).joined()
-
-		conf.arguments += ipStatus.torConf(transport, Transport.asArguments).joined()
-
-		conf.options = [
+		var options = [
 			// DNS
 			"DNSPort": "auto",
 			"AutomapHostsOnResolve": "1",
@@ -435,15 +435,20 @@ class TorManager {
 #if os(iOS)
 		// Reduce Tor's memory footprint.
 		// Allow users to play with that number themselves.
-		if !conf.arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
-			conf.options["MaxMemInQueues"] = "10MB"
+		if !arguments.contains(where: { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == "--maxmeminqueues" }) {
+			options["MaxMemInQueues"] = "10MB"
 		}
 #endif
 
 		if Logger.ENABLE_LOGGING,
 		   let logfile = FileManager.default.torLogFile?.truncate()
 		{
-			conf.options["Log"] = "notice file \(logfile.path)"
+			options["Log"] = "notice file \(logfile.path)"
+		}
+
+		// Very weird. Suddenly Dictionary doesn't convert to NSMutableDictionary anymore.
+		for option in options {
+			conf.options[option.key] = option.value
 		}
 
 		return conf
