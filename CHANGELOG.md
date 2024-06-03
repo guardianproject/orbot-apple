@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.7.1
+- Updated Tor to latest version 0.4.8.11.
+- Updated translations.
+- Fixed issue with still selected bridges on iOS where we had to remove bridge support.
+- Added WebTunnel support to macOS version.
+
 ## 1.7.0
 - Removed support for Obfs4proxy and Snowflake on iOS to reduce RAM usage.
 - Added toggle to disable GeoIP which reduces RAM usage on iOS.

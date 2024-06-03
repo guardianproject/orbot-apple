@@ -1,6 +1,4 @@
-- Adicionado tradução croata.
-- Tradução atualizada para o espanhol.
-- Atualizado Snowflake para a última versão 2.7.0.
-- Suporte fixo Snowflake AMP.
-- Atualizado Tor para a versão mais recente 0.4.8.7.
-- Mostrar novo tipo de circuito "CONFLUX_LINKED" na lista de circuitos.
+- Atualização do Tor para a versão mais recente 0.4.8.11.
+- Traduções atualizadas.
+- Corrigido o problema com as pontes ainda selecionadas no iOS, onde tivemos que remover o suporte a pontes.
+- Adicionado suporte ao WebTunnel à versão para macOS.

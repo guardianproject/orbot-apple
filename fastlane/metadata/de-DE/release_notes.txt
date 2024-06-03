@@ -1,16 +1,4 @@
-Mit diesem Update sollte Orbot für iOS für viele Leute wieder nutzbar sein!
-
-Um die RAM-Nutzung zu reduzieren (und damit zu verhindern, dass der iOS-Speicher-Watchdog das Programm killt), solltest du folgendes tun:
-- Lösche den Tor-Cache bei jedem Start. (Es gibt eine Einstellung, die das automatisch macht!)
-- Deaktiviere die GeoIP-Nutzung. (Auch das ist eine neue Einstellung.)
-- Leider mussten wir die Bridge-Unterstützung (Obfs4proxy und Snowflake) entfernen, die ebenfalls zu viel RAM verbraucht.
-- iOS 17.3.1 scheint einen Fehler mit VPNs zu haben. Ein Neustart des Geräts kann Abhilfe schaffen.
-
-
-Die macOS-Version hat weiterhin alle Funktionen, einschließlich der Bridge-Unterstützung, da es dort keine RAM-Beschränkung gibt.
-
-Änderungsliste:
-- Die Unterstützung für Obfs4proxy und Snowflake auf iOS wurde entfernt, um den RAM-Verbrauch zu reduzieren.
-- Es wurde ein Schalter hinzugefügt, um GeoIP zu deaktivieren, was die RAM-Nutzung unter iOS reduziert.
-- Die für das Routing des Datenverkehrs verwendete Leaf-Abhängigkeit wurde aktualisiert.
-- Snowflake-Unterstützung für macOS aktualisiert.
+- Tor wurde auf die neueste Version 0.4.8.11 aktualisiert.
+- Übersetzungen aktualisiert.
+- Problem mit immer noch ausgewählten Brücken auf iOS behoben, wo wir die Brückenunterstützung entfernen mussten.
+- WebTunnel-Unterstützung in der macOS-Version hinzugefügt.
