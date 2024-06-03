@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	{
 		Settings.stateLocation = FileManager.default.ptDir!
 
+		// No PT support on iOS, currently. Reset any chosen transports from
+		// earlier versions.
+		// TODO: Remove this, once PT support is back!
+		Settings.transport = .none
+		Settings.smartConnect = false
+
 		UIBarButtonItem.appearance().tintColor = .label
 		UITableViewCell.appearance().tintColor = .label
 		UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .label
