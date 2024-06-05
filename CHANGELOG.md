@@ -5,6 +5,7 @@
 - Updated translations.
 - Fixed issue with still selected bridges on iOS where we had to remove bridge support.
 - Added WebTunnel support to macOS version.
+- Fixed crash when deleting block items.
 
 ## 1.7.0
 - Removed support for Obfs4proxy and Snowflake on iOS to reduce RAM usage.

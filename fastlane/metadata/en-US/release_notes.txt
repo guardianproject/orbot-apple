@@ -2,3 +2,4 @@
 - Updated translations.
 - Fixed issue with still selected bridges on iOS where we had to remove bridge support.
 - Added WebTunnel support to macOS version.
+- Fixed crash when deleting block items.
