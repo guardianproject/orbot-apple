@@ -50,16 +50,22 @@ class ContentBlockerViewController: BaseFormViewController, BlockerViewControlle
 						self?.open(index)
 					}
 
-					$0.tag = String(index)
-
 					$0.cell.textLabel?.numberOfLines = 0
 
 					let font = $0.cell.textLabel?.font ?? UIFont.systemFont(ofSize: UIFont.buttonFontSize)
 					$0.cell.textLabel?.font = UIFont(name: font.familyName, size: font.pointSize - 3)
 				}
 				.cellUpdate({ cell, row in
-					let index = Int(string: row.tag ?? "0") ?? 0
-					row.title = BlockList.shared[index].description
+					let item: BlockItem?
+
+					if let index = row.indexPath?.row, index < BlockList.shared.count {
+						item = BlockList.shared[index]
+					}
+					else {
+						item = nil
+					}
+
+					row.title = item?.description
 
 					cell.textLabel?.textAlignment = .natural
 				})
