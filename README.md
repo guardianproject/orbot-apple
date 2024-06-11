@@ -18,8 +18,8 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 ## Build
 
 ### Prerequisits:
-- MacOS Big Sur or later
-- Xcode 13 or later
+- MacOS Sonoma or later
+- Xcode 15 or later
 - [Homebrew](https://brew.sh)
 
 ```sh
@@ -27,8 +27,8 @@ brew install cocoapods bartycrouch fastlane rustup-init automake autoconf libtoo
 rustup-init -y
 rustup target add aarch64-apple-ios aarch64-apple-ios-sim x86_64-apple-ios aarch64-apple-darwin x86_64-apple-darwin
 cargo install cbindgen
-git clone git@github.com:guardianproject/orbot-ios.git
-cd orbot-ios
+git clone git@github.com:guardianproject/orbot-apple.git
+cd orbot-apple
 git submodule update --init --recursive
 pod update
 leaf-ffi-orbot/build-leaf.sh
