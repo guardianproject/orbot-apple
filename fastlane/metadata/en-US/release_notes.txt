@@ -1,5 +1,1 @@
-- Updated Tor to latest version 0.4.8.11.
-- Updated translations.
-- Fixed issue with still selected bridges on iOS where we had to remove bridge support.
-- Added WebTunnel support to macOS version.
-- Fixed crash when deleting block items.
+Updated Tor to latest version 0.4.8.12.

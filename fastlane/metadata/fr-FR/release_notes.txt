@@ -1,4 +1,1 @@
-- Mise à jour de Tor vers la dernière version 0.4.8.11.
-- Mise à jour des traductions.
-- Correction d'un problème avec les ponts encore sélectionnés sur iOS où nous avons dû supprimer la prise en charge des ponts.
-- Ajout de la prise en charge de WebTunnel dans la version macOS.
+Mise à jour de Tor vers la dernière version 0.4.8.12.

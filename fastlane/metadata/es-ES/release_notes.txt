@@ -1,4 +1,1 @@
-- Actualizado Tor a la última versión 0.4.8.11.
-- Actualizadas las traducciones.
-- Arreglado el problema con los puentes aún seleccionados en iOS donde tuvimos que eliminar el soporte de puentes.
-- Añadido soporte WebTunnel a la versión macOS.
+Actualizado Tor a la última versión 0.4.8.12.
