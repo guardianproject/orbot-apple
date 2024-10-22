@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.7.3
+- Fixed Webtunnel support.
+
 ## 1.7.2
 - Updated Tor to latest version 0.4.8.12.
 

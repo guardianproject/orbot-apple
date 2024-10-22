@@ -1,1 +1,1 @@
-Actualizado Tor a la última versión 0.4.8.12.
+Corregida la compatibilidad con Webtunnel.

@@ -1,1 +1,1 @@
-Mise à jour de Tor vers la dernière version 0.4.8.12.
+Correction de la prise en charge de Webtunnel.

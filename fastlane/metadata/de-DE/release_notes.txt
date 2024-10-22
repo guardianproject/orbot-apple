@@ -1,1 +1,1 @@
-Tor wurde auf die neueste Version 0.4.8.12 aktualisiert.
+Unterstützung für Webtunnel behoben.
