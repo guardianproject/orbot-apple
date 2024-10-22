@@ -17,6 +17,9 @@ def iptproxy
   '~> 4.6'
 #   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
 #   :path => '../IPtProxyUI'
+
+#  pod 'IPtProxy',
+#   :path => '../IPtProxy-cohosh'
 end
 
 target 'Orbot' do
