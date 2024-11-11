@@ -94,7 +94,7 @@ public enum Transport: Int, CaseIterable, Comparable {
 	public func stop() {
 	}
 
-	public func torConf<T>(_ cv: (String, String) -> T) -> [T] {
+	public func torConf<T>(_ cv: (String, String) -> T, onDemandBridges: [String]? = nil, customBridges: [String]? = nil) -> [T] {
 		return [T]()
 	}
 }
