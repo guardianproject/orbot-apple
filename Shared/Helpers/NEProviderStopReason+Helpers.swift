@@ -64,7 +64,10 @@ extension NEProviderStopReason: @retroactive CustomStringConvertible {
         case .userSwitch:
             return "userSwitch"
 
-        @unknown default:
+		case .internalError:
+			return "internalError"
+
+		@unknown default:
             return "unknown"
         }
     }
