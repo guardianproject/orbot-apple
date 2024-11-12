@@ -23,7 +23,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 - [Homebrew](https://brew.sh)
 
 ```sh
-brew install cocoapods bartycrouch fastlane rustup-init automake autoconf libtool gettext
+brew install cocoapods bartycrouch fastlane rustup-init automake autoconf libtool gettext cmake
 rustup-init -y
 rustup target add aarch64-apple-ios aarch64-apple-ios-sim x86_64-apple-ios aarch64-apple-darwin x86_64-apple-darwin
 cargo install cbindgen

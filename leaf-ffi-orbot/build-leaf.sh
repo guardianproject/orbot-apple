@@ -41,8 +41,7 @@ function clean {
 	cd "$WORKDIR"
 
 	git restore .
-
-	rm -rf target
+	git clean -dxf
 
 	cd "$SCRIPTDIR"
 }
