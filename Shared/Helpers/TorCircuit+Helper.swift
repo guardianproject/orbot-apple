@@ -33,14 +33,14 @@ extension TorCircuit: @retroactive Encodable {
 		circuits.filter({ circuit in
 			!(circuit.nodes?.isEmpty ?? true)
 			&& (
-				(circuit.purpose == TorCircuit.purposeGeneral || circuit.purpose == "CONFLUX_LINKED")
-				&& !(circuit.buildFlags?.contains(TorCircuit.buildFlagIsInternal) ?? false)
-				&& !(circuit.buildFlags?.contains(TorCircuit.buildFlagOneHopTunnel) ?? false)
+				(circuit.purpose == Self.purposeGeneral || circuit.purpose == Self.purposeConfluxLinked)
+				&& !(circuit.buildFlags?.contains(Self.buildFlagIsInternal) ?? false)
+				&& !(circuit.buildFlags?.contains(Self.buildFlagOneHopTunnel) ?? false)
 			) || (
-				circuit.purpose == TorCircuit.purposeHsClientRend
+				circuit.purpose == Self.purposeHsClientRend
 				&& !(circuit.rendQuery?.isEmpty ?? true)
 			) || (
-				circuit.purpose == TorCircuit.purposeHsServiceRend
+				circuit.purpose == Self.purposeHsServiceRend
 			)
 		})
 		// Oldest first! This is sometimes wrong, but our best guess.

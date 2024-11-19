@@ -18,7 +18,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 		return webServer.isRunning
 	}
 
-	private static let onionAddressRegex = try? NSRegularExpression(pattern: "^(.*)\\.(onion|exit)$", options: .caseInsensitive)
+	private static let onionAddressRegex = try? NSRegularExpression(pattern: "^(.*\\.)?(.*?)\\.(onion|exit)$", options: .caseInsensitive)
 
 	private lazy var webServer: GCDWebServer = {
 		GCDWebServer.setBuiltInLogger { level, message in
@@ -143,10 +143,14 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 					in: host, options: [],
 					range: NSRange(host.startIndex ..< host.endIndex, in: host))
 
-				if matches?.first?.numberOfRanges ?? 0 > 1,
-					let nsRange = matches?.first?.range(at: 1),
-					let range = Range(nsRange, in: host) {
-					query = String(host[range])
+				if let match = matches?.first,
+				   match.numberOfRanges > 1
+				{
+					let nsRange = match.range(at: match.numberOfRanges - 2)
+
+					if let range = Range(nsRange, in: host) {
+						query = String(host[range])
+					}
 				}
 
 				// Circuits used for .onion addresses can be identified by their
@@ -159,7 +163,7 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 				}
 				else {
 					candidates = candidates.filter { circuit in
-						circuit.purpose == TorCircuit.purposeGeneral || circuit.purpose == "CONFLUX_LINKED"
+						circuit.purpose == TorCircuit.purposeGeneral || circuit.purpose == TorCircuit.purposeConfluxLinked
 					}
 				}
 			}
