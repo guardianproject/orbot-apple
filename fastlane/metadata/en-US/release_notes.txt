@@ -1,1 +1,5 @@
-Fixed Webtunnel support.
+- Fixed issue with finding the correct circuit for onion domains. (Affects other apps which use the Orbot API.)
+- Updated Tor to latest version 0.4.8.13.
+- Updated leaf to latest version 0.11.0.
+- Updated Snowflake to latest version 2.10.1. (Affects macOS only.)
+- Updated Lyrebird to latest version 0.5.0. (Affects macOS only.)
