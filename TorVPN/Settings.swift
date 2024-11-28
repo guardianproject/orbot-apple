@@ -12,6 +12,8 @@ public enum Transport: Int, CaseIterable, Comparable {
 
 	public static let order: [Transport] = [.none, .obfs4, .snowflake, .snowflakeAmp, .meekAzure, .custom, .onDemand]
 
+	public static var customBridges: [String]?
+
 	public static func asArguments(key: String, value: String) -> [String] {
 		return ["--\(key)", value]
 	}
@@ -85,10 +87,8 @@ public enum Transport: Int, CaseIterable, Comparable {
 
 	/**
 	 Start the transport, if it is startable.
-
-	 - parameter log: OPTIONAL. A file URL to write the log to (for Snowflake) or just anything non-nil to enable Obfs4proxy logging.
 	 */
-	public func start(log: Bool = false) {
+	public func start() throws {
 	}
 
 	public func stop() {

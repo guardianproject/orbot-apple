@@ -32,6 +32,14 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 		URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!
 	}
 
+	private static let snowflakeProxy: IPtProxySnowflakeProxy = {
+		let p = IPtProxySnowflakeProxy()
+		p.capacity = 1
+		p.clientConnected = selfInstance
+
+		return p
+	}()
+
 
 	// MARK: BridgesConfDelegate
 
@@ -110,13 +118,11 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 	}
 
 	static func controlSnowflakeProxy() {
-		if IPtProxyIsSnowflakeProxyRunning() {
-			IPtProxyStopSnowflakeProxy()
+		if snowflakeProxy.isRunning() {
+			snowflakeProxy.stop()
 		}
 		else {
-			IPtProxyStartSnowflakeProxy(1, nil, nil, nil, nil,
-										FileManager.default.sfpLogFile?.truncate().path,
-										false, false, selfInstance)
+			snowflakeProxy.start()
 		}
 
 		NotificationCenter.default.post(name: .vpnStatusChanged, object: nil)
@@ -234,7 +240,7 @@ class SharedUtils: NSObject, BridgesConfDelegate, IPtProxySnowflakeClientConnect
 		}
 
 		let sfpText = String(
-			format: IPtProxyIsSnowflakeProxyRunning() ? L10n.snowflakeProxyStarted : L10n.snowflakeProxyStopped,
+			format: snowflakeProxy.isRunning() ? L10n.snowflakeProxyStarted : L10n.snowflakeProxyStopped,
 			Formatters.format(Settings.snowflakesHelped))
 
 		return (statusIcon, showShadow, buttonTitle, statusText, statusSubtext, sfpText, showConfButton)

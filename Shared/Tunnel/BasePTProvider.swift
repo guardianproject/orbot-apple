@@ -9,6 +9,9 @@
 import NetworkExtension
 import WidgetKit
 
+#if os(macOS)
+import IPtProxyUI
+#endif
 
 class BasePTProvider: NEPacketTunnelProvider {
 
@@ -304,10 +307,22 @@ class BasePTProvider: NEPacketTunnelProvider {
 	private func startTransportAndTor(_ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void) {
 		stopConnectionGuard()
 
-		if Logger.ENABLE_LOGGING {
-			transport.logFile?.truncate()
+		// Since IPtProxyUI.Settings use `UserDefaults.standard` as source, instead of
+		// `UserDefaults(suiteName: Config.groupId)` as Orbot does, `custom`
+		// bridge lines cannot be resolved by `IPtProxyUI.Transport` automatically.
+		// So we need to hand them over manually.
+		// `Transport.customBridges` need to be set before `start`, otherwise, `IPtProxyUI`
+		// cannot determine, which transport to start and will do nothing.
+		Transport.customBridges = Settings.customBridges
+
+		transport.logFile?.truncate()
+
+		do {
+			try transport.start()
 		}
-		transport.start(log: Logger.ENABLE_LOGGING)
+		catch {
+			return completion(error, nil, nil)
+		}
 
 		var oldProgress = -1
 
@@ -353,48 +368,75 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 				self.connectionAlive()
 
-				switch self.transport {
+				var connected = false
 
-				// If direct connection didn't work, try Snowflake bridge.
-				case .none:
-					self.transport = .snowflake
+				repeat {
+					switch self.transport {
 
-					if Logger.ENABLE_LOGGING {
+						// If direct connection didn't work, try Snowflake bridge.
+					case .none:
+						self.transport = .snowflake
+
 						self.transport.logFile?.truncate()
-					}
-					self.transport.start(log: Logger.ENABLE_LOGGING)
 
-				// If Snowflake didn't work, try custom or default Obfs4 bridges.
-				case .snowflake, .snowflakeAmp:
-					self.transport.stop()
+						do {
+							try self.transport.start()
+							connected = true
+						}
+						catch {
+							self.log(error.localizedDescription)
+						}
 
-					if !(Settings.customBridges?.isEmpty ?? true) {
-						self.transport = .custom
-					}
-					else {
+						// If Snowflake didn't work, try custom or default Obfs4 bridges.
+					case .snowflake, .snowflakeAmp:
+						self.transport.stop()
+
+						if !(Settings.customBridges?.isEmpty ?? true) {
+							self.transport = .custom
+						}
+						else {
+							self.transport = .obfs4
+						}
+
+						self.transport.logFile?.truncate()
+
+						do {
+							try self.transport.start()
+							connected = true
+						}
+						catch {
+							self.log(error.localizedDescription)
+						}
+
+						// If custom Obfs4 bridges didn't work, try default ones.
+					case .custom:
+						self.transport.stop()
+
 						self.transport = .obfs4
-					}
 
-					if Logger.ENABLE_LOGGING {
 						self.transport.logFile?.truncate()
+
+						do {
+							try self.transport.start()
+							connected = true
+						}
+						catch {
+							self.log(error.localizedDescription)
+						}
+
+						// If Obfs4 bridges didn't work, give up.
+					default:
+						self.stopConnectionGuard()
+
+						TorManager.shared.stop()
+
+						self.transport.stop()
+
+						completion(TorManager.Errors.smartConnectFailed, nil, nil)
+						return
 					}
-					self.transport.start(log: Logger.ENABLE_LOGGING)
-
-				// If custom Obfs4 bridges didn't work, try default ones.
-				case .custom:
-					self.transport = .obfs4
-
-				// If Obfs4 bridges didn't work, give up.
-				default:
-					self.stopConnectionGuard()
-
-					TorManager.shared.stop()
-
-					self.transport.stop()
-
-					completion(TorManager.Errors.smartConnectFailed, nil, nil)
-					return
 				}
+				while !connected
 
 				TorManager.shared.updateConfig(self.transport)
 

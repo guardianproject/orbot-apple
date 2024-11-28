@@ -477,12 +477,10 @@ class TorManager {
 
 	private func transportConf<T>(_ cv: (String, String) -> T) -> [T] {
 		// Since IPtProxyUI.Settings use `UserDefaults.standard` as source, instead of
-		// `UserDefaults(suiteName: Config.groupId)` as Orbot does, `custom` and `onDemand`
-		// bridge lines cannot be resolved by `IPtProxyUI.Transport.torConv()`.
-		var arguments = transport.torConf(
-			cv,
-			onDemandBridges: Settings.onDemandBridges,
-			customBridges: Settings.customBridges)
+		// `UserDefaults(suiteName: Config.groupId)` as Orbot does, `onDemand`
+		// bridge lines cannot be resolved by `IPtProxyUI.Transport.torConv()`, if
+		// we don't hand them over here.
+		var arguments = transport.torConf(cv, onDemandBridges: Settings.onDemandBridges)
 
 		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
 
