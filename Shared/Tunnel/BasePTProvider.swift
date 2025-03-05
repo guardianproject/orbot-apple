@@ -110,7 +110,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		let ipv4 = NEIPv4Settings(addresses: [addressRange], subnetMasks: ["255.255.255.0"])
 		ipv4.includedRoutes = [NEIPv4Route.default()]
 
-		let ipv6 = NEIPv6Settings(addresses: ["FC00::0001"], networkPrefixLengths: [7])
+		let ipv6 = NEIPv6Settings(addresses: ["fd00::0001"], networkPrefixLengths: [48])
 		ipv6.includedRoutes = [NEIPv6Route.default()]
 
 		let dns = NEDNSSettings(servers: [dnsIp])
