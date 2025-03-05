@@ -61,7 +61,7 @@ class LeafPTProvider: BasePTProvider {
 
 		let file = fm.leafConfFile
 
-		try! conf.write(to: file!, atomically: true, encoding: .utf8)
+		try conf.write(to: file!, atomically: true, encoding: .utf8)
 
 		setenv("LOG_NO_COLOR", "true", 1)
 
