@@ -88,6 +88,7 @@ struct StatusWidgetEntryView : View {
 			default: MediumView(entry: entry)
 			}
 		}
+		.widgetBackground(Color("WidgetBackground"))
 	}
 }
 
