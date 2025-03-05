@@ -1,5 +1,2 @@
-- Problem bei der Suche nach der richtigen Schaltung für Onion-Domains behoben. (Betrifft andere Anwendungen, die die Orbot-API verwenden.)
-- Tor wurde auf die neueste Version 0.4.8.13 aktualisiert.
-- Leaf wurde auf die neueste Version 0.11.0 aktualisiert.
-- Snowflake wurde auf die neueste Version 2.10.1 aktualisiert. (Betrifft nur macOS.)
-- Lyrebird auf die neueste Version 0.5.0 aktualisiert. (Betrifft nur macOS.)
+- Tor wurde auf die neueste Version 0.4.8.14 aktualisiert.
+- Widget auf iOS 17 und höher korrigiert.

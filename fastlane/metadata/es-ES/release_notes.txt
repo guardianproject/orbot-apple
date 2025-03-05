@@ -1,5 +1,2 @@
-- Se ha solucionado un problema con la búsqueda del circuito correcto para los dominios onion. (Afecta a otras aplicaciones que usan la API de Orbot).
-- Actualizado Tor a la última versión 0.4.8.13.
-- Actualizado leaf a la última versión 0.11.0.
-- Actualizado Snowflake a la última versión 2.10.1. (Sólo para macOS).
-- Actualizado Lyrebird a la última versión 0.5.0. (Sólo para macOS.)
+- Actualizado Tor a la última versión 0.4.8.14.
+- Arreglado el widget en iOS 17 y superiores.
