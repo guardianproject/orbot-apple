@@ -1,2 +1,3 @@
 - Actualizado Tor a la última versión 0.4.8.14.
 - Arreglado el widget en iOS 17 y superiores.
+- Corregido fallo al cambiar la configuración.

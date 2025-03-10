@@ -1,2 +1,3 @@
 - Atualização do Tor para a versão mais recente 0.4.8.14.
 - Widget corrigido no iOS 17 e superior.
+- Corrigida a falha na alteração da configuração.

@@ -3,6 +3,7 @@
 ## 1.7.5
 - Updated Tor to latest version 0.4.8.14.
 - Fixed widget on iOS 17 and up.
+- Fixed crash on config change.
 
 ## 1.7.4
 - Fixed issue with finding the correct circuit for onion domains. (Affects other apps which use the Orbot API.) 

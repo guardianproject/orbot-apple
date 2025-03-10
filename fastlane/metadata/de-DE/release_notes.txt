@@ -1,2 +1,3 @@
 - Tor wurde auf die neueste Version 0.4.8.14 aktualisiert.
 - Widget auf iOS 17 und höher korrigiert.
+- Absturz bei Änderung der Konfiguration behoben.
