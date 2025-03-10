@@ -258,6 +258,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 			startTransportAndTor { error, socksAddr, dnsAddr in
 				completionHandler?(Self.archive(error ?? true))
 			}
+
+			return
 		}
 
 		// Wait for progress updates.
