@@ -191,10 +191,10 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func refresh(_ sender: UIButton? = nil) {
-		ProgressHUD.showProgress(L10n.newCircuits, 0)
+		ProgressHUD.progress(L10n.newCircuits, 0)
 
 		let showError = { (error: Error) in
-			ProgressHUD.showError(error.localizedDescription, delay: 3)
+			ProgressHUD.failed(error.localizedDescription, delay: 3)
 		}
 
 		VpnManager.shared.getCircuits { [weak self] circuits, error in
@@ -202,14 +202,14 @@ class MainViewController: UIViewController {
 				return showError(error)
 			}
 
-			ProgressHUD.showProgress(0.5)
+			ProgressHUD.progress(0.5)
 
 			VpnManager.shared.closeCircuits(circuits) { success, error in
 				if let error = error {
 					return showError(error)
 				}
 
-				ProgressHUD.showSucceed()
+				ProgressHUD.succeed()
 
 				if self?.logContainer.isHidden == false && self?.logSc.selectedSegmentIndex == 1 {
 					self?.changeLog()

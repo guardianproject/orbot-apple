@@ -4,7 +4,7 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-   '~> 408.14'
+   '~> 408.16'
 #   :git => 'https://github.com/iCepa/Tor.framework'
 #  :path => '../Tor.framework'
 
@@ -14,7 +14,7 @@ end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
-  '~> 4.7'
+  '~> 4.8'
 #   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
 #   :path => '../IPtProxyUI'
 
@@ -28,8 +28,8 @@ target 'Orbot' do
   tor
   iptproxy
 
-  pod 'Eureka', '~> 5.3'
-  pod 'ProgressHUD', '~> 13.6'
+  pod 'Eureka', '~> 5.5'
+  pod 'ProgressHUD', '~> 14.1'
 end
 
 target 'Orbot Mac' do

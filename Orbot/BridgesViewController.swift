@@ -220,7 +220,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				return
 			}
 
-			ProgressHUD.show()
+			ProgressHUD.animate()
 
 			AutoConf(self).do(cannotConnectWithoutPt: true) { [weak self] error in
 				guard let self = self else {
