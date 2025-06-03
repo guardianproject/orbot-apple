@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.7.6
+- Updated Tor to latest version 0.4.8.16.
+- Updated Snowflake to latest version 2.11.0. (Affects macOS only.)
+- Updated Lyrebird to latest version 0.6.1. (Affects macOS only.)
+- Minor localization updates.
+
 ## 1.7.5
 - Updated Tor to latest version 0.4.8.14.
 - Fixed widget on iOS 17 and up.

@@ -1,3 +1,4 @@
-- Mise à jour de Tor vers la dernière version 0.4.8.14.
-- Correction du widget sur iOS 17 et plus.
-- Correction d'un crash lors d'un changement de configuration.
+- Mise à jour de Tor vers la dernière version 0.4.8.16.
+- Mise à jour de Snowflake vers la dernière version 2.11.0. (Affecte macOS uniquement).
+- Mise à jour de Lyrebird vers la dernière version 0.6.1 (pour macOS uniquement).
+- Mises à jour mineures de la localisation.
