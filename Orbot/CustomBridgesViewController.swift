@@ -20,8 +20,7 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 		var urlc = URLComponents(url: Constants.bridgesUrl,
 								 resolvingAgainstBaseURL: false)
 
-		urlc?.path = "/bridges"
-		urlc?.queryItems = [.init(name: "transport", value: "obfs4")]
+		urlc?.path = "/options"
 
 		return urlc?.string ?? Constants.bridgesUrl.absoluteString
 	}
