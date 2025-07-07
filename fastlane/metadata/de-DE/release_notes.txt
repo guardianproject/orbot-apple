@@ -1,4 +1,1 @@
-- Tor wurde auf die neueste Version 0.4.8.16 aktualisiert.
-- Snowflake wurde auf die neueste Version 2.11.0 aktualisiert. (Betrifft nur macOS.)
-- Lyrebird wurde auf die neueste Version 0.6.1 aktualisiert. (Betrifft nur macOS.)
-- Kleinere Aktualisierungen der Lokalisierung.
+- Tor wurde auf die neueste Version 0.4.8.17 aktualisiert.

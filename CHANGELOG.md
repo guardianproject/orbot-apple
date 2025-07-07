@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.7.7
+- Updated Tor to latest version 0.4.8.17.
+
 ## 1.7.6
 - Updated Tor to latest version 0.4.8.16.
 - Updated Snowflake to latest version 2.11.0. (Affects macOS only.)

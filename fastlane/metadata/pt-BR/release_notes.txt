@@ -1,4 +1,1 @@
-- Atualização do Tor para a versão mais recente 0.4.8.16.
-- Atualização do Snowflake para a versão mais recente 2.11.0 (afeta apenas o macOS).
-- Atualização do Lyrebird para a versão mais recente 0.6.1. (Afeta apenas o macOS.)
-- Pequenas atualizações de localização.
+- Atualização do Tor para a versão mais recente 0.4.8.17.
