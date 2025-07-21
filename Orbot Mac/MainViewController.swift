@@ -127,10 +127,6 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		updateUi()
 	}
 
-	@IBAction func controlSnowflakeProxy(_ sender: Any) {
-		SharedUtils.controlSnowflakeProxy()
-	}
-
 	@IBAction func refresh(_ sender: Any) {
 		let hud = MBProgressHUD.showAdded(to: view, animated: true)
 		hud?.mode = MBProgressHUDModeDeterminate
@@ -185,7 +181,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		// Trigger refresh button revalidation.
 		NSApp.setWindowsNeedUpdate(true)
 
-		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, _, showConfButton) = SharedUtils.updateUi(
+		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, showConfButton) = SharedUtils.updateUi(
 			notification, buttonFontSize: controlBt.font?.pointSize)
 
 #if DEBUG

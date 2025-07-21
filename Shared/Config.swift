@@ -39,13 +39,6 @@ extension Config {
 	}
 
 	/**
-	 Show the Snowflake Proxy experimental button.
-	 */
-	class var snowflakeProxyExperiment: Bool {
-		!screenshotMode && true
-	}
-
-	/**
 	 Show VPN Log, Leaf Log, Leaf Configuration and Webserver log segments in log view for debugging.
 	 */
 	class var extendedLogging: Bool {

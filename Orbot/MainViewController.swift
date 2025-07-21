@@ -287,19 +287,6 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	@IBAction func controlSnowflakeProxy() {
-#if DEBUG
-		if Config.snowflakeProxyExperiment {
-			SharedUtils.controlSnowflakeProxy()
-		}
-		else {
-			showContentBlocker()
-		}
-#else
-		showContentBlocker()
-#endif
-	}
-
 	@IBAction func showContentBlocker() {
 		present(inNav: ContentBlockerViewController(), button: settingsBt)
 	}
@@ -311,7 +298,7 @@ class MainViewController: UIViewController {
 
 		refreshBt?.isEnabled = VpnManager.shared.status == .connected
 
-		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, _, showConfButton) = SharedUtils.updateUi(
+		let (statusIconName, showShadow, buttonTitle, statusText, statusSubtext, showConfButton) = SharedUtils.updateUi(
 			notification, buttonFontSize: controlBt.titleLabel?.font.pointSize)
 
 		animateOrbie = statusIconName == .imgOrbieStarting
