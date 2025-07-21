@@ -90,34 +90,33 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	func addToken(_ appId: String, _ appName: String?, _ needsBypass: Bool, _ completion: @escaping (_ token: ApiToken?) -> Void) {
 		let token = ApiToken(appId: appId, key: UUID().uuidString, appName: appName, bypass: needsBypass)
 
-		if let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "accessRequest") as? AccessRequestViewController {
-			vc.token = token
-			vc.completion = { granted in
-				self.tokens.removeAll(where: { $0.appId == token.appId })
+		let vc = UIStoryboard.main.instantiateViewController(AccessRequestViewController.self)
+		vc.token = token
+		vc.completion = { granted in
+			self.tokens.removeAll(where: { $0.appId == token.appId })
 
-				if granted {
-					self.tokens.append(token)
+			if granted {
+				self.tokens.append(token)
 
-					UIPasteboard.general.string = token.key
+				UIPasteboard.general.string = token.key
 
-					// User granted bypass access. Switch on, if not yet enabled.
-					if token.bypass && Settings.bypassPort == nil {
-						Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
+				// User granted bypass access. Switch on, if not yet enabled.
+				if token.bypass && Settings.bypassPort == nil {
+					Settings.bypassPort = 1 // Will be set to a random valid port number, regardless of this value.
 
-						// Restart with activated bypass.
-						self.restartVpn()
-					}
+					// Restart with activated bypass.
+					self.restartVpn()
 				}
-
-				// Since we removed ourselves, we need to find the navigationController on the AccessRequestViewController.
-				vc.navigationController?.dismiss(animated: true)
-				self.close()
-
-				completion(granted ? token : nil)
 			}
 
-			navigationController?.viewControllers = [vc]
+			// Since we removed ourselves, we need to find the navigationController on the AccessRequestViewController.
+			vc.navigationController?.dismiss(animated: true)
+			self.close()
+
+			completion(granted ? token : nil)
 		}
+
+		navigationController?.viewControllers = [vc]
 	}
 
 

@@ -13,7 +13,7 @@ import PhotosUI
 class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrDelegate, PHPickerViewControllerDelegate {
 
 	static func make() -> Self {
-		UIStoryboard.main.instantiateViewController(withIdentifier: "custom_bridges_vc") as! Self
+		UIStoryboard.main.instantiateViewController(Self.self)
 	}
 
 	class var bridgesUrl: String {
