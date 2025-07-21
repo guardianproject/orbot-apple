@@ -37,11 +37,23 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ wants to access %2$@.";
 
+/* Placeholder is bullet */
+"%@ App needs to stay in the foreground." = "%@ App needs to stay in the foreground.";
+
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
+/* Placeholder is bullet */
+"%@ Connect to power while letting it run." = "%@ Connect to power while letting it run.";
+
 /* macOS menu item */
 "%@ Help" = "%@ Help";
+
+/* Placeholder is bullet */
+"%@ It can be turned off anytime." = "%@ It can be turned off anytime.";
+
+/* Placeholder is bullet */
+"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ Status";
@@ -93,6 +105,9 @@
 
 /* No comment provided by engineer. */
 "all domains but %@" = "all domains but %@";
+
+/* No comment provided by engineer. */
+"All Time Total" = "All Time Total";
 
 /* No comment provided by engineer. */
 "all types" = "all types";
@@ -349,6 +364,9 @@
 /* macOS menu item */
 "Help" = "Help";
 
+/* No comment provided by engineer. */
+"Help others connect to Tor" = "Help others connect to Tor";
+
 /* macOS menu item */
 "Hide %@" = "Hide %@";
 
@@ -387,6 +405,12 @@
 
 /* No comment provided by engineer. */
 "Key" = "Key";
+
+/* No comment provided by engineer. */
+"Kindness Mode" = "Kindness Mode";
+
+/* No comment provided by engineer. */
+"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.";
@@ -578,6 +602,9 @@
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
 
 /* No comment provided by engineer. */
+"Today is better because of you." = "Today is better because of you.";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
@@ -621,6 +648,9 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"Weekly Total" = "Weekly Total";
 
 /* No comment provided by engineer. */
 "Welcome!" = "Welcome!";

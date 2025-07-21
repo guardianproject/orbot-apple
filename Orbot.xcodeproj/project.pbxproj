@@ -177,6 +177,10 @@
 		A0EF11A028045F7D00A03017 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
 		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
+		A0F4E9CC2E27E8A50074BB28 /* KindnessModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */; };
+		A0F4E9D02E2808360074BB28 /* Dimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9CF2E2808360074BB28 /* Dimmer.swift */; };
+		A0F4E9D22E2808650074BB28 /* UIScreen+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9D12E2808650074BB28 /* UIScreen+Helpers.swift */; };
+		A0F4E9D42E2808A80074BB28 /* UIApplication+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9D32E2808A80074BB28 /* UIApplication+Helpers.swift */; };
 		A0FD91A126F35E5A002C317C /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
 		A0FF331528B3ADC50079A267 /* template.conf in Resources */ = {isa = PBXBuildFile; fileRef = A023D82A271983C000A634B7 /* template.conf */; };
 		A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
@@ -469,6 +473,10 @@
 		A0EF119828043A9200A03017 /* BaseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFormViewController.swift; sourceTree = "<group>"; };
 		A0EF119B280441C400A03017 /* BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockList.swift; sourceTree = "<group>"; };
 		A0F3FFB4282EA264003096EC /* template-onion-only.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-onion-only.conf"; sourceTree = "<group>"; };
+		A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeViewController.swift; sourceTree = "<group>"; };
+		A0F4E9CF2E2808360074BB28 /* Dimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimmer.swift; sourceTree = "<group>"; };
+		A0F4E9D12E2808650074BB28 /* UIScreen+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Helpers.swift"; sourceTree = "<group>"; };
+		A0F4E9D32E2808A80074BB28 /* UIApplication+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Helpers.swift"; sourceTree = "<group>"; };
 		A0F8690027D629B000C9D407 /* leaf */ = {isa = PBXFileReference; lastKnownFileType = folder; path = leaf; sourceTree = "<group>"; };
 		A0F8690727D635D700C9D407 /* build-leaf.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-leaf.sh"; sourceTree = "<group>"; };
 		A0F8690827D6372C00C9D407 /* leaf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = leaf.h; sourceTree = "<group>"; };
@@ -570,8 +578,11 @@
 		A01AB60F28A54531008A79EE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0F4E9CF2E2808360074BB28 /* Dimmer.swift */,
 				A05DCD03297191760017B36A /* RoundedButtonRow.swift */,
+				A0F4E9D32E2808A80074BB28 /* UIApplication+Helpers.swift */,
 				A0A73607247587D300073C81 /* UIButton+Helpers.swift */,
+				A0F4E9D12E2808650074BB28 /* UIScreen+Helpers.swift */,
 				A06470172477F7E900311CBE /* UITextView+Helpers.swift */,
 				A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */,
 			);
@@ -661,6 +672,7 @@
 				A0B167DB284F90560089EB7C /* ApiAccessCell.xib */,
 				A0B167DC284F90560089EB7C /* ApiAccessCell.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
+				A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A01AB60F28A54531008A79EE /* Helpers */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
@@ -1207,9 +1219,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1224,9 +1240,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1263,9 +1283,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1406,9 +1430,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1423,9 +1451,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1440,9 +1472,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1551,7 +1587,9 @@
 				A01AB61428A5463C008A79EE /* Formatters.swift in Sources */,
 				A0A2D8A028B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */,
 				A06C96F6273C36AE0019ABE5 /* Settings.swift in Sources */,
+				A0F4E9D02E2808360074BB28 /* Dimmer.swift in Sources */,
 				A0EF119C280441C400A03017 /* BlockList.swift in Sources */,
+				A0F4E9D22E2808650074BB28 /* UIScreen+Helpers.swift in Sources */,
 				A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */,
 				A0A735EA24756CA200073C81 /* CloseCircuitsMessage.swift in Sources */,
 				A0274FED28E70B6300E767E9 /* SharedUtils.swift in Sources */,
@@ -1564,6 +1602,7 @@
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
+				A0F4E9D42E2808A80074BB28 /* UIApplication+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A08CA43B29ACE76400B01C1F /* Color.swift in Sources */,
@@ -1592,6 +1631,7 @@
 				A0CC772329A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift in Sources */,
 				A0C1D8AC292F8D2B00EB9DBB /* ExitNodeCountries.swift in Sources */,
 				A0C1D8AA292F840E00EB9DBB /* ChangeExitViewController.swift in Sources */,
+				A0F4E9CC2E27E8A50074BB28 /* KindnessModeViewController.swift in Sources */,
 				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,

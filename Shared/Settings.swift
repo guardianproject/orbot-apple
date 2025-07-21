@@ -175,13 +175,31 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
-	class var snowflakesHelped: Int {
+	class var snowflakesHelpedTotal: Int {
+		defaults?.integer(forKey: "snowflakes_helped") ?? 0
+	}
+
+	private class var snowflakesHelpedWeek: Int {
 		get {
-			defaults?.integer(forKey: "snowflakes_helped") ?? 0
+			defaults?.integer(forKey: "snowflakes_helped_week") ?? Calendar.current.component(.weekOfYear, from: .now)
 		}
 		set {
-			defaults?.set(newValue, forKey: "snowflakes_helped")
+			defaults?.set(newValue, forKey: "snowflakes_helped_week")
 		}
+	}
+
+	class var snowflakesHelpedWeekly: Int {
+		if snowflakesHelpedWeek < Calendar.current.component(.weekOfYear, from: .now) {
+			snowflakesHelpedWeek = Calendar.current.component(.weekOfYear, from: .now)
+			defaults?.set(0, forKey: "snowflakes_helped_weekly")
+		}
+
+		return defaults?.integer(forKey: "snowflakes_helped_weekly") ?? 0
+	}
+
+	class func addOneSnowflakeHelped() {
+		defaults?.set(snowflakesHelpedTotal + 1, forKey: "snowflakes_helped")
+		defaults?.set(snowflakesHelpedWeekly + 1, forKey: "snowflakes_helped_weekly")
 	}
 
 	class var smartConnect: Bool {

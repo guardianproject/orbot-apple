@@ -47,16 +47,12 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var smartConnectSw: UISwitch! {
 		didSet {
-			smartConnectSw.isHidden = true
-			smartConnectSw.heightAnchor.constraint(equalToConstant: 0).isActive = true
 			Settings.smartConnect = false
 		}
 	}
 	@IBOutlet weak var smartConnectLb: UILabel! {
 		didSet {
 			smartConnectLb.text = L10n.runSmartConnectToFindTheBestWay
-			smartConnectLb.isHidden = true
-			smartConnectLb.heightAnchor.constraint(equalToConstant: 0).isActive = true
 		}
 	}
 
@@ -64,13 +60,18 @@ class MainViewController: UIViewController {
 		didSet {
 			configureBt.setTitle(L10n.chooseHowToConnect)
 			configureBt.accessibilityIdentifier = "bridge_configuration"
-			configureBt.heightAnchor.constraint(equalToConstant: 0).isActive = true
 		}
 	}
 
 	@IBOutlet weak var clearCacheBt: UIButton! {
 		didSet {
 			clearCacheBt.setTitle(NSLocalizedString("Clear Tor Cache", comment: ""))
+		}
+	}
+
+	@IBOutlet weak var kindnessModeBt: UIButton! {
+		didSet {
+			kindnessModeBt.setTitle(NSLocalizedString("Kindness Mode", comment: ""))
 		}
 	}
 
@@ -108,6 +109,8 @@ class MainViewController: UIViewController {
 	private var obInstalled: Bool {
 		UIApplication.shared.canOpenURL(URL.obCheckTor)
 	}
+
+	private var heightsCache = [UIView: CGFloat]()
 
 
 	override func viewDidLoad() {
@@ -246,6 +249,13 @@ class MainViewController: UIViewController {
 		}
 	}
 
+	@IBAction func kindnessMode(_ sender: UIButton? = nil) {
+		SharedUtils.control(onlyTo: .disconnected)
+
+		let vc = UIStoryboard.main.instantiateViewController(KindnessModeViewController.self)
+		navigationController?.setViewControllers([vc], animated: true)
+	}
+
 	@IBAction func changeLog() {
 		switch logSc.selectedSegmentIndex {
 		case 1:
@@ -321,15 +331,15 @@ class MainViewController: UIViewController {
 		controlBt.setAttributedTitle(buttonTitle)
 
 		smartConnectSw.isOn = Settings.smartConnect
-		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected
-		smartConnectSw.superview?.isHidden = !showConfButton
+		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected || VpnManager.shared.status == .disabled
+		reallyHide(smartConnectSw.superview, true) //!showConfButton)
+
+		reallyHide(configureBt, true) //!showConfButton)
 
 		clearCacheBt.isEnabled = VpnManager.shared.status == .disconnected
-		clearCacheBt.isHidden = !showConfButton || Settings.alwaysClearCache
+		reallyHide(clearCacheBt, !showConfButton || Settings.alwaysClearCache)
 
 		logSc.setEnabled(Settings.transport != .none, forSegmentAt: 1)
-
-		configureBt.isHidden = true //!showConfButton
 	}
 
 
@@ -449,5 +459,39 @@ class MainViewController: UIViewController {
 			}) { [weak self] _ in
 				self?.animateOrbie(up: !up)
 			}
+	}
+
+	private func reallyHide(_ view: UIView?, _ hide: Bool = true) {
+		guard let view = view, view.isHidden != hide else {
+			return
+		}
+
+		if hide {
+			for c in view.constraints {
+				if c.firstAttribute == .height {
+					if c.constant > 0 && heightsCache[view] == nil {
+						heightsCache[view] = c.constant
+					}
+
+					c.isActive = false
+				}
+			}
+
+			view.heightAnchor.constraint(equalToConstant: 0).isActive = true
+		}
+		else {
+			for c in view.constraints {
+				if c.firstAttribute == .height {
+					c.isActive = false
+				}
+			}
+
+			if let height = heightsCache[view] {
+				view.heightAnchor.constraint(equalToConstant: height).isActive = true
+				heightsCache[view] = nil
+			}
+		}
+
+		view.isHidden = hide
 	}
 }
