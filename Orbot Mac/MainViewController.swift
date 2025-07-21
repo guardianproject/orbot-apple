@@ -65,6 +65,9 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 		for item in view.window?.toolbar?.items ?? [] {
 			switch item.itemIdentifier.rawValue {
+			case "kindness-mode":
+				item.label = L10n.kindnessMode
+
 			case "log":
 				item.label = L10n.log
 

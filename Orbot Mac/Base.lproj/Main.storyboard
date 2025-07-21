@@ -1357,7 +1357,7 @@ Gw
                         <rect key="screenRect" x="0.0" y="0.0" width="3840" height="2135"/>
                         <toolbar key="toolbar" implicitIdentifier="0CAFD6D0-C3D0-44A3-BF50-FCBD2E19A344" autosavesConfiguration="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="bcc-Vt-E5X">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="F6BE8AC4-5F21-45F4-9C61-371A52BE2EB2" label="Kindness Mode" paletteLabel="Kindness Mode" tag="-1" image="heart.fill" catalog="system" bordered="YES" id="yBd-m1-Or2">
+                                <toolbarItem implicitItemIdentifier="F6BE8AC4-5F21-45F4-9C61-371A52BE2EB2" explicitItemIdentifier="kindness-mode" label="Kindness Mode" paletteLabel="Kindness Mode" tag="-1" image="heart.fill" catalog="system" bordered="YES" id="yBd-m1-Or2">
                                     <size key="minSize" width="28" height="25"/>
                                     <size key="maxSize" width="28" height="25"/>
                                     <connections>
