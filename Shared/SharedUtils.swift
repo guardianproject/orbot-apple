@@ -245,6 +245,16 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		}
 	}
 
+	static func createSnowflakeProxy() -> IPtProxySnowflakeProxy {
+		let proxy = IPtProxySnowflakeProxy()
+		proxy.capacity = 1
+		proxy.pollInterval = 120
+		proxy.stunServer = BuiltInBridges.shared?.snowflake?.first?.ice?.components(separatedBy: ",")
+			.filter({ !$0.isEmpty }).randomElement() ?? ""
+
+		return proxy
+	}
+
 #if DEBUG
 	static func addScreenshotDummies() {
 		guard Config.screenshotMode, let authDir = FileManager.default.torAuthDir else {

@@ -53,6 +53,12 @@
 "%@ It can be turned off anytime." = "%@ It can be turned off anytime.";
 
 /* Placeholder is bullet */
+"%@ It will not drain your battery." = "%@ It will not drain your battery.";
+
+/* Placeholder is bullet */
+"%@ It will not slow down your internet." = "%@ It will not slow down your internet.";
+
+/* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)";
 
 /* Placeholder is app name */
@@ -602,7 +608,7 @@
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
 
 /* No comment provided by engineer. */
-"Today is better because of you." = "Today is better because of you.";
+"Today is better because of you" = "Today is better because of you";
 
 /* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";

@@ -112,6 +112,7 @@
 		A08CA43D29ACE76400B01C1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CA43A29ACE76400B01C1F /* Color.swift */; };
 		A08CA43E29ACE76400B01C1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CA43A29ACE76400B01C1F /* Color.swift */; };
 		A08CA43F29ACEEDC00B01C1F /* NSMutableAttributedString+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC772229A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift */; };
+		A0922B932E2E498D003D2280 /* KindnessModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
 		A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */; };
 		A0A2D8A028B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */; };
@@ -403,6 +404,7 @@
 		A08CA2CC27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A08CA2CD27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A08CA43A29ACE76400B01C1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeViewController.swift; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthViewController.swift; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */,
 				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
 				A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */,
+				A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -1512,6 +1515,7 @@
 				A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
 				A08CA43F29ACEEDC00B01C1F /* NSMutableAttributedString+Helpers.swift in Sources */,
+				A0922B932E2E498D003D2280 /* KindnessModeViewController.swift in Sources */,
 				A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
 				A01AB60928A542FF008A79EE /* Config.m in Sources */,

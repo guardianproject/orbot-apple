@@ -53,6 +53,12 @@
 "%@ It can be turned off anytime." = "%@ Kann jederzeit abgeschaltet werden.";
 
 /* Placeholder is bullet */
+"%@ It will not drain your battery." = "%@ Wird Deine Batterie nicht wesentlich entladen.";
+
+/* Placeholder is bullet */
+"%@ It will not slow down your internet." = "%@ Wird Dein Internet nicht verlangsamen.";
+
+/* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Bildschirm wird gedimmt. (Gerät auf Bildschirmseite legen, um den Bildschirm abzuschalten wie bei einem Telefonanruf.)";
 
 /* Placeholder is app name */
@@ -602,7 +608,7 @@
 "To make it work, you will need to activate the blocker:" = "Damit das funktioniert, mußt Du den Blocker aktivieren:";
 
 /* No comment provided by engineer. */
-"Today is better because of you." = "Heute wird besser wegen Dir.";
+"Today is better because of you" = "Heute wird besser wegen Dir";
 
 /* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Konfigurationsreferenz";

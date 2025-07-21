@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var kindnessModeBt: UIButton! {
 		didSet {
-			kindnessModeBt.setTitle(NSLocalizedString("Kindness Mode", comment: ""))
+			kindnessModeBt.setTitle(L10n.kindnessMode)
 		}
 	}
 
@@ -347,14 +347,6 @@ class MainViewController: UIViewController {
 
 	func updateMenu() {
 		var elements = [UIMenuElement]()
-
-//		elements.append(UIAction(
-//			title: LocalizedString("Kindness Mode", comment: ""),
-//			image: UIImage(systemName: "heart.fill"),
-//			handler: { _ in
-//				// TODO
-//			}))
-//		elements.last?.accessibilityIdentifier = "kindness_mode"
 
 		elements.append(UIAction(
 			title: L10n.authCookies,

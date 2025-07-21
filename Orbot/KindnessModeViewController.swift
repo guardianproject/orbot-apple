@@ -18,15 +18,13 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
-			titleLb.text = NSLocalizedString("Help others connect to Tor", comment: "")
+			titleLb.text = L10n.helpOthers
 		}
 	}
 
 	@IBOutlet weak var descriptionLb: UILabel! {
 		didSet {
-			descriptionLb.text = NSLocalizedString(
-				"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.",
-				comment: "")
+			descriptionLb.text = L10n.kindnessModeDescription
 		}
 	}
 
@@ -56,9 +54,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var item4Lb: UILabel! {
 		didSet {
-			item4Lb.text = String(format: NSLocalizedString(
-				"%@ It can be turned off anytime.",
-				comment: "Placeholder is bullet"), "•")
+			item4Lb.text = L10n.kindnessModeItem4
 		}
 	}
 
@@ -72,13 +68,13 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var titleStartedLb: UILabel! {
 		didSet {
-			titleStartedLb.text = NSLocalizedString("Today is better because of you.", comment: "")
+			titleStartedLb.text = L10n.todayIsBetter
 		}
 	}
 
 	@IBOutlet weak var toggleLb: UILabel! {
 		didSet {
-			toggleLb.text = NSLocalizedString("Kindness Mode", comment: "")
+			toggleLb.text = L10n.kindnessMode
 		}
 	}
 
@@ -86,7 +82,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var weeklyLb: UILabel! {
 		didSet {
-			weeklyLb.text = NSLocalizedString("Weekly Total", comment: "")
+			weeklyLb.text = L10n.weeklyTotal
 		}
 	}
 
@@ -94,7 +90,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var totalLb: UILabel! {
 		didSet {
-			totalLb.text = NSLocalizedString("All Time Total", comment: "")
+			totalLb.text = L10n.allTimeTotal
 		}
 	}
 
@@ -104,11 +100,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	// MARK: Private Properties
 
 	private lazy var proxy: IPtProxySnowflakeProxy = {
-		let proxy = IPtProxySnowflakeProxy()
-		proxy.capacity = 1
-		proxy.pollInterval = 120
-		proxy.stunServer = BuiltInBridges.shared?.snowflake?.first?.ice?.components(separatedBy: ",")
-			.filter({ !$0.isEmpty }).randomElement() ?? ""
+		let proxy = SharedUtils.createSnowflakeProxy()
 		proxy.clientConnected = self
 
 		return proxy
@@ -118,7 +110,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Kindness Mode", comment: "")
+		navigationItem.title = L10n.kindnessMode
 
 		updateUi()
 	}

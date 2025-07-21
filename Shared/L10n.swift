@@ -203,6 +203,37 @@ class L10n {
 		NSLocalizedString("Smart Connect Timeout (s)", comment: "")
 	}
 
+	static var kindnessMode: String {
+		NSLocalizedString("Kindness Mode", comment: "")
+	}
+
+	static var helpOthers: String {
+		NSLocalizedString("Help others connect to Tor", comment: "")
+	}
+
+	static var kindnessModeDescription: String {
+		NSLocalizedString(
+			"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.",
+			comment: "")
+	}
+
+	static var kindnessModeItem4: String {
+		String(format: NSLocalizedString("%@ It can be turned off anytime.",
+										 comment: "Placeholder is bullet"), "•")
+	}
+
+	static var todayIsBetter: String {
+		NSLocalizedString("Today is better because of you", comment: "")
+	}
+
+	static var weeklyTotal: String {
+		NSLocalizedString("Weekly Total", comment: "")
+	}
+
+	static var allTimeTotal: String {
+		NSLocalizedString("All Time Total", comment: "")
+	}
+
 	static let menu: [String: () -> String] = [
 		"Orbot" : { Bundle.main.displayName },
 		"About Orbot": { String(format: NSLocalizedString("About %@",  comment: "macOS menu item"), Bundle.main.displayName) },
