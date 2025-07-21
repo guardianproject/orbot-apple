@@ -181,7 +181,7 @@ class Settings: IPtProxyUI.Settings {
 
 	private class var snowflakesHelpedWeek: Int {
 		get {
-			defaults?.integer(forKey: "snowflakes_helped_week") ?? Calendar.current.component(.weekOfYear, from: .now)
+			defaults?.integer(forKey: "snowflakes_helped_week") ?? Calendar.current.component(.weekOfYear, from: Date())
 		}
 		set {
 			defaults?.set(newValue, forKey: "snowflakes_helped_week")
@@ -189,8 +189,8 @@ class Settings: IPtProxyUI.Settings {
 	}
 
 	class var snowflakesHelpedWeekly: Int {
-		if snowflakesHelpedWeek < Calendar.current.component(.weekOfYear, from: .now) {
-			snowflakesHelpedWeek = Calendar.current.component(.weekOfYear, from: .now)
+		if snowflakesHelpedWeek < Calendar.current.component(.weekOfYear, from: Date()) {
+			snowflakesHelpedWeek = Calendar.current.component(.weekOfYear, from: Date())
 			defaults?.set(0, forKey: "snowflakes_helped_weekly")
 		}
 
