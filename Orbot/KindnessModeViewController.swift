@@ -38,23 +38,23 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var item2Lb: UILabel! {
 		didSet {
-			item2Lb.text = String(format: NSLocalizedString(
-				"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)",
-				comment: "Placeholder is bullet"), "•")
+			item2Lb.text = L10n.vpnWillBeSwitchedOff
 		}
 	}
 
 	@IBOutlet weak var item3Lb: UILabel! {
 		didSet {
 			item3Lb.text = String(format: NSLocalizedString(
-				"%@ Connect to power while letting it run.",
+				"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)",
 				comment: "Placeholder is bullet"), "•")
 		}
 	}
 
 	@IBOutlet weak var item4Lb: UILabel! {
 		didSet {
-			item4Lb.text = L10n.kindnessModeItem4
+			item4Lb.text = String(format: NSLocalizedString(
+				"%@ Connect to power while letting it run.",
+				comment: "Placeholder is bullet"), "•")
 		}
 	}
 
@@ -126,6 +126,9 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	}
 
 	@IBAction func activate() {
+		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
+		SharedUtils.control(onlyTo: .disconnected)
+
 		UIApplication.shared.isIdleTimerDisabled = true
 		Dimmer.shared.start()
 

@@ -29,9 +29,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var item1Lb: NSTextField! {
 		didSet {
-			item1Lb.stringValue = String(format: NSLocalizedString(
-				"%@ It will not drain your battery.",
-				comment: "Placeholder is bullet"), "•")
+			item1Lb.stringValue = L10n.vpnWillBeSwitchedOff
 
 		}
 	}
@@ -39,14 +37,24 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 	@IBOutlet weak var item2Lb: NSTextField! {
 		didSet {
 			item2Lb.stringValue = String(format: NSLocalizedString(
-				"%@ It will not slow down your internet.",
+				"%@ It will not drain your battery.",
 				comment: "Placeholder is bullet"), "•")
 		}
 	}
 
 	@IBOutlet weak var item3Lb: NSTextField! {
 		didSet {
-			item3Lb.stringValue = L10n.kindnessModeItem4
+			item3Lb.stringValue = String(format: NSLocalizedString(
+				"%@ It will not slow down your internet.",
+				comment: "Placeholder is bullet"), "•")
+		}
+	}
+
+	@IBOutlet weak var item4Lb: NSTextField! {
+		didSet {
+			item4Lb.stringValue = String(
+				format: NSLocalizedString("%@ It can be turned off anytime.",
+										  comment: "Placeholder is bullet"), "•")
 		}
 	}
 
@@ -117,6 +125,9 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 	// MARK: Actions
 
 	@IBAction func activate(_ sender: NSButton) {
+		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
+		SharedUtils.control(onlyTo: .disconnected)
+
 		proxy.start()
 
 		startedContainer.isHidden = false

@@ -217,9 +217,11 @@ class L10n {
 			comment: "")
 	}
 
-	static var kindnessModeItem4: String {
-		String(format: NSLocalizedString("%@ It can be turned off anytime.",
-										 comment: "Placeholder is bullet"), "•")
+	static var vpnWillBeSwitchedOff: String {
+		String(format: NSLocalizedString(
+			"%1$@ %2$@ VPN will be switched off.",
+			comment: "1. Placeholder is bullet, 2. placeholder is 'Orbot'"),
+			   "•", Bundle.main.displayName)
 	}
 
 	static var todayIsBetter: String {

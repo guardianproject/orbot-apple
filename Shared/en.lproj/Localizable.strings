@@ -1,6 +1,9 @@
 /* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = " where the URL contains the regex \"%@\"";
 
+/* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
+"%1$@ %2$@ VPN will be switched off." = "%1$@ %2$@ VPN will be switched off.";
+
 /* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"";
 

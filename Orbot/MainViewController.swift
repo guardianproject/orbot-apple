@@ -250,8 +250,6 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func kindnessMode(_ sender: UIButton? = nil) {
-		SharedUtils.control(onlyTo: .disconnected)
-
 		let vc = UIStoryboard.main.instantiateViewController(KindnessModeViewController.self)
 		navigationController?.setViewControllers([vc], animated: true)
 	}

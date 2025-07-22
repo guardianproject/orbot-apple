@@ -446,7 +446,7 @@
                                     </textField>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-xS-CMl">
                                         <rect key="frame" x="-2" y="108" width="464" height="16"/>
-                                        <textFieldCell key="cell" alignment="center" title="%@ It will not drain your battery." id="fbh-ir-QVC">
+                                        <textFieldCell key="cell" alignment="center" title="%1$@ %2$@ VPN will be switched off." id="fbh-ir-QVC">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -454,7 +454,7 @@
                                     </textField>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="X94-mJ-yhW">
                                         <rect key="frame" x="-2" y="84" width="464" height="16"/>
-                                        <textFieldCell key="cell" alignment="center" title="%@ It will not slow down your internet." id="8tB-2B-lYo">
+                                        <textFieldCell key="cell" alignment="center" title="%@ It will not drain your battery." id="8tB-2B-lYo">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -462,14 +462,22 @@
                                     </textField>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-wS-uyW">
                                         <rect key="frame" x="-2" y="60" width="464" height="16"/>
-                                        <textFieldCell key="cell" alignment="center" title="%@ It can be turned off anytime." id="cX2-a6-lPM">
+                                        <textFieldCell key="cell" alignment="center" title="%@ It will not slow down your internet." id="cX2-a6-lPM">
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-2C-lUL">
+                                        <rect key="frame" x="-2" y="36" width="464" height="16"/>
+                                        <textFieldCell key="cell" alignment="center" title="%@ It can be turned off anytime." id="ekz-Ts-rlb">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5NK-pD-H6F">
-                                        <rect key="frame" x="188" y="17" width="84" height="32"/>
+                                        <rect key="frame" x="188" y="-7" width="84" height="32"/>
                                         <buttonCell key="cell" type="push" title="Activate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KE9-0j-tMg">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -483,7 +491,7 @@
                                     <constraint firstItem="X94-mJ-yhW" firstAttribute="top" secondItem="0Ur-xS-CMl" secondAttribute="bottom" constant="8" symbolic="YES" id="2jT-Y6-dD0"/>
                                     <constraint firstAttribute="trailing" secondItem="0Ur-xS-CMl" secondAttribute="trailing" id="3Q1-Cg-qb4"/>
                                     <constraint firstItem="FHB-AQ-wOF" firstAttribute="leading" secondItem="eRZ-PV-Z1P" secondAttribute="leading" id="5PK-vQ-xa4"/>
-                                    <constraint firstItem="5NK-pD-H6F" firstAttribute="top" secondItem="NVX-wS-uyW" secondAttribute="bottom" constant="16" id="7sn-Me-m8p"/>
+                                    <constraint firstAttribute="trailing" secondItem="dC5-2C-lUL" secondAttribute="trailing" id="73D-xS-voj"/>
                                     <constraint firstItem="NVX-wS-uyW" firstAttribute="top" secondItem="X94-mJ-yhW" secondAttribute="bottom" constant="8" symbolic="YES" id="AtY-gP-Bic"/>
                                     <constraint firstItem="X94-mJ-yhW" firstAttribute="leading" secondItem="eRZ-PV-Z1P" secondAttribute="leading" id="BAY-oI-Agc"/>
                                     <constraint firstItem="0Ur-xS-CMl" firstAttribute="leading" secondItem="eRZ-PV-Z1P" secondAttribute="leading" id="BO0-3E-L4v"/>
@@ -496,8 +504,11 @@
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5NK-pD-H6F" secondAttribute="bottom" id="P7N-w3-9qk"/>
                                     <constraint firstItem="fsk-Bf-68t" firstAttribute="centerX" secondItem="eRZ-PV-Z1P" secondAttribute="centerX" id="TEF-4H-DrN"/>
                                     <constraint firstAttribute="trailing" secondItem="NVX-wS-uyW" secondAttribute="trailing" id="Wc8-SM-Svp"/>
+                                    <constraint firstItem="dC5-2C-lUL" firstAttribute="top" secondItem="NVX-wS-uyW" secondAttribute="bottom" constant="8" symbolic="YES" id="X8j-L1-NHW"/>
                                     <constraint firstAttribute="trailing" secondItem="FHB-AQ-wOF" secondAttribute="trailing" id="Ziy-FY-FkQ"/>
+                                    <constraint firstItem="5NK-pD-H6F" firstAttribute="top" secondItem="dC5-2C-lUL" secondAttribute="bottom" constant="16" id="anV-0f-R5n"/>
                                     <constraint firstItem="0Ur-xS-CMl" firstAttribute="top" secondItem="bYz-9f-cwe" secondAttribute="bottom" constant="16" id="gUJ-EC-bbh"/>
+                                    <constraint firstItem="dC5-2C-lUL" firstAttribute="leading" secondItem="eRZ-PV-Z1P" secondAttribute="leading" id="gXH-yv-zqy"/>
                                     <constraint firstItem="FHB-AQ-wOF" firstAttribute="top" secondItem="fsk-Bf-68t" secondAttribute="bottom" constant="8" symbolic="YES" id="gxM-Ka-ZJW"/>
                                     <constraint firstItem="NVX-wS-uyW" firstAttribute="leading" secondItem="eRZ-PV-Z1P" secondAttribute="leading" id="kqk-zX-5Dz"/>
                                 </constraints>
@@ -655,6 +666,7 @@
                         <outlet property="item1Lb" destination="0Ur-xS-CMl" id="QBa-gC-chV"/>
                         <outlet property="item2Lb" destination="X94-mJ-yhW" id="mnh-og-qGZ"/>
                         <outlet property="item3Lb" destination="NVX-wS-uyW" id="eqv-fd-7jI"/>
+                        <outlet property="item4Lb" destination="dC5-2C-lUL" id="6rV-c9-qRK"/>
                         <outlet property="startedContainer" destination="F1b-Me-TOz" id="6Ig-HH-WgB"/>
                         <outlet property="stoppedContainer" destination="eRZ-PV-Z1P" id="yb9-6A-F8l"/>
                         <outlet property="titleLb" destination="FHB-AQ-wOF" id="0cw-SL-8RB"/>
@@ -1361,7 +1373,7 @@ Gw
                                     <size key="minSize" width="28" height="25"/>
                                     <size key="maxSize" width="28" height="25"/>
                                     <connections>
-                                        <segue destination="xrC-tj-dI1" kind="show" id="F34-LI-4el"/>
+                                        <segue destination="xrC-tj-dI1" kind="modal" id="F34-LI-4el"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="3C6D5448-5556-4105-A89C-9FCAF0ECB002" explicitItemIdentifier="log" label="Log" paletteLabel="Log" tag="-1" image="chart.bar.doc.horizontal" catalog="system" bordered="YES" sizingBehavior="auto" id="Oco-oC-wai">
@@ -1634,16 +1646,16 @@ Gw
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
         <image name="gear.circle" width="11" height="11"/>
-        <image name="heart.fill" catalog="system" width="16" height="14"/>
-        <image name="key" catalog="system" width="12" height="18"/>
+        <image name="heart.fill" catalog="system" width="17" height="14"/>
+        <image name="key" catalog="system" width="13" height="18"/>
         <image name="network.badge.shield.half.filled" width="12" height="11"/>
         <image name="orbie.charging" width="256" height="256"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="orbie.snoozing" width="432" height="432"/>
-        <image name="plus" catalog="system" width="14" height="13"/>
+        <image name="plus" catalog="system" width="15" height="13"/>
         <namedColor name="AccentColor">
             <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
