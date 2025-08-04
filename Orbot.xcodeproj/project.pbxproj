@@ -360,6 +360,8 @@
 		A03394CA2A45BEC200012811 /* OrbotWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbotWidget.swift; sourceTree = "<group>"; };
 		A03394CE2A45BEC200012811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03394E02A45C71400012811 /* StatusWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StatusWidget.entitlements; sourceTree = "<group>"; };
+		A033CD462E40F5C30075E20A /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A033CD472E40F5C40075E20A /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0367015292E65C70012C84A /* compile-country-list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "compile-country-list.swift"; sourceTree = "<group>"; };
 		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -1120,6 +1122,7 @@
 				"es-CU",
 				hr,
 				"pt-BR",
+				fa,
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			preferredProjectObjectVersion = 77;
@@ -1757,6 +1760,7 @@
 				A0D902182A98B2EF0032BDD2 /* es-CU */,
 				A02680A92AE1249700B71DFB /* hr */,
 				A0B11E652BB33B55003061E1 /* pt-BR */,
+				A033CD472E40F5C40075E20A /* fa */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1781,6 +1785,7 @@
 				A0D8FBAC2A7135BD001791B2 /* ar */,
 				A0D902172A98B2EF0032BDD2 /* es-CU */,
 				A0B11E642BB33B55003061E1 /* pt-BR */,
+				A033CD462E40F5C30075E20A /* fa */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
