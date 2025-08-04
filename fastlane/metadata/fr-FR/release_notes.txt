@@ -1,1 +1,2 @@
-- Mise à jour de Tor vers la dernière version 0.4.8.17.
+- Ajout du mode « Kindness » (gentillesse). (Fournit un proxy Snowflake pour aider les autres.)
+- Ajout de la traduction en farsi.

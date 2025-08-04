@@ -1,1 +1,2 @@
-- Tor wurde auf die neueste Version 0.4.8.17 aktualisiert.
+- Freundlichkeitsmodus hinzugefügt. (Bietet einen Snowflake-Proxy, um anderen zu helfen.)
+- Farsi-Übersetzung hinzugefügt.

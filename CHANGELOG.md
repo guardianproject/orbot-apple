@@ -1,5 +1,10 @@
 #  Orbot Apple Changelog
 
+## 1.8.0
+
+- Added Kindness Mode. (Provides a Snowflake Proxy to help others.)
+- Added Farsi translation.
+
 ## 1.7.7
 - Updated Tor to latest version 0.4.8.17.
 
