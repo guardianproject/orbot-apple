@@ -1,4 +1,4 @@
-Orbot is the original free and open-source Tor-powered VPN for iOS and macOS. Orbot helps you access the internet with more safety and privacy, and no extra cost to you.
+Orbot est le RPV/VPN gratuit et libre original propulsé par Tor pour iOS. Orbot vous aide à accéder à Internet avec plus de sécurité et de confidentialité, sans coût supplémentaire.
 
 FONCTIONS :
 – Parcourir Internet avec Tor.
@@ -6,7 +6,7 @@ FONCTIONS :
 – Accéder à des sites .onion qui ne sont accessibles que par Tor.
 
 AVERTISSEMENTS :
-– Parcourir le Web est beaucoup plus lent qu’avec un RPV normal, car votre trafic est chiffré et relayé par le réseau Tor.
+– Parcourir le Web est beaucoup plus lent qu’avec un RPV/VPN normal, car votre trafic est chiffré et relayé par le réseau Tor.
 
 – Orbot pourrait ne pas fonctionner sur des réseaux aux restrictions évoluées. Si l’appli ne se connecte pas, essayez d’utiliser des ponts (ou un type de pont différent).
 
