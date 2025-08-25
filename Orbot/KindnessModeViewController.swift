@@ -132,7 +132,13 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 		UIApplication.shared.isIdleTimerDisabled = true
 		Dimmer.shared.start()
 
-		proxy.start()
+		Task {
+			let mapped = await SharedUtils.getMappedPorts()
+			proxy.ephemeralMinPort = mapped.min
+			proxy.ephemeralMaxPort = mapped.max
+
+			proxy.start()
+		}
 
 		startedContainer.layer.opacity = 0
 		startedContainer.isHidden = false
@@ -187,6 +193,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	private func stopProxy() {
 		proxy.stop()
+
+		SharedUtils.releaseMappedPorts()
 
 		Dimmer.shared.stop()
 		UIApplication.shared.isIdleTimerDisabled = false

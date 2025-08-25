@@ -11,6 +11,8 @@ import IPtProxy
 import IPtProxyUI
 import NetworkExtension
 import Tor
+import SwiftPortmap
+
 
 class SharedUtils: NSObject, BridgesConfDelegate {
 
@@ -26,6 +28,8 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 
 		return style
 	}()
+
+	private static var internalPorts = [SwiftPortmap.Port.UDP]()
 
 
 	public static var torConfUrl: URL {
@@ -253,6 +257,33 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 			.filter({ !$0.isEmpty }).randomElement() ?? ""
 
 		return proxy
+	}
+
+	static func getMappedPorts() async -> (min: Int, max: Int) {
+		releaseMappedPorts()
+		var mapped = [UInt16]()
+
+		let start = UInt16.random(in: 49152...65535 - 2) // Dynamic port range
+
+		do {
+			for i in start ... start + 2 {
+				let port = Port.UDP(internalPort: i)
+
+				mapped.append(try await port.externalPort)
+				internalPorts.append(port)
+			}
+		}
+		catch {
+			releaseMappedPorts()
+
+			return (min: 0, max: 0)
+		}
+
+		return (min: Int(mapped.min() ?? 0), max: Int(mapped.max() ?? 0))
+	}
+
+	static func releaseMappedPorts() {
+		internalPorts.removeAll()
 	}
 
 #if DEBUG

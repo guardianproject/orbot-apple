@@ -85,6 +85,8 @@
 		A0463DBA2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */; };
 		A0463DBB2AA0F15600AC9925 /* OnionmasqPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */; };
 		A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04672E9296DC85400BD0F2F /* BridgesViewController.swift */; };
+		A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */ = {isa = PBXBuildFile; productRef = A04A997E2E5C544F006B03C3 /* SwiftPortmap */; };
+		A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */ = {isa = PBXBuildFile; productRef = A04A99802E5C5ED6006B03C3 /* SwiftPortmap */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -499,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F95C60BD6D792CDE343C4CF8 /* Pods_Orbot_Mac.framework in Frameworks */,
+				A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
+				A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */,
 				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1125,6 +1129,9 @@
 				fa,
 			);
 			mainGroup = A05B73A724755CE600930C40;
+			packageReferences = (
+				A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
 			projectDirPath = "";
@@ -2447,6 +2454,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/osy/SwiftPortmap";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A04A997E2E5C544F006B03C3 /* SwiftPortmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
+			productName = SwiftPortmap;
+		};
+		A04A99802E5C5ED6006B03C3 /* SwiftPortmap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
+			productName = SwiftPortmap;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A05B73A824755CE600930C40 /* Project object */;
 }

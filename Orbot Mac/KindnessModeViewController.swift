@@ -119,6 +119,8 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 		super.viewDidDisappear()
 
 		proxy.stop()
+
+		SharedUtils.releaseMappedPorts()
 	}
 
 
@@ -128,7 +130,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
 		SharedUtils.control(onlyTo: .disconnected)
 
-		proxy.start()
+		Task {
+			let mapped = await SharedUtils.getMappedPorts()
+			proxy.ephemeralMinPort = mapped.min
+			proxy.ephemeralMaxPort = mapped.max
+
+			proxy.start()
+		}
 
 		startedContainer.isHidden = false
 		stoppedContainer.isHidden = true
@@ -137,6 +145,8 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 
 	@IBAction func deactivate(_ sender: NSSwitch) {
 		proxy.stop()
+
+		SharedUtils.releaseMappedPorts()
 
 		stoppedContainer.isHidden = false
 		startedContainer.isHidden = true
