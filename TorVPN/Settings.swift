@@ -10,7 +10,7 @@ import Foundation
 
 public enum Transport: Int, CaseIterable, Comparable {
 
-	public static let order: [Transport] = [.none, .obfs4, .snowflake, .snowflakeAmp, .meekAzure, .custom, .onDemand]
+	public static let order: [Transport] = [.none, .obfs4, .snowflake, .snowflakeAmp, .meek, .custom, .onDemand]
 
 	public static var customBridges: [String]?
 
@@ -38,7 +38,7 @@ public enum Transport: Int, CaseIterable, Comparable {
 	case custom = 3
 	case snowflakeAmp = 4
 	case onDemand = 5
-	case meekAzure = 6
+	case meek = 6
 
 
 	public var description: String {
@@ -58,8 +58,8 @@ public enum Transport: Int, CaseIterable, Comparable {
 		case .onDemand:
 			return "On-demand bridges"
 
-		case .meekAzure:
-			return "Meek azure bridge"
+		case .meek:
+			return "Meek bridge"
 
 		default:
 			return ""
@@ -74,7 +74,7 @@ public enum Transport: Int, CaseIterable, Comparable {
 	 */
 	public var logFile: URL? {
 		switch self {
-		case .obfs4, .custom, .onDemand, .meekAzure:
+		case .obfs4, .custom, .onDemand, .meek:
 			return Settings.stateLocation.appendingPathComponent("obfs4proxy.log")
 
 		case .snowflake, .snowflakeAmp:

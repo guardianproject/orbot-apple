@@ -21,7 +21,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		case requestTelegram = "request_telegram"
 		case obfs4 = "transport_obfs4"
 		case requestMail = "request_mail"
-		case meekAzure = "transport_meek_azure"
+		case meek = "transport_meek_azure"
 		case custom = "transport_custom"
 
 		static func from(_ transport: Transport) -> Option {
@@ -35,8 +35,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .snowflakeAmp:
 				return .snowflakeAmp
 
-			case .meekAzure:
-				return .meekAzure
+			case .meek:
+				return .meek
 
 			case .custom:
 				return .custom
@@ -66,8 +66,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .requestMail:
 				return NSLocalizedString("Bridges from Tor (obfs4) via Email", comment: "")
 
-			case .meekAzure:
-				return NSLocalizedString("Meek Azure", comment: "")
+			case .meek:
+				return NSLocalizedString("Meek", comment: "")
 
 			case .custom:
 				return NSLocalizedString("Custom Bridges", comment: "")
@@ -106,7 +106,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 					"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.",
 					comment: "")
 
-			case .meekAzure:
+			case .meek:
 				return NSLocalizedString(
 					"Cloaks your traffic. Gets around some Tor blocking. May be very slow.",
 					comment: "")
@@ -132,8 +132,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			case .snowflakeAmp:
 				return Settings.transport == .snowflakeAmp
 
-			case .meekAzure:
-				return Settings.transport == .meekAzure
+			case .meek:
+				return Settings.transport == .meek
 
 			case .custom:
 				return Settings.transport == .custom
@@ -322,8 +322,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				case .snowflakeAmp:
 					self?.transport = .snowflakeAmp
 
-				case .meekAzure:
-					self?.transport = .meekAzure
+				case .meek:
+					self?.transport = .meek
 
 				default:
 					break

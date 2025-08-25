@@ -6,7 +6,7 @@ lang_map = es_CU: es-CU
 file_filter  = Shared/<lang>.lproj/Localizable.strings
 source_file  = Shared/en.lproj/Localizable.strings
 source_lang  = en
-type         = STRINGS
+type         = STRINGS_UTF8
 minimum_perc = 0
 trans.pt_BR  = Shared/pt-BR.lproj/Localizable.strings
 
@@ -14,7 +14,7 @@ trans.pt_BR  = Shared/pt-BR.lproj/Localizable.strings
 file_filter  = Orbot/<lang>.lproj/InfoPlist.strings
 source_file  = Orbot/en.lproj/InfoPlist.strings
 source_lang  = en
-type         = STRINGS
+type         = STRINGS_UTF8
 minimum_perc = 0
 trans.pt_BR  = Orbot/pt-BR.lproj/InfoPlist.strings
 
