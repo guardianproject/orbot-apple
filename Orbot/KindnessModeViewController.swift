@@ -142,7 +142,9 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 			proxy.ephemeralMinPort = mapped.min
 			proxy.ephemeralMaxPort = mapped.max
 
-			proxy.start()
+			DispatchQueue.global(qos: .utility).async { [weak self] in
+				self?.proxy.start()
+			}
 		}
 
 		startedContainer.layer.opacity = 0

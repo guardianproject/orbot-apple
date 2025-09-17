@@ -259,6 +259,7 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		return proxy
 	}
 
+	@concurrent
 	static func getMappedPorts() async -> (min: Int, max: Int) {
 		releaseMappedPorts()
 		var mapped = [UInt16]()
