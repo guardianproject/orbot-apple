@@ -82,6 +82,9 @@ class SettingsViewController: BaseFormViewController {
 		<<< TextAreaRow() {
 			$0.value = Settings.entryNodes
 		}
+		.cellUpdate({ cell, row in
+			cell.textView?.accessibilityLabel = L10n.entryNodes
+		})
 		.onChange({ row in
 			Settings.entryNodes = row.value
 		})
@@ -96,6 +99,9 @@ class SettingsViewController: BaseFormViewController {
 		<<< TextAreaRow() {
 			$0.value = Settings.exitNodes
 		}
+		.cellUpdate({ cell, row in
+			cell.textView?.accessibilityLabel = L10n.exitNodes
+		})
 		.onChange({ row in
 			Settings.exitNodes = row.value
 		})
@@ -112,6 +118,9 @@ class SettingsViewController: BaseFormViewController {
 		<<< TextAreaRow() {
 			$0.value = Settings.excludeNodes
 		}
+		.cellUpdate({ cell, row in
+			cell.textView?.accessibilityLabel = L10n.excludeNodes
+		})
 		.onChange({ row in
 			Settings.excludeNodes = row.value
 		})

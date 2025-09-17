@@ -75,10 +75,15 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	@IBOutlet weak var toggleLb: UILabel! {
 		didSet {
 			toggleLb.text = L10n.kindnessMode
+			toggleLb.isAccessibilityElement = false
 		}
 	}
 
-	@IBOutlet weak var toggleSw: UISwitch!
+	@IBOutlet weak var toggleSw: UISwitch! {
+		didSet {
+			toggleSw.accessibilityLabel = L10n.kindnessMode
+		}
+	}
 
 	@IBOutlet weak var weeklyLb: UILabel! {
 		didSet {
@@ -142,6 +147,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 		startedContainer.layer.opacity = 0
 		startedContainer.isHidden = false
+		startedContainer.accessibilityElementsHidden = false
 		toggleSw.isOn = true
 
 		UIView.animate(
@@ -152,6 +158,9 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 			},
 			completion: { [weak self] _ in
 				self?.stoppedContainer.isHidden = true
+				self?.stoppedContainer.accessibilityElementsHidden = true
+
+				UIAccessibility.post(notification: .screenChanged, argument: self?.titleStartedLb)
 			})
 	}
 
@@ -160,6 +169,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 		stoppedContainer.layer.opacity = 0
 		stoppedContainer.isHidden = false
+		stoppedContainer.accessibilityElementsHidden = false
 
 		UIView.animate(
 			withDuration: 0.3,
@@ -169,6 +179,9 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 			},
 			completion: { [weak self] _ in
 				self?.startedContainer.isHidden = true
+				self?.startedContainer.accessibilityElementsHidden = true
+
+				UIAccessibility.post(notification: .screenChanged, argument: self?.titleLb)
 			})
 	}
 

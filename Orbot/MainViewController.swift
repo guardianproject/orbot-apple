@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var logBt: UIBarButtonItem? {
 		didSet {
-			logBt?.accessibilityLabel = NSLocalizedString("Open or Close Log", comment: "")
+			logBt?.accessibilityLabel = NSLocalizedString("Open Log", comment: "")
 			logBt?.accessibilityIdentifier = "open_close_log"
 		}
 	}
@@ -138,10 +138,12 @@ class MainViewController: UIViewController {
 		if logContainer.isHidden {
 			logContainer.transform = CGAffineTransform(translationX: -logContainer.bounds.width, y: 0)
 			logContainer.isHidden = false
+			logContainer.accessibilityViewIsModal = true
 
 			UIView.animate(withDuration: 0.5) {
 				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
 			} completion: { _ in
+				self.logBt?.accessibilityLabel = NSLocalizedString("Close Log", comment: "")
 				self.changeLog()
 			}
 		}
@@ -157,6 +159,8 @@ class MainViewController: UIViewController {
 			} completion: { _ in
 				self.logContainer.isHidden = true
 				self.logContainer.transform = CGAffineTransform(translationX: 0, y: 0)
+				self.logContainer.accessibilityViewIsModal = true
+				self.logBt?.accessibilityLabel = NSLocalizedString("Open Log", comment: "")
 
 				Logger.tailFile(nil)
 			}
@@ -325,6 +329,8 @@ class MainViewController: UIViewController {
 		}
 
 		statusLb.attributedText = statusText
+		UIAccessibility.post(notification: .announcement, argument: statusText)
+
 		statusSubLb.text = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
 

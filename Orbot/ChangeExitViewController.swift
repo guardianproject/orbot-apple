@@ -40,6 +40,9 @@ class ChangeExitViewController: BaseFormViewController, UISearchResultsUpdating 
 					self.filteredCountries != nil && !self.filteredCountries!.contains(country)
 				})
 			}
+			.cellUpdate({ cell, row in
+				cell.accessibilityLabel = country.localizedName
+			})
 			.onChange({ row in
 				guard let code = row.tag else {
 					return
