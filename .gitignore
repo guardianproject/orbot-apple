@@ -1,7 +1,6 @@
 leaf-ffi-orbot/leaf.h
 leaf-ffi-orbot/*/libleaf.a
-TorVPN/geoip
-TorVPN/geoip6
+Shared/exit-node-countries.plist
 fastlane/screenshots/screenshots.html
 
 # Created by https://www.gitignore.io/api/xcode,macos,swift,objective-c
