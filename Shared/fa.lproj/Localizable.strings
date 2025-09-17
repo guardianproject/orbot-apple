@@ -230,6 +230,9 @@
 "Close" = "بستن";
 
 /* No comment provided by engineer. */
+"Close Log" = "بستن رویداد";
+
+/* No comment provided by engineer. */
 "Comma-separated lists of:" = "فهرستی از موارد جداشده با ویرگول:";
 
 /* No comment provided by engineer. */
@@ -440,7 +443,7 @@
 "Make Upper Case" = "تبدیل به حروف بزرگ";
 
 /* No comment provided by engineer. */
-"Meek" = "Meek";
+"Meek" = "";
 
 /* macOS menu item */
 "Minimize" = "کوچک‌سازی";
@@ -476,7 +479,7 @@
 "Open %@" = "باز کردن %@";
 
 /* No comment provided by engineer. */
-"Open or Close Log" = "باز یا بسته کردن گزارش";
+"Open Log" = "Open Log";
 
 /* No comment provided by engineer. */
 "other" = "سایر";

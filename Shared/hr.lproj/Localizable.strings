@@ -230,6 +230,9 @@
 "Close" = "Zatvori";
 
 /* No comment provided by engineer. */
+"Close Log" = "Close Log";
+
+/* No comment provided by engineer. */
 "Comma-separated lists of:" = "Zarezima odijeljen popis za:";
 
 /* No comment provided by engineer. */
@@ -440,7 +443,7 @@
 "Make Upper Case" = "Pretvori u velika slova";
 
 /* No comment provided by engineer. */
-"Meek" = "Meek";
+"Meek" = "";
 
 /* macOS menu item */
 "Minimize" = "Smanji";
@@ -476,7 +479,7 @@
 "Open %@" = "Otvori %@";
 
 /* No comment provided by engineer. */
-"Open or Close Log" = "Otvori ili zatvori dnevnik";
+"Open Log" = "Open Log";
 
 /* No comment provided by engineer. */
 "other" = "ostalo";

@@ -230,6 +230,9 @@
 "Close" = "Cerrar";
 
 /* No comment provided by engineer. */
+"Close Log" = "Cerrar registro";
+
+/* No comment provided by engineer. */
 "Comma-separated lists of:" = "Listas separadas por comas de:";
 
 /* No comment provided by engineer. */
@@ -440,7 +443,7 @@
 "Make Upper Case" = "Usar mayusculas ";
 
 /* No comment provided by engineer. */
-"Meek" = "Meek";
+"Meek" = "";
 
 /* macOS menu item */
 "Minimize" = "Minimizar";
@@ -476,7 +479,7 @@
 "Open %@" = "Abrir %@";
 
 /* No comment provided by engineer. */
-"Open or Close Log" = "Abrir o Cerrar Registro";
+"Open Log" = "Open Log";
 
 /* No comment provided by engineer. */
 "other" = "otros";
