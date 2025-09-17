@@ -26,12 +26,14 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var restartOnErrorLb: NSTextField! {
 		didSet {
 			restartOnErrorLb.stringValue = L10n.automaticallyRestartOnError
+			restartOnErrorLb.cell?.setAccessibilityElement(false)
 		}
 	}
 	
 	@IBOutlet weak var restartOnErrorSw: NSSwitch! {
 		didSet {
 			restartOnErrorSw.state = Settings.restartOnError ? .on : .off
+			restartOnErrorSw.setAccessibilityLabel(L10n.automaticallyRestartOnError)
 		}
 	}
 	
@@ -44,12 +46,14 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var onionOnlyLb: NSTextField! {
 		didSet {
 			onionOnlyLb.stringValue = L10n.disableForNonOnionTraffic
+			onionOnlyLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
 	@IBOutlet weak var onionOnlySw: NSSwitch! {
 		didSet {
 			onionOnlySw.state = Settings.onionOnly ? .on : .off
+			onionOnlySw.setAccessibilityLabel(L10n.disableForNonOnionTraffic)
 		}
 	}
 
@@ -86,6 +90,7 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var entryNodesTf: NSTextField! {
 		didSet {
 			entryNodesTf.stringValue = Settings.entryNodes ?? ""
+			entryNodesTf.setAccessibilityLabel(L10n.entryNodes)
 		}
 	}
 
@@ -106,6 +111,7 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var exitNodesTf: NSTextField! {
 		didSet {
 			exitNodesTf.stringValue = Settings.exitNodes ?? ""
+			exitNodesTf.setAccessibilityLabel(L10n.exitNodes)
 		}
 	}
 
@@ -124,18 +130,22 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var excludeNodesTf: NSTextField! {
 		didSet {
 			excludeNodesTf.stringValue = Settings.excludeNodes ?? ""
+			excludeNodesTf.setAccessibilityLabel(L10n.excludeNodes)
 		}
 	}
 
 	@IBOutlet weak var strictNodesLb: NSTextField! {
 		didSet {
 			strictNodesLb.stringValue = L10n.excludeNodesNever
+			strictNodesLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
 	@IBOutlet weak var strictNodesSw: NSSwitch! {
 		didSet {
 			strictNodesSw.state = Settings.strictNodes ? .on : .off
+			strictNodesSw.setAccessibilityLabel(L10n.excludeNodesNever)
+
 		}
 	}
 
@@ -190,12 +200,14 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var smartConnectTimeoutLb: NSTextField! {
 		didSet {
 			smartConnectTimeoutLb.stringValue = L10n.smartConnectTimeout
+			smartConnectTimeoutLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
 	@IBOutlet weak var smartConnectTimeoutTf: NSTextField! {
 		didSet {
 			smartConnectTimeoutTf.stringValue = String(Int(Settings.smartConnectTimeout))
+			smartConnectTimeoutTf.setAccessibilityLabel(L10n.smartConnectTimeout)
 		}
 	}
 

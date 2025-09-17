@@ -12,8 +12,18 @@ import NetworkExtension
 
 class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValidation {
 
-	@IBOutlet weak var statusIcon: NSImageView!
-	@IBOutlet weak var shadowImg: NSImageView!
+	@IBOutlet weak var statusIcon: NSImageView! {
+		didSet {
+			statusIcon.cell?.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var shadowImg: NSImageView! {
+		didSet {
+			shadowImg.cell?.setAccessibilityElement(false)
+		}
+	}
+
 	@IBOutlet weak var statusLb: NSTextField!
 	@IBOutlet weak var statusSubLb: NSTextField!
 	@IBOutlet weak var controlBt: NSButton! {
@@ -196,6 +206,15 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 		statusIcon.image = NSImage(named: statusIconName)
 		shadowImg.isHidden = !showShadow
 		statusLb.attributedStringValue = statusText
+
+		if let window = NSApp.mainWindow {
+			NSAccessibility.post(
+				element: window,
+				notification: .announcementRequested,
+				userInfo: [.announcement: statusText.string,
+						   .priority: NSAccessibilityPriorityLevel.high.rawValue])
+		}
+
 		statusSubLb.stringValue = statusSubtext
 		controlBt.setAttributedTitle(buttonTitle)
 

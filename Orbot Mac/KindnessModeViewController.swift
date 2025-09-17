@@ -15,6 +15,12 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var stoppedContainer: NSView!
 
+	@IBOutlet weak var iconIv: NSImageView! {
+		didSet {
+			iconIv.cell?.setAccessibilityElement(false)
+		}
+	}
+
 	@IBOutlet weak var titleLb: NSTextField! {
 		didSet {
 			titleLb.stringValue = L10n.helpOthers
@@ -66,6 +72,12 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 
 	@IBOutlet weak var startedContainer: NSView!
 
+	@IBOutlet weak var iconStartedIv: NSImageView! {
+		didSet {
+			iconStartedIv.cell?.setAccessibilityElement(false)
+		}
+	}
+
 	@IBOutlet weak var titleStartedLb: NSTextField! {
 		didSet {
 			titleStartedLb.stringValue = L10n.todayIsBetter
@@ -75,10 +87,15 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientConne
 	@IBOutlet weak var toggleLb: NSTextField! {
 		didSet {
 			toggleLb.stringValue = L10n.kindnessMode
+			toggleLb.setAccessibilityElement(false)
 		}
 	}
 
-	@IBOutlet weak var toggleSw: NSSwitch!
+	@IBOutlet weak var toggleSw: NSSwitch! {
+		didSet {
+			toggleSw.setAccessibilityLabel(L10n.kindnessMode)
+		}
+	}
 
 	@IBOutlet weak var weeklyLb: NSTextField! {
 		didSet {
