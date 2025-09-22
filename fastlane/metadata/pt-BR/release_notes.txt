@@ -1,2 +1,6 @@
-- Adicionado o Modo Gentileza. (Fornece um Proxy Snowflake para ajudar outras pessoas.)
-- Adicionada tradução para o farsi.
+- Adicionado suporte a UPnP/NAT-PMP para permitir acesso irrestrito ao Snowflake Proxy.
+- Substituído “Meek Azure” por “Meek”, conforme sugerido pelo Tor Project.
+- Traduções atualizadas.
+- Tor atualizado para a versão mais recente 0.4.8.18.
+- Suporte à acessibilidade do VoiceOver aprimorado.
+- MacOS: Desativado a minimização de janelas modais, pois isso bloqueava o aplicativo quando usado.

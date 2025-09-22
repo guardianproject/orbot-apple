@@ -1,5 +1,13 @@
 #  Orbot Apple Changelog
 
+## 1.8.1
+- Added UPnP/NAT-PMP support to allow unrestricted Snowflake Proxy access.
+- Replaced "Meek Azure" with "Meek" as suggested by Tor Project.
+- Updated translations.
+- Updated Tor to latest version 0.4.8.18.
+- Improved VoiceOver accessibility support.
+- MacOS: Disable window minimization for modal windows, because that deadlocks the app when used. 
+
 ## 1.8.0
 
 - Added Kindness Mode. (Provides a Snowflake Proxy to help others.)

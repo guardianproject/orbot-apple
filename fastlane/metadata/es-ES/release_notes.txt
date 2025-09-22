@@ -1,2 +1,6 @@
-- Se ha añadido el modo Kindness (amabilidad). (Proporciona un proxy Snowflake para ayudar a otros).
-- Se ha añadido la traducción al farsi.
+- Se ha añadido compatibilidad con UPnP/NAT-PMP para permitir el acceso sin restricciones a Snowflake Proxy.
+- Se ha sustituido «Meek Azure» por «Meek», tal y como sugirió Tor Project.
+- Se han actualizado las traducciones.
+- Se ha actualizado Tor a la última versión 0.4.8.18.
+- Se ha mejorado la compatibilidad con la accesibilidad de VoiceOver.
+- MacOS: se ha desactivado la minimización de ventanas modales, ya que bloqueaba la aplicación cuando se utilizaba.
