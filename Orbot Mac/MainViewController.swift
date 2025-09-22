@@ -180,6 +180,7 @@ class MainViewController: NSViewController, NSWindowDelegate, NSToolbarItemValid
 
 		let window = NSWindow(contentViewController: vc)
 		window.delegate = self
+		window.styleMask.remove(.miniaturizable)
 
 		NSApp.runModal(for: window)
 

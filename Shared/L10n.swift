@@ -278,7 +278,8 @@ class L10n {
 		"Minimize" : { NSLocalizedString("Minimize", comment: "macOS menu item") },
 		"Zoom" : { NSLocalizedString("Zoom", comment: "macOS menu item") },
 		"Bring All to Front" : { NSLocalizedString("Bring All to Front", comment: "macOS menu item") },
-		"Log" : { NSLocalizedString("Log", comment: "macOS menu item") },
+		"Log" : { L10n.log },
+		"Kindness Mode": { L10n.kindnessMode },
 		"Help" : { NSLocalizedString("Help", comment: "macOS menu item") },
 		"Orbot Help": { String(format: NSLocalizedString("%@ Help",  comment: "macOS menu item"), Bundle.main.displayName) },
 	]

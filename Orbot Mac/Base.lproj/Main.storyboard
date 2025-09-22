@@ -266,6 +266,11 @@
                                                 <segue destination="Klk-BL-Yvt" kind="show" id="XVp-Bx-NoT"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Kindness Mode" keyEquivalent="3" allowsKeyEquivalentWhenHidden="YES" id="OeU-TV-bJM">
+                                            <connections>
+                                                <segue destination="xrC-tj-dI1" kind="modal" id="Xh5-wE-V4K"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -298,7 +303,7 @@
             <objects>
                 <windowController id="Es4-DB-VW9" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="2Dj-jk-32U">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="322" y="408" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
@@ -323,7 +328,7 @@
             <objects>
                 <windowController id="Yl1-vt-3vX" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="zE9-Zg-Pef">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="686" y="760" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
@@ -389,7 +394,7 @@
             <objects>
                 <windowController id="xrC-tj-dI1" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="2Qx-YK-SUK">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="322" y="408" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2056" height="1285"/>
@@ -683,7 +688,7 @@
                 </viewController>
                 <customObject id="iSb-CX-Khs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3394.5" y="805.5"/>
+            <point key="canvasLocation" x="3316" y="769"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="sgp-yq-xVd">
@@ -1643,21 +1648,22 @@ Gw
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CbE-rS-Pmv"/>
-        <segue reference="0QR-9b-55l"/>
+        <segue reference="XVp-Bx-NoT"/>
+        <segue reference="Xh5-wE-V4K"/>
+        <segue reference="7WH-jy-Jfn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="14" height="16"/>
-        <image name="chart.bar.doc.horizontal" catalog="system" width="14" height="16"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="15" height="16"/>
         <image name="gear.circle" width="11" height="11"/>
-        <image name="heart.fill" catalog="system" width="16" height="14"/>
-        <image name="key" catalog="system" width="12" height="18"/>
+        <image name="heart.fill" catalog="system" width="17" height="14"/>
+        <image name="key" catalog="system" width="13" height="18"/>
         <image name="network.badge.shield.half.filled" width="12" height="11"/>
         <image name="orbie.charging" width="256" height="256"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.shadow" width="65" height="9"/>
         <image name="orbie.snoozing" width="432" height="432"/>
-        <image name="plus" catalog="system" width="14" height="13"/>
+        <image name="plus" catalog="system" width="15" height="13"/>
         <namedColor name="AccentColor">
             <color red="0.45500001311302185" green="0.14100000262260437" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
