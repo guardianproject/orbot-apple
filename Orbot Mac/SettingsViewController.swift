@@ -9,7 +9,7 @@
 import Cocoa
 import IPtProxyUI
 
-class SettingsViewController: NSViewController {
+class SettingsViewController: NSViewController, NSTextFieldDelegate {
 
 	@IBOutlet weak var tab1: NSTabViewItem! {
 		didSet {
@@ -91,6 +91,7 @@ class SettingsViewController: NSViewController {
 		didSet {
 			entryNodesTf.stringValue = Settings.entryNodes ?? ""
 			entryNodesTf.setAccessibilityLabel(L10n.entryNodes)
+			entryNodesTf.delegate = self
 		}
 	}
 
@@ -112,6 +113,7 @@ class SettingsViewController: NSViewController {
 		didSet {
 			exitNodesTf.stringValue = Settings.exitNodes ?? ""
 			exitNodesTf.setAccessibilityLabel(L10n.exitNodes)
+			exitNodesTf.delegate = self
 		}
 	}
 
@@ -131,6 +133,7 @@ class SettingsViewController: NSViewController {
 		didSet {
 			excludeNodesTf.stringValue = Settings.excludeNodes ?? ""
 			excludeNodesTf.setAccessibilityLabel(L10n.excludeNodes)
+			excludeNodesTf.delegate = self
 		}
 	}
 
@@ -170,6 +173,7 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var torConfTf: NSTextField! {
 		didSet {
 			torConfTf.stringValue = Settings.advancedTorConf?.joined(separator: "\n") ?? ""
+			torConfTf.delegate = self
 		}
 	}
 
@@ -302,6 +306,22 @@ class SettingsViewController: NSViewController {
 		alert.messageText = L10n.cleared
 
 		alert.runModal()
+	}
+
+
+	// NSTextFieldDelegate
+
+	/**
+	 Let the user enter new lines instead of end editing and marking the whole text.
+	 */
+	func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+		if commandSelector == #selector(insertNewline) {
+			textView.insertNewlineIgnoringFieldEditor(self)
+
+			return true
+		}
+
+		return false
 	}
 
 
