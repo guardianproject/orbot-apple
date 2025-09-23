@@ -410,6 +410,9 @@
 "Invalid" = "Inválido";
 
 /* No comment provided by engineer. */
+"Isolate Destination Addresses" = "Isolate Destination Addresses";
+
+/* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "No proporcionó un identificador de aplicación válido.";
 
 /* macOS menu item */
@@ -441,9 +444,6 @@
 
 /* macOS menu item */
 "Make Upper Case" = "Poner en mayúsculas";
-
-/* No comment provided by engineer. */
-"Meek" = "Meek";
 
 /* macOS menu item */
 "Minimize" = "Minimizar";
@@ -633,6 +633,9 @@
 
 /* No comment provided by engineer. */
 "Use %1$@" = "usar %1$@";
+
+/* No comment provided by engineer. */
+"Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
 
 /* No comment provided by engineer. */
 "Use Direct Connection" = "Usar conexión directa";

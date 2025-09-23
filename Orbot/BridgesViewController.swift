@@ -67,7 +67,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				return NSLocalizedString("Bridges from Tor (obfs4) via Email", comment: "")
 
 			case .meek:
-				return NSLocalizedString("Meek", comment: "")
+				return "Meek"
 
 			case .custom:
 				return NSLocalizedString("Custom Bridges", comment: "")
