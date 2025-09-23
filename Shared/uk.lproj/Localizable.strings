@@ -410,6 +410,9 @@
 "Invalid" = "Некоректний";
 
 /* No comment provided by engineer. */
+"Isolate Destination Addresses" = "Isolate Destination Addresses";
+
+/* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "It didn't provide a valid app identifier.";
 
 /* macOS menu item */
@@ -633,6 +636,9 @@
 
 /* No comment provided by engineer. */
 "Use %1$@" = "Use %1$@";
+
+/* No comment provided by engineer. */
+"Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
 
 /* No comment provided by engineer. */
 "Use Direct Connection" = "Use Direct Connection";

@@ -164,6 +164,26 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
+	@IBOutlet weak var box3: NSBox! {
+		didSet {
+			box3.title = L10n.isolateDestAddr
+		}
+	}
+
+	@IBOutlet weak var isolateDestAddrLb: NSTextField! {
+		didSet {
+			isolateDestAddrLb.stringValue = L10n.isolateDestAddrDescription
+			isolateDestAddrLb.cell?.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var isolateDestAddrSw: NSSwitch! {
+		didSet {
+			isolateDestAddrSw.state = Settings.isolateDestAddr ? .on : .off
+			isolateDestAddrSw.setAccessibilityLabel(L10n.isolateDestAddrDescription)
+		}
+	}
+
 	@IBOutlet weak var torConfRefBt: NSButton! {
 		didSet {
 			torConfRefBt.title = L10n.torConfReference
@@ -183,9 +203,9 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
-	@IBOutlet weak var box3: NSBox! {
+	@IBOutlet weak var box4: NSBox! {
 		didSet {
-			box3.title = L10n.maintenance
+			box4.title = L10n.maintenance
 		}
 	}
 
@@ -195,9 +215,9 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
-	@IBOutlet weak var box4: NSBox! {
+	@IBOutlet weak var box5: NSBox! {
 		didSet {
-			box4.title = L10n.expert
+			box5.title = L10n.expert
 		}
 	}
 
@@ -287,6 +307,10 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 
 	@IBAction func changeStrictNodes(_ sender: NSSwitch) {
 		Settings.strictNodes = sender.state == .on
+	}
+
+	@IBAction func changeIsolateDestAddr(_ sender: NSSwitch) {
+		Settings.isolateDestAddr = sender.state == .on
 	}
 
 	@IBAction func showTorConfRef(_ sender: NSButton) {

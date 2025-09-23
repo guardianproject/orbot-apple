@@ -261,6 +261,15 @@ class Settings {
 		}
 	}
 
+	class var isolateDestAddr: Bool {
+		get {
+			defaults?.bool(forKey: "isolate_dest_addr") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "isolate_dest_addr")
+		}
+	}
+
 	class var advancedTorConf: [String]? {
 		get {
 			let value = defaults?.stringArray(forKey: "advanced_tor_conf")?

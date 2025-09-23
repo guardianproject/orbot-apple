@@ -139,7 +139,7 @@ class SettingsViewController: BaseFormViewController {
 			}
 		})
 
-		+++ Section(L10n.advancedTorConf)
+		+++ Section(header: L10n.advancedTorConf, footer: L10n.isolateDestAddrDescription)
 
 		<<< SwitchRow {
 			$0.title = NSLocalizedString("Disable GeoIP lookup for nodes (reduces RAM usage)", comment: "")
@@ -150,6 +150,18 @@ class SettingsViewController: BaseFormViewController {
 		.onChange({ row in
 			if let value = row.value {
 				Settings.disableGeoIp = value
+			}
+		})
+
+		<<< SwitchRow {
+			$0.title = L10n.isolateDestAddr
+			$0.cell.textLabel?.numberOfLines = 0
+
+			$0.value = Settings.isolateDestAddr
+		}
+		.onChange({ row in
+			if let value = row.value {
+				Settings.isolateDestAddr = value
 			}
 		})
 

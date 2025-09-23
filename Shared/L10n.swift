@@ -236,6 +236,14 @@ class L10n {
 		NSLocalizedString("All Time Total", comment: "")
 	}
 
+	static var isolateDestAddr: String {
+		NSLocalizedString("Isolate Destination Addresses", comment: "")
+	}
+
+	static var isolateDestAddrDescription: String {
+		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
+	}
+
 	static let menu: [String: () -> String] = [
 		"Orbot" : { Bundle.main.displayName },
 		"About Orbot": { String(format: NSLocalizedString("About %@",  comment: "macOS menu item"), Bundle.main.displayName) },

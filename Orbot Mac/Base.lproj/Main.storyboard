@@ -433,7 +433,7 @@
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="orbie.snoozing" id="4Gm-AF-aEs"/>
                                     </imageView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="FHB-AQ-wOF">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="FHB-AQ-wOF">
                                         <rect key="frame" x="-2" y="188" width="464" height="31"/>
                                         <textFieldCell key="cell" alignment="center" title="Help others connect to Tor" id="grI-bL-gau">
                                             <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
@@ -441,7 +441,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bYz-9f-cwe">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="bYz-9f-cwe">
                                         <rect key="frame" x="-2" y="140" width="464" height="32"/>
                                         <textFieldCell key="cell" allowsUndo="NO" alignment="center" title="Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." id="GwU-kd-3AB">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -449,7 +449,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-xS-CMl">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0Ur-xS-CMl">
                                         <rect key="frame" x="-2" y="108" width="464" height="16"/>
                                         <textFieldCell key="cell" alignment="center" title="%1$@ %2$@ VPN will be switched off." id="fbh-ir-QVC">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -457,7 +457,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="X94-mJ-yhW">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="X94-mJ-yhW">
                                         <rect key="frame" x="-2" y="84" width="464" height="16"/>
                                         <textFieldCell key="cell" alignment="center" title="%@ It will not drain your battery." id="8tB-2B-lYo">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -465,7 +465,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-wS-uyW">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="NVX-wS-uyW">
                                         <rect key="frame" x="-2" y="60" width="464" height="16"/>
                                         <textFieldCell key="cell" alignment="center" title="%@ It will not slow down your internet." id="cX2-a6-lPM">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -473,7 +473,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-2C-lUL">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dC5-2C-lUL">
                                         <rect key="frame" x="-2" y="36" width="464" height="16"/>
                                         <textFieldCell key="cell" alignment="center" title="%@ It can be turned off anytime." id="ekz-Ts-rlb">
                                             <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -529,7 +529,7 @@
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="orbie.charging" id="wmd-CI-GZC"/>
                                     </imageView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-YH-kgF">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-YH-kgF">
                                         <rect key="frame" x="-2" y="188" width="464" height="31"/>
                                         <textFieldCell key="cell" alignment="center" title="Today is better because of you" id="iHm-kL-bdF">
                                             <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
@@ -543,7 +543,7 @@
                                             <rect key="frame" x="4" y="5" width="418" height="38"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-4r-Ort">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IAG-4r-Ort">
                                                     <rect key="frame" x="18" y="11" width="336" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Kindness Mode" id="6tL-1t-9VL">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -574,7 +574,7 @@
                                             <rect key="frame" x="4" y="5" width="418" height="32"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-oW-2Oh">
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xrt-oW-2Oh">
                                                     <rect key="frame" x="18" y="8" width="365" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Weekly Total" id="hpM-J5-jg8">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -582,7 +582,7 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-0g-ZIL">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-0g-ZIL">
                                                     <rect key="frame" x="387" y="8" width="13" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="0" id="0w8-Lf-0sn">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -607,7 +607,7 @@
                                             <rect key="frame" x="4" y="5" width="418" height="32"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Yn-pW-eBb">
+                                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7Yn-pW-eBb">
                                                     <rect key="frame" x="18" y="8" width="365" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="All Time Total" id="Z0c-6o-XDw">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -615,7 +615,7 @@
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-wC-Iwr">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ma7-wC-Iwr">
                                                     <rect key="frame" x="387" y="8" width="13" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="0" id="oaK-Dl-SOT">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -822,7 +822,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m2q-XB-nGC">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m2q-XB-nGC">
                                 <rect key="frame" x="20" y="259" width="410" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="http://example.onion" drawsBackground="YES" id="rf7-Ck-BBb">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -830,7 +830,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-20-BDg">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cwu-20-BDg">
                                 <rect key="frame" x="20" y="228" width="410" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Key" drawsBackground="YES" id="WsG-c6-TJH">
                                     <font key="font" metaFont="system"/>
@@ -905,11 +905,11 @@ Gw
             <objects>
                 <viewController id="cNi-Fr-8GN" customClass="SettingsViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dV5-ta-aIY">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="584"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="609"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-uE-re9">
-                                <rect key="frame" x="13" y="10" width="514" height="568"/>
+                                <rect key="frame" x="13" y="10" width="514" height="593"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="500" id="jaW-PN-x9P"/>
                                 </constraints>
@@ -917,16 +917,16 @@ Gw
                                 <tabViewItems>
                                     <tabViewItem label="General" identifier="" id="KgC-0C-aRO">
                                         <view key="view" id="v51-nt-UN2">
-                                            <rect key="frame" x="10" y="33" width="494" height="522"/>
+                                            <rect key="frame" x="10" y="33" width="494" height="547"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box title="Automatic Restart" translatesAutoresizingMaskIntoConstraints="NO" id="Oxo-2r-eGh">
-                                                    <rect key="frame" x="17" y="434" width="460" height="68"/>
+                                                    <rect key="frame" x="17" y="459" width="460" height="68"/>
                                                     <view key="contentView" id="fAm-8S-yvW">
                                                         <rect key="frame" x="4" y="5" width="452" height="48"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-oB-Ge9">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pQ8-oB-Ge9">
                                                                 <rect key="frame" x="18" y="16" width="370" height="16"/>
                                                                 <textFieldCell key="cell" title="Automatically Restart on Error" id="5i4-Ta-WNF">
                                                                     <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -952,12 +952,12 @@ Gw
                                                     </view>
                                                 </box>
                                                 <box title="Onion-only Mode" translatesAutoresizingMaskIntoConstraints="NO" id="qMx-R2-l8X">
-                                                    <rect key="frame" x="17" y="341" width="460" height="89"/>
+                                                    <rect key="frame" x="17" y="366" width="460" height="89"/>
                                                     <view key="contentView" id="O36-6J-lTJ">
                                                         <rect key="frame" x="4" y="5" width="452" height="69"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1z-ng-0bG">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1z-ng-0bG">
                                                                 <rect key="frame" x="18" y="37" width="370" height="16"/>
                                                                 <textFieldCell key="cell" title="Disable %@ for non-onion traffic" id="kg8-QH-3mj">
                                                                     <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -971,7 +971,7 @@ Gw
                                                                     <action selector="changeOnionOnly:" target="cNi-Fr-8GN" id="yyr-PL-Mcr"/>
                                                                 </connections>
                                                             </switch>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ein-zp-z6o">
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ein-zp-z6o">
                                                                 <rect key="frame" x="18" y="16" width="416" height="13"/>
                                                                 <textFieldCell key="cell" title="ATTENTION: This may harm your anonymity and security!" id="mi6-k4-2jP">
                                                                     <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
@@ -993,7 +993,7 @@ Gw
                                                         </constraints>
                                                     </view>
                                                 </box>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7NV-XK-ThT">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7NV-XK-ThT">
                                                     <rect key="frame" x="18" y="20" width="458" height="16"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Version %@, Build %@" id="7uX-Go-peg">
                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -1021,7 +1021,7 @@ Gw
                                             <rect key="frame" x="10" y="33" width="494" height="522"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-QE-vWe">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bkr-QE-vWe">
                                                     <rect key="frame" x="18" y="486" width="458" height="16"/>
                                                     <textFieldCell key="cell" title="Entry Nodes" id="LLa-yi-qlF">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -1029,7 +1029,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZCk-Ga-870">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZCk-Ga-870">
                                                     <rect key="frame" x="18" y="465" width="458" height="13"/>
                                                     <textFieldCell key="cell" title="Only use these nodes as first hop. Ignored, when bridging is used." id="fq3-uH-zjE">
                                                         <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
@@ -1037,7 +1037,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="h5v-Tw-EiO">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="h5v-Tw-EiO">
                                                     <rect key="frame" x="20" y="394" width="454" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="iPW-Hk-LAg"/>
@@ -1051,7 +1051,7 @@ Gw
                                                         <action selector="changeEntryNodes:" target="cNi-Fr-8GN" id="mHM-jl-OKJ"/>
                                                     </connections>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-cm-ck3">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bY1-cm-ck3">
                                                     <rect key="frame" x="18" y="370" width="458" height="16"/>
                                                     <textFieldCell key="cell" title="Exit Nodes" id="Cs3-PH-pW9">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -1059,7 +1059,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="V98-Yp-bN6">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="V98-Yp-bN6">
                                                     <rect key="frame" x="18" y="336" width="430" height="26"/>
                                                     <textFieldCell key="cell" title="Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" id="baV-md-jcj">
                                                         <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
@@ -1067,7 +1067,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jBm-NZ-SkB">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jBm-NZ-SkB">
                                                     <rect key="frame" x="20" y="265" width="454" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="BQN-Uf-KRx"/>
@@ -1081,7 +1081,7 @@ Gw
                                                         <action selector="changeExitNodes:" target="cNi-Fr-8GN" id="TB4-Uu-nfs"/>
                                                     </connections>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-e3-Jtb">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EOI-e3-Jtb">
                                                     <rect key="frame" x="18" y="241" width="458" height="16"/>
                                                     <textFieldCell key="cell" title="Exclude Nodes" id="6yQ-xv-2ew">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -1089,7 +1089,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="soC-Hb-1Sp">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="soC-Hb-1Sp">
                                                     <rect key="frame" x="18" y="207" width="458" height="26"/>
                                                     <textFieldCell key="cell" title="Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." id="Gcq-ML-jnU">
                                                         <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
@@ -1097,7 +1097,7 @@ Gw
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="E0P-sj-yN4">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="E0P-sj-yN4">
                                                     <rect key="frame" x="20" y="136" width="454" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="FOU-LK-pCE"/>
@@ -1111,7 +1111,7 @@ Gw
                                                         <action selector="changeExcludeNodes:" target="cNi-Fr-8GN" id="S9z-BX-0YJ"/>
                                                     </connections>
                                                 </textField>
-                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-Jr-Mcl">
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-Jr-Mcl">
                                                     <rect key="frame" x="18" y="112" width="412" height="16"/>
                                                     <textFieldCell key="cell" title="Also don't use excluded nodes for network management" id="MlF-OD-ngi">
                                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>
@@ -1125,7 +1125,7 @@ Gw
                                                         <action selector="changeStrictNodes:" target="cNi-Fr-8GN" id="15k-VI-uMs"/>
                                                     </connections>
                                                 </switch>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="N94-4z-rFw">
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="N94-4z-rFw">
                                                     <rect key="frame" x="18" y="52" width="458" height="52"/>
                                                     <textFieldCell key="cell" selectable="YES" id="ySa-u4-InO">
                                                         <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
@@ -1192,11 +1192,42 @@ Gw
                                     </tabViewItem>
                                     <tabViewItem label="Advanced Tor Configuration" identifier="" id="MDz-YV-BPZ">
                                         <view key="view" id="r8F-Gu-3jx">
-                                            <rect key="frame" x="10" y="33" width="494" height="490"/>
+                                            <rect key="frame" x="10" y="33" width="494" height="547"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
+                                                <box title="Isolate Destination Address" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-zm-kGA">
+                                                    <rect key="frame" x="17" y="443" width="460" height="84"/>
+                                                    <view key="contentView" id="jLl-j4-Uua">
+                                                        <rect key="frame" x="4" y="5" width="452" height="64"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="LjJ-nL-4n8">
+                                                                <rect key="frame" x="18" y="16" width="370" height="32"/>
+                                                                <textFieldCell key="cell" title="Don’t share circuits with streams targeting a different destination address." id="u2v-dW-Whe">
+                                                                    <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="ZUC-yq-VPB">
+                                                                <rect key="frame" x="392" y="19" width="42" height="25"/>
+                                                                <connections>
+                                                                    <action selector="changeIsolateDestAddr:" target="cNi-Fr-8GN" id="Muu-sR-4Oy"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="LjJ-nL-4n8" firstAttribute="top" secondItem="jLl-j4-Uua" secondAttribute="top" constant="16" id="J81-to-tzp"/>
+                                                            <constraint firstItem="ZUC-yq-VPB" firstAttribute="leading" secondItem="LjJ-nL-4n8" secondAttribute="trailing" constant="8" symbolic="YES" id="MkC-R3-cSn"/>
+                                                            <constraint firstItem="LjJ-nL-4n8" firstAttribute="leading" secondItem="jLl-j4-Uua" secondAttribute="leading" constant="20" symbolic="YES" id="Naw-QY-0Rh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ZUC-yq-VPB" secondAttribute="trailing" constant="20" symbolic="YES" id="aO2-tg-uJS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="LjJ-nL-4n8" secondAttribute="bottom" constant="16" id="n8S-js-nPy"/>
+                                                            <constraint firstItem="ZUC-yq-VPB" firstAttribute="centerY" secondItem="LjJ-nL-4n8" secondAttribute="centerY" id="ykT-uq-4tb"/>
+                                                        </constraints>
+                                                    </view>
+                                                </box>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fan-AM-VwW">
-                                                    <rect key="frame" x="276" y="443" width="205" height="32"/>
+                                                    <rect key="frame" x="276" y="400" width="205" height="32"/>
                                                     <buttonCell key="cell" type="push" title="Tor Configuration Reference" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Y3-uR-p1O">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
@@ -1205,8 +1236,8 @@ Gw
                                                         <action selector="showTorConfRef:" target="cNi-Fr-8GN" id="fSi-na-gTI"/>
                                                     </connections>
                                                 </button>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-Z7-wRV">
-                                                    <rect key="frame" x="20" y="379" width="454" height="63"/>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="e7u-Z7-wRV">
+                                                    <rect key="frame" x="20" y="336" width="454" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="dpW-IL-71r"/>
                                                     </constraints>
@@ -1219,8 +1250,8 @@ Gw
                                                         <action selector="changeTorConf:" target="cNi-Fr-8GN" id="Z80-N4-jB7"/>
                                                     </connections>
                                                 </textField>
-                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-4d-vgc">
-                                                    <rect key="frame" x="18" y="332" width="458" height="39"/>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HqU-4d-vgc">
+                                                    <rect key="frame" x="18" y="289" width="458" height="39"/>
                                                     <textFieldCell key="cell" selectable="YES" id="J5o-so-Z4h">
                                                         <font key="font" textStyle="caption1" name=".SFNS-Regular"/>
                                                         <string key="title">- Options need 2 leading minuses: --Option
@@ -1231,13 +1262,13 @@ Gw
                                                     </textFieldCell>
                                                 </textField>
                                                 <box title="Maintenance" translatesAutoresizingMaskIntoConstraints="NO" id="YkU-Gc-PX2">
-                                                    <rect key="frame" x="17" y="246" width="460" height="78"/>
+                                                    <rect key="frame" x="17" y="201" width="460" height="80"/>
                                                     <view key="contentView" id="9Bt-kF-c6b">
-                                                        <rect key="frame" x="4" y="5" width="452" height="58"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="60"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dWv-cE-Bzx">
-                                                                <rect key="frame" x="310" y="11" width="131" height="32"/>
+                                                                <rect key="frame" x="308" y="13" width="131" height="32"/>
                                                                 <buttonCell key="cell" type="push" title="Clear Tor Cache" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QWG-Za-13e">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
@@ -1256,21 +1287,21 @@ Gw
                                                     </view>
                                                 </box>
                                                 <box title="Expert" translatesAutoresizingMaskIntoConstraints="NO" id="7fN-9r-Dj6">
-                                                    <rect key="frame" x="17" y="163" width="460" height="79"/>
+                                                    <rect key="frame" x="17" y="116" width="460" height="81"/>
                                                     <view key="contentView" id="mUF-JV-bBU">
-                                                        <rect key="frame" x="4" y="5" width="452" height="59"/>
+                                                        <rect key="frame" x="4" y="5" width="452" height="61"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-3M-djm">
-                                                                <rect key="frame" x="18" y="21" width="314" height="16"/>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-3M-djm">
+                                                                <rect key="frame" x="18" y="23" width="312" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Smart Connect Timeout" id="nfZ-fk-czk">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-w0-a0D">
-                                                                <rect key="frame" x="338" y="18" width="96" height="21"/>
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FfK-w0-a0D">
+                                                                <rect key="frame" x="336" y="20" width="96" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="oBl-xp-hwb"/>
                                                                     <constraint firstAttribute="height" constant="21" id="rG2-fm-A11"/>
@@ -1300,6 +1331,7 @@ Gw
                                                 <constraint firstItem="YkU-Gc-PX2" firstAttribute="top" secondItem="HqU-4d-vgc" secondAttribute="bottom" constant="8" symbolic="YES" id="55X-xg-9Mr"/>
                                                 <constraint firstAttribute="trailing" secondItem="HqU-4d-vgc" secondAttribute="trailing" constant="20" symbolic="YES" id="AFo-Cp-03D"/>
                                                 <constraint firstItem="7fN-9r-Dj6" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="B8b-FR-Fwm"/>
+                                                <constraint firstItem="fan-AM-VwW" firstAttribute="top" secondItem="UZf-zm-kGA" secondAttribute="bottom" constant="20" symbolic="YES" id="D6l-MF-zPC"/>
                                                 <constraint firstAttribute="trailing" secondItem="e7u-Z7-wRV" secondAttribute="trailing" constant="20" symbolic="YES" id="Hpd-hL-461"/>
                                                 <constraint firstItem="HqU-4d-vgc" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="Hrw-71-cfi"/>
                                                 <constraint firstAttribute="trailing" secondItem="7fN-9r-Dj6" secondAttribute="trailing" constant="20" symbolic="YES" id="Q3V-iy-euI"/>
@@ -1310,8 +1342,10 @@ Gw
                                                 <constraint firstItem="HqU-4d-vgc" firstAttribute="top" secondItem="e7u-Z7-wRV" secondAttribute="bottom" constant="8" symbolic="YES" id="aY6-4U-sby"/>
                                                 <constraint firstItem="e7u-Z7-wRV" firstAttribute="top" secondItem="fan-AM-VwW" secondAttribute="bottom" constant="8" symbolic="YES" id="cdu-Vu-07d"/>
                                                 <constraint firstItem="fan-AM-VwW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="h65-GL-iIq"/>
+                                                <constraint firstItem="UZf-zm-kGA" firstAttribute="top" secondItem="r8F-Gu-3jx" secondAttribute="top" constant="20" symbolic="YES" id="i2Q-w4-YSE"/>
                                                 <constraint firstAttribute="trailing" secondItem="YkU-Gc-PX2" secondAttribute="trailing" constant="20" symbolic="YES" id="lX3-Dh-3GI"/>
-                                                <constraint firstItem="fan-AM-VwW" firstAttribute="top" secondItem="r8F-Gu-3jx" secondAttribute="top" constant="20" symbolic="YES" id="tGR-I9-agA"/>
+                                                <constraint firstItem="UZf-zm-kGA" firstAttribute="leading" secondItem="r8F-Gu-3jx" secondAttribute="leading" constant="20" symbolic="YES" id="nHr-65-lzp"/>
+                                                <constraint firstAttribute="trailing" secondItem="UZf-zm-kGA" secondAttribute="trailing" constant="20" symbolic="YES" id="nps-Kd-wiV"/>
                                                 <constraint firstAttribute="trailing" secondItem="fan-AM-VwW" secondAttribute="trailing" constant="20" symbolic="YES" id="vGT-8o-Vyf"/>
                                             </constraints>
                                         </view>
@@ -1329,8 +1363,9 @@ Gw
                     <connections>
                         <outlet property="box1" destination="Oxo-2r-eGh" id="rnE-9h-xUN"/>
                         <outlet property="box2" destination="qMx-R2-l8X" id="NJb-ff-u9F"/>
-                        <outlet property="box3" destination="YkU-Gc-PX2" id="GFK-Yt-odV"/>
-                        <outlet property="box4" destination="7fN-9r-Dj6" id="Amp-MB-gI3"/>
+                        <outlet property="box3" destination="UZf-zm-kGA" id="oRe-77-Yd0"/>
+                        <outlet property="box4" destination="YkU-Gc-PX2" id="GFK-Yt-odV"/>
+                        <outlet property="box5" destination="7fN-9r-Dj6" id="Amp-MB-gI3"/>
                         <outlet property="clearCacheBt" destination="dWv-cE-Bzx" id="uio-dm-Z0h"/>
                         <outlet property="entryNodesExplLb" destination="ZCk-Ga-870" id="CNk-U8-iS4"/>
                         <outlet property="entryNodesLb" destination="Bkr-QE-vWe" id="1MO-Op-Qzq"/>
@@ -1342,6 +1377,8 @@ Gw
                         <outlet property="exitNodesExplLb" destination="V98-Yp-bN6" id="J9A-zl-iTo"/>
                         <outlet property="exitNodesLb" destination="bY1-cm-ck3" id="vq9-jq-54a"/>
                         <outlet property="exitNodesTf" destination="jBm-NZ-SkB" id="AYY-OM-0ye"/>
+                        <outlet property="isolateDestAddrLb" destination="LjJ-nL-4n8" id="BRK-1r-xK6"/>
+                        <outlet property="isolateDestAddrSw" destination="ZUC-yq-VPB" id="7rX-FY-U47"/>
                         <outlet property="nodesExplLb" destination="N94-4z-rFw" id="oB4-x4-MuO"/>
                         <outlet property="onionOnlyExplLb" destination="Ein-zp-z6o" id="D1U-DY-yQK"/>
                         <outlet property="onionOnlyLb" destination="u1z-ng-0bG" id="I80-WZ-Mo4"/>
@@ -1451,7 +1488,7 @@ Gw
                                     </constraints>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="orbie.shadow" id="C9v-er-g7m"/>
                                 </imageView>
-                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-pW-43f">
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-pW-43f">
                                     <rect key="frame" x="18" y="362" width="461" height="31"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Status" usesSingleLineMode="YES" id="ZVW-FL-Qxq">
                                         <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
@@ -1459,7 +1496,7 @@ Gw
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-zr-4vf">
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jbv-zr-4vf">
                                     <rect key="frame" x="18" y="338" width="461" height="16"/>
                                     <textFieldCell key="cell" alignment="center" title="Hide apps from network monitoring and get access when they are blocked." id="IED-sZ-Fbn">
                                         <font key="font" textStyle="body" name=".SFNS-Regular"/>

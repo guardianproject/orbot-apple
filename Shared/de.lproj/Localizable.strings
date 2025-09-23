@@ -410,6 +410,9 @@
 "Invalid" = "Ungültig";
 
 /* No comment provided by engineer. */
+"Isolate Destination Addresses" = "Isoliere Zieladressen";
+
+/* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Sie hat keine gültige App-ID angegeben.";
 
 /* macOS menu item */
@@ -633,6 +636,9 @@
 
 /* No comment provided by engineer. */
 "Use %1$@" = "Benutze %1$@";
+
+/* No comment provided by engineer. */
+"Use different circuits for different destination addresses." = "Benutze unterschiedliche Kanäle für unterschiedliche Zieladressen.";
 
 /* No comment provided by engineer. */
 "Use Direct Connection" = "Benutze direkte Verbindung";

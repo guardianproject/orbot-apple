@@ -416,6 +416,12 @@ class TorManager {
 		// Very weird. Suddenly Array doesn't convert to NSMutableArray anymore.
 		conf.arguments.addObjects(from: arguments)
 
+		var socksPort = "auto"
+
+		if Settings.isolateDestAddr {
+			socksPort += " IsolateDestAddr"
+		}
+
 		var options = [
 			// DNS
 			"DNSPort": "auto",
@@ -430,7 +436,7 @@ class TorManager {
 			"SafeLogging": "1",
 
 			// SOCKS5
-			"SocksPort": "auto"]
+			"SocksPort": socksPort]
 
 #if os(iOS)
 		// Reduce Tor's memory footprint.
