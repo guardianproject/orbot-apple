@@ -410,7 +410,7 @@
 "Invalid" = "Invalide";
 
 /* No comment provided by engineer. */
-"Isolate Destination Addresses" = "Isolate Destination Addresses";
+"Isolate Destination Addresses" = "Isoler les adresses de destination";
 
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Elle n’a pas indiqué un identifiant valide d’appli.";
@@ -635,7 +635,7 @@
 "Use %1$@" = "Utiliser des %1$@";
 
 /* No comment provided by engineer. */
-"Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
+"Use different circuits for different destination addresses." = "Utiliser des circuits différents pour différentes adresses de destination";
 
 /* No comment provided by engineer. */
 "Use Direct Connection" = "Utiliser la connexion directe";
