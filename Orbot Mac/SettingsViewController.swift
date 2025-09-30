@@ -22,21 +22,21 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 			box1.title = L10n.automaticRestart
 		}
 	}
-	
+
 	@IBOutlet weak var restartOnErrorLb: NSTextField! {
 		didSet {
 			restartOnErrorLb.stringValue = L10n.automaticallyRestartOnError
 			restartOnErrorLb.cell?.setAccessibilityElement(false)
 		}
 	}
-	
+
 	@IBOutlet weak var restartOnErrorSw: NSSwitch! {
 		didSet {
 			restartOnErrorSw.state = Settings.restartOnError ? .on : .off
 			restartOnErrorSw.setAccessibilityLabel(L10n.automaticallyRestartOnError)
 		}
 	}
-	
+
 	@IBOutlet weak var box2: NSBox! {
 		didSet {
 			box2.title = L10n.onionOnlyMode
@@ -60,6 +60,91 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 	@IBOutlet weak var onionOnlyExplLb: NSTextField! {
 		didSet {
 			onionOnlyExplLb.stringValue = L10n.attentionAnonymity
+		}
+	}
+
+	@IBOutlet weak var box3: NSBox! {
+		didSet {
+			box3.title = L10n.proxy
+		}
+	}
+
+	@IBOutlet weak var proxyDescLb: NSTextField! {
+		didSet {
+			proxyDescLb.stringValue = L10n.proxyDesc
+		}
+	}
+
+	@IBOutlet weak var proxyTypeLb: NSTextField! {
+		didSet {
+			proxyTypeLb.stringValue = L10n.proxyType
+			proxyTypeLb.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var proxyTypePb: NSPopUpButton! {
+		didSet {
+			proxyTypePb.selectItem(withTitle: Settings.proxy?.scheme ?? "socks5")
+		}
+	}
+
+	@IBOutlet weak var proxyHostLb: NSTextField! {
+		didSet {
+			proxyHostLb.stringValue = L10n.proxyHost
+			proxyHostLb.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var proxyHostTf: NSTextField! {
+		didSet {
+			proxyHostTf.setAccessibilityLabel(L10n.proxyHost)
+			proxyHostTf.stringValue = Settings.proxy?.host ?? ""
+		}
+	}
+
+	@IBOutlet weak var proxyPortLb: NSTextField! {
+		didSet {
+			proxyPortLb.stringValue = L10n.proxyPort
+			proxyPortLb.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var proxyPortTf: NSTextField! {
+		didSet {
+			proxyPortTf.setAccessibilityLabel(L10n.proxyPort)
+			proxyPortTf.placeholderString = URL.defaultProxyPort(for: Settings.proxy?.scheme)
+
+			if let port = Settings.proxy?.port {
+				proxyPortTf.stringValue = String(port)
+			}
+		}
+	}
+
+	@IBOutlet weak var proxyUsernameLb: NSTextField! {
+		didSet {
+			proxyUsernameLb.stringValue = L10n.proxyUsername
+			proxyUsernameLb.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var proxyUsernameTf: NSTextField! {
+		didSet {
+			proxyUsernameTf.setAccessibilityLabel(L10n.proxyUsername)
+			proxyUsernameTf.stringValue = Settings.proxy?.user ?? ""
+		}
+	}
+
+	@IBOutlet weak var proxyPasswordLb: NSTextField! {
+		didSet {
+			proxyPasswordLb.stringValue = L10n.proxyPassword
+			proxyPasswordLb.setAccessibilityElement(false)
+		}
+	}
+
+	@IBOutlet weak var proxyPasswordTf: NSTextField! {
+		didSet {
+			proxyPasswordTf.setAccessibilityLabel(L10n.proxyPassword)
+			proxyPasswordTf.stringValue = Settings.proxy?.password ?? ""
 		}
 	}
 
@@ -164,9 +249,9 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
-	@IBOutlet weak var box3: NSBox! {
+	@IBOutlet weak var box4: NSBox! {
 		didSet {
-			box3.title = L10n.isolateDestAddr
+			box4.title = L10n.isolateDestAddr
 		}
 	}
 
@@ -203,9 +288,9 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
-	@IBOutlet weak var box4: NSBox! {
+	@IBOutlet weak var box5: NSBox! {
 		didSet {
-			box4.title = L10n.maintenance
+			box5.title = L10n.maintenance
 		}
 	}
 
@@ -215,9 +300,9 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
-	@IBOutlet weak var box5: NSBox! {
+	@IBOutlet weak var box6: NSBox! {
 		didSet {
-			box5.title = L10n.expert
+			box6.title = L10n.expert
 		}
 	}
 
@@ -260,10 +345,10 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 
 
 	// MARK: Actions
-	
+
 	@IBAction func changeRestartOnError(_ sender: NSSwitch) {
 		Settings.restartOnError = sender.state == .on
-		
+
 		VpnManager.shared.updateRestartOnError()
 	}
 
@@ -291,6 +376,32 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 				VpnManager.shared.disconnect(explicit: true)
 			}
 		}
+	}
+
+	@IBAction func changeProxy(_ sender: NSView) {
+		var urlc = URLComponents()
+
+		urlc.scheme = proxyTypePb.selectedItem?.title
+		urlc.host = proxyHostTf.stringValue
+
+		if let port = Int(proxyPortTf.stringValue), port > 0 && port < 65536 {
+			urlc.port = port
+		}
+		else {
+			urlc.port = nil
+		}
+
+		urlc.user = proxyUsernameTf.stringValue
+		urlc.password = proxyPasswordTf.stringValue
+
+		if !(urlc.host?.isEmpty ?? true) {
+			Settings.proxy = urlc.url
+		}
+		else {
+			Settings.proxy = nil
+		}
+
+		proxyPortTf.placeholderString = URL.defaultProxyPort(for: Settings.proxy?.scheme)
 	}
 
 	@IBAction func changeEntryNodes(_ sender: NSTextField) {
@@ -350,7 +461,7 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 
 
 	// MARK: Private Methods
-	
+
 	private func statusChanged() {
 		clearCacheBt.isEnabled = !VpnManager.shared.isConnected
 	}

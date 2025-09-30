@@ -389,6 +389,9 @@
 "Hide Others" = "Скрыть остальные";
 
 /* No comment provided by engineer. */
+"Host" = "Сайт";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Если эти onion-сервисы настроены неправильно, возможна утечка информации интернет-провайдеру и всем, кто прослушивает этот трафик!";
 
 /* No comment provided by engineer. */
@@ -464,6 +467,9 @@
 "Not sure?" = "Not sure?";
 
 /* No comment provided by engineer. */
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+
+/* No comment provided by engineer. */
 "Onion-only Mode" = "Режим только onion";
 
 /* No comment provided by engineer. */
@@ -484,6 +490,9 @@
 /* No comment provided by engineer. */
 "other" = "прочее";
 
+/* No comment provided by engineer. */
+"Password" = "Пароль";
+
 /* macOS menu item */
 "Paste" = "Вставить";
 
@@ -502,11 +511,17 @@
 /* No comment provided by engineer. */
 "popups" = "popups";
 
+/* No comment provided by engineer. */
+"Port" = "Порт";
+
 /* macOS menu item */
 "Preferences…" = "Настройки...";
 
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Приставка со звездочкой (*) позволяет также захватить поддомены.";
+
+/* No comment provided by engineer. */
+"Proxy" = "Прокси";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR-код не распознан! Вы уверены, что отсканировали URL-адрес .onion?";
@@ -625,6 +640,9 @@
 /* macOS menu item */
 "Transformations" = "Transformations";
 
+/* No comment provided by engineer. */
+"Type" = "Тип";
+
 /* macOS menu item */
 "Undo" = "Отменить";
 
@@ -645,6 +663,9 @@
 
 /* No comment provided by engineer. */
 "Use Smart Connect" = "Использовать умное подключение";
+
+/* No comment provided by engineer. */
+"Username" = "Имя пользователя";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Версия %1$@, сборка %2$@";

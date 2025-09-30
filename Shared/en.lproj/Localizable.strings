@@ -389,6 +389,9 @@
 "Hide Others" = "Hide Others";
 
 /* No comment provided by engineer. */
+"Host" = "Host";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!";
 
 /* No comment provided by engineer. */
@@ -464,6 +467,9 @@
 "Not sure?" = "Not sure?";
 
 /* No comment provided by engineer. */
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+
+/* No comment provided by engineer. */
 "Onion-only Mode" = "Onion-only Mode";
 
 /* No comment provided by engineer. */
@@ -484,6 +490,9 @@
 /* No comment provided by engineer. */
 "other" = "other";
 
+/* No comment provided by engineer. */
+"Password" = "Password";
+
 /* macOS menu item */
 "Paste" = "Paste";
 
@@ -502,11 +511,17 @@
 /* No comment provided by engineer. */
 "popups" = "popups";
 
+/* No comment provided by engineer. */
+"Port" = "Port";
+
 /* macOS menu item */
 "Preferences…" = "Preferences…";
 
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Prefix with asterisk (*) to also capture subdomains.";
+
+/* No comment provided by engineer. */
+"Proxy" = "Proxy";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";
@@ -625,6 +640,9 @@
 /* macOS menu item */
 "Transformations" = "Transformations";
 
+/* No comment provided by engineer. */
+"Type" = "Type";
+
 /* macOS menu item */
 "Undo" = "Undo";
 
@@ -645,6 +663,9 @@
 
 /* No comment provided by engineer. */
 "Use Smart Connect" = "Use Smart Connect";
+
+/* No comment provided by engineer. */
+"Username" = "Username";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Version %1$@, Build %2$@";

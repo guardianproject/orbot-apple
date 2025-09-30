@@ -389,6 +389,9 @@
 "Hide Others" = "پنهان کردن بقیه";
 
 /* No comment provided by engineer. */
+"Host" = "ميزبان";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "اگر این سرویس‌های onion به درستی پیکربندی نشده باشند، اطلاعات شما به ارائه‌دهنده‌ی اینترنت و دیگر شنوندگان آن ترافیک لو خواهد رفت!";
 
 /* No comment provided by engineer. */
@@ -464,6 +467,9 @@
 "Not sure?" = "مطمئن نیستید؟";
 
 /* No comment provided by engineer. */
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+
+/* No comment provided by engineer. */
 "Onion-only Mode" = "حالت فقط-آنلاین";
 
 /* No comment provided by engineer. */
@@ -484,6 +490,9 @@
 /* No comment provided by engineer. */
 "other" = "سایر";
 
+/* No comment provided by engineer. */
+"Password" = "رمز عبور";
+
 /* macOS menu item */
 "Paste" = "چسباندن";
 
@@ -502,11 +511,17 @@
 /* No comment provided by engineer. */
 "popups" = "پنجره‌های بازشو";
 
+/* No comment provided by engineer. */
+"Port" = "پورت";
+
 /* macOS menu item */
 "Preferences…" = "ترجیحات…";
 
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "برای گرفتن زیردامنه‌ها هم از ستاره (*) در ابتدای آدرس استفاده کن.";
+
+/* No comment provided by engineer. */
+"Proxy" = "پراکسی";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "کد QR قابل شناسایی نبود! مطمئن هستیذ که آدرس .onion را اسکن کرده اید؟";
@@ -625,6 +640,9 @@
 /* macOS menu item */
 "Transformations" = "تبدیل‌ها";
 
+/* No comment provided by engineer. */
+"Type" = "نوغ";
+
 /* macOS menu item */
 "Undo" = "Undo";
 
@@ -645,6 +663,9 @@
 
 /* No comment provided by engineer. */
 "Use Smart Connect" = "استفاده از Smart Connect";
+
+/* No comment provided by engineer. */
+"Username" = "شناسه‌ی کاربری";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "نسخه %1$@، ساخت %2$@";

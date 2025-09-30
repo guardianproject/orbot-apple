@@ -38,6 +38,14 @@ extension URL {
 		}
 	}
 
+	static func defaultProxyPort(for scheme: String?) -> String {
+		if scheme  == "https" {
+			return "443"
+		}
+
+		return "1080"
+	}
+
 	@discardableResult
 	func truncate() -> Self {
 		if isFileURL {

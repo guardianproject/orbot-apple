@@ -389,6 +389,9 @@
 "Hide Others" = "Ocultar otros";
 
 /* No comment provided by engineer. */
+"Host" = "Host";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Si estos servicios cebolla no están configurados correctamente, filtrará información a tu proveedor de servicios de Internet y a cualquier otra persona que escuche ese tráfico.";
 
 /* No comment provided by engineer. */
@@ -464,6 +467,9 @@
 "Not sure?" = "¿No estás seguro?";
 
 /* No comment provided by engineer. */
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+
+/* No comment provided by engineer. */
 "Onion-only Mode" = "Modo solo-Onion ";
 
 /* No comment provided by engineer. */
@@ -484,6 +490,9 @@
 /* No comment provided by engineer. */
 "other" = "Otro";
 
+/* No comment provided by engineer. */
+"Password" = "Contraseña";
+
 /* macOS menu item */
 "Paste" = "Pegar";
 
@@ -502,11 +511,17 @@
 /* No comment provided by engineer. */
 "popups" = "Ventanas emergentes";
 
+/* No comment provided by engineer. */
+"Port" = "Port";
+
 /* macOS menu item */
 "Preferences…" = "Preferencias...";
 
 /* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Prefijo con asterisco (*) para capturar también subdominios.";
+
+/* No comment provided by engineer. */
+"Proxy" = "Proxy";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "¡El código QR no se pudo decodificar! ¿Estás seguro de que escaneaste una URL .Onion?";
@@ -625,6 +640,9 @@
 /* macOS menu item */
 "Transformations" = "Transformaciones";
 
+/* No comment provided by engineer. */
+"Type" = "Type";
+
 /* macOS menu item */
 "Undo" = "Deshacer";
 
@@ -645,6 +663,9 @@
 
 /* No comment provided by engineer. */
 "Use Smart Connect" = "Usar conexión inteligente";
+
+/* No comment provided by engineer. */
+"Username" = "Username";
 
 /* No comment provided by engineer. */
 "Version %@, Build %@" = "Versión %1$@, Compilación %2$@";

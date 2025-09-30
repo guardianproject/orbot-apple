@@ -144,6 +144,7 @@
 		A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A0AFFCF02487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
 		A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */; };
+		A0B07B1A2E86D55600275BF7 /* ProxySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */; };
 		A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0B167D9284F63C80089EB7C /* template-bypass.conf */; };
 		A0B167DD284F90560089EB7C /* ApiAccessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B167DB284F90560089EB7C /* ApiAccessCell.xib */; };
 		A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B167DC284F90560089EB7C /* ApiAccessCell.swift */; };
@@ -439,6 +440,7 @@
 		A0A736042475851D00073C81 /* Bundle+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Helpers.swift"; sourceTree = "<group>"; };
 		A0A73607247587D300073C81 /* UIButton+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Helpers.swift"; sourceTree = "<group>"; };
 		A0AFFCEF2487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NEProviderStopReason+Helpers.swift"; sourceTree = "<group>"; };
+		A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsViewController.swift; sourceTree = "<group>"; };
 		A0B11E642BB33B55003061E1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A0B11E652BB33B55003061E1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A0B167D9284F63C80089EB7C /* template-bypass.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "template-bypass.conf"; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				A0B167DB284F90560089EB7C /* ApiAccessCell.xib */,
 				A0B167DC284F90560089EB7C /* ApiAccessCell.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
+				A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */,
 				A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A01AB60F28A54531008A79EE /* Helpers */,
@@ -1600,6 +1603,7 @@
 				A0A73603247584EE00073C81 /* VpnManager.swift in Sources */,
 				A0A735EE24756CA200073C81 /* GetCircuitsMessage.swift in Sources */,
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
+				A0B07B1A2E86D55600275BF7 /* ProxySettingsViewController.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
 				A0CC771F29A79E1B0053CB53 /* AccessRequestViewController.swift in Sources */,
 				A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */,

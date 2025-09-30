@@ -165,6 +165,16 @@ class SettingsViewController: BaseFormViewController {
 			}
 		})
 
+		<<< LabelRow() {
+			$0.title = L10n.proxy
+			$0.cell.textLabel?.numberOfLines = 0
+			$0.cell.accessoryType = .disclosureIndicator
+			$0.cell.selectionStyle = .default
+		}
+		.onCellSelection { [weak self] _, _ in
+			self?.navigationController?.pushViewController(ProxySettingsViewController(), animated: true)
+		}
+
 		+++ ButtonRow() {
 			$0.title = L10n.torConfReference
 		}

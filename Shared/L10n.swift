@@ -175,6 +175,42 @@ class L10n {
 		NSLocalizedString("Also don't use excluded nodes for network management", comment: "")
 	}
 
+	static var isolateDestAddr: String {
+		NSLocalizedString("Isolate Destination Addresses", comment: "")
+	}
+
+	static var isolateDestAddrDescription: String {
+		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
+	}
+
+	static var proxy: String {
+		NSLocalizedString("Proxy", comment: "")
+	}
+
+	static var proxyDesc: String {
+		NSLocalizedString("NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.", comment: "")
+	}
+
+	static var proxyType: String {
+		NSLocalizedString("Type", comment: "")
+	}
+
+	static var proxyHost: String {
+		NSLocalizedString("Host", comment: "")
+	}
+
+	static var proxyPort: String {
+		NSLocalizedString("Port", comment: "")
+	}
+
+	static var proxyUsername: String {
+		NSLocalizedString("Username", comment: "")
+	}
+
+	static var proxyPassword: String {
+		NSLocalizedString("Password", comment: "")
+	}
+
 	static var advancedTorConf: String {
 		NSLocalizedString("Advanced Tor Configuration", comment: "")
 	}
@@ -234,14 +270,6 @@ class L10n {
 
 	static var allTimeTotal: String {
 		NSLocalizedString("All Time Total", comment: "")
-	}
-
-	static var isolateDestAddr: String {
-		NSLocalizedString("Isolate Destination Addresses", comment: "")
-	}
-
-	static var isolateDestAddrDescription: String {
-		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [

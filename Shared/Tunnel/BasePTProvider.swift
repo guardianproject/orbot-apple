@@ -316,6 +316,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 		// `Transport.customBridges` need to be set before `start`, otherwise, `IPtProxyUI`
 		// cannot determine, which transport to start and will do nothing.
 		Transport.customBridges = Settings.customBridges
+		Transport.proxy = Settings.proxy
 
 		transport.logFile?.truncate()
 

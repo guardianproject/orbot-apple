@@ -14,6 +14,8 @@ public enum Transport: Int, CaseIterable, Comparable {
 
 	public static var customBridges: [String]?
 
+	public static var proxy: URL?
+
 	public static func asArguments(key: String, value: String) -> [String] {
 		return ["--\(key)", value]
 	}
@@ -95,7 +97,61 @@ public enum Transport: Int, CaseIterable, Comparable {
 	}
 
 	public func torConf<T>(_ cv: (String, String) -> T, onDemandBridges: [String]? = nil, customBridges: [String]? = nil) -> [T] {
-		return [T]()
+		var conf = [T]()
+
+		if self == .none {
+			if let proxy = Settings.proxy,
+			   let hostPort = proxy.hostPort
+			{
+				switch proxy.scheme {
+				case "https":
+					conf.append(cv("HTTPSProxy", hostPort))
+
+					if let username = proxy.user, !username.isEmpty {
+						conf.append(cv("HTTPSProxyAuthenticator", "\(username):\(proxy.password ?? "")"))
+					}
+
+				case "socks4":
+					conf.append(cv("Socks4Proxy", hostPort))
+
+				case "socks5":
+					conf.append(cv("Socks5Proxy", hostPort))
+
+					if let username = proxy.user, !username.isEmpty {
+						conf.append(cv("Socks5ProxyUsername", username))
+
+						var password = proxy.password ?? " "
+						if password.isEmpty {
+							password = " "
+						}
+
+						conf.append(cv("Socks5ProxyPassword", password))
+					}
+
+				default:
+					break
+				}
+			}
+		}
+
+		return conf
+	}
+}
+
+extension URL {
+
+	var hostPort: String? {
+		var value: String?
+
+		if let host = host, !host.isEmpty {
+			value = host
+
+			if let port = port {
+				value?.append(":\(port)")
+			}
+		}
+
+		return value
 	}
 }
 
@@ -137,6 +193,19 @@ class Settings {
 			FileManager.default.ptDir!
 		}
 		set {
+		}
+	}
+
+	class var proxy: URL? {
+		get {
+			guard let proxy = defaults?.string(forKey: "proxy") else {
+				return nil
+			}
+
+			return URL(string: proxy)
+		}
+		set {
+			defaults?.set(newValue?.absoluteString, forKey: "proxy")
 		}
 	}
 
