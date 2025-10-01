@@ -1,5 +1,10 @@
 #  Orbot Apple Changelog
 
+## 1.8.2
+- Added proxy support.
+- Added IsolateDestAddr Tor config support.
+- Update translations.
+
 ## 1.8.1
 - Added UPnP/NAT-PMP support to allow unrestricted Snowflake Proxy access.
 - Replaced "Meek Azure" with "Meek" as suggested by Tor Project.

@@ -1,6 +1,3 @@
-- Added UPnP/NAT-PMP support to allow unrestricted Snowflake Proxy access.
-- Replaced "Meek Azure" with "Meek" as suggested by Tor Project.
-- Updated translations.
-- Updated Tor to latest version 0.4.8.18.
-- Improved VoiceOver accessibility support.
-- MacOS: Disable window minimization for modal windows, because that deadlocks the app when used.
+- Added proxy support.
+- Added IsolateDestAddr Tor config support.
+- Update translations.
