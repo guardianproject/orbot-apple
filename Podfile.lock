@@ -4,7 +4,7 @@ PODS:
     - GCDWebServerExtension/Core (= 3.5.4)
   - GCDWebServerExtension/Core (3.5.4)
   - IPtProxy (4.2.2)
-  - IPtProxyUI/AppEx (4.9.1):
+  - IPtProxyUI/AppEx (4.9.2):
     - Eureka (~> 5.3)
     - IPtProxy (~> 4.2.2)
   - ProgressHUD (14.1.1)
@@ -42,7 +42,7 @@ SPEC CHECKSUMS:
   Eureka: 1c18c7fcd8f772cc2ca42d6be36292dffa77eecb
   GCDWebServerExtension: a7d9eb7b23a9f03f48a4eada2e57e11483c5a9a9
   IPtProxy: 19447d245d04aa357f788828565f026695e8ae17
-  IPtProxyUI: ce45ad43c19242f19843729b3fe231ad984b2b8a
+  IPtProxyUI: c524f7ce3a863ee782e83883aa38de4e14d785c2
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   Tor: 68d9512ae32b66c82eb7be4e5a5c3c8586d2cbf0
 
