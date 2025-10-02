@@ -467,7 +467,7 @@
 "Not sure?" = "Avez-vous un doute ?";
 
 /* No comment provided by engineer. */
-"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "Note : Snowflake ne prend pas en charge les mandataires. Les paramètres des mandataires seront ignorés pour les ponts Snowflake.";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Mode oignon seulement";
