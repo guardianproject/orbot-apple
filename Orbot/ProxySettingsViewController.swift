@@ -17,6 +17,8 @@ class ProxySettingsViewController: BaseFormViewController {
 		navigationItem.title = L10n.proxy
 
 		navigationItem.leftBarButtonItem = nil
+		navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteProxy))
+
 
 		form
 		+++ Section()
@@ -55,6 +57,7 @@ class ProxySettingsViewController: BaseFormViewController {
 			$0.add(rule: RuleGreaterThan(min: 0))
 			$0.add(rule: RuleSmallerThan(max: 65536))
 			$0.validationOptions = .validatesAlways
+			$0.formatter = nil
 		}
 		.cellUpdate({ cell, row in
 			cell.titleLabel?.textColor = row.isValid ? .label :.systemRed
@@ -108,5 +111,17 @@ class ProxySettingsViewController: BaseFormViewController {
 		else {
 			Settings.proxy = nil
 		}
+	}
+
+	// MARK: Actions
+
+	@objc func deleteProxy() {
+		for tag in ["host", "port", "username", "password"] {
+			let row = form.rowBy(tag: tag)
+			row?.baseValue = nil
+			row?.updateCell()
+		}
+
+		updateProxy()
 	}
 }

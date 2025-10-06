@@ -75,29 +75,37 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 		}
 	}
 
+	@IBOutlet weak var proxyDeleteBt: NSButton! {
+		didSet {
+			proxyDeleteBt.setAccessibilityLabel(L10n.delete)
+		}
+	}
+
 	@IBOutlet weak var proxyTypeLb: NSTextField! {
 		didSet {
 			proxyTypeLb.stringValue = L10n.proxyType
-			proxyTypeLb.setAccessibilityElement(false)
+			proxyTypeLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
 	@IBOutlet weak var proxyTypePb: NSPopUpButton! {
 		didSet {
 			proxyTypePb.selectItem(withTitle: Settings.proxy?.scheme ?? "socks5")
+			proxyTypePb.setAccessibilityLabel(L10n.proxyType)
 		}
 	}
 
 	@IBOutlet weak var proxyHostLb: NSTextField! {
 		didSet {
 			proxyHostLb.stringValue = L10n.proxyHost
-			proxyHostLb.setAccessibilityElement(false)
+			proxyHostLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
 	@IBOutlet weak var proxyHostTf: NSTextField! {
 		didSet {
 			proxyHostTf.setAccessibilityLabel(L10n.proxyHost)
+			proxyHostTf.setAccessibilityPlaceholderValue(nil)
 			proxyHostTf.stringValue = Settings.proxy?.host ?? ""
 		}
 	}
@@ -105,7 +113,7 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 	@IBOutlet weak var proxyPortLb: NSTextField! {
 		didSet {
 			proxyPortLb.stringValue = L10n.proxyPort
-			proxyPortLb.setAccessibilityElement(false)
+			proxyPortLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
@@ -123,7 +131,7 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 	@IBOutlet weak var proxyUsernameLb: NSTextField! {
 		didSet {
 			proxyUsernameLb.stringValue = L10n.proxyUsername
-			proxyUsernameLb.setAccessibilityElement(false)
+			proxyUsernameLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
@@ -137,7 +145,7 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 	@IBOutlet weak var proxyPasswordLb: NSTextField! {
 		didSet {
 			proxyPasswordLb.stringValue = L10n.proxyPassword
-			proxyPasswordLb.setAccessibilityElement(false)
+			proxyPasswordLb.cell?.setAccessibilityElement(false)
 		}
 	}
 
@@ -376,6 +384,15 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 				VpnManager.shared.disconnect(explicit: true)
 			}
 		}
+	}
+
+	@IBAction func deleteProxy(_ sender: NSView) {
+		proxyHostTf.stringValue = ""
+		proxyPortTf.stringValue = ""
+		proxyUsernameTf.stringValue = ""
+		proxyPasswordTf.stringValue = ""
+
+		changeProxy(sender)
 	}
 
 	@IBAction func changeProxy(_ sender: NSView) {
