@@ -8,10 +8,10 @@ PODS:
     - Eureka (~> 5.3)
     - IPtProxy (~> 4.2.2)
   - ProgressHUD (14.1.1)
-  - Tor/Core (408.18.1)
-  - Tor/CTor-NoLZMA (408.18.1):
+  - Tor/Core (408.19.1)
+  - Tor/CTor-NoLZMA (408.19.1):
     - Tor/Core
-  - Tor/GeoIP-NoLZMA (408.18.1):
+  - Tor/GeoIP-NoLZMA (408.19.1):
     - Tor/CTor-NoLZMA
 
 DEPENDENCIES:
@@ -44,7 +44,7 @@ SPEC CHECKSUMS:
   IPtProxy: 19447d245d04aa357f788828565f026695e8ae17
   IPtProxyUI: c524f7ce3a863ee782e83883aa38de4e14d785c2
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
-  Tor: 68d9512ae32b66c82eb7be4e5a5c3c8586d2cbf0
+  Tor: 643811ad926f7e7bce1525f21b7645701678de48
 
 PODFILE CHECKSUM: 5905d1b52b293a5a0dd51e45332b4d2aca66a5a1
 
