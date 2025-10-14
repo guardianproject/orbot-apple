@@ -1,3 +1,1 @@
-- Ajout de la prise en charge des proxys.
-- Ajout de la prise en charge de la configuration IsolateDestAddr Tor.
-- Mise à jour des traductions.
+- Mise à jour de Tor vers la dernière version 0.4.8.19.

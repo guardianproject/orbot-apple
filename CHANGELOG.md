@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.8.3
+- Updated Tor to latest version 0.4.8.19.
+
 ## 1.8.2
 - Added proxy support.
 - Added IsolateDestAddr Tor config support.
