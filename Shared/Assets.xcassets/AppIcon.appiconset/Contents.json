@@ -1,229 +1,74 @@
-{"images":[
 {
-"size":"20x20",
-"idiom":"iphone",
-"filename":"appicon_40.png",
-"scale":"2x"
-},
-{
-"size":"20x20",
-"idiom":"iphone",
-"filename":"appicon_60.png",
-"scale":"3x"
-},
-{
-"size":"29x29",
-"idiom":"iphone",
-"filename":"appicon_29.png",
-"scale":"1x"
-},
-{
-"size":"29x29",
-"idiom":"iphone",
-"filename":"appicon_58.png",
-"scale":"2x"
-},
-{
-"size":"29x29",
-"idiom":"iphone",
-"filename":"appicon_87.png",
-"scale":"3x"
-},
-{
-"size":"40x40",
-"idiom":"iphone",
-"filename":"appicon_80.png",
-"scale":"2x"
-},
-{
-"size":"40x40",
-"idiom":"iphone",
-"filename":"appicon_120.png",
-"scale":"3x"
-},
-{
-"size":"57x57",
-"idiom":"iphone",
-"filename":"appicon_57.png",
-"scale":"1x"
-},
-{
-"size":"57x57",
-"idiom":"iphone",
-"filename":"appicon_114.png",
-"scale":"2x"
-},
-{
-"size":"60x60",
-"idiom":"iphone",
-"filename":"appicon_120.png",
-"scale":"2x"
-},
-{
-"size":"60x60",
-"idiom":"iphone",
-"filename":"appicon_180.png",
-"scale":"3x"
-},
-{
-"size":"20x20",
-"idiom":"ipad",
-"filename":"appicon_20.png",
-"scale":"1x"
-},
-{
-"size":"20x20",
-"idiom":"ipad",
-"filename":"appicon_40.png",
-"scale":"2x"
-},
-{
-"size":"29x29",
-"idiom":"ipad",
-"filename":"appicon_29.png",
-"scale":"1x"
-},
-{
-"size":"29x29",
-"idiom":"ipad",
-"filename":"appicon_58.png",
-"scale":"2x"
-},
-{
-"size":"40x40",
-"idiom":"ipad",
-"filename":"appicon_40.png",
-"scale":"1x"
-},
-{
-"size":"40x40",
-"idiom":"ipad",
-"filename":"appicon_80.png",
-"scale":"2x"
-},
-{
-"size":"50x50",
-"idiom":"ipad",
-"filename":"appicon_50.png",
-"scale":"1x"
-},
-{
-"size":"50x50",
-"idiom":"ipad",
-"filename":"appicon_100.png",
-"scale":"2x"
-},
-{
-"size":"72x72",
-"idiom":"ipad",
-"filename":"appicon_72.png",
-"scale":"1x"
-},
-{
-"size":"72x72",
-"idiom":"ipad",
-"filename":"appicon_144.png",
-"scale":"2x"
-},
-{
-"size":"76x76",
-"idiom":"ipad",
-"filename":"appicon_76.png",
-"scale":"1x"
-},
-{
-"size":"76x76",
-"idiom":"ipad",
-"filename":"appicon_152.png",
-"scale":"2x"
-},
-{
-"size":"83.5x83.5",
-"idiom":"ipad",
-"filename":"appicon_167.png",
-"scale":"2x"
-},
-{
-"size":"60x60",
-"idiom":"car",
-"filename":"appicon_120.png",
-"scale":"2x"
-},
-{
-"size":"60x60",
-"idiom":"car",
-"filename":"appicon_180.png",
-"scale":"3x"
-},
-{
-"size":"16x16",
-"idiom":"mac",
-"filename":"Icon-16.png",
-"scale":"1x"
-},
-{
-"size":"16x16",
-"idiom":"mac",
-"filename":"Icon-32.png",
-"scale":"2x"
-},
-{
-"size":"32x32",
-"idiom":"mac",
-"filename":"Icon-32.png",
-"scale":"1x"
-},
-{
-"size":"32x32",
-"idiom":"mac",
-"filename":"Icon-64.png",
-"scale":"2x"
-},
-{
-"size":"128x128",
-"idiom":"mac",
-"filename":"Icon-128.png",
-"scale":"1x"
-},
-{
-"size":"128x128",
-"idiom":"mac",
-"filename":"Icon-256.png",
-"scale":"2x"
-},
-{
-"size":"256x256",
-"idiom":"mac",
-"filename":"Icon-256.png",
-"scale":"1x"
-},
-{
-"size":"256x256",
-"idiom":"mac",
-"filename":"Icon-512.png",
-"scale":"2x"
-},
-{
-"size":"512x512",
-"idiom":"mac",
-"filename":"Icon-512.png",
-"scale":"1x"
-},
-{
-"size":"512x512",
-"idiom":"mac",
-"filename":"Icon-1024.png",
-"scale":"2x"
-},
-{
-"size":"1024x1024",
-"idiom":"ios-marketing",
-"filename":"appicon_1024.png",
-"scale":"1x"
-}
-],
-"info":{
-"version":1,
-"author":"xcode"
-}
+  "images" : [
+    {
+      "filename" : "orbot-ios-1024.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "orbot-mac-16.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "orbot-mac-32.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "orbot-mac-32.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "orbot-mac-64.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "orbot-mac-128.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "orbot-mac-256.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "orbot-mac-256.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "orbot-mac-512.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "orbot-mac-512.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512"
+    },
+    {
+      "filename" : "orbot-mac-1024.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "512x512"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
 }
