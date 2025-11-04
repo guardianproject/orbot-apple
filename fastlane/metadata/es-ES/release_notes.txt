@@ -1,1 +1,2 @@
-- Actualización de Tor a la última versión 0.4.8.19.
+Icono de la aplicación actualizado: lamentablemente, Orbie nunca llegó a ser muy popular, así que volvemos al icono de la cebolla
+para aumentar el reconocimiento. Esta vez en todas las plataformas.

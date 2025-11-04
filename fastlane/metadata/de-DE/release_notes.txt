@@ -1,1 +1,2 @@
-- Tor auf die neueste Version 0.4.8.19 aktualisiert.
+Aktualisiertes App-Symbol: Orbie wurde leider nie wirklich populär, daher kehren wir zu einem Zwiebel-Symbol zurück,
+ um die Wiedererkennbarkeit zu erhöhen. Diesmal auf allen Plattformen.

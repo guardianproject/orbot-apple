@@ -1,5 +1,9 @@
 #  Orbot Apple Changelog
 
+## 1.8.4
+- Updated app icon: Orbie unfortunately never got that popular, so we go back to an onion icon
+  to increase recognizability. This time on all platforms.
+
 ## 1.8.3
 - Updated Tor to latest version 0.4.8.19.
 
