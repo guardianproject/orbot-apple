@@ -2,7 +2,7 @@
 " where the URL contains the regex \"%@\"" = " onde a URL contém o regex \"%@\"";
 
 /* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
-"%1$@ %2$@ VPN will be switched off." = "%1$@ %2$@ VPN will be switched off.";
+"%1$@ %2$@ VPN will be switched off." = "%1$@%2$@a VPN será desligada ";
 
 /* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ Códigos de país de 2 letras em chaves, por exemplo. \"%2$@\"";
@@ -41,28 +41,28 @@
 "%1$@ wants to access %2$@." = "%1$@ quer acessar %2$@.";
 
 /* Placeholder is bullet */
-"%@ App needs to stay in the foreground." = "%@ App needs to stay in the foreground.";
+"%@ App needs to stay in the foreground." = "%@O app precisa ficar em primeiro plano.";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Os argumentos para uma opção precisam estar em uma nova linha.";
 
 /* Placeholder is bullet */
-"%@ Connect to power while letting it run." = "%@ Connect to power while letting it run.";
+"%@ Connect to power while letting it run." = "%@Ligar a alimentação ao mesmo tempo que permite que ele seja executado..";
 
 /* macOS menu item */
 "%@ Help" = "%@ Ajuda";
 
 /* Placeholder is bullet */
-"%@ It can be turned off anytime." = "%@ It can be turned off anytime.";
+"%@ It can be turned off anytime." = "%@Ela pode ser desligada a qualquer momento.";
 
 /* Placeholder is bullet */
-"%@ It will not drain your battery." = "%@ It will not drain your battery.";
+"%@ It will not drain your battery." = "%@Ela não irá drenar sua bateria.";
 
 /* Placeholder is bullet */
-"%@ It will not slow down your internet." = "%@ It will not slow down your internet.";
+"%@ It will not slow down your internet." = "%@Ela não vai diminuir a velocidade da sua internet.";
 
 /* Placeholder is bullet */
-"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)";
+"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ A Tela ficará escurecida. (Vire a tela do dispositivo para baixo para desligar a tela durante uma chamada telefônica.)";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ Estado";
@@ -377,7 +377,7 @@
 "Help" = "Ajuda";
 
 /* No comment provided by engineer. */
-"Help others connect to Tor" = "Help others connect to Tor";
+"Help others connect to Tor" = "Ajude os outros a se conectarem com o Tor";
 
 /* macOS menu item */
 "Hide %@" = "Esconder %@";
@@ -413,7 +413,7 @@
 "Invalid" = "Inválido";
 
 /* No comment provided by engineer. */
-"Isolate Destination Addresses" = "Isolate Destination Addresses";
+"Isolate Destination Addresses" = "Isolar os Endereços De Destino";
 
 /* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Ele não forneceu um identificador de aplicativo válido.";
@@ -428,7 +428,7 @@
 "Kindness Mode" = "Modo de gentileza";
 
 /* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.";
+"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "O Modo Gentileza permite que o dispositivo para ser uma ponte para os outros. Ele ajuda as pessoas a usar o Tor em lugares onde é bloqueado.";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "É provável que você mantenha conectado se o Tor estiver severamente bloqueado. Usando este método irá lançar o canal Tor Bot Telegram. Toque em 'Iniciar' ou escreva '%1$@' no chat para obter endereços de ponte.";
@@ -467,7 +467,7 @@
 "Not sure?" = "Não tem certeza?";
 
 /* No comment provided by engineer. */
-"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTA: O Snowflake não suporta proxies. As configurações de Proxy serão ignoradas com as pontes Snowflake.";
 
 /* No comment provided by engineer. */
 "Onion-only Mode" = "Modo somente Onion";
@@ -485,7 +485,7 @@
 "Open %@" = "Abrir   %@";
 
 /* No comment provided by engineer. */
-"Open Log" = "Open Log";
+"Open Log" = "Abrir log";
 
 /* No comment provided by engineer. */
 "other" = "outro";
@@ -629,7 +629,7 @@
 "To make it work, you will need to activate the blocker:" = "Para fazê-lo funcionar, você precisará ativar o bloqueador:";
 
 /* No comment provided by engineer. */
-"Today is better because of you" = "Today is better because of you";
+"Today is better because of you" = "Hoje é melhor por causa de você";
 
 /* No comment provided by engineer. */
 "Tor Configuration Reference" = "Referência de configuração do Tor";
@@ -653,7 +653,7 @@
 "Use %1$@" = "Usar %1$@";
 
 /* No comment provided by engineer. */
-"Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
+"Use different circuits for different destination addresses." = "Use diferentes circuitos para diferentes endereços de destinatário.";
 
 /* No comment provided by engineer. */
 "Use Direct Connection" = "Usar conexão direta";
