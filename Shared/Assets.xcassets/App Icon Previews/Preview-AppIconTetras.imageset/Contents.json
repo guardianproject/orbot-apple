@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_camouflage_tetras-128.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

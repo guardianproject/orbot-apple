@@ -11,7 +11,6 @@ import IPtProxyUI
 
 class AppIconViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-
 	private lazy var icons: [AppIcon] = {
 		var icons = [AppIcon(title: Bundle.main.displayName)]
 
@@ -25,7 +24,7 @@ class AppIconViewController: UICollectionViewController, UICollectionViewDelegat
 				name: icon))
 		}
 
-		return icons
+		return icons.sorted()
 	}()
 
 
@@ -49,10 +48,7 @@ class AppIconViewController: UICollectionViewController, UICollectionViewDelegat
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appIconCell", for: indexPath) as! AppIconCell
 
-		cell.imageView.image = icons[indexPath.item].image
-		cell.titleLabel.text = icons[indexPath.item].title
-
-		return cell
+		return cell.set(icons[indexPath.item])
 	}
 
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -62,6 +58,10 @@ class AppIconViewController: UICollectionViewController, UICollectionViewDelegat
 			}
 			catch {
 				AlertHelper.present(self, message: error.localizedDescription)
+
+				await MainActor.run {
+					collectionView.deselectItem(at: indexPath, animated: false)
+				}
 			}
 		}
 	}
@@ -84,9 +84,49 @@ class AppIconCell: UICollectionViewCell {
 	@IBOutlet weak var imageView: UIImageView!
 
 	@IBOutlet weak var titleLabel: UILabel!
+
+
+	override var isSelected: Bool {
+		didSet {
+			if isSelected {
+				layer.borderWidth = 4
+				layer.cornerRadius = 16
+				layer.borderColor = UIColor.accent.cgColor
+			}
+			else {
+				layer.borderWidth = 0
+			}
+		}
+	}
+
+
+	@discardableResult
+	func set(_ icon: AppIcon) -> Self {
+		imageView.image = icon.image
+		titleLabel.text = icon.title
+
+		return self
+	}
 }
 
-struct AppIcon {
+struct AppIcon: Comparable {
+
+	private static let forcedOrder = [Bundle.main.displayName, "Orbie"]
+
+	static func < (lhs: AppIcon, rhs: AppIcon) -> Bool {
+		for item in forcedOrder {
+			if lhs.title == item {
+				return true
+			}
+
+			if rhs.title == item {
+				return false
+			}
+		}
+
+		return lhs.title < rhs.title
+	}
+
 
 	var title: String
 

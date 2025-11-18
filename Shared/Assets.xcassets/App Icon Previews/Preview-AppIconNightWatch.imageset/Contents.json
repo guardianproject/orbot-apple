@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_camouflage_night_watch-128.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
