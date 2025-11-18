@@ -106,6 +106,7 @@
 		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A081CEDF2ECC94CB00DA2392 /* AppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */; };
 		A08688172975A2310032B141 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08688162975A2310032B141 /* ScanViewController.swift */; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
 		A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */; };
@@ -399,6 +400,7 @@
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A06DDCAC29264D0E001F9371 /* DebugMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMessage.swift; sourceTree = "<group>"; };
+		A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconViewController.swift; sourceTree = "<group>"; };
 		A08688162975A2310032B141 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		A08C8FEF2805D7220065B98D /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Helpers.swift"; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				A0B167DB284F90560089EB7C /* ApiAccessCell.xib */,
 				A0B167DC284F90560089EB7C /* ApiAccessCell.swift */,
 				A0BBF1A827D77B18005BBA3A /* SettingsViewController.swift */,
+				A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */,
 				A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */,
 				A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
@@ -1628,6 +1631,7 @@
 				A0F4E9CC2E27E8A50074BB28 /* KindnessModeViewController.swift in Sources */,
 				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
+				A081CEDF2ECC94CB00DA2392 /* AppIconViewController.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2150,7 +2154,7 @@
 			baseConfigurationReference = 2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Orbot/Orbot.entitlements;
 				CODE_SIGN_STYLE = Manual;
@@ -2182,7 +2186,7 @@
 			baseConfigurationReference = 29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Orbot/Orbot.entitlements;
 				CODE_SIGN_STYLE = Manual;

@@ -41,6 +41,18 @@ class SettingsViewController: BaseFormViewController {
 			Settings.disableOnStop = row.value ?? false
 		}
 
+		<<< LabelRow() {
+			$0.title = NSLocalizedString("App Icon", comment: "")
+			$0.cell.textLabel?.numberOfLines = 0
+			$0.cell.accessoryType = .disclosureIndicator
+			$0.cell.selectionStyle = .default
+		}
+		.onCellSelection { [weak self] _, _ in
+			let vc = UIStoryboard.main.instantiateViewController(AppIconViewController.self)
+
+			self?.navigationController?.pushViewController(vc, animated: true)
+		}
+
 		+++ Section(header: L10n.onionOnlyMode, footer: L10n.attentionAnonymity)
 		<<< SwitchRow("onionOnlyMode") {
 			$0.title = L10n.disableForNonOnionTraffic
