@@ -401,12 +401,6 @@ class TorManager {
 		conf.dataDirectory = FileManager.default.torDir
 		conf.clientAuthDirectory = FileManager.default.torAuthDir
 
-		// GeoIP files for circuit node country display.
-		if !Settings.disableGeoIp {
-			conf.geoipFile = Bundle.geoIp?.geoipFile
-			conf.geoip6File = Bundle.geoIp?.geoip6File
-		}
-
 		// Add user-defined configuration.
 		var arguments = Settings.advancedTorConf ?? []
 		arguments += nodeConf(Transport.asArguments).joined()
@@ -415,6 +409,18 @@ class TorManager {
 
 		// Very weird. Suddenly Array doesn't convert to NSMutableArray anymore.
 		conf.arguments.addObjects(from: arguments)
+
+		let regex = try? NSRegularExpression(pattern: "\\{\\w\\w\\}")
+		let hasGeoArguments = arguments.contains {
+			regex?.firstMatch(in: $0, range: NSRange($0.startIndex ..< $0.endIndex, in: $0)) != nil
+		}
+
+		// GeoIP files for circuit node country display.
+		// If the user set country restrictions, Tor always needs the GeoIP files.
+		if !Settings.disableGeoIp || hasGeoArguments {
+			conf.geoipFile = Bundle.geoIp?.geoipFile
+			conf.geoip6File = Bundle.geoIp?.geoip6File
+		}
 
 		var socksPort = "auto"
 
