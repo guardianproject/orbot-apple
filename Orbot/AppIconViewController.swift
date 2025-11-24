@@ -48,6 +48,9 @@ class AppIconViewController: UICollectionViewController, UICollectionViewDelegat
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appIconCell", for: indexPath) as! AppIconCell
 
+		cell.layer.cornerRadius = 16
+		cell.layer.borderColor = UIColor.accent.cgColor
+
 		return cell.set(icons[indexPath.item])
 	}
 
@@ -90,8 +93,6 @@ class AppIconCell: UICollectionViewCell {
 		didSet {
 			if isSelected {
 				layer.borderWidth = 4
-				layer.cornerRadius = 16
-				layer.borderColor = UIColor.accent.cgColor
 			}
 			else {
 				layer.borderWidth = 0
