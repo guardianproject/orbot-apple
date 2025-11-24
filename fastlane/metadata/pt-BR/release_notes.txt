@@ -1,2 +1,3 @@
-Ícone do aplicativo atualizado: infelizmente, o Orbie nunca se tornou muito popular, então voltamos ao ícone da cebola
-para aumentar o reconhecimento. Desta vez, em todas as plataformas.
+- Atualização do Tor para a versão mais recente 0.4.8.20.
+- Adicionado seletor de ícones de aplicativos (iOS).
+- Corrigido bug ao definir limitações de país e, ao mesmo tempo, impedir o carregamento de arquivos GeoIP. (iOS)

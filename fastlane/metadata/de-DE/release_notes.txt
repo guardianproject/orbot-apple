@@ -1,2 +1,3 @@
-Aktualisiertes App-Symbol: Orbie wurde leider nie wirklich populär, daher kehren wir zu einem Zwiebel-Symbol zurück,
- um die Wiedererkennbarkeit zu erhöhen. Diesmal auf allen Plattformen.
+- Tor auf die neueste Version 0.4.8.20 aktualisiert.
+- App-Symbol-Umschalter hinzugefügt (iOS).
+- Fehler beim Festlegen von Länderbeschränkungen behoben, während gleichzeitig das Laden von GeoIP-Dateien untersagt wurde. (iOS)

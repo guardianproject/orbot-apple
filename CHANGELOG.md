@@ -1,5 +1,10 @@
 #  Orbot Apple Changelog
 
+## 1.8.5
+- Updated Tor to latest version 0.4.8.20.
+- Added app icon switcher (iOS).
+- Fixed bug when setting country limitations while also disallowing GeoIP files to be loaded. (iOS) 
+
 ## 1.8.4
 - Updated app icon: Orbie unfortunately never got that popular, so we go back to an onion icon
   to increase recognizability. This time on all platforms.
