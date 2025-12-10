@@ -69,16 +69,24 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let key = auth?.keys[indexPath.row]
+		Task {
+			let key = auth?.keys[indexPath.row]
 
-		showAlert(url: key?.onionAddress, key: key?.key, indexPath: indexPath) { [weak self] success in
-				if success {
-					self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
-				}
-				else {
-					self?.tableView?.deselectRow(at: indexPath, animated: true)
-				}
+			switch await showAlert(url: key?.onionAddress, key: key?.key, indexPath: indexPath) {
+			case .cancelled:
+				tableView.deselectRow(at: indexPath, animated: true)
+
+			case .changed:
+				tableView.reloadRows(at: [indexPath], with: .automatic)
+
+				VpnManager.shared.configChanged()
+
+			case .deleted:
+				self.tableView(tableView, commit: .delete, forRowAt: indexPath)
+
+				VpnManager.shared.configChanged()
 			}
+		}
 	}
 
 
@@ -131,72 +139,89 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 	}
 
 	func addKey(_ url: URL?, _ key: String?) {
-		let old = auth?.keys.count ?? 0
+		Task {
+			let old = auth?.keys.count ?? 0
 
-		showAlert(url: url, key: key, indexPath: nil) { [weak self] success in
-			if success {
-				if self?.auth?.keys.count ?? 0 > old {
-					self?.tableView?.insertRows(
-						at: [IndexPath(row: (self?.auth?.keys.count ?? 1) - 1, section: 0)],
+			switch await showAlert(url: url, key: key, indexPath: nil) {
+			case .changed:
+				if auth?.keys.count ?? 0 > old {
+					tableView?.insertRows(
+						at: [IndexPath(row: (auth?.keys.count ?? 1) - 1, section: 0)],
 						with: .automatic)
 				}
 				else {
-					self?.tableView.reloadData()
+					tableView?.reloadData()
 				}
-			}
 
-			VpnManager.shared.configChanged()
+				VpnManager.shared.configChanged()
+
+			default:
+				break
+			}
 		}
 	}
 
 
 	// MARK: Private Methods
 
-	private func showAlert(url: URL?, key: String?, indexPath: IndexPath?, completion: @escaping (_ success: Bool) -> Void) {
-		let title: String
-		let actionTitle: String
+	private func showAlert(url: URL?, key: String?, indexPath: IndexPath?) async -> EditResult {
+		await withCheckedContinuation { continuation in
+			let title: String
+			let actionTitle: String
 
-		if indexPath != nil {
-			title = L10n.editAuthCookie
-			actionTitle = L10n.edit
-		}
-		else {
-			title = L10n.addAuthCookie
-			actionTitle = L10n.add
-		}
-
-		let alert = AlertHelper.build(
-			title: title,
-			actions: [AlertHelper.cancelAction(handler: { _ in completion(false) })])
-
-		alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] _ in
-			guard let rawUrl = alert.textFields?.first?.text,
-				  let key = alert.textFields?.last?.text
+			if indexPath != nil {
+				title = L10n.editAuthCookie
+				actionTitle = L10n.edit
+			}
 			else {
-				return completion(false)
+				title = L10n.addAuthCookie
+				actionTitle = L10n.add
 			}
 
-			guard let cookie = TorAuthKey(private: key, forDomain: rawUrl) else {
-				return completion(false)
-			}
+			let alert = AlertHelper.build(
+				title: title,
+				actions: [AlertHelper.cancelAction(handler: { _ in continuation.resume(returning: .cancelled) })])
 
-			self?.auth?.set(cookie)
+			alert.addAction(AlertHelper.defaultAction(actionTitle) { [weak self] _ in
+				guard let rawUrl = alert.textFields?.first?.text,
+					  let key = alert.textFields?.last?.text
+				else {
+					return continuation.resume(returning: .cancelled)
+				}
 
-			completion(true)
-		})
+				guard let cookie = TorAuthKey(private: key, forDomain: rawUrl) else {
+					return continuation.resume(returning: .cancelled)
+				}
 
-		if let indexPath = indexPath {
-			alert.addAction(AlertHelper.destructiveAction(L10n.delete) { [weak self] _ in
-				self?.tableView(self!.tableView, commit: .delete, forRowAt: indexPath)
+				self?.auth?.set(cookie)
+
+				continuation.resume(returning: .changed)
 			})
+
+			if indexPath != nil {
+				alert.addAction(AlertHelper.destructiveAction(L10n.delete) { _ in
+					continuation.resume(returning: .deleted)
+				})
+			}
+
+			AlertHelper.addTextField(alert, placeholder: "http://example.onion", text: url?.absoluteString) { tf in
+				tf.keyboardType = .URL
+
+				// Domains cannot be edited. That would create a new entry and force a crash
+				// on return, because `tableView.reloadRows` would detect an inconsistency:
+				// One more row than expected after reload.
+				tf.isEnabled = indexPath == nil
+			}
+
+			AlertHelper.addTextField(alert, placeholder: L10n.key, text: key)
+
+			present(alert, animated: true)
 		}
+	}
 
-		AlertHelper.addTextField(alert, placeholder: "http://example.onion", text: url?.absoluteString) { tf in
-			tf.keyboardType = .URL
-		}
-
-		AlertHelper.addTextField(alert, placeholder: L10n.key, text: key)
-
-		present(alert, animated: true)
+	private enum EditResult {
+		case cancelled
+		case changed
+		case deleted
 	}
 }
