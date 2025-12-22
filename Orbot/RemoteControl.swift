@@ -15,14 +15,6 @@ class RemoteControl {
 	static let shared = RemoteControl()
 
 
-	private var rootVc: UINavigationController? {
-		(UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as? UINavigationController
-	}
-
-	private var mainVc: MainViewController? {
-		rootVc?.viewControllers.first as? MainViewController
-	}
-
 	private var handlerQueue = [(() -> Void)]()
 
 	private var observerToken: NSObjectProtocol? = nil {
@@ -86,8 +78,8 @@ class RemoteControl {
 	 */
 	private func createHandler(_ command: String, _ args: [URLQueryItem]?) -> (() -> Void)? {
 		let dismiss = { (inner: (() -> Void)?) in
-			return { [weak self] in
-				self?.rootVc?.dismiss(animated: true, completion: inner) ?? Void()
+			return {
+				UIApplication.shared.rootVc?.dismiss(animated: true, completion: inner) ?? Void()
 			}
 		}
 
@@ -115,26 +107,26 @@ class RemoteControl {
 			}
 
 		case "show/settings":
-			return dismiss { [weak self] in
-				self?.mainVc?.showSettings()
+			return dismiss {
+				UIApplication.shared.mainVc?.showSettings()
 			}
 
 		case "show/bridges":
-			return dismiss { [weak self] in
-				self?.mainVc?.changeBridges()
+			return dismiss {
+				UIApplication.shared.mainVc?.changeBridges()
 			}
 
 		case "show/auth":
-			return dismiss { [weak self] in
-				self?.mainVc?.showAuth()
+			return dismiss {
+				UIApplication.shared.mainVc?.showAuth()
 			}
 
 		case "add/auth":
 			let url = args?.first(where: { $0.name == "url" })?.value
 			let key = args?.first(where: { $0.name == "key" })?.value
 
-			return dismiss { [weak self] in
-				self?.mainVc?.showAuth().addKey(URL(string: url ?? ""), key)
+			return dismiss {
+				UIApplication.shared.mainVc?.showAuth().addKey(URL(string: url ?? ""), key)
 			}
 
 		case "request/token":
@@ -171,7 +163,7 @@ class RemoteControl {
 			// Hook up state change observer and try to start VPN.
 			case .disabled, .disconnected, .evaluating, .connecting, .reasserting, .disconnecting:
 
-				guard let rootVc = rootVc else {
+				guard let rootVc = UIApplication.shared.rootVc else {
 					return
 				}
 
@@ -220,7 +212,7 @@ class RemoteControl {
 		}
 		// No callback. Just try to connect.
 		else {
-			rootVc?.dismiss(animated: true) {
+			UIApplication.shared.rootVc?.dismiss(animated: true) {
 				SharedUtils.control(onlyTo: .connected)
 			}
 		}
@@ -239,7 +231,7 @@ class RemoteControl {
 			  !token.isEmpty,
 			  Settings.apiAccessTokens.first(where: { $0.key == token }) != nil
 		else {
-			if let mainVc = mainVc {
+			if let mainVc = UIApplication.shared.mainVc {
 				let message = String(
 					format: NSLocalizedString(
 						"An app tried to stop %1$@, but you didn't allow it to do this, yet.",
@@ -255,7 +247,7 @@ class RemoteControl {
 				AlertHelper.present(mainVc, message: message, actions: [
 					AlertHelper.cancelAction(),
 					AlertHelper.destructiveAction(NSLocalizedString("Stop", comment: ""), handler: { _ in
-						self.rootVc?.dismiss(animated: true) {
+						UIApplication.shared.rootVc?.dismiss(animated: true) {
 							SharedUtils.control(onlyTo: .disconnected)
 						}
 					})])
@@ -275,7 +267,7 @@ class RemoteControl {
 			// Hook up state change observer and try to stop VPN.
 			case .disabled, .evaluating, .connecting, .connected, .reasserting, .disconnecting:
 
-				guard let rootVc = rootVc else {
+				guard let rootVc = UIApplication.shared.rootVc else {
 					return
 				}
 
@@ -324,7 +316,7 @@ class RemoteControl {
 		}
 		// No callback. Just try to disconnect.
 		else {
-			rootVc?.dismiss(animated: true) {
+			UIApplication.shared.rootVc?.dismiss(animated: true) {
 				SharedUtils.control(onlyTo: .disconnected)
 			}
 		}
@@ -339,7 +331,7 @@ class RemoteControl {
 	 - parameter callback: A callback URL to redirect the user to after access registration.
 	 */
 	private func requestToken(_ appId: String?, _ appName: String?, _ needsBypass: Bool, _ callback: String?) {
-		guard let mainVc = mainVc else {
+		guard let mainVc = UIApplication.shared.mainVc else {
 			return
 		}
 

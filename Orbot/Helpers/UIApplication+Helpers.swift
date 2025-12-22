@@ -19,7 +19,11 @@ extension UIApplication {
             .first
     }
 
-    var rootViewController: UIViewController? {
-        currentKeyWindow?.rootViewController
+    var rootVc: UITabBarController? {
+        currentKeyWindow?.rootViewController as? UITabBarController
     }
+
+	var mainVc: MainViewController? {
+		(rootVc?.viewControllers?.first as? UINavigationController)?.viewControllers.first as? MainViewController
+	}
 }

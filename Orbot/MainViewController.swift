@@ -116,6 +116,12 @@ class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		tabBarItem = navigationController?.tabBarItem
+		tabBarItem?.badgeColor = .accent
+		tabBarItem?.title = NSLocalizedString("VPN", comment: "")
+
+		tabBarController?.tabBar.items?.last?.title = L10n.kindnessMode
+
 		let callback: (Notification) -> Void = { [weak self] notification in
 			self?.updateUi(notification)
 		}
@@ -307,6 +313,18 @@ class MainViewController: UIViewController {
 	// MARK: Observers
 
 	@objc func updateUi(_ notification: Notification? = nil) {
+
+		switch VpnManager.shared.status {
+
+		case .notInstalled, .disabled, .invalid, .disconnected, .unknown:
+			tabBarItem?.badgeValue = nil
+
+		case .evaluating, .connecting, .reasserting, .disconnecting:
+			tabBarItem?.badgeValue = "…"
+
+		case .connected:
+			tabBarItem?.badgeValue = "✓"
+		}
 
 		refreshBt?.isEnabled = VpnManager.shared.status == .connected
 

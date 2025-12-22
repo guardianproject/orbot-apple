@@ -115,20 +115,22 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = L10n.kindnessMode
+		tabBarItem?.title = L10n.kindnessMode
+		tabBarItem?.badgeColor = .accent
 
 		updateUi()
 	}
 
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		if proxy.isRunning() {
+			deactivate()
+		}
+	}
+
 
 	// MARK: Actions
-
-	@IBAction func stop() {
-		stopProxy()
-
-		let vc = UIStoryboard.main.instantiateViewController(MainViewController.self)
-		navigationController?.setViewControllers([vc], animated: true)
-	}
 
 	@IBAction func activate() {
 		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
@@ -162,6 +164,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 				self?.stoppedContainer.isHidden = true
 				self?.stoppedContainer.accessibilityElementsHidden = true
 
+				self?.tabBarItem?.badgeValue = "✓"
+
 				UIAccessibility.post(notification: .screenChanged, argument: self?.titleStartedLb)
 			})
 	}
@@ -182,6 +186,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 			completion: { [weak self] _ in
 				self?.startedContainer.isHidden = true
 				self?.startedContainer.accessibilityElementsHidden = true
+
+				self?.tabBarItem?.badgeValue = nil
 
 				UIAccessibility.post(notification: .screenChanged, argument: self?.titleLb)
 			})

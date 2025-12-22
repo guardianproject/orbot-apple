@@ -35,8 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		SharedUtils.addScreenshotDummies()
 #endif
 
-//		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//			UIApplication.shared.open(URL(string: "orbot:request/token?app-id=foobar&need-bypass=true")!)
+//		Task {
+//			try await Task.sleep(nanoseconds: 1_000_000_000)
+//
+//			await UIApplication.shared.open(URL(string: "orbot:request/token?app-id=foobar&need-bypass=true")!)
+//
+//			try await Task.sleep(nanoseconds: 1_000_000_000)
+//
+//			RemoteControl.shared.workQueue()
 //		}
 
 		return true

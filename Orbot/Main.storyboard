@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zOy-O2-NNl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DFg-mb-CCK">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iT1-s3-3pL">
-                                <rect key="frame" x="0.0" y="74" width="320" height="494"/>
+                                <rect key="frame" x="0.0" y="74" width="320" height="411"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-Ym-ISf">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="511"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.off" translatesAutoresizingMaskIntoConstraints="NO" id="1N5-w4-uQk">
                                                 <rect key="frame" x="96" y="8" width="128" height="121.5"/>
@@ -139,24 +139,6 @@
                                                     <action selector="clearCache:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqr-Yi-57Z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm2-Kk-BR6">
-                                                <rect key="frame" x="32" y="519" width="256" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="256" id="EF8-PM-gDl"/>
-                                                    <constraint firstAttribute="height" constant="40" id="GfL-kg-LaP"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Kindness Mode"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="9"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="kindnessMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2f2-0V-PnG"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="eEm-Rp-xCs" firstAttribute="leading" secondItem="2qL-Ym-ISf" secondAttribute="leading" constant="16" id="3Za-Qh-IUc"/>
@@ -165,14 +147,11 @@
                                             <constraint firstItem="RHK-rR-QxJ" firstAttribute="top" secondItem="eEm-Rp-xCs" secondAttribute="bottom" constant="32" id="9Nz-n8-gcJ"/>
                                             <constraint firstAttribute="trailing" secondItem="trJ-w6-CDg" secondAttribute="trailing" constant="16" id="DPG-ZM-luw"/>
                                             <constraint firstItem="1N5-w4-uQk" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="DZP-yM-wXA"/>
-                                            <constraint firstAttribute="bottom" secondItem="Wm2-Kk-BR6" secondAttribute="bottom" constant="8" id="Ffy-Vg-vUP"/>
                                             <constraint firstItem="E1X-xS-ta9" firstAttribute="top" secondItem="4D2-gT-gQC" secondAttribute="bottom" constant="8" id="GBZ-uc-Sdk"/>
                                             <constraint firstItem="hc2-uq-S3p" firstAttribute="top" secondItem="1N5-w4-uQk" secondAttribute="bottom" constant="8" symbolic="YES" id="GRf-iC-pQ6"/>
-                                            <constraint firstItem="Wm2-Kk-BR6" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="JlB-zs-rIp"/>
                                             <constraint firstItem="Oag-Ga-fc5" firstAttribute="top" secondItem="RHK-rR-QxJ" secondAttribute="bottom" constant="16" id="K6j-DF-pcA"/>
                                             <constraint firstAttribute="trailing" secondItem="eEm-Rp-xCs" secondAttribute="trailing" constant="16" id="LHa-PK-5oj"/>
                                             <constraint firstItem="4D2-gT-gQC" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="LhP-Ei-sVG"/>
-                                            <constraint firstItem="Wm2-Kk-BR6" firstAttribute="top" secondItem="E1X-xS-ta9" secondAttribute="bottom" constant="16" id="MCg-De-b7F"/>
                                             <constraint firstItem="trJ-w6-CDg" firstAttribute="leading" secondItem="2qL-Ym-ISf" secondAttribute="leading" constant="16" id="SJ4-J4-spz"/>
                                             <constraint firstItem="4D2-gT-gQC" firstAttribute="top" secondItem="Oag-Ga-fc5" secondAttribute="bottom" constant="16" id="bQs-AG-ECq"/>
                                             <constraint firstItem="trJ-w6-CDg" firstAttribute="top" secondItem="hc2-uq-S3p" secondAttribute="bottom" constant="8" symbolic="YES" id="eQE-4I-AE9"/>
@@ -180,6 +159,7 @@
                                             <constraint firstItem="E1X-xS-ta9" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="gD3-WO-YDO"/>
                                             <constraint firstItem="hc2-uq-S3p" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="kUQ-g1-C9E"/>
                                             <constraint firstItem="RHK-rR-QxJ" firstAttribute="centerX" secondItem="2qL-Ym-ISf" secondAttribute="centerX" id="lLU-FI-8rp"/>
+                                            <constraint firstAttribute="bottom" secondItem="E1X-xS-ta9" secondAttribute="bottom" constant="8" id="uM0-r9-sax"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -274,7 +254,6 @@
                         <outlet property="clearCacheBt" destination="E1X-xS-ta9" id="oIQ-RM-SYl"/>
                         <outlet property="configureBt" destination="4D2-gT-gQC" id="BzC-HQ-bEE"/>
                         <outlet property="controlBt" destination="RHK-rR-QxJ" id="eOS-d8-hnA"/>
-                        <outlet property="kindnessModeBt" destination="Wm2-Kk-BR6" id="N6t-da-qpW"/>
                         <outlet property="logBt" destination="2Pk-78-bJO" id="Wja-ru-8lH"/>
                         <outlet property="logContainer" destination="48u-FW-Qyr" id="pu3-SA-Xqe"/>
                         <outlet property="logSc" destination="wHn-pb-Y2g" id="Rbp-pl-ctO"/>
@@ -314,7 +293,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-n1-uC4">
-                                <rect key="frame" x="16" y="90" width="288" height="462"/>
+                                <rect key="frame" x="16" y="90" width="288" height="379"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.snoozing" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-sQ-M9r">
                                         <rect key="frame" x="80" y="0.0" width="128" height="128"/>
@@ -405,7 +384,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-tV-wfg">
-                                <rect key="frame" x="16" y="90" width="288" height="462"/>
+                                <rect key="frame" x="16" y="90" width="288" height="379"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orbie.kindness" translatesAutoresizingMaskIntoConstraints="NO" id="Ory-q0-5NJ">
                                         <rect key="frame" x="80" y="0.0" width="128" height="128"/>
@@ -545,13 +524,7 @@
                             <constraint firstItem="Sst-n1-uC4" firstAttribute="leading" secondItem="oUo-aM-UNZ" secondAttribute="leading" constant="16" id="v2e-lC-p7N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Kindness Mode" id="RQc-0K-ppr">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="2gM-hN-nIx">
-                            <connections>
-                                <action selector="stop" destination="A04-Pj-ZSy" id="XQQ-2X-LTt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Kindness Mode" image="heart.fill" catalog="system" id="seG-Bj-o2n"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="activateBt" destination="UTC-Zm-XAq" id="iBY-fO-5iA"/>
@@ -574,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfH-Gb-n6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-661"/>
+            <point key="canvasLocation" x="-744" y="-661"/>
         </scene>
         <!--Access Request View Controller-->
         <scene sceneID="pAc-Hf-2db">
@@ -1045,13 +1018,34 @@
             </objects>
             <point key="canvasLocation" x="2116" y="135.38230884557723"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="vdL-Sd-g8k">
+            <objects>
+                <tabBarController id="DFg-mb-CCK" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W8N-E4-e0X">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zOy-O2-NNl" kind="relationship" relationship="viewControllers" id="yX7-Ec-E16"/>
+                        <segue destination="A04-Pj-ZSy" kind="relationship" relationship="viewControllers" id="02Z-cz-7SK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yhf-9c-84D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1791" y="-212"/>
+        </scene>
+        <!--Connect-->
         <scene sceneID="dcy-1L-Z2H">
             <objects>
                 <navigationController id="zOy-O2-NNl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Connect" image="network" catalog="system" id="jvC-jC-KLo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Sy3-W1-eYI">
                         <rect key="frame" x="0.0" y="20" width="320" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -1073,6 +1067,8 @@
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="network" catalog="system" width="128" height="123"/>
         <image name="orbie.kindness" width="432" height="432"/>
         <image name="orbie.off" width="132" height="125"/>
         <image name="orbie.office" width="256" height="256"/>

@@ -28,9 +28,7 @@ open class Dimmer: NSObject, UIGestureRecognizerDelegate {
 
         UIDevice.current.isProximityMonitoringEnabled = true
 
-        if let rootVc = UIApplication.shared.rootViewController {
-            view = (rootVc as? UINavigationController)?.topViewController?.view ?? rootVc.view
-        }
+		view = UIApplication.shared.rootVc?.view
 
         tapRec.delegate = self
 

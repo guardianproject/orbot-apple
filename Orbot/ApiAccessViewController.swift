@@ -81,9 +81,7 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	@objc func close() {
 		navigationController?.dismiss(animated: true)
 
-		((UIApplication.shared.delegate?.window??.rootViewController as? UINavigationController)?
-			.viewControllers.first as? MainViewController)?
-			.updateMenu()
+		UIApplication.shared.mainVc?.updateMenu()
 	}
 
 
