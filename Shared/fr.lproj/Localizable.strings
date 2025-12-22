@@ -677,6 +677,9 @@
 "View" = "Afficher";
 
 /* No comment provided by engineer. */
+"VPN" = "RPV";
+
+/* No comment provided by engineer. */
 "VPN in a strange state" = "Le RPV/VPN est dans un état étrange";
 
 /* No comment provided by engineer. */

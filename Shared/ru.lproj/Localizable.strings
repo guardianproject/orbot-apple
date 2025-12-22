@@ -11,7 +11,7 @@
 "%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ %2$@ для %3$@ на %4$@%5$@.";
 
 /* No comment provided by engineer. */
-"%1$@ Bypass %2$@" = "%1$@ Bypass %2$@";
+"%1$@ Bypass %2$@" = "%1$@ через %2$@";
 
 /* No comment provided by engineer. */
 "%1$@ Get information about Tor circuits." = "%1$@ Get information about Tor circuits.";
@@ -32,7 +32,7 @@
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Некоторые параметры могут быть перезаписаны %2$@.";
 
 /* No comment provided by engineer. */
-"%1$@ Stop Tor." = "%1$@ Stop Tor.";
+"%1$@ Stop Tor." = "%1$@ Остановить Tor.";
 
 /* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ Эти настройки вступят в силу только после перезапуска.";
@@ -65,7 +65,7 @@
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)";
 
 /* Placeholder is app name */
-"%@ Status" = "%@ Status";
+"%@ Status" = "%@ Статус";
 
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
@@ -107,7 +107,7 @@
 "all" = "все";
 
 /* No comment provided by engineer. */
-"all domains" = "all domains";
+"all domains" = "все домены, кроме";
 
 /* No comment provided by engineer. */
 "all domains but" = "все домены, кроме";
@@ -161,7 +161,7 @@
 "audio/video media" = "аудио/видео медиа";
 
 /* No comment provided by engineer. */
-"Auth Cookies" = "Auth Cookies";
+"Auth Cookies" = "Авторизирующие cookies";
 
 /* No comment provided by engineer. */
 "Automatic Restart" = "Автоматический перезапуск";
@@ -194,7 +194,7 @@
 "Build new Circuits" = "Создать новую цепочку";
 
 /* No comment provided by engineer. */
-"Built-in Bridges (obfs4)" = "Built-in Bridges (obfs4)";
+"Built-in Bridges (obfs4)" = "Встроенные мосты (obfs4)";
 
 /* No comment provided by engineer. */
 "Bypass" = "Обход";
@@ -407,7 +407,7 @@
 "Install" = "Установить";
 
 /* Placeholder is 'Onion Browser' */
-"Install %@" = "Install %@";
+"Install %@" = "Установить %@";
 
 /* No comment provided by engineer. */
 "Install Orbot as a VPN on your device to continue." = "Install Orbot as a VPN on your device to continue.";
@@ -485,7 +485,7 @@
 "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "Использовать эти узлы только для подключения вне сети Tor. Вы снизите функциональность, если укажете слишком мало узлов!";
 
 /* Placeholder is 'Onion Browser' */
-"Open %@" = "Open %@";
+"Open %@" = "Открыть %@";
 
 /* No comment provided by engineer. */
 "Open Log" = "Open Log";
@@ -675,6 +675,9 @@
 
 /* macOS menu item */
 "View" = "Просмотр";
+
+/* No comment provided by engineer. */
+"VPN" = "VPN";
 
 /* No comment provided by engineer. */
 "VPN in a strange state" = "VPN in a strange state";
