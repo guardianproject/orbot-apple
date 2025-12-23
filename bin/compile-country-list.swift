@@ -7,7 +7,7 @@ import Foundation
 
 var request = URLRequest(url: URL(string: "http://onionoo.torproject.org/details?type=relay&running=true&flag=Exit")!)
 
-let outfile = resolve("Shared/exit-node-countries.plist")
+let outfile = resolve("../Shared/exit-node-countries.plist")
 
 // MARK: Helper Methods
 
