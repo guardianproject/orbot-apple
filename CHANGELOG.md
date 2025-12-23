@@ -1,5 +1,12 @@
 #  Orbot Apple Changelog
 
+## 1.9.0
+- Updated Tor to latest version 0.4.8.21.
+- Updated Lyrebird to latest version 0.8.0. (macOS)
+- Reworked UI: Use tabs. Put Kindness Mode in its own tab. (iOS)
+- Fixed crash when editing Tor auth cookies. (iOS)
+- Fixed crash when stopping Kindness Mode.
+
 ## 1.8.5
 - Updated Tor to latest version 0.4.8.20.
 - Added app icon switcher (iOS).

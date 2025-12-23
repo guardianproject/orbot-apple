@@ -1,3 +1,5 @@
-- Actualización de Tor a la última versión 0.4.8.20.
-- Se ha añadido un selector de iconos de aplicaciones (iOS).
-- Se ha corregido un error al establecer limitaciones por país y, al mismo tiempo, impedir la carga de archivos GeoIP. (iOS)
+- Actualización de Tor a la última versión 0.4.8.21.
+- Actualización de Lyrebird a la última versión 0.8.0. (macOS)
+- Rediseño de la interfaz de usuario: uso de pestañas. El modo Kindness ahora tiene su propia pestaña. (iOS)
+- Se ha corregido el error que provocaba el bloqueo del sistema al editar las cookies de autenticación de Tor. (iOS)
+- Se ha corregido el error que provocaba el bloqueo del sistema al detener el modo Kindness.

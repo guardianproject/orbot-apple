@@ -1,3 +1,5 @@
-- Atualização do Tor para a versão mais recente 0.4.8.20.
-- Adicionado seletor de ícones de aplicativos (iOS).
-- Corrigido bug ao definir limitações de país e, ao mesmo tempo, impedir o carregamento de arquivos GeoIP. (iOS)
+- Atualização do Tor para a versão mais recente 0.4.8.21.
+- Atualização do Lyrebird para a versão mais recente 0.8.0. (macOS)
+- Reformulação da interface do usuário: uso de guias. Colocação do Modo Gentileza em uma guia separada. (iOS)
+- Correção de falha ao editar cookies de autenticação do Tor. (iOS)
+- Correção de falha ao interromper o Modo Gentileza.

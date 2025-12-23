@@ -1,3 +1,5 @@
-- Tor auf die neueste Version 0.4.8.20 aktualisiert.
-- App-Symbol-Umschalter hinzugefügt (iOS).
-- Fehler beim Festlegen von Länderbeschränkungen behoben, während gleichzeitig das Laden von GeoIP-Dateien untersagt wurde. (iOS)
+- Tor auf die neueste Version 0.4.8.21 aktualisiert.
+- Lyrebird auf die neueste Version 0.8.0 aktualisiert. (macOS)
+- Überarbeitete Benutzeroberfläche: Verwendung von Registerkarten. Kindness Mode in einer eigenen Registerkarte. (iOS)
+- Absturz beim Bearbeiten von Tor-Authentifizierungs-Cookies behoben. (iOS)
+- Absturz beim Beenden des Kindness Mode behoben.
