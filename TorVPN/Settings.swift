@@ -87,6 +87,10 @@ public enum Transport: Int, CaseIterable, Comparable {
 		}
 	}
 
+	public var error: Error? {
+		nil
+	}
+
 	/**
 	 Start the transport, if it is startable.
 	 */

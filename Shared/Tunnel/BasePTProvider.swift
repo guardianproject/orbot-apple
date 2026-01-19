@@ -63,6 +63,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 	private var connectionGuard: DispatchSourceTimer?
 	private var connectionTimeout = DispatchTime.now()
 
+	private var oldProgress: Int = -1
+
 
 	override init() {
 		super.init()
@@ -327,16 +329,22 @@ class BasePTProvider: NEPacketTunnelProvider {
 			return completion(error, nil, nil)
 		}
 
-		var oldProgress = -1
+#if os(macOS)
+		NotificationCenter.default.addObserver(self, selector: #selector(transportErrored), name: .iPtProxyTransportErrored, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(transportConnected), name: .iPtProxyTransportConnected, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(transportStopped), name: .iPtProxyTransportStopped, object: nil)
+#endif
+
+		oldProgress = -1
 
 		TorManager.shared.start(transport, packetFlow, { [weak self] progress, summary in
 			guard let progress = progress else {
 				return
 			}
 
-			if progress > oldProgress {
+			if progress > self?.oldProgress ?? -1 {
 				self?.connectionAlive()
-				oldProgress = progress
+				self?.oldProgress = progress
 			}
 
 			Self.messageQueue.append(ProgressMessage(Float(progress) / 100, summary))
@@ -344,6 +352,14 @@ class BasePTProvider: NEPacketTunnelProvider {
 			self?.sendMessages()
 		}, { [weak self] error, socksAddr, dnsAddr in
 			self?.stopConnectionGuard()
+
+#if os(macOS)
+			if let self {
+				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportErrored, object: nil)
+				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportConnected, object: nil)
+				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportStopped, object: nil)
+			}
+#endif
 
 			// Since we seem to have a working connection now, disable smart connect.
 			if error == nil && Settings.smartConnect {
@@ -461,6 +477,36 @@ class BasePTProvider: NEPacketTunnelProvider {
 			log(error.localizedDescription)
 		}
 #endif
+	}
+
+	@objc
+	private func transportErrored(_ notification: Notification) {
+		Task {
+			if let error = (notification.object as? [Transport])?.compactMap({ $0.error }).first {
+				Self.messageQueue.append(
+					ProgressMessage(Float(max(0, oldProgress)) / 100, error.localizedDescription))
+			}
+		}
+	}
+
+	@objc
+	private func transportConnected(_ notification: Notification) {
+		Task {
+			Self.messageQueue.append(
+				ProgressMessage(Float(max(0, oldProgress)) / 100,
+								NSLocalizedString("Bridge connected", comment: "")))
+		}
+	}
+
+	@objc
+	private func transportStopped(_ notification: Notification) {
+		Task {
+			let error = (notification.object as? [Transport])?.compactMap({ $0.error }).first
+
+			Self.messageQueue.append(
+				ProgressMessage(Float(max(0, oldProgress)) / 100,
+								error?.localizedDescription ?? NSLocalizedString("Bridge stopped", comment: "")))
+		}
 	}
 
 	/**
