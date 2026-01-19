@@ -84,7 +84,7 @@ class TorManager {
 				self?.torController?.setConfs(status.torConf(self?.transport ?? .none, Transport.asConf))
 				{ success, error in
 					if let error = error {
-						print("[\(String(describing: type(of: self)))] error: \(error)")
+						Logger.log(level: .error, "[\(String(describing: type(of: self)))] error: \(error)")
 					}
 
 					self?.torController?.resetConnection()
@@ -325,7 +325,7 @@ class TorManager {
 
 			torController?.resetConf(forKey: key) { _, error in
 				if let error = error {
-					debugPrint(error)
+					Logger.log(level: .error, error.localizedDescription)
 				}
 
 				group.leave()

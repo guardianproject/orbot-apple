@@ -307,7 +307,7 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 					   atomically: true, encoding: .utf8)
 		}
 		catch {
-			print(error)
+			Logger.log(level: .error, error.localizedDescription)
 		}
 	}
 #endif

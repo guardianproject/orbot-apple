@@ -254,7 +254,7 @@ class VpnManager: BridgesConfDelegate {
 	func configChanged() {
 		if isConnected {
 			sendMessage(ConfigChangedMessage()) { (success: Bool?, error) in
-				print("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
+				Logger.log("[\(String(describing: type(of: self)))] success=\(success ?? false), error=\(String(describing: error))")
 
 				self.error = error
 
@@ -341,14 +341,14 @@ class VpnManager: BridgesConfDelegate {
 						return
 					}
 
-					print("[\(String(describing: type(of: self)))] Connection watchdog check")
+					Logger.log("[\(String(describing: type(of: self)))] Connection watchdog check")
 
 					if self.watchdog == timer {
 						self.watchdog = nil
 					}
 
 					if ![Status.connecting, .connected].contains(self.status) {
-						print("[\(String(describing: type(of: self)))] Connection watchdog retry!")
+						Logger.log("[\(String(describing: type(of: self)))] Connection watchdog retry!")
 						self.connect(autoConfDone: true)
 					}
 				}
@@ -534,7 +534,7 @@ class VpnManager: BridgesConfDelegate {
 						}
 					}
 					else if message is ConfigChangedMessage {
-						print("[\(String(describing: type(of: self)))] ConfigChangedMessage")
+						Logger.log("[\(String(describing: type(of: self)))] ConfigChangedMessage")
 
 						self.postChange()
 					}

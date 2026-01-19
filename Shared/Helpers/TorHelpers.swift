@@ -32,10 +32,10 @@ class TorHelpers {
 				do {
 					try fm.removeItem(at: file)
 
-					print("File deleted: \(file.path)")
+					Logger.log("File deleted: \(file.path)")
 				}
 				catch {
-					print("File could not be deleted: \(file.path)")
+					Logger.log(level: .error, "File could not be deleted: \(file.path)")
 				}
 			}
 		}

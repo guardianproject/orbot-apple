@@ -40,7 +40,7 @@ class BlockList {
 			blocklist = try Self.decoder.decode([BlockItem].self, from: data)
 		}
 		catch {
-			print("[\(String(describing: type(of: self)))]#init error=\(error)")
+			Logger.log(level: .error, "[\(String(describing: type(of: self)))]#init error=\(error)")
 		}
 	}
 
@@ -91,10 +91,10 @@ class BlockList {
 		}
 
 		SFContentBlockerManager.reloadContentBlocker(withIdentifier: Config.contentBlockerBundleId) { error in
-			print("[\(String(describing: type(of: self)))]#write reload bundleId=\(Config.contentBlockerBundleId), error=\(String(describing: error))")
+			Logger.log(level: .error, "[\(String(describing: type(of: self)))]#write reload bundleId=\(Config.contentBlockerBundleId), error=\(String(describing: error))")
 		}
 
-		print("[\(String(describing: type(of: self)))]#write path=\(url.path)")
+		Logger.log("[\(String(describing: type(of: self)))]#write path=\(url.path)")
 	}
 }
 

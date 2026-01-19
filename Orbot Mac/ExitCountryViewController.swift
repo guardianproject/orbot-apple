@@ -38,7 +38,7 @@ class ExitCountryViewController: NSViewController, NSTableViewDataSource, NSTabl
 
 		for country in countries {
 			if country.inUse {
-				print(country.code)
+				Logger.log(country.code)
 
 				indexes.insert(row)
 			}

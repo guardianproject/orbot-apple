@@ -24,12 +24,12 @@ class Logger {
 	private static let osLogger = os.Logger(subsystem: Bundle.main.bundleIdentifier!, category: "main")
 
 
-	static func log(_ message: String, to: URL?) {
+	static func log(level: OSLogType = .debug, _ message: String, to: URL? = nil) {
 		guard ENABLE_LOGGING else {
 			return
 		}
 
-		osLogger.log(level: .debug, "\(message, privacy: .public)")
+		osLogger.log(level: level, "\(message, privacy: .public)")
 
 		guard let url = to,
 			  let data = message.trimmingCharacters(in: .whitespacesAndNewlines).appending("\n").data(using: .utf8),
