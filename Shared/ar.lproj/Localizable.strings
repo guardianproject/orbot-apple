@@ -179,6 +179,12 @@
 "Blocker" = "Blocker";
 
 /* No comment provided by engineer. */
+"Bridge connected" = "Bridge connected";
+
+/* No comment provided by engineer. */
+"Bridge stopped" = "Bridge stopped";
+
+/* No comment provided by engineer. */
 "Bridges" = "الجسور";
 
 /* No comment provided by engineer. */
@@ -452,7 +458,7 @@
 "Make Upper Case" = "Make Upper Case";
 
 /* macOS menu item */
-"Minimize" = "Minimize";
+"Minimize" = "تصغير";
 
 /* No comment provided by engineer. */
 "Next" = "التالي";
@@ -677,7 +683,7 @@
 "View" = "عرض";
 
 /* No comment provided by engineer. */
-"VPN" = "VPN";
+"VPN" = "الشبكة الافتراضية الخاصة (VPN)";
 
 /* No comment provided by engineer. */
 "VPN in a strange state" = "VPN in a strange state";
