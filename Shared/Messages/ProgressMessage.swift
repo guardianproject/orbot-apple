@@ -15,15 +15,18 @@ class ProgressMessage: Message {
 	}
 
 	let progress: Float
+	let summary: String?
 
-	init(_ progress: Float) {
+	init(_ progress: Float, _ summary: String?) {
 		self.progress = progress
+		self.summary = summary
 
 		super.init()
 	}
 
 	required init?(coder: NSCoder) {
 		progress = coder.decodeFloat(forKey: "progress")
+		summary = coder.decodeObject(forKey: "summary") as? String
 
 		super.init(coder: coder)
 	}
@@ -32,5 +35,6 @@ class ProgressMessage: Message {
 		super.encode(with: coder)
 
 		coder.encode(progress, forKey: "progress")
+		coder.encode(summary, forKey: "summary")
 	}
 }

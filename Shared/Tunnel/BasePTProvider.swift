@@ -329,7 +329,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		var oldProgress = -1
 
-		TorManager.shared.start(transport, packetFlow, { [weak self] progress in
+		TorManager.shared.start(transport, packetFlow, { [weak self] progress, summary in
 			guard let progress = progress else {
 				return
 			}
@@ -339,7 +339,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 				oldProgress = progress
 			}
 
-			Self.messageQueue.append(ProgressMessage(Float(progress) / 100))
+			Self.messageQueue.append(ProgressMessage(Float(progress) / 100, summary))
 
 			self?.sendMessages()
 		}, { [weak self] error, socksAddr, dnsAddr in

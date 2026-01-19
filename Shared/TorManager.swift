@@ -95,7 +95,7 @@ class TorManager {
 
 	func start(_ transport: Transport,
 			   _ packetFlow: NEPacketTunnelFlow,
-			   _ progressCallback: @escaping (_ progress: Int?) -> Void,
+			   _ progressCallback: @escaping (_ progress: Int?, _ summary: String?) -> Void,
 			   _ completion: @escaping (Error?, _ socksAddr: String?, _ dnsAddr: String?) -> Void)
 	{
 		status = .starting
@@ -267,9 +267,11 @@ class TorManager {
 							progress = nil
 						}
 
-						self?.log("#startTunnel progress=\(progress?.description ?? "(nil)")")
+						let summary = arguments?["SUMMARY"]
 
-						progressCallback(progress)
+						self?.log("#startTunnel progress=\(progress?.description ?? "(nil)"), summary=\(summary ?? "(nil)")")
+
+						progressCallback(progress, summary)
 
 						if progress ?? 0 >= 100 {
 							self?.torController?.removeObserver(self?.progressObs)

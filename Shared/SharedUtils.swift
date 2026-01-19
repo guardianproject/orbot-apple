@@ -193,6 +193,11 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 				if VpnManager.shared.status == .evaluating {
 					statusSubtext = NSLocalizedString("Asking Tor Project's Circumvention Service", comment: "")
 				}
+				else if VpnManager.shared.status == .connecting,
+						let summary = VpnManager.shared.summary, !summary.isEmpty
+				{
+					statusSubtext = summary
+				}
 				else if transport == .none {
 					statusSubtext = NSLocalizedString("Use Direct Connection", comment: "")
 				}

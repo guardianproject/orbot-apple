@@ -101,6 +101,7 @@ class VpnManager: BridgesConfDelegate {
 
 	private var evaluating = false
 	private(set) var progress: Float = 0
+	private(set) var summary: String?
 
 	private var watchdog: Timer?
 
@@ -318,6 +319,7 @@ class VpnManager: BridgesConfDelegate {
 
 				self.evaluating = false
 				self.progress = 0
+				self.summary = nil
 
 				do {
 					try session.startVPNTunnel()
@@ -518,16 +520,17 @@ class VpnManager: BridgesConfDelegate {
 			try session?.sendProviderMessage(Data()) { response in
 				guard let response = response,
 					  let unarchiver = try? NSKeyedUnarchiver(forReadingFrom: response),
-					  let response = unarchiver.decodeArrayOfObjects(ofClass: Message.self, forKey: NSKeyedArchiveRootObjectKey)
+					  let response = unarchiver.decodeArrayOfObjects(ofClasses: [Message.self, NSString.self], forKey: NSKeyedArchiveRootObjectKey)
 				else {
 					return
 				}
 
 				for message in response {
 					if let pm = message as? ProgressMessage {
-						print("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress)")
+						Logger.log("[\(String(describing: type(of: self)))] ProgressMessage=\(pm.progress), summary=\(pm.summary ?? "(nil)")")
 
 						self.progress = pm.progress
+						self.summary = pm.summary
 
 						DispatchQueue.main.async {
 							NotificationCenter.default.post(name: .vpnProgress, object: pm.progress)
