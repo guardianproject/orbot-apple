@@ -3,7 +3,7 @@
 //  Orbot Mac
 //
 //  Created by Benjamin Erhart on 21.07.25.
-//  Copyright © 2025 Guardian Project. All rights reserved.
+//  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 //
 
 import Cocoa

@@ -4,7 +4,7 @@
 #  OnionBrowser
 #
 #  Created by Benjamin Erhart on 19.12.25.
-#  Copyright © 2025 Tigas Ventures, LLC (Mike Tigas). All rights reserved.
+#  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 #
 # Description: Translates the English release notes to all other languages present
 #              in fastlane/metadata/* folders using the DeepL CLI.

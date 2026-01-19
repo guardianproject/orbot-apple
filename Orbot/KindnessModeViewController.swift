@@ -3,7 +3,7 @@
 //  Orbot
 //
 //  Created by Benjamin Erhart on 16.07.25.
-//  Copyright © 2025 Guardian Project. All rights reserved.
+//  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 //
 
 import UIKit

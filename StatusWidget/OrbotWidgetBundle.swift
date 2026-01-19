@@ -3,7 +3,7 @@
 //  StatusWidget
 //
 //  Created by Benjamin Erhart on 23.06.23.
-//  Copyright © 2023 Guardian Project. All rights reserved.
+//  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 //
 
 import WidgetKit

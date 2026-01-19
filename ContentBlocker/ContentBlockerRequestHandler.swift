@@ -3,7 +3,7 @@
 //  ContentBlocker
 //
 //  Created by Benjamin Erhart on 08.04.22.
-//  Copyright © 2022 Guardian Project. All rights reserved.
+//  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 //
 
 import UIKit
