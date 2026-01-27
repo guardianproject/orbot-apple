@@ -222,32 +222,38 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			ProgressHUD.animate()
 
-			AutoConf(self).do(cannotConnectWithoutPt: true) { [weak self] error in
-				guard let self = self else {
+			Task {
+				do {
+					try await AutoConf(self).do(country: Settings.countryCode, cannotConnectWithoutPt: true)
+				}
+				catch {
+					await MainActor.run {
+						ProgressHUD.dismiss()
+
+						AlertHelper.present(self, message: error.localizedDescription)
+					}
+
 					return
 				}
 
-				DispatchQueue.main.async {
+				await MainActor.run {
 					ProgressHUD.dismiss()
 
-					if let error = error {
-						AlertHelper.present(self, message: error.localizedDescription)
-					}
-					else {
-						row.title = nil
-						row.attributedTitle = NSAttributedString(string: Option.from(self.transport).localizedDescription, attributes: [.foregroundColor: UIColor.label])
-						row.image = .init(systemName: "checkmark")
-						row.tintColor = .systemGreen
-						row.updateCell()
+					row.title = nil
+					row.attributedTitle = NSAttributedString(string: Option.from(self.transport).localizedDescription, attributes: [.foregroundColor: UIColor.label])
+					row.image = .init(systemName: "checkmark")
+					row.tintColor = .systemGreen
+					row.updateCell()
+				}
 
-						DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-							row.title = NSLocalizedString("Ask Tor", comment: "")
-							row.attributedTitle = nil
-							row.image = nil
-							row.tintColor = .label
-							row.updateCell()
-						}
-					}
+				try? await Task.sleep(nanoseconds: 1_000_000_000 * 5)
+
+				await MainActor.run {
+					row.title = NSLocalizedString("Ask Tor", comment: "")
+					row.attributedTitle = nil
+					row.image = nil
+					row.tintColor = .label
+					row.updateCell()
 				}
 			}
 		})

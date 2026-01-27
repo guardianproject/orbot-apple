@@ -282,18 +282,21 @@ class VpnManager: BridgesConfDelegate {
 				evaluating = true
 				postChange()
 
-				AutoConf(self).do { [weak self] error in
-					if let error = error {
-						self?.error = error
+				Task {
+					do {
+						try await AutoConf(self).do(country: Settings.countryCode)
+					}
+					catch {
+						self.error = error
 
-						self?.postChange()
+						postChange()
 
 						// If the API is broken, we continue with our own smart-connect logic.
 						Settings.transport = .none
 					}
 
 					// Continue in any case, don't let us stop because of a broken config API.
-					self?.connect(autoConfDone: true)
+					connect(autoConfDone: true)
 				}
 			}
 

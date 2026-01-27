@@ -7,47 +7,13 @@
 //
 
 import Foundation
+import IPtProxyUI
 
 class ExitNodeCountries {
 
-	class Country: Equatable {
-
-		static func == (lhs: ExitNodeCountries.Country, rhs: ExitNodeCountries.Country) -> Bool {
-			lhs.code == rhs.code
-		}
-
-		let code: String
+	class Country: IPtProxyUI.Country {
 
 		fileprivate(set) var inUse = false
-
-		private var _flag: String?
-		var flag: String {
-			if _flag == nil {
-
-				let base: UInt32 = 127397
-				_flag = ""
-
-				for v in code.uppercased().unicodeScalars {
-					_flag?.unicodeScalars.append(UnicodeScalar(base + v.value)!)
-				}
-
-			}
-
-			return _flag!
-		}
-
-		fileprivate var _localizedName: String?
-		var localizedName: String {
-			if _localizedName == nil {
-				_localizedName = Locale.current.localizedString(forRegionCode: code) ?? code
-			}
-
-			return _localizedName!
-		}
-
-		init(code: String) {
-			self.code = code.lowercased()
-		}
 	}
 
 
@@ -69,7 +35,7 @@ class ExitNodeCountries {
 		{
 			self.countries = countries
 				.map({ Country(code: $0) })
-				.sorted { $0.localizedName.compare($1.localizedName) == .orderedAscending }
+				.sorted()
 		}
 		else {
 			countries = []
@@ -77,10 +43,10 @@ class ExitNodeCountries {
 
 		NotificationCenter.default.addObserver(forName: NSLocale.currentLocaleDidChangeNotification, object: nil, queue: nil) { _ in
 			for country in self.countries {
-				country._localizedName = nil
+				country.clearCache()
 			}
 
-			self.countries.sort { $0.localizedName.compare($1.localizedName) == .orderedAscending }
+			self.countries.sort()
 		}
 	}
 
