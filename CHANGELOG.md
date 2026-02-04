@@ -1,5 +1,13 @@
 #  Orbot Apple Changelog
 
+## 1.9.1
+- Updated Tor to latest version 0.4.8.22.
+- Updated Lyrebird to latest version 0.8.1. (macOS)
+- Show more status infos when connecting.
+- Updated translations.
+- Added DNSTT support for certain countries. (macOS)
+- Added an additional source for bridges. (macOS)
+
 ## 1.9.0
 - Updated Tor to latest version 0.4.8.21.
 - Updated Lyrebird to latest version 0.8.0. (macOS)

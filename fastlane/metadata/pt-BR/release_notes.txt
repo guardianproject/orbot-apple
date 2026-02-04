@@ -1,5 +1,6 @@
-- Atualização do Tor para a versão mais recente 0.4.8.21.
-- Atualização do Lyrebird para a versão mais recente 0.8.0. (macOS)
-- Reformulação da interface do usuário: uso de guias. Colocação do Modo Gentileza em uma guia separada. (iOS)
-- Correção de falha ao editar cookies de autenticação do Tor. (iOS)
-- Correção de falha ao interromper o Modo Gentileza.
+- Atualização do Tor para a versão mais recente 0.4.8.22.
+- Exibição de mais informações de status durante a conexão.
+- Atualização das traduções.
+- Atualização do Lyrebird para a versão mais recente 0.8.1. (macOS)
+- Adição de suporte a DNSTT para determinados países. (macOS)
+- Adição de uma fonte adicional para pontes. (macOS)

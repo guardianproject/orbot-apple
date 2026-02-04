@@ -1,5 +1,6 @@
-- Updated Tor to latest version 0.4.8.21.
-- Updated Lyrebird to latest version 0.8.0. (macOS)
-- Reworked UI: Use tabs. Put Kindness Mode in its own tab. (iOS)
-- Fixed crash when editing Tor auth cookies. (iOS)
-- Fixed crash when stopping Kindness Mode.
+- Updated Tor to latest version 0.4.8.22.
+- Show more status infos when connecting.
+- Updated translations.
+- Updated Lyrebird to latest version 0.8.1. (macOS)
+- Added DNSTT support for certain countries. (macOS)
+- Added an additional source for bridges. (macOS)

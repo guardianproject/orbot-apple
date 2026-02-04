@@ -1,5 +1,6 @@
-- Tor auf die neueste Version 0.4.8.21 aktualisiert.
-- Lyrebird auf die neueste Version 0.8.0 aktualisiert. (macOS)
-- Überarbeitete Benutzeroberfläche: Verwendung von Registerkarten. Kindness Mode in einer eigenen Registerkarte. (iOS)
-- Absturz beim Bearbeiten von Tor-Authentifizierungs-Cookies behoben. (iOS)
-- Absturz beim Beenden des Kindness Mode behoben.
+- Tor auf die neueste Version 0.4.8.22 aktualisiert.
+- Mehr Statusinformationen beim Herstellen einer Verbindung anzeigen.
+- Übersetzungen aktualisiert.
+- Lyrebird auf die neueste Version 0.8.1 aktualisiert. (macOS)
+- DNSTT-Unterstützung für bestimmte Länder hinzugefügt. (macOS)
+- Zusätzliche Quelle für Brücken hinzugefügt. (macOS)

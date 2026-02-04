@@ -1,5 +1,6 @@
-- Actualización de Tor a la última versión 0.4.8.21.
-- Actualización de Lyrebird a la última versión 0.8.0. (macOS)
-- Rediseño de la interfaz de usuario: uso de pestañas. El modo Kindness ahora tiene su propia pestaña. (iOS)
-- Se ha corregido el error que provocaba el bloqueo del sistema al editar las cookies de autenticación de Tor. (iOS)
-- Se ha corregido el error que provocaba el bloqueo del sistema al detener el modo Kindness.
+- Actualización de Tor a la última versión 0.4.8.22.
+- Se muestra más información de estado al conectarse.
+- Actualización de las traducciones.
+- Actualización de Lyrebird a la última versión 0.8.1. (macOS)
+- Se ha añadido compatibilidad con DNSTT para determinados países. (macOS)
+- Se ha añadido una fuente adicional para puentes. (macOS)
