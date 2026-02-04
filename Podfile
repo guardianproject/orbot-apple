@@ -4,7 +4,7 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-   '~> 408.21'
+   '~> 408.22'
 #   :git => 'https://github.com/iCepa/Tor.framework'
 #  :path => '../Tor.framework'
 
@@ -14,7 +14,7 @@ end
 
 def iptproxy
   pod 'IPtProxyUI/AppEx',
-  '~> 5.1'
+  '~> 5.2'
 #   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
 #   :path => '../IPtProxyUI'
 
