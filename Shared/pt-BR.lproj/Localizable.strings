@@ -1,49 +1,22 @@
-/* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = " onde a URL contém o regex \"%@\"";
 
 /* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
 "%1$@ %2$@ VPN will be switched off." = "%1$@%2$@a VPN será desligada ";
-
-/* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ Códigos de país de 2 letras em chaves, por exemplo. \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ por %2$@ durante %3$@ em %4$@%5$@.";
-
-/* No comment provided by engineer. */
 "%1$@ Bypass %2$@" = "%1$@ Contornar %2$@";
-
-/* No comment provided by engineer. */
 "%1$@ Get information about Tor circuits." = "%1$@ Obtenha informações sobre circuitos Tor.";
-
-/* No comment provided by engineer. */
 "%1$@ Get updates on the status of the connection." = "%1$@ Obtenha atualizações sobre o status da conexão.";
-
-/* No comment provided by engineer. */
 "%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ Padrões de endereço IP, por exemplo, \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ impressões digitais do nó, por exemplo. \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ Options need 2 leading minuses: %2$@" = "%1$@ As opções precisam de 2 pontos negativos: %2$@";
-
-/* No comment provided by engineer. */
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ Algumas opções podem ser substituídas por %2$@.";
-
-/* No comment provided by engineer. */
 "%1$@ Stop Tor." = "%1$@ Pare o Tor.";
-
-/* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ Essas configurações só entrarão em vigor após a reinicialização.";
-
-/* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ quer acessar %2$@.";
 
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@O app precisa ficar em primeiro plano.";
-
-/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Os argumentos para uma opção precisam estar em uma nova linha.";
 
 /* Placeholder is bullet */
@@ -66,215 +39,85 @@
 
 /* Placeholder is app name */
 "%@ Status" = "%@ Estado";
-
-/* No comment provided by engineer. */
-"__BLOCKER_HEADER_1__" = "__vazio__";
-
-/* No comment provided by engineer. */
+"__BLOCKER_HEADER_1__" = "__empty__";
 "__BLOCKER_HEADER_2__" = "por";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_3__" = "durante";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_4__" = "em";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_5__" = "onde a URL contém";
-
-/* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "Um \"Bloqueador de conteúdo\" fornece uma lista de itens a serem bloqueados no Safari, em todos os outros navegadores e em todas as visualizações da Web usadas em aplicativos.";
 
 /* macOS menu item */
 "About %@" = "Sobre   %@";
-
-/* No comment provided by engineer. */
 "Access Request" = "Solicitação de Acesso";
-
-/* No comment provided by engineer. */
 "Activate" = "Ativar";
-
-/* No comment provided by engineer. */
 "Add" = "Adicionar";
-
-/* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "Adicionar v3 Onion Service Auth Cookie";
-
-/* No comment provided by engineer. */
 "Advanced Tor Configuration" = "Configuração avançada do Tor";
-
-/* No comment provided by engineer. */
 "all" = "todo";
-
-/* No comment provided by engineer. */
 "all domains" = "Todos os domínios";
-
-/* No comment provided by engineer. */
 "all domains but" = "todos os domínios, mas";
-
-/* No comment provided by engineer. */
 "all domains but %@" = "todos os domínios, mas %@";
-
-/* No comment provided by engineer. */
 "All Time Total" = "Total de todos os tempos";
-
-/* No comment provided by engineer. */
 "all types" = "todos os tipos";
-
-/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Também não use nós excluídos para gerenciamento de rede";
-
-/* No comment provided by engineer. */
 "Always clear cache before start" = "Sempre limpe o cache antes de iniciar";
-
-/* No comment provided by engineer. */
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Um aplicativo tentou parar %1$@, mas você não permitiu que ele fizesse isso, ainda.";
-
-/* No comment provided by engineer. */
 "Another app requested an API access token." = "Outro aplicativo solicitou um token de acesso à API.";
-
-/* No comment provided by engineer. */
 "anything" = "qualquer coisa";
-
-/* No comment provided by engineer. */
 "API Access" = "Acesso à API";
-
-/* No comment provided by engineer. */
 "API Access Token" = "Token de acesso à API";
-
-/* No comment provided by engineer. */
 "App Icon" = "Ícone do App";
-
-/* No comment provided by engineer. */
 "Ask Tor" = "Pergunte ao Tor";
-
-/* No comment provided by engineer. */
 "Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "Pergunte dentro de suas redes e organizações confiáveis para ver se alguém está hospedando uma ponte. Se não, um amigo pode conseguir pontes para você.";
-
-/* No comment provided by engineer. */
 "Asking Tor Project's Circumvention Service" = "Solicitando o Serviço de Evasão do Projeto Tor";
-
-/* No comment provided by engineer. */
 "ATTENTION: This may harm your anonymity and security!" = "ATENÇÃO: Isso pode prejudicar seu anonimato e segurança!";
-
-/* No comment provided by engineer. */
 "audio/video media" = "mídia de áudio/vídeo";
-
-/* No comment provided by engineer. */
 "Auth Cookies" = "Cookies de autenticação";
-
-/* No comment provided by engineer. */
 "Automatic Restart" = "Reinicialização automática";
-
-/* No comment provided by engineer. */
 "Automatically Restart on Error" = "Reiniciar automaticamente em caso de erro";
-
-/* No comment provided by engineer. */
 "Block cookies" = "Bloquear cookies";
-
-/* No comment provided by engineer. */
 "Block requests" = "Bloquear solicitações";
-
-/* No comment provided by engineer. */
 "Blocker" = "Bloqueador";
-
-/* No comment provided by engineer. */
 "Bridge connected" = "Bridge connected";
-
-/* No comment provided by engineer. */
 "Bridge stopped" = "Bridge stopped";
-
-/* No comment provided by engineer. */
 "Bridges" = "Pontes";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Email" = "Pontes do Tor (obfs4) via e-mail";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Telegram" = "Pontes do Tor (obfs4) via Telegram";
 
 /* macOS menu item */
 "Bring All to Front" = "Traga tudo para a frente";
-
-/* No comment provided by engineer. */
 "Build new Circuits" = "Construa novos circuitos";
-
-/* No comment provided by engineer. */
 "Built-in Bridges (obfs4)" = "Pontes embutidas (obfs4)";
-
-/* No comment provided by engineer. */
 "Bypass" = "Contornar";
-
-/* No comment provided by engineer. */
 "Bypass: denied" = "Desvio: negado";
-
-/* No comment provided by engineer. */
 "Bypass: granted" = "Desvio: concedido";
 
 /* macOS menu item */
 "Capitalize" = "Capitalizar";
-
-/* No comment provided by engineer. */
 "Choose How to Connect" = "Escolha como se conectar";
-
-/* No comment provided by engineer. */
 "Circuits" = "Circuitos";
-
-/* No comment provided by engineer. */
 "Clear Tor Cache" = "Limpar cache do Tor";
-
-/* No comment provided by engineer. */
 "Cleared!" = "Limpo!";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Encobre seu tráfego. Contornando alguns bloqueios do Tor. Bom se você estiver em Wi-Fi público, mas em um país onde o Tor não está bloqueado.";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Encobre seu tráfego. Contornando alguns bloqueios do Tor. Pode ser muito lento.";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Encobre seu tráfego. Contornando alguns bloqueios do Tor. Requer um e-mail enviado de uma conta do Gmail ou do Riseup.";
 
 /* macOS menu item */
 "Close" = "Fechar";
-
-/* No comment provided by engineer. */
 "Close Log" = "Fechar registro";
-
-/* No comment provided by engineer. */
 "Comma-separated lists of:" = "Listas separadas por vírgulas de:";
-
-/* No comment provided by engineer. */
 "Connected" = "Conectado";
-
-/* No comment provided by engineer. */
 "Connecting" = "Conectar";
-
-/* No comment provided by engineer. */
 "Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking." = "Conecta-se através de voluntários do Tor. Mas usa um método diferente do \"original\" para encontrar o primeiro voluntário. Contornando alguns bloqueios do Tor.";
-
-/* No comment provided by engineer. */
 "Connects through Tor volunteers. Gets around some Tor blocking." = "Conecta-se através de voluntários do Tor. Contornando alguns bloqueios do Tor.";
-
-/* No comment provided by engineer. */
 "Content Blocker" = "Bloqueador de conteúdo";
 
 /* macOS menu item */
 "Copy" = "Copiar";
-
-/* No comment provided by engineer. */
 "Copy to Clipboard" = "Copiar para área de transferência";
-
-/* No comment provided by engineer. */
 "Could not connect." = "Não foi possível conectar.";
-
-/* No comment provided by engineer. */
 "Create your own rules here to e.g. block popups or third-party scripts." = "Crie suas próprias regras aqui para, por exemplo, bloquear pop-ups ou scripts de terceiros.";
-
-/* No comment provided by engineer. */
 "Current State" = "Estado Atual";
-
-/* No comment provided by engineer. */
 "Custom Bridges" = "Pontes Personalizadas";
 
 /* macOS menu item */
@@ -282,71 +125,29 @@
 
 /* macOS menu item */
 "Cut" = "Cortar";
-
-/* No comment provided by engineer. */
 "Delete" = "Excluir";
-
-/* No comment provided by engineer. */
 "Deny" = "Negar";
-
-/* No comment provided by engineer. */
 "Direct Connection" = "Conexão Direta";
-
-/* No comment provided by engineer. */
 "Disable %@ for non-onion traffic" = "Desativar para tráfego que não seja onion%@";
-
-/* No comment provided by engineer. */
 "Disable GeoIP lookup for nodes (reduces RAM usage)" = "Desativar pesquisa GeoIP para nós (reduz o uso de RAM)";
-
-/* No comment provided by engineer. */
 "disabled" = "desativado";
-
-/* No comment provided by engineer. */
 "Disabled" = "Desativado";
-
-/* No comment provided by engineer. */
 "Disconnecting" = "Desconectar";
-
-/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Não use esses nós. Substitui a lista de nós de entrada e saída. Ainda pode ser usado para fins de gerenciamento.";
-
-/* No comment provided by engineer. */
 "documents" = "Documentos";
-
-/* No comment provided by engineer. */
 "Edit" = "Editar";
-
-/* No comment provided by engineer. */
 "Edit v3 Onion Service Auth Cookie" = "Editar v3 Onion Service Auth Cookie";
-
-/* No comment provided by engineer. */
 "enabled" = "Habilitado";
-
-/* No comment provided by engineer. */
 "Enter bridge address" = "Digite o endereço da ponte";
 
 /* macOS menu item */
 "Enter Full Screen" = "Entre em tela cheia";
-
-/* No comment provided by engineer. */
 "Entry Nodes" = "Nós de entrada";
-
-/* No comment provided by engineer. */
 "Evaluating" = "Avaliar";
-
-/* No comment provided by engineer. */
 "Exclude Nodes" = "Excluir nós";
-
-/* No comment provided by engineer. */
 "Exit Node Countries" = "Países do nó de saída";
-
-/* No comment provided by engineer. */
 "Exit Nodes" = "Nó de saída";
-
-/* No comment provided by engineer. */
 "Expert" = "Especialista";
-
-/* No comment provided by engineer. */
 "fetches" = "Busca";
 
 /* macOS menu item */
@@ -366,89 +167,43 @@
 
 /* macOS menu item */
 "Find…" = "Encontrar...";
-
-/* No comment provided by engineer. */
 "fonts" = "Fontes";
-
-/* No comment provided by engineer. */
 "General" = "Geral";
-
-/* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "Volte para o aplicativo solicitante e cole o token na caixa de diálogo apropriada.";
-
-/* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "Aceda à aplicação Definições do iOS -> Safari -> Extensions.";
-
-/* No comment provided by engineer. */
 "Grant" = "Subvenção";
 
 /* macOS menu item */
 "Help" = "Ajuda";
-
-/* No comment provided by engineer. */
 "Help others connect to Tor" = "Ajude os outros a se conectarem com o Tor";
 
 /* macOS menu item */
 "Hide %@" = "Esconder %@";
-
-/* No comment provided by engineer. */
 "Hide apps from network monitoring and get access when they are blocked." = "Oculte aplicativos do monitoramento de rede e obtenha acesso quando eles forem bloqueados.";
 
 /* macOS menu item */
 "Hide Others" = "Ocultar outros";
-
-/* No comment provided by engineer. */
 "Host" = "Hospedeiro";
-
-/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Se esses serviços onion não estiverem configurados corretamente, você vazará informações para seu provedor de serviços de Internet e qualquer outra pessoa ouvindo esse tráfego!";
-
-/* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Se você quiser que o aplicativo seja capaz de parar %1$@ Automaticamente, volte para esse aplicativo e faça com que ele reinicie o processo de autorização novamente!";
-
-/* No comment provided by engineer. */
 "images" = "Imagens";
-
-/* No comment provided by engineer. */
 "Install" = "Instalar";
 
 /* Placeholder is 'Onion Browser' */
 "Install %@" = "Instalar %@";
-
-/* No comment provided by engineer. */
 "Install Orbot as a VPN on your device to continue." = "Instale o Orbot como uma VPN no seu dispositivo para continuar.";
-
-/* No comment provided by engineer. */
 "Invalid" = "Inválido";
-
-/* No comment provided by engineer. */
 "Isolate Destination Addresses" = "Isolar os Endereços De Destino";
-
-/* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "Ele não forneceu um identificador de aplicativo válido.";
 
 /* macOS menu item */
 "Jump to Selection" = "Saltar para a Seleção";
-
-/* No comment provided by engineer. */
 "Key" = "Chave";
-
-/* No comment provided by engineer. */
 "Kindness Mode" = "Modo de gentileza";
-
-/* No comment provided by engineer. */
 "Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "O Modo Gentileza permite que o dispositivo para ser uma ponte para os outros. Ele ajuda as pessoas a usar o Tor em lugares onde é bloqueado.";
-
-/* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "É provável que você mantenha conectado se o Tor estiver severamente bloqueado. Usando este método irá lançar o canal Tor Bot Telegram. Toque em 'Iniciar' ou escreva '%1$@' no chat para obter endereços de ponte.";
-
-/* No comment provided by engineer. */
 "Limit Exit Countries" = "Limitar países de saída";
-
-/* No comment provided by engineer. */
 "Log" = "Log";
-
-/* No comment provided by engineer. */
 "Maintenance" = "Manutenção";
 
 /* macOS menu item */
@@ -459,47 +214,21 @@
 
 /* macOS menu item */
 "Minimize" = "Minimizar";
-
-/* No comment provided by engineer. */
 "Next" = "Próximo";
-
-/* No comment provided by engineer. */
 "No VPN configuration set." = "Nenhuma configuração VPN definida.";
-
-/* No comment provided by engineer. */
 "Node Configuration" = "Configuração do nó";
-
-/* No comment provided by engineer. */
 "Not Installed" = "Não instalado";
-
-/* No comment provided by engineer. */
 "Not sure?" = "Não tem certeza?";
-
-/* No comment provided by engineer. */
 "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTA: O Snowflake não suporta proxies. As configurações de Proxy serão ignoradas com as pontes Snowflake.";
-
-/* No comment provided by engineer. */
 "Onion-only Mode" = "Modo somente Onion";
-
-/* No comment provided by engineer. */
 "Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor." = "Somente o tráfego para serviços onion (para domínios terminados em \".onion\") será roteado pelo Tor.";
-
-/* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "Use esses nós apenas como primeiro salto. Ignorado, quando a ponte é usada.";
-
-/* No comment provided by engineer. */
 "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "Use esses nós apenas para se conectar fora da rede Tor. Você degradará a funcionalidade se listar muito pouco!";
 
 /* Placeholder is 'Onion Browser' */
 "Open %@" = "Abrir   %@";
-
-/* No comment provided by engineer. */
 "Open Log" = "Abrir log";
-
-/* No comment provided by engineer. */
 "other" = "outro";
-
-/* No comment provided by engineer. */
 "Password" = "Senha";
 
 /* macOS menu item */
@@ -507,68 +236,36 @@
 
 /* macOS menu item */
 "Paste and Match Style" = "Colar e combinar estilo";
-
-/* No comment provided by engineer. */
 "Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "Cole os endereços de ponte que você recebe abaixo. Ou digitalize o código QR para adicioná-los. Amigos podem obter pontes para você em .%@";
-
-/* No comment provided by engineer. */
 "pings" = "Pings";
-
-/* No comment provided by engineer. */
 "Please report this error to the requesting app's developers." = "Relate esse erro aos desenvolvedores do aplicativo solicitante.";
-
-/* No comment provided by engineer. */
 "popups" = "Pop-ups";
-
-/* No comment provided by engineer. */
 "Port" = "Porta";
 
 /* macOS menu item */
 "Preferences…" = "Preferências...";
-
-/* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "Prefixo com asterisco (*) para também capturar subdomínios.";
-
-/* No comment provided by engineer. */
 "Proxy" = "Proxy";
-
-/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code não pôde ser decodificado! Tem certeza de que escaneou um URL .onion?";
 
 /* macOS menu item */
 "Quit %@" = "Renunciar %@";
-
-/* No comment provided by engineer. */
 "raw data" = "Dados brutos";
-
-/* No comment provided by engineer. */
 "Ready to Connect" = "Pronto para se conectar";
-
-/* No comment provided by engineer. */
 "Reasserting" = "Reafirmando";
 
 /* macOS menu item */
 "Redo" = "Refazer";
-
-/* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Execute o Smart Connect para encontrar a melhor maneira";
-
-/* No comment provided by engineer. */
 "Scan a bridge QR code" = "Digitalizar um código QR de ponte";
-
-/* No comment provided by engineer. */
 "scripts" = "scripts";
 
 /* macOS menu item */
 "Select All" = "Selecionar tudo";
-
-/* No comment provided by engineer. */
 "selected domains" = "domínios selecionados";
 
 /* macOS menu item */
 "Services" = "Serviços";
-
-/* No comment provided by engineer. */
 "Settings" = "Configurações";
 
 /* macOS menu item */
@@ -579,134 +276,64 @@
 
 /* Placeholder is app name */
 "Shows the connection status of %@." = "Mostra o status da conexão de %@.";
-
-/* No comment provided by engineer. */
 "Smart Connect Timeout (s)" = "Tempo limite do Smart Connect";
-
-/* No comment provided by engineer. */
-"Snowflake (AMP)" = "Flocos de neve (AMP)";
-
-/* No comment provided by engineer. */
+"Snowflake (AMP)" = "Snowflake (AMP)";
 "Snowflake (original)" = "Flocos de neve (original)";
 
 /* macOS menu item */
 "Speech" = "Discurso";
-
-/* No comment provided by engineer. */
 "Start" = "Começar";
 
 /* macOS menu item */
 "Start Speaking" = "Comece a falar";
-
-/* No comment provided by engineer. */
 "Stop" = "Parar";
 
 /* macOS menu item */
 "Stop Speaking" = "Pare de falar";
-
-/* No comment provided by engineer. */
 "style sheets" = "folhas de estilo";
-
-/* No comment provided by engineer. */
 "SVG documents" = "Documentos SVG";
-
-/* No comment provided by engineer. */
 "Switch back to last used VPN after stop" = "Volte para a última VPN usada após a parada";
-
-/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "Esse aplicativo não poderá acessar a API do Orbot enquanto isso não for corrigido.";
-
-/* No comment provided by engineer. */
 "The API access token was copied to your clipboard." = "O token de acesso à API foi copiado para a área de transferência.";
-
-/* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "A melhor maneira de se conectar ao Tor. Use se o Tor não estiver bloqueado.";
-
-/* No comment provided by engineer. */
 "the website" = "o site";
-
-/* No comment provided by engineer. */
 "third parties" = "Terceiros";
-
-/* No comment provided by engineer. */
 "this regex:" = "este regex:";
-
-/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "Isso permitirá %1$@ Para:";
-
-/* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "Para fazê-lo funcionar, você precisará ativar o bloqueador:";
-
-/* No comment provided by engineer. */
 "Today is better because of you" = "Hoje é melhor por causa de você";
-
-/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Referência de configuração do Tor";
-
-/* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "O tráfego para todos os outros domínios será roteado através da sua conexão normal com a Internet.";
 
 /* macOS menu item */
 "Transformations" = "Transformações";
-
-/* No comment provided by engineer. */
 "Type" = "Tipo";
 
 /* macOS menu item */
 "Undo" = "Desfazer";
-
-/* No comment provided by engineer. */
 "Unknown" = "Desconhecido";
-
-/* No comment provided by engineer. */
 "Use %1$@" = "Usar %1$@";
-
-/* No comment provided by engineer. */
 "Use different circuits for different destination addresses." = "Use diferentes circuitos para diferentes endereços de destinatário.";
-
-/* No comment provided by engineer. */
 "Use Direct Connection" = "Usar conexão direta";
 
 /* macOS menu item */
 "Use Selection for Find" = "Usar seleção para localizar";
-
-/* No comment provided by engineer. */
 "Use Smart Connect" = "Usar o Smart Connect";
-
-/* No comment provided by engineer. */
 "Username" = "Utilizador";
-
-/* No comment provided by engineer. */
 "Version %@, Build %@" = "Versão %1$@, Build %2$@";
 
 /* macOS menu item */
 "View" = "View";
-
-/* No comment provided by engineer. */
 "VPN" = "VPN";
-
-/* No comment provided by engineer. */
 "VPN in a strange state" = "VPN em um estado estranho";
-
-/* No comment provided by engineer. */
 "Warning" = "Aviso";
-
-/* No comment provided by engineer. */
 "We could not return to that app, because it didn't provide a valid callback URL." = "Não foi possível retornar a esse aplicativo, porque ele não fornecia uma URL de retorno de chamada válida.";
-
-/* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
-
-/* No comment provided by engineer. */
 "Weekly Total" = "Total Semanal";
-
-/* No comment provided by engineer. */
 "Welcome!" = "Bem-vindo!";
 
 /* macOS menu item */
 "Window" = "Janela";
-
-/* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "Você pode inserir vários endereços de ponte.";
 
 /* macOS menu item */

@@ -1,6 +1,6 @@
-- Mise à jour de Tor vers la dernière version 0.4.8.22.
-- Affichage d'informations supplémentaires sur l'état lors de la connexion.
-- Mise à jour des traductions.
-- Mise à jour de Lyrebird vers la dernière version 0.8.1. (macOS)
-- Ajout de la prise en charge DNSTT pour certains pays. (macOS)
-- Ajout d'une source supplémentaire pour les ponts. (macOS)
+- Updated Tor to latest version 0.4.8.22.
+- Show more status infos when connecting.
+- Updated translations.
+- Updated Lyrebird to latest version 0.8.1. (macOS)
+- Added DNSTT support for certain countries. (macOS)
+- Added an additional source for bridges. (macOS)

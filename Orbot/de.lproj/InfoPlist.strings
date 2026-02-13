@@ -5,4 +5,4 @@
   Created by Benjamin Erhart on 24.11.21.
   Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 */
-NSCameraUsageDescription = "Nötig, um Brückenadressen in angezeigten QR Codes zu lesen.";
+"NSCameraUsageDescription" = "Nötig, um Brückenadressen in angezeigten QR Codes zu lesen.";
