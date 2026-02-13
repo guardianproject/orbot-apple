@@ -239,14 +239,7 @@ class Settings: IPtProxyUI.Settings {
 
 	class var alwaysClearCache: Bool {
 		get {
-#if os(iOS)
-			// On iOS, this defaults to true, to maximize the change of a successful start.
-			guard defaults?.object(forKey: "always_clear_cache") != nil else {
-				return true
-			}
-#endif
-
-			return defaults?.bool(forKey: "always_clear_cache") ?? false
+			defaults?.bool(forKey: "always_clear_cache") ?? false
 		}
 		set {
 			defaults?.set(newValue, forKey: "always_clear_cache")
