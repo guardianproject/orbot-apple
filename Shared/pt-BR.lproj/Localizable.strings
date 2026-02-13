@@ -277,7 +277,7 @@
 /* Placeholder is app name */
 "Shows the connection status of %@." = "Mostra o status da conexão de %@.";
 "Smart Connect Timeout (s)" = "Tempo limite do Smart Connect";
-"Snowflake (AMP)" = "Snowflake (AMP)";
+"Snowflake (AMP)" = "Flocos de neve (AMP)";
 "Snowflake (original)" = "Flocos de neve (original)";
 
 /* macOS menu item */

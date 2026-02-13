@@ -277,7 +277,7 @@
 /* Placeholder is app name */
 "Shows the connection status of %@." = "وضعیت اتصال %@ را نمایش می‌دهد.";
 "Smart Connect Timeout (s)" = "مهلت زمانی Smart Connect (بر حسب ثانیه)";
-"Snowflake (AMP)" = "Snowflake (AMP)";
+"Snowflake (AMP)" = "Snowflake (نسخه AMP)";
 "Snowflake (original)" = "Snowflake (نسخه اصلی)";
 
 /* macOS menu item */
