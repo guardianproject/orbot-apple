@@ -1,5 +1,12 @@
 #  Orbot Apple Changelog
 
+## 1.9.2
+- Updated Tor to latest version 0.4.9.5.
+- Updated leaf to version 0.12.0.
+- "Always clear cache before start" now off by default. 
+  Tor improved memory handling: Starting Tor with cache now uses less memory.
+- Updated translations.
+
 ## 1.9.1
 - Updated Tor to latest version 0.4.8.22.
 - Updated Lyrebird to latest version 0.8.1. (macOS)

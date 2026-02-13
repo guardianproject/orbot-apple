@@ -1,6 +1,5 @@
-- Updated Tor to latest version 0.4.8.22.
-- Show more status infos when connecting.
+- Updated Tor to latest version 0.4.9.5.
+- Updated leaf to version 0.12.0.
+- "Always clear cache before start" now off by default.
+  Tor improved memory handling: Starting Tor with cache now uses less memory.
 - Updated translations.
-- Updated Lyrebird to latest version 0.8.1. (macOS)
-- Added DNSTT support for certain countries. (macOS)
-- Added an additional source for bridges. (macOS)

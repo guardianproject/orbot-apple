@@ -1,6 +1,5 @@
-- Mise à jour de Tor vers la dernière version 0.4.8.22.
-- Affichage d'informations supplémentaires sur l'état lors de la connexion.
+- Mise à jour de Tor vers la dernière version 0.4.9.5.
+- Mise à jour de Leaf vers la version 0.12.0.
+- L'option « Toujours vider le cache avant le démarrage » est désormais désactivée par défaut.
+  Amélioration de la gestion de la mémoire par Tor : le démarrage de Tor avec le cache utilise désormais moins de mémoire.
 - Mise à jour des traductions.
-- Mise à jour de Lyrebird vers la dernière version 0.8.1. (macOS)
-- Ajout de la prise en charge DNSTT pour certains pays. (macOS)
-- Ajout d'une source supplémentaire pour les ponts. (macOS)
