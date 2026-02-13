@@ -1,49 +1,22 @@
-/* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = "در جایی که نشانی اینترنتی شامل عبارت منظم \"%@\" باشد.";
 
 /* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
 "%1$@ %2$@ VPN will be switched off." = "VPN %1$@%2$@ غیرفعال خواهد شد.";
-
-/* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ کدهای دوحرفی کشور در داخل آکولاد، مثلاً \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ توسط %2$@ برای %3$@ در %4$@%5$@";
-
-/* No comment provided by engineer. */
 "%1$@ Bypass %2$@" = "%1$@ دور زدن %2$@";
-
-/* No comment provided by engineer. */
 "%1$@ Get information about Tor circuits." = "%1$@ دریافت اطلاعات درباره‌ی مسیرهای Tor";
-
-/* No comment provided by engineer. */
 "%1$@ Get updates on the status of the connection." = "%1$@ دریافت به‌روزرسانی درباره‌ی وضعیت اتصال.";
-
-/* No comment provided by engineer. */
 "%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ الگوهای نشانی IP، مثلاً \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ اثر انگشت گره‌ها، مثلاً \"%2$@\"";
-
-/* No comment provided by engineer. */
 "%1$@ Options need 2 leading minuses: %2$@" = "%1$@ گزینه‌ها باید با دو خط فاصله‌ی اول شروع شوند: %2$@";
-
-/* No comment provided by engineer. */
 "%1$@ Some options might get overwritten by %2$@." = "%1$@ برخی گزینه‌ها ممکن است با %2$@ بازنویسی شوند.";
-
-/* No comment provided by engineer. */
 "%1$@ Stop Tor." = "%1$@ متوقف کردن Tor";
-
-/* No comment provided by engineer. */
 "%1$@ These settings will only take effect after restart." = "%1$@ این تنظیمات پس از راه‌اندازی مجدد اعمال خواهند شد.";
-
-/* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ می‌خواهد به %2$@ دسترسی پیدا کند.";
 
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ برنامه باید در پیش‌زمینه فعال بماند.";
-
-/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ آرگومان‌های یک گزینه باید در یک خط جدید قرار بگیرند.";
 
 /* Placeholder is bullet */
@@ -66,215 +39,85 @@
 
 /* Placeholder is app name */
 "%@ Status" = "%@ وضعیت";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_2__" = "توسط";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_3__" = "برای";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_4__" = "بر روی";
-
-/* No comment provided by engineer. */
 "__BLOCKER_HEADER_5__" = "در جایی که نشانی اینترنتی شامل باشد";
-
-/* No comment provided by engineer. */
 "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "یک «مسدودکننده‌ی محتوا» فهرستی از چیزهایی که باید در Safari، دیگر مرورگرها و تمام وب‌نماهای استفاده‌شده در برنامه‌ها مسدود شوند را فراهم می‌کند.";
 
 /* macOS menu item */
 "About %@" = "درباره %@";
-
-/* No comment provided by engineer. */
 "Access Request" = "درخواست دسترسی";
-
-/* No comment provided by engineer. */
 "Activate" = "فعال كردن";
-
-/* No comment provided by engineer. */
 "Add" = "افزودن";
-
-/* No comment provided by engineer. */
 "Add v3 Onion Service Auth Cookie" = "افزودن کوکی احراز هویت سرویس Onion v3";
-
-/* No comment provided by engineer. */
 "Advanced Tor Configuration" = "پیکربندی پیشرفته‌ی Tor";
-
-/* No comment provided by engineer. */
 "all" = "همه";
-
-/* No comment provided by engineer. */
 "all domains" = "همه‌ی دامنه ها";
-
-/* No comment provided by engineer. */
 "all domains but" = "همه ی دامنه ها بجز";
-
-/* No comment provided by engineer. */
 "all domains but %@" = "همه ی دامنه ها بجز %@";
-
-/* No comment provided by engineer. */
 "All Time Total" = "مجموع کل زمان ها";
-
-/* No comment provided by engineer. */
 "all types" = "همه ی نوع ها";
-
-/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "همچنین از گره‌های مستثنا شده برای مدیریت شبکه استفاده نکنید.";
-
-/* No comment provided by engineer. */
 "Always clear cache before start" = "همیشه کش را پیش از شروع پاک کنید";
-
-/* No comment provided by engineer. */
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "یک برنامه تلاش کرد %1$@ را متوقف کند، اما شما هنوز اجازه‌ی انجام این کار را نداده‌اید.";
-
-/* No comment provided by engineer. */
 "Another app requested an API access token." = "برنامه‌ای دیگر درخواست دریافت توکن دسترسی API کرد.";
-
-/* No comment provided by engineer. */
 "anything" = "هر چیزی";
-
-/* No comment provided by engineer. */
 "API Access" = "دسترسی API";
-
-/* No comment provided by engineer. */
 "API Access Token" = "توکن دسترسی API";
-
-/* No comment provided by engineer. */
 "App Icon" = "آیکون برنامه";
-
-/* No comment provided by engineer. */
 "Ask Tor" = "پرسیدن از Tor";
-
-/* No comment provided by engineer. */
 "Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "در شبکه‌ها و سازمان‌های قابل اعتماد خود بپرسید که آیا کسی میزبان پل است یا نه. اگر نه، یک دوست می‌تواند پل‌هایی برای شما تهیه کند.";
-
-/* No comment provided by engineer. */
 "Asking Tor Project's Circumvention Service" = "درخواست سرویس دور زدن پروژه‌ی Tor";
-
-/* No comment provided by engineer. */
 "ATTENTION: This may harm your anonymity and security!" = "هشدار: این کار ممکن است به ناشناس‌بودن و امنیت شما آسیب بزند!";
-
-/* No comment provided by engineer. */
 "audio/video media" = "رسانه‌ی صوتی/تصویری";
-
-/* No comment provided by engineer. */
 "Auth Cookies" = "کوکی‌های احراز هویت";
-
-/* No comment provided by engineer. */
 "Automatic Restart" = "راه‌اندازی خودکار";
-
-/* No comment provided by engineer. */
 "Automatically Restart on Error" = "در صورت بروز خطا به‌صورت خودکار راه‌اندازی شود";
-
-/* No comment provided by engineer. */
 "Block cookies" = "جلوگیری از ذخیره‌ی کوکی‌ها";
-
-/* No comment provided by engineer. */
 "Block requests" = "مسدود کردن درخواست‌ها";
-
-/* No comment provided by engineer. */
 "Blocker" = "مسدودکننده";
-
-/* No comment provided by engineer. */
 "Bridge connected" = "Bridge connected";
-
-/* No comment provided by engineer. */
 "Bridge stopped" = "Bridge stopped";
-
-/* No comment provided by engineer. */
 "Bridges" = "پل ها";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Email" = "پل‌های Tor (obfs4) از طریق ایمیل";
-
-/* No comment provided by engineer. */
 "Bridges from Tor (obfs4) via Telegram" = "پل‌های Tor (obfs4) از طریق تلگرام";
 
 /* macOS menu item */
 "Bring All to Front" = "نمایش همه در جلو";
-
-/* No comment provided by engineer. */
 "Build new Circuits" = "ساخت مدار جدید";
-
-/* No comment provided by engineer. */
 "Built-in Bridges (obfs4)" = "پل‌های داخلی (obfs4)";
-
-/* No comment provided by engineer. */
 "Bypass" = "دور زدن";
-
-/* No comment provided by engineer. */
 "Bypass: denied" = "دور زدن: رد شد";
-
-/* No comment provided by engineer. */
 "Bypass: granted" = "دور زدن: پذیرفته شد";
 
 /* macOS menu item */
 "Capitalize" = "حروف بزرگ";
-
-/* No comment provided by engineer. */
 "Choose How to Connect" = "انتخاب نحوه‌ی اتصال";
-
-/* No comment provided by engineer. */
 "Circuits" = "مدارها";
-
-/* No comment provided by engineer. */
 "Clear Tor Cache" = "پاک‌سازی کش Tor";
-
-/* No comment provided by engineer. */
 "Cleared!" = "پاک شد!";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "ترافیک شما را پنهان می‌کند. برخی از مسدودسازی‌های Tor را دور می‌زند. مناسب برای وای‌فای عمومی، اما در کشورهایی که Tor مسدود نیست.";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "ترافیک شما را پنهان می‌کند. برخی از مسدودسازی‌های Tor را دور می‌زند. ممکن است بسیار کند باشد.";
-
-/* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "ترافیک شما را پنهان می‌کند. برخی از مسدودسازی‌های Tor را دور می‌زند. نیاز به ایمیلی از حساب Gmail یا Riseup دارد.";
 
 /* macOS menu item */
 "Close" = "بستن";
-
-/* No comment provided by engineer. */
 "Close Log" = "بستن رویداد";
-
-/* No comment provided by engineer. */
 "Comma-separated lists of:" = "فهرستی از موارد جداشده با ویرگول:";
-
-/* No comment provided by engineer. */
 "Connected" = "متصل";
-
-/* No comment provided by engineer. */
 "Connecting" = "وصل شده";
-
-/* No comment provided by engineer. */
 "Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking." = "از داوطلبان Tor استفاده می‌کند. اما روش متفاوتی نسبت به \"روش اصلی\" برای یافتن اولین داوطلب دارد. برخی از مسدودسازی‌های Tor را دور می‌زند.";
-
-/* No comment provided by engineer. */
 "Connects through Tor volunteers. Gets around some Tor blocking." = "از داوطلبان Tor استفاده می‌کند. برخی از مسدودسازی‌های Tor را دور می‌زند.";
-
-/* No comment provided by engineer. */
 "Content Blocker" = "مسدودکننده‌ی محتوا";
 
 /* macOS menu item */
 "Copy" = "کپی";
-
-/* No comment provided by engineer. */
 "Copy to Clipboard" = "کپی به کلیپ بورد";
-
-/* No comment provided by engineer. */
 "Could not connect." = "نتوانست وصل شود.";
-
-/* No comment provided by engineer. */
 "Create your own rules here to e.g. block popups or third-party scripts." = "می‌توانید قوانین خود را اینجا بسازید، مثلاً برای مسدود کردن پنجره‌های بازشو یا اسکریپت‌های شخص ثالث.";
-
-/* No comment provided by engineer. */
 "Current State" = "وضعیت فعلی";
-
-/* No comment provided by engineer. */
 "Custom Bridges" = "پل‌های ارتباطی مخصوص";
 
 /* macOS menu item */
@@ -282,71 +125,29 @@
 
 /* macOS menu item */
 "Cut" = "برش";
-
-/* No comment provided by engineer. */
 "Delete" = "حذف";
-
-/* No comment provided by engineer. */
 "Deny" = "غیرمجاز کردن";
-
-/* No comment provided by engineer. */
 "Direct Connection" = "اتصال مستقیم";
-
-/* No comment provided by engineer. */
 "Disable %@ for non-onion traffic" = "%@ را برای ترافیک غیر onion غیرفعال کن";
-
-/* No comment provided by engineer. */
 "Disable GeoIP lookup for nodes (reduces RAM usage)" = "غیرفعال کردن بررسی مکان گره‌ها (مصرف رم را کاهش می‌دهد)";
-
-/* No comment provided by engineer. */
 "disabled" = "غیر فعال";
-
-/* No comment provided by engineer. */
 "Disabled" = "غیرفعال";
-
-/* No comment provided by engineer. */
 "Disconnecting" = "در حال قطع اتصال";
-
-/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "از این گره‌ها استفاده نکن. فهرست گره‌های ورودی و خروجی را نادیده می‌گیرد. ممکن است هنوز برای اهداف مدیریتی استفاده شوند.";
-
-/* No comment provided by engineer. */
 "documents" = "سندها";
-
-/* No comment provided by engineer. */
 "Edit" = "ویرایش";
-
-/* No comment provided by engineer. */
 "Edit v3 Onion Service Auth Cookie" = "کوکی تأیید سرویس Onion v3 را ویرایش کن.";
-
-/* No comment provided by engineer. */
 "enabled" = "فعال";
-
-/* No comment provided by engineer. */
 "Enter bridge address" = "نشانی پل را وارد کنید";
 
 /* macOS menu item */
 "Enter Full Screen" = "حالت تمام‌صفحه";
-
-/* No comment provided by engineer. */
 "Entry Nodes" = "گره‌های ورودی";
-
-/* No comment provided by engineer. */
 "Evaluating" = "در حال ارزیابی";
-
-/* No comment provided by engineer. */
 "Exclude Nodes" = "این گره ها را استفاده نکن";
-
-/* No comment provided by engineer. */
 "Exit Node Countries" = "کشورهای گره خروجی";
-
-/* No comment provided by engineer. */
 "Exit Nodes" = "گره های خروجی";
-
-/* No comment provided by engineer. */
 "Expert" = "حرفه‌ای";
-
-/* No comment provided by engineer. */
 "fetches" = "بازیابی می‌کند";
 
 /* macOS menu item */
@@ -366,89 +167,43 @@
 
 /* macOS menu item */
 "Find…" = "یافتن...";
-
-/* No comment provided by engineer. */
 "fonts" = "فونت‌ها";
-
-/* No comment provided by engineer. */
 "General" = "عمومی";
-
-/* No comment provided by engineer. */
 "Go back to the requesting app and paste the token in the appropriate dialog." = "به اپلیکیشنی که درخواست داده برگردید و توکن را در پنجره‌ی مربوط جای‌گذاری کنید.";
-
-/* No comment provided by engineer. */
 "Go to iOS Settings App -> Safari -> Extensions." = "به تنظیمات iOS بروید -> Safari -> افزونه‌ها.";
-
-/* No comment provided by engineer. */
 "Grant" = "اجازه دادن";
 
 /* macOS menu item */
 "Help" = "کمک";
-
-/* No comment provided by engineer. */
 "Help others connect to Tor" = "به دیگران کمک کنید به مرورگر Tor وصل شوند.";
 
 /* macOS menu item */
 "Hide %@" = "%@ را پنهان کن.";
-
-/* No comment provided by engineer. */
 "Hide apps from network monitoring and get access when they are blocked." = "اپ‌ها را از نظارت شبکه پنهان کن و زمانی که مسدود می‌شوند به آن‌ها دسترسی بگیر.";
 
 /* macOS menu item */
 "Hide Others" = "پنهان کردن بقیه";
-
-/* No comment provided by engineer. */
 "Host" = "ميزبان";
-
-/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "اگر این سرویس‌های onion به درستی پیکربندی نشده باشند، اطلاعات شما به ارائه‌دهنده‌ی اینترنت و دیگر شنوندگان آن ترافیک لو خواهد رفت!";
-
-/* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "اگر می‌خواهید اپ بتواند به‌طور خودکار%1$@ را متوقف کند، لطفاً به آن اپ برگردید و فرایند تأیید را دوباره راه‌اندازی کنید!";
-
-/* No comment provided by engineer. */
 "images" = "تصاویر";
-
-/* No comment provided by engineer. */
 "Install" = "نصب";
 
 /* Placeholder is 'Onion Browser' */
 "Install %@" = "نصب %@";
-
-/* No comment provided by engineer. */
 "Install Orbot as a VPN on your device to continue." = "برای ادامه، برنامه‌ی Orbot را به‌عنوان VPN روی دستگاه خود نصب کنید.";
-
-/* No comment provided by engineer. */
 "Invalid" = "نامعتبر";
-
-/* No comment provided by engineer. */
 "Isolate Destination Addresses" = "Isolate Destination Addresses";
-
-/* No comment provided by engineer. */
 "It didn't provide a valid app identifier." = "شناسه‌ی معتبری برای اپ ارائه نکرد.";
 
 /* macOS menu item */
 "Jump to Selection" = "رفتن به انتخاب";
-
-/* No comment provided by engineer. */
 "Key" = "کلید";
-
-/* No comment provided by engineer. */
 "Kindness Mode" = "حالت مهربانی";
-
-/* No comment provided by engineer. */
 "Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "حالت مهربانی دستگاه شما را به پلی برای دیگران تبدیل می‌کند. این کار به افراد کمک می‌کند در مکان‌هایی که مرورگر Tor مسدود است از آن استفاده کنند.";
-
-/* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "اگر دسترسی به Tor شدیداً مسدود شده باشد، این روش احتمالاً اتصال شما را حفظ خواهد کرد. با استفاده از این روش، کانال تلگرام Tor Bot راه‌اندازی می‌شود. روی «Start» بزنید یا در گفت‌و‌گو بنویسید: «%1$@» تا نشانی پل‌ها را دریافت کنید.";
-
-/* No comment provided by engineer. */
 "Limit Exit Countries" = "محدود کردن کشورهای خروجی";
-
-/* No comment provided by engineer. */
 "Log" = "ورود";
-
-/* No comment provided by engineer. */
 "Maintenance" = "نگهداری";
 
 /* macOS menu item */
@@ -459,47 +214,21 @@
 
 /* macOS menu item */
 "Minimize" = "کوچک‌سازی";
-
-/* No comment provided by engineer. */
 "Next" = "بعدی";
-
-/* No comment provided by engineer. */
 "No VPN configuration set." = "پیکربندی VPN تنظیم نشده است.";
-
-/* No comment provided by engineer. */
 "Node Configuration" = "تنظیمات گره";
-
-/* No comment provided by engineer. */
 "Not Installed" = "نصب نشده";
-
-/* No comment provided by engineer. */
 "Not sure?" = "مطمئن نیستید؟";
-
-/* No comment provided by engineer. */
 "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
-
-/* No comment provided by engineer. */
 "Onion-only Mode" = "حالت فقط-آنلاین";
-
-/* No comment provided by engineer. */
 "Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor." = "فقط ترافیک مربوط به سرویس‌های onion (دامنه‌هایی که به ‎\".onion\"‎ ختم می‌شوند) از طریق مرورگر Tor هدایت می‌شود.";
-
-/* No comment provided by engineer. */
 "Only use these nodes as first hop. Ignored, when bridging is used." = "فقط از این گره‌ها به‌عنوان گام اول استفاده شود. در زمان استفاده از پل نادیده گرفته می‌شود.";
-
-/* No comment provided by engineer. */
 "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "فقط از این گره‌ها برای ارتباط با بیرون از شبکه‌ی مرورگر Tor استفاده شود. اگر تعداد کمی را انتخاب کنید، عملکرد کاهش می‌یابد!";
 
 /* Placeholder is 'Onion Browser' */
 "Open %@" = "باز کردن %@";
-
-/* No comment provided by engineer. */
 "Open Log" = "Open Log";
-
-/* No comment provided by engineer. */
 "other" = "سایر";
-
-/* No comment provided by engineer. */
 "Password" = "رمز عبور";
 
 /* macOS menu item */
@@ -507,68 +236,36 @@
 
 /* macOS menu item */
 "Paste and Match Style" = "جای‌گذاری همراه با تطبیق سبک";
-
-/* No comment provided by engineer. */
 "Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "نشانی پل‌هایی که دریافت می‌کنید را در پایین جای‌گذاری کنید. یا برای افزودن آن‌ها کد QR را اسکن کنید. دوستان شما می‌توانند برایتان از %@ پل بگیرند.";
-
-/* No comment provided by engineer. */
 "pings" = "pingها";
-
-/* No comment provided by engineer. */
 "Please report this error to the requesting app's developers." = "لطفاً این خطا را به توسعه‌دهندگان اپلیکیشنی که درخواست داده گزارش دهید.";
-
-/* No comment provided by engineer. */
 "popups" = "پنجره‌های بازشو";
-
-/* No comment provided by engineer. */
 "Port" = "پورت";
 
 /* macOS menu item */
 "Preferences…" = "ترجیحات…";
-
-/* No comment provided by engineer. */
 "Prefix with asterisk (*) to also capture subdomains." = "برای گرفتن زیردامنه‌ها هم از ستاره (*) در ابتدای آدرس استفاده کن.";
-
-/* No comment provided by engineer. */
 "Proxy" = "پراکسی";
-
-/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "کد QR قابل شناسایی نبود! مطمئن هستیذ که آدرس .onion را اسکن کرده اید؟";
 
 /* macOS menu item */
 "Quit %@" = "خروج از %@";
-
-/* No comment provided by engineer. */
 "raw data" = "داده‌های خام";
-
-/* No comment provided by engineer. */
 "Ready to Connect" = "آماده برای اتصال";
-
-/* No comment provided by engineer. */
 "Reasserting" = "در حال تأیید مجدد";
 
 /* macOS menu item */
 "Redo" = "دوباره انجام دادن";
-
-/* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "اجرای Smart Connect برای یافتن بهترین روش.";
-
-/* No comment provided by engineer. */
 "Scan a bridge QR code" = "یک کد QR مربوط به پل را اسکن کنید.";
-
-/* No comment provided by engineer. */
 "scripts" = "اسکریپت‌ها";
 
 /* macOS menu item */
 "Select All" = "گزینش همه";
-
-/* No comment provided by engineer. */
 "selected domains" = "دامنه‌های انتخاب ‌شده";
 
 /* macOS menu item */
 "Services" = "سرویس ها";
-
-/* No comment provided by engineer. */
 "Settings" = "تنظیمات";
 
 /* macOS menu item */
@@ -579,134 +276,64 @@
 
 /* Placeholder is app name */
 "Shows the connection status of %@." = "وضعیت اتصال %@ را نمایش می‌دهد.";
-
-/* No comment provided by engineer. */
 "Smart Connect Timeout (s)" = "مهلت زمانی Smart Connect (بر حسب ثانیه)";
-
-/* No comment provided by engineer. */
 "Snowflake (AMP)" = "Snowflake (نسخه AMP)";
-
-/* No comment provided by engineer. */
 "Snowflake (original)" = "Snowflake (نسخه اصلی)";
 
 /* macOS menu item */
 "Speech" = "گفتار";
-
-/* No comment provided by engineer. */
 "Start" = "آغاز";
 
 /* macOS menu item */
 "Start Speaking" = "آغاز گفتار";
-
-/* No comment provided by engineer. */
 "Stop" = "توقف";
 
 /* macOS menu item */
 "Stop Speaking" = "توقف گفتار";
-
-/* No comment provided by engineer. */
 "style sheets" = "برگه‌های سبک (style sheets)";
-
-/* No comment provided by engineer. */
 "SVG documents" = "سندهای SVG";
-
-/* No comment provided by engineer. */
 "Switch back to last used VPN after stop" = "بازگشت به آخرین VPN استفاده‌شده پس از توقف";
-
-/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "تا زمانی که این مشکل برطرف نشود، آن برنامه قادر به دسترسی به Orbot API نخواهد بود.";
-
-/* No comment provided by engineer. */
 "The API access token was copied to your clipboard." = "توکن دسترسی به API در کلیپ‌بورد کپی شد.";
-
-/* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "بهترین روش برای اتصال به Tor. در صورت عدم مسدود بودن Tor از این گزینه استفاده کنید.";
-
-/* No comment provided by engineer. */
 "the website" = "وب‌سایت";
-
-/* No comment provided by engineer. */
 "third parties" = "طرف‌های ثالث";
-
-/* No comment provided by engineer. */
 "this regex:" = "این عبارت باقاعده (regex):";
-
-/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "این گزینه به %1$@ اجازه خواهد داد که:";
-
-/* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "برای عملکرد صحیح، باید مسدودکننده را فعال کنید:";
-
-/* No comment provided by engineer. */
 "Today is better because of you" = "امروز به خاطر شما روز بهتری است.";
-
-/* No comment provided by engineer. */
 "Tor Configuration Reference" = "راهنمای پیکربندی Tor";
-
-/* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "ترافیک به سایر دامنه‌ها از طریق اتصال عادی اینترنت شما هدایت خواهد شد.";
 
 /* macOS menu item */
 "Transformations" = "تبدیل‌ها";
-
-/* No comment provided by engineer. */
 "Type" = "نوغ";
 
 /* macOS menu item */
 "Undo" = "Undo";
-
-/* No comment provided by engineer. */
 "Unknown" = "ناشناخته";
-
-/* No comment provided by engineer. */
 "Use %1$@" = "استفاده از %1$@";
-
-/* No comment provided by engineer. */
 "Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
-
-/* No comment provided by engineer. */
 "Use Direct Connection" = "استفاده از اتصال مستقیم";
 
 /* macOS menu item */
 "Use Selection for Find" = "استفاده از انتخاب برای جستجو";
-
-/* No comment provided by engineer. */
 "Use Smart Connect" = "استفاده از Smart Connect";
-
-/* No comment provided by engineer. */
 "Username" = "شناسه‌ی کاربری";
-
-/* No comment provided by engineer. */
 "Version %@, Build %@" = "نسخه %1$@، ساخت %2$@";
 
 /* macOS menu item */
 "View" = "نمایش";
-
-/* No comment provided by engineer. */
 "VPN" = "وی‌پی‌ان";
-
-/* No comment provided by engineer. */
 "VPN in a strange state" = "VPN در وضعیت غیرعادی";
-
-/* No comment provided by engineer. */
 "Warning" = "اخطار";
-
-/* No comment provided by engineer. */
 "We could not return to that app, because it didn't provide a valid callback URL." = "امکان بازگشت به آن برنامه وجود ندارد، زیرا نشانی بازگشت معتبری ارائه نکرده است.";
-
-/* No comment provided by engineer. */
 "WebSockets" = "WebSocketها";
-
-/* No comment provided by engineer. */
 "Weekly Total" = "مجموع هفتگی";
-
-/* No comment provided by engineer. */
 "Welcome!" = "خوش آمدید!";
 
 /* macOS menu item */
 "Window" = "پنجره";
-
-/* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "می‌توانید چندین نشانی پل وارد کنید.";
 
 /* macOS menu item */
