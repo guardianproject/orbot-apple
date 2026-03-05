@@ -284,7 +284,7 @@ class VpnManager: BridgesConfDelegate {
 
 				Task {
 					do {
-						try await AutoConf(self).do(country: Settings.countryCode)
+						try await AutoConf(self).do(countryCode: countryCode)
 					}
 					catch {
 						self.error = error
@@ -442,6 +442,15 @@ class VpnManager: BridgesConfDelegate {
 		}
 		set {
 			Settings.customBridges = newValue
+		}
+	}
+
+	var countryCode: String? {
+		get {
+			Settings.countryCode
+		}
+		set {
+			Settings.countryCode = newValue
 		}
 	}
 

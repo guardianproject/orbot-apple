@@ -494,7 +494,7 @@ class TorManager {
 		// `UserDefaults(suiteName: Config.groupId)` as Orbot does, `onDemand`
 		// bridge lines cannot be resolved by `IPtProxyUI.Transport.torConv()`, if
 		// we don't hand them over here.
-		var arguments = transport.torConf(cv, onDemandBridges: Settings.onDemandBridges)
+		var arguments = transport.torConf(cv, onDemandBridges: Settings.onDemandBridges, countryCode: Settings.countryCode)
 
 		arguments.append(cv("UseBridges", transport == .none ? "0" : "1"))
 

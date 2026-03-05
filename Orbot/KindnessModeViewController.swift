@@ -10,7 +10,7 @@ import UIKit
 import IPtProxy
 import IPtProxyUI
 
-class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConnectedProtocol {
+class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol {
 
 	// MARK: Outlets
 
@@ -106,7 +106,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 
 	private lazy var proxy: IPtProxySnowflakeProxy = {
 		let proxy = SharedUtils.createSnowflakeProxy()
-		proxy.clientConnected = self
+		proxy.clientEvents = self
 
 		return proxy
 	}()
@@ -194,7 +194,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 	}
 
 
-	// MARK: IPtProxySnowflakeClientConnectedProtocol
+	// MARK: IPtProxySnowflakeClientEventsProtocol
 
 	func connected() {
 		Settings.addOneSnowflakeHelped()
@@ -202,6 +202,40 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientConne
 		DispatchQueue.main.async { [weak self] in
 			self?.updateUi()
 		}
+	}
+
+	func connectionFailed() {
+		Logger.log("[SnowflakeClientEvent] connectionFailed")
+	}
+
+	func disconnected(_ country: String?) {
+		Logger.log("[SnowflakeClientEvent] disconnected from country: \(country ?? "(nil)")")
+	}
+
+	func stats(_ connectionCount: Int, failedConnectionCount: Int64, inboundBytes: Int64, outboundBytes: Int64, inboundUnit: String?, outboundUnit: String?, summaryInterval: Int64)
+	{
+		guard connectionCount > 0 || failedConnectionCount > 0 || inboundBytes > 0 || outboundBytes > 0 || summaryInterval > 0
+		else {
+			return
+		}
+
+		let interval = TimeInterval(summaryInterval) / 1_000_000_000
+
+		Logger.log(String(
+			format: "[SnowflakeClientEvent] In the last %f seconds, there were %d completed successful and %d failed connections. Traffic Relayed ↓ %d %@ (%.2f %@%@), ↑ %d %@ (%.2f %@%@).  ",
+			interval,
+			connectionCount,
+			failedConnectionCount,
+			inboundBytes,
+			inboundUnit ?? "?",
+			Double(inboundBytes)/interval,
+			inboundUnit ?? "?",
+			"/s",
+			outboundBytes,
+			outboundUnit ?? "?",
+			Double(outboundBytes)/interval,
+			outboundUnit ?? "?",
+			"/s"))
 	}
 
 

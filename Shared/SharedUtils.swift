@@ -60,6 +60,15 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		}
 	}
 
+	var countryCode: String? {
+		get {
+			Settings.countryCode
+		}
+		set {
+			Settings.countryCode = newValue
+		}
+	}
+
 	func save() {
 		VpnManager.shared.configChanged()
 	}
