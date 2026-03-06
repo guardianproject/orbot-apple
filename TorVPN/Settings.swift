@@ -100,7 +100,7 @@ public enum Transport: Int, CaseIterable, Comparable {
 	public func stop() {
 	}
 
-	public func torConf<T>(_ cv: (String, String) -> T, onDemandBridges: [String]? = nil, customBridges: [String]? = nil) -> [T] {
+	public func torConf<T>(_ cv: (String, String) -> T, onDemandBridges: [String]? = nil, countryCode: String? = nil) -> [T] {
 		var conf = [T]()
 
 		if self == .none {
@@ -200,7 +200,7 @@ class Settings {
 		}
 	}
 
-	class var proxy: URL? {
+	open class var proxy: URL? {
 		get {
 			guard let proxy = defaults?.string(forKey: "proxy") else {
 				return nil
@@ -213,6 +213,15 @@ class Settings {
 		}
 	}
 
+
+	open class var countryCode: String? {
+		get {
+			defaults?.string(forKey: "countryCode")
+		}
+		set {
+			defaults?.set(newValue, forKey: "countryCode")
+		}
+	}
 
 	/**
 	 Defaults to `true`!

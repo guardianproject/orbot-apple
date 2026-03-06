@@ -184,6 +184,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 	var customBridges: [String]? = nil
 
+	var countryCode: String? = nil
+
 	private let section = SelectableSection<ListCheckRow<Option>>(nil, selectionType: .singleSelection(enableDeselection: false))
 
 
@@ -192,6 +194,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 		transport = Settings.transport
 		customBridges = Settings.customBridges
+		countryCode = Settings.countryCode
 
 		tableView.separatorStyle = .none
 
@@ -224,7 +227,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			Task {
 				do {
-					try await AutoConf(self).do(country: Settings.countryCode, cannotConnectWithoutPt: true)
+					try await AutoConf(self).do(countryCode: Settings.countryCode, cannotConnectWithoutPt: true)
 				}
 				catch {
 					await MainActor.run {
@@ -345,6 +348,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		Settings.smartConnect = false
 		Settings.transport = transport
 		Settings.customBridges = customBridges
+		Settings.countryCode = countryCode
 
 		navigationController?.dismiss(animated: true)
 
