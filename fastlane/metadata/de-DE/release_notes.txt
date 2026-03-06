@@ -1,5 +1,1 @@
-- Tor wurde auf die neueste Version 0.4.9.5 aktualisiert.
-- Leaf wurde auf Version 0.12.0 aktualisiert.
-- „Cache vor dem Start immer löschen” ist nun standardmäßig deaktiviert.
-  Tor hat die Speicherverwaltung verbessert: Der Start von Tor mit Cache benötigt nun weniger Speicherplatz.
-- Übersetzungen wurden aktualisiert.
+- Verbesserte DNSTT-Unterstützung für Länder mit besonderen Herausforderungen. (macOS)

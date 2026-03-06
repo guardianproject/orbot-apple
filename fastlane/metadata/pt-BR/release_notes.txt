@@ -1,5 +1,1 @@
-- Atualização do Tor para a versão mais recente 0.4.9.5.
-- Atualização do Leaf para a versão 0.12.0.
-- A opção “Sempre limpar o cache antes de iniciar” agora está desativada por padrão.
-  Melhoria no gerenciamento de memória do Tor: iniciar o Tor com o cache agora usa menos memória.
-- Atualização das traduções.
+- Suporte DNSTT aprimorado para países com dificuldades. (macOS)

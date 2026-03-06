@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.9.3
+- Improved DNSTT support for challenged countries. (macOS)
+
 ## 1.9.2
 - Updated Tor to latest version 0.4.9.5.
 - Updated leaf to version 0.12.0.

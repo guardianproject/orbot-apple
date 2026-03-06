@@ -1,5 +1,1 @@
-- Actualización de Tor a la última versión 0.4.9.5.
-- Actualización de Leaf a la versión 0.12.0.
-- La opción «Borrar siempre la caché antes de iniciar» ahora está desactivada de forma predeterminada.
-  Tor ha mejorado la gestión de la memoria: al iniciar Tor con la caché, ahora se utiliza menos memoria.
-- Actualización de las traducciones.
+- Mejora de la compatibilidad con DNSTT para países con dificultades. (macOS)
