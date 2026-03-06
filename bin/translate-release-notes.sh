@@ -81,6 +81,6 @@ for DIR in fastlane/metadata/*/; do
 done
 
 cd "$BASE"
-rm -rf .gitignore bin lib pyvenv.cfg
+rm -rf .gitignore bin lib include pyvenv.cfg
 
 echo "All translations completed!"
