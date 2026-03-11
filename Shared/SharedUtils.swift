@@ -269,6 +269,7 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		proxy.pollInterval = 120
 		proxy.stunServer = BuiltInBridges.shared?.snowflake?.first?.ice?.components(separatedBy: ",")
 			.filter({ !$0.isEmpty }).randomElement() ?? ""
+		proxy.summaryInterval = 60
 
 		return proxy
 	}

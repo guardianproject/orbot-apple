@@ -139,6 +139,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		UIApplication.shared.isIdleTimerDisabled = true
 		Dimmer.shared.start()
 
+		FileManager.default.sfpLogFile?.truncate()
+
 		Task {
 			let mapped = await SharedUtils.getMappedPorts()
 			proxy.ephemeralMinPort = mapped.min
@@ -205,24 +207,19 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	}
 
 	func connectionFailed() {
-		Logger.log("[SnowflakeClientEvent] connectionFailed")
+		Logger.log("[SnowflakeClientEvent] connectionFailed", to: FileManager.default.sfpLogFile)
 	}
 
 	func disconnected(_ country: String?) {
-		Logger.log("[SnowflakeClientEvent] disconnected from country: \(country ?? "(nil)")")
+		Logger.log("[SnowflakeClientEvent] disconnected from country: \(country ?? "(nil)")", to: FileManager.default.sfpLogFile)
 	}
 
 	func stats(_ connectionCount: Int, failedConnectionCount: Int64, inboundBytes: Int64, outboundBytes: Int64, inboundUnit: String?, outboundUnit: String?, summaryInterval: Int64)
 	{
-		guard connectionCount > 0 || failedConnectionCount > 0 || inboundBytes > 0 || outboundBytes > 0 || summaryInterval > 0
-		else {
-			return
-		}
-
 		let interval = TimeInterval(summaryInterval) / 1_000_000_000
 
 		Logger.log(String(
-			format: "[SnowflakeClientEvent] In the last %f seconds, there were %d completed successful and %d failed connections. Traffic Relayed ↓ %d %@ (%.2f %@%@), ↑ %d %@ (%.2f %@%@).  ",
+			format: "[SnowflakeClientEvent] In the last %.0f seconds, there were %d completed successful and %d failed connections. Traffic Relayed ↓ %d %@ (%.2f %@%@), ↑ %d %@ (%.2f %@%@).  ",
 			interval,
 			connectionCount,
 			failedConnectionCount,
@@ -235,7 +232,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 			outboundUnit ?? "?",
 			Double(outboundBytes)/interval,
 			outboundUnit ?? "?",
-			"/s"))
+			"/s"), to: FileManager.default.sfpLogFile)
 	}
 
 
