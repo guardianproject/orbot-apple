@@ -10,6 +10,6 @@ EXENCIONES DE RESPONSABILIDAD:
 
 Es posible que Orbot no funcione en redes con restricciones de red avanzadas. Si la aplicación no se conecta, intenta usar puentes (o un tipo diferente de puente).
 
-- El uso de Orbot es bajo tu propio riesgo; recuerda que los datos confidenciales no siempre pertenecen a un dispositivo móvil
+- El uso de Orbot es bajo tu propio riesgo; recuerda que los datos confidenciales no siempre pertenecen a un dispositivo móvil.
 
 ** Orbot es un software gratuito y de código abierto. Puedes leer más sobre Orbot y cómo apoyar el desarrollo de Tor en iOS visitando orbot.app **
