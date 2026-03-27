@@ -1,1 +1,2 @@
-- Mejora de la compatibilidad con DNSTT para países con dificultades. (macOS)
+- Se ha mejorado el proceso de apagado de DNSTT. (macOS)
+- Se ha actualizado a Snowflake 2.12.1.

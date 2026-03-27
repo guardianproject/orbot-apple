@@ -1,1 +1,2 @@
-- Verbesserte DNSTT-Unterstützung für Länder mit besonderen Herausforderungen. (macOS)
+- Verbesserte Beendigung von DNSTT. (macOS)
+- Aktualisierung auf Snowflake 2.12.1.

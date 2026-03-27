@@ -1,5 +1,9 @@
 #  Orbot Apple Changelog
 
+## 1.9.4
+- Improved DNSTT shutdown. (macOS)
+- Updated to Snowflake 2.12.1.
+
 ## 1.9.3
 - Improved DNSTT support for challenged countries. (macOS)
 
