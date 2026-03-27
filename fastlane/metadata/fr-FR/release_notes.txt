@@ -1,1 +1,2 @@
-- Amélioration de la prise en charge DNSTT pour les pays confrontés à des difficultés. (macOS)
+- Amélioration de la procédure d'arrêt de DNSTT. (macOS)
+- Mise à jour vers Snowflake 2.12.1.
