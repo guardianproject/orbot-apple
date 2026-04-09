@@ -56,10 +56,10 @@
 "%@ It can be turned off anytime." = "%@ Kann jederzeit abgeschaltet werden.";
 
 /* Placeholder is bullet */
-"%@ It will not drain your battery." = "%@ Wird Deine Batterie nicht wesentlich entladen.";
+"%@ It will not drain your battery." = "%@ Wird deine Batterie nicht wesentlich entladen.";
 
 /* Placeholder is bullet */
-"%@ It will not slow down your internet." = "%@ Wird Dein Internet nicht verlangsamen.";
+"%@ It will not slow down your internet." = "%@ Wird dein Internet nicht verlangsamen.";
 
 /* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Bildschirm wird gedimmt. (Gerät auf Bildschirmseite legen, um den Bildschirm abzuschalten wie bei einem Telefonanruf.)";
@@ -128,7 +128,7 @@
 "Always clear cache before start" = "Cache vor Start immer löschen";
 
 /* No comment provided by engineer. */
-"An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Eine App hat versucht, %1$@ zu stoppen, aber Du hast das noch nicht erlaubt.";
+"An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Eine App hat versucht, %1$@ zu stoppen, aber du hast das noch nicht erlaubt.";
 
 /* No comment provided by engineer. */
 "Another app requested an API access token." = "Eine andere App hat ein API-Zugriffstoken angefordert.";
@@ -149,13 +149,13 @@
 "Ask Tor" = "Frag Tor";
 
 /* No comment provided by engineer. */
-"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "Frage in Deinen vertrauten Netzwerken und Organisationen, um herauszufinden, ob irgendwer eine bereitstellt. Oder ein Freund kann Dir dabei helfen Brücken zu bekommen.";
+"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "Frage in deinen vertrauten Netzwerken und Organisationen, um herauszufinden, ob irgendwer eine bereitstellt. Oder ein Freund kann Dir dabei helfen Brücken zu bekommen.";
 
 /* No comment provided by engineer. */
 "Asking Tor Project's Circumvention Service" = "Umgehungs-Service von Tor Project fragen";
 
 /* No comment provided by engineer. */
-"ATTENTION: This may harm your anonymity and security!" = "ACHTUNG: Dies könnte Deiner Anonymität und Sicherheit schaden!";
+"ATTENTION: This may harm your anonymity and security!" = "ACHTUNG: Dies könnte deiner Anonymität und Sicherheit schaden!";
 
 /* No comment provided by engineer. */
 "audio/video media" = "Audio/Video-Medien";
@@ -230,10 +230,10 @@
 "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Gut für öffentliche WLANs in einem Land, in dem Tor nicht blockiert wird.";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Könnte sehr langsam sein.";
+"Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Könnte sehr langsam sein.";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Verschleiert Deinen Datenverkehr. Umgeht einige Tor-Blockaden. Benötigt eine E-Mail, die von einem Google-Mail- oder Riseup-Konto kommt.";
+"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Benötigt eine E-Mail, die von einem Google-Mail- oder Riseup-Konto kommt.";
 
 /* macOS menu item */
 "Close" = "Schließen";
@@ -269,7 +269,7 @@
 "Could not connect." = "Konnte nicht verbinden.";
 
 /* No comment provided by engineer. */
-"Create your own rules here to e.g. block popups or third-party scripts." = "Erzeuge hier Deine eigenen Regeln um z.B. Popups oder Skripte von Dritten zu blockieren.";
+"Create your own rules here to e.g. block popups or third-party scripts." = "Erzeuge hier deine eigenen Regeln um z.B. Popups oder Skripte von Dritten zu blockieren.";
 
 /* No comment provided by engineer. */
 "Current State" = "Aktueller Zustand";
@@ -404,10 +404,10 @@
 "Host" = "Host";
 
 /* No comment provided by engineer. */
-"If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über Dein Surfverhalten an Deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
+"If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über dein Surfverhalten an deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
 
 /* No comment provided by engineer. */
-"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Wenn Du willst, daß die App %1$@ automatisch stoppen kann, geh bitte zurück in diese App und laß sie den Authorisierungsprozess erneut starten!";
+"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Wenn du willst, daß die App %1$@ automatisch stoppen kann, geh bitte zurück in diese App und laß sie den Authorisierungsprozess erneut starten!";
 
 /* No comment provided by engineer. */
 "images" = "Bildern";
@@ -419,7 +419,7 @@
 "Install %@" = "Installiere %@";
 
 /* No comment provided by engineer. */
-"Install Orbot as a VPN on your device to continue." = "Installiere Orbot auf Deinem Gerät als ein VPN, um weiterzumachen.";
+"Install Orbot as a VPN on your device to continue." = "Installiere Orbot auf deinem Gerät als ein VPN, um weiterzumachen.";
 
 /* No comment provided by engineer. */
 "Invalid" = "Ungültig";
@@ -440,10 +440,10 @@
 "Kindness Mode" = "Unterstützungsmodus";
 
 /* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Der Unterstützungsmodus macht Dein Gerät zu einer Brücke für andere. Damit hilfst Du Menschen Tor an Orten zu benutzen, wo es ansonsten blockiert würde.";
+"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Der Unterstützungsmodus macht dein Gerät zu einer Brücke für andere. Damit hilfst du Menschen Tor an Orten zu benutzen, wo es ansonsten blockiert würde.";
 
 /* No comment provided by engineer. */
-"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Sehr wahrscheinlich, daß Du damit verbunden bleibst, wenn Tor aufwändig blockiert wird. Dies wird den Tor-Bot Telegramkanal öffnen. Drücke 'Start' oder schreibe '%1$@' in den Chat um Brückenadressen zu bekommen.";
+"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Sehr wahrscheinlich, daß du damit verbunden bleibst, wenn Tor aufwändig blockiert wird. Dies wird den Tor-Bot Telegramkanal öffnen. Drücke 'Start' oder schreibe '%1$@' in den Chat um Brückenadressen zu bekommen.";
 
 /* No comment provided by engineer. */
 "Limit Exit Countries" = "Begrenze Exit-Länder";
@@ -512,7 +512,7 @@
 "Paste and Match Style" = "Einsetzen und Stil anpassen";
 
 /* No comment provided by engineer. */
-"Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "Füge die Brückenadressen, die Du bekommen hast, hier ein. Oder scanne den QR code, um sie hinzuzufügen. Freunde können Brücken von %@ für Dich besorgen.";
+"Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "Füge die Brückenadressen, die du bekommen hast, hier ein. Oder scanne den QR code, um sie hinzuzufügen. Freunde können Brücken von %@ für Dich besorgen.";
 
 /* No comment provided by engineer. */
 "pings" = "Pings";
@@ -536,7 +536,7 @@
 "Proxy" = "Proxy";
 
 /* No comment provided by engineer. */
-"QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß Du einen .onion Link gescannt hast?";
+"QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß du einen .onion Link gescannt hast?";
 
 /* macOS menu item */
 "Quit %@" = "%@ beenden";
@@ -638,7 +638,7 @@
 "This will allow %1$@ to:" = "Das wird %1$@ folgendes ermöglichen:";
 
 /* No comment provided by engineer. */
-"To make it work, you will need to activate the blocker:" = "Damit das funktioniert, mußt Du den Blocker aktivieren:";
+"To make it work, you will need to activate the blocker:" = "Damit das funktioniert, mußt du den Blocker aktivieren:";
 
 /* No comment provided by engineer. */
 "Today is better because of you" = "Heute wird besser wegen Dir";
@@ -647,7 +647,7 @@
 "Tor Configuration Reference" = "Tor Konfigurationsreferenz";
 
 /* No comment provided by engineer. */
-"Traffic to all other domains will be routed through your normal Internet connection." = "Datenverkehr zu allen anderen Seiten wird über Deine normale Internetverbindung geleitet.";
+"Traffic to all other domains will be routed through your normal Internet connection." = "Datenverkehr zu allen anderen Seiten wird über deine normale Internetverbindung geleitet.";
 
 /* macOS menu item */
 "Transformations" = "Transformationen";
