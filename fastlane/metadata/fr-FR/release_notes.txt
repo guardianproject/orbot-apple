@@ -1,2 +1,4 @@
-- Amélioration de la procédure d'arrêt de DNSTT. (macOS)
-- Mise à jour vers Snowflake 2.12.1.
+- La prise en charge de Bridge est de retour sur iOS !
+- Mise à jour de Tor vers la dernière version 0.4.9.6.
+- Mise à jour vers Snowflake 2.13.1.
+- Mise à jour des traductions.

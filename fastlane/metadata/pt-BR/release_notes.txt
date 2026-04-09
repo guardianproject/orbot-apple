@@ -1,2 +1,4 @@
-- Melhoria no processo de desligamento do DNSTT. (macOS)
-- Atualização para o Snowflake 2.12.1.
+- O SUPORTE AO BRIDGE ESTÁ DE VOLTA NO iOS!
+- Atualizado o Tor para a versão mais recente, 0.4.9.6.
+- Atualizado para o Snowflake 2.13.1.
+- Atualizadas as traduções.

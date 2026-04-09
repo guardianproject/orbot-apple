@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.10.0
+- BRIDGE SUPPORT IS BACK ON iOS!
+- Updated Tor to latest version 0.4.9.6.
+- Updated to Snowflake 2.13.1.
+- Updated translations.
+
 ## 1.9.4
 - Improved DNSTT shutdown. (macOS)
 - Updated to Snowflake 2.12.1.
