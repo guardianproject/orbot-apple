@@ -308,6 +308,9 @@
 "Disconnecting" = "Соединение отключается";
 
 /* No comment provided by engineer. */
+"DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "DNS-туннели приоритизируют доступ над скоростью и могут ощущаться медленнее. Мы рекомендуем включать их только для ключевых приложений. Просмотр видео не рекомандован.";
+
+/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Не использовать эти узлы. Изменяемый список входных и выходных узлов. Может по-прежнему использоваться в целях управления.";
 
 /* No comment provided by engineer. */

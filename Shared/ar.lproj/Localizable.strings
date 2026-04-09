@@ -308,6 +308,9 @@
 "Disconnecting" = "جاري قطع الإتصال ";
 
 /* No comment provided by engineer. */
+"DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "تعطي أنفاق DNS الأولوية للوصول على حساب السرعة وقد تبدو بطيئة. نوصي بتفعيلها فقط للتطبيقات الضرورية. لا يُنصح باستخدامها لبث الفيديو.";
+
+/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "لا تستخدم هذه العقد. يتجاوز الدخول والخروج من قائمة العقد. قد لا يزال يستخدم لأغراض الإدارة.";
 
 /* No comment provided by engineer. */

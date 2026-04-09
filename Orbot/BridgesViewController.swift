@@ -22,6 +22,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		case obfs4 = "transport_obfs4"
 		case requestMail = "request_mail"
 		case meek = "transport_meek_azure"
+		case dnstt = "transport_dnstt"
 		case custom = "transport_custom"
 
 		static func from(_ transport: Transport) -> Option {
@@ -37,6 +38,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .meek:
 				return .meek
+
+			case .dnstt:
+				return .dnstt
 
 			case .custom:
 				return .custom
@@ -68,6 +72,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .meek:
 				return "Meek"
+
+			case .dnstt:
+				return "DNS Tunnel"
 
 			case .custom:
 				return NSLocalizedString("Custom Bridges", comment: "")
@@ -111,6 +118,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 					"Cloaks your traffic. Gets around some Tor blocking. May be very slow.",
 					comment: "")
 
+			case .dnstt:
+				return NSLocalizedString("DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended.", comment: "")
+
 			case .custom:
 				return NSLocalizedString(
 					"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you.",
@@ -134,6 +144,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .meek:
 				return Settings.transport == .meek
+
+			case .dnstt:
+				return Settings.transport == .dnstt
 
 			case .custom:
 				return Settings.transport == .custom
@@ -227,7 +240,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			Task {
 				do {
-					try await AutoConf(self).do(countryCode: Settings.countryCode, cannotConnectWithoutPt: true)
+					try await AutoConf(self).do(countryCode: self.countryCode, cannotConnectWithoutPt: true)
 				}
 				catch {
 					await MainActor.run {
@@ -261,6 +274,19 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 			}
 		})
 
+		<<< SearchablePushRow<Country>("country") {
+			$0.title = IPtProxyUI.L10n.myCountry
+			$0.selectorTitle = IPtProxyUI.L10n.myCountry
+			$0.options = Country.all
+
+			$0.value = Country.selected(countryCode)
+
+			$0.cell.backgroundColor = .widgetBackground
+		}
+		.onChange({ [weak self] row in
+			self?.countryCode = row.value?.code
+		})
+
 		+++ section
 
 		for option in Option.allCases.filter({ $0.isEnabled }) {
@@ -275,6 +301,27 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				$0.cell.accessibilityIdentifier = option.rawValue
 				$0.cell.detailTextLabel?.numberOfLines = 0
 				$0.cell.backgroundColor = .black2
+
+				if option == .dnstt {
+					$0.hidden = .function(["country"], { [weak self] _ in
+						let isDnsCountry = BuiltInBridges.dnsCountries.contains(self?.countryCode ?? "")
+
+						Task { @MainActor in
+							// If dnstt was selected, selection is now nil after hiding it.
+							if !isDnsCountry && self?.section.selectedRow() == nil {
+								self?.section.selectedRow()?.value = nil
+
+								let row = self?.form.rowBy(tag: Option.direct.rawValue) as? ListCheckRow<Option>
+								row?.value = row?.selectableValue
+
+								// Needed, otherwise rows don't get resized due to changing subtitle.
+								self?.tableView.reloadData()
+							}
+						}
+
+						return !isDnsCountry
+					})
+				}
 			}
 			.cellUpdate({ cell, row in
 				cell.detailTextLabel?.text = row.value != nil ? row.selectableValue?.longDescription : nil
@@ -333,6 +380,9 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 				case .meek:
 					self?.transport = .meek
+
+				case .dnstt:
+					self?.transport = .dnstt
 
 				default:
 					break

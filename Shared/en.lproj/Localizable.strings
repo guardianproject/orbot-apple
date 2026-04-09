@@ -308,6 +308,9 @@
 "Disconnecting" = "Disconnecting";
 
 /* No comment provided by engineer. */
+"DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended.";
+
+/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
 
 /* No comment provided by engineer. */
