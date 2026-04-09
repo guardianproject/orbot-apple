@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
 
 	@IBOutlet weak var smartConnectSw: UISwitch! {
 		didSet {
-			Settings.smartConnect = false
+			smartConnectSw.isOn = Settings.smartConnect
 		}
 	}
 	@IBOutlet weak var smartConnectLb: UILabel! {
@@ -354,9 +354,9 @@ class MainViewController: UIViewController {
 
 		smartConnectSw.isOn = Settings.smartConnect
 		smartConnectSw.isEnabled = VpnManager.shared.status == .disconnected || VpnManager.shared.status == .disabled
-		reallyHide(smartConnectSw.superview, true) //!showConfButton)
+		reallyHide(smartConnectSw.superview, !showConfButton)
 
-		reallyHide(configureBt, true) //!showConfButton)
+		reallyHide(configureBt, !showConfButton)
 
 		clearCacheBt.isEnabled = VpnManager.shared.status == .disconnected
 		reallyHide(clearCacheBt, !showConfButton || Settings.alwaysClearCache)

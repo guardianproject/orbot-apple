@@ -8,9 +8,7 @@
 
 import Foundation
 
-#if os(macOS)
 import IPtProxyUI
-#endif
 
 open class IpSupport {
 

@@ -9,9 +9,7 @@
 import NetworkExtension
 import Tor
 
-#if os(macOS)
 import IPtProxyUI
-#endif
 
 
 class TorManager {

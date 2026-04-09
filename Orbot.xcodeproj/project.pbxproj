@@ -169,7 +169,6 @@
 		A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */; };
 		A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF48B928250A7F001EED78 /* ApiAccessViewController.swift */; };
 		A0E0061D28B649F200ABC846 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E0061C28B649F200ABC846 /* AuthViewController.swift */; };
-		A0E048052B8E1BF700348ED4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048042B8E1BEA00348ED4 /* Settings.swift */; };
 		A0E048072B8E1E8000348ED4 /* IpSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048062B8E1E8000348ED4 /* IpSupport.swift */; };
 		A0E048092B8E1F1200348ED4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048082B8E1F1200348ED4 /* Reachability.swift */; };
 		A0E0480A2B8E1F3E00348ED4 /* IpSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048062B8E1E8000348ED4 /* IpSupport.swift */; };
@@ -1057,6 +1056,7 @@
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
+				559F9991C8F25B0D9E85EB42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1325,6 +1325,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		559F9991C8F25B0D9E85EB42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
@@ -1708,11 +1729,11 @@
 				A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
 				A08CA43C29ACE76400B01C1F /* Color.swift in Sources */,
+				A0236CC52F87DF6400EC2DD1 /* Settings.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0AFFCF12487D7CD00F0E221 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0A735E52475679800073C81 /* Config.swift in Sources */,
 				A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
-				A0E048052B8E1BF700348ED4 /* Settings.swift in Sources */,
 				A00D90E0273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

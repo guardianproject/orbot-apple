@@ -9,9 +9,7 @@
 import NetworkExtension
 import WidgetKit
 
-#if os(macOS)
 import IPtProxyUI
-#endif
 
 class BasePTProvider: NEPacketTunnelProvider {
 
@@ -329,11 +327,9 @@ class BasePTProvider: NEPacketTunnelProvider {
 			return completion(error, nil, nil)
 		}
 
-#if os(macOS)
 		NotificationCenter.default.addObserver(self, selector: #selector(transportErrored), name: .iPtProxyTransportErrored, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(transportConnected), name: .iPtProxyTransportConnected, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(transportStopped), name: .iPtProxyTransportStopped, object: nil)
-#endif
 
 		oldProgress = -1
 
@@ -353,13 +349,11 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}, { [weak self] error, socksAddr, dnsAddr in
 			self?.stopConnectionGuard()
 
-#if os(macOS)
 			if let self {
 				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportErrored, object: nil)
 				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportConnected, object: nil)
 				NotificationCenter.default.removeObserver(self, name: .iPtProxyTransportStopped, object: nil)
 			}
-#endif
 
 			// Since we seem to have a working connection now, disable smart connect.
 			if error == nil && Settings.smartConnect {
