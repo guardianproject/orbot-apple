@@ -40,6 +40,9 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ will auf %2$@ zugreifen.";
 
+/* No comment provided by engineer. */
+"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@Nur%2$@ aktivieren, wenn das Internet in deinem Land %1$@nicht heftig zensiert%2$@ wird.";
+
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ Die App muss im Vordergrund bleiben.";
 
@@ -114,9 +117,6 @@
 
 /* No comment provided by engineer. */
 "all domains but %@" = "allen Domains außer %@";
-
-/* No comment provided by engineer. */
-"All Time Total" = "Gesamt";
 
 /* No comment provided by engineer. */
 "all types" = "allen Typen";
@@ -326,6 +326,9 @@
 "enabled" = "aktiviert";
 
 /* No comment provided by engineer. */
+"Enabled" = "Aktiviert";
+
+/* No comment provided by engineer. */
 "Enter bridge address" = "Brückenadresse eingeben";
 
 /* macOS menu item */
@@ -388,9 +391,6 @@
 /* macOS menu item */
 "Help" = "Hilfe";
 
-/* No comment provided by engineer. */
-"Help others connect to Tor" = "Hilf anderen, sich mit Tor zu verbinden";
-
 /* macOS menu item */
 "Hide %@" = "%@ ausblenden";
 
@@ -440,7 +440,13 @@
 "Kindness Mode" = "Unterstützungsmodus";
 
 /* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Der Unterstützungsmodus macht dein Gerät zu einer Brücke für andere. Damit hilfst du Menschen Tor an Orten zu benutzen, wo es ansonsten blockiert würde.";
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Der Unterstützungsmodus macht aus deinem Gerät einen Snowflake Proxy im Tor Netzwerk – eine Brücke um anderen zu helfen, sich zu verbinden.";
+
+/* No comment provided by engineer. */
+"Kindness Mode: Help Others Connect to Tor" = "Unterstützungsmodus: Hilf anderen, sich mit Tor zu verbinden";
+
+/* No comment provided by engineer. */
+"Learn More" = "Mehr herausfinden";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Sehr wahrscheinlich, daß du damit verbunden bleibst, wenn Tor aufwändig blockiert wird. Dies wird den Tor-Bot Telegramkanal öffnen. Drücke 'Start' oder schreibe '%1$@' in den Chat um Brückenadressen zu bekommen.";
@@ -534,6 +540,9 @@
 
 /* No comment provided by engineer. */
 "Proxy" = "Proxy";
+
+/* No comment provided by engineer. */
+"Proxy Quality" = "Proxy Qualität";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "Der QR Code konnnte nicht dekodiert werden! Sicher, daß du einen .onion Link gescannt hast?";
@@ -635,16 +644,19 @@
 "this regex:" = "diese RegEx:";
 
 /* No comment provided by engineer. */
+"This Week" = "Diese Woche";
+
+/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "Das wird %1$@ folgendes ermöglichen:";
 
 /* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "Damit das funktioniert, mußt du den Blocker aktivieren:";
 
 /* No comment provided by engineer. */
-"Today is better because of you" = "Heute wird besser wegen Dir";
+"Tor Configuration Reference" = "Tor Konfigurationsreferenz";
 
 /* No comment provided by engineer. */
-"Tor Configuration Reference" = "Tor Konfigurationsreferenz";
+"Total" = "Gesamt";
 
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "Datenverkehr zu allen anderen Seiten wird über deine normale Internetverbindung geleitet.";
@@ -701,9 +713,6 @@
 "WebSockets" = "WebSockets";
 
 /* No comment provided by engineer. */
-"Weekly Total" = "Woche Gesamt";
-
-/* No comment provided by engineer. */
 "Welcome!" = "Willkommen!";
 
 /* macOS menu item */
@@ -711,6 +720,9 @@
 
 /* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "Du kannst mehrere Brückenadressen eingeben.";
+
+/* No comment provided by engineer. */
+"Your Impact in Numbers" = "Deine Wirkung in Zahlen";
 
 /* macOS menu item */
 "Zoom" = "Zoomen";

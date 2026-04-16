@@ -40,6 +40,9 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ wants to access %2$@.";
 
+/* No comment provided by engineer. */
+"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@.";
+
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ App needs to stay in the foreground.";
 
@@ -114,9 +117,6 @@
 
 /* No comment provided by engineer. */
 "all domains but %@" = "all domains but %@";
-
-/* No comment provided by engineer. */
-"All Time Total" = "All Time Total";
 
 /* No comment provided by engineer. */
 "all types" = "all types";
@@ -326,6 +326,9 @@
 "enabled" = "enabled";
 
 /* No comment provided by engineer. */
+"Enabled" = "Enabled";
+
+/* No comment provided by engineer. */
 "Enter bridge address" = "Enter bridge address";
 
 /* macOS menu item */
@@ -388,9 +391,6 @@
 /* macOS menu item */
 "Help" = "Help";
 
-/* No comment provided by engineer. */
-"Help others connect to Tor" = "Help others connect to Tor";
-
 /* macOS menu item */
 "Hide %@" = "Hide %@";
 
@@ -440,7 +440,13 @@
 "Kindness Mode" = "Kindness Mode";
 
 /* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.";
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.";
+
+/* No comment provided by engineer. */
+"Kindness Mode: Help Others Connect to Tor" = "Kindness Mode: Help Others Connect to Tor";
+
+/* No comment provided by engineer. */
+"Learn More" = "Learn More";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.";
@@ -534,6 +540,9 @@
 
 /* No comment provided by engineer. */
 "Proxy" = "Proxy";
+
+/* No comment provided by engineer. */
+"Proxy Quality" = "Proxy Quality";
 
 /* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";
@@ -635,16 +644,19 @@
 "this regex:" = "this regex:";
 
 /* No comment provided by engineer. */
+"This Week" = "This Week";
+
+/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "This will allow %1$@ to:";
 
 /* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
 
 /* No comment provided by engineer. */
-"Today is better because of you" = "Today is better because of you";
+"Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
-"Tor Configuration Reference" = "Tor Configuration Reference";
+"Total" = "Total";
 
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "Traffic to all other domains will be routed through your normal Internet connection.";
@@ -701,9 +713,6 @@
 "WebSockets" = "WebSockets";
 
 /* No comment provided by engineer. */
-"Weekly Total" = "Weekly Total";
-
-/* No comment provided by engineer. */
 "Welcome!" = "Welcome!";
 
 /* macOS menu item */
@@ -711,6 +720,9 @@
 
 /* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
+
+/* No comment provided by engineer. */
+"Your Impact in Numbers" = "Your Impact in Numbers";
 
 /* macOS menu item */
 "Zoom" = "Zoom";

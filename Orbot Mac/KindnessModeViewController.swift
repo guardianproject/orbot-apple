@@ -33,6 +33,31 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	@IBOutlet weak var description2Lb: NSTextField! {
+		didSet {
+			if #available(macOS 12, *),
+			   let attributedString = try? NSMutableAttributedString(markdown: L10n.kindnessModeDescription2)
+			{
+				let range = NSRange(attributedString.string.startIndex..., in: attributedString.string)
+
+				// Fix font. Otherwise, the bold part will show too small.
+				attributedString.addAttribute(
+					.font, value: NSFont.preferredFont(forTextStyle: .body),
+					range: range)
+
+				let ps = NSMutableParagraphStyle()
+				ps.alignment = .center
+
+				attributedString.addAttribute(.paragraphStyle, value: ps, range: range)
+
+				description2Lb.attributedStringValue = attributedString
+			}
+			else {
+				description2Lb.stringValue = L10n.kindnessModeDescription2
+			}
+		}
+	}
+
 	@IBOutlet weak var item1Lb: NSTextField! {
 		didSet {
 			item1Lb.stringValue = L10n.vpnWillBeSwitchedOff
@@ -80,13 +105,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var titleStartedLb: NSTextField! {
 		didSet {
-			titleStartedLb.stringValue = L10n.todayIsBetter
+			titleStartedLb.stringValue = L10n.kindnessMode
 		}
 	}
 
 	@IBOutlet weak var toggleLb: NSTextField! {
 		didSet {
-			toggleLb.stringValue = L10n.kindnessMode
+			toggleLb.stringValue = L10n.enabled
 			toggleLb.setAccessibilityElement(false)
 		}
 	}
@@ -97,9 +122,23 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	@IBOutlet weak var proxyQualityLb: NSTextField! {
+		didSet {
+			proxyQualityLb.stringValue = L10n.proxyQuality
+		}
+	}
+
+	@IBOutlet weak var proxyQualityStateLb: NSTextField!
+
+	@IBOutlet weak var impactLb: NSTextField! {
+		didSet {
+			impactLb.stringValue = L10n.yourImpactInNumbers
+		}
+	}
+
 	@IBOutlet weak var weeklyLb: NSTextField! {
 		didSet {
-			weeklyLb.stringValue = L10n.weeklyTotal
+			weeklyLb.stringValue = L10n.thisWeek
 		}
 	}
 
@@ -107,7 +146,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var totalLb: NSTextField! {
 		didSet {
-			totalLb.stringValue = L10n.allTimeTotal
+			totalLb.stringValue = L10n.total
 		}
 	}
 
@@ -160,6 +199,10 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		startedContainer.isHidden = false
 		stoppedContainer.isHidden = true
 		toggleSw.state = .on
+	}
+
+	@IBAction func learnMore(_ sender: NSButton) {
+		NSWorkspace.shared.open(SharedUtils.snowflakeHelpUrl)
 	}
 
 	@IBAction func deactivate(_ sender: NSSwitch) {

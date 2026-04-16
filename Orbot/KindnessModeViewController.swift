@@ -28,6 +28,30 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	@IBOutlet weak var description2Lb: UILabel! {
+		didSet {
+			if let attributedString = try? NSMutableAttributedString(markdown: L10n.kindnessModeDescription2)
+			{
+				let range = NSRange(attributedString.string.startIndex..., in: attributedString.string)
+
+				// Fix font. Otherwise, the bold part will show too small.
+				attributedString.addAttribute(
+					.font, value: UIFont.preferredFont(forTextStyle: .body),
+					range: range)
+
+				let ps = NSMutableParagraphStyle()
+				ps.alignment = .center
+
+				attributedString.addAttribute(.paragraphStyle, value: ps, range: range)
+
+				description2Lb.attributedText = attributedString
+			}
+			else {
+				description2Lb.text = L10n.kindnessModeDescription2
+			}
+		}
+	}
+
 	@IBOutlet weak var item1Lb: UILabel! {
 		didSet {
 			item1Lb.text = String(format: NSLocalizedString(
@@ -64,17 +88,23 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	@IBOutlet weak var learnMoreBt: UIButton! {
+		didSet {
+			learnMoreBt.setTitle(L10n.learnMore, for: .normal)
+		}
+	}
+
 	@IBOutlet weak var startedContainer: UIView!
 
 	@IBOutlet weak var titleStartedLb: UILabel! {
 		didSet {
-			titleStartedLb.text = L10n.todayIsBetter
+			titleStartedLb.text = L10n.kindnessMode
 		}
 	}
 
 	@IBOutlet weak var toggleLb: UILabel! {
 		didSet {
-			toggleLb.text = L10n.kindnessMode
+			toggleLb.text = L10n.enabled
 			toggleLb.isAccessibilityElement = false
 		}
 	}
@@ -85,9 +115,23 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	@IBOutlet weak var proxyQualityLb: UILabel! {
+		didSet {
+			proxyQualityLb.text = L10n.proxyQuality
+		}
+	}
+
+	@IBOutlet weak var proxyQualityStateLb: UILabel!
+
+	@IBOutlet weak var impactLb: UILabel! {
+		didSet {
+			impactLb.text = L10n.yourImpactInNumbers
+		}
+	}
+
 	@IBOutlet weak var weeklyLb: UILabel! {
 		didSet {
-			weeklyLb.text = L10n.weeklyTotal
+			weeklyLb.text = L10n.thisWeek
 		}
 	}
 
@@ -95,7 +139,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var totalLb: UILabel! {
 		didSet {
-			totalLb.text = L10n.allTimeTotal
+			totalLb.text = L10n.total
 		}
 	}
 
@@ -170,6 +214,10 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 
 				UIAccessibility.post(notification: .screenChanged, argument: self?.titleStartedLb)
 			})
+	}
+
+	@IBAction func learnMore() {
+		UIApplication.shared.open(SharedUtils.snowflakeHelpUrl)
 	}
 
 	@IBAction func deactivate() {

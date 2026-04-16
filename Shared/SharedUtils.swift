@@ -36,6 +36,10 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		URL(string: "https://2019.www.torproject.org/docs/tor-manual.html")!
 	}
 
+	public static var snowflakeHelpUrl: URL {
+		URL(string: "https://orbot.app/kindness")!
+	}
+
 
 	// MARK: BridgesConfDelegate
 

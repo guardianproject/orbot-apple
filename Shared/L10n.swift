@@ -18,14 +18,6 @@ class L10n {
 		NSLocalizedString("Build new Circuits", comment: "")
 	}
 
-	static var snowflakeProxyStarted: String {
-		"Snowflake Proxy: started (%@ people helped)"
-	}
-
-	static var snowflakeProxyStopped: String {
-		"Snowflake Proxy: stopped (%@ people helped)"
-	}
-
 	static var version: String {
 		String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
 			   Bundle.main.version, Bundle.main.build)
@@ -139,6 +131,10 @@ class L10n {
 		NSLocalizedString("Activate", comment: "")
 	}
 
+	static var learnMore: String {
+		NSLocalizedString("Learn More", comment: "")
+	}
+
 	static var nodeConfiguration: String {
 		NSLocalizedString("Node Configuration", comment: "")
 	}
@@ -243,14 +239,32 @@ class L10n {
 		NSLocalizedString("Kindness Mode", comment: "")
 	}
 
+	static var enabled: String {
+		NSLocalizedString("Enabled", comment: "")
+	}
+
+	static var proxyQuality: String {
+		NSLocalizedString("Proxy Quality", comment: "")
+	}
+
+	static var yourImpactInNumbers: String {
+		NSLocalizedString("Your Impact in Numbers", comment: "")
+	}
+
 	static var helpOthers: String {
-		NSLocalizedString("Help others connect to Tor", comment: "")
+		NSLocalizedString("Kindness Mode: Help Others Connect to Tor", comment: "")
 	}
 
 	static var kindnessModeDescription: String {
 		NSLocalizedString(
-			"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked.",
+			"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.",
 			comment: "")
+	}
+
+	static var kindnessModeDescription2: String {
+		String(format:
+				NSLocalizedString("%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@.", comment: ""),
+			   "**", "**")
 	}
 
 	static var vpnWillBeSwitchedOff: String {
@@ -260,16 +274,12 @@ class L10n {
 			   "•", Bundle.main.displayName)
 	}
 
-	static var todayIsBetter: String {
-		NSLocalizedString("Today is better because of you", comment: "")
+	static var thisWeek: String {
+		NSLocalizedString("This Week", comment: "")
 	}
 
-	static var weeklyTotal: String {
-		NSLocalizedString("Weekly Total", comment: "")
-	}
-
-	static var allTimeTotal: String {
-		NSLocalizedString("All Time Total", comment: "")
+	static var total: String {
+		NSLocalizedString("Total", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [
