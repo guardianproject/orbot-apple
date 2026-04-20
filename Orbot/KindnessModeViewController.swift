@@ -199,6 +199,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		startedContainer.isHidden = false
 		startedContainer.accessibilityElementsHidden = false
 		toggleSw.isOn = true
+		proxyQualityStateLb.text = L10n.proxyQualityType[IPtProxyNATUnknown] ?? IPtProxyNATUnknown
 
 		UIView.animate(
 			withDuration: 0.3,
@@ -281,6 +282,12 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 			Double(outboundBytes)/interval,
 			outboundUnit ?? "?",
 			"/s"), to: FileManager.default.sfpLogFile)
+	}
+
+	func natTypeUpdated(_ natType: String?) {
+		Task { @MainActor in
+			proxyQualityStateLb.text = L10n.proxyQualityType[natType ?? IPtProxyNATUnknown] ?? natType ?? IPtProxyNATUnknown
+		}
 	}
 
 

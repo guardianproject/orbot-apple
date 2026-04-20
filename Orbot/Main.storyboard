@@ -289,123 +289,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-n1-uC4">
-                                <rect key="frame" x="16" y="90" width="288" height="379"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhf-2P-Y20">
+                                <rect key="frame" x="0.0" y="74" width="320" height="411"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowflake" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-sQ-M9r">
-                                        <rect key="frame" x="120" y="0.0" width="48" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="RdW-sQ-M9r" secondAttribute="height" multiplier="1:1" id="7m6-4r-WRr"/>
-                                            <constraint firstAttribute="width" constant="48" id="ryN-bG-3R1"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kindness Mode: Help others connect to Tor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZo-0H-gD7">
-                                        <rect key="frame" x="0.0" y="64" width="288" height="67.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e3-aK-yQ9">
-                                        <rect key="frame" x="0.0" y="147.5" width="288" height="64.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activate if the Internet in your country is not heavily censored." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2J-M1-brz">
-                                        <rect key="frame" x="0.0" y="220" width="288" height="42.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• App needs to stay in the foreground." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDi-0t-gjg">
-                                        <rect key="frame" x="0.0" y="270.5" width="288" height="16"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Orbot VPN will be switched off." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN8-gk-fRq">
-                                        <rect key="frame" x="0.0" y="294.5" width="288" height="16"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faa-8L-Rbq">
-                                        <rect key="frame" x="0.0" y="318.5" width="288" height="52"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Connect to power while letting it run." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFu-7Z-aaP">
-                                        <rect key="frame" x="0.0" y="378.5" width="288" height="16"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTC-Zm-XAq">
-                                        <rect key="frame" x="0.0" y="418.5" width="288" height="48"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="RO3-gb-i6B"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Activate"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="9"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="activate" destination="A04-Pj-ZSy" eventType="touchUpInside" id="aOA-ps-ToD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-UF-KnC">
-                                        <rect key="frame" x="0.0" y="474.5" width="288" height="48"/>
-                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-n1-uC4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="584.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Snowflake" translatesAutoresizingMaskIntoConstraints="NO" id="RdW-sQ-M9r">
+                                                <rect key="frame" x="136" y="20" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="RdW-sQ-M9r" secondAttribute="height" multiplier="1:1" id="7m6-4r-WRr"/>
+                                                    <constraint firstAttribute="width" constant="48" id="ryN-bG-3R1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kindness Mode: Help others connect to Tor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZo-0H-gD7">
+                                                <rect key="frame" x="20" y="84" width="280" height="67.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e3-aK-yQ9">
+                                                <rect key="frame" x="20" y="167.5" width="280" height="86.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activate if the Internet in your country is not heavily censored." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2J-M1-brz">
+                                                <rect key="frame" x="20" y="262" width="280" height="42.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• App needs to stay in the foreground." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDi-0t-gjg">
+                                                <rect key="frame" x="20" y="312.5" width="280" height="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Orbot VPN will be switched off." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN8-gk-fRq">
+                                                <rect key="frame" x="20" y="336.5" width="280" height="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faa-8L-Rbq">
+                                                <rect key="frame" x="20" y="360.5" width="280" height="52"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Connect to power while letting it run." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFu-7Z-aaP">
+                                                <rect key="frame" x="20" y="420.5" width="280" height="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTC-Zm-XAq">
+                                                <rect key="frame" x="20" y="460.5" width="280" height="48"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="RO3-gb-i6B"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Activate"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="activate" destination="A04-Pj-ZSy" eventType="touchUpInside" id="aOA-ps-ToD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-UF-KnC">
+                                                <rect key="frame" x="20" y="516.5" width="280" height="48"/>
+                                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="3u3-UG-WDd"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Learn More"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="learnMore" destination="A04-Pj-ZSy" eventType="touchUpInside" id="N6y-wz-Zko"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="3u3-UG-WDd"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Learn More"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="9"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="learnMore" destination="A04-Pj-ZSy" eventType="touchUpInside" id="N6y-wz-Zko"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="q4I-UF-KnC" firstAttribute="top" secondItem="UTC-Zm-XAq" secondAttribute="bottom" constant="8" symbolic="YES" id="15i-iu-65f"/>
-                                    <constraint firstAttribute="trailing" secondItem="faa-8L-Rbq" secondAttribute="trailing" id="1ne-KL-ZsO"/>
-                                    <constraint firstItem="f2J-M1-brz" firstAttribute="top" secondItem="4e3-aK-yQ9" secondAttribute="bottom" constant="8" symbolic="YES" id="2gV-ea-CAs"/>
-                                    <constraint firstAttribute="trailing" secondItem="tN8-gk-fRq" secondAttribute="trailing" id="7w0-TX-wfb"/>
-                                    <constraint firstItem="4e3-aK-yQ9" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="AKp-5f-Cve"/>
-                                    <constraint firstAttribute="trailing" secondItem="QDi-0t-gjg" secondAttribute="trailing" id="Bi3-iW-kiM"/>
-                                    <constraint firstItem="RdW-sQ-M9r" firstAttribute="top" secondItem="Sst-n1-uC4" secondAttribute="top" id="EC1-hS-9gF"/>
-                                    <constraint firstAttribute="trailing" secondItem="GZo-0H-gD7" secondAttribute="trailing" id="Ebf-50-dhN"/>
-                                    <constraint firstItem="QDi-0t-gjg" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="FUI-4p-6OG"/>
-                                    <constraint firstItem="QDi-0t-gjg" firstAttribute="top" secondItem="f2J-M1-brz" secondAttribute="bottom" constant="8" symbolic="YES" id="Gje-Ly-I8O"/>
-                                    <constraint firstAttribute="trailing" secondItem="vFu-7Z-aaP" secondAttribute="trailing" id="KNt-gW-OWG"/>
-                                    <constraint firstItem="faa-8L-Rbq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="N6Y-Ns-CfE"/>
-                                    <constraint firstItem="GZo-0H-gD7" firstAttribute="top" secondItem="RdW-sQ-M9r" secondAttribute="bottom" constant="16" id="O0T-GK-yaD"/>
-                                    <constraint firstAttribute="trailing" secondItem="4e3-aK-yQ9" secondAttribute="trailing" id="S1y-VZ-IS1"/>
-                                    <constraint firstItem="tN8-gk-fRq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="TaT-2U-XC4"/>
-                                    <constraint firstItem="faa-8L-Rbq" firstAttribute="top" secondItem="tN8-gk-fRq" secondAttribute="bottom" constant="8" symbolic="YES" id="Uc4-Yq-9Wt"/>
-                                    <constraint firstItem="UTC-Zm-XAq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="Vig-ug-U6f"/>
-                                    <constraint firstItem="q4I-UF-KnC" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="W1g-D2-uPN"/>
-                                    <constraint firstItem="tN8-gk-fRq" firstAttribute="top" secondItem="QDi-0t-gjg" secondAttribute="bottom" constant="8" symbolic="YES" id="YaC-ti-ky6"/>
-                                    <constraint firstItem="f2J-M1-brz" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="ZfB-mM-cYp"/>
-                                    <constraint firstAttribute="trailing" secondItem="f2J-M1-brz" secondAttribute="trailing" id="asW-IV-898"/>
-                                    <constraint firstItem="4e3-aK-yQ9" firstAttribute="top" secondItem="GZo-0H-gD7" secondAttribute="bottom" constant="16" id="bpg-LQ-DZj"/>
-                                    <constraint firstItem="vFu-7Z-aaP" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="c6o-Lt-eMk"/>
-                                    <constraint firstAttribute="trailing" secondItem="UTC-Zm-XAq" secondAttribute="trailing" id="eKi-fU-fYM"/>
-                                    <constraint firstItem="GZo-0H-gD7" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" id="h21-V0-eAD"/>
-                                    <constraint firstItem="RdW-sQ-M9r" firstAttribute="centerX" secondItem="Sst-n1-uC4" secondAttribute="centerX" id="vLD-Jc-cvV"/>
-                                    <constraint firstAttribute="trailing" secondItem="q4I-UF-KnC" secondAttribute="trailing" id="wkB-3U-1BD"/>
-                                    <constraint firstItem="UTC-Zm-XAq" firstAttribute="top" secondItem="vFu-7Z-aaP" secondAttribute="bottom" constant="24" id="xNd-GD-lXb"/>
-                                    <constraint firstItem="vFu-7Z-aaP" firstAttribute="top" secondItem="faa-8L-Rbq" secondAttribute="bottom" constant="8" symbolic="YES" id="znX-f2-qlb"/>
+                                    <constraint firstItem="ah9-1G-crp" firstAttribute="trailing" secondItem="Sst-n1-uC4" secondAttribute="trailing" id="BuC-hP-WPM"/>
+                                    <constraint firstItem="Sst-n1-uC4" firstAttribute="trailing" secondItem="57h-V6-GlH" secondAttribute="trailing" id="C80-VW-Mrf"/>
+                                    <constraint firstItem="Sst-n1-uC4" firstAttribute="bottom" secondItem="57h-V6-GlH" secondAttribute="bottom" id="HMZ-Va-Y0U"/>
+                                    <constraint firstItem="Sst-n1-uC4" firstAttribute="leading" secondItem="ah9-1G-crp" secondAttribute="leading" id="XA0-da-sJS"/>
+                                    <constraint firstItem="Sst-n1-uC4" firstAttribute="top" secondItem="57h-V6-GlH" secondAttribute="top" id="gi3-LT-lAQ"/>
+                                    <constraint firstItem="Sst-n1-uC4" firstAttribute="leading" secondItem="57h-V6-GlH" secondAttribute="leading" id="vDs-5n-zqU"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-tV-wfg">
@@ -579,13 +564,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oUo-aM-UNZ" firstAttribute="bottom" secondItem="eCy-tV-wfg" secondAttribute="bottom" constant="16" id="30q-Ym-mgy"/>
-                            <constraint firstItem="oUo-aM-UNZ" firstAttribute="trailing" secondItem="Sst-n1-uC4" secondAttribute="trailing" constant="16" id="EMK-Mh-LOP"/>
-                            <constraint firstItem="Sst-n1-uC4" firstAttribute="top" secondItem="oUo-aM-UNZ" secondAttribute="top" constant="16" id="LYg-5L-k6F"/>
+                            <constraint firstItem="jhf-2P-Y20" firstAttribute="leading" secondItem="oUo-aM-UNZ" secondAttribute="leading" id="SFk-Z7-Jns"/>
                             <constraint firstItem="eCy-tV-wfg" firstAttribute="top" secondItem="oUo-aM-UNZ" secondAttribute="top" constant="16" id="ZK5-r9-R9Q"/>
                             <constraint firstItem="eCy-tV-wfg" firstAttribute="leading" secondItem="oUo-aM-UNZ" secondAttribute="leading" constant="16" id="a3P-dL-ORQ"/>
-                            <constraint firstItem="oUo-aM-UNZ" firstAttribute="bottom" secondItem="Sst-n1-uC4" secondAttribute="bottom" constant="16" id="mjz-be-IOj"/>
+                            <constraint firstItem="oUo-aM-UNZ" firstAttribute="trailing" secondItem="jhf-2P-Y20" secondAttribute="trailing" id="bLx-rq-sVH"/>
+                            <constraint firstItem="jhf-2P-Y20" firstAttribute="top" secondItem="oUo-aM-UNZ" secondAttribute="top" id="lLC-Zs-nUt"/>
                             <constraint firstItem="oUo-aM-UNZ" firstAttribute="trailing" secondItem="eCy-tV-wfg" secondAttribute="trailing" constant="16" id="s6S-4e-txe"/>
-                            <constraint firstItem="Sst-n1-uC4" firstAttribute="leading" secondItem="oUo-aM-UNZ" secondAttribute="leading" constant="16" id="v2e-lC-p7N"/>
+                            <constraint firstItem="oUo-aM-UNZ" firstAttribute="bottom" secondItem="jhf-2P-Y20" secondAttribute="bottom" id="vrT-cm-9Pw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Kindness Mode" image="heart.fill" catalog="system" id="seG-Bj-o2n"/>

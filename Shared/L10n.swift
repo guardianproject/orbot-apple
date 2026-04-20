@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import IPtProxy
 
 class L10n {
 
@@ -246,6 +247,12 @@ class L10n {
 	static var proxyQuality: String {
 		NSLocalizedString("Proxy Quality", comment: "")
 	}
+
+	static var proxyQualityType: [String: String] = [
+		IPtProxyNATUnknown: NSLocalizedString("unknown", comment: "IPtProxyNATUnknown"),
+		IPtProxyNATRestricted: NSLocalizedString("restricted", comment: "IPtProxyNATRestricted"),
+		IPtProxyNATUnrestricted: NSLocalizedString("unrestricted", comment: "IPtProxyNATUnrestricted")
+	]
 
 	static var yourImpactInNumbers: String {
 		NSLocalizedString("Your Impact in Numbers", comment: "")

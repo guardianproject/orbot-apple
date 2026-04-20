@@ -199,6 +199,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		startedContainer.isHidden = false
 		stoppedContainer.isHidden = true
 		toggleSw.state = .on
+		proxyQualityStateLb.stringValue = L10n.proxyQualityType[IPtProxyNATUnknown] ?? IPtProxyNATUnknown
 	}
 
 	@IBAction func learnMore(_ sender: NSButton) {
@@ -215,7 +216,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 	}
 
 
-	// MARK: IPtProxySnowflakeClientEvents
+	// MARK: IPtProxySnowflakeClientEventsProtocol
 
 	func connected() {
 		Settings.addOneSnowflakeHelped()
@@ -253,6 +254,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 			outboundUnit ?? "?",
 			"/s"), to: FileManager.default.sfpLogFile)
 	}
+
+	func natTypeUpdated(_ natType: String?) {
+		Task { @MainActor in
+			proxyQualityStateLb.stringValue = L10n.proxyQualityType[natType ?? IPtProxyNATUnknown] ?? natType ?? IPtProxyNATUnknown
+		}
+	}
+
 
 	// MARK: Private Methods
 

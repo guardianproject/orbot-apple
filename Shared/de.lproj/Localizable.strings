@@ -562,6 +562,9 @@
 /* macOS menu item */
 "Redo" = "Wiederholen";
 
+/* IPtProxyNATRestricted */
+"restricted" = "eingeschränkt";
+
 /* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Smart Connect ausführen, um den besten Weg zu finden";
 
@@ -672,6 +675,12 @@
 
 /* No comment provided by engineer. */
 "Unknown" = "Unbekannt";
+
+/* IPtProxyNATUnknown */
+"unknown" = "unbekannt";
+
+/* IPtProxyNATUnrestricted */
+"unrestricted" = "uneingeschränkt";
 
 /* No comment provided by engineer. */
 "Use %1$@" = "Benutze %1$@";
