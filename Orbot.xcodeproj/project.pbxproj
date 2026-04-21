@@ -121,6 +121,7 @@
 		A092846C2F1E8C5200A403FF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A092846D2F1E8C7300A403FF /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A092846E2F1E8C8800A403FF /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
+		A095A1942F967596007C10D5 /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095A1932F967596007C10D5 /* TestingViewController.swift */; };
 		A0A039B1274E9DF400D80FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A039B3274E9DF400D80FD1 /* InfoPlist.strings */; };
 		A0A2D89E28B6531A00F49BF4 /* EditAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */; };
 		A0A2D8A028B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */; };
@@ -164,6 +165,7 @@
 		A0D0F1032A14F54500293A1A /* RemoteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0F1022A14F54500293A1A /* RemoteControl.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
+		A0D8103E2F9119E2000D407F /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8103D2F9119E2000D407F /* TestingViewController.swift */; };
 		A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
 		A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
 		A0D9021D2A98E56C0032BDD2 /* TorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D9021A2A98E56C0032BDD2 /* TorHelpers.swift */; };
@@ -415,6 +417,7 @@
 		A08CA2CD27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A08CA43A29ACE76400B01C1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeViewController.swift; sourceTree = "<group>"; };
+		A095A1932F967596007C10D5 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A2D89D28B6531A00F49BF4 /* EditAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAuthViewController.swift; sourceTree = "<group>"; };
@@ -463,6 +466,7 @@
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		A0D8103D2F9119E2000D407F /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A0D8FBAC2A7135BD001791B2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0D8FBAD2A7135BD001791B2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0D902172A98B2EF0032BDD2 /* es-CU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-CU"; path = "es-CU.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -596,6 +600,7 @@
 				A03CFBB728B5206500D7A700 /* SettingsViewController.swift */,
 				A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */,
 				A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */,
+				A095A1932F967596007C10D5 /* TestingViewController.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -704,6 +709,7 @@
 				A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */,
 				A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */,
 				A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */,
+				A0D8103D2F9119E2000D407F /* TestingViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A01AB60F28A54531008A79EE /* Helpers */,
 				A00F51392745464E0037DD4A /* LaunchScreen.storyboard */,
@@ -1580,6 +1586,7 @@
 				A01AB60A28A54345008A79EE /* ProgressMessage.swift in Sources */,
 				A0AD232728F96C670067CE63 /* URL+Helpers.swift in Sources */,
 				A01AB60C28A54358008A79EE /* CloseCircuitsMessage.swift in Sources */,
+				A095A1942F967596007C10D5 /* TestingViewController.swift in Sources */,
 				A01AB60B28A5434E008A79EE /* Message.swift in Sources */,
 				A01AB60728A54225008A79EE /* VpnManager.swift in Sources */,
 				A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */,
@@ -1673,6 +1680,7 @@
 				A06470182477F7E900311CBE /* UITextView+Helpers.swift in Sources */,
 				A0B07B1A2E86D55600275BF7 /* ProxySettingsViewController.swift in Sources */,
 				A01F34DF2652D082008F9912 /* Logger.swift in Sources */,
+				A0D8103E2F9119E2000D407F /* TestingViewController.swift in Sources */,
 				A0CC771F29A79E1B0053CB53 /* AccessRequestViewController.swift in Sources */,
 				A05DCD0829719A1B0017B36A /* UIStoryboard.swift in Sources */,
 				A0A735E1247566CD00073C81 /* Config.m in Sources */,

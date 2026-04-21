@@ -380,7 +380,36 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="3u3-UG-WDd"/>
+                                            <constraint firstItem="q4I-UF-KnC" firstAttribute="top" secondItem="UTC-Zm-XAq" secondAttribute="bottom" constant="8" symbolic="YES" id="15i-iu-65f"/>
+                                            <constraint firstAttribute="trailing" secondItem="faa-8L-Rbq" secondAttribute="trailing" constant="20" symbolic="YES" id="1ne-KL-ZsO"/>
+                                            <constraint firstItem="f2J-M1-brz" firstAttribute="top" secondItem="4e3-aK-yQ9" secondAttribute="bottom" constant="8" symbolic="YES" id="2gV-ea-CAs"/>
+                                            <constraint firstAttribute="trailing" secondItem="tN8-gk-fRq" secondAttribute="trailing" constant="20" symbolic="YES" id="7w0-TX-wfb"/>
+                                            <constraint firstItem="4e3-aK-yQ9" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="AKp-5f-Cve"/>
+                                            <constraint firstAttribute="trailing" secondItem="QDi-0t-gjg" secondAttribute="trailing" constant="20" symbolic="YES" id="Bi3-iW-kiM"/>
+                                            <constraint firstItem="RdW-sQ-M9r" firstAttribute="top" secondItem="Sst-n1-uC4" secondAttribute="top" constant="20" symbolic="YES" id="EC1-hS-9gF"/>
+                                            <constraint firstItem="QDi-0t-gjg" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="FUI-4p-6OG"/>
+                                            <constraint firstAttribute="bottom" secondItem="q4I-UF-KnC" secondAttribute="bottom" constant="20" symbolic="YES" id="GU1-eZ-f65"/>
+                                            <constraint firstItem="QDi-0t-gjg" firstAttribute="top" secondItem="f2J-M1-brz" secondAttribute="bottom" constant="8" symbolic="YES" id="Gje-Ly-I8O"/>
+                                            <constraint firstAttribute="trailing" secondItem="vFu-7Z-aaP" secondAttribute="trailing" constant="20" symbolic="YES" id="KNt-gW-OWG"/>
+                                            <constraint firstItem="faa-8L-Rbq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="N6Y-Ns-CfE"/>
+                                            <constraint firstItem="GZo-0H-gD7" firstAttribute="top" secondItem="RdW-sQ-M9r" secondAttribute="bottom" constant="16" id="O0T-GK-yaD"/>
+                                            <constraint firstAttribute="trailing" secondItem="4e3-aK-yQ9" secondAttribute="trailing" constant="20" symbolic="YES" id="S1y-VZ-IS1"/>
+                                            <constraint firstItem="tN8-gk-fRq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="TaT-2U-XC4"/>
+                                            <constraint firstItem="faa-8L-Rbq" firstAttribute="top" secondItem="tN8-gk-fRq" secondAttribute="bottom" constant="8" symbolic="YES" id="Uc4-Yq-9Wt"/>
+                                            <constraint firstItem="UTC-Zm-XAq" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="Vig-ug-U6f"/>
+                                            <constraint firstItem="q4I-UF-KnC" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="W1g-D2-uPN"/>
+                                            <constraint firstItem="tN8-gk-fRq" firstAttribute="top" secondItem="QDi-0t-gjg" secondAttribute="bottom" constant="8" symbolic="YES" id="YaC-ti-ky6"/>
+                                            <constraint firstItem="f2J-M1-brz" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="ZfB-mM-cYp"/>
+                                            <constraint firstAttribute="trailing" secondItem="f2J-M1-brz" secondAttribute="trailing" constant="20" symbolic="YES" id="asW-IV-898"/>
+                                            <constraint firstItem="4e3-aK-yQ9" firstAttribute="top" secondItem="GZo-0H-gD7" secondAttribute="bottom" constant="16" id="bpg-LQ-DZj"/>
+                                            <constraint firstItem="vFu-7Z-aaP" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="c6o-Lt-eMk"/>
+                                            <constraint firstAttribute="trailing" secondItem="GZo-0H-gD7" secondAttribute="trailing" constant="20" symbolic="YES" id="dsX-zJ-lpR"/>
+                                            <constraint firstAttribute="trailing" secondItem="UTC-Zm-XAq" secondAttribute="trailing" constant="20" symbolic="YES" id="eKi-fU-fYM"/>
+                                            <constraint firstItem="GZo-0H-gD7" firstAttribute="leading" secondItem="Sst-n1-uC4" secondAttribute="leading" constant="20" symbolic="YES" id="h21-V0-eAD"/>
+                                            <constraint firstItem="RdW-sQ-M9r" firstAttribute="centerX" secondItem="Sst-n1-uC4" secondAttribute="centerX" id="vLD-Jc-cvV"/>
+                                            <constraint firstAttribute="trailing" secondItem="q4I-UF-KnC" secondAttribute="trailing" constant="20" symbolic="YES" id="wkB-3U-1BD"/>
+                                            <constraint firstItem="UTC-Zm-XAq" firstAttribute="top" secondItem="vFu-7Z-aaP" secondAttribute="bottom" constant="24" id="xNd-GD-lXb"/>
+                                            <constraint firstItem="vFu-7Z-aaP" firstAttribute="top" secondItem="faa-8L-Rbq" secondAttribute="bottom" constant="8" symbolic="YES" id="znX-f2-qlb"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -392,7 +421,9 @@
                                     <constraint firstItem="Sst-n1-uC4" firstAttribute="top" secondItem="57h-V6-GlH" secondAttribute="top" id="gi3-LT-lAQ"/>
                                     <constraint firstItem="Sst-n1-uC4" firstAttribute="leading" secondItem="57h-V6-GlH" secondAttribute="leading" id="vDs-5n-zqU"/>
                                 </constraints>
-                            </view>
+                                <viewLayoutGuide key="contentLayoutGuide" id="57h-V6-GlH"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ah9-1G-crp"/>
+                            </scrollView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-tV-wfg">
                                 <rect key="frame" x="16" y="90" width="288" height="379"/>
                                 <subviews>
@@ -422,7 +453,7 @@
                                                 <rect key="frame" x="207" y="30" width="63" height="28"/>
                                                 <color key="onTintColor" name="Accent2"/>
                                                 <connections>
-                                                    <action selector="deactivate" destination="A04-Pj-ZSy" eventType="valueChanged" id="2O8-YL-Xjx"/>
+                                                    <action selector="toggleSnowflakeProxy" destination="A04-Pj-ZSy" eventType="valueChanged" id="2O8-YL-Xjx"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -468,6 +499,14 @@
                                             <constraint firstAttribute="trailing" secondItem="RAK-yj-B7d" secondAttribute="trailing" constant="20" symbolic="YES" id="IC0-8z-t95"/>
                                             <constraint firstItem="EHt-4E-nsD" firstAttribute="leading" secondItem="PMo-i9-Z92" secondAttribute="leading" constant="20" symbolic="YES" id="qoJ-ZF-ly5"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="9"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="8IJ-Xe-3Ji" appends="YES" id="9Se-5B-xoE"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Impact in Numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npn-gp-4Bb">
                                         <rect key="frame" x="0.0" y="255" width="288" height="20.5"/>
@@ -600,8 +639,172 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfH-Gb-n6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8IJ-Xe-3Ji">
+                    <connections>
+                        <action selector="upgrade" destination="A04-Pj-ZSy" id="Cb1-JZ-4kl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-744" y="-661"/>
+        </scene>
+        <!--Testing Quality…-->
+        <scene sceneID="pOC-PJ-EPl">
+            <objects>
+                <viewController storyboardIdentifier="TestingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5xf-XA-NYU" customClass="TestingViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JbU-me-zB0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDo-Be-jwZ">
+                                <rect key="frame" x="0.0" y="74" width="320" height="414"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-vo-6zk">
+                                        <rect key="frame" x="141.5" y="16" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGR-Ds-L57">
+                                        <rect key="frame" x="20" y="77" width="280" height="81.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wGR-Ds-L57" firstAttribute="leading" secondItem="HDo-Be-jwZ" secondAttribute="leading" constant="20" symbolic="YES" id="6g7-0V-ifg"/>
+                                    <constraint firstAttribute="trailing" secondItem="wGR-Ds-L57" secondAttribute="trailing" constant="20" symbolic="YES" id="GQy-A2-1u4"/>
+                                    <constraint firstItem="1gt-vo-6zk" firstAttribute="centerX" secondItem="HDo-Be-jwZ" secondAttribute="centerX" id="slG-Sh-xqd"/>
+                                    <constraint firstItem="wGR-Ds-L57" firstAttribute="top" secondItem="1gt-vo-6zk" secondAttribute="bottom" constant="24" id="wHh-n9-n7L"/>
+                                    <constraint firstItem="1gt-vo-6zk" firstAttribute="top" secondItem="HDo-Be-jwZ" secondAttribute="top" constant="16" id="z0o-ZQ-x5y"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLK-ku-biO">
+                                <rect key="frame" x="0.0" y="74" width="320" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✅ Approved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le9-Tg-VCo">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are a great candidate for becoming a Snowflake Proxy on the Tor network." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ht-Er-cHw">
+                                        <rect key="frame" x="20" y="49.5" width="280" height="64.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="le9-Tg-VCo" secondAttribute="trailing" constant="20" symbolic="YES" id="3cN-qo-4Fk"/>
+                                    <constraint firstItem="9Ht-Er-cHw" firstAttribute="leading" secondItem="MLK-ku-biO" secondAttribute="leading" constant="20" symbolic="YES" id="4hj-OM-1oj"/>
+                                    <constraint firstItem="9Ht-Er-cHw" firstAttribute="top" secondItem="le9-Tg-VCo" secondAttribute="bottom" constant="16" id="TGV-yy-jTv"/>
+                                    <constraint firstItem="le9-Tg-VCo" firstAttribute="leading" secondItem="MLK-ku-biO" secondAttribute="leading" constant="20" symbolic="YES" id="p0G-Wn-5h1"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ht-Er-cHw" secondAttribute="trailing" constant="20" symbolic="YES" id="tOS-Dh-2Ni"/>
+                                    <constraint firstItem="le9-Tg-VCo" firstAttribute="top" secondItem="MLK-ku-biO" secondAttribute="top" id="zfV-6i-udy"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTP-Rz-FNO">
+                                <rect key="frame" x="0.0" y="74" width="320" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🚫 Not Approved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFX-j9-aq2">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-Np-Sdc">
+                                        <rect key="frame" x="20" y="49.5" width="280" height="86.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leN-mn-OuP">
+                                        <rect key="frame" x="20" y="152" width="280" height="101.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do not use Kindness Mode, if the Internet in your country is heavily censored." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHL-cA-obW">
+                                                <rect key="frame" x="20" y="20" width="240" height="61.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstItem="mHL-cA-obW" firstAttribute="leading" secondItem="leN-mn-OuP" secondAttribute="leading" constant="20" symbolic="YES" id="7x8-Rn-BKd"/>
+                                            <constraint firstAttribute="bottom" secondItem="mHL-cA-obW" secondAttribute="bottom" constant="20" symbolic="YES" id="qxg-NQ-EwY"/>
+                                            <constraint firstAttribute="trailing" secondItem="mHL-cA-obW" secondAttribute="trailing" constant="20" symbolic="YES" id="tde-ao-iIl"/>
+                                            <constraint firstItem="mHL-cA-obW" firstAttribute="top" secondItem="leN-mn-OuP" secondAttribute="top" constant="20" symbolic="YES" id="vpq-Ls-ltb"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="leN-mn-OuP" firstAttribute="top" secondItem="xJa-Np-Sdc" secondAttribute="bottom" constant="16" id="1oU-RM-KAn"/>
+                                    <constraint firstItem="KFX-j9-aq2" firstAttribute="leading" secondItem="eTP-Rz-FNO" secondAttribute="leading" constant="20" symbolic="YES" id="9Fr-8X-BY0"/>
+                                    <constraint firstItem="xJa-Np-Sdc" firstAttribute="top" secondItem="KFX-j9-aq2" secondAttribute="bottom" constant="16" id="D55-fh-d8V"/>
+                                    <constraint firstItem="leN-mn-OuP" firstAttribute="leading" secondItem="eTP-Rz-FNO" secondAttribute="leading" constant="20" symbolic="YES" id="H4a-yV-P9g"/>
+                                    <constraint firstItem="xJa-Np-Sdc" firstAttribute="leading" secondItem="eTP-Rz-FNO" secondAttribute="leading" constant="20" symbolic="YES" id="Q6k-tg-VzI"/>
+                                    <constraint firstItem="KFX-j9-aq2" firstAttribute="top" secondItem="eTP-Rz-FNO" secondAttribute="top" id="WGD-q3-esv"/>
+                                    <constraint firstAttribute="trailing" secondItem="leN-mn-OuP" secondAttribute="trailing" constant="20" symbolic="YES" id="Wb6-z5-dYS"/>
+                                    <constraint firstAttribute="trailing" secondItem="KFX-j9-aq2" secondAttribute="trailing" constant="20" symbolic="YES" id="aJw-nd-xMG"/>
+                                    <constraint firstAttribute="trailing" secondItem="xJa-Np-Sdc" secondAttribute="trailing" constant="20" symbolic="YES" id="yNL-JU-0qj"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8D-SF-RD9">
+                                <rect key="frame" x="16" y="496" width="288" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="358-nL-eom"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Cancel"/>
+                                <connections>
+                                    <action selector="dismiss" destination="5xf-XA-NYU" eventType="touchUpInside" id="i63-97-JAW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lah-Gg-Nh7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eTP-Rz-FNO" firstAttribute="trailing" secondItem="lah-Gg-Nh7" secondAttribute="trailing" id="3Xg-NQ-e8k"/>
+                            <constraint firstItem="eTP-Rz-FNO" firstAttribute="leading" secondItem="lah-Gg-Nh7" secondAttribute="leading" id="9iT-Ql-pvc"/>
+                            <constraint firstItem="lah-Gg-Nh7" firstAttribute="bottom" secondItem="t8D-SF-RD9" secondAttribute="bottom" constant="24" id="C4I-Aj-ubb"/>
+                            <constraint firstItem="HDo-Be-jwZ" firstAttribute="top" secondItem="lah-Gg-Nh7" secondAttribute="top" id="G9S-JW-j5C"/>
+                            <constraint firstItem="t8D-SF-RD9" firstAttribute="top" secondItem="MLK-ku-biO" secondAttribute="bottom" constant="8" symbolic="YES" id="Ih8-SI-Ge7"/>
+                            <constraint firstItem="t8D-SF-RD9" firstAttribute="top" secondItem="eTP-Rz-FNO" secondAttribute="bottom" constant="8" symbolic="YES" id="KMc-Gb-oGQ"/>
+                            <constraint firstItem="t8D-SF-RD9" firstAttribute="leading" secondItem="lah-Gg-Nh7" secondAttribute="leading" constant="16" id="NEc-wW-4Kn"/>
+                            <constraint firstItem="t8D-SF-RD9" firstAttribute="top" secondItem="HDo-Be-jwZ" secondAttribute="bottom" constant="8" symbolic="YES" id="VAV-Ud-D8i"/>
+                            <constraint firstItem="MLK-ku-biO" firstAttribute="top" secondItem="lah-Gg-Nh7" secondAttribute="top" id="a8S-Ch-9JS"/>
+                            <constraint firstItem="MLK-ku-biO" firstAttribute="leading" secondItem="lah-Gg-Nh7" secondAttribute="leading" id="d4M-Ig-GHE"/>
+                            <constraint firstItem="lah-Gg-Nh7" firstAttribute="trailing" secondItem="t8D-SF-RD9" secondAttribute="trailing" constant="16" id="g7d-e4-yuW"/>
+                            <constraint firstItem="lah-Gg-Nh7" firstAttribute="top" secondItem="eTP-Rz-FNO" secondAttribute="top" id="ldY-Nh-rgn"/>
+                            <constraint firstItem="HDo-Be-jwZ" firstAttribute="leading" secondItem="lah-Gg-Nh7" secondAttribute="leading" id="uhe-w6-Blj"/>
+                            <constraint firstItem="lah-Gg-Nh7" firstAttribute="trailing" secondItem="HDo-Be-jwZ" secondAttribute="trailing" id="zGD-gQ-FC0"/>
+                            <constraint firstItem="lah-Gg-Nh7" firstAttribute="trailing" secondItem="MLK-ku-biO" secondAttribute="trailing" id="zud-TV-waK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Testing Quality…" id="plf-mk-Z87"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="explanationLb" destination="wGR-Ds-L57" id="hh8-1J-QpB"/>
+                        <outlet property="failContainer" destination="eTP-Rz-FNO" id="yY7-gJ-vTQ"/>
+                        <outlet property="failDescriptionLb" destination="xJa-Np-Sdc" id="UqQ-80-3MS"/>
+                        <outlet property="failTitleLb" destination="KFX-j9-aq2" id="d2T-Wq-2gP"/>
+                        <outlet property="failWarningLb" destination="mHL-cA-obW" id="YKp-ue-oVQ"/>
+                        <outlet property="mainBt" destination="t8D-SF-RD9" id="try-uH-Rgf"/>
+                        <outlet property="successContainer" destination="MLK-ku-biO" id="Onu-Xe-6de"/>
+                        <outlet property="successDescriptionLb" destination="9Ht-Er-cHw" id="iux-VW-dPH"/>
+                        <outlet property="successTitleLb" destination="le9-Tg-VCo" id="ooL-O6-EOc"/>
+                        <outlet property="testingContainer" destination="HDo-Be-jwZ" id="PfL-SB-6L1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLk-AL-wXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="-661"/>
         </scene>
         <!--Access Request View Controller-->
         <scene sceneID="pAc-Hf-2db">
@@ -1168,6 +1371,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

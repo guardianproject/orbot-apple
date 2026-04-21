@@ -46,6 +46,9 @@
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ App needs to stay in the foreground.";
 
+/* Placeholder is '✅' */
+"%@ Approved" = "%@ Approved";
+
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
@@ -63,6 +66,9 @@
 
 /* Placeholder is bullet */
 "%@ It will not slow down your internet." = "%@ It will not slow down your internet.";
+
+/* Placeholder is '🚫' */
+"%@ Not Approved" = "%@ Not Approved";
 
 /* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)";
@@ -170,6 +176,9 @@
 "Automatically Restart on Error" = "Automatically Restart on Error";
 
 /* No comment provided by engineer. */
+"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.";
+
+/* No comment provided by engineer. */
 "Block cookies" = "Block cookies";
 
 /* No comment provided by engineer. */
@@ -210,6 +219,9 @@
 
 /* No comment provided by engineer. */
 "Bypass: granted" = "Bypass: granted";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
 
 /* macOS menu item */
 "Capitalize" = "Capitalize";
@@ -258,6 +270,9 @@
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Content Blocker";
+
+/* No comment provided by engineer. */
+"Continue" = "Continue";
 
 /* macOS menu item */
 "Copy" = "Copy";
@@ -309,6 +324,9 @@
 
 /* No comment provided by engineer. */
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended.";
+
+/* No comment provided by engineer. */
+"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Do not use Kindness Mode, if the Internet in your country is heavily censored.";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
@@ -629,6 +647,9 @@
 "Switch back to last used VPN after stop" = "Switch back to last used VPN after stop";
 
 /* No comment provided by engineer. */
+"Testing Quality…" = "Testing Quality…";
+
+/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";
 
 /* No comment provided by engineer. */
@@ -656,6 +677,9 @@
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
 
 /* No comment provided by engineer. */
+"To upgrade, enable UPnP on your WiFi router for this device." = "To upgrade, enable UPnP on your WiFi router for this device.";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";
 
 /* No comment provided by engineer. */
@@ -681,6 +705,9 @@
 
 /* IPtProxyNATUnrestricted */
 "unrestricted" = "unrestricted";
+
+/* No comment provided by engineer. */
+"Upgrade your Snowflake Proxy" = "Upgrade your Snowflake Proxy";
 
 /* No comment provided by engineer. */
 "Use %1$@" = "Use %1$@";
@@ -728,10 +755,19 @@
 "Window" = "Window";
 
 /* No comment provided by engineer. */
+"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "You are a great candidate for becoming a Snowflake Proxy on the Tor network.";
+
+/* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
 
 /* No comment provided by engineer. */
+"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network.";
+
+/* No comment provided by engineer. */
 "Your Impact in Numbers" = "Your Impact in Numbers";
+
+/* No comment provided by engineer. */
+"Your proxy can be more powerful when kindness mode is running on WiFi." = "Your proxy can be more powerful when kindness mode is running on WiFi.";
 
 /* macOS menu item */
 "Zoom" = "Zoom";

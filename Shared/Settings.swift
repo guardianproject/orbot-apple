@@ -211,6 +211,15 @@ class Settings: IPtProxyUI.Settings {
 		defaults?.set(snowflakesHelpedWeekly + 1, forKey: "snowflakes_helped_weekly")
 	}
 
+	class var lastSnowflakeQualityCheck: Date {
+		get {
+			Date(timeIntervalSince1970: defaults?.double(forKey: "last_snowflake_quality_check") ?? 0)
+		}
+		set {
+			defaults?.set(newValue.timeIntervalSince1970, forKey: "last_snowflake_quality_check")
+		}
+	}
+
 	class var smartConnect: Bool {
 		get {
 			guard defaults?.object(forKey: "smart_connect") != nil else {

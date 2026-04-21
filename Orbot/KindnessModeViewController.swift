@@ -10,7 +10,7 @@ import UIKit
 import IPtProxy
 import IPtProxyUI
 
-class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol {
+class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol, TestingViewController.Delegate {
 
 	// MARK: Outlets
 
@@ -104,7 +104,6 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var toggleLb: UILabel! {
 		didSet {
-			toggleLb.text = L10n.enabled
 			toggleLb.isAccessibilityElement = false
 		}
 	}
@@ -112,6 +111,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	@IBOutlet weak var toggleSw: UISwitch! {
 		didSet {
 			toggleSw.accessibilityLabel = L10n.kindnessMode
+			toggleSw.isOn = false
 		}
 	}
 
@@ -155,12 +155,22 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		return proxy
 	}()
 
+	private var natType: String?
+
+	private var qualityCheckGood: Bool {
+		Settings.lastSnowflakeQualityCheck > .now.addingTimeInterval(-1 * 60 * 60 * 24)
+	}
+
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		tabBarItem?.title = L10n.kindnessMode
 		tabBarItem?.badgeColor = .accent
+
+		if qualityCheckGood {
+			toggleContainers()
+		}
 
 		updateUi()
 	}
@@ -169,7 +179,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		super.viewWillDisappear(animated)
 
 		if proxy.isRunning() {
-			deactivate()
+			toggleSw.isOn = false
+			toggleSnowflakeProxy()
 		}
 	}
 
@@ -177,71 +188,72 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	// MARK: Actions
 
 	@IBAction func activate() {
-		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
-		SharedUtils.control(onlyTo: .disconnected)
+#if targetEnvironment(simulator)
+		Settings.lastSnowflakeQualityCheck = .now
+#else
+		if VpnManager.shared.status == .connected && Settings.transport == .none {
+			Settings.lastSnowflakeQualityCheck = .now
+		}
+#endif
 
-		UIApplication.shared.isIdleTimerDisabled = true
-		Dimmer.shared.start()
-
-		FileManager.default.sfpLogFile?.truncate()
-
-		Task {
-			let mapped = await SharedUtils.getMappedPorts()
-			proxy.ephemeralMinPort = mapped.min
-			proxy.ephemeralMaxPort = mapped.max
-
-			DispatchQueue.global(qos: .utility).async { [weak self] in
-				self?.proxy.start()
-			}
+		guard qualityCheckGood else {
+			return runTest()
 		}
 
-		startedContainer.layer.opacity = 0
-		startedContainer.isHidden = false
-		startedContainer.accessibilityElementsHidden = false
 		toggleSw.isOn = true
-		proxyQualityStateLb.text = L10n.proxyQualityType[IPtProxyNATUnknown] ?? IPtProxyNATUnknown
 
-		UIView.animate(
-			withDuration: 0.3,
-			animations: { [weak self] in
-				self?.stoppedContainer.layer.opacity = 0
-				self?.startedContainer.layer.opacity = 1
-			},
-			completion: { [weak self] _ in
-				self?.stoppedContainer.isHidden = true
-				self?.stoppedContainer.accessibilityElementsHidden = true
+		if startedContainer.isHidden {
+			toggleContainers(animated: true)
+		}
 
-				self?.tabBarItem?.badgeValue = "✓"
-
-				UIAccessibility.post(notification: .screenChanged, argument: self?.titleStartedLb)
-			})
+		toggleSnowflakeProxy()
 	}
 
 	@IBAction func learnMore() {
 		UIApplication.shared.open(SharedUtils.snowflakeHelpUrl)
 	}
 
-	@IBAction func deactivate() {
-		stopProxy()
+	@IBAction func toggleSnowflakeProxy() {
+		if toggleSw.isOn {
+			// Stop VPN. Snowflake Proxy only works, when not tunnelled through Tor itself.
+			SharedUtils.control(onlyTo: .disconnected)
 
-		stoppedContainer.layer.opacity = 0
-		stoppedContainer.isHidden = false
-		stoppedContainer.accessibilityElementsHidden = false
+			UIApplication.shared.isIdleTimerDisabled = true
+			Dimmer.shared.start()
 
-		UIView.animate(
-			withDuration: 0.3,
-			animations: { [weak self] in
-				self?.stoppedContainer.layer.opacity = 1
-				self?.startedContainer.layer.opacity = 0
-			},
-			completion: { [weak self] _ in
-				self?.startedContainer.isHidden = true
-				self?.startedContainer.accessibilityElementsHidden = true
+			FileManager.default.sfpLogFile?.truncate()
 
-				self?.tabBarItem?.badgeValue = nil
+			Task {
+				let mapped = await SharedUtils.getMappedPorts()
+				proxy.ephemeralMinPort = mapped.min
+				proxy.ephemeralMaxPort = mapped.max
 
-				UIAccessibility.post(notification: .screenChanged, argument: self?.titleLb)
-			})
+				DispatchQueue.global(qos: .utility).async { [weak self] in
+					self?.proxy.start()
+				}
+			}
+		}
+		else {
+			proxy.stop()
+
+			SharedUtils.releaseMappedPorts()
+
+			Dimmer.shared.stop()
+			UIApplication.shared.isIdleTimerDisabled = false
+
+			natType = nil
+		}
+
+		updateUi()
+	}
+
+	@IBAction func upgrade() {
+		if natType == IPtProxyNATRestricted {
+			AlertHelper.present(
+				self,
+				message: String(format: "%@\n\n%@", L10n.yourProxyCanBeMorePowerful, L10n.toUpgradeEnableUPnP),
+				title: L10n.upgradeYourSnowflakeProxy)
+		}
 	}
 
 
@@ -250,8 +262,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	func connected() {
 		Settings.addOneSnowflakeHelped()
 
-		DispatchQueue.main.async { [weak self] in
-			self?.updateUi()
+		Task { @MainActor in
+			updateUi()
 		}
 	}
 
@@ -285,25 +297,99 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	}
 
 	func natTypeUpdated(_ natType: String?) {
+		self.natType = natType
+
 		Task { @MainActor in
-			proxyQualityStateLb.text = L10n.proxyQualityType[natType ?? IPtProxyNATUnknown] ?? natType ?? IPtProxyNATUnknown
+			updateUi()
 		}
+	}
+
+
+	// MARK: TestingViewController.Delegate
+
+	func finished(success: Bool) {
+		if success {
+			Settings.lastSnowflakeQualityCheck = .now
+		}
+
+		activate()
 	}
 
 
 	// MARK: Private Methods
 
 	private func updateUi() {
+		toggleLb.text = toggleSw.isOn ? L10n.enabled : L10n.disabled
+
+		let natType = toggleSw.isOn ? (natType ?? IPtProxyNATUnknown) : IPtProxyNATUnknown
+		let proxyQualityText = L10n.proxyQualityType[natType] ?? natType
+
+		if natType == IPtProxyNATRestricted {
+			let at = NSMutableAttributedString(string: "• \(proxyQualityText) \u{276f}") // Chevron right
+
+			// Color the bullet red.
+			let range = NSRange(at.string.startIndex ..< at.string.index(at.string.startIndex, offsetBy: 1), in: at.string)
+			at.addAttribute(.foregroundColor, value: UIColor.systemRed, range: range)
+
+			proxyQualityStateLb.attributedText = at
+		}
+		else {
+			proxyQualityStateLb.text = proxyQualityText
+		}
+
 		totalNumberLb.text = Formatters.format(Settings.snowflakesHelpedTotal)
 		weeklyNumberLb.text = Formatters.format(Settings.snowflakesHelpedWeekly)
+
+		tabBarItem?.badgeValue = toggleSw.isOn ? "✓" : nil
 	}
 
-	private func stopProxy() {
-		proxy.stop()
+	private func toggleContainers(animated: Bool = false) {
+		let toShow: UIView
+		let toHide: UIView
+		let toTell: UILabel
 
-		SharedUtils.releaseMappedPorts()
+		if stoppedContainer.isHidden {
+			toShow = stoppedContainer
+			toHide = startedContainer
+			toTell = titleLb
+		}
+		else {
+			toShow = startedContainer
+			toHide = stoppedContainer
+			toTell = titleStartedLb
+		}
 
-		Dimmer.shared.stop()
-		UIApplication.shared.isIdleTimerDisabled = false
+		if animated {
+			toShow.layer.opacity = 0
+			toShow.isHidden = false
+			toShow.accessibilityElementsHidden = false
+
+			UIView.animate(
+				withDuration: 0.3,
+				animations: {
+					toShow.layer.opacity = 1
+					toHide.layer.opacity = 0
+				},
+				completion: { _ in
+					toHide.isHidden = true
+					toHide.layer.opacity = 1
+					toHide.accessibilityElementsHidden = true
+
+					UIAccessibility.post(notification: .screenChanged, argument: toTell)
+				})
+		}
+		else {
+			toShow.isHidden = false
+			toHide.isHidden = true
+
+			UIAccessibility.post(notification: .screenChanged, argument: toTell)
+		}
+	}
+
+	private func runTest() {
+		let vc = UIStoryboard.main.instantiateViewController(TestingViewController.self)
+		vc.delegate = self
+
+		present(inNav: vc, view: activateBt)
 	}
 }

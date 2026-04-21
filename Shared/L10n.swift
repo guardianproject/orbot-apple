@@ -244,6 +244,10 @@ class L10n {
 		NSLocalizedString("Enabled", comment: "")
 	}
 
+	static var disabled: String {
+		NSLocalizedString("Disabled", comment: "")
+	}
+
 	static var proxyQuality: String {
 		NSLocalizedString("Proxy Quality", comment: "")
 	}
@@ -287,6 +291,46 @@ class L10n {
 
 	static var total: String {
 		NSLocalizedString("Total", comment: "")
+	}
+
+	static var upgradeYourSnowflakeProxy: String {
+		NSLocalizedString("Upgrade your Snowflake Proxy", comment: "")
+	}
+
+	static var yourProxyCanBeMorePowerful: String {
+		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on WiFi.", comment: "")
+	}
+
+	static var toUpgradeEnableUPnP: String {
+		NSLocalizedString("To upgrade, enable UPnP on your WiFi router for this device.", comment: "")
+	}
+
+	static var beforeYouBecomeaSnowflakeProxy: String {
+		NSLocalizedString(
+			"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.",
+			comment: "")
+	}
+
+	static var approved: String {
+		String(format: NSLocalizedString("%@ Approved", comment: "Placeholder is '✅'"), "✅")
+	}
+
+	static var youAreaGreatCandidate: String {
+		NSLocalizedString("You are a great candidate for becoming a Snowflake Proxy on the Tor network.", comment: "")
+	}
+
+	static var notApproved: String {
+		String(format: NSLocalizedString("%@ Not Approved", comment: "Placeholder is '🚫'"), "🚫")
+	}
+
+	static var youCannotBeaUsefulSnowflakeProxy: String {
+		NSLocalizedString(
+			"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network.",
+			comment: "")
+	}
+
+	static var doNotUseKindnessMode: String {
+		NSLocalizedString("Do not use Kindness Mode, if the Internet in your country is heavily censored.", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [
