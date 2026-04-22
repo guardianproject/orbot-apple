@@ -47,7 +47,7 @@
 "%@ Arguments to an option need to be in a new line." = "%@ آرگومان‌های یک گزینه باید در یک خط جدید قرار بگیرند.";
 
 /* Placeholder is bullet */
-"%@ Connect to power while letting it run." = "%@ در حین اجرا به برق متصل باشید.";
+"%@ Connect to power while letting it run." = "%@ در حین اجرا شارژر متصل باشد.";
 
 /* macOS menu item */
 "%@ Help" = "%@ راهنما";
@@ -179,10 +179,10 @@
 "Blocker" = "مسدودکننده";
 
 /* No comment provided by engineer. */
-"Bridge connected" = "Bridge connected";
+"Bridge connected" = "ارتباط از طریق پل بر قرار شد";
 
 /* No comment provided by engineer. */
-"Bridge stopped" = "Bridge stopped";
+"Bridge stopped" = "ارتباط از طریق پل بر قطع شد";
 
 /* No comment provided by engineer. */
 "Bridges" = "پل ها";
