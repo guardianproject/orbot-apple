@@ -9,7 +9,7 @@
 import Cocoa
 import IPtProxy
 
-class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEventsProtocol {
+class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEventsProtocol, TestingViewController.Delegate, NSWindowDelegate {
 
 	// MARK: Outlets
 
@@ -111,7 +111,6 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var toggleLb: NSTextField! {
 		didSet {
-			toggleLb.stringValue = L10n.enabled
 			toggleLb.setAccessibilityElement(false)
 		}
 	}
@@ -119,6 +118,14 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 	@IBOutlet weak var toggleSw: NSSwitch! {
 		didSet {
 			toggleSw.setAccessibilityLabel(L10n.kindnessMode)
+			toggleSw.state = .off
+		}
+	}
+
+	@IBOutlet weak var proxyQualityBox: NSBox! {
+		didSet {
+			let click = NSClickGestureRecognizer(target: self, action: #selector(upgrade))
+			proxyQualityBox.addGestureRecognizer(click)
 		}
 	}
 
@@ -162,11 +169,21 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		return proxy
 	}()
 
+	private var natType: String?
 
+	private var qualityCheckGood: Bool {
+		Settings.lastSnowflakeQualityCheck > .init().addingTimeInterval(-1 * 60 * 60 * 24)
+	}
+
+	
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
 		view.window?.title = L10n.kindnessMode
+
+		if qualityCheckGood {
+			toggleContainers()
+		}
 
 		updateUi()
 	}
@@ -174,45 +191,71 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 	override func viewDidDisappear() {
 		super.viewDidDisappear()
 
-		proxy.stop()
-
-		SharedUtils.releaseMappedPorts()
+		if proxy.isRunning() {
+			toggleSw.state = .off
+			toggleSnowflakeProxy(toggleSw)
+		}
 	}
 
 
 	// MARK: Actions
 
 	@IBAction func activate(_ sender: NSButton) {
-		// Stop VPN. Snowflake Proxy only works, when not tunneled through Tor itself.
-		SharedUtils.control(onlyTo: .disconnected)
-
-		FileManager.default.sfpLogFile?.truncate()
-
-		Task {
-			let mapped = await SharedUtils.getMappedPorts()
-			proxy.ephemeralMinPort = mapped.min
-			proxy.ephemeralMaxPort = mapped.max
-
-			proxy.start()
+		if VpnManager.shared.status == .connected && Settings.transport == .none {
+			Settings.lastSnowflakeQualityCheck = .init()
 		}
 
-		startedContainer.isHidden = false
-		stoppedContainer.isHidden = true
+		guard qualityCheckGood else {
+			return runTest()
+		}
+
 		toggleSw.state = .on
-		proxyQualityStateLb.stringValue = L10n.proxyQualityType[IPtProxyNATUnknown] ?? IPtProxyNATUnknown
+
+		if startedContainer.isHidden {
+			toggleContainers()
+		}
+
+		toggleSnowflakeProxy(toggleSw)
 	}
 
 	@IBAction func learnMore(_ sender: NSButton) {
 		NSWorkspace.shared.open(SharedUtils.snowflakeHelpUrl)
 	}
 
-	@IBAction func deactivate(_ sender: NSSwitch) {
-		proxy.stop()
+	@IBAction func toggleSnowflakeProxy(_ sender: NSSwitch) {
+		if toggleSw.state == .on {
+			// Stop VPN. Snowflake Proxy only works, when not tunnelled through Tor itself.
+			SharedUtils.control(onlyTo: .disconnected)
 
-		SharedUtils.releaseMappedPorts()
+			FileManager.default.sfpLogFile?.truncate()
 
-		stoppedContainer.isHidden = false
-		startedContainer.isHidden = true
+			Task {
+				let mapped = await SharedUtils.getMappedPorts()
+				proxy.ephemeralMinPort = mapped.min
+				proxy.ephemeralMaxPort = mapped.max
+
+				proxy.start()
+			}
+		}
+		else {
+			proxy.stop()
+
+			SharedUtils.releaseMappedPorts()
+
+			natType = nil
+		}
+
+		updateUi()
+	}
+
+	@objc func upgrade() {
+		if natType == IPtProxyNATRestricted {
+			let alert = NSAlert()
+			alert.messageText = L10n.upgradeYourSnowflakeProxy
+			alert.informativeText = String(format: "%@\n\n%@", L10n.yourProxyCanBeMorePowerful, L10n.toUpgradeEnableUPnP)
+
+			alert.runModal()
+		}
 	}
 
 
@@ -256,16 +299,77 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 	}
 
 	func natTypeUpdated(_ natType: String?) {
+		self.natType = natType
+
 		Task { @MainActor in
-			proxyQualityStateLb.stringValue = L10n.proxyQualityType[natType ?? IPtProxyNATUnknown] ?? natType ?? IPtProxyNATUnknown
+			updateUi()
 		}
+	}
+
+
+	// MARK: TestingViewController.Delegate
+
+	func finished(success: Bool) {
+		if success {
+			Settings.lastSnowflakeQualityCheck = .init()
+		}
+
+		activate(activateBt)
 	}
 
 
 	// MARK: Private Methods
 
 	private func updateUi() {
+		toggleLb.stringValue = toggleSw.state == .on ? L10n.enabled : L10n.disabled
+
+		let natType = toggleSw.state == .on ? (natType ?? IPtProxyNATUnknown) : IPtProxyNATUnknown
+		let proxyQualityText = L10n.proxyQualityType[natType] ?? natType
+
+		if natType == IPtProxyNATRestricted {
+			let at = NSMutableAttributedString(string: "• \(proxyQualityText) \u{276f}") // Chevron right
+
+			// Color the bullet red.
+			let range = NSRange(at.string.startIndex ..< at.string.index(at.string.startIndex, offsetBy: 1), in: at.string)
+			at.addAttribute(.foregroundColor, value: NSColor.systemRed, range: range)
+
+			proxyQualityStateLb.attributedStringValue = at
+		}
+		else {
+			proxyQualityStateLb.stringValue = proxyQualityText
+		}
+
 		totalNumberLb.stringValue = Formatters.format(Settings.snowflakesHelpedTotal)
 		weeklyNumberLb.stringValue = Formatters.format(Settings.snowflakesHelpedWeekly)
+	}
+
+	private func toggleContainers() {
+		let toShow: NSView
+		let toHide: NSView
+
+		if stoppedContainer.isHidden {
+			toShow = stoppedContainer
+			toHide = startedContainer
+		}
+		else {
+			toShow = startedContainer
+			toHide = stoppedContainer
+		}
+
+		toShow.isHidden = false
+		toHide.isHidden = true
+	}
+
+	private func runTest() {
+		if let wc = NSStoryboard.main?.instantiateController(withIdentifier: "testingScene") as? NSWindowController,
+		   let win = wc.window,
+		   let vc = wc.contentViewController as? TestingViewController
+		{
+			vc.delegate = self
+
+			NSApp.runModal(for: win)
+
+			win.close()
+		}
 	}
 }

@@ -414,6 +414,31 @@
             </objects>
             <point key="canvasLocation" x="3316" y="240"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="8BW-HE-JNe">
+            <objects>
+                <windowController storyboardIdentifier="testingScene" id="4B0-ug-1f3" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="8lq-Df-QQb">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="686" y="762" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3840" height="2130"/>
+                        <view key="contentView" id="BcX-dl-81U">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="4B0-ug-1f3" id="R2q-t5-0aL"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="8oM-yR-dgM" kind="relationship" relationship="window.shadowedContentViewController" id="OEw-nv-kLu"/>
+                    </connections>
+                </windowController>
+                <customObject id="TqP-x5-hQr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4004" y="240"/>
+        </scene>
         <!--Kindness Mode-->
         <scene sceneID="yhk-2h-BU2">
             <objects>
@@ -577,7 +602,7 @@
                                                 <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" state="on" translatesAutoresizingMaskIntoConstraints="NO" id="U8e-UC-QKr">
                                                     <rect key="frame" x="456" y="8" width="54" height="72"/>
                                                     <connections>
-                                                        <action selector="deactivate:" target="a3P-ry-ITB" id="Irf-ZV-QBB"/>
+                                                        <action selector="toggleSnowflakeProxy:" target="a3P-ry-ITB" id="x9i-xr-YLM"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -748,6 +773,7 @@
                         <outlet property="item2Lb" destination="X94-mJ-yhW" id="mnh-og-qGZ"/>
                         <outlet property="item3Lb" destination="NVX-wS-uyW" id="eqv-fd-7jI"/>
                         <outlet property="item4Lb" destination="dC5-2C-lUL" id="6rV-c9-qRK"/>
+                        <outlet property="proxyQualityBox" destination="uKY-rQ-hPI" id="ua7-zz-zqK"/>
                         <outlet property="proxyQualityLb" destination="mC6-M2-byS" id="Trl-Jd-zUc"/>
                         <outlet property="proxyQualityStateLb" destination="lIZ-0P-8MP" id="ExL-fw-ILE"/>
                         <outlet property="startedContainer" destination="F1b-Me-TOz" id="6Ig-HH-WgB"/>
@@ -765,6 +791,172 @@
                 <customObject id="iSb-CX-Khs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3316" y="720.5"/>
+        </scene>
+        <!--Testing View Controller-->
+        <scene sceneID="tXx-07-uFN">
+            <objects>
+                <viewController storyboardIdentifier="TestingViewController" id="8oM-yR-dgM" customClass="TestingViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="fuT-tj-8UY">
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="268"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-Um-PZg">
+                                <rect key="frame" x="20" y="64" width="400" height="184"/>
+                                <subviews>
+                                    <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Y2V-sf-lZx">
+                                        <rect key="frame" x="192" y="60" width="16" height="104"/>
+                                    </progressIndicator>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RsI-0k-UZj">
+                                        <rect key="frame" x="18" y="20" width="364" height="32"/>
+                                        <textFieldCell key="cell" title="Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." id="tQx-1r-0Gz">
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RsI-0k-UZj" firstAttribute="leading" secondItem="l9S-Um-PZg" secondAttribute="leading" constant="20" symbolic="YES" id="Mu3-s2-VZa"/>
+                                    <constraint firstAttribute="trailing" secondItem="RsI-0k-UZj" secondAttribute="trailing" constant="20" symbolic="YES" id="OVi-51-RAn"/>
+                                    <constraint firstItem="Y2V-sf-lZx" firstAttribute="centerX" secondItem="l9S-Um-PZg" secondAttribute="centerX" id="UUY-nF-jcp"/>
+                                    <constraint firstAttribute="bottom" secondItem="RsI-0k-UZj" secondAttribute="bottom" constant="20" symbolic="YES" id="ZGJ-9B-Jb3"/>
+                                    <constraint firstItem="RsI-0k-UZj" firstAttribute="top" secondItem="Y2V-sf-lZx" secondAttribute="bottom" constant="8" symbolic="YES" id="h1X-E9-3gr"/>
+                                    <constraint firstItem="Y2V-sf-lZx" firstAttribute="top" secondItem="l9S-Um-PZg" secondAttribute="top" constant="20" symbolic="YES" id="y24-If-szj"/>
+                                    <constraint firstAttribute="width" constant="400" id="y77-56-awx"/>
+                                </constraints>
+                            </customView>
+                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTl-x3-w2u">
+                                <rect key="frame" x="20" y="64" width="400" height="184"/>
+                                <subviews>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-p6-IuR">
+                                        <rect key="frame" x="18" y="60" width="364" height="104"/>
+                                        <textFieldCell key="cell" title="✅ Approved" id="saH-je-Ejn">
+                                            <font key="font" textStyle="title1" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nAd-SA-KfM">
+                                        <rect key="frame" x="18" y="20" width="364" height="32"/>
+                                        <textFieldCell key="cell" title="You are a great candidate for becoming a Snowflake Proxy on the Tor network." id="1hh-Zb-W6V">
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nAd-SA-KfM" secondAttribute="bottom" constant="20" symbolic="YES" id="5eE-O0-Ayi"/>
+                                    <constraint firstAttribute="trailing" secondItem="nAd-SA-KfM" secondAttribute="trailing" constant="20" symbolic="YES" id="8WP-NR-tUM"/>
+                                    <constraint firstItem="5Lv-p6-IuR" firstAttribute="top" secondItem="uTl-x3-w2u" secondAttribute="top" constant="20" symbolic="YES" id="8Z0-dg-xJu"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Lv-p6-IuR" secondAttribute="trailing" constant="20" symbolic="YES" id="Gjj-7I-sBn"/>
+                                    <constraint firstItem="nAd-SA-KfM" firstAttribute="leading" secondItem="uTl-x3-w2u" secondAttribute="leading" constant="20" symbolic="YES" id="ag5-ey-Gug"/>
+                                    <constraint firstItem="nAd-SA-KfM" firstAttribute="top" secondItem="5Lv-p6-IuR" secondAttribute="bottom" constant="8" symbolic="YES" id="rgc-J8-Ix6"/>
+                                    <constraint firstItem="5Lv-p6-IuR" firstAttribute="leading" secondItem="uTl-x3-w2u" secondAttribute="leading" constant="20" symbolic="YES" id="ujm-pn-dUA"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="cTR-wX-01k">
+                                <rect key="frame" x="20" y="64" width="400" height="184"/>
+                                <subviews>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-tU-iEC">
+                                        <rect key="frame" x="18" y="138" width="364" height="26"/>
+                                        <textFieldCell key="cell" title="🚫 Not Approved" id="9av-br-Pkh">
+                                            <font key="font" textStyle="title1" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n8V-95-nH9">
+                                        <rect key="frame" x="18" y="98" width="364" height="32"/>
+                                        <textFieldCell key="cell" title="You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." id="PcK-V2-Rdd">
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box boxType="custom" borderType="none" cornerRadius="9" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-7p-b4i">
+                                        <rect key="frame" x="20" y="20" width="360" height="70"/>
+                                        <view key="contentView" id="7tF-6Z-BlZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dbU-Qf-xpZ">
+                                                    <rect key="frame" x="18" y="20" width="324" height="30"/>
+                                                    <textFieldCell key="cell" title="Do not use Kindness Mode, if the Internet in your country is heavily censored." id="gW2-fI-dg2">
+                                                        <font key="font" textStyle="callout" name=".SFNS-Regular"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dbU-Qf-xpZ" secondAttribute="trailing" constant="20" symbolic="YES" id="C6V-yx-oVL"/>
+                                                <constraint firstItem="dbU-Qf-xpZ" firstAttribute="leading" secondItem="7tF-6Z-BlZ" secondAttribute="leading" constant="20" symbolic="YES" id="bA6-bo-M0D"/>
+                                                <constraint firstAttribute="bottom" secondItem="dbU-Qf-xpZ" secondAttribute="bottom" constant="20" symbolic="YES" id="fz6-Q0-tyi"/>
+                                                <constraint firstItem="dbU-Qf-xpZ" firstAttribute="top" secondItem="7tF-6Z-BlZ" secondAttribute="top" constant="1" symbolic="YES" id="lfH-8Z-B4v"/>
+                                            </constraints>
+                                        </view>
+                                        <color key="fillColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                    </box>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="q4h-7p-b4i" firstAttribute="top" secondItem="n8V-95-nH9" secondAttribute="bottom" constant="8" symbolic="YES" id="KdO-m3-RzH"/>
+                                    <constraint firstItem="i7g-tU-iEC" firstAttribute="top" secondItem="cTR-wX-01k" secondAttribute="top" constant="20" symbolic="YES" id="KkU-Pw-7Pf"/>
+                                    <constraint firstItem="n8V-95-nH9" firstAttribute="leading" secondItem="cTR-wX-01k" secondAttribute="leading" constant="20" symbolic="YES" id="Nb9-C4-6yn"/>
+                                    <constraint firstAttribute="bottom" secondItem="q4h-7p-b4i" secondAttribute="bottom" constant="20" symbolic="YES" id="UyM-Dm-jff"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7g-tU-iEC" secondAttribute="trailing" constant="20" symbolic="YES" id="WAP-uU-KKR"/>
+                                    <constraint firstItem="i7g-tU-iEC" firstAttribute="leading" secondItem="cTR-wX-01k" secondAttribute="leading" constant="20" symbolic="YES" id="e4k-qF-RJp"/>
+                                    <constraint firstAttribute="trailing" secondItem="q4h-7p-b4i" secondAttribute="trailing" constant="20" symbolic="YES" id="eWf-tU-vm9"/>
+                                    <constraint firstAttribute="trailing" secondItem="n8V-95-nH9" secondAttribute="trailing" constant="20" symbolic="YES" id="rDi-yK-z7y"/>
+                                    <constraint firstItem="n8V-95-nH9" firstAttribute="top" secondItem="i7g-tU-iEC" secondAttribute="bottom" constant="8" symbolic="YES" id="rEp-jU-oM4"/>
+                                    <constraint firstItem="q4h-7p-b4i" firstAttribute="leading" secondItem="cTR-wX-01k" secondAttribute="leading" constant="20" symbolic="YES" id="tkC-bc-EBe"/>
+                                </constraints>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Eg-q4-LKA">
+                                <rect key="frame" x="188" y="20" width="65" height="24"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sNH-TK-oeK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismiss:" target="8oM-yR-dgM" id="5tu-zs-Dtt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cTR-wX-01k" firstAttribute="leading" secondItem="fuT-tj-8UY" secondAttribute="leading" constant="20" symbolic="YES" id="1IB-vp-Ag2"/>
+                            <constraint firstItem="8Eg-q4-LKA" firstAttribute="top" secondItem="l9S-Um-PZg" secondAttribute="bottom" constant="20" symbolic="YES" id="9Vq-zY-BOM"/>
+                            <constraint firstItem="8Eg-q4-LKA" firstAttribute="top" secondItem="uTl-x3-w2u" secondAttribute="bottom" constant="20" symbolic="YES" id="GnA-xg-9Kj"/>
+                            <constraint firstItem="8Eg-q4-LKA" firstAttribute="top" secondItem="cTR-wX-01k" secondAttribute="bottom" constant="20" symbolic="YES" id="Mnj-rf-SIY"/>
+                            <constraint firstItem="cTR-wX-01k" firstAttribute="top" secondItem="fuT-tj-8UY" secondAttribute="top" constant="20" symbolic="YES" id="R9p-l6-znQ"/>
+                            <constraint firstItem="8Eg-q4-LKA" firstAttribute="centerX" secondItem="fuT-tj-8UY" secondAttribute="centerX" id="SO5-Lx-wxm"/>
+                            <constraint firstItem="uTl-x3-w2u" firstAttribute="top" secondItem="fuT-tj-8UY" secondAttribute="top" constant="20" symbolic="YES" id="Sbp-iK-SQQ"/>
+                            <constraint firstItem="l9S-Um-PZg" firstAttribute="top" secondItem="fuT-tj-8UY" secondAttribute="top" constant="20" symbolic="YES" id="UCr-lk-fVd"/>
+                            <constraint firstItem="l9S-Um-PZg" firstAttribute="leading" secondItem="fuT-tj-8UY" secondAttribute="leading" constant="20" symbolic="YES" id="Zf3-55-OGb"/>
+                            <constraint firstAttribute="trailing" secondItem="cTR-wX-01k" secondAttribute="trailing" constant="20" symbolic="YES" id="pjV-hZ-kBp"/>
+                            <constraint firstAttribute="bottom" secondItem="8Eg-q4-LKA" secondAttribute="bottom" constant="20" symbolic="YES" id="r1B-TH-0oL"/>
+                            <constraint firstItem="uTl-x3-w2u" firstAttribute="leading" secondItem="fuT-tj-8UY" secondAttribute="leading" constant="20" symbolic="YES" id="whV-Oa-hQu"/>
+                            <constraint firstAttribute="trailing" secondItem="l9S-Um-PZg" secondAttribute="trailing" constant="20" symbolic="YES" id="xqV-0m-j7T"/>
+                            <constraint firstAttribute="trailing" secondItem="uTl-x3-w2u" secondAttribute="trailing" constant="20" symbolic="YES" id="z6m-ff-2eE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="explanationLb" destination="RsI-0k-UZj" id="ZoM-jg-Dli"/>
+                        <outlet property="failContainer" destination="cTR-wX-01k" id="41x-iG-FEZ"/>
+                        <outlet property="failDescriptionLb" destination="n8V-95-nH9" id="1Id-sd-WwI"/>
+                        <outlet property="failTitleLb" destination="i7g-tU-iEC" id="aSC-zz-nFj"/>
+                        <outlet property="failWarningLb" destination="dbU-Qf-xpZ" id="If8-s2-4JM"/>
+                        <outlet property="mainBt" destination="8Eg-q4-LKA" id="VkT-0S-jF7"/>
+                        <outlet property="progress" destination="Y2V-sf-lZx" id="Gvw-CX-woA"/>
+                        <outlet property="successContainer" destination="uTl-x3-w2u" id="w7z-6f-DYr"/>
+                        <outlet property="successDescriptionLb" destination="nAd-SA-KfM" id="exT-Vr-ugo"/>
+                        <outlet property="successTitleLb" destination="5Lv-p6-IuR" id="UqA-Pd-poi"/>
+                        <outlet property="testingContainer" destination="l9S-Um-PZg" id="TYG-Yy-czF"/>
+                    </connections>
+                </viewController>
+                <customObject id="hnB-kj-1w2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4004" y="655"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="sgp-yq-xVd">

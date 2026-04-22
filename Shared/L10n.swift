@@ -293,6 +293,10 @@ class L10n {
 		NSLocalizedString("Total", comment: "")
 	}
 
+	static var testingQuality: String {
+		NSLocalizedString("Testing Quality…", comment: "")
+	}
+
 	static var upgradeYourSnowflakeProxy: String {
 		NSLocalizedString("Upgrade your Snowflake Proxy", comment: "")
 	}
@@ -331,6 +335,10 @@ class L10n {
 
 	static var doNotUseKindnessMode: String {
 		NSLocalizedString("Do not use Kindness Mode, if the Internet in your country is heavily censored.", comment: "")
+	}
+
+	static var cancel: String {
+		NSLocalizedString("Cancel", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [
