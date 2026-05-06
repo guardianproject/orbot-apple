@@ -279,7 +279,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	func stats(_ connectionCount: Int, failedConnectionCount: Int64, inboundBytes: Int64, outboundBytes: Int64, inboundUnit: String?, outboundUnit: String?, summaryInterval: Int64)
 	{
-		let interval = TimeInterval(summaryInterval) / 1_000_000_000
+		let interval = TimeInterval(summaryInterval) / Double(NSEC_PER_SEC)
 
 		Logger.log(String(
 			format: "[SnowflakeClientEvent] In the last %.0f seconds, there were %d completed successful and %d failed connections. Traffic Relayed ↓ %d %@ (%.2f %@%@), ↑ %d %@ (%.2f %@%@).  ",

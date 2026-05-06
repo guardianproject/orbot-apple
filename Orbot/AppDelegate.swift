@@ -30,11 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 #endif
 
 //		Task {
-//			try await Task.sleep(nanoseconds: 1_000_000_000)
+//			try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 //
 //			await UIApplication.shared.open(URL(string: "orbot:request/token?app-id=foobar&need-bypass=true")!)
 //
-//			try await Task.sleep(nanoseconds: 1_000_000_000)
+//			try await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 //
 //			RemoteControl.shared.workQueue()
 //		}

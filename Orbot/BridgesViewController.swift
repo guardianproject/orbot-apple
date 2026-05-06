@@ -262,7 +262,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 					row.updateCell()
 				}
 
-				try? await Task.sleep(nanoseconds: 1_000_000_000 * 5)
+				try? await Task.sleep(nanoseconds: 5 * NSEC_PER_SEC)
 
 				await MainActor.run {
 					row.title = NSLocalizedString("Ask Tor", comment: "")
