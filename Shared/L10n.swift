@@ -294,7 +294,7 @@ class L10n {
 	}
 
 	static var testingQuality: String {
-		NSLocalizedString("Testing Quality…", comment: "")
+		NSLocalizedString("Testing Quality", comment: "")
 	}
 
 	static var upgradeYourSnowflakeProxy: String {

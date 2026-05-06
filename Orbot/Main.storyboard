@@ -647,7 +647,7 @@
             </objects>
             <point key="canvasLocation" x="-744" y="-661"/>
         </scene>
-        <!--Testing Quality…-->
+        <!--Testing Quality-->
         <scene sceneID="pOC-PJ-EPl">
             <objects>
                 <viewController storyboardIdentifier="TestingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5xf-XA-NYU" customClass="TestingViewController" customModule="Orbot" customModuleProvider="target" sceneMemberID="viewController">
@@ -787,7 +787,7 @@
                             <constraint firstItem="lah-Gg-Nh7" firstAttribute="trailing" secondItem="MLK-ku-biO" secondAttribute="trailing" id="zud-TV-waK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Testing Quality…" id="plf-mk-Z87"/>
+                    <navigationItem key="navigationItem" title="Testing Quality" id="plf-mk-Z87"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="explanationLb" destination="wGR-Ds-L57" id="hh8-1J-QpB"/>

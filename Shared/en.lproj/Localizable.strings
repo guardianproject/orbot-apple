@@ -647,7 +647,7 @@
 "Switch back to last used VPN after stop" = "Switch back to last used VPN after stop";
 
 /* No comment provided by engineer. */
-"Testing Quality…" = "Testing Quality…";
+"Testing Quality" = "Testing Quality";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";

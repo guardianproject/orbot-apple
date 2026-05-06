@@ -647,7 +647,7 @@
 "Switch back to last used VPN after stop" = "Nach dem Beenden zum zuletzt verwendeten VPN zurückwechseln";
 
 /* No comment provided by engineer. */
-"Testing Quality…" = "Teste Qualität…";
+"Testing Quality" = "Teste Qualität";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "Diese App wird keinen Zugriff auf Orbots API haben, so lange dieser Fehler nicht behoben ist.";
