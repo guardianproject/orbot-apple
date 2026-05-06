@@ -19,14 +19,9 @@ class TestingViewController: UIViewController {
 
 	weak var delegate: Delegate?
 
-	private var testStarted = false
-
-	private var originalTransport: Transport = .none
-	private var originalSmartConnect = false
 
 	private var testSucceeded = false
 
-	private var lastStatus: VpnManager.Status?
 
 	@IBOutlet weak var testingContainer: UIView! {
 		didSet {
@@ -88,88 +83,39 @@ class TestingViewController: UIViewController {
 		}
 	}
 
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Testing Quality…", comment: "")
+		navigationItem.title = L10n.testingQuality
 
-		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
+		Task {
+			if await ProxyQualityTest().evaluate() {
+				Task { @MainActor in
+					testingContainer.isHidden = true
+					successContainer.isHidden = false
+					failContainer.isHidden = true
+					mainBt.setTitle(NSLocalizedString("Continue", comment: ""))
 
-		originalTransport = Settings.transport
-		Settings.transport = .none
-
-		originalSmartConnect = Settings.smartConnect
-		Settings.smartConnect = false
-
-		statusChanged()
+					testSucceeded = true
+				}
+			}
+			else {
+				Task { @MainActor in
+					testingContainer.isHidden = true
+					successContainer.isHidden = true
+					failContainer.isHidden = false
+					mainBt.setTitle(IPtProxyUI.L10n.ok)
+				}
+			}
+		}
 	}
 
 
 	@IBAction
 	func dismiss() {
-		Settings.transport = originalTransport
-		Settings.smartConnect = originalSmartConnect
-
 		delegate?.finished(success: testSucceeded)
 
 		dismiss(animated: true)
-	}
-
-	@objc
-	private func statusChanged() {
-		print("Status: \(VpnManager.shared.status)")
-
-		if lastStatus == VpnManager.shared.status {
-			return
-		}
-
-		lastStatus = VpnManager.shared.status
-
-		switch VpnManager.shared.status {
-		case .notInstalled:
-			VpnManager.shared.install()
-
-		case .disabled:
-			VpnManager.shared.enable()
-
-		case .disconnected:
-			if testStarted {
-				// Nos! Not working.
-				testingContainer.isHidden = true
-				successContainer.isHidden = true
-				failContainer.isHidden = false
-			}
-			else {
-				testStarted = true
-				VpnManager.shared.connect()
-			}
-
-		case .evaluating, .connecting, .reasserting:
-			// Ignore. Waiting for `connected`.
-			break
-
-		case .connected:
-			// Yay! Success!
-			testingContainer.isHidden = true
-			successContainer.isHidden = false
-			failContainer.isHidden = true
-			mainBt.setTitle(NSLocalizedString("Continue", comment: ""))
-
-			testSucceeded = true
-
-			NotificationCenter.default.removeObserver(self, name: .vpnStatusChanged, object: nil)
-
-			VpnManager.shared.disconnect(explicit: true)
-
-		case .disconnecting:
-			// Ignore. Waiting for `disconnected`.
-			break
-
-		default:
-			// Nos! Not working.
-			testingContainer.isHidden = true
-			successContainer.isHidden = true
-			failContainer.isHidden = false
-		}
 	}
 }

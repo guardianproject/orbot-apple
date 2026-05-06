@@ -179,6 +179,8 @@
 		A0E0480B2B8E1F4200348ED4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E048082B8E1F1200348ED4 /* Reachability.swift */; };
 		A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423B62919530F001C31E9 /* libleaf.a */; };
 		A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
+		A0E471442FAB540500633EC2 /* ProxyQualityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */; };
+		A0E471452FAB540500633EC2 /* ProxyQualityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -483,6 +485,7 @@
 		A0E423BB291956A8001C31E9 /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
 		A0E423BC291956A8001C31E9 /* iossim */ = {isa = PBXFileReference; lastKnownFileType = folder; path = iossim; sourceTree = "<group>"; };
 		A0E423BE291956E9001C31E9 /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "leaf-ffi-orbot/macos/libleaf.a"; sourceTree = "<group>"; };
+		A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyQualityTest.swift; sourceTree = "<group>"; };
 		A0E5F7622806ECEB00B86AF6 /* noop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = noop.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerViewController.swift; sourceTree = "<group>"; };
@@ -777,6 +780,7 @@
 				A0A73602247584EE00073C81 /* VpnManager.swift */,
 				A06C96F5273C36AE0019ABE5 /* Settings.swift */,
 				A0274FEC28E70B6300E767E9 /* SharedUtils.swift */,
+				A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */,
 				A0C53058280F11C20067597F /* WebServer.swift */,
 				A0A735DE247566CC00073C81 /* TorVPN-Bridging-Header.h */,
 				A0A735DD247566CC00073C81 /* Orbot-Bridging-Header.h */,
@@ -1562,6 +1566,7 @@
 				A0274FF228E7223300E767E9 /* L10n.swift in Sources */,
 				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A0E471442FAB540500633EC2 /* ProxyQualityTest.swift in Sources */,
 				A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */,
 				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A01AB60D28A54361008A79EE /* ConfigChangedMessage.swift in Sources */,
@@ -1671,6 +1676,7 @@
 				A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A0F4E9D42E2808A80074BB28 /* UIApplication+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
+				A0E471452FAB540500633EC2 /* ProxyQualityTest.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A08CA43B29ACE76400B01C1F /* Color.swift in Sources */,
 				A0DF48BA28250A7F001EED78 /* ApiAccessViewController.swift in Sources */,
