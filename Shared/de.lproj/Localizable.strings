@@ -239,7 +239,7 @@
 "Cleared!" = "Gelöscht!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Gut für öffentliche WLANs in einem Land, in dem Tor nicht blockiert wird.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Gut für öffentliche WLANs in einem Land, in dem Tor nicht blockiert wird.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Verschleiert deinen Datenverkehr. Umgeht einige Tor-Blockaden. Könnte sehr langsam sein.";
@@ -677,7 +677,7 @@
 "To make it work, you will need to activate the blocker:" = "Damit das funktioniert, mußt du den Blocker aktivieren:";
 
 /* No comment provided by engineer. */
-"To upgrade, enable UPnP on your WiFi router for this device." = "Aktiviere UPnP auf deinem WLAN-Router für dieses Gerät, um den Unterstützungsmodus zu verbessern.";
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "Aktiviere UPnP auf deinem WLAN-Router für dieses Gerät, um den Unterstützungsmodus zu verbessern.";
 
 /* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Konfigurationsreferenz";
@@ -767,7 +767,7 @@
 "Your Impact in Numbers" = "Deine Wirkung in Zahlen";
 
 /* No comment provided by engineer. */
-"Your proxy can be more powerful when kindness mode is running on WiFi." = "Dein Proxy kann nützlicher sein, wenn der Unterstützungsmodus über WLAN läuft.";
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Dein Proxy kann nützlicher sein, wenn der Unterstützungsmodus über WLAN läuft.";
 
 /* macOS menu item */
 "Zoom" = "Zoomen";

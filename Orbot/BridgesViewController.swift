@@ -105,7 +105,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 
 			case .obfs4:
 				return NSLocalizedString(
-					"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.",
+					"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked.",
 					comment: "")
 
 			case .requestMail:

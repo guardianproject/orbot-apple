@@ -227,7 +227,7 @@
 "Cleared!" = "Cleared!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض حظر Tor. جيد إذا كنت تستخدم شبكة WiFi عامة، ولكن في بلد لا يتم حظر فيه Tor.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "يخفي حركة المرور الخاصة بك. يلتف حول بعض حظر Tor. جيد إذا كنت تستخدم شبكة Wi-Fi عامة، ولكن في بلد لا يتم حظر فيه Tor.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Cloaks your traffic. Gets around some Tor blocking. May be very slow.";

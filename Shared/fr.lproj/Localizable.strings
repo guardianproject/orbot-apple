@@ -227,7 +227,7 @@
 "Cleared!" = "Le cache a été vidé.";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Dissimule votre trafic. Contourne certains blocages de Tor. Utile si vous utilisez un réseau Wi-Fi public, mais dans un pays où Tor n’est pas bloqué.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "Dissimule votre trafic. Contourne certains blocages de Tor. Utile si vous utilisez un réseau Wi-Fi public, mais dans un pays où Tor n’est pas bloqué.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Dissimule votre trafic. Contourne certains blocages de Tor. Peut être très lent.";

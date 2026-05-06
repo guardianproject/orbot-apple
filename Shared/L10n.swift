@@ -302,11 +302,11 @@ class L10n {
 	}
 
 	static var yourProxyCanBeMorePowerful: String {
-		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on WiFi.", comment: "")
+		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on Wi-Fi.", comment: "")
 	}
 
 	static var toUpgradeEnableUPnP: String {
-		NSLocalizedString("To upgrade, enable UPnP on your WiFi router for this device.", comment: "")
+		NSLocalizedString("To upgrade, enable UPnP on your Wi-Fi router for this device.", comment: "")
 	}
 
 	static var beforeYouBecomeaSnowflakeProxy: String {

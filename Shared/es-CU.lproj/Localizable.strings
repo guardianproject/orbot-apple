@@ -227,7 +227,7 @@
 "Cleared!" = "¡Despejado!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Oculta tu actividad en línea. Evita ciertos bloqueos de Tor. Es útil si estás usando WiFi público, pero no es necesario en países donde Tor funciona sin problemas.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "Oculta tu actividad en línea. Evita ciertos bloqueos de Tor. Es útil si estás usando Wi-Fi público, pero no es necesario en países donde Tor funciona sin problemas.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Oculta tu actividad en línea. Evita algunos bloqueos de Tor. Puede ser muy lento.";

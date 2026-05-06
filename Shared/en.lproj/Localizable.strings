@@ -239,7 +239,7 @@
 "Cleared!" = "Cleared!";
 
 /* No comment provided by engineer. */
-"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked." = "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public WiFi, but in a country where Tor isn't blocked.";
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked.";
 
 /* No comment provided by engineer. */
 "Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Cloaks your traffic. Gets around some Tor blocking. May be very slow.";
@@ -677,7 +677,7 @@
 "To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
 
 /* No comment provided by engineer. */
-"To upgrade, enable UPnP on your WiFi router for this device." = "To upgrade, enable UPnP on your WiFi router for this device.";
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "To upgrade, enable UPnP on your Wi-Fi router for this device.";
 
 /* No comment provided by engineer. */
 "Tor Configuration Reference" = "Tor Configuration Reference";
@@ -767,7 +767,7 @@
 "Your Impact in Numbers" = "Your Impact in Numbers";
 
 /* No comment provided by engineer. */
-"Your proxy can be more powerful when kindness mode is running on WiFi." = "Your proxy can be more powerful when kindness mode is running on WiFi.";
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Your proxy can be more powerful when kindness mode is running on Wi-Fi.";
 
 /* macOS menu item */
 "Zoom" = "Zoom";
