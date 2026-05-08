@@ -19,6 +19,7 @@ class ProxyQualityTest {
 
 	private let originalTransport: Transport
 	private let originalSmartConnect: Bool
+	private let originalProxy: URL?
 
 	private let stream = AsyncStream<Bool>.makeStream()
 
@@ -26,6 +27,7 @@ class ProxyQualityTest {
 	init() {
 		originalTransport = Settings.transport
 		originalSmartConnect = Settings.smartConnect
+		originalProxy = Settings.proxy
 	}
 
 	/**
@@ -42,6 +44,7 @@ class ProxyQualityTest {
 
 		Settings.transport = .none
 		Settings.smartConnect = false
+		Settings.proxy = nil
 
 		NotificationCenter.default.addObserver(self, selector: #selector(statusChanged), name: .vpnStatusChanged, object: nil)
 
@@ -77,6 +80,7 @@ class ProxyQualityTest {
 
 		Settings.transport = originalTransport
 		Settings.smartConnect = originalSmartConnect
+		Settings.proxy = originalProxy
 
 		return result
 	}
