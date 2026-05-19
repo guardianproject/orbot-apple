@@ -108,6 +108,7 @@ You can call these URIs like this:
 ## Acknowledgements
 
 These people helped with translations. Thank you so much, folks!
+You can help, too! https://localizationlab.weblate.cloud/projects/orbot-ios-mac-os/
 
 - French: 
   yahoe.001, Guirlandia
@@ -137,6 +138,9 @@ These people helped with translations. Thank you so much, folks!
 - Portuguese (Brazil)
   Bk__13, CRCF, CypherZnnb, MarvinSilc, cauan_zorzenon, darkcrystal, eduaddadbr, 
   leovasone, rdd15, shazaum, vic.toria, vmattos, Communia, nopum
+  
+- Korean
+  kimjuho
 
 
 ## Tech Stuff
