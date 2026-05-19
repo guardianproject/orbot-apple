@@ -171,17 +171,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	private var natType: String?
 
-	private var qualityCheckGood: Bool {
-		Settings.lastSnowflakeQualityCheck > .init().addingTimeInterval(-1 * 60 * 60 * 24)
-	}
 
-	
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
 		view.window?.title = L10n.kindnessMode
 
-		if qualityCheckGood {
+		if Settings.hideInitialKindnessScene {
 			toggleContainers()
 		}
 
@@ -201,13 +197,15 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 	// MARK: Actions
 
 	@IBAction func activate(_ sender: NSButton) {
-		if VpnManager.shared.status == .connected && Settings.transport == .none {
-			Settings.lastSnowflakeQualityCheck = .init()
+		if VpnManager.shared.isStraightTorRunning {
+			Settings.lastSnowflakeQualityCheckValid = true
 		}
 
-		guard qualityCheckGood else {
+		guard Settings.lastSnowflakeQualityCheckValid else {
 			return runTest()
 		}
+
+		Settings.hideInitialKindnessScene = true
 
 		toggleSw.state = .on
 
@@ -311,7 +309,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	func finished(success: Bool) {
 		if success {
-			Settings.lastSnowflakeQualityCheck = .init()
+			Settings.lastSnowflakeQualityCheckValid = true
 		}
 
 		activate(activateBt)

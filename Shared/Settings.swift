@@ -211,12 +211,21 @@ class Settings: IPtProxyUI.Settings {
 		defaults?.set(snowflakesHelpedWeekly + 1, forKey: "snowflakes_helped_weekly")
 	}
 
-	class var lastSnowflakeQualityCheck: Date {
+	class var lastSnowflakeQualityCheckValid: Bool {
 		get {
-			Date(timeIntervalSince1970: defaults?.double(forKey: "last_snowflake_quality_check") ?? 0)
+			Date(timeIntervalSince1970: defaults?.double(forKey: "last_snowflake_quality_check") ?? 0) > Date().addingTimeInterval(-1 * 60 * 60 * 24)
 		}
 		set {
-			defaults?.set(newValue.timeIntervalSince1970, forKey: "last_snowflake_quality_check")
+			defaults?.set(newValue ? Date().timeIntervalSince1970 : 0.0, forKey: "last_snowflake_quality_check")
+		}
+	}
+
+	class var hideInitialKindnessScene: Bool {
+		get {
+			Date(timeIntervalSince1970: defaults?.double(forKey: "last_snowflake_initial_scene_shown") ?? 0) > Date().addingTimeInterval(-1 * 60 * 60 * 24)
+		}
+		set {
+			defaults?.set(newValue ? Date().timeIntervalSince1970 : 0.0, forKey: "last_snowflake_initial_scene_shown")
 		}
 	}
 

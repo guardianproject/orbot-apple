@@ -178,6 +178,10 @@ class VpnManager: BridgesConfDelegate {
 		}
 	}
 
+	var isStraightTorRunning: Bool {
+		status == .connected && Settings.transport == .none && Settings.proxy == nil
+	}
+
 
 	init() {
 		NSKeyedUnarchiver.setClass(ProgressMessage.self, forClassName:
@@ -496,6 +500,11 @@ class VpnManager: BridgesConfDelegate {
 
 		case .connected:
 			poll = false
+
+			// Record the last time, the user connected straight to Tor without any bridges and proxies.
+			if isStraightTorRunning {
+				Settings.lastSnowflakeQualityCheckValid = true
+			}
 
 		case .reasserting:
 			// Circuit reestablishing
