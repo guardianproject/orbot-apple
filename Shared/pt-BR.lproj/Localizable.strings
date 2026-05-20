@@ -116,9 +116,6 @@
 "all domains but %@" = "todos os domínios, mas %@";
 
 /* No comment provided by engineer. */
-"All Time Total" = "Total de todos os tempos";
-
-/* No comment provided by engineer. */
 "all types" = "todos os tipos";
 
 /* No comment provided by engineer. */
@@ -388,9 +385,6 @@
 /* macOS menu item */
 "Help" = "Ajuda";
 
-/* No comment provided by engineer. */
-"Help others connect to Tor" = "Ajude os outros a se conectarem com o Tor";
-
 /* macOS menu item */
 "Hide %@" = "Esconder %@";
 
@@ -438,9 +432,6 @@
 
 /* No comment provided by engineer. */
 "Kindness Mode" = "Modo de gentileza";
-
-/* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "O Modo Gentileza permite que o dispositivo para ser uma ponte para os outros. Ele ajuda as pessoas a usar o Tor em lugares onde é bloqueado.";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "É provável que você mantenha conectado se o Tor estiver severamente bloqueado. Usando este método irá lançar o canal Tor Bot Telegram. Toque em 'Iniciar' ou escreva '%1$@' no chat para obter endereços de ponte.";
@@ -641,9 +632,6 @@
 "To make it work, you will need to activate the blocker:" = "Para fazê-lo funcionar, você precisará ativar o bloqueador:";
 
 /* No comment provided by engineer. */
-"Today is better because of you" = "Hoje é melhor por causa de você";
-
-/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Referência de configuração do Tor";
 
 /* No comment provided by engineer. */
@@ -699,9 +687,6 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
-
-/* No comment provided by engineer. */
-"Weekly Total" = "Total Semanal";
 
 /* No comment provided by engineer. */
 "Welcome!" = "Bem-vindo!";

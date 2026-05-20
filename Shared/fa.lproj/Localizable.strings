@@ -116,9 +116,6 @@
 "all domains but %@" = "همه ی دامنه ها بجز %@";
 
 /* No comment provided by engineer. */
-"All Time Total" = "مجموع کل زمان ها";
-
-/* No comment provided by engineer. */
 "all types" = "همه ی نوع ها";
 
 /* No comment provided by engineer. */
@@ -388,9 +385,6 @@
 /* macOS menu item */
 "Help" = "کمک";
 
-/* No comment provided by engineer. */
-"Help others connect to Tor" = "به دیگران کمک کنید به مرورگر Tor وصل شوند.";
-
 /* macOS menu item */
 "Hide %@" = "%@ را پنهان کن.";
 
@@ -438,9 +432,6 @@
 
 /* No comment provided by engineer. */
 "Kindness Mode" = "حالت مهربانی";
-
-/* No comment provided by engineer. */
-"Kindness mode allows your device to be a bridge for others. It helps people use Tor in places where it is blocked." = "حالت مهربانی دستگاه شما را به پلی برای دیگران تبدیل می‌کند. این کار به افراد کمک می‌کند در مکان‌هایی که مرورگر Tor مسدود است از آن استفاده کنند.";
 
 /* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "اگر دسترسی به Tor شدیداً مسدود شده باشد، این روش احتمالاً اتصال شما را حفظ خواهد کرد. با استفاده از این روش، کانال تلگرام Tor Bot راه‌اندازی می‌شود. روی «Start» بزنید یا در گفت‌و‌گو بنویسید: «%1$@» تا نشانی پل‌ها را دریافت کنید.";
@@ -641,9 +632,6 @@
 "To make it work, you will need to activate the blocker:" = "برای عملکرد صحیح، باید مسدودکننده را فعال کنید:";
 
 /* No comment provided by engineer. */
-"Today is better because of you" = "امروز به خاطر شما روز بهتری است.";
-
-/* No comment provided by engineer. */
 "Tor Configuration Reference" = "راهنمای پیکربندی Tor";
 
 /* No comment provided by engineer. */
@@ -699,9 +687,6 @@
 
 /* No comment provided by engineer. */
 "WebSockets" = "WebSocketها";
-
-/* No comment provided by engineer. */
-"Weekly Total" = "مجموع هفتگی";
 
 /* No comment provided by engineer. */
 "Welcome!" = "خوش آمدید!";
