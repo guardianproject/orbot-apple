@@ -1,5 +1,11 @@
 #  Orbot Apple Changelog
 
+## 1.11.0
+- Updated Tor to latest version 0.4.9.8.
+- Improved Kindness Mode.
+- Updated translations.
+- Added Korean translation.
+
 ## 1.10.0
 - BRIDGE SUPPORT IS BACK ON iOS!
 - Updated Tor to latest version 0.4.9.6.

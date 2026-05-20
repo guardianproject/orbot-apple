@@ -1,4 +1,4 @@
-- ¡VUELVE LA COMPATIBILIDAD CON BRIDGE EN iOS!
-- Se ha actualizado Tor a la última versión, la 0.4.9.6.
-- Se ha actualizado a Snowflake 2.13.1.
+- Se ha actualizado Tor a la última versión, la 0.4.9.8.
+- Se ha mejorado el «Modo Amabilidad».
 - Se han actualizado las traducciones.
+- Se ha añadido la traducción al coreano.

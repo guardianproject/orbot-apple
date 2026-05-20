@@ -1,4 +1,4 @@
-- La prise en charge de Bridge est de retour sur iOS !
-- Mise à jour de Tor vers la dernière version 0.4.9.6.
-- Mise à jour vers Snowflake 2.13.1.
+- Mise à jour de Tor vers la dernière version 0.4.9.8.
+- Amélioration du mode « Kindness ».
 - Mise à jour des traductions.
+- Ajout de la traduction en coréen.

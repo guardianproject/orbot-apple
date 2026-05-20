@@ -1,4 +1,4 @@
-- BRIDGE-UNTERSTÜTZUNG IST WIEDER AUF iOS VERFÜGBAR!
-- Tor wurde auf die neueste Version 0.4.9.6 aktualisiert.
-- Snowflake wurde auf Version 2.13.1 aktualisiert.
-- Die Übersetzungen wurden aktualisiert.
+- Tor auf die neueste Version 0.4.9.8 aktualisiert.
+- „Kindness Mode“ verbessert.
+- Übersetzungen aktualisiert.
+- Koreanische Übersetzung hinzugefügt.
