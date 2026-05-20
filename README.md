@@ -18,7 +18,7 @@ Provides a "VPN" which tunnels all your device network traffic through Tor.
 
 ## Build
 
-### Prerequisits:
+### Prerequisites:
 - MacOS Sonoma or later
 - Xcode 15 or later
 - [Homebrew](https://brew.sh)
