@@ -274,6 +274,13 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		proxy.stunServer = BuiltInBridges.shared?.snowflake?.first?.ice?.components(separatedBy: ",")
 			.filter({ !$0.isEmpty }).randomElement() ?? ""
 		proxy.summaryInterval = 60
+		proxy.natTypeMeasurementInterval = 60 * 60 // every hour
+
+#if os(macOS)
+		proxy.proxyTypeIdentifier = "orbot-macos"
+#else
+		proxy.proxyTypeIdentifier = "orbot-ios"
+#endif
 
 		return proxy
 	}
