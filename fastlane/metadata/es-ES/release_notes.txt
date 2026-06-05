@@ -1,4 +1,2 @@
-- Se ha actualizado Tor a la última versión, la 0.4.9.8.
-- Se ha mejorado el «Modo Amabilidad».
-- Se han actualizado las traducciones.
-- Se ha añadido la traducción al coreano.
+- Se ha actualizado Tor a la versión 0.4.9.9. (¡Incluye numerosas correcciones de seguridad!)
+- Se han actualizado las traducciones al farsi.

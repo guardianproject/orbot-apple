@@ -1,5 +1,10 @@
 #  Orbot Apple Changelog
 
+## 1.11.1
+- Updated Tor to 0.4.9.9. (Contains many security fixes!)
+- Updated Farsi translations.
+- Set unique Snowflake Proxy identifiers, to be able to distinguish in logs.
+
 ## 1.11.0
 - Updated Tor to latest version 0.4.9.8.
 - Improved Kindness Mode.

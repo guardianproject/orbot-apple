@@ -1,4 +1,2 @@
-- Atualização do Tor para a versão mais recente, 0.4.9.8.
-- Melhorias no Modo Kindness.
-- Atualização das traduções.
-- Adição da tradução para o coreano.
+- Atualizei o Tor para a versão 0.4.9.9. (Inclui várias correções de segurança!)
+- Atualizei as traduções para o farsi.
