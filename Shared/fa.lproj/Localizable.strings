@@ -40,8 +40,14 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ می‌خواهد به %2$@ دسترسی پیدا کند.";
 
+/* No comment provided by engineer. */
+"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@فقط%2$@ زمانی فعال کنید که اینترنت در کشور شما %1$@به‌شدت سانسور نشده باشد%2$@.";
+
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ برنامه باید در پیش‌زمینه فعال بماند.";
+
+/* Placeholder is '✅' */
+"%@ Approved" = "%@ تأیید شده است";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ آرگومان‌های یک گزینه باید در یک خط جدید قرار بگیرند.";
@@ -60,6 +66,9 @@
 
 /* Placeholder is bullet */
 "%@ It will not slow down your internet." = "%@ سرعت اینترنت شما را کم نمی‌کند.";
+
+/* Placeholder is '🚫' */
+"%@ Not Approved" = "%@ تأیید نشده است";
 
 /* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ صفحه‌نمایش تاریک خواهد شد. (برای خاموش کردن صفحه مثل زمانی که تماس تلفنی دارید، صفحه نمایش دستگاه را رو به پایین بگذارید.)";
@@ -167,6 +176,9 @@
 "Automatically Restart on Error" = "در صورت بروز خطا به‌صورت خودکار راه‌اندازی شود";
 
 /* No comment provided by engineer. */
+"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "قبل از اینکه به یک پراکسی Snowflake تبدیل شوید، باید بررسی کنیم که آیا می‌توانید یک پراکسی مؤثر اجرا کنید یا نه. لطفاً صبر کنید تا این بررسی انجام شود.";
+
+/* No comment provided by engineer. */
 "Block cookies" = "جلوگیری از ذخیره‌ی کوکی‌ها";
 
 /* No comment provided by engineer. */
@@ -207,6 +219,9 @@
 
 /* No comment provided by engineer. */
 "Bypass: granted" = "دور زدن: پذیرفته شد";
+
+/* No comment provided by engineer. */
+"Cancel" = "لغو";
 
 /* macOS menu item */
 "Capitalize" = "حروف بزرگ";
@@ -255,6 +270,9 @@
 
 /* No comment provided by engineer. */
 "Content Blocker" = "مسدودکننده‌ی محتوا";
+
+/* No comment provided by engineer. */
+"Continue" = "ادامه دهید";
 
 /* macOS menu item */
 "Copy" = "کپی";
@@ -308,6 +326,9 @@
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "تونل‌های ساناد دسترسی را بر سرعت ترجیح داده و ممکن است کندتر باشند. توصیه می‌کنیم تنها برای کاره‌های ضروری به کارشان بیندازید. جریان ویدیویی توصیه نمی‌شود.";
 
 /* No comment provided by engineer. */
+"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "اگر اینترنت در کشور شما به‌شدت سانسور می‌شود، از حالت Kindness Mode استفاده نکنید.";
+
+/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "از این گره‌ها استفاده نکن. فهرست گره‌های ورودی و خروجی را نادیده می‌گیرد. ممکن است هنوز برای اهداف مدیریتی استفاده شوند.";
 
 /* No comment provided by engineer. */
@@ -321,6 +342,9 @@
 
 /* No comment provided by engineer. */
 "enabled" = "فعال";
+
+/* No comment provided by engineer. */
+"Enabled" = "فعال شد";
 
 /* No comment provided by engineer. */
 "Enter bridge address" = "نشانی پل را وارد کنید";
@@ -434,6 +458,15 @@
 "Kindness Mode" = "حالت مهربانی";
 
 /* No comment provided by engineer. */
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "حالت Kindness Mode دستگاه شما را به یک پراکسی Snowflake در شبکه Tor تبدیل می‌کند - پلی برای کمک به دیگران برای اتصال به اینترنت.";
+
+/* No comment provided by engineer. */
+"Kindness Mode: Help Others Connect to Tor" = "حالت Kindness Mode: به دیگران کمک کنید به Tor وصل شوند";
+
+/* No comment provided by engineer. */
+"Learn More" = "اطلاعات بیشتر";
+
+/* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "اگر دسترسی به Tor شدیداً مسدود شده باشد، این روش احتمالاً اتصال شما را حفظ خواهد کرد. با استفاده از این روش، کانال تلگرام Tor Bot راه‌اندازی می‌شود. روی «Start» بزنید یا در گفت‌و‌گو بنویسید: «%1$@» تا نشانی پل‌ها را دریافت کنید.";
 
 /* No comment provided by engineer. */
@@ -527,6 +560,9 @@
 "Proxy" = "پراکسی";
 
 /* No comment provided by engineer. */
+"Proxy Quality" = "کیفیت پراکسی";
+
+/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "کد QR قابل شناسایی نبود! مطمئن هستیذ که آدرس .onion را اسکن کرده اید؟";
 
 /* macOS menu item */
@@ -543,6 +579,9 @@
 
 /* macOS menu item */
 "Redo" = "دوباره انجام دادن";
+
+/* IPtProxyNATRestricted */
+"restricted" = "محدود شده";
 
 /* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "اجرای Smart Connect برای یافتن بهترین روش.";
@@ -608,6 +647,9 @@
 "Switch back to last used VPN after stop" = "بازگشت به آخرین VPN استفاده‌شده پس از توقف";
 
 /* No comment provided by engineer. */
+"Testing Quality" = "در حال بررسی کیفیت";
+
+/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "تا زمانی که این مشکل برطرف نشود، آن برنامه قادر به دسترسی به Orbot API نخواهد بود.";
 
 /* No comment provided by engineer. */
@@ -626,13 +668,22 @@
 "this regex:" = "این عبارت باقاعده (regex):";
 
 /* No comment provided by engineer. */
+"This Week" = "این هفته";
+
+/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "این گزینه به %1$@ اجازه خواهد داد که:";
 
 /* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "برای عملکرد صحیح، باید مسدودکننده را فعال کنید:";
 
 /* No comment provided by engineer. */
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "برای ارتقا، UPnP را روی روتر Wi-Fi خود برای این دستگاه فعال کنید.";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "راهنمای پیکربندی Tor";
+
+/* No comment provided by engineer. */
+"Total" = "مجموع";
 
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "ترافیک به سایر دامنه‌ها از طریق اتصال عادی اینترنت شما هدایت خواهد شد.";
@@ -648,6 +699,15 @@
 
 /* No comment provided by engineer. */
 "Unknown" = "ناشناخته";
+
+/* IPtProxyNATUnknown */
+"unknown" = "ناشناخته";
+
+/* IPtProxyNATUnrestricted */
+"unrestricted" = "بدون محدودیت";
+
+/* No comment provided by engineer. */
+"Upgrade your Snowflake Proxy" = "پراکسی Snowflake خود را ارتقا دهید";
 
 /* No comment provided by engineer. */
 "Use %1$@" = "استفاده از %1$@";
@@ -695,31 +755,19 @@
 "Window" = "پنجره";
 
 /* No comment provided by engineer. */
+"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "شما گزینه بسیار خوبی برای تبدیل شدن به یک پراکسی Snowflake در شبکه Tor هستید.";
+
+/* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "می‌توانید چندین نشانی پل وارد کنید.";
+
+/* No comment provided by engineer. */
+"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "در حال حاضر نمی‌توانید یک پراکسی Snowflake مفید باشید. اگر همچنان این پیام را می‌بینید، روی یک شبکه دیگر دوباره امتحان کنید.";
+
+/* No comment provided by engineer. */
+"Your Impact in Numbers" = "تأثیر شما در آمار و ارقام";
+
+/* No comment provided by engineer. */
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "وقتی حالت Kindness Mode روی Wi-Fi فعال باشد، پراکسی شما می‌تواند قدرتمندتر عمل کند.";
 
 /* macOS menu item */
 "Zoom" = "زوم";
-"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "قبل از اینکه به یک پراکسی Snowflake تبدیل شوید، باید بررسی کنیم که آیا می‌توانید یک پراکسی مؤثر اجرا کنید یا نه. لطفاً صبر کنید تا این بررسی انجام شود.";
-"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "اگر اینترنت در کشور شما به‌شدت سانسور می‌شود، از حالت Kindness Mode استفاده نکنید.";
-"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "حالت Kindness Mode دستگاه شما را به یک پراکسی Snowflake در شبکه Tor تبدیل می‌کند - پلی برای کمک به دیگران برای اتصال به اینترنت.";
-"Kindness Mode: Help Others Connect to Tor" = "حالت Kindness Mode: به دیگران کمک کنید به Tor وصل شوند";
-"Learn More" = "اطلاعات بیشتر";
-"restricted" = "محدود شده";
-"Proxy Quality" = "کیفیت پراکسی";
-"Testing Quality" = "در حال بررسی کیفیت";
-"To upgrade, enable UPnP on your Wi-Fi router for this device." = "برای ارتقا، UPnP را روی روتر Wi-Fi خود برای این دستگاه فعال کنید.";
-"This Week" = "این هفته";
-"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "در حال حاضر نمی‌توانید یک پراکسی Snowflake مفید باشید. اگر همچنان این پیام را می‌بینید، روی یک شبکه دیگر دوباره امتحان کنید.";
-"unknown" = "ناشناخته";
-"unrestricted" = "بدون محدودیت";
-"Upgrade your Snowflake Proxy" = "پراکسی Snowflake خود را ارتقا دهید";
-"Total" = "مجموع";
-"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "شما گزینه بسیار خوبی برای تبدیل شدن به یک پراکسی Snowflake در شبکه Tor هستید.";
-"Your Impact in Numbers" = "تأثیر شما در آمار و ارقام";
-"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "وقتی حالت Kindness Mode روی Wi-Fi فعال باشد، پراکسی شما می‌تواند قدرتمندتر عمل کند.";
-"%@ Not Approved" = "%@ تأیید نشده است";
-"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@فقط%2$@ زمانی فعال کنید که اینترنت در کشور شما %1$@به‌شدت سانسور نشده باشد%2$@.";
-"%@ Approved" = "%@ تأیید شده است";
-"Continue" = "ادامه دهید";
-"Cancel" = "لغو";
-"Enabled" = "فعال شد";

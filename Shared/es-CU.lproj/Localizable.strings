@@ -40,8 +40,14 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ quiere acceder %2$@.";
 
+/* No comment provided by engineer. */
+"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@.";
+
 /* Placeholder is bullet */
 "%@ App needs to stay in the foreground." = "%@ La aplicación debe permanecer en primer plano.";
+
+/* Placeholder is '✅' */
+"%@ Approved" = "%@ Approved";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Los argumentos de una opción deben estar en una nueva línea.";
@@ -60,6 +66,9 @@
 
 /* Placeholder is bullet */
 "%@ It will not slow down your internet." = "%@ No ralentizará tu conexión a internet.";
+
+/* Placeholder is '🚫' */
+"%@ Not Approved" = "%@ Not Approved";
 
 /* Placeholder is bullet */
 "%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ La pantalla se atenuará. (Para apagar la pantalla, gire el dispositivo hacia abajo, como durante una llamada telefónica)";
@@ -167,6 +176,9 @@
 "Automatically Restart on Error" = "Reiniciar automáticamente en caso de error";
 
 /* No comment provided by engineer. */
+"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.";
+
+/* No comment provided by engineer. */
 "Block cookies" = "Bloquear cookies";
 
 /* No comment provided by engineer. */
@@ -207,6 +219,9 @@
 
 /* No comment provided by engineer. */
 "Bypass: granted" = "Desvío: otorgado";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
 
 /* macOS menu item */
 "Capitalize" = "Capitalizar";
@@ -255,6 +270,9 @@
 
 /* No comment provided by engineer. */
 "Content Blocker" = "Bloqueador de contenido";
+
+/* No comment provided by engineer. */
+"Continue" = "Continue";
 
 /* macOS menu item */
 "Copy" = "Copiar";
@@ -308,6 +326,9 @@
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "Los túneles DNS priorizan el acceso sobre la velocidad y pueden ralentizar el sistema. Recomendamos activarlos solo para aplicaciones esenciales. No se recomienda la transmisión de vídeo.";
 
 /* No comment provided by engineer. */
+"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Do not use Kindness Mode, if the Internet in your country is heavily censored.";
+
+/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "No utilices estos nodos. Anula la lista de nodos de entrada y salida. Todavía se puede utilizar con fines de gestión.";
 
 /* No comment provided by engineer. */
@@ -321,6 +342,9 @@
 
 /* No comment provided by engineer. */
 "enabled" = "Activado";
+
+/* No comment provided by engineer. */
+"Enabled" = "Enabled";
 
 /* No comment provided by engineer. */
 "Enter bridge address" = "Introduce la dirección del puente";
@@ -434,6 +458,15 @@
 "Kindness Mode" = "Modo bondad";
 
 /* No comment provided by engineer. */
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.";
+
+/* No comment provided by engineer. */
+"Kindness Mode: Help Others Connect to Tor" = "Kindness Mode: Help Others Connect to Tor";
+
+/* No comment provided by engineer. */
+"Learn More" = "Learn More";
+
+/* No comment provided by engineer. */
 "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Es probable que te mantengas conectado si Tor está severamente bloqueado. El uso de este método iniciará el canal Tor Bot Telegram. Toca 'Inicio' o escribe '%1$@' en el chat para obtener direcciones de puente.";
 
 /* No comment provided by engineer. */
@@ -527,6 +560,9 @@
 "Proxy" = "Proxy";
 
 /* No comment provided by engineer. */
+"Proxy Quality" = "Proxy Quality";
+
+/* No comment provided by engineer. */
 "QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "¡El código QR no se pudo decodificar! ¿Estás seguro de que escaneaste una URL .Onion?";
 
 /* macOS menu item */
@@ -543,6 +579,9 @@
 
 /* macOS menu item */
 "Redo" = "Rehacer";
+
+/* IPtProxyNATRestricted */
+"restricted" = "restricted";
 
 /* No comment provided by engineer. */
 "Run Smart Connect to find the best way" = "Ejecuta la conexión inteligente para encontrar la mejor forma";
@@ -608,6 +647,9 @@
 "Switch back to last used VPN after stop" = "Volver a la última VPN utilizada después de detenerla";
 
 /* No comment provided by engineer. */
+"Testing Quality" = "Testing Quality";
+
+/* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "Esa aplicación no podrá acceder a la API de Orbot mientras esto no se solucione.";
 
 /* No comment provided by engineer. */
@@ -626,13 +668,22 @@
 "this regex:" = "esta expresión regular:";
 
 /* No comment provided by engineer. */
+"This Week" = "This Week";
+
+/* No comment provided by engineer. */
 "This will allow %1$@ to:" = "Esto permitirá %1$@ a:";
 
 /* No comment provided by engineer. */
 "To make it work, you will need to activate the blocker:" = "Para que funcione, necesitarás activar el bloqueador:";
 
 /* No comment provided by engineer. */
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "To upgrade, enable UPnP on your Wi-Fi router for this device.";
+
+/* No comment provided by engineer. */
 "Tor Configuration Reference" = "Referencia de configuración de Tor";
+
+/* No comment provided by engineer. */
+"Total" = "Total";
 
 /* No comment provided by engineer. */
 "Traffic to all other domains will be routed through your normal Internet connection." = "El tráfico a todos los demás dominios se enrutará a través de tu conexión normal a Internet.";
@@ -648,6 +699,15 @@
 
 /* No comment provided by engineer. */
 "Unknown" = "Desconocido";
+
+/* IPtProxyNATUnknown */
+"unknown" = "unknown";
+
+/* IPtProxyNATUnrestricted */
+"unrestricted" = "unrestricted";
+
+/* No comment provided by engineer. */
+"Upgrade your Snowflake Proxy" = "Upgrade your Snowflake Proxy";
 
 /* No comment provided by engineer. */
 "Use %1$@" = "usar %1$@";
@@ -695,7 +755,19 @@
 "Window" = "Ventana";
 
 /* No comment provided by engineer. */
+"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "You are a great candidate for becoming a Snowflake Proxy on the Tor network.";
+
+/* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "Puedes ingresar varias direcciones de puente.";
+
+/* No comment provided by engineer. */
+"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network.";
+
+/* No comment provided by engineer. */
+"Your Impact in Numbers" = "Your Impact in Numbers";
+
+/* No comment provided by engineer. */
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Your proxy can be more powerful when kindness mode is running on Wi-Fi.";
 
 /* macOS menu item */
 "Zoom" = "Zoom";
