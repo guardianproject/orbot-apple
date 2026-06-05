@@ -699,3 +699,27 @@
 
 /* macOS menu item */
 "Zoom" = "زوم";
+"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "قبل از اینکه به یک پراکسی Snowflake تبدیل شوید، باید بررسی کنیم که آیا می‌توانید یک پراکسی مؤثر اجرا کنید یا نه. لطفاً صبر کنید تا این بررسی انجام شود.";
+"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "اگر اینترنت در کشور شما به‌شدت سانسور می‌شود، از حالت Kindness Mode استفاده نکنید.";
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "حالت Kindness Mode دستگاه شما را به یک پراکسی Snowflake در شبکه Tor تبدیل می‌کند - پلی برای کمک به دیگران برای اتصال به اینترنت.";
+"Kindness Mode: Help Others Connect to Tor" = "حالت Kindness Mode: به دیگران کمک کنید به Tor وصل شوند";
+"Learn More" = "اطلاعات بیشتر";
+"restricted" = "محدود شده";
+"Proxy Quality" = "کیفیت پراکسی";
+"Testing Quality" = "در حال بررسی کیفیت";
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "برای ارتقا، UPnP را روی روتر Wi-Fi خود برای این دستگاه فعال کنید.";
+"This Week" = "این هفته";
+"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "در حال حاضر نمی‌توانید یک پراکسی Snowflake مفید باشید. اگر همچنان این پیام را می‌بینید، روی یک شبکه دیگر دوباره امتحان کنید.";
+"unknown" = "ناشناخته";
+"unrestricted" = "بدون محدودیت";
+"Upgrade your Snowflake Proxy" = "پراکسی Snowflake خود را ارتقا دهید";
+"Total" = "مجموع";
+"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "شما گزینه بسیار خوبی برای تبدیل شدن به یک پراکسی Snowflake در شبکه Tor هستید.";
+"Your Impact in Numbers" = "تأثیر شما در آمار و ارقام";
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "وقتی حالت Kindness Mode روی Wi-Fi فعال باشد، پراکسی شما می‌تواند قدرتمندتر عمل کند.";
+"%@ Not Approved" = "%@ تأیید نشده است";
+"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@فقط%2$@ زمانی فعال کنید که اینترنت در کشور شما %1$@به‌شدت سانسور نشده باشد%2$@.";
+"%@ Approved" = "%@ تأیید شده است";
+"Continue" = "ادامه دهید";
+"Cancel" = "لغو";
+"Enabled" = "فعال شد";
