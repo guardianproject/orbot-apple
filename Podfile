@@ -39,6 +39,13 @@ target 'Orbot Mac' do
   iptproxy
 end
 
+target 'Orbot Mac-sys' do
+  platform :macos, '11.0'
+
+  tor
+  iptproxy
+end
+
 target 'TorVPN' do
   platform :ios, '15.0'
 
@@ -56,6 +63,13 @@ target 'StatusWidget' do
 end
 
 target 'TorVPN Mac' do
+  platform :macos, '11.0'
+
+  tor
+  iptproxy
+end
+
+target 'TorVPN Mac-sys' do
   platform :macos, '11.0'
 
   tor
