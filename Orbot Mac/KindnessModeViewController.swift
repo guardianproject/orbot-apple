@@ -232,7 +232,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 				proxy.ephemeralMinPort = mapped.min
 				proxy.ephemeralMaxPort = mapped.max
 
-				proxy.start()
+				do {
+					try proxy.start()
+				}
+				catch {
+					// This should not happen, but we log it, if it does, just in case.
+					Logger.log(level: .error, error.localizedDescription)
+				}
 			}
 		}
 		else {
