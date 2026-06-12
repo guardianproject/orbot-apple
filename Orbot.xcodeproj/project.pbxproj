@@ -144,7 +144,7 @@
 		A05DB2E72FD97BDD009D2949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A01AB5FE28A53465008A79EE /* Main.storyboard */; };
 		A05DB2F22FD97C0B009D2949 /* SwiftPortmap in Frameworks */ = {isa = PBXBuildFile; productRef = A05DB2F12FD97C0B009D2949 /* SwiftPortmap */; };
 		A05DB2F92FD97DA1009D2949 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01AB69928A55512008A79EE /* NetworkExtension.framework */; };
-		A05DB3032FD97DA1009D2949 /* TorVPN Mac-sys.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = A05DB2F82FD97DA1009D2949 /* TorVPN Mac-sys.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A05DB3032FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A05DB3092FD9801F009D2949 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
 		A05DB3652FD980F5009D2949 /* OnionmasqPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */; };
 		A05DB3662FD980F5009D2949 /* LeafPTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */; };
@@ -203,6 +203,8 @@
 		A0A2D8A128B65ECC00F49BF4 /* TorAuthKey+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */; };
 		A0A2D8A628B687D200F49BF4 /* AuthKeyItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */; };
 		A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */; };
+		A0A6E1202FDBFFEA0088CB6F /* SysExManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */; };
+		A0A6E1212FDBFFEA0088CB6F /* SysExManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */; };
 		A0A735D0247561F200073C81 /* BasePTProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735CF247561F200073C81 /* BasePTProvider.swift */; };
 		A0A735D5247561F200073C81 /* TorVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A0A735CD247561F200073C81 /* TorVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0A735E1247566CD00073C81 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
@@ -393,7 +395,7 @@
 			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				A05DB3032FD97DA1009D2949 /* TorVPN Mac-sys.systemextension in Embed System Extensions */,
+				A05DB3032FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +506,7 @@
 		A05B73BC24755CE700930C40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A05B73C124755CE700930C40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05DB2EF2FD97BDD009D2949 /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A05DB2F82FD97DA1009D2949 /* TorVPN Mac-sys.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = "TorVPN Mac-sys.systemextension"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = org.torproject.orbot.ext.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05DCD03297191760017B36A /* RoundedButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonRow.swift; sourceTree = "<group>"; };
 		A05DCD05297198540017B36A /* CustomBridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBridgesViewController.swift; sourceTree = "<group>"; };
 		A05DCD0729719A1B0017B36A /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -853,7 +855,7 @@
 				A01AB69F28A55706008A79EE /* TorVPN Mac.appex */,
 				A03394C22A45BEC200012811 /* StatusWidget.appex */,
 				A05DB2EF2FD97BDD009D2949 /* Orbot.app */,
-				A05DB2F82FD97DA1009D2949 /* TorVPN Mac-sys.systemextension */,
+				A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1259,7 +1261,7 @@
 			);
 			name = "TorVPN Mac-sys";
 			productName = "TorVPN Mac-sys";
-			productReference = A05DB2F82FD97DA1009D2949 /* TorVPN Mac-sys.systemextension */;
+			productReference = A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 		A06BEC6D280090B300351868 /* ContentBlocker */ = {
@@ -2845,7 +2847,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac-sys/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac-sys";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orbot TorVPN";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Guardian Project";
 				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "This is where Tor lives. No VPN without an installed system extension!";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2860,7 +2862,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = org.torproject.orbot.ext;
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				REGISTER_APP_GROUPS = YES;
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
@@ -2905,7 +2907,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TorVPN Mac-sys/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac-sys";
+				INFOPLIST_KEY_CFBundleDisplayName = "Orbot TorVPN";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Guardian Project";
 				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "This is where Tor lives. No VPN without an installed system extension!";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2920,7 +2922,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(EXT_BUNDLE_ID)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = org.torproject.orbot.ext;
 				PROVISIONING_PROFILE_SPECIFIER = "$(EXT_PROVISIONING_PROFILE_SPECIFIER_MAC)";
 				REGISTER_APP_GROUPS = YES;
 				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
