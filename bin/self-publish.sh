@@ -8,9 +8,11 @@ usage() {
     echo ""
     echo "Commands:"
     echo "  resign     Prepare and sign the app and its extensions"
+    echo "  check      Checks the signatures"
     echo "  notarize   Zip the signed app and submit it to Apple"
     echo "  log        Fetch the notarization log"
     echo "  staple     Staple the notarization ticket to the app"
+    echo "  dmg        Create a dmg file for distribution"
     echo ""
     echo "Options for 'resign':"
     echo "  -a <path>  Path to the .xcarchive"
@@ -22,9 +24,11 @@ usage() {
     echo ""
     echo "Example:"
     echo "  $0 resign -a MyApp.xcarchive -p app.prof -x ext.prof"
+    echo "  $0 check"
     echo "  $0 notarize"
     echo "  $0 log -i 2efe2717-52ef-43a5-96dc-0797e4ca1041"
     echo "  $0 staple"
+    echo "  $0 dmg"
     exit 1
 }
 
@@ -34,14 +38,15 @@ sign_item() {
     local entitlements="$2" # Optional
 
     if [ -n "$entitlements" ]; then
-        echo "Signing with entitlements: $target"
-        codesign -s "$SIGNING_IDENTITY" -f --entitlements "$entitlements" --timestamp -o runtime "$target"
+        echo "codesign --sign \"$SIGNING_IDENTITY\" --force --entitlements \"$entitlements\" --timestamp --options runtime \"$target\""
+        codesign --sign "$SIGNING_IDENTITY" --force --entitlements "$entitlements" --timestamp --options runtime "$target"
     else
-        echo "Signing: $target"
-        codesign -s "$SIGNING_IDENTITY" -f --timestamp -o runtime "$target"
+        echo "codesign --sign \"$SIGNING_IDENTITY\" --force --timestamp --options runtime \"$target\""
+        codesign --sign "$SIGNING_IDENTITY" --force --timestamp --options runtime "$target"
     fi
 }
 
+# https://developer.apple.com/forums/thread/737894
 do_resign() {
     local archive=""
     local app_profile=""
@@ -121,6 +126,45 @@ do_resign() {
     rm -f "${APP_NAME}.entitlements" "$APP_NAME-ext.entitlements"
 }
 
+check_item() {
+	local target="$1"
+
+	echo ""
+	echo "# Checking $target:"
+    echo "## codesign --display:"
+    echo ""
+	codesign --display --verbose "$target"
+
+    echo ""
+	echo "## codesign --verify:"
+    echo ""
+	codesign --verify --verbose --check-notarization "$target"
+
+	echo ""
+}
+
+do_check() {
+    local app_bundle=$(find . -maxdepth 1 -name "*.app" -print -quit)
+
+    if [ -z "$app_bundle" ]; then
+        echo "Error: No .app bundle found in current directory. Run 'resign' first."
+        exit 1
+    fi
+
+    find "$app_bundle" -name "*.dylib" -o -name "*.framework" -o -name "*.systemextension" | while IFS= read -r f; do
+		check_item "$f"
+    done
+
+    check_item "$app_bundle"
+
+    echo ""
+	echo "## spctl --assess:"
+    echo ""
+	spctl --assess --type execute --verbose "$app_bundle"
+
+    echo ""
+}
+
 # https://developer.apple.com/documentation/security/customizing-the-notarization-workflow
 do_notarize() {
     local app_bundle=$(find . -maxdepth 1 -name "*.app" -print -quit)
@@ -169,18 +213,22 @@ do_staple() {
         exit 1
     fi
 
-    local app_name="${app_bundle%.app}"
-
     echo "Stapling notarization ticket to ${app_bundle}…"
 
     xcrun stapler staple "$app_bundle"
+}
 
-    rm -f "$app_name.zip"
+do_dmg() {
+    local app_bundle=$(find . -maxdepth 1 -name "*.app" -print -quit)
 
-    echo "Packaging $app_bundle again…"
-    ditto -c -k --keepParent "$app_bundle" "$app_name.zip"
+    if [ -z "$app_bundle" ]; then
+        echo "Error: No .app bundle found in current directory. Run 'resign' and 'notarize' first."
+        exit 1
+    fi
 
-    echo "SUCCESS! You can now distribute $app_name.zip!"
+    root=$(dirname $(realpath "$0"))
+
+    "$root/create-dmg.sh" "$app_bundle"
 }
 
 # --- Main Entry Point ---
@@ -196,6 +244,9 @@ case "$COMMAND" in
     resign)
         do_resign "$@"
         ;;
+	check)
+		do_check "$@"
+		;;
     notarize)
         do_notarize "$@"
         ;;
@@ -205,6 +256,9 @@ case "$COMMAND" in
     staple)
         do_staple "$@"
         ;;
+	dmg)
+		do_dmg "$@"
+		;;
     -h|--help|help)
         usage
         ;;

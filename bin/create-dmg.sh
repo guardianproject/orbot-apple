@@ -9,7 +9,7 @@ basename=$(echo "$name" | cut -f 1 -d '.')
 scriptpath=$(dirname "$0")
 
 dmg="${path}/${basename}.dmg"
-src="${scriptpath}/Shared/Assets.xcassets/AppIcon.appiconset"
+src="${scriptpath}/../Shared/Assets.xcassets/App Icons/AppIcon.appiconset"
 tmp="${path}/${basename}.iconset"
 icns="${path}/${basename}.icns"
 
@@ -19,16 +19,16 @@ rm -f "$icns"
 
 mkdir "$tmp"
 
-cp -a "$src/Icon-16.png" "$tmp/icon_16x16.png"
-cp -a "$src/Icon-32.png" "$tmp/icon_16x16@2x.png"
-cp -a "$src/Icon-32.png" "$tmp/icon_32x32.png"
-cp -a "$src/Icon-64.png" "$tmp/icon_32x32@2x.png"
-cp -a "$src/Icon-128.png" "$tmp/icon_128x128.png"
-cp -a "$src/Icon-256.png" "$tmp/icon_128x128@2x.png"
-cp -a "$src/Icon-256.png" "$tmp/icon_256x256.png"
-cp -a "$src/Icon-512.png" "$tmp/icon_256x256@2x.png"
-cp -a "$src/Icon-512.png" "$tmp/icon_512x512.png"
-cp -a "$src/Icon-1024.png" "$tmp/icon_512x512@2x.png"
+cp -a "$src/orbot-mac-16.png" "$tmp/icon_16x16.png"
+cp -a "$src/orbot-mac-32.png" "$tmp/icon_16x16@2x.png"
+cp -a "$src/orbot-mac-32.png" "$tmp/icon_32x32.png"
+cp -a "$src/orbot-mac-64.png" "$tmp/icon_32x32@2x.png"
+cp -a "$src/orbot-mac-128.png" "$tmp/icon_128x128.png"
+cp -a "$src/orbot-mac-256.png" "$tmp/icon_128x128@2x.png"
+cp -a "$src/orbot-mac-256.png" "$tmp/icon_256x256.png"
+cp -a "$src/orbot-mac-512.png" "$tmp/icon_256x256@2x.png"
+cp -a "$src/orbot-mac-512.png" "$tmp/icon_512x512.png"
+cp -a "$src/orbot-mac-1024.png" "$tmp/icon_512x512@2x.png"
 
 
 iconutil --convert icns --output "$icns" "$tmp"
