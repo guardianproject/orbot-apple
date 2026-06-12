@@ -200,21 +200,32 @@ class VpnManager: BridgesConfDelegate {
 			self, selector: #selector(statusDidChange),
 			name: .NEVPNStatusDidChange, object: nil)
 
-		reload()
-	}
-
-	func reload(_ completed: Completed? = nil) {
-		NETunnelProviderManager.loadAllFromPreferences { [weak self] managers, error in
-			self?.error = error
-			self?.manager = managers?.first(where: { $0.isEnabled }) ?? managers?.first
-
-			self?.postChange()
-
-			completed?(self?.manager != nil)
+		Task {
+			await reload()
 		}
 	}
 
-	func install(_ completed: Completed? = nil) {
+	func reload() async -> Bool {
+		let managers: [NETunnelProviderManager]?
+
+		do {
+			managers = try await NETunnelProviderManager.loadAllFromPreferences()
+			self.error = nil
+		}
+		catch {
+			managers = nil
+			self.error = error
+		}
+
+		manager = managers?.first(where: { $0.isEnabled }) ?? managers?.first
+
+		await postChange()
+
+		return manager != nil
+	}
+
+	@discardableResult
+	func install() async -> Bool {
 		let conf = NETunnelProviderProtocol()
 		conf.providerBundleIdentifier = Config.extBundleId
 		conf.serverAddress = "Tor" // Needs to be set to something, otherwise error.
@@ -229,33 +240,30 @@ class VpnManager: BridgesConfDelegate {
 
 		manager.isEnabled = true
 
-		save(manager, completed)
+		return await save(manager)
 	}
 
-	func enable(_ completed: Completed? = nil) {
+	func enable() async -> Bool {
 		guard let manager = manager else {
-			completed?(false)
-
-			return
+			return false
 		}
 
 		manager.isEnabled = true
 
-		save(manager, completed)
+		return await save(manager)
 	}
 
-	func disable(_ completed: Completed? = nil) {
+	func disable() async -> Bool {
 		guard let manager = manager else {
-			completed?(false)
-
-			return
+			return false
 		}
 
 		manager.isEnabled = false
 
-		save(manager, completed)
+		return await save(manager)
 	}
 
+	@MainActor
 	func configChanged() {
 		if isConnected {
 			sendMessage(ConfigChangedMessage()) { (success: Bool?, error) in
@@ -271,118 +279,110 @@ class VpnManager: BridgesConfDelegate {
 		}
 	}
 
-	func connect(autoConfDone: Bool = false) {
+	func connect(autoConfDone: Bool = false) async {
 		if Settings.smartConnect && !autoConfDone {
 			// Has to be switched off, first, otherwise AutoConf request would trigger a connection
 			// which we're trying to configure first!
 			if let manager = manager, manager.isOnDemandEnabled {
 				manager.isOnDemandEnabled = false
 
-				save(manager) { [weak self] success in
-					self?.connect()
-				}
+				await save(manager)
+				await connect()
 			}
 			else {
 				evaluating = true
-				postChange()
 
-				Task {
-					do {
-						try await AutoConf(self).do(countryCode: countryCode)
-					}
-					catch {
-						self.error = error
+				await postChange()
 
-						postChange()
-
-						// If the API is broken, we continue with our own smart-connect logic.
-						Settings.transport = .none
-					}
-
-					// Continue in any case, don't let us stop because of a broken config API.
-					connect(autoConfDone: true)
+				do {
+					try await AutoConf(self).do(countryCode: countryCode)
 				}
+				catch {
+					self.error = error
+
+					await postChange()
+
+					// If the API is broken, we continue with our own smart-connect logic.
+					Settings.transport = .none
+				}
+
+				// Continue in any case, don't let us stop because of a broken config API.
+				await connect(autoConfDone: true)
 			}
 
 			return
 		}
 
-		let completed: Completed = { [weak self] success in
-			guard success,
-				  let session = self?.session
-			else {
-				self?.error = Errors.noConfiguration
-				self?.evaluating = false
-
-				self?.postChange()
-
-				return
-			}
-
-			DispatchQueue.main.async {
-				guard let self = self else {
-					return
-				}
-
-				self.evaluating = false
-				self.progress = 0
-				self.summary = nil
-
-				do {
-					try session.startVPNTunnel()
-				}
-				catch let error {
-					self.error = error
-
-					self.postChange()
-
-					return
-				}
-
-				self.commTunnel()
-			}
-
-			// Workaround for iOS 16.5: Restarting is unreliably there.
-			// Check after 2 seconds and start again, if not starting.
-			if self?.watchdog == nil {
-				self?.watchdog = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-					guard let self = self else {
-						return
-					}
-
-					Logger.log("[\(String(describing: type(of: self)))] Connection watchdog check")
-
-					if self.watchdog == timer {
-						self.watchdog = nil
-					}
-
-					if ![Status.connecting, .connected].contains(self.status) {
-						Logger.log("[\(String(describing: type(of: self)))] Connection watchdog retry!")
-						self.connect(autoConfDone: true)
-					}
-				}
-			}
-		}
+		let success: Bool
 
 		// If user wants to automatically restart on error, but
 		// start-on-demand is not set, set it now and store the config.
 		if Settings.restartOnError, let manager = manager, !manager.isOnDemandEnabled {
 			manager.isOnDemandEnabled = true
 
-			save(manager, completed)
+			success = await save(manager)
 		}
 		else {
-			completed(true)
+			success = true
+		}
+
+		guard success,
+			  let session = session
+		else {
+			error = Errors.noConfiguration
+			evaluating = false
+
+			await postChange()
+
+			return
+		}
+
+		Task { @MainActor in
+			evaluating = false
+			progress = 0
+			summary = nil
+
+			do {
+				try session.startVPNTunnel()
+			}
+			catch let error {
+				self.error = error
+
+				postChange()
+
+				return
+			}
+
+			commTunnel()
+		}
+
+		// Workaround for iOS 16.5: Restarting is unreliably there.
+		// Check after 2 seconds and start again, if not starting.
+		if watchdog == nil {
+			watchdog = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] timer in
+				guard let self = self else {
+					return
+				}
+
+				Logger.log("[\(String(describing: type(of: self)))] Connection watchdog check")
+
+				if self.watchdog == timer {
+					self.watchdog = nil
+				}
+
+				if ![Status.connecting, .connected].contains(self.status) {
+					Logger.log("[\(String(describing: type(of: self)))] Connection watchdog retry!")
+					Task {
+						await self.connect(autoConfDone: true)
+					}
+				}
+			}
 		}
 	}
 
 	func disconnect(explicit: Bool) {
 		watchdog?.invalidate()
 		watchdog = nil
-
-		let completed: Completed = { [weak self] _ in
-			self?.session?.stopTunnel()
-		}
 
 		// If user pressed stop explicitly and  start-on-demand is set, unset it now,
 		// otherwise it would constantly restart.
@@ -393,10 +393,13 @@ class VpnManager: BridgesConfDelegate {
 				manager.isEnabled = false
 			}
 
-			save(manager, completed)
+			Task {
+				await save(manager)
+				session?.stopTunnel()
+			}
 		}
 		else {
-			completed(true)
+			session?.stopTunnel()
 		}
 	}
 
@@ -412,7 +415,9 @@ class VpnManager: BridgesConfDelegate {
 		{
 			manager.isOnDemandEnabled = Settings.restartOnError
 
-			save(manager)
+			Task {
+				await save(manager)
+			}
 		}
 	}
 
@@ -465,14 +470,19 @@ class VpnManager: BridgesConfDelegate {
 
 	// MARK: Private Methods
 
-	private func save(_ manager: NETunnelProviderManager, _ completed: Completed? = nil) {
-		manager.saveToPreferences { [weak self] error in
-			self?.error = error
-
-			// Always re-load the manager from preferences, otherwise changes
-			// won't be applied and the manager cannot be used as expected.
-			self?.reload(completed)
+	@discardableResult
+	private func save(_ manager: NETunnelProviderManager) async -> Bool {
+		do {
+			try await manager.saveToPreferences()
+			error = nil
 		}
+		catch {
+			self.error = error
+		}
+
+		// Always re-load the manager from preferences, otherwise changes
+		// won't be applied and the manager cannot be used as expected.
+		return await reload()
 	}
 
 	@objc
@@ -520,7 +530,9 @@ class VpnManager: BridgesConfDelegate {
 			poll = false
 		}
 
-		postChange()
+		Task { @MainActor in
+			postChange()
+		}
 	}
 
 	private func commTunnel() {
@@ -532,7 +544,9 @@ class VpnManager: BridgesConfDelegate {
 
 			error = Errors.couldNotConnect
 
-			postChange()
+			Task { @MainActor in
+				postChange()
+			}
 
 			return
 		}
@@ -560,7 +574,9 @@ class VpnManager: BridgesConfDelegate {
 					else if message is ConfigChangedMessage {
 						Logger.log("[\(String(describing: type(of: self)))] ConfigChangedMessage")
 
-						self.postChange()
+						Task { @MainActor in
+							self.postChange()
+						}
 					}
 				}
 			}
@@ -618,10 +634,9 @@ class VpnManager: BridgesConfDelegate {
 		}
 	}
 
+	@MainActor
 	private func postChange() {
-		DispatchQueue.main.async {
-			NotificationCenter.default.post(name: .vpnStatusChanged, object: self)
-		}
+		NotificationCenter.default.post(name: .vpnStatusChanged, object: self)
 
 		WidgetCenter.shared.reloadAllTimelines()
 	}

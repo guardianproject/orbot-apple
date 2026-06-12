@@ -222,12 +222,13 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBAction func toggleSnowflakeProxy(_ sender: NSSwitch) {
 		if toggleSw.state == .on {
-			// Stop VPN. Snowflake Proxy only works, when not tunnelled through Tor itself.
-			SharedUtils.control(onlyTo: .disconnected)
-
-			FileManager.default.sfpLogFile?.truncate()
-
 			Task {
+				// Stop VPN. Snowflake Proxy only works, when not tunnelled through Tor itself.
+				await SharedUtils.control(onlyTo: .disconnected)
+
+
+				FileManager.default.sfpLogFile?.truncate()
+
 				let mapped = await SharedUtils.getMappedPorts()
 				proxy.ephemeralMinPort = mapped.min
 				proxy.ephemeralMaxPort = mapped.max

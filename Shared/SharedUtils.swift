@@ -74,21 +74,23 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 	}
 
 	func save() {
-		VpnManager.shared.configChanged()
+		Task { @MainActor in
+			VpnManager.shared.configChanged()
+		}
 	}
 
 
 	// MARK: Shared Methods
 
-	static func control(onlyTo status: VpnManager.Status? = nil) {
+	static func control(onlyTo status: VpnManager.Status? = nil) async {
 
 		// Enable, if disabled.
 		if VpnManager.shared.status == .disabled {
-			return VpnManager.shared.enable { success in
-				if success && VpnManager.shared.status != .disabled {
-					control(onlyTo: status)
-				}
+			if await VpnManager.shared.enable() && VpnManager.shared.status != .disabled {
+				await control(onlyTo: status)
 			}
+
+			return
 		}
 
 		if status == .connected && ![VpnManager.Status.disconnected, .disconnecting].contains(VpnManager.shared.status) {
@@ -102,13 +104,13 @@ class SharedUtils: NSObject, BridgesConfDelegate {
 		switch VpnManager.shared.status {
 		case .notInstalled:
 			// Install first, if not installed.
-			VpnManager.shared.install()
+			await VpnManager.shared.install()
 
 		case .evaluating, .connecting, .connected, .reasserting:
 			VpnManager.shared.disconnect(explicit: true)
 
 		case .disconnected, .disconnecting:
-			VpnManager.shared.connect()
+			await VpnManager.shared.connect()
 
 		default:
 			break

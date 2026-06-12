@@ -97,12 +97,16 @@ class ProxyQualityTest {
 
 		switch VpnManager.shared.status {
 		case .notInstalled:
-			VpnManager.shared.install()
+			Task {
+				await VpnManager.shared.install()
+			}
 
 			return
 
 		case .disabled:
-			VpnManager.shared.enable()
+			Task {
+				await VpnManager.shared.enable()
+			}
 
 			return
 
@@ -118,7 +122,9 @@ class ProxyQualityTest {
 			}
 			else {
 				trialCounter += 1
-				VpnManager.shared.connect()
+				Task {
+					await VpnManager.shared.connect()
+				}
 
 				return
 			}
