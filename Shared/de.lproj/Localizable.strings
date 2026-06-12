@@ -98,6 +98,9 @@
 "About %@" = "Über %@";
 
 /* No comment provided by engineer. */
+"Accept installation of system extension. Orbot will not work without it." = "Bitte Installation der Systemerweiterung akzeptieren. Orbot funktioniert nicht ohne.";
+
+/* No comment provided by engineer. */
 "Access Request" = "Zugriffsanfrage";
 
 /* No comment provided by engineer. */
@@ -135,6 +138,9 @@
 
 /* No comment provided by engineer. */
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Eine App hat versucht, %1$@ zu stoppen, aber du hast das noch nicht erlaubt.";
+
+/* No comment provided by engineer. */
+"An unknown error occurred." = "Unbekannter Fehler";
 
 /* No comment provided by engineer. */
 "Another app requested an API access token." = "Eine andere App hat ein API-Zugriffstoken angefordert.";
@@ -579,6 +585,9 @@
 
 /* macOS menu item */
 "Redo" = "Wiederholen";
+
+/* No comment provided by engineer. */
+"Restart computer to finish system extension installation." = "Computer neu starten, um Installation abzuschließen.";
 
 /* IPtProxyNATRestricted */
 "restricted" = "eingeschränkt";

@@ -226,6 +226,32 @@ class VpnManager: BridgesConfDelegate {
 
 	@discardableResult
 	func install() async -> Bool {
+#if os(macOS)
+	#if SYSEX
+		for await result in SysExManager.shared.install() {
+			switch result {
+			case .completed:
+				// Install went fine, now continue below installing the VPN profile.
+				break
+
+			case .needsApproval(let error):
+				// The user didn't approve, yet. We keep waiting until they either accept or deny.
+				self.error = error
+
+				await postChange()
+
+			case .error(let error):
+				// An error happened during SysEx install. Show error and stop.
+				self.error = error
+
+				await postChange()
+
+				return false
+			}
+		}
+	#endif
+#endif
+
 		let conf = NETunnelProviderProtocol()
 		conf.providerBundleIdentifier = Config.extBundleId
 		conf.serverAddress = "Tor" // Needs to be set to something, otherwise error.

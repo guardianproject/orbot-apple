@@ -98,6 +98,9 @@
 "About %@" = "About %@";
 
 /* No comment provided by engineer. */
+"Accept installation of system extension. Orbot will not work without it." = "Accept installation of system extension. Orbot will not work without it.";
+
+/* No comment provided by engineer. */
 "Access Request" = "Access Request";
 
 /* No comment provided by engineer. */
@@ -135,6 +138,9 @@
 
 /* No comment provided by engineer. */
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "An app tried to stop %1$@, but you didn't allow it to do this, yet.";
+
+/* No comment provided by engineer. */
+"An unknown error occurred." = "An unknown error occurred.";
 
 /* No comment provided by engineer. */
 "Another app requested an API access token." = "Another app requested an API access token.";
@@ -579,6 +585,9 @@
 
 /* macOS menu item */
 "Redo" = "Redo";
+
+/* No comment provided by engineer. */
+"Restart computer to finish system extension installation." = "Restart computer to finish system extension installation.";
 
 /* IPtProxyNATRestricted */
 "restricted" = "restricted";

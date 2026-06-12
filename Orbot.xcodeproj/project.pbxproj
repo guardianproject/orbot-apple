@@ -540,6 +540,7 @@
 		A0A2D89F28B65ECC00F49BF4 /* TorAuthKey+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorAuthKey+Helpers.swift"; sourceTree = "<group>"; };
 		A0A2D8A428B687D200F49BF4 /* AuthKeyItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthKeyItem.xib; sourceTree = "<group>"; };
 		A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyItem.swift; sourceTree = "<group>"; };
+		A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysExManager.swift; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
 		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -765,6 +766,7 @@
 				A0D92FBF295E28E10079BB4C /* ExitCountryViewController.swift */,
 				A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */,
 				A095A1932F967596007C10D5 /* TestingViewController.swift */,
+				A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -1916,6 +1918,7 @@
 				A03CFBB828B5206500D7A700 /* SettingsViewController.swift in Sources */,
 				A01AB61528A5463C008A79EE /* Formatters.swift in Sources */,
 				A0274FF228E7223300E767E9 /* L10n.swift in Sources */,
+				A0A6E1212FDBFFEA0088CB6F /* SysExManager.swift in Sources */,
 				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A0E471442FAB540500633EC2 /* ProxyQualityTest.swift in Sources */,
@@ -2077,6 +2080,7 @@
 				A05DB2BB2FD97BDD009D2949 /* SettingsViewController.swift in Sources */,
 				A05DB2BC2FD97BDD009D2949 /* Formatters.swift in Sources */,
 				A05DB2BD2FD97BDD009D2949 /* L10n.swift in Sources */,
+				A0A6E1202FDBFFEA0088CB6F /* SysExManager.swift in Sources */,
 				A05DB2BE2FD97BDD009D2949 /* Logger.swift in Sources */,
 				A05DB2BF2FD97BDD009D2949 /* GetCircuitsMessage.swift in Sources */,
 				A05DB2C02FD97BDD009D2949 /* ProxyQualityTest.swift in Sources */,
@@ -2762,6 +2766,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D SYSEX";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
@@ -2794,12 +2799,14 @@
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Guardian Project";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "This is where Tor lives. No VPN without an installed system extension!";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D SYSEX";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_ID)";
 				PRODUCT_NAME = Orbot;
 				PROVISIONING_PROFILE_SPECIFIER = "$(APP_PROVISIONING_PROFILE_SPECIFIER_MAC)";
@@ -2837,7 +2844,7 @@
 				INFOPLIST_FILE = "TorVPN Mac-sys/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac-sys";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Guardian Project";
-				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "This is where Tor lives. No VPN without an installed system extension!";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -2897,7 +2904,7 @@
 				INFOPLIST_FILE = "TorVPN Mac-sys/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "TorVPN Mac-sys";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Guardian Project";
-				INFOPLIST_KEY_NSSystemExtensionUsageDescription = SYSTEM_EXTENSION_USAGE_DESCRIPTION;
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "This is where Tor lives. No VPN without an installed system extension!";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
