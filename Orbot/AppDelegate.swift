@@ -43,7 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func applicationWillEnterForeground(_ application: UIApplication) {
-		VpnManager.shared.reload()
+		Task {
+			await VpnManager.shared.reload()
+		}
 	}
 
 	func application(_ application: UIApplication,

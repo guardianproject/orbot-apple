@@ -156,7 +156,10 @@ class ApiAccessViewController: UITableViewController, UITextFieldDelegate {
 	private func restartVpn() {
 		if VpnManager.shared.isConnected {
 			VpnManager.shared.disconnect(explicit: false)
-			VpnManager.shared.connect()
+
+			Task {
+				await VpnManager.shared.connect()
+			}
 
 			// We need to sleep a little, otherwise the queued start on the
 			// main thread will never happen.

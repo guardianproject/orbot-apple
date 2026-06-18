@@ -232,7 +232,9 @@ class MainViewController: UIViewController {
 	}
 
 	@IBAction func control(_ sender: UIButton? = nil) {
-		SharedUtils.control()
+		Task {
+			await SharedUtils.control()
+		}
 	}
 
 	@IBAction func toggleSmartConnect(_ sender: UIView) {

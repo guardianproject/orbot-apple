@@ -199,8 +199,9 @@ class RemoteControl {
 					}
 				}
 
-				rootVc.dismiss(animated: true) {
-					SharedUtils.control(onlyTo: .connected)
+				Task {
+					await rootVc.dismiss(animated: true)
+					await SharedUtils.control(onlyTo: .connected)
 				}
 
 			// Ok, we're already running. Just call back other app after a small delay.
@@ -212,8 +213,9 @@ class RemoteControl {
 		}
 		// No callback. Just try to connect.
 		else {
-			UIApplication.shared.rootVc?.dismiss(animated: true) {
-				SharedUtils.control(onlyTo: .connected)
+			Task {
+				await UIApplication.shared.rootVc?.dismiss(animated: true)
+				await SharedUtils.control(onlyTo: .connected)
 			}
 		}
 	}
@@ -247,8 +249,9 @@ class RemoteControl {
 				AlertHelper.present(mainVc, message: message, actions: [
 					AlertHelper.cancelAction(),
 					AlertHelper.destructiveAction(NSLocalizedString("Stop", comment: ""), handler: { _ in
-						UIApplication.shared.rootVc?.dismiss(animated: true) {
-							SharedUtils.control(onlyTo: .disconnected)
+						Task {
+							await UIApplication.shared.rootVc?.dismiss(animated: true)
+							await SharedUtils.control(onlyTo: .disconnected)
 						}
 					})])
 			}
@@ -303,8 +306,9 @@ class RemoteControl {
 					}
 				}
 
-				rootVc.dismiss(animated: true) {
-					SharedUtils.control(onlyTo: .disconnected)
+				Task {
+					await rootVc.dismiss(animated: true)
+					await SharedUtils.control(onlyTo: .disconnected)
 				}
 
 			// Ok, we're already stopped. Just call back other app after a small delay.
@@ -316,8 +320,9 @@ class RemoteControl {
 		}
 		// No callback. Just try to disconnect.
 		else {
-			UIApplication.shared.rootVc?.dismiss(animated: true) {
-				SharedUtils.control(onlyTo: .disconnected)
+			Task {
+				await UIApplication.shared.rootVc?.dismiss(animated: true)
+				await SharedUtils.control(onlyTo: .disconnected)
 			}
 		}
 	}
