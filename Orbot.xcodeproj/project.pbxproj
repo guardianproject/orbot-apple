@@ -192,6 +192,12 @@
 		A08CA43D29ACE76400B01C1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CA43A29ACE76400B01C1F /* Color.swift */; };
 		A08CA43E29ACE76400B01C1F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CA43A29ACE76400B01C1F /* Color.swift */; };
 		A08CA43F29ACEEDC00B01C1F /* NSMutableAttributedString+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC772229A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift */; };
+		A08E50DF2FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
+		A08E50E02FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
+		A08E50E12FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
+		A08E50E22FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
+		A08E50E32FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
+		A08E50E42FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
 		A0922B932E2E498D003D2280 /* KindnessModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */; };
 		A092846C2F1E8C5200A403FF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A092846D2F1E8C7300A403FF /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
@@ -534,6 +540,7 @@
 		A08CA2CC27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A08CA2CD27DB6D0900F23100 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A08CA43A29ACE76400B01C1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Helpers.swift"; sourceTree = "<group>"; };
 		A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeViewController.swift; sourceTree = "<group>"; };
 		A095A1932F967596007C10D5 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -981,6 +988,7 @@
 			children = (
 				A0A736042475851D00073C81 /* Bundle+Helpers.swift */,
 				A08CA43A29ACE76400B01C1F /* Color.swift */,
+				A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */,
 				A08C8FF12805FB130065B98D /* Eureka+Helpers.swift */,
 				A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */,
 				A0E048062B8E1E8000348ED4 /* IpSupport.swift */,
@@ -1936,6 +1944,7 @@
 				A0A2D8A728B687D200F49BF4 /* AuthKeyItem.swift in Sources */,
 				A01AB61628A549D0008A79EE /* Settings.swift in Sources */,
 				A08CA43F29ACEEDC00B01C1F /* NSMutableAttributedString+Helpers.swift in Sources */,
+				A08E50E32FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A0922B932E2E498D003D2280 /* KindnessModeViewController.swift in Sources */,
 				A0274FEE28E70B6300E767E9 /* SharedUtils.swift in Sources */,
 				A01AB5FB28A53465008A79EE /* MainViewController.swift in Sources */,
@@ -1966,6 +1975,7 @@
 				A01AB6BF28A55DD0008A79EE /* GetCircuitsMessage.swift in Sources */,
 				A01AB6B228A558FE008A79EE /* Bundle+Helpers.swift in Sources */,
 				A01AB6BE28A55DCA008A79EE /* CloseCircuitsMessage.swift in Sources */,
+				A08E50E22FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A0E0480A2B8E1F3E00348ED4 /* IpSupport.swift in Sources */,
 				A0FF331928B3AE010079A267 /* NEProviderStopReason+Helpers.swift in Sources */,
 				A0D9021E2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
@@ -2067,6 +2077,7 @@
 				A0F4E9CC2E27E8A50074BB28 /* KindnessModeViewController.swift in Sources */,
 				A06DDCAD29264D0E001F9371 /* DebugMessage.swift in Sources */,
 				A0274FF128E7223300E767E9 /* L10n.swift in Sources */,
+				A08E50DF2FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A081CEDF2ECC94CB00DA2392 /* AppIconViewController.swift in Sources */,
 				A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */,
 			);
@@ -2098,6 +2109,7 @@
 				A05DB2CA2FD97BDD009D2949 /* AuthKeyItem.swift in Sources */,
 				A05DB2CB2FD97BDD009D2949 /* Settings.swift in Sources */,
 				A05DB2CC2FD97BDD009D2949 /* NSMutableAttributedString+Helpers.swift in Sources */,
+				A08E50E12FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A05DB2CD2FD97BDD009D2949 /* KindnessModeViewController.swift in Sources */,
 				A05DB2CE2FD97BDD009D2949 /* SharedUtils.swift in Sources */,
 				A05DB2CF2FD97BDD009D2949 /* MainViewController.swift in Sources */,
@@ -2138,6 +2150,7 @@
 				A05DB3712FD98136009D2949 /* IpSupport.swift in Sources */,
 				A05DB3692FD98109009D2949 /* ConfigChangedMessage.swift in Sources */,
 				A05DB36D2FD9811C009D2949 /* Message.swift in Sources */,
+				A08E50E02FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A05DB3702FD98131009D2949 /* FileManager+Helpers.swift in Sources */,
 				A05DB37B2FD98185009D2949 /* Settings.swift in Sources */,
 				A05DB3782FD9816F009D2949 /* Config.swift in Sources */,
@@ -2180,6 +2193,7 @@
 				A0E048092B8E1F1200348ED4 /* Reachability.swift in Sources */,
 				A0D9021C2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A01F34E02652D082008F9912 /* Logger.swift in Sources */,
+				A08E50E42FE428390028E6E7 /* Error+Helpers.swift in Sources */,
 				A08CA43C29ACE76400B01C1F /* Color.swift in Sources */,
 				A0236CC52F87DF6400EC2DD1 /* Settings.swift in Sources */,
 				A0A736062475851D00073C81 /* Bundle+Helpers.swift in Sources */,

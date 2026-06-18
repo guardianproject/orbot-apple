@@ -69,7 +69,7 @@ class VpnManager: BridgesConfDelegate {
 		}
 	}
 
-	enum Errors: LocalizedError {
+	enum Errors: Int, LocalizedError {
 		public var errorDescription: String? {
 			switch self {
 			case .noConfiguration:
@@ -165,6 +165,10 @@ class VpnManager: BridgesConfDelegate {
 		}
 		set {
 			_error = newValue
+
+			if let _error {
+				Logger.log(level: .error, "New error: \(_error.localizedDescription)")
+			}
 		}
 	}
 
@@ -205,6 +209,7 @@ class VpnManager: BridgesConfDelegate {
 		}
 	}
 
+	@discardableResult
 	func reload() async -> Bool {
 		let managers: [NETunnelProviderManager]?
 
@@ -557,6 +562,17 @@ class VpnManager: BridgesConfDelegate {
 		}
 
 		Task { @MainActor in
+			if status == .disconnected {
+				if #available(iOS 16.0, *) {
+					do {
+						try await session?.fetchLastDisconnectError()
+					}
+					catch {
+						self.error = error
+					}
+				}
+			}
+
 			postChange()
 		}
 	}

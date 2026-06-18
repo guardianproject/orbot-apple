@@ -20,7 +20,7 @@ class TorManager {
 		case started = "started"
 	}
 
-	enum Errors: Error, LocalizedError {
+	enum Errors: Int, LocalizedError {
 		case cookieUnreadable
 		case noSocksAddr
 		case noDnsAddr

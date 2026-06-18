@@ -11,7 +11,7 @@ import SystemExtensions
 
 class SysExManager: NSObject, OSSystemExtensionRequestDelegate {
 
-	enum SysExError: LocalizedError {
+	enum SysExError: Int, LocalizedError {
 		case unknown
 		case needsApproval
 		case needsReboot

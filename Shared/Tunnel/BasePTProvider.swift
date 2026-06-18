@@ -13,7 +13,7 @@ import IPtProxyUI
 
 class BasePTProvider: NEPacketTunnelProvider {
 
-	enum Errors: LocalizedError {
+	enum Errors: Int, LocalizedError {
 		case tunnelFdNotFound
 		case socksPortUnparsable
 		case dnsPortUnparsable
@@ -158,7 +158,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 					if !completionHandlerCalled {
 						completionHandlerCalled = true
 
-						completionHandler(error)
+						completionHandler(error.nsError)
 					}
 
 					return
@@ -173,7 +173,7 @@ class BasePTProvider: NEPacketTunnelProvider {
 					if !completionHandlerCalled {
 						completionHandlerCalled = true
 
-						completionHandler(error)
+						completionHandler(error.nsError)
 					}
 					else {
 						self.stopTunnel(with: .noNetworkAvailable) {
