@@ -563,7 +563,7 @@ class VpnManager: BridgesConfDelegate {
 
 		Task { @MainActor in
 			if status == .disconnected {
-				if #available(iOS 16.0, *) {
+				if #available(iOS 16.0, macOS 13.0, *) {
 					do {
 						try await session?.fetchLastDisconnectError()
 					}
