@@ -11,69 +11,238 @@ import IPtProxy
 
 class L10n {
 
-	static var settings: String {
-		NSLocalizedString("Settings", comment: "")
-	}
-
-	static var newCircuits: String {
-		NSLocalizedString("Build new Circuits", comment: "")
-	}
-
-	static var version: String {
-		String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
-			   Bundle.main.version, Bundle.main.build)
-	}
-
-	static var runSmartConnectToFindTheBestWay: String {
-		NSLocalizedString("Run Smart Connect to find the best way", comment: "")
-	}
-
-	static var chooseHowToConnect: String {
-		NSLocalizedString("Choose How to Connect", comment: "")
-	}
-
-	static var log: String {
-		NSLocalizedString("Log", comment: "")
-	}
-
-	static var bridges: String {
-		NSLocalizedString("Bridges", comment: "")
-	}
-
-	static var circuits: String {
-		NSLocalizedString("Circuits", comment: "")
-	}
-
-	static var authCookies: String {
-		NSLocalizedString("Auth Cookies", comment: "")
+	static var activate: String {
+		NSLocalizedString("Activate", comment: "")
 	}
 
 	static var add: String {
 		NSLocalizedString("Add", comment: "")
 	}
 
-	static var editAuthCookie: String {
-		NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: "")
-	}
-
-	static var edit: String {
-		NSLocalizedString("Edit", comment: "")
-	}
-
 	static var addAuthCookie: String {
 		NSLocalizedString("Add v3 Onion Service Auth Cookie", comment: "")
+	}
+
+	static var advancedTorConf: String {
+		NSLocalizedString("Advanced Tor Configuration", comment: "")
+	}
+
+	static var approved: String {
+		NSLocalizedString("Approved", comment: "")
+	}
+
+	static var attentionAnonymity:String {
+		NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: "")
+	}
+
+	static var authCookies: String {
+		NSLocalizedString("Auth Cookies", comment: "")
+	}
+
+	static var automaticallyRestartOnError: String {
+		NSLocalizedString("Automatically Restart on Error", comment: "")
+	}
+
+	static var automaticRestart: String {
+		NSLocalizedString("Automatic Restart", comment: "")
+	}
+
+	static var bridges: String {
+		NSLocalizedString("Bridges", comment: "")
+	}
+
+	static var cancel: String {
+		NSLocalizedString("Cancel", comment: "")
+	}
+
+	static var circuits: String {
+		NSLocalizedString("Circuits", comment: "")
+	}
+
+	static var censoredCountryWarning: String {
+		NSLocalizedString("Do not use Kindness Mode if you live in a highly censored country.", comment: "")
+	}
+
+	static var chooseHowToConnect: String {
+		NSLocalizedString("Choose How to Connect", comment: "")
+	}
+
+	static var cleared: String {
+		NSLocalizedString("Cleared!", comment: "")
+	}
+
+	static var clearTorCache: String {
+		NSLocalizedString("Clear Tor Cache", comment: "")
 	}
 
 	static var delete: String {
 		NSLocalizedString("Delete", comment: "")
 	}
 
-	static var key: String {
-		NSLocalizedString("Key", comment: "")
+	static var disabled: String {
+		NSLocalizedString("Disabled", comment: "")
+	}
+
+	static var disableForNonOnionTraffic: String {
+		String(format: NSLocalizedString("Disable %@ for non-onion traffic",  comment: "macOS menu item"), Bundle.main.displayName)
+	}
+
+	static var doNotUseKindnessMode: String {
+		NSLocalizedString("Do not use Kindness Mode, if the Internet in your country is heavily censored.", comment: "")
+	}
+
+	static var edit: String {
+		NSLocalizedString("Edit", comment: "")
+	}
+
+	static var editAuthCookie: String {
+		NSLocalizedString("Edit v3 Onion Service Auth Cookie", comment: "")
+	}
+
+	static var enabled: String {
+		NSLocalizedString("Enabled", comment: "")
+	}
+
+	static var entryNodes: String {
+		NSLocalizedString("Entry Nodes", comment: "")
+	}
+
+	static var entryNodesExplanation: String {
+		NSLocalizedString("Only use these nodes as first hop. Ignored, when bridging is used.", comment: "")
+	}
+
+	static var excludeNodes: String {
+		NSLocalizedString("Exclude Nodes", comment: "")
+	}
+
+	static var excludeNodesExplanation: String {
+		NSLocalizedString("Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.", comment: "")
+	}
+
+	static var excludeNodesNever: String {
+		NSLocalizedString("Also don't use excluded nodes for network management", comment: "")
+	}
+
+	static var exitNodeCountries: String {
+		NSLocalizedString("Exit Node Countries", comment: "")
+	}
+
+	static var exitNodes: String {
+		NSLocalizedString("Exit Nodes", comment: "")
+	}
+
+	static var exitNodesExplanation: String {
+		NSLocalizedString("Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!", comment: "")
+	}
+
+	static var expert: String {
+		NSLocalizedString("Expert", comment: "")
 	}
 
 	static var general: String {
 		NSLocalizedString("General", comment: "")
+	}
+
+	static var isolateDestAddr: String {
+		NSLocalizedString("Isolate Destination Addresses", comment: "")
+	}
+
+	static var isolateDestAddrDescription: String {
+		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
+	}
+
+	static var key: String {
+		NSLocalizedString("Key", comment: "")
+	}
+
+	static var kindnessMode: String {
+		NSLocalizedString("Kindness Mode", comment: "")
+	}
+
+	static var kindnessModeDescription: String {
+		NSLocalizedString(
+			"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.",
+			comment: "")
+	}
+
+	static var learnMore: String {
+		NSLocalizedString("Learn More", comment: "")
+	}
+
+	static var log: String {
+		NSLocalizedString("Log", comment: "")
+	}
+
+	static var maintenance: String {
+		NSLocalizedString("Maintenance", comment: "")
+	}
+
+	static var newCircuits: String {
+		NSLocalizedString("Build new Circuits", comment: "")
+	}
+
+	static var nodeConfiguration: String {
+		NSLocalizedString("Node Configuration", comment: "")
+	}
+
+	static var notApproved: String {
+		NSLocalizedString("Not Approved", comment: "")
+	}
+
+	static var onionOnlyMode: String {
+		NSLocalizedString("Onion-only Mode", comment: "")
+	}
+
+	static var pleaseWaitWhileWeCheck: String {
+		NSLocalizedString(
+			"Please wait while we check to see if you can run an effective proxy.",
+			comment: "")
+	}
+
+	static var proxy: String {
+		NSLocalizedString("Proxy", comment: "")
+	}
+
+	static var proxyDesc: String {
+		NSLocalizedString("NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.", comment: "")
+	}
+
+	static var proxyHost: String {
+		NSLocalizedString("Host", comment: "")
+	}
+
+	static var proxyPassword: String {
+		NSLocalizedString("Password", comment: "")
+	}
+
+	static var proxyPort: String {
+		NSLocalizedString("Port", comment: "")
+	}
+
+	static var proxyQuality: String {
+		NSLocalizedString("Proxy Quality", comment: "")
+	}
+
+	static var proxyQualityType: [String: String] = [
+		IPtProxyNATUnknown: NSLocalizedString("unknown", comment: "IPtProxyNATUnknown"),
+		IPtProxyNATRestricted: NSLocalizedString("restricted", comment: "IPtProxyNATRestricted"),
+		IPtProxyNATUnrestricted: NSLocalizedString("unrestricted", comment: "IPtProxyNATUnrestricted")
+	]
+
+	static var proxyType: String {
+		NSLocalizedString("Type", comment: "")
+	}
+
+	static var proxyUsername: String {
+		NSLocalizedString("Username", comment: "")
+	}
+
+	static var runSmartConnectToFindTheBestWay: String {
+		NSLocalizedString("Run Smart Connect to find the best way", comment: "")
+	}
+
+	static var settings: String {
+		NSLocalizedString("Settings", comment: "")
 	}
 
 	static var settingsExplanation1: String {
@@ -100,180 +269,41 @@ class L10n {
 		+ NSLocalizedString("If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!", comment: "")
 	}
 
-	static var automaticRestart: String {
-		NSLocalizedString("Automatic Restart", comment: "")
-	}
-
-	static var automaticallyRestartOnError: String {
-		NSLocalizedString("Automatically Restart on Error", comment: "")
+	static var smartConnectTimeout: String {
+		NSLocalizedString("Smart Connect Timeout (s)", comment: "")
 	}
 
 	static var switchBackToLastUsedVpnAfterStop: String {
 		NSLocalizedString("Switch back to last used VPN after stop", comment: "")
 	}
 
-	static var onionOnlyMode: String {
-		NSLocalizedString("Onion-only Mode", comment: "")
+	static var testingQuality: String {
+		NSLocalizedString("Testing Quality", comment: "")
 	}
 
-	static var attentionAnonymity:String {
-		NSLocalizedString("ATTENTION: This may harm your anonymity and security!", comment: "")
-	}
-
-	static var disableForNonOnionTraffic: String {
-		String(format: NSLocalizedString("Disable %@ for non-onion traffic",  comment: "macOS menu item"), Bundle.main.displayName)
-	}
-
-	static var warning: String {
-		NSLocalizedString("Warning", comment: "")
-	}
-
-	static var activate: String {
-		NSLocalizedString("Activate", comment: "")
-	}
-
-	static var learnMore: String {
-		NSLocalizedString("Learn More", comment: "")
-	}
-
-	static var nodeConfiguration: String {
-		NSLocalizedString("Node Configuration", comment: "")
-	}
-
-	static var entryNodes: String {
-		NSLocalizedString("Entry Nodes", comment: "")
-	}
-
-	static var entryNodesExplanation: String {
-		NSLocalizedString("Only use these nodes as first hop. Ignored, when bridging is used.", comment: "")
-	}
-
-	static var exitNodes: String {
-		NSLocalizedString("Exit Nodes", comment: "")
-	}
-
-	static var exitNodesExplanation: String {
-		NSLocalizedString("Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!", comment: "")
-	}
-
-	static var exitNodeCountries: String {
-		NSLocalizedString("Exit Node Countries", comment: "")
-	}
-
-	static var excludeNodes: String {
-		NSLocalizedString("Exclude Nodes", comment: "")
-	}
-
-	static var excludeNodesExplanation: String {
-		NSLocalizedString("Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.", comment: "")
-	}
-
-	static var excludeNodesNever: String {
-		NSLocalizedString("Also don't use excluded nodes for network management", comment: "")
-	}
-
-	static var isolateDestAddr: String {
-		NSLocalizedString("Isolate Destination Addresses", comment: "")
-	}
-
-	static var isolateDestAddrDescription: String {
-		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
-	}
-
-	static var proxy: String {
-		NSLocalizedString("Proxy", comment: "")
-	}
-
-	static var proxyDesc: String {
-		NSLocalizedString("NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.", comment: "")
-	}
-
-	static var proxyType: String {
-		NSLocalizedString("Type", comment: "")
-	}
-
-	static var proxyHost: String {
-		NSLocalizedString("Host", comment: "")
-	}
-
-	static var proxyPort: String {
-		NSLocalizedString("Port", comment: "")
-	}
-
-	static var proxyUsername: String {
-		NSLocalizedString("Username", comment: "")
-	}
-
-	static var proxyPassword: String {
-		NSLocalizedString("Password", comment: "")
-	}
-
-	static var advancedTorConf: String {
-		NSLocalizedString("Advanced Tor Configuration", comment: "")
+	static var thisWeek: String {
+		NSLocalizedString("This Week", comment: "")
 	}
 
 	static var torConfReference: String {
 		NSLocalizedString("Tor Configuration Reference", comment: "")
 	}
 
-	static var maintenance: String {
-		NSLocalizedString("Maintenance", comment: "")
+	static var total: String {
+		NSLocalizedString("Total", comment: "")
 	}
 
-	static var clearTorCache: String {
-		NSLocalizedString("Clear Tor Cache", comment: "")
+	static var toUpgradeEnableUPnP: String {
+		NSLocalizedString("To upgrade, enable UPnP on your Wi-Fi router for this device.", comment: "")
 	}
 
-	static var cleared: String {
-		NSLocalizedString("Cleared!", comment: "")
+	static var upgradeYourSnowflakeProxy: String {
+		NSLocalizedString("Upgrade your Snowflake Proxy", comment: "")
 	}
 
-	static var expert: String {
-		NSLocalizedString("Expert", comment: "")
-	}
-
-	static var smartConnectTimeout: String {
-		NSLocalizedString("Smart Connect Timeout (s)", comment: "")
-	}
-
-	static var kindnessMode: String {
-		NSLocalizedString("Kindness Mode", comment: "")
-	}
-
-	static var enabled: String {
-		NSLocalizedString("Enabled", comment: "")
-	}
-
-	static var disabled: String {
-		NSLocalizedString("Disabled", comment: "")
-	}
-
-	static var proxyQuality: String {
-		NSLocalizedString("Proxy Quality", comment: "")
-	}
-
-	static var proxyQualityType: [String: String] = [
-		IPtProxyNATUnknown: NSLocalizedString("unknown", comment: "IPtProxyNATUnknown"),
-		IPtProxyNATRestricted: NSLocalizedString("restricted", comment: "IPtProxyNATRestricted"),
-		IPtProxyNATUnrestricted: NSLocalizedString("unrestricted", comment: "IPtProxyNATUnrestricted")
-	]
-
-	static var yourImpactInNumbers: String {
-		NSLocalizedString("Your Impact in Numbers", comment: "")
-	}
-
-	static var welcomeKindnessMode: String {
-		NSLocalizedString("Welcome to Kindness Mode", comment: "")
-	}
-
-	static var kindnessModeDescription: String {
-		NSLocalizedString(
-			"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.",
-			comment: "")
-	}
-
-	static var censoredCountryWarning: String {
-		NSLocalizedString("Do not use Kindness Mode if you live in a highly censored country.", comment: "")
+	static var version: String {
+		String(format: NSLocalizedString("Version %@, Build %@", comment: ""),
+			   Bundle.main.version, Bundle.main.build)
 	}
 
 	static var vpnWillBeSwitchedOff: String {
@@ -283,46 +313,16 @@ class L10n {
 			   "•", Bundle.main.displayName)
 	}
 
-	static var thisWeek: String {
-		NSLocalizedString("This Week", comment: "")
+	static var warning: String {
+		NSLocalizedString("Warning", comment: "")
 	}
 
-	static var total: String {
-		NSLocalizedString("Total", comment: "")
-	}
-
-	static var testingQuality: String {
-		NSLocalizedString("Testing Quality", comment: "")
-	}
-
-	static var upgradeYourSnowflakeProxy: String {
-		NSLocalizedString("Upgrade your Snowflake Proxy", comment: "")
-	}
-
-	static var yourProxyCanBeMorePowerful: String {
-		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on Wi-Fi.", comment: "")
-	}
-
-	static var toUpgradeEnableUPnP: String {
-		NSLocalizedString("To upgrade, enable UPnP on your Wi-Fi router for this device.", comment: "")
-	}
-
-	static var pleaseWaitWhileWeCheck: String {
-		NSLocalizedString(
-			"Please wait while we check to see if you can run an effective proxy.",
-			comment: "")
-	}
-
-	static var approved: String {
-		NSLocalizedString("Approved", comment: "")
+	static var welcomeKindnessMode: String {
+		NSLocalizedString("Welcome to Kindness Mode", comment: "")
 	}
 
 	static var youAreaGreatCandidate: String {
 		NSLocalizedString("You are a great candidate for becoming a Snowflake Proxy on the Tor network.", comment: "")
-	}
-
-	static var notApproved: String {
-		NSLocalizedString("Not Approved", comment: "")
 	}
 
 	static var youCannotBeaUsefulSnowflakeProxy: String {
@@ -331,12 +331,12 @@ class L10n {
 			comment: "")
 	}
 
-	static var doNotUseKindnessMode: String {
-		NSLocalizedString("Do not use Kindness Mode, if the Internet in your country is heavily censored.", comment: "")
+	static var yourImpactInNumbers: String {
+		NSLocalizedString("Your Impact in Numbers", comment: "")
 	}
 
-	static var cancel: String {
-		NSLocalizedString("Cancel", comment: "")
+	static var yourProxyCanBeMorePowerful: String {
+		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on Wi-Fi.", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [
