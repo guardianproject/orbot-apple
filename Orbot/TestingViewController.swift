@@ -29,9 +29,15 @@ class TestingViewController: UIViewController {
 		}
 	}
 
+	@IBOutlet weak var titleLb: UILabel! {
+		didSet {
+			titleLb.text = NSLocalizedString("Testing Connection", comment: "")
+		}
+	}
+
 	@IBOutlet weak var explanationLb: UILabel! {
 		didSet {
-			explanationLb.text = L10n.beforeYouBecomeaSnowflakeProxy
+			explanationLb.text = L10n.pleaseWaitWhileWeCheck
 		}
 	}
 
@@ -71,15 +77,9 @@ class TestingViewController: UIViewController {
 		}
 	}
 
-	@IBOutlet weak var failWarningLb: UILabel! {
-		didSet {
-			failWarningLb.text = L10n.doNotUseKindnessMode
-		}
-	}
-
 	@IBOutlet weak var mainBt: UIButton! {
 		didSet {
-			mainBt.setTitle(L10n.cancel)
+			mainBt.setTitle(NSLocalizedString("Stop Test", comment: ""))
 		}
 	}
 
@@ -87,7 +87,7 @@ class TestingViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = L10n.testingQuality
+		navigationItem.title = NSLocalizedString("Activate Kindness Mode", comment: "")
 
 		Task {
 			if await ProxyQualityTest().evaluate() {

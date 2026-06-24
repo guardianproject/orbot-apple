@@ -40,9 +40,6 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ will auf %2$@ zugreifen.";
 
-/* Placeholder is '✅' */
-"%@ Approved" = "%@ Genehmigt";
-
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Argumente einer Option müssen in einer neue Zeile stehen.";
 
@@ -57,9 +54,6 @@
 
 /* Placeholder is bullet */
 "%@ It will not slow down your internet." = "%@ Wird dein Internet nicht verlangsamen.";
-
-/* Placeholder is '🚫' */
-"%@ Not Approved" = "%@ Nicht genehmigt";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ Status";
@@ -158,6 +152,9 @@
 "App Icon" = "App-Symbol";
 
 /* No comment provided by engineer. */
+"Approved" = "Genehmigt";
+
+/* No comment provided by engineer. */
 "Ask Tor" = "Frag Tor";
 
 /* No comment provided by engineer. */
@@ -180,9 +177,6 @@
 
 /* No comment provided by engineer. */
 "Automatically Restart on Error" = "Starte bei Fehlern automatisch neu";
-
-/* No comment provided by engineer. */
-"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Bevor du ein Snowflake Proxy werden kannst, müssen wir erst sehen, ob du ein effektiver Proxy sein kannst. Bitte warten, solange wir das prüfen.";
 
 /* No comment provided by engineer. */
 "Block cookies" = "Blockiere Cookies";
@@ -512,6 +506,9 @@
 "Node Configuration" = "Netzknoten-Konfiguration";
 
 /* No comment provided by engineer. */
+"Not Approved" = "Nicht genehmigt";
+
+/* No comment provided by engineer. */
 "Not Installed" = "Nicht installiert";
 
 /* No comment provided by engineer. */
@@ -558,6 +555,9 @@
 
 /* No comment provided by engineer. */
 "Please report this error to the requesting app's developers." = "Bitte kläre diesen Fehler mit den Entwicklern der anfordernden App.";
+
+/* No comment provided by engineer. */
+"Please wait while we check to see if you can run an effective proxy." = "Bitte warten, solange wir prüfen, ob du ein effektiver Proxy sein kannst.";
 
 /* No comment provided by engineer. */
 "popups" = "Popups";
@@ -656,6 +656,9 @@
 "Stop Speaking" = "Sprachausgabe stoppen";
 
 /* No comment provided by engineer. */
+"Stop Test" = "Stoppe Test";
+
+/* No comment provided by engineer. */
 "style sheets" = "Style Sheets";
 
 /* No comment provided by engineer. */
@@ -666,6 +669,9 @@
 
 /* No comment provided by engineer. */
 "Test Connection" = "Teste Verbindung";
+
+/* No comment provided by engineer. */
+"Testing Connection" = "Verbindung testen";
 
 /* No comment provided by engineer. */
 "Testing Quality" = "Teste Qualität";

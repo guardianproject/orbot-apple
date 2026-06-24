@@ -31,7 +31,7 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 
 	@IBOutlet weak var explanationLb: NSTextField! {
 		didSet {
-			explanationLb.stringValue = L10n.beforeYouBecomeaSnowflakeProxy
+			explanationLb.stringValue = L10n.pleaseWaitWhileWeCheck
 		}
 	}
 

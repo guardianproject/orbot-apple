@@ -40,9 +40,6 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ wants to access %2$@.";
 
-/* Placeholder is '✅' */
-"%@ Approved" = "%@ Approved";
-
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
 
@@ -57,9 +54,6 @@
 
 /* Placeholder is bullet */
 "%@ It will not slow down your internet." = "%@ It will not slow down your internet.";
-
-/* Placeholder is '🚫' */
-"%@ Not Approved" = "%@ Not Approved";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ Status";
@@ -158,6 +152,9 @@
 "App Icon" = "App Icon";
 
 /* No comment provided by engineer. */
+"Approved" = "Approved";
+
+/* No comment provided by engineer. */
 "Ask Tor" = "Ask Tor";
 
 /* No comment provided by engineer. */
@@ -180,9 +177,6 @@
 
 /* No comment provided by engineer. */
 "Automatically Restart on Error" = "Automatically Restart on Error";
-
-/* No comment provided by engineer. */
-"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.";
 
 /* No comment provided by engineer. */
 "Block cookies" = "Block cookies";
@@ -512,6 +506,9 @@
 "Node Configuration" = "Node Configuration";
 
 /* No comment provided by engineer. */
+"Not Approved" = "Not Approved";
+
+/* No comment provided by engineer. */
 "Not Installed" = "Not Installed";
 
 /* No comment provided by engineer. */
@@ -558,6 +555,9 @@
 
 /* No comment provided by engineer. */
 "Please report this error to the requesting app's developers." = "Please report this error to the requesting app's developers.";
+
+/* No comment provided by engineer. */
+"Please wait while we check to see if you can run an effective proxy." = "Please wait while we check to see if you can run an effective proxy.";
 
 /* No comment provided by engineer. */
 "popups" = "popups";
@@ -656,6 +656,9 @@
 "Stop Speaking" = "Stop Speaking";
 
 /* No comment provided by engineer. */
+"Stop Test" = "Stop Test";
+
+/* No comment provided by engineer. */
 "style sheets" = "style sheets";
 
 /* No comment provided by engineer. */
@@ -666,6 +669,9 @@
 
 /* No comment provided by engineer. */
 "Test Connection" = "Test Connection";
+
+/* No comment provided by engineer. */
+"Testing Connection" = "Testing Connection";
 
 /* No comment provided by engineer. */
 "Testing Quality" = "Testing Quality";

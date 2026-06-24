@@ -307,14 +307,14 @@ class L10n {
 		NSLocalizedString("To upgrade, enable UPnP on your Wi-Fi router for this device.", comment: "")
 	}
 
-	static var beforeYouBecomeaSnowflakeProxy: String {
+	static var pleaseWaitWhileWeCheck: String {
 		NSLocalizedString(
-			"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.",
+			"Please wait while we check to see if you can run an effective proxy.",
 			comment: "")
 	}
 
 	static var approved: String {
-		String(format: NSLocalizedString("%@ Approved", comment: "Placeholder is '✅'"), "✅")
+		NSLocalizedString("Approved", comment: "")
 	}
 
 	static var youAreaGreatCandidate: String {
@@ -322,7 +322,7 @@ class L10n {
 	}
 
 	static var notApproved: String {
-		String(format: NSLocalizedString("%@ Not Approved", comment: "Placeholder is '🚫'"), "🚫")
+		NSLocalizedString("Not Approved", comment: "")
 	}
 
 	static var youCannotBeaUsefulSnowflakeProxy: String {
