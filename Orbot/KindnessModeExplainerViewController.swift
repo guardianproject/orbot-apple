@@ -15,7 +15,7 @@ class KindnessModeExplainerViewController: UIViewController, UITableViewDataSour
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
-			titleLb.text = String(format: NSLocalizedString("About Running Kindness Mode on %@", comment: ""), "iOS")
+			titleLb.text = L10n.aboutRunningKindnessMode
 		}
 	}
 
@@ -23,7 +23,7 @@ class KindnessModeExplainerViewController: UIViewController, UITableViewDataSour
 
 	@IBOutlet weak var continueBt: UIButton! {
 		didSet {
-			continueBt.setTitle(NSLocalizedString("Continue", comment: ""))
+			continueBt.setTitle(L10n.cont)
 		}
 	}
 
@@ -38,19 +38,19 @@ class KindnessModeExplainerViewController: UIViewController, UITableViewDataSour
 	]
 
 	private lazy var texts = [
-		{ String(format: NSLocalizedString("Keep %@ open for Kindness Mode to work.", comment: "Placeholder is 'Orbot'"), Bundle.main.displayName) },
-		{ NSLocalizedString("Your screen will dim to minimize power usage.", comment: "") },
-		{ NSLocalizedString("We recommend charging the device when running Kindness Mode.", comment: "") },
-		{ NSLocalizedString("You can also turn the device face down to minimize power usage. Kindness Mode will continue to run.", comment: "") },
-		{ NSLocalizedString("Turn off Kindness Mode when you use a VPN on this device.", comment: "") },
-		{ String(format: NSLocalizedString("%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.", comment: "Placeholder is 'Orbot'"), Bundle.main.displayName) },
+		{ L10n.keepOrbotOpen },
+		{ L10n.yourScreenWillDim },
+		{ L10n.weRecommendCharging },
+		{ L10n.youCanAlsoTurnTheDeviceFaceDown },
+		{ L10n.turnOffKindnessMode },
+		{ L10n.orbotVpnWillAutomaticallyTurnOff },
 	]
 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Activate Kindness Mode", comment: "")
+		navigationItem.title = L10n.activateKindnessMode
 	}
 
 

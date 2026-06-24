@@ -14,16 +14,13 @@ class TestExplainerViewController: UIViewController, UITableViewDataSource {
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
-			titleLb.text = NSLocalizedString("Test Connection", comment: "")
+			titleLb.text = L10n.testConnection
 		}
 	}
 
 	@IBOutlet weak var descriptionLb: UILabel! {
 		didSet {
-			descriptionLb.text = String(
-				format: NSLocalizedString("%@ will test your connection to determine if you can be a Snowflake Proxy for others.",
-										  comment: "Placeholder is 'Orbot'"),
-				Bundle.main.displayName)
+			descriptionLb.text = L10n.orbotWillTestYourConnection
 		}
 	}
 
@@ -31,7 +28,7 @@ class TestExplainerViewController: UIViewController, UITableViewDataSource {
 
 	@IBOutlet weak var safetyLb: UILabel! {
 		didSet {
-			safetyLb.text = NSLocalizedString("I acknowledge I have read the above.", comment: "")
+			safetyLb.text = L10n.iAcknowledgeIHaveReadTheAbove
 		}
 	}
 
@@ -39,7 +36,7 @@ class TestExplainerViewController: UIViewController, UITableViewDataSource {
 
 	@IBOutlet weak var continueBt: UIButton! {
 		didSet {
-			continueBt.setTitle(NSLocalizedString("Test Connection", comment: ""))
+			continueBt.setTitle(L10n.testConnection)
 		}
 	}
 
@@ -50,15 +47,15 @@ class TestExplainerViewController: UIViewController, UITableViewDataSource {
 	]
 
 	private lazy var texts = [
-		{ NSLocalizedString("The test will try to connect directly to the Tor network.", comment: "") },
-		{ NSLocalizedString("If you are using Tor bridges, they will temporarily be disconnected.", comment: "") },
+		{ L10n.theTestWillTryToConnectDirectly },
+		{ L10n.ifYouAreUsingTorBridges },
 	]
 
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Activate Kindness Mode", comment: "")
+		navigationItem.title = L10n.activateKindnessMode
 	}
 
 

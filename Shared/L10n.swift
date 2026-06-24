@@ -11,8 +11,22 @@ import IPtProxy
 
 class L10n {
 
+	static var aboutRunningKindnessMode: String {
+#if os(macOS)
+		let os = "macOS"
+#else
+		let os = "iOS"
+#endif
+
+		return String(format: NSLocalizedString("About Running Kindness Mode on %@", comment: "Placeholder is 'iOS' or 'macOS'"), os)
+	}
+
 	static var activate: String {
 		NSLocalizedString("Activate", comment: "")
+	}
+
+	static var activateKindnessMode: String {
+		NSLocalizedString("Activate Kindness Mode", comment: "")
 	}
 
 	static var add: String {
@@ -73,6 +87,10 @@ class L10n {
 
 	static var clearTorCache: String {
 		NSLocalizedString("Clear Tor Cache", comment: "")
+	}
+
+	static var cont: String {
+		NSLocalizedString("Continue", comment: "")
 	}
 
 	static var delete: String {
@@ -143,12 +161,24 @@ class L10n {
 		NSLocalizedString("General", comment: "")
 	}
 
+	static var iAcknowledgeIHaveReadTheAbove: String {
+		NSLocalizedString("I acknowledge I have read the above.", comment: "")
+	}
+
+	static var ifYouAreUsingTorBridges: String {
+		NSLocalizedString("If you are using Tor bridges, they will temporarily be disconnected.", comment: "")
+	}
+
 	static var isolateDestAddr: String {
 		NSLocalizedString("Isolate Destination Addresses", comment: "")
 	}
 
 	static var isolateDestAddrDescription: String {
 		NSLocalizedString("Use different circuits for different destination addresses.", comment: "")
+	}
+
+	static var keepOrbotOpen: String {
+		String(format: NSLocalizedString("Keep %@ open for Kindness Mode to work.", comment: "Placeholder is 'Orbot'"), Bundle.main.displayName)
 	}
 
 	static var key: String {
@@ -191,6 +221,17 @@ class L10n {
 
 	static var onionOnlyMode: String {
 		NSLocalizedString("Onion-only Mode", comment: "")
+	}
+
+	static var orbotVpnWillAutomaticallyTurnOff: String {
+		String(format: NSLocalizedString("%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.", comment: "Placeholder is 'Orbot'"), Bundle.main.displayName)
+	}
+
+	static var orbotWillTestYourConnection: String {
+		String(
+			format: NSLocalizedString("%@ will test your connection to determine if you can be a Snowflake Proxy for others.",
+									  comment: "Placeholder is 'Orbot'"),
+			Bundle.main.displayName)
 	}
 
 	static var pleaseWaitWhileWeCheck: String {
@@ -273,12 +314,28 @@ class L10n {
 		NSLocalizedString("Smart Connect Timeout (s)", comment: "")
 	}
 
+	static var stopTest: String {
+		NSLocalizedString("Stop Test", comment: "")
+	}
+
 	static var switchBackToLastUsedVpnAfterStop: String {
 		NSLocalizedString("Switch back to last used VPN after stop", comment: "")
 	}
 
+	static var testConnection: String {
+		NSLocalizedString("Test Connection", comment: "")
+	}
+
+	static var testingConnection: String {
+		NSLocalizedString("Testing Connection", comment: "")
+	}
+
 	static var testingQuality: String {
 		NSLocalizedString("Testing Quality", comment: "")
+	}
+
+	static var theTestWillTryToConnectDirectly: String {
+		NSLocalizedString("The test will try to connect directly to the Tor network.", comment: "")
 	}
 
 	static var thisWeek: String {
@@ -295,6 +352,10 @@ class L10n {
 
 	static var toUpgradeEnableUPnP: String {
 		NSLocalizedString("To upgrade, enable UPnP on your Wi-Fi router for this device.", comment: "")
+	}
+
+	static var turnOffKindnessMode: String {
+		NSLocalizedString("Turn off Kindness Mode when you use a VPN on this device.", comment: "")
 	}
 
 	static var upgradeYourSnowflakeProxy: String {
@@ -321,8 +382,16 @@ class L10n {
 		NSLocalizedString("Welcome to Kindness Mode", comment: "")
 	}
 
+	static var weRecommendCharging: String {
+		NSLocalizedString("We recommend charging the device when running Kindness Mode.", comment: "")
+	}
+
 	static var youAreaGreatCandidate: String {
 		NSLocalizedString("You are a great candidate for becoming a Snowflake Proxy on the Tor network.", comment: "")
+	}
+
+	static var youCanAlsoTurnTheDeviceFaceDown: String {
+		NSLocalizedString("You can also turn the device face down to minimize power usage. Kindness Mode will continue to run.", comment: "")
 	}
 
 	static var youCannotBeaUsefulSnowflakeProxy: String {
@@ -337,6 +406,10 @@ class L10n {
 
 	static var yourProxyCanBeMorePowerful: String {
 		NSLocalizedString("Your proxy can be more powerful when kindness mode is running on Wi-Fi.", comment: "")
+	}
+
+	static var yourScreenWillDim: String {
+		NSLocalizedString("Your screen will dim to minimize power usage.", comment: "")
 	}
 
 	static let menu: [String: () -> String] = [

@@ -38,7 +38,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var continueBt: UIButton! {
 		didSet {
-			continueBt.setTitle(NSLocalizedString("Continue", comment: ""), for: .normal)
+			continueBt.setTitle(L10n.cont)
 		}
 	}
 

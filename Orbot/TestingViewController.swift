@@ -31,7 +31,7 @@ class TestingViewController: UIViewController {
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
-			titleLb.text = NSLocalizedString("Testing Connection", comment: "")
+			titleLb.text = L10n.testingConnection
 		}
 	}
 
@@ -79,7 +79,7 @@ class TestingViewController: UIViewController {
 
 	@IBOutlet weak var mainBt: UIButton! {
 		didSet {
-			mainBt.setTitle(NSLocalizedString("Stop Test", comment: ""))
+			mainBt.setTitle(L10n.stopTest)
 		}
 	}
 
@@ -87,7 +87,7 @@ class TestingViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		navigationItem.title = NSLocalizedString("Activate Kindness Mode", comment: "")
+		navigationItem.title = L10n.activateKindnessMode
 
 		Task {
 			if await ProxyQualityTest().evaluate() {
@@ -95,7 +95,7 @@ class TestingViewController: UIViewController {
 					testingContainer.isHidden = true
 					successContainer.isHidden = false
 					failContainer.isHidden = true
-					mainBt.setTitle(NSLocalizedString("Continue", comment: ""))
+					mainBt.setTitle(L10n.cont)
 
 					testSucceeded = true
 				}
