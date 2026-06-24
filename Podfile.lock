@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - Eureka (~> 5.5)
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - IPtProxyUI/AppEx (~> 5.3)
+  - IPtProxyUI/AppEx (~> 5.4)
   - ProgressHUD (~> 14.1)
   - Tor/GeoIP-NoLZMA (~> 409.10)
 
@@ -46,6 +46,6 @@ SPEC CHECKSUMS:
   ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   Tor: 1dd335893175610967a943796abba233ea35e33f
 
-PODFILE CHECKSUM: 816e99704a262ee8fbf9004f259dd76e5ff79ae4
+PODFILE CHECKSUM: af0dd0c51d93f283d045b5a3ce4b58ae232b362d
 
 COCOAPODS: 1.16.2
