@@ -67,6 +67,9 @@
 /* Placeholder is 'Orbot' */
 "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.";
 
+/* Placeholder is 'Orbot' */
+"%@ will test your connection to determine if you can be a Snowflake Proxy for others." = "%@ will test your connection to determine if you can be a Snowflake Proxy for others.";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -428,7 +431,13 @@
 "Host" = "Host";
 
 /* No comment provided by engineer. */
+"I acknowledge I have read the above." = "I acknowledge I have read the above.";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!";
+
+/* No comment provided by engineer. */
+"If you are using Tor bridges, they will temporarily be disconnected." = "If you are using Tor bridges, they will temporarily be disconnected.";
 
 /* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!";
@@ -656,6 +665,9 @@
 "Switch back to last used VPN after stop" = "Switch back to last used VPN after stop";
 
 /* No comment provided by engineer. */
+"Test Connection" = "Test Connection";
+
+/* No comment provided by engineer. */
 "Testing Quality" = "Testing Quality";
 
 /* No comment provided by engineer. */
@@ -666,6 +678,9 @@
 
 /* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "The best way to connect to Tor. Use if Tor is not blocked.";
+
+/* No comment provided by engineer. */
+"The test will try to connect directly to the Tor network." = "The test will try to connect directly to the Tor network.";
 
 /* No comment provided by engineer. */
 "the website" = "the website";

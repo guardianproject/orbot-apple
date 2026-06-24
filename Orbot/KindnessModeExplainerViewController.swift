@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KindnessModeExplainerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class KindnessModeExplainerViewController: UIViewController, UITableViewDataSource {
 
 	protocol Delegate: AnyObject {
 
@@ -66,7 +66,7 @@ class KindnessModeExplainerViewController: UIViewController, UITableViewDelegate
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "KindnessModeExplainerCell", for: indexPath) as? KindnessModeExplainerCell else {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExplainerCell", for: indexPath) as? ExplainerCell else {
 			return UITableViewCell()
 		}
 		
@@ -76,9 +76,10 @@ class KindnessModeExplainerViewController: UIViewController, UITableViewDelegate
 
 	// MARK: Actions
 
-	@IBAction func dismiss() {
-		dismiss(animated: true) { [weak self] in
-			self?.delegate?.explainFinished()
-		}
+	@IBAction func next() {
+		let vc = UIStoryboard.main.instantiateViewController(TestExplainerViewController.self)
+		vc.delegate = delegate
+
+		navigationController?.setViewControllers([vc], animated: true)
 	}
 }

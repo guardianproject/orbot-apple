@@ -1,5 +1,5 @@
 //
-//  KindnessModeExplainerCell.swift
+//  ExplainerCell.swift
 //  Orbot
 //
 //  Created by Benjamin Erhart on 23.06.26.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KindnessModeExplainerCell: UITableViewCell {
+class ExplainerCell: UITableViewCell {
 
 	@IBOutlet weak var iconIv: UIImageView!
 

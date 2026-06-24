@@ -82,7 +82,7 @@
 		A03394EF2A45CF8200012811 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A03394F02A45E5DF00012811 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A00F5134274545BC0037DD4A /* Localizable.strings */; };
 		A035BE7E2FEAE953004DC596 /* KindnessModeExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035BE7D2FEAE953004DC596 /* KindnessModeExplainerViewController.swift */; };
-		A035BE802FEAEF3A004DC596 /* KindnessModeExplainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035BE7F2FEAEF3A004DC596 /* KindnessModeExplainerCell.swift */; };
+		A035BE802FEAEF3A004DC596 /* ExplainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A035BE7F2FEAEF3A004DC596 /* ExplainerCell.swift */; };
 		A036701E292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A036701F292E70D60012C84A /* exit-node-countries.plist in Resources */ = {isa = PBXBuildFile; fileRef = A036701D292E70D60012C84A /* exit-node-countries.plist */; };
 		A03CFBB428B4CB0200D7A700 /* NSScrollView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */; };
@@ -248,6 +248,7 @@
 		A0CC771F29A79E1B0053CB53 /* AccessRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC771E29A79E1B0053CB53 /* AccessRequestViewController.swift */; };
 		A0CC772329A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC772229A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift */; };
 		A0D0F1032A14F54500293A1A /* RemoteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D0F1022A14F54500293A1A /* RemoteControl.swift */; };
+		A0D368F72FEC10710014FD49 /* TestExplainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D368F62FEC10710014FD49 /* TestExplainerViewController.swift */; };
 		A0D6162827D8E4AA008E0F3C /* Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6162727D8E4AA008E0F3C /* Screenshots.swift */; };
 		A0D6163127D8E4EA008E0F3C /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */; };
 		A0D8103E2F9119E2000D407F /* TestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8103D2F9119E2000D407F /* TestingViewController.swift */; };
@@ -494,7 +495,7 @@
 		A033CD462E40F5C30075E20A /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A033CD472E40F5C40075E20A /* fa */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fa; path = fa.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A035BE7D2FEAE953004DC596 /* KindnessModeExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeExplainerViewController.swift; sourceTree = "<group>"; };
-		A035BE7F2FEAEF3A004DC596 /* KindnessModeExplainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeExplainerCell.swift; sourceTree = "<group>"; };
+		A035BE7F2FEAEF3A004DC596 /* ExplainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerCell.swift; sourceTree = "<group>"; };
 		A036701D292E70D60012C84A /* exit-node-countries.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "exit-node-countries.plist"; sourceTree = "<group>"; };
 		A0367840274E5E8000344B7F /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		A03CBDA32F3C9B7500B22D96 /* .weblate */ = {isa = PBXFileReference; lastKnownFileType = text; path = .weblate; sourceTree = "<group>"; };
@@ -593,6 +594,7 @@
 		A0CC772229A7B8080053CB53 /* NSMutableAttributedString+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Helpers.swift"; sourceTree = "<group>"; };
 		A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Orbot-Mac-Info.plist"; path = "Orbot Mac/Orbot-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A0D0F1022A14F54500293A1A /* RemoteControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteControl.swift; sourceTree = "<group>"; };
+		A0D368F62FEC10710014FD49 /* TestExplainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExplainerViewController.swift; sourceTree = "<group>"; };
 		A0D6162527D8E4AA008E0F3C /* Screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D6162727D8E4AA008E0F3C /* Screenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshots.swift; sourceTree = "<group>"; };
 		A0D6163027D8E4EA008E0F3C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
@@ -653,22 +655,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A03CBDF62F3CA9D900B22D96 /* docs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = docs;
 			sourceTree = "<group>";
 		};
 		A04FFDE42EFAD5380094AEFA /* bin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = bin;
 			sourceTree = "<group>";
 		};
 		A05DB2F32FD97CF4009D2949 /* Orbot Mac-sys */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "Orbot Mac-sys";
 			sourceTree = "<group>";
 		};
@@ -899,7 +895,8 @@
 				A0B07B192E86D55600275BF7 /* ProxySettingsViewController.swift */,
 				A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */,
 				A035BE7D2FEAE953004DC596 /* KindnessModeExplainerViewController.swift */,
-				A035BE7F2FEAEF3A004DC596 /* KindnessModeExplainerCell.swift */,
+				A035BE7F2FEAEF3A004DC596 /* ExplainerCell.swift */,
+				A0D368F62FEC10710014FD49 /* TestExplainerViewController.swift */,
 				A0D8103D2F9119E2000D407F /* TestingViewController.swift */,
 				A0EF119A28043EF200A03017 /* ContentBlocker */,
 				A01AB60F28A54531008A79EE /* Helpers */,
@@ -1533,9 +1530,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1550,9 +1551,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1567,9 +1572,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1606,9 +1615,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1623,9 +1636,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1722,9 +1739,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1739,9 +1760,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1822,9 +1847,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1861,9 +1890,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1878,9 +1911,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2008,6 +2045,7 @@
 				A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */,
 				A0B167DE284F90560089EB7C /* ApiAccessCell.swift in Sources */,
 				A05DCD06297198540017B36A /* CustomBridgesViewController.swift in Sources */,
+				A0D368F72FEC10710014FD49 /* TestExplainerViewController.swift in Sources */,
 				A0BBF1A927D77B18005BBA3A /* SettingsViewController.swift in Sources */,
 				A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */,
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
@@ -2015,7 +2053,7 @@
 				A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
 				A0F4E9D42E2808A80074BB28 /* UIApplication+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
-				A035BE802FEAEF3A004DC596 /* KindnessModeExplainerCell.swift in Sources */,
+				A035BE802FEAEF3A004DC596 /* ExplainerCell.swift in Sources */,
 				A0E471452FAB540500633EC2 /* ProxyQualityTest.swift in Sources */,
 				A05B73B824755CE600930C40 /* MainViewController.swift in Sources */,
 				A08CA43B29ACE76400B01C1F /* Color.swift in Sources */,

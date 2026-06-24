@@ -67,6 +67,9 @@
 /* Placeholder is 'Orbot' */
 "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN wird automatisch deaktiviert, wenn der Unterstützungsmodus aktiviert wird. Beide Funktionen können nicht gleichzeitig ausgeführt werden.";
 
+/* Placeholder is 'Orbot' */
+"%@ will test your connection to determine if you can be a Snowflake Proxy for others." = "%@ testet Deine Verbindung, um festzustellen, ob Du als Snowflake-Proxy für andere fungieren kannst.";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -428,7 +431,13 @@
 "Host" = "Host";
 
 /* No comment provided by engineer. */
+"I acknowledge I have read the above." = "Ich bestätige, dass ich den obigen Text gelesen habe.";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Wenn diese Onion-Services nicht korrekt konfiguriert sind, werden Informationen über dein Surfverhalten an deinen Internet Service Provider und jeden Anderen, der diesen Datenverkehr mitliest, gelangen.";
+
+/* No comment provided by engineer. */
+"If you are using Tor bridges, they will temporarily be disconnected." = "Wenn Du Tor-Brücken verwendest, werden diese vorübergehend getrennt.";
 
 /* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Wenn du willst, daß die App %1$@ automatisch stoppen kann, geh bitte zurück in diese App und laß sie den Authorisierungsprozess erneut starten!";
@@ -656,6 +665,9 @@
 "Switch back to last used VPN after stop" = "Nach dem Beenden zum zuletzt verwendeten VPN zurückwechseln";
 
 /* No comment provided by engineer. */
+"Test Connection" = "Teste Verbindung";
+
+/* No comment provided by engineer. */
 "Testing Quality" = "Teste Qualität";
 
 /* No comment provided by engineer. */
@@ -666,6 +678,9 @@
 
 /* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "Der beste Weg, um sich mit Tor zu verbinden. Wenn Tor nicht blockiert wird.";
+
+/* No comment provided by engineer. */
+"The test will try to connect directly to the Tor network." = "Der Test versucht, eine direkte Verbindung zum Tor-Netzwerk herzustellen.";
 
 /* No comment provided by engineer. */
 "the website" = "der Webseite";
