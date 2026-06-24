@@ -10,12 +10,7 @@ import UIKit
 
 class KindnessModeExplainerViewController: UIViewController, UITableViewDataSource {
 
-	protocol Delegate: AnyObject {
-
-		func explainFinished()
-	}
-
-	weak var delegate: Delegate?
+	weak var delegate: TestingViewController.Delegate?
 
 
 	@IBOutlet weak var titleLb: UILabel! {

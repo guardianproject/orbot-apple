@@ -10,7 +10,7 @@ import UIKit
 
 class TestExplainerViewController: UIViewController, UITableViewDataSource {
 
-	weak var delegate: KindnessModeExplainerViewController.Delegate?
+	weak var delegate: TestingViewController.Delegate?
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
@@ -88,8 +88,9 @@ class TestExplainerViewController: UIViewController, UITableViewDataSource {
 			return
 		}
 
-		dismiss(animated: true) { [weak self] in
-			self?.delegate?.explainFinished()
-		}
+		let vc = UIStoryboard.main.instantiateViewController(TestingViewController.self)
+		vc.delegate = delegate
+
+		navigationController?.setViewControllers([vc], animated: true)
 	}
 }

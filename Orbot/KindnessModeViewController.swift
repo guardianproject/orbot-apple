@@ -11,7 +11,7 @@ import IPtProxy
 import IPtProxyUI
 
 class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol,
-									TestingViewController.Delegate, KindnessModeExplainerViewController.Delegate
+									TestingViewController.Delegate
 {
 
 	// MARK: Outlets
@@ -147,7 +147,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 //#endif
 
 		guard Settings.lastSnowflakeQualityCheckValid else {
-			return showExplainer()
+			return runTest()
 		}
 
 		Settings.hideInitialKindnessScene = true
@@ -263,13 +263,6 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	}
 
 
-	// MARK: KindnessModeExplainerViewController.Delegate
-
-	func explainFinished() {
-		runTest()
-	}
-
-
 	// MARK: TestingViewController.Delegate
 
 	func finished(success: Bool) {
@@ -351,15 +344,8 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
-	private func showExplainer() {
-		let vc = UIStoryboard.main.instantiateViewController(KindnessModeExplainerViewController.self)
-		vc.delegate = self
-
-		present(inNav: vc, view: continueBt)
-	}
-
 	private func runTest() {
-		let vc = UIStoryboard.main.instantiateViewController(TestingViewController.self)
+		let vc = UIStoryboard.main.instantiateViewController(KindnessModeExplainerViewController.self)
 		vc.delegate = self
 
 		present(inNav: vc, view: continueBt)
