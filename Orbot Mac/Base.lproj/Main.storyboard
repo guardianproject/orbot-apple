@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24765"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
@@ -763,8 +762,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activateBt" destination="5NK-pD-H6F" id="a3X-s2-7nE"/>
-                        <outlet property="description2Lb" destination="NbW-jd-7c6" id="Zox-B4-amg"/>
+                        <outlet property="censoredCountryWarningLb" destination="NbW-jd-7c6" id="Zox-B4-amg"/>
+                        <outlet property="continueBt" destination="5NK-pD-H6F" id="a3X-s2-7nE"/>
                         <outlet property="descriptionLb" destination="bYz-9f-cwe" id="zP5-Ic-drG"/>
                         <outlet property="iconIv" destination="fsk-Bf-68t" id="kxa-T5-Jhl"/>
                         <outlet property="iconStartedIv" destination="t6A-R2-H6X" id="2dT-7i-ysP"/>
@@ -970,7 +969,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <clipView key="contentView" id="zw2-bM-rhG">
                                     <rect key="frame" x="1" y="1" width="478" height="268"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView selectable="YES" id="FnM-bE-cyp">
                                             <rect key="frame" x="0.0" y="0.0" width="478" height="268"/>
@@ -1024,7 +1023,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" id="VuA-0i-nCd">
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="24" headerView="hiE-8x-h9M" id="mw6-kf-fau">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="270"/>
@@ -2115,7 +2114,7 @@ Gw
                                 <rect key="frame" x="0.0" y="0.0" width="492" height="218"/>
                                 <clipView key="contentView" drawsBackground="NO" id="f7k-IN-lEw">
                                     <rect key="frame" x="0.0" y="0.0" width="475" height="218"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="BeW-4a-IF5">
                                             <rect key="frame" x="0.0" y="0.0" width="475" height="218"/>

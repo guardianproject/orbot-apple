@@ -23,7 +23,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var titleLb: NSTextField! {
 		didSet {
-			titleLb.stringValue = L10n.helpOthers
+			titleLb.stringValue = L10n.welcomeKindnessMode
 		}
 	}
 
@@ -33,10 +33,10 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
-	@IBOutlet weak var description2Lb: NSTextField! {
+	@IBOutlet weak var censoredCountryWarningLb: NSTextField! {
 		didSet {
 			if #available(macOS 12, *),
-			   let attributedString = try? NSMutableAttributedString(markdown: L10n.kindnessModeDescription2)
+			   let attributedString = try? NSMutableAttributedString(markdown: L10n.censoredCountryWarning)
 			{
 				let range = NSRange(attributedString.string.startIndex..., in: attributedString.string)
 
@@ -50,10 +50,10 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 				attributedString.addAttribute(.paragraphStyle, value: ps, range: range)
 
-				description2Lb.attributedStringValue = attributedString
+				censoredCountryWarningLb.attributedStringValue = attributedString
 			}
 			else {
-				description2Lb.stringValue = L10n.kindnessModeDescription2
+				censoredCountryWarningLb.stringValue = L10n.censoredCountryWarning
 			}
 		}
 	}
@@ -89,9 +89,9 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
-	@IBOutlet weak var activateBt: NSButton! {
+	@IBOutlet weak var continueBt: NSButton! {
 		didSet {
-			activateBt.title = L10n.activate
+			continueBt.title = L10n.activate
 		}
 	}
 
@@ -319,7 +319,7 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 			Settings.lastSnowflakeQualityCheckValid = true
 		}
 
-		activate(activateBt)
+		activate(continueBt)
 	}
 
 

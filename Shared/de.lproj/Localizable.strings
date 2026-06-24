@@ -40,20 +40,11 @@
 /* No comment provided by engineer. */
 "%1$@ wants to access %2$@." = "%1$@ will auf %2$@ zugreifen.";
 
-/* No comment provided by engineer. */
-"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@Nur%2$@ aktivieren, wenn das Internet in deinem Land %1$@nicht heftig zensiert%2$@ wird.";
-
-/* Placeholder is bullet */
-"%@ App needs to stay in the foreground." = "%@ Die App muss im Vordergrund bleiben.";
-
 /* Placeholder is '✅' */
 "%@ Approved" = "%@ Genehmigt";
 
 /* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Argumente einer Option müssen in einer neue Zeile stehen.";
-
-/* Placeholder is bullet */
-"%@ Connect to power while letting it run." = "%@ Mit Stromanschluss verbinden, während es läuft.";
 
 /* macOS menu item */
 "%@ Help" = "%@ Hilfe";
@@ -70,11 +61,11 @@
 /* Placeholder is '🚫' */
 "%@ Not Approved" = "%@ Nicht genehmigt";
 
-/* Placeholder is bullet */
-"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ Bildschirm wird gedimmt. (Gerät auf Bildschirmseite legen, um den Bildschirm abzuschalten wie bei einem Telefonanruf.)";
-
 /* Placeholder is app name */
 "%@ Status" = "%@ Status";
+
+/* Placeholder is 'Orbot' */
+"%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN wird automatisch deaktiviert, wenn der Unterstützungsmodus aktiviert wird. Beide Funktionen können nicht gleichzeitig ausgeführt werden.";
 
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
@@ -98,6 +89,9 @@
 "About %@" = "Über %@";
 
 /* No comment provided by engineer. */
+"About Running Kindness Mode on %@" = "Informationen zur Nutzung des Unterstützungsmodus unter %@";
+
+/* No comment provided by engineer. */
 "Accept installation of system extension. Orbot will not work without it." = "Bitte Installation der Systemerweiterung akzeptieren. Orbot funktioniert nicht ohne.";
 
 /* No comment provided by engineer. */
@@ -105,6 +99,9 @@
 
 /* No comment provided by engineer. */
 "Activate" = "Aktivieren";
+
+/* No comment provided by engineer. */
+"Activate Kindness Mode" = "Aktiviere Unterstützungsmodus";
 
 /* No comment provided by engineer. */
 "Add" = "Hinzufügen";
@@ -332,6 +329,9 @@
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "Bei DNS-Tunneln hat Erreichbarkeit Vorrang vor Geschwindigkeit, sodass sie sich möglicherweise langsamer anfühlen. Wir empfehlen, sie nur für unverzichtbare Apps zu aktivieren. Von Videostreaming wird abgeraten.";
 
 /* No comment provided by engineer. */
+"Do not use Kindness Mode if you live in a highly censored country." = "Verwende den Unterstützungsmodus nicht, wenn Du in einem Land mit harter Zensur lebst.";
+
+/* No comment provided by engineer. */
 "Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Verwende den Unterstützungsmodus nicht, wenn das Internet in deinem Land heftig zensiert wird.";
 
 /* No comment provided by engineer. */
@@ -457,6 +457,9 @@
 /* macOS menu item */
 "Jump to Selection" = "Auswahl anzeigen";
 
+/* Placeholder is 'Orbot' */
+"Keep %@ open for Kindness Mode to work." = "%@ offen lassen, damit der Unterstützungsmodus funktioniert.";
+
 /* No comment provided by engineer. */
 "Key" = "Schlüssel";
 
@@ -465,9 +468,6 @@
 
 /* No comment provided by engineer. */
 "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Der Unterstützungsmodus macht aus deinem Gerät einen Snowflake Proxy im Tor Netzwerk – eine Brücke um anderen zu helfen, sich zu verbinden.";
-
-/* No comment provided by engineer. */
-"Kindness Mode: Help Others Connect to Tor" = "Unterstützungsmodus: Hilf anderen, sich mit Tor zu verbinden";
 
 /* No comment provided by engineer. */
 "Learn More" = "Mehr herausfinden";
@@ -701,6 +701,9 @@
 "Transformations" = "Transformationen";
 
 /* No comment provided by engineer. */
+"Turn off Kindness Mode when you use a VPN on this device." = "Deaktiviere den Unterstützungsmodus, wenn Du auf diesem Gerät ein VPN verwendest.";
+
+/* No comment provided by engineer. */
 "Type" = "Typ";
 
 /* macOS menu item */
@@ -755,7 +758,13 @@
 "We could not return to that app, because it didn't provide a valid callback URL." = "Wir konnten nicht zu der App zurückkehren, weil sie keine gültige Rückruf-URL angegeben hat.";
 
 /* No comment provided by engineer. */
+"We recommend charging the device when running Kindness Mode." = "Wir empfehlen, das Gerät zu laden, während der Unterstützungsmodus aktiv ist.";
+
+/* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"Welcome to Kindness Mode" = "Willkommen beim Unterstützungsmodus";
 
 /* No comment provided by engineer. */
 "Welcome!" = "Willkommen!";
@@ -765,6 +774,9 @@
 
 /* No comment provided by engineer. */
 "You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "Du bist ein großartiger Kandidat um ein Snowflake Proxy im Tor Netzwerk zu werden.";
+
+/* No comment provided by engineer. */
+"You can also turn the device face down to minimize power usage. Kindness Mode will continue to run." = "Du kannst das Gerät auch mit der Vorderseite nach unten legen, um den Stromverbrauch zu minimieren. Der Unterstützungsmodus läuft dabei weiter.";
 
 /* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "Du kannst mehrere Brückenadressen eingeben.";
@@ -777,6 +789,9 @@
 
 /* No comment provided by engineer. */
 "Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Dein Proxy kann nützlicher sein, wenn der Unterstützungsmodus über WLAN läuft.";
+
+/* No comment provided by engineer. */
+"Your screen will dim to minimize power usage." = "Dein Bildschirm wird gedimmt, um den Stromverbrauch zu minimieren.";
 
 /* macOS menu item */
 "Zoom" = "Zoomen";

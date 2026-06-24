@@ -10,7 +10,9 @@ import UIKit
 import IPtProxy
 import IPtProxyUI
 
-class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol, TestingViewController.Delegate {
+class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol,
+									TestingViewController.Delegate, KindnessModeExplainerViewController.Delegate
+{
 
 	// MARK: Outlets
 
@@ -18,7 +20,7 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var titleLb: UILabel! {
 		didSet {
-			titleLb.text = L10n.helpOthers
+			titleLb.text = L10n.welcomeKindnessMode
 		}
 	}
 
@@ -28,63 +30,15 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
-	@IBOutlet weak var description2Lb: UILabel! {
+	@IBOutlet weak var censoredCountryWarningLb: UILabel! {
 		didSet {
-			if let attributedString = try? NSMutableAttributedString(markdown: L10n.kindnessModeDescription2)
-			{
-				let range = NSRange(attributedString.string.startIndex..., in: attributedString.string)
-
-				// Fix font. Otherwise, the bold part will show too small.
-				attributedString.addAttribute(
-					.font, value: UIFont.preferredFont(forTextStyle: .body),
-					range: range)
-
-				let ps = NSMutableParagraphStyle()
-				ps.alignment = .center
-
-				attributedString.addAttribute(.paragraphStyle, value: ps, range: range)
-
-				description2Lb.attributedText = attributedString
-			}
-			else {
-				description2Lb.text = L10n.kindnessModeDescription2
-			}
+			censoredCountryWarningLb.text = L10n.censoredCountryWarning
 		}
 	}
 
-	@IBOutlet weak var item1Lb: UILabel! {
+	@IBOutlet weak var continueBt: UIButton! {
 		didSet {
-			item1Lb.text = String(format: NSLocalizedString(
-				"%@ App needs to stay in the foreground.",
-				comment: "Placeholder is bullet"), "•")
-		}
-	}
-
-	@IBOutlet weak var item2Lb: UILabel! {
-		didSet {
-			item2Lb.text = L10n.vpnWillBeSwitchedOff
-		}
-	}
-
-	@IBOutlet weak var item3Lb: UILabel! {
-		didSet {
-			item3Lb.text = String(format: NSLocalizedString(
-				"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)",
-				comment: "Placeholder is bullet"), "•")
-		}
-	}
-
-	@IBOutlet weak var item4Lb: UILabel! {
-		didSet {
-			item4Lb.text = String(format: NSLocalizedString(
-				"%@ Connect to power while letting it run.",
-				comment: "Placeholder is bullet"), "•")
-		}
-	}
-
-	@IBOutlet weak var activateBt: UIButton! {
-		didSet {
-			activateBt.setTitle(L10n.activate, for: .normal)
+			continueBt.setTitle(NSLocalizedString("Continue", comment: ""), for: .normal)
 		}
 	}
 
@@ -184,16 +138,16 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	// MARK: Actions
 
 	@IBAction func activate() {
-#if targetEnvironment(simulator)
-		Settings.lastSnowflakeQualityCheckValid = true
-#else
+//#if targetEnvironment(simulator)
+//		Settings.lastSnowflakeQualityCheckValid = true
+//#else
 		if VpnManager.shared.isStraightTorRunning {
 			Settings.lastSnowflakeQualityCheckValid = true
 		}
-#endif
+//#endif
 
 		guard Settings.lastSnowflakeQualityCheckValid else {
-			return runTest()
+			return showExplainer()
 		}
 
 		Settings.hideInitialKindnessScene = true
@@ -309,6 +263,13 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 	}
 
 
+	// MARK: KindnessModeExplainerViewController.Delegate
+
+	func explainFinished() {
+		runTest()
+	}
+
+
 	// MARK: TestingViewController.Delegate
 
 	func finished(success: Bool) {
@@ -390,10 +351,17 @@ class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEvent
 		}
 	}
 
+	private func showExplainer() {
+		let vc = UIStoryboard.main.instantiateViewController(KindnessModeExplainerViewController.self)
+		vc.delegate = self
+
+		present(inNav: vc, view: continueBt)
+	}
+
 	private func runTest() {
 		let vc = UIStoryboard.main.instantiateViewController(TestingViewController.self)
 		vc.delegate = self
 
-		present(inNav: vc, view: activateBt)
+		present(inNav: vc, view: continueBt)
 	}
 }

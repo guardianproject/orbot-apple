@@ -262,8 +262,8 @@ class L10n {
 		NSLocalizedString("Your Impact in Numbers", comment: "")
 	}
 
-	static var helpOthers: String {
-		NSLocalizedString("Kindness Mode: Help Others Connect to Tor", comment: "")
+	static var welcomeKindnessMode: String {
+		NSLocalizedString("Welcome to Kindness Mode", comment: "")
 	}
 
 	static var kindnessModeDescription: String {
@@ -272,10 +272,8 @@ class L10n {
 			comment: "")
 	}
 
-	static var kindnessModeDescription2: String {
-		String(format:
-				NSLocalizedString("%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@.", comment: ""),
-			   "**", "**")
+	static var censoredCountryWarning: String {
+		NSLocalizedString("Do not use Kindness Mode if you live in a highly censored country.", comment: "")
 	}
 
 	static var vpnWillBeSwitchedOff: String {
