@@ -501,6 +501,8 @@
 		A03CBDA32F3C9B7500B22D96 /* .weblate */ = {isa = PBXFileReference; lastKnownFileType = text; path = .weblate; sourceTree = "<group>"; };
 		A03CFBB328B4CB0200D7A700 /* NSScrollView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Helpers.swift"; sourceTree = "<group>"; };
 		A03CFBB728B5206500D7A700 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A0434F772FF2C333006C3939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A0434F782FF2C358006C3939 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A0463DB92AA0F15600AC9925 /* OnionmasqPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnionmasqPTProvider.swift; sourceTree = "<group>"; };
 		A04672E9296DC85400BD0F2F /* BridgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgesViewController.swift; sourceTree = "<group>"; };
 		A04E3678273D4BF100578FD4 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -1401,6 +1403,7 @@
 				"pt-BR",
 				fa,
 				ko,
+				"zh-Hans",
 			);
 			mainGroup = A05B73A724755CE600930C40;
 			packageReferences = (
@@ -2306,6 +2309,7 @@
 				A0B11E652BB33B55003061E1 /* pt-BR */,
 				A033CD472E40F5C40075E20A /* fa */,
 				A080ED382FBCB1CB003A8BC8 /* ko */,
+				A0434F772FF2C333006C3939 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -2332,6 +2336,7 @@
 				A0B11E642BB33B55003061E1 /* pt-BR */,
 				A033CD462E40F5C30075E20A /* fa */,
 				A080ED392FBCB1D8003A8BC8 /* ko */,
+				A0434F782FF2C358006C3939 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
