@@ -46,6 +46,12 @@
 /* Placeholder is app name */
 "%@ Status" = "%@ Estado";
 
+/* Placeholder is 'Orbot' */
+"%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.";
+
+/* Placeholder is 'Orbot' */
+"%@ will test your connection to determine if you can be a Snowflake Proxy for others." = "%@ will test your connection to determine if you can be a Snowflake Proxy for others.";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -68,10 +74,19 @@
 "About %@" = "Sobre   %@";
 
 /* No comment provided by engineer. */
+"About Running Kindness Mode on %@" = "About Running Kindness Mode on %@";
+
+/* No comment provided by engineer. */
+"Accept installation of system extension. Orbot will not work without it." = "Accept installation of system extension. Orbot will not work without it.";
+
+/* No comment provided by engineer. */
 "Access Request" = "Solicitação de Acesso";
 
 /* No comment provided by engineer. */
 "Activate" = "Ativar";
+
+/* No comment provided by engineer. */
+"Activate Kindness Mode" = "Activate Kindness Mode";
 
 /* No comment provided by engineer. */
 "Add" = "Adicionar";
@@ -107,6 +122,9 @@
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "Um aplicativo tentou parar %1$@, mas você não permitiu que ele fizesse isso, ainda.";
 
 /* No comment provided by engineer. */
+"An unknown error occurred." = "An unknown error occurred.";
+
+/* No comment provided by engineer. */
 "Another app requested an API access token." = "Outro aplicativo solicitou um token de acesso à API.";
 
 /* No comment provided by engineer. */
@@ -120,6 +138,9 @@
 
 /* No comment provided by engineer. */
 "App Icon" = "Ícone do App";
+
+/* No comment provided by engineer. */
+"Approved" = "Approved";
 
 /* No comment provided by engineer. */
 "Ask Tor" = "Pergunte ao Tor";
@@ -293,7 +314,7 @@
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "Os túneis DNS priorizam o acesso em detrimento da velocidade e podem parecer mais lentos. Recomendamos ativá-los apenas para aplicativos essenciais. Não recomendamos o uso de streaming de vídeo.";
 
 /* No comment provided by engineer. */
-"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Do not use Kindness Mode, if the Internet in your country is heavily censored.";
+"Do not use Kindness Mode if you live in a highly censored country." = "Do not use Kindness Mode if you live in a highly censored country.";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Não use esses nós. Substitui a lista de nós de entrada e saída. Ainda pode ser usado para fins de gerenciamento.";
@@ -389,7 +410,13 @@
 "Host" = "Hospedeiro";
 
 /* No comment provided by engineer. */
+"I acknowledge I have read the above." = "I acknowledge I have read the above.";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "Se esses serviços onion não estiverem configurados corretamente, você vazará informações para seu provedor de serviços de Internet e qualquer outra pessoa ouvindo esse tráfego!";
+
+/* No comment provided by engineer. */
+"If you are using Tor bridges, they will temporarily be disconnected." = "If you are using Tor bridges, they will temporarily be disconnected.";
 
 /* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "Se você quiser que o aplicativo seja capaz de parar %1$@ Automaticamente, volte para esse aplicativo e faça com que ele reinicie o processo de autorização novamente!";
@@ -417,6 +444,9 @@
 
 /* macOS menu item */
 "Jump to Selection" = "Saltar para a Seleção";
+
+/* Placeholder is 'Orbot' */
+"Keep %@ open for Kindness Mode to work." = "Keep %@ open for Kindness Mode to work.";
 
 /* No comment provided by engineer. */
 "Key" = "Chave";
@@ -459,6 +489,9 @@
 
 /* No comment provided by engineer. */
 "Node Configuration" = "Configuração do nó";
+
+/* No comment provided by engineer. */
+"Not Approved" = "Not Approved";
 
 /* No comment provided by engineer. */
 "Not Installed" = "Não instalado";
@@ -509,6 +542,9 @@
 "Please report this error to the requesting app's developers." = "Relate esse erro aos desenvolvedores do aplicativo solicitante.";
 
 /* No comment provided by engineer. */
+"Please wait while we check to see if you can run an effective proxy." = "Please wait while we check to see if you can run an effective proxy.";
+
+/* No comment provided by engineer. */
 "popups" = "Pop-ups";
 
 /* No comment provided by engineer. */
@@ -543,6 +579,9 @@
 
 /* macOS menu item */
 "Redo" = "Refazer";
+
+/* No comment provided by engineer. */
+"Restart computer to finish system extension installation." = "Restart computer to finish system extension installation.";
 
 /* IPtProxyNATRestricted */
 "restricted" = "restricted";
@@ -602,6 +641,9 @@
 "Stop Speaking" = "Pare de falar";
 
 /* No comment provided by engineer. */
+"Stop Test" = "Stop Test";
+
+/* No comment provided by engineer. */
 "style sheets" = "folhas de estilo";
 
 /* No comment provided by engineer. */
@@ -611,7 +653,10 @@
 "Switch back to last used VPN after stop" = "Volte para a última VPN usada após a parada";
 
 /* No comment provided by engineer. */
-"Testing Quality" = "Testing Quality";
+"Test Connection" = "Test Connection";
+
+/* No comment provided by engineer. */
+"Testing Connection" = "Testing Connection";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "Esse aplicativo não poderá acessar a API do Orbot enquanto isso não for corrigido.";
@@ -621,6 +666,9 @@
 
 /* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "A melhor maneira de se conectar ao Tor. Use se o Tor não estiver bloqueado.";
+
+/* No comment provided by engineer. */
+"The test will try to connect directly to the Tor network." = "The test will try to connect directly to the Tor network.";
 
 /* No comment provided by engineer. */
 "the website" = "o site";
@@ -654,6 +702,9 @@
 
 /* macOS menu item */
 "Transformations" = "Transformações";
+
+/* No comment provided by engineer. */
+"Turn off Kindness Mode when you use a VPN on this device." = "Turn off Kindness Mode when you use a VPN on this device.";
 
 /* No comment provided by engineer. */
 "Type" = "Tipo";
@@ -710,7 +761,13 @@
 "We could not return to that app, because it didn't provide a valid callback URL." = "Não foi possível retornar a esse aplicativo, porque ele não fornecia uma URL de retorno de chamada válida.";
 
 /* No comment provided by engineer. */
+"We recommend charging the device when running Kindness Mode." = "We recommend charging the device when running Kindness Mode.";
+
+/* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"Welcome to Kindness Mode" = "Welcome to Kindness Mode";
 
 /* No comment provided by engineer. */
 "Welcome!" = "Bem-vindo!";
@@ -720,6 +777,9 @@
 
 /* No comment provided by engineer. */
 "You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "You are a great candidate for becoming a Snowflake Proxy on the Tor network.";
+
+/* No comment provided by engineer. */
+"You can also turn the device face down to minimize power usage. Kindness Mode will continue to run." = "You can also turn the device face down to minimize power usage. Kindness Mode will continue to run.";
 
 /* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "Você pode inserir vários endereços de ponte.";
@@ -732,6 +792,9 @@
 
 /* No comment provided by engineer. */
 "Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Your proxy can be more powerful when kindness mode is running on Wi-Fi.";
+
+/* No comment provided by engineer. */
+"Your screen will dim to minimize power usage." = "Your screen will dim to minimize power usage.";
 
 /* macOS menu item */
 "Zoom" = "Zoom";

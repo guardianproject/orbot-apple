@@ -46,6 +46,12 @@
 /* Placeholder is app name */
 "%@ Status" = "%@ 상태";
 
+/* Placeholder is 'Orbot' */
+"%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.";
+
+/* Placeholder is 'Orbot' */
+"%@ will test your connection to determine if you can be a Snowflake Proxy for others." = "%@ will test your connection to determine if you can be a Snowflake Proxy for others.";
+
 /* No comment provided by engineer. */
 "__BLOCKER_HEADER_1__" = "__empty__";
 
@@ -68,10 +74,19 @@
 "About %@" = "%@ 에 대해";
 
 /* No comment provided by engineer. */
+"About Running Kindness Mode on %@" = "About Running Kindness Mode on %@";
+
+/* No comment provided by engineer. */
+"Accept installation of system extension. Orbot will not work without it." = "Accept installation of system extension. Orbot will not work without it.";
+
+/* No comment provided by engineer. */
 "Access Request" = "접근 요청";
 
 /* No comment provided by engineer. */
 "Activate" = "켜기";
+
+/* No comment provided by engineer. */
+"Activate Kindness Mode" = "Activate Kindness Mode";
 
 /* No comment provided by engineer. */
 "Add" = "추가";
@@ -107,6 +122,9 @@
 "An app tried to stop %1$@, but you didn't allow it to do this, yet." = "앱이 %1$@을(를) 중지하려고 했지만, 아직 이 작업을 허용하지 않았습니다.";
 
 /* No comment provided by engineer. */
+"An unknown error occurred." = "An unknown error occurred.";
+
+/* No comment provided by engineer. */
 "Another app requested an API access token." = "다른 앱이 API 접근 토큰을 요청했습니다.";
 
 /* No comment provided by engineer. */
@@ -120,6 +138,9 @@
 
 /* No comment provided by engineer. */
 "App Icon" = "앱 아이콘";
+
+/* No comment provided by engineer. */
+"Approved" = "Approved";
 
 /* No comment provided by engineer. */
 "Ask Tor" = "Tor에 문의하기";
@@ -293,7 +314,7 @@
 "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "DNS 터널은 속도보다 연결 가능성을 우선하므로 느리게 느껴질 수 있습니다. 필수적인 앱에만 활성화하는 것을 권장합니다. 동영상 스트리밍에는 권장되지 않습니다.";
 
 /* No comment provided by engineer. */
-"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "인터넷 검열이 심한 국가에서는 Kindness Mode 사용을 권장하지 않습니다.";
+"Do not use Kindness Mode if you live in a highly censored country." = "Do not use Kindness Mode if you live in a highly censored country.";
 
 /* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "이 노드들은 사용하지 않습니다. 진입 및 종료 노드 목록보다 우선 적용됩니다. 관리 목적으로는 여전히 사용될 수 있습니다.";
@@ -389,7 +410,13 @@
 "Host" = "호스트";
 
 /* No comment provided by engineer. */
+"I acknowledge I have read the above." = "I acknowledge I have read the above.";
+
+/* No comment provided by engineer. */
 "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "이 onion service가 올바르게 구성되지 않은 경우 인터넷 서비스 제공업체(ISP)와 해당 트래픽을 감청하는 제3자에게 정보가 유출될 수 있습니다!";
+
+/* No comment provided by engineer. */
+"If you are using Tor bridges, they will temporarily be disconnected." = "If you are using Tor bridges, they will temporarily be disconnected.";
 
 /* No comment provided by engineer. */
 "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "앱이 %1$@을(를) 자동으로 중지할 수 있도록 하려면 해당 앱으로 돌아가 인증 절차를 다시 시작하세요!";
@@ -417,6 +444,9 @@
 
 /* macOS menu item */
 "Jump to Selection" = "선택 항목으로 이동";
+
+/* Placeholder is 'Orbot' */
+"Keep %@ open for Kindness Mode to work." = "Keep %@ open for Kindness Mode to work.";
 
 /* No comment provided by engineer. */
 "Key" = "키";
@@ -459,6 +489,9 @@
 
 /* No comment provided by engineer. */
 "Node Configuration" = "노드 구성";
+
+/* No comment provided by engineer. */
+"Not Approved" = "Not Approved";
 
 /* No comment provided by engineer. */
 "Not Installed" = "설치되지 않음";
@@ -509,6 +542,9 @@
 "Please report this error to the requesting app's developers." = "이 오류를 해당 앱 개발자에게 알려 주세요.";
 
 /* No comment provided by engineer. */
+"Please wait while we check to see if you can run an effective proxy." = "Please wait while we check to see if you can run an effective proxy.";
+
+/* No comment provided by engineer. */
 "popups" = "팝업";
 
 /* No comment provided by engineer. */
@@ -543,6 +579,9 @@
 
 /* macOS menu item */
 "Redo" = "재실행";
+
+/* No comment provided by engineer. */
+"Restart computer to finish system extension installation." = "Restart computer to finish system extension installation.";
 
 /* IPtProxyNATRestricted */
 "restricted" = "제한됨";
@@ -602,6 +641,9 @@
 "Stop Speaking" = "Stop Speaking";
 
 /* No comment provided by engineer. */
+"Stop Test" = "Stop Test";
+
+/* No comment provided by engineer. */
 "style sheets" = "스타일 표";
 
 /* No comment provided by engineer. */
@@ -611,7 +653,10 @@
 "Switch back to last used VPN after stop" = "중지 후 마지막 VPN으로 전환";
 
 /* No comment provided by engineer. */
-"Testing Quality" = "품질 테스트";
+"Test Connection" = "Test Connection";
+
+/* No comment provided by engineer. */
+"Testing Connection" = "Testing Connection";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "“이 문제가 해결되지 않는 한 해당 앱은 Orbot의 API에 접근할 수 없습니다.";
@@ -621,6 +666,9 @@
 
 /* No comment provided by engineer. */
 "The best way to connect to Tor. Use if Tor is not blocked." = "Tor에 연결하는 가장 좋은 방법입니다. Tor가 차단되지 않은 경우 사용하세요.";
+
+/* No comment provided by engineer. */
+"The test will try to connect directly to the Tor network." = "The test will try to connect directly to the Tor network.";
 
 /* No comment provided by engineer. */
 "the website" = "웹사이트";
@@ -654,6 +702,9 @@
 
 /* macOS menu item */
 "Transformations" = "변환";
+
+/* No comment provided by engineer. */
+"Turn off Kindness Mode when you use a VPN on this device." = "Turn off Kindness Mode when you use a VPN on this device.";
 
 /* No comment provided by engineer. */
 "Type" = "유형";
@@ -710,7 +761,13 @@
 "We could not return to that app, because it didn't provide a valid callback URL." = "유효한 콜백 URL을 제공하지 않았기 때문에 해당 앱으로 돌아갈 수 없습니다.";
 
 /* No comment provided by engineer. */
+"We recommend charging the device when running Kindness Mode." = "We recommend charging the device when running Kindness Mode.";
+
+/* No comment provided by engineer. */
 "WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"Welcome to Kindness Mode" = "Welcome to Kindness Mode";
 
 /* No comment provided by engineer. */
 "Welcome!" = "환영합니다!";
@@ -720,6 +777,9 @@
 
 /* No comment provided by engineer. */
 "You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "당신은 Tor 네트워크에서 Snowflake 프록시가 되기에 적합한 후보입니다.";
+
+/* No comment provided by engineer. */
+"You can also turn the device face down to minimize power usage. Kindness Mode will continue to run." = "You can also turn the device face down to minimize power usage. Kindness Mode will continue to run.";
 
 /* No comment provided by engineer. */
 "You can enter multiple bridge addresses." = "여러 브리지 주소를 입력할 수 있습니다.";
@@ -732,6 +792,9 @@
 
 /* No comment provided by engineer. */
 "Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Wi-Fi에서 Tor의 배려 모드가 실행 중일 때, 당신의 프록시는 더 강력해질 수 있습니다.";
+
+/* No comment provided by engineer. */
+"Your screen will dim to minimize power usage." = "Your screen will dim to minimize power usage.";
 
 /* macOS menu item */
 "Zoom" = "확대";
