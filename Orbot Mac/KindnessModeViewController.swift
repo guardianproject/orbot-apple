@@ -60,38 +60,49 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	@IBOutlet weak var item1Lb: NSTextField! {
 		didSet {
-			item1Lb.stringValue = L10n.vpnWillBeSwitchedOff
-
+			item1Lb.stringValue = L10n.turnOffKindnessMode
 		}
 	}
 
 	@IBOutlet weak var item2Lb: NSTextField! {
 		didSet {
-			item2Lb.stringValue = String(format: NSLocalizedString(
-				"%@ It will not drain your battery.",
-				comment: "Placeholder is bullet"), "•")
+			item2Lb.stringValue = L10n.orbotVpnWillAutomaticallyTurnOff
+		}
+	}
+
+	@IBOutlet weak var testBox: NSBox! {
+		didSet {
+			testBox.title = L10n.testConnection
+		}
+	}
+
+	@IBOutlet weak var testExplainerLb: NSTextField! {
+		didSet {
+			testExplainerLb.stringValue = L10n.orbotWillTestYourConnection
 		}
 	}
 
 	@IBOutlet weak var item3Lb: NSTextField! {
 		didSet {
-			item3Lb.stringValue = String(format: NSLocalizedString(
-				"%@ It will not slow down your internet.",
-				comment: "Placeholder is bullet"), "•")
+			item3Lb.stringValue = L10n.theTestWillTryToConnectDirectly
 		}
 	}
 
 	@IBOutlet weak var item4Lb: NSTextField! {
 		didSet {
-			item4Lb.stringValue = String(
-				format: NSLocalizedString("%@ It can be turned off anytime.",
-										  comment: "Placeholder is bullet"), "•")
+			item4Lb.stringValue = L10n.ifYouAreUsingTorBridges
+		}
+	}
+
+	@IBOutlet weak var acknowledgmentLb: NSTextField! {
+		didSet {
+			acknowledgmentLb.stringValue = L10n.iAcknowledgeIHaveReadTheAbove
 		}
 	}
 
 	@IBOutlet weak var continueBt: NSButton! {
 		didSet {
-			continueBt.title = L10n.activate
+			continueBt.title = L10n.testConnection
 		}
 	}
 
@@ -196,7 +207,15 @@ class KindnessModeViewController: NSViewController, IPtProxySnowflakeClientEvent
 
 	// MARK: Actions
 
+	@IBAction func safetyToggle(_ sender: NSSwitch) {
+		continueBt.isEnabled = sender.state == .on
+	}
+
 	@IBAction func activate(_ sender: NSButton) {
+		if !sender.isEnabled {
+			return
+		}
+
 		if VpnManager.shared.isStraightTorRunning {
 			Settings.lastSnowflakeQualityCheckValid = true
 		}

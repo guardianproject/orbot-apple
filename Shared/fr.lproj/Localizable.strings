@@ -1,9 +1,6 @@
 /* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = " où l’URL comprend l’expression rationnelle « %@ »";
 
-/* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
-"%1$@ %2$@ VPN will be switched off." = "%1$@ Le RPV/VPN %2$@ sera désactivé.";
-
 /* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ codes de pays à deux lettres entre accolades, p. ex. « %2$@ »";
 
@@ -41,37 +38,10 @@
 "%1$@ wants to access %2$@." = "%1$@ veut accéder à %2$@.";
 
 /* No comment provided by engineer. */
-"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@.";
-
-/* Placeholder is bullet */
-"%@ App needs to stay in the foreground." = "%@ L’appli doit rester au premier plan.";
-
-/* Placeholder is '✅' */
-"%@ Approved" = "%@ Approved";
-
-/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ Les arguments d’une option doivent se trouver sur une nouvelle ligne.";
-
-/* Placeholder is bullet */
-"%@ Connect to power while letting it run." = "%@ Branchez l’appareil à une source d'alimentation tout en laissant Orbot fonctionner.";
 
 /* macOS menu item */
 "%@ Help" = "Aide %@";
-
-/* Placeholder is bullet */
-"%@ It can be turned off anytime." = "%@ Le mode peut être désactivé n’importe quand.";
-
-/* Placeholder is bullet */
-"%@ It will not drain your battery." = "%@ Cela ne déchargera pas votre batterie.";
-
-/* Placeholder is bullet */
-"%@ It will not slow down your internet." = "%@ Cela ne ralentira pas votre connexion Internet.";
-
-/* Placeholder is '🚫' */
-"%@ Not Approved" = "%@ Not Approved";
-
-/* Placeholder is bullet */
-"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ La luminosité de l’écran sera moindre (baissez la luminosité de l’écran pour l’éteindre, p. ex. lors d’un appel téléphonique.)";
 
 /* Placeholder is app name */
 "%@ Status" = "État de %@";
@@ -174,9 +144,6 @@
 
 /* No comment provided by engineer. */
 "Automatically Restart on Error" = "Redémarrage automatique en cas d’erreur";
-
-/* No comment provided by engineer. */
-"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check.";
 
 /* No comment provided by engineer. */
 "Block cookies" = "Bloquer les témoins";
@@ -459,9 +426,6 @@
 
 /* No comment provided by engineer. */
 "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.";
-
-/* No comment provided by engineer. */
-"Kindness Mode: Help Others Connect to Tor" = "Kindness Mode: Help Others Connect to Tor";
 
 /* No comment provided by engineer. */
 "Learn More" = "Learn More";

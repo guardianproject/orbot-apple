@@ -367,13 +367,6 @@ class L10n {
 			   Bundle.main.version, Bundle.main.build)
 	}
 
-	static var vpnWillBeSwitchedOff: String {
-		String(format: NSLocalizedString(
-			"%1$@ %2$@ VPN will be switched off.",
-			comment: "1. Placeholder is bullet, 2. placeholder is 'Orbot'"),
-			   "•", Bundle.main.displayName)
-	}
-
 	static var warning: String {
 		NSLocalizedString("Warning", comment: "")
 	}

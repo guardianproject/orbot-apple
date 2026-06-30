@@ -1,9 +1,6 @@
 /* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = " URL에 정규식 \"%@\" 이 포함된 경우";
 
-/* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
-"%1$@ %2$@ VPN will be switched off." = "%1$@ %2$@ VPN이 비활성화됩니다.";
-
 /* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "괄호 안의 %1$@ 2자리 국가 코드(예: \"%2$@\")";
 
@@ -41,37 +38,10 @@
 "%1$@ wants to access %2$@." = "%1$@이(가) %2$@에 접근하려고 합니다.";
 
 /* No comment provided by engineer. */
-"%1$@Only%2$@ activate if the Internet in your country is %1$@not heavily censored%2$@." = "%1$@귀하의 국가에서 인터넷 검열이 %1$@심하지 않은 경우에만%2$@ 활성화하세요.";
-
-/* Placeholder is bullet */
-"%@ App needs to stay in the foreground." = "%@ 앱이 계속 전면에서 실행되어 있어야 합니다.";
-
-/* Placeholder is '✅' */
-"%@ Approved" = "%@ 승인됨";
-
-/* No comment provided by engineer. */
 "%@ Arguments to an option need to be in a new line." = "%@ 옵션의 인수는 새 줄에 작성해야 합니다.";
-
-/* Placeholder is bullet */
-"%@ Connect to power while letting it run." = "%@ 실행 중에는 전원에 연결해 두세요.";
 
 /* macOS menu item */
 "%@ Help" = "%@ 도움말";
-
-/* Placeholder is bullet */
-"%@ It can be turned off anytime." = "%@ 언제든지 끌 수 있습니다.";
-
-/* Placeholder is bullet */
-"%@ It will not drain your battery." = "%@ 배터리를 소모하지 않습니다.";
-
-/* Placeholder is bullet */
-"%@ It will not slow down your internet." = "%@ 인터넷 속도를 느리게 하지 않습니다.";
-
-/* Placeholder is '🚫' */
-"%@ Not Approved" = "%@ 승인되지 않음";
-
-/* Placeholder is bullet */
-"%@ Screen will be dimmed. (Turn device screen down to switch off screen like during a phone call.)" = "%@ 화면이 어두워집니다. (전화 통화 중처럼 화면을 끄려면 기기의 화면 밝기를 낮추세요.)";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ 상태";
@@ -174,9 +144,6 @@
 
 /* No comment provided by engineer. */
 "Automatically Restart on Error" = "오류 발생 시 자동으로 재시작";
-
-/* No comment provided by engineer. */
-"Before you become a Snowflake Proxy, we need to see if you can run an effective proxy. Please wait while we check." = "Snowflake 프록시가 되기 전에, 효과적인 프록시를 실행할 수 있는지 확인해야 합니다. 확인하는 동안 잠시 기다려 주세요.";
 
 /* No comment provided by engineer. */
 "Block cookies" = "쿠키 차단";
@@ -459,9 +426,6 @@
 
 /* No comment provided by engineer. */
 "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "배려 모드는 사용자의 기기를 Tor 네트워크의 Snowflake 프록시로 전환하여, 다른 사람들이 연결할 수 있도록 도와주는 브리지 역할을 하게 합니다.";
-
-/* No comment provided by engineer. */
-"Kindness Mode: Help Others Connect to Tor" = "배려 모드: 다른 사람들이 Tor에 연결할 수 있도록 돕기";
 
 /* No comment provided by engineer. */
 "Learn More" = "자세히 알아보기";

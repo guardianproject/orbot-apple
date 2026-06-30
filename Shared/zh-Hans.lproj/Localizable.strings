@@ -1,9 +1,6 @@
 /* No comment provided by engineer. */
 " where the URL contains the regex \"%@\"" = " URL 包含正则表达式“%@”";
 
-/* 1. Placeholder is bullet, 2. placeholder is 'Orbot' */
-"%1$@ %2$@ VPN will be switched off." = "%1$@ %2$@ VPN 将被关闭。";
-
 /* No comment provided by engineer. */
 "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 用花括号括起来的两位字母的国家/地区代码，例如“%2$@”";
 
@@ -45,15 +42,6 @@
 
 /* macOS menu item */
 "%@ Help" = "%@ 帮助";
-
-/* Placeholder is bullet */
-"%@ It can be turned off anytime." = "%@ 可以随时关闭。";
-
-/* Placeholder is bullet */
-"%@ It will not drain your battery." = "%@ 不会耗尽电池电量。";
-
-/* Placeholder is bullet */
-"%@ It will not slow down your internet." = "%@ 不会减慢网络速度。";
 
 /* Placeholder is app name */
 "%@ Status" = "%@ 状态";

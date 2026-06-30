@@ -97,6 +97,8 @@
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A053994F26822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
 		A053995026822C4F00A19969 /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
+		A055C07B2FF416800024B39A /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A055C07A2FF416800024B39A /* IconView.swift */; };
+		A055C07C2FF416800024B39A /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A055C07A2FF416800024B39A /* IconView.swift */; };
 		A05B73B424755CE600930C40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B324755CE600930C40 /* AppDelegate.swift */; };
 		A05B73B824755CE600930C40 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05B73B724755CE600930C40 /* MainViewController.swift */; };
 		A05B73BD24755CE700930C40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05B73BC24755CE700930C40 /* Assets.xcassets */; };
@@ -513,6 +515,7 @@
 		A0507D0026F9FC2600F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0507D0426F9FC2C00F91105 /* Tor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A053994E26822C4F00A19969 /* URL+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
+		A055C07A2FF416800024B39A /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		A05B73B024755CE600930C40 /* Orbot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05B73B324755CE600930C40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A05B73B724755CE600930C40 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -784,6 +787,7 @@
 				A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */,
 				A095A1932F967596007C10D5 /* TestingViewController.swift */,
 				A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */,
+				A055C07A2FF416800024B39A /* IconView.swift */,
 				A01AB61028A5456E008A79EE /* Helpers */,
 				A0D0454B28EECF240031FFB4 /* Orbot-Mac-Info.plist */,
 				A01AB60128A53465008A79EE /* Orbot_Mac.entitlements */,
@@ -1943,6 +1947,7 @@
 				A0A6E1212FDBFFEA0088CB6F /* SysExManager.swift in Sources */,
 				A0274FEF28E71D8200E767E9 /* Logger.swift in Sources */,
 				A01AB60E28A54369008A79EE /* GetCircuitsMessage.swift in Sources */,
+				A055C07C2FF416800024B39A /* IconView.swift in Sources */,
 				A0E471442FAB540500633EC2 /* ProxyQualityTest.swift in Sources */,
 				A0D92FC0295E28E10079BB4C /* ExitCountryViewController.swift in Sources */,
 				A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */,
@@ -2111,6 +2116,7 @@
 				A0A6E1202FDBFFEA0088CB6F /* SysExManager.swift in Sources */,
 				A05DB2BE2FD97BDD009D2949 /* Logger.swift in Sources */,
 				A05DB2BF2FD97BDD009D2949 /* GetCircuitsMessage.swift in Sources */,
+				A055C07B2FF416800024B39A /* IconView.swift in Sources */,
 				A05DB2C02FD97BDD009D2949 /* ProxyQualityTest.swift in Sources */,
 				A05DB2C12FD97BDD009D2949 /* ExitCountryViewController.swift in Sources */,
 				A05DB2C22FD97BDD009D2949 /* DebugMessage.swift in Sources */,
