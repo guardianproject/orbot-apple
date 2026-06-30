@@ -27,13 +27,19 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 		}
 	}
 
-	@IBOutlet weak var progress: NSProgressIndicator!
+	@IBOutlet weak var testingTitleLb: NSTextField! {
+		didSet {
+			testingTitleLb.stringValue = L10n.testingConnection
+		}
+	}
 
 	@IBOutlet weak var explanationLb: NSTextField! {
 		didSet {
 			explanationLb.stringValue = L10n.pleaseWaitWhileWeCheck
 		}
 	}
+
+	@IBOutlet weak var progress: NSProgressIndicator!
 
 	@IBOutlet weak var successContainer: NSView! {
 		didSet {
@@ -71,15 +77,9 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 		}
 	}
 
-	@IBOutlet weak var failWarningLb: NSTextField! {
-		didSet {
-			failWarningLb.stringValue = L10n.doNotUseKindnessMode
-		}
-	}
-
 	@IBOutlet weak var mainBt: NSButton! {
 		didSet {
-			mainBt.setTitle(L10n.cancel)
+			mainBt.setTitle(L10n.stopTest)
 		}
 	}
 
@@ -95,7 +95,7 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 					progress.stopAnimation(nil)
 					successContainer.isHidden = false
 					failContainer.isHidden = true
-					mainBt.setTitle(NSLocalizedString("Continue", comment: ""))
+					mainBt.setTitle(L10n.cont)
 				}
 
 				testSucceeded = true
@@ -115,7 +115,7 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		view.window?.title = L10n.testingQuality
+		view.window?.title = L10n.activateKindnessMode
 	}
 
 

@@ -105,10 +105,6 @@ class L10n {
 		String(format: NSLocalizedString("Disable %@ for non-onion traffic",  comment: "macOS menu item"), Bundle.main.displayName)
 	}
 
-	static var doNotUseKindnessMode: String {
-		NSLocalizedString("Do not use Kindness Mode, if the Internet in your country is heavily censored.", comment: "")
-	}
-
 	static var edit: String {
 		NSLocalizedString("Edit", comment: "")
 	}
@@ -328,10 +324,6 @@ class L10n {
 
 	static var testingConnection: String {
 		NSLocalizedString("Testing Connection", comment: "")
-	}
-
-	static var testingQuality: String {
-		NSLocalizedString("Testing Quality", comment: "")
 	}
 
 	static var theTestWillTryToConnectDirectly: String {

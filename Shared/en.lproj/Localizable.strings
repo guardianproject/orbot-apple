@@ -317,9 +317,6 @@
 "Do not use Kindness Mode if you live in a highly censored country." = "Do not use Kindness Mode if you live in a highly censored country.";
 
 /* No comment provided by engineer. */
-"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Do not use Kindness Mode, if the Internet in your country is heavily censored.";
-
-/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
 
 /* No comment provided by engineer. */
@@ -660,9 +657,6 @@
 
 /* No comment provided by engineer. */
 "Testing Connection" = "Testing Connection";
-
-/* No comment provided by engineer. */
-"Testing Quality" = "Testing Quality";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";

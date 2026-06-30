@@ -317,9 +317,6 @@
 "Do not use Kindness Mode if you live in a highly censored country." = "Verwende den Unterstützungsmodus nicht, wenn Du in einem Land mit harter Zensur lebst.";
 
 /* No comment provided by engineer. */
-"Do not use Kindness Mode, if the Internet in your country is heavily censored." = "Verwende den Unterstützungsmodus nicht, wenn das Internet in deinem Land heftig zensiert wird.";
-
-/* No comment provided by engineer. */
 "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Diese Netzknoten nicht verwenden. Überschreibt Eingangs- und Ausgangs-Netzknotenliste. Diese Netzknoten können immer noch für Netzmanagementaufgaben verwendet werden.";
 
 /* No comment provided by engineer. */
@@ -660,9 +657,6 @@
 
 /* No comment provided by engineer. */
 "Testing Connection" = "Verbindung testen";
-
-/* No comment provided by engineer. */
-"Testing Quality" = "Teste Qualität";
 
 /* No comment provided by engineer. */
 "That app will be unable to access Orbot's API as long as this is not fixed." = "Diese App wird keinen Zugriff auf Orbots API haben, so lange dieser Fehler nicht behoben ist.";
