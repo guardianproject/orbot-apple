@@ -1,5 +1,12 @@
 #  Orbot Apple Changelog
 
+## 1.12.0
+- Updated Tor to 0.4.9.11.
+- Updated Snowflake to 2.14.1.
+- Improved explanation of Kindness Mode and its test implications. 
+- Slightly improved status error display.
+- Added simplified Chinese translation.
+
 ## 1.11.1
 - Updated Tor to 0.4.9.9. (Contains many security fixes!)
 - Updated Farsi translations.

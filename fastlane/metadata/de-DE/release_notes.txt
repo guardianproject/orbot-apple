@@ -1,2 +1,5 @@
-- Tor auf Version 0.4.9.9 aktualisiert. (Enthält zahlreiche Sicherheitskorrekturen!)
-- Farsi-Übersetzungen aktualisiert.
+- Tor wurde auf Version 0.4.9.11 aktualisiert.
+- Snowflake wurde auf Version 2.14.1 aktualisiert.
+- Die Erläuterung zum „Kindness Mode“ und dessen Test-Auswirkungen wurde verbessert.
+- Die Anzeige von Statusfehlern wurde leicht verbessert.
+- Eine Übersetzung ins vereinfachte Chinesisch wurde hinzugefügt.

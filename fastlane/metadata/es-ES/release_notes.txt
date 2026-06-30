@@ -1,2 +1,5 @@
-- Se ha actualizado Tor a la versión 0.4.9.9. (¡Incluye numerosas correcciones de seguridad!)
-- Se han actualizado las traducciones al farsi.
+- Se ha actualizado Tor a la versión 0.4.9.11.
+- Se ha actualizado Snowflake a la versión 2.14.1.
+- Se ha mejorado la explicación del «modo amable» y sus implicaciones en las pruebas.
+- Se ha mejorado ligeramente la visualización de los errores de estado.
+- Se ha añadido la traducción al chino simplificado.

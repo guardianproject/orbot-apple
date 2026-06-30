@@ -1,2 +1,5 @@
-- Mise à jour de Tor vers la version 0.4.9.9. (Comprend de nombreuses corrections de sécurité !)
-- Mise à jour des traductions en farsi.
+- Mise à jour de Tor vers la version 0.4.9.11.
+- Mise à jour de Snowflake vers la version 2.14.1.
+- Amélioration de l'explication du « Kindness Mode » et de ses implications pour les tests.
+- Légère amélioration de l'affichage des erreurs d'état.
+- Ajout d'une traduction en chinois simplifié.
