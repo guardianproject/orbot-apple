@@ -41,6 +41,18 @@ class Settings: IPtProxyUI.Settings {
 		}
 	}
 
+	/**
+	 Only needed for iOS, as macOS routing always allows access to the LAN. Hence, not exposed in macOS UI.
+	 */
+	class var allowLanAccess: Bool {
+		get {
+			defaults?.bool(forKey: "allow_lan_access") ?? false
+		}
+		set {
+			defaults?.set(newValue, forKey: "allow_lan_access")
+		}
+	}
+
 	class var onionOnly: Bool {
 		get {
 			defaults?.bool(forKey: "onion_only") ?? false

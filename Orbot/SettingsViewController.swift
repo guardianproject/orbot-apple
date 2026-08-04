@@ -41,6 +41,15 @@ class SettingsViewController: BaseFormViewController {
 			Settings.disableOnStop = row.value ?? false
 		}
 
+		<<< SwitchRow() {
+			$0.title = L10n.allowLanAccess
+			$0.value = Settings.allowLanAccess
+			$0.cell.textLabel?.numberOfLines = 0
+		}
+		.onChange { row in
+			Settings.allowLanAccess = row.value ?? false
+		}
+
 		<<< LabelRow() {
 			$0.title = NSLocalizedString("App Icon", comment: "")
 			$0.cell.textLabel?.numberOfLines = 0

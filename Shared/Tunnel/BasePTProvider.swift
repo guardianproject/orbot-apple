@@ -108,10 +108,20 @@ class BasePTProvider: NEPacketTunnelProvider {
 #endif
 
 		let ipv4 = NEIPv4Settings(addresses: [addressRange], subnetMasks: ["255.255.255.0"])
-		ipv4.includedRoutes = [NEIPv4Route.default()]
+		ipv4.includedRoutes = [.default()]
 
 		let ipv6 = NEIPv6Settings(addresses: ["fd00::0001"], networkPrefixLengths: [48])
-		ipv6.includedRoutes = [NEIPv6Route.default()]
+		ipv6.includedRoutes = [.default()]
+
+		if Settings.allowLanAccess {
+			ipv4.excludedRoutes = [
+				.init(destinationAddress: "10.0.0.0", subnetMask: "255.0.0.0"),
+				.init(destinationAddress: "172.16.0.0", subnetMask: "255.240.0.0"),
+				.init(destinationAddress: "192.168.0.0", subnetMask: "255.255.0.0"),
+				.init(destinationAddress: "169.254.0.0", subnetMask: "255.255.0.0")]
+
+			ipv6.excludedRoutes = [.init(destinationAddress: "fc00::", networkPrefixLength: 7)]
+		}
 
 		let dns = NEDNSSettings(servers: [dnsIp])
 		// https://developer.apple.com/forums/thread/116033

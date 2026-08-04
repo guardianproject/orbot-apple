@@ -41,6 +41,10 @@ class L10n {
 		NSLocalizedString("Advanced Tor Configuration", comment: "")
 	}
 
+	static var allowLanAccess: String {
+		NSLocalizedString("Allow LAN Access", comment: "")
+	}
+
 	static var approved: String {
 		NSLocalizedString("Approved", comment: "")
 	}

@@ -113,6 +113,9 @@
 "all types" = "all types";
 
 /* No comment provided by engineer. */
+"Allow LAN Access" = "Allow LAN Access";
+
+/* No comment provided by engineer. */
 "Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
 
 /* No comment provided by engineer. */
