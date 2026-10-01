@@ -1,5 +1,9 @@
 #  Orbot Apple Changelog
 
+## 1.13.0
+- Updated Tor to 0.4.9.13, OpenSSL to 3.6.4 and liblzma to 5.8.4.
+- Fixed bug wtih DNSTT bridge parsing.
+
 ## 1.12.0
 - Updated Tor to 0.4.9.11.
 - Updated Snowflake to 2.14.1.

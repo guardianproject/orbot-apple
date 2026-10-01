@@ -1,5 +1,2 @@
-- Mise à jour de Tor vers la version 0.4.9.11.
-- Mise à jour de Snowflake vers la version 2.14.1.
-- Amélioration de l'explication du « Kindness Mode » et de ses implications pour les tests.
-- Légère amélioration de l'affichage des erreurs d'état.
-- Ajout d'une traduction en chinois simplifié.
+- Mise à jour de Tor vers la version 0.4.9.13, d'OpenSSL vers la version 3.6.4 et de liblzma vers la version 5.8.4.
+- Correction d'un bug lié à l'analyse du pont DNSTT.
