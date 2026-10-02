@@ -1,2 +1,3 @@
 - Mise à jour de Tor vers la version 0.4.9.13, d'OpenSSL vers la version 3.6.4 et de liblzma vers la version 5.8.4.
 - Correction d'un bug lié à l'analyse du pont DNSTT.
+- Correction d'un plantage sous iOS 27.

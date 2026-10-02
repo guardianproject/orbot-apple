@@ -3,6 +3,7 @@
 ## 1.13.0
 - Updated Tor to 0.4.9.13, OpenSSL to 3.6.4 and liblzma to 5.8.4.
 - Fixed bug wtih DNSTT bridge parsing.
+- Fixed crash on iOS 27.
 
 ## 1.12.0
 - Updated Tor to 0.4.9.11.
