@@ -203,6 +203,7 @@
 		A08E50E32FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
 		A08E50E42FE428390028E6E7 /* Error+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */; };
 		A0922B932E2E498D003D2280 /* KindnessModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */; };
+		A0924904306FA53A0047CAE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0924903306FA53A0047CAE1 /* SceneDelegate.swift */; };
 		A092846C2F1E8C5200A403FF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F34DE2652D082008F9912 /* Logger.swift */; };
 		A092846D2F1E8C7300A403FF /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A092846E2F1E8C8800A403FF /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A053994E26822C4F00A19969 /* URL+Helpers.swift */; };
@@ -552,6 +553,7 @@
 		A08CA43A29ACE76400B01C1F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A08E50DE2FE428390028E6E7 /* Error+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Helpers.swift"; sourceTree = "<group>"; };
 		A0922B922E2E498D003D2280 /* KindnessModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindnessModeViewController.swift; sourceTree = "<group>"; };
+		A0924903306FA53A0047CAE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A095A1932F967596007C10D5 /* TestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingViewController.swift; sourceTree = "<group>"; };
 		A0A039B2274E9DF400D80FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0A039B4274E9E1600D80FD1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -883,6 +885,7 @@
 			isa = PBXGroup;
 			children = (
 				A05B73B324755CE600930C40 /* AppDelegate.swift */,
+				A0924903306FA53A0047CAE1 /* SceneDelegate.swift */,
 				A0D0F1022A14F54500293A1A /* RemoteControl.swift */,
 				A00F51322745456A0037DD4A /* Main.storyboard */,
 				A05B73B724755CE600930C40 /* MainViewController.swift */,
@@ -2059,6 +2062,7 @@
 				A0A73608247587D300073C81 /* UIButton+Helpers.swift in Sources */,
 				A0A736052475851D00073C81 /* Bundle+Helpers.swift in Sources */,
 				A0D9021B2A98E56C0032BDD2 /* TorHelpers.swift in Sources */,
+				A0924904306FA53A0047CAE1 /* SceneDelegate.swift in Sources */,
 				A0F4E9D42E2808A80074BB28 /* UIApplication+Helpers.swift in Sources */,
 				A08C8FF22805FB130065B98D /* Eureka+Helpers.swift in Sources */,
 				A035BE802FEAEF3A004DC596 /* ExplainerCell.swift in Sources */,

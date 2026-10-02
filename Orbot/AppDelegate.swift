@@ -42,12 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 
-	func applicationWillEnterForeground(_ application: UIApplication) {
-		Task {
-			await VpnManager.shared.reload()
-		}
-	}
-
 	func application(_ application: UIApplication,
 					 continue userActivity: NSUserActivity,
 					 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
@@ -73,9 +67,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
 	{
 		return RemoteControl.shared.evaluate(url: url)
-	}
-
-	func applicationDidBecomeActive(_ application: UIApplication) {
-		RemoteControl.shared.workQueue()
 	}
 }
