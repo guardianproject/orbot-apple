@@ -1,3 +1,1 @@
-- 将 Tor 更新至 0.4.9.13，OpenSSL 更新至 3.6.4，liblzma 更新至 5.8.4。
-- 修复了 DNSTT 桥接解析中的错误。
-- 修复了 iOS 27 上的崩溃问题。
+修复了其他应用（尤其是 Onion Browser）无法再向 Orbot iOS 请求访问权限的 bug。

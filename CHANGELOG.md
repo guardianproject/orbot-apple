@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.13.1
+- Fixed bug where other apps, esp. Onion Browser, couldn't request access to Orbot iOS anymore.
+
 ## 1.13.0
 - Updated Tor to 0.4.9.13, OpenSSL to 3.6.4 and liblzma to 5.8.4.
 - Fixed bug wtih DNSTT bridge parsing.
