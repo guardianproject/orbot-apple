@@ -41,31 +41,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		return true
 	}
-
-	func application(_ application: UIApplication,
-					 continue userActivity: NSUserActivity,
-					 restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool
-	{
-		guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-			  let url = userActivity.webpageURL
-		else {
-			return false
-		}
-
-		if RemoteControl.shared.evaluate(url: url) {
-			// Call this explicitly, when we're already in the foreground. (iPad multitasking!)
-			if UIApplication.shared.applicationState == .active {
-				RemoteControl.shared.workQueue()
-			}
-
-			return true
-		}
-
-		return false
-	}
-
-	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
-	{
-		return RemoteControl.shared.evaluate(url: url)
-	}
 }
