@@ -8,9 +8,14 @@
 
 import Foundation
 import IPtProxy
-import IPtProxyUI
 
-class Settings: IPtProxyUI.Settings {
+#if os(macOS)
+import IPtProxyUI_macOS
+#else
+import IPtProxyUI_iOS_AppEx
+#endif
+
+class Settings: IPtProxyUI_Shared.Settings {
 
 	class override var defaults: UserDefaults? {
 		UserDefaults(suiteName: Config.groupId)

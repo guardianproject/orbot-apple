@@ -8,7 +8,7 @@
 
 import UIKit
 import Tor
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 
 class AuthViewController: UITableViewController, ScanQrDelegate {
 
@@ -28,7 +28,7 @@ class AuthViewController: UITableViewController, ScanQrDelegate {
 		addBt.accessibilityLabel = L10n.add
 
 		let scanBt = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(qr))
-		scanBt.accessibilityLabel = IPtProxyUI.L10n.scanQrCode
+		scanBt.accessibilityLabel = IPtProxyUI_Shared.L10n.scanQrCode
 
 		navigationItem.rightBarButtonItems = [addBt, scanBt]
 

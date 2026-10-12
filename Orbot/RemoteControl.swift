@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 
 
 class RemoteControl {

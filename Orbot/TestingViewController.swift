@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 
 class TestingViewController: UIViewController {
 
@@ -105,7 +105,7 @@ class TestingViewController: UIViewController {
 					testingContainer.isHidden = true
 					successContainer.isHidden = true
 					failContainer.isHidden = false
-					mainBt.setTitle(IPtProxyUI.L10n.ok)
+					mainBt.setTitle(IPtProxyUI_Shared.L10n.ok)
 				}
 			}
 		}

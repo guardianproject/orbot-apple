@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import IPtProxyUI
+import IPtProxyUI_macOS
 
 class SettingsViewController: NSViewController, NSTextFieldDelegate {
 
@@ -366,7 +366,7 @@ class SettingsViewController: NSViewController, NSTextFieldDelegate {
 			alert.messageText = L10n.warning
 			alert.informativeText = L10n.settingsExplanation3
 			alert.addButton(withTitle: L10n.activate)
-			alert.addButton(withTitle: IPtProxyUI.L10n.cancel)
+			alert.addButton(withTitle: IPtProxyUI_Shared.L10n.cancel)
 
 			let response = alert.runModal()
 

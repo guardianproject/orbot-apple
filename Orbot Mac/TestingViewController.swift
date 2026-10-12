@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import IPtProxyUI
+import IPtProxyUI_macOS
 
 class TestingViewController: NSViewController, NSWindowDelegate {
 
@@ -106,7 +106,7 @@ class TestingViewController: NSViewController, NSWindowDelegate {
 					progress.stopAnimation(nil)
 					successContainer.isHidden = true
 					failContainer.isHidden = false
-					mainBt.setTitle(IPtProxyUI.L10n.ok)
+					mainBt.setTitle(IPtProxyUI_Shared.L10n.ok)
 				}
 			}
 		}

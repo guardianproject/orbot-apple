@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 import PhotosUI
 
 class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrDelegate, PHPickerViewControllerDelegate {
@@ -55,13 +55,13 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 
 	@IBOutlet weak var fileBt: UIButton! {
 		didSet {
-			fileBt.accessibilityLabel  = IPtProxyUI.L10n.uploadQrCode
+			fileBt.accessibilityLabel  = IPtProxyUI_Shared.L10n.uploadQrCode
 		}
 	}
 
 	@IBOutlet weak var qrBt: UIButton! {
 		didSet {
-			qrBt.accessibilityLabel = IPtProxyUI.L10n.scanQrCode
+			qrBt.accessibilityLabel = IPtProxyUI_Shared.L10n.scanQrCode
 		}
 	}
 
@@ -73,7 +73,7 @@ class CustomBridgesViewController: UIViewController, UITextViewDelegate, ScanQrD
 
 	@IBOutlet weak var saveBt: UIButton! {
 		didSet {
-			saveBt.setTitle(IPtProxyUI.L10n.save)
+			saveBt.setTitle(IPtProxyUI_Shared.L10n.save)
 		}
 	}
 

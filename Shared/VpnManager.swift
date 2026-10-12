@@ -8,8 +8,14 @@
 
 import NetworkExtension
 import Tor
-import IPtProxyUI
 import WidgetKit
+
+#if os(macOS)
+import IPtProxyUI_macOS
+#else
+import IPtProxyUI_iOS_AppEx
+#endif
+
 
 extension Notification.Name {
 	static let vpnStatusChanged = Notification.Name("vpn-status-changed")

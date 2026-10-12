@@ -8,10 +8,15 @@
 
 import Foundation
 import IPtProxy
-import IPtProxyUI
 import NetworkExtension
 import Tor
 import SwiftPortmap
+
+#if os(macOS)
+import IPtProxyUI_macOS
+#else
+import IPtProxyUI_iOS_AppEx
+#endif
 
 
 class SharedUtils: NSObject, BridgesConfDelegate {

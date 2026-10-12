@@ -7,11 +7,16 @@
 //
 
 import Foundation
-import IPtProxyUI
+
+#if os(macOS)
+import IPtProxyUI_macOS
+#else
+import IPtProxyUI_iOS_AppEx
+#endif
 
 class ExitNodeCountries {
 
-	class Country: IPtProxyUI.Country {
+	class Country: IPtProxyUI_Shared.Country {
 
 		fileprivate(set) var inUse = false
 	}

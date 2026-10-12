@@ -8,7 +8,7 @@
 
 import UIKit
 import IPtProxy
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 
 class KindnessModeViewController: UIViewController, IPtProxySnowflakeClientEventsProtocol,
 									TestingViewController.Delegate

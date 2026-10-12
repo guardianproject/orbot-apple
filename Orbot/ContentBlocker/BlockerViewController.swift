@@ -8,7 +8,7 @@
 
 import UIKit
 import Eureka
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 
 protocol BlockerViewControllerDelegate: AnyObject {
 

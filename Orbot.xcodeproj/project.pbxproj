@@ -92,6 +92,15 @@
 		A04672EA296DC85400BD0F2F /* BridgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04672E9296DC85400BD0F2F /* BridgesViewController.swift */; };
 		A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */ = {isa = PBXBuildFile; productRef = A04A997E2E5C544F006B03C3 /* SwiftPortmap */; };
 		A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */ = {isa = PBXBuildFile; productRef = A04A99802E5C5ED6006B03C3 /* SwiftPortmap */; };
+		A04CC978307D32E50018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC977307D32E50018C468 /* IPtProxyUI-iOS-AppEx */; };
+		A04CC97A307D33020018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */; };
+		A04CC97C307D331F0018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC97B307D331F0018C468 /* IPtProxyUI-iOS-AppEx */; };
+		A04CC97F307D33DA0018C468 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC97E307D33DA0018C468 /* ProgressHUD */; };
+		A04CC982307D350A0018C468 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC981307D350A0018C468 /* Eureka */; };
+		A04CC9F1307D3A460018C468 /* IPtProxyUI-macOS in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC9F0307D3A460018C468 /* IPtProxyUI-macOS */; };
+		A04CC9F3307D3A4F0018C468 /* IPtProxyUI-macOS in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC9F2307D3A4F0018C468 /* IPtProxyUI-macOS */; };
+		A04CC9F5307D3A5B0018C468 /* IPtProxyUI-macOS in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC9F4307D3A5B0018C468 /* IPtProxyUI-macOS */; };
+		A04CC9F7307D3A620018C468 /* IPtProxyUI-macOS in Frameworks */ = {isa = PBXBuildFile; productRef = A04CC9F6307D3A620018C468 /* IPtProxyUI-macOS */; };
 		A04E3679273D4BF100578FD4 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04E3678273D4BF100578FD4 /* AuthViewController.swift */; };
 		A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
 		A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0507CF226F9FB8200F91105 /* NetworkExtension.framework */; };
@@ -662,16 +671,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A03CBDF62F3CA9D900B22D96 /* docs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = docs;
 			sourceTree = "<group>";
 		};
 		A04FFDE42EFAD5380094AEFA /* bin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = bin;
 			sourceTree = "<group>";
 		};
 		A05DB2F32FD97CF4009D2949 /* Orbot Mac-sys */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "Orbot Mac-sys";
 			sourceTree = "<group>";
 		};
@@ -691,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */,
+				A04CC9F1307D3A460018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
 				DF35744A806FF39C2F2C4585 /* Pods_Orbot_Mac.framework in Frameworks */,
 			);
@@ -701,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
+				A04CC9F5307D3A5B0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
 				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
 			);
@@ -710,6 +727,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04CC97C307D331F0018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */,
 				A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */,
 				C59B4EC689F98C4FE46E9746 /* Pods_StatusWidget.framework in Frameworks */,
@@ -720,9 +738,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04CC97F307D33DA0018C468 /* ProgressHUD in Frameworks */,
+				A04CC978307D32E50018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
 				A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */,
 				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
+				A04CC982307D350A0018C468 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05DB2F22FD97C0B009D2949 /* SwiftPortmap in Frameworks */,
+				A04CC9F3307D3A4F0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB2E12FD97BDD009D2949 /* NetworkExtension.framework in Frameworks */,
 				D110A30400328DDB2AD7DAF1 /* Pods_Orbot_Mac_sys.framework in Frameworks */,
 			);
@@ -741,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05DB2F92FD97DA1009D2949 /* NetworkExtension.framework in Frameworks */,
+				A04CC9F7307D3A620018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB3092FD9801F009D2949 /* libleaf.a in Frameworks */,
 				25E3312E40EBA55C8207F69C /* Pods_TorVPN_Mac_sys.framework in Frameworks */,
 			);
@@ -757,6 +780,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04CC97A307D33020018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
 				A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */,
@@ -1164,7 +1188,6 @@
 				A01AB5F328A53465008A79EE /* Frameworks */,
 				A01AB5F428A53465008A79EE /* Resources */,
 				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
-				FDA880FFFC27B6247F09BD65 /* [CP] Copy Pods Resources */,
 				0EE0CCE28D8566B0FF16BEDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1174,6 +1197,9 @@
 				A01AB6A728A55706008A79EE /* PBXTargetDependency */,
 			);
 			name = "Orbot Mac";
+			packageProductDependencies = (
+				A04CC9F0307D3A460018C468 /* IPtProxyUI-macOS */,
+			);
 			productName = "Orbot Mac";
 			productReference = A01AB5F628A53465008A79EE /* Orbot.app */;
 			productType = "com.apple.product-type.application";
@@ -1188,7 +1214,6 @@
 				A06D605C29019D33001A2E2C /* Embed Frameworks */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
 				A01AB69D28A55706008A79EE /* Resources */,
-				363815AD4FC35F4FA60A8AB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1196,6 +1221,9 @@
 				A06D605829019CDA001A2E2C /* PBXTargetDependency */,
 			);
 			name = "TorVPN Mac";
+			packageProductDependencies = (
+				A04CC9F4307D3A5B0018C468 /* IPtProxyUI-macOS */,
+			);
 			productName = "TorVPN Mac";
 			productReference = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1208,13 +1236,15 @@
 				A03394BE2A45BEC200012811 /* Sources */,
 				A03394BF2A45BEC200012811 /* Frameworks */,
 				A03394C02A45BEC200012811 /* Resources */,
-				4A1B02941857EDC85BB07183 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = StatusWidget;
+			packageProductDependencies = (
+				A04CC97B307D331F0018C468 /* IPtProxyUI-iOS-AppEx */,
+			);
 			productName = StatusWidgetExtension;
 			productReference = A03394C22A45BEC200012811 /* StatusWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1229,7 +1259,6 @@
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
 				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
-				FE3803C7B1CE3627FE4B1C9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1240,6 +1269,11 @@
 				A03394D02A45BEC200012811 /* PBXTargetDependency */,
 			);
 			name = Orbot;
+			packageProductDependencies = (
+				A04CC977307D32E50018C468 /* IPtProxyUI-iOS-AppEx */,
+				A04CC97E307D33DA0018C468 /* ProgressHUD */,
+				A04CC981307D350A0018C468 /* Eureka */,
+			);
 			productName = iCepa;
 			productReference = A05B73B024755CE600930C40 /* Orbot.app */;
 			productType = "com.apple.product-type.application";
@@ -1252,7 +1286,6 @@
 				A05DB2B72FD97BDD009D2949 /* Sources */,
 				A05DB2DE2FD97BDD009D2949 /* Frameworks */,
 				A05DB2E22FD97BDD009D2949 /* Resources */,
-				A05DB2EA2FD97BDD009D2949 /* [CP] Copy Pods Resources */,
 				A05DB2EB2FD97BDD009D2949 /* [CP] Embed Pods Frameworks */,
 				A05DB3082FD97DA1009D2949 /* Embed System Extensions */,
 			);
@@ -1263,6 +1296,9 @@
 				A05DB3022FD97DA1009D2949 /* PBXTargetDependency */,
 			);
 			name = "Orbot Mac-sys";
+			packageProductDependencies = (
+				A04CC9F2307D3A4F0018C468 /* IPtProxyUI-macOS */,
+			);
 			productName = "Orbot Mac";
 			productReference = A05DB2EF2FD97BDD009D2949 /* Orbot.app */;
 			productType = "com.apple.product-type.application";
@@ -1275,7 +1311,6 @@
 				A05DB2F42FD97DA1009D2949 /* Sources */,
 				A05DB2F52FD97DA1009D2949 /* Frameworks */,
 				A05DB2F62FD97DA1009D2949 /* Resources */,
-				1163207621662BCEDAE17D3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1286,6 +1321,9 @@
 				A05DB2FA2FD97DA1009D2949 /* TorVPN Mac-sys */,
 			);
 			name = "TorVPN Mac-sys";
+			packageProductDependencies = (
+				A04CC9F6307D3A620018C468 /* IPtProxyUI-macOS */,
+			);
 			productName = "TorVPN Mac-sys";
 			productReference = A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */;
 			productType = "com.apple.product-type.system-extension";
@@ -1317,7 +1355,6 @@
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
 				A0A735CB247561F200073C81 /* Resources */,
-				559F9991C8F25B0D9E85EB42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1325,6 +1362,9 @@
 				A06D605629019CD5001A2E2C /* PBXTargetDependency */,
 			);
 			name = TorVPN;
+			packageProductDependencies = (
+				A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */,
+			);
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1415,6 +1455,9 @@
 			mainGroup = A05B73A724755CE600930C40;
 			packageReferences = (
 				A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */,
+				A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */,
+				A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1540,59 +1583,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1163207621662BCEDAE17D3D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		363815AD4FC35F4FA60A8AB5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */ = {
@@ -1615,48 +1612,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A1B02941857EDC85BB07183 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StatusWidget/Pods-StatusWidget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		559F9991C8F25B0D9E85EB42 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TorVPN/Pods-TorVPN-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
@@ -1741,27 +1696,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A05DB2EA2FD97BDD009D2949 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A05DB2EB2FD97BDD009D2949 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1770,13 +1704,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1857,13 +1787,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1890,48 +1816,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FDA880FFFC27B6247F09BD65 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE3803C7B1CE3627FE4B1C9A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3275,6 +3159,30 @@
 				kind = branch;
 			};
 		};
+		A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tladesignz/IPtProxyUI-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.5;
+			};
+		};
+		A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/eureka";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3287,6 +3195,51 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
 			productName = SwiftPortmap;
+		};
+		A04CC977307D32E50018C468 /* IPtProxyUI-iOS-AppEx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-iOS-AppEx";
+		};
+		A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-iOS-AppEx";
+		};
+		A04CC97B307D331F0018C468 /* IPtProxyUI-iOS-AppEx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-iOS-AppEx";
+		};
+		A04CC97E307D33DA0018C468 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+		A04CC981307D350A0018C468 /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */;
+			productName = Eureka;
+		};
+		A04CC9F0307D3A460018C468 /* IPtProxyUI-macOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-macOS";
+		};
+		A04CC9F2307D3A4F0018C468 /* IPtProxyUI-macOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-macOS";
+		};
+		A04CC9F4307D3A5B0018C468 /* IPtProxyUI-macOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-macOS";
+		};
+		A04CC9F6307D3A620018C468 /* IPtProxyUI-macOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */;
+			productName = "IPtProxyUI-macOS";
 		};
 		A05DB2F12FD97C0B009D2949 /* SwiftPortmap */ = {
 			isa = XCSwiftPackageProductDependency;
