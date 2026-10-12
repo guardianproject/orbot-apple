@@ -4,7 +4,7 @@ use_frameworks!
 
 def tor
   pod 'Tor/GeoIP-NoLZMA',
-   '~> 409.13'
+   '~> 409.14'
 #   :git => 'https://github.com/iCepa/Tor.framework'
 #  :path => '../Tor.framework'
 
@@ -12,45 +12,28 @@ def tor
 #    :podspec => 'https://raw.githubusercontent.com/iCepa/Tor.framework/pure_pod/Arti.podspec'
 end
 
-def iptproxy
-  pod 'IPtProxyUI/AppEx',
-  '~> 5.4'
-#   :git => 'https://github.com/tladesignz/IPtProxyUI-ios'
-#   :path => '../IPtProxyUI'
-
-#  pod 'IPtProxy',
-#   :path => '../IPtProxy'
-end
-
 target 'Orbot' do
   platform :ios, '15.0'
 
   tor
-  iptproxy
-
-  pod 'Eureka', '~> 5.5'
-  pod 'ProgressHUD', '~> 14.1'
 end
 
 target 'Orbot Mac' do
   platform :macos, '12.0'
 
   tor
-  iptproxy
 end
 
 target 'Orbot Mac-sys' do
   platform :macos, '12.0'
 
   tor
-  iptproxy
 end
 
 target 'TorVPN' do
   platform :ios, '15.0'
 
   tor
-  iptproxy
 
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end
@@ -59,21 +42,18 @@ target 'StatusWidget' do
   platform :ios, '15.0'
 
   tor
-  iptproxy
 end
 
 target 'TorVPN Mac' do
   platform :macos, '12.0'
 
   tor
-  iptproxy
 end
 
 target 'TorVPN Mac-sys' do
   platform :macos, '12.0'
 
   tor
-  iptproxy
 end
 
 # Fix Xcode 15 compile issues.

@@ -1,3 +1,1 @@
-- Se ha actualizado Tor a la versión 0.4.9.13, OpenSSL a la 3.6.4 y liblzma a la 5.8.4.
-- Se ha corregido un error en el análisis del puente DNSTT.
-- Se ha corregido un fallo en iOS 27.
+Se ha corregido un error por el que otras aplicaciones, especialmente Onion Browser, ya no podían solicitar acceso a Orbot para iOS.

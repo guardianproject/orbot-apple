@@ -8,7 +8,7 @@
 
 import UIKit
 import Eureka
-import IPtProxyUI
+import IPtProxyUI_iOS_AppEx
 import MessageUI
 import ProgressHUD
 
@@ -275,8 +275,8 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 		})
 
 		<<< SearchablePushRow<Country>("country") {
-			$0.title = IPtProxyUI.L10n.myCountry
-			$0.selectorTitle = IPtProxyUI.L10n.myCountry
+			$0.title = IPtProxyUI_Shared.L10n.myCountry
+			$0.selectorTitle = IPtProxyUI_Shared.L10n.myCountry
 			$0.options = Country.all
 
 			$0.value = Country.selected(countryCode)
@@ -338,7 +338,7 @@ class BridgesViewController: BaseFormViewController, BridgesConfDelegate, MFMail
 				row.title = NSLocalizedString("Next", comment: "")
 
 			default:
-				row.title = IPtProxyUI.L10n.save
+				row.title = IPtProxyUI_Shared.L10n.save
 			}
 		})
 		.onCellSelection({ [weak self] cell, row in

@@ -7,7 +7,12 @@
 //
 
 import Foundation
-import IPtProxyUI
+
+#if os(macOS)
+import IPtProxyUI_macOS
+#else
+import IPtProxyUI_iOS_AppEx
+#endif
 
 class ProxyQualityTest {
 

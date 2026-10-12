@@ -7,6 +7,7 @@
 
 // Found at: https://gist.github.com/max-pfeiffer/cd823549653ae22b8ba600b6cc4c764b
 
+import UIKit
 import Eureka
 
 

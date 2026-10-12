@@ -8,7 +8,7 @@
 
 import Cocoa
 import Tor
-import IPtProxyUI
+import IPtProxyUI_macOS
 
 protocol EditAuthDelegate: AnyObject {
 
@@ -42,7 +42,7 @@ class EditAuthViewController: NSViewController, NSWindowDelegate {
 
 	@IBOutlet weak var cancelBt: NSButton! {
 		didSet {
-			cancelBt.title = IPtProxyUI.L10n.cancel
+			cancelBt.title = IPtProxyUI_Shared.L10n.cancel
 		}
 	}
 
