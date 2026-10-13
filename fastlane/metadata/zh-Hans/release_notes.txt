@@ -1,1 +1,4 @@
-修复了其他应用（尤其是 Onion Browser）无法再向 Orbot iOS 请求访问权限的 bug。
+- 将 Tor 更新至 0.4.9.14，将 OpenSSL 更新至 3.6.5。
+- 将 Snowflake 更新至 2.15.1。
+- 将 Lyrebird 更新至 0.9.0 版。
+- 修复了看似随机发生的崩溃问题。

@@ -1,1 +1,4 @@
-Es wurde ein Fehler behoben, durch den andere Apps, insbesondere der Onion Browser, keinen Zugriff mehr auf Orbot iOS anfordern konnten.
+- Tor wurde auf Version 0.4.9.14 und OpenSSL auf Version 3.6.5 aktualisiert.
+- Snowflake wurde auf Version 2.15.1 aktualisiert.
+- Lyrebird wurde auf Version 0.9.0 aktualisiert.
+- Abstürze, die scheinbar zufällig auftraten, wurden behoben.
