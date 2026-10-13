@@ -317,6 +317,11 @@ class VpnManager: BridgesConfDelegate {
 	}
 
 	func connect(autoConfDone: Bool = false) async {
+
+		// Reset any errors when the user tries to restart. Otherwise, an old error
+		// will continue to display, even though it's not applicable anymore.
+		error = nil
+
 		if Settings.smartConnect && !autoConfDone {
 			// Has to be switched off, first, otherwise AutoConf request would trigger a connection
 			// which we're trying to configure first!
