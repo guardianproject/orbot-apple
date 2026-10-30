@@ -1,5 +1,8 @@
 #  Orbot Apple Changelog
 
+## 1.14.1
+- Updated Tor to 0.4.9.15.
+
 ## 1.14.0
 - Updated Tor to 0.4.9.14 and OpenSSL to 3.6.5.
 - Updated Snowflake to 2.15.1.

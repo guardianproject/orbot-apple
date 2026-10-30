@@ -1,4 +1,1 @@
-- Mise à jour de Tor vers la version 0.4.9.14 et d'OpenSSL vers la version 3.6.5.
-- Mise à jour de Snowflake vers la version 2.15.1.
-- Mise à jour de Lyrebird vers la version 0.9.0.
-- Correction des plantages qui semblaient se produire de manière aléatoire.
+- Mise à jour de Tor vers la version 0.4.9.15.
