@@ -6,30 +6,10 @@ target 'Orbot' do
   platform :ios, '15.0'
 end
 
-target 'Orbot Mac' do
-  platform :macos, '12.0'
-end
-
-target 'Orbot Mac-sys' do
-  platform :macos, '12.0'
-end
-
 target 'TorVPN' do
   platform :ios, '15.0'
 
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
-end
-
-target 'StatusWidget' do
-  platform :ios, '15.0'
-end
-
-target 'TorVPN Mac' do
-  platform :macos, '12.0'
-end
-
-target 'TorVPN Mac-sys' do
-  platform :macos, '12.0'
 end
 
 # Fix Xcode 15 compile issues.

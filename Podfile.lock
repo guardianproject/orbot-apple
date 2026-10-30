@@ -12,12 +12,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GCDWebServerExtension:
-    :commit: 250ccc860abfcceb30c3c9b546b225a8293ad3dd
+    :commit: 9b93af6da074c69af0418312e7dc1e07025359b0
     :git: https://github.com/tladesignz/GCDWebServer.git
 
 SPEC CHECKSUMS:
-  GCDWebServerExtension: a7d9eb7b23a9f03f48a4eada2e57e11483c5a9a9
+  GCDWebServerExtension: 5135462d9e4ff6fc091d33a2685f705d275737b3
 
-PODFILE CHECKSUM: f3c1f0b3452a97234f580bdd0d13430775ab67b0
+PODFILE CHECKSUM: fdb211be5662e247e715aa0751c2be634281b8f5
 
 COCOAPODS: 1.17.0

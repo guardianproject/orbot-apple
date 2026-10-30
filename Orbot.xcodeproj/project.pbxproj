@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25E3312E40EBA55C8207F69C /* Pods_TorVPN_Mac_sys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6AAB83BE9F1055B04878A /* Pods_TorVPN_Mac_sys.framework */; };
 		A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
@@ -317,11 +316,7 @@
 		A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
-		C59B4EC689F98C4FE46E9746 /* Pods_StatusWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */; };
 		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
-		D110A30400328DDB2AD7DAF1 /* Pods_Orbot_Mac_sys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42B1393C2F16BF7183321B9 /* Pods_Orbot_Mac_sys.framework */; };
-		D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */; };
-		DF35744A806FF39C2F2C4585 /* Pods_Orbot_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 617469B8A27C4819662444AB /* Pods_Orbot_Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -470,20 +465,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		006AE1C005BD05A18A84964D /* Pods-TorVPN Mac-sys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac-sys.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys.debug.xcconfig"; sourceTree = "<group>"; };
-		1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.release.xcconfig"; sourceTree = "<group>"; };
-		168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusWidget.release.xcconfig"; path = "Target Support Files/Pods-StatusWidget/Pods-StatusWidget.release.xcconfig"; sourceTree = "<group>"; };
 		169F99644003AC860683D373 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StatusWidget.debug.xcconfig"; path = "Target Support Files/Pods-StatusWidget/Pods-StatusWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
 		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
-		617469B8A27C4819662444AB /* Pods_Orbot_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
-		816668CFE0F321875316C090 /* Pods-TorVPN Mac-sys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac-sys.release.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac-sys/Pods-TorVPN Mac-sys.release.xcconfig"; sourceTree = "<group>"; };
-		82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN Mac.release.xcconfig"; path = "Target Support Files/Pods-TorVPN Mac/Pods-TorVPN Mac.release.xcconfig"; sourceTree = "<group>"; };
 		A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorCircuit+Helper.swift"; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
@@ -664,13 +650,7 @@
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FF331C28B3B7F10079A267 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		A2A6AAB83BE9F1055B04878A /* Pods_TorVPN_Mac_sys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN_Mac_sys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A45BBB72161AE213CF5E5FB5 /* Pods-Orbot Mac-sys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac-sys.release.xcconfig"; path = "Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys.release.xcconfig"; sourceTree = "<group>"; };
-		A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		C42B1393C2F16BF7183321B9 /* Pods_Orbot_Mac_sys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot_Mac_sys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
-		F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StatusWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF0D4F885346C5BF7CDD321A /* Pods-Orbot Mac-sys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot Mac-sys.debug.xcconfig"; path = "Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -686,16 +666,22 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A03CBDF62F3CA9D900B22D96 /* docs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = docs;
 			sourceTree = "<group>";
 		};
 		A04FFDE42EFAD5380094AEFA /* bin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = bin;
 			sourceTree = "<group>";
 		};
 		A05DB2F32FD97CF4009D2949 /* Orbot Mac-sys */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "Orbot Mac-sys";
 			sourceTree = "<group>";
 		};
@@ -718,7 +704,6 @@
 				A07A8E303094B21C0031E738 /* CTor in Frameworks */,
 				A04CC9F1307D3A460018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
-				DF35744A806FF39C2F2C4585 /* Pods_Orbot_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +714,6 @@
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
 				A07A8E343094B22D0031E738 /* CTor in Frameworks */,
 				A04CC9F5307D3A5B0018C468 /* IPtProxyUI-macOS in Frameworks */,
-				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
 				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,7 +726,6 @@
 				A04CC97C307D331F0018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */,
 				A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */,
-				C59B4EC689F98C4FE46E9746 /* Pods_StatusWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +751,6 @@
 				A07A8E323094B2240031E738 /* CTor in Frameworks */,
 				A04CC9F3307D3A4F0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB2E12FD97BDD009D2949 /* NetworkExtension.framework in Frameworks */,
-				D110A30400328DDB2AD7DAF1 /* Pods_Orbot_Mac_sys.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,7 +762,6 @@
 				A07A8E363094B2330031E738 /* CTor in Frameworks */,
 				A04CC9F7307D3A620018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB3092FD9801F009D2949 /* libleaf.a in Frameworks */,
-				25E3312E40EBA55C8207F69C /* Pods_TorVPN_Mac_sys.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1123,16 +1104,6 @@
 				29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */,
 				C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */,
 				77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */,
-				A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */,
-				1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */,
-				245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */,
-				82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */,
-				2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */,
-				168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */,
-				FF0D4F885346C5BF7CDD321A /* Pods-Orbot Mac-sys.debug.xcconfig */,
-				A45BBB72161AE213CF5E5FB5 /* Pods-Orbot Mac-sys.release.xcconfig */,
-				006AE1C005BD05A18A84964D /* Pods-TorVPN Mac-sys.debug.xcconfig */,
-				816668CFE0F321875316C090 /* Pods-TorVPN Mac-sys.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1152,13 +1123,8 @@
 				A0FD91A426F36199002C317C /* libleaf.a */,
 				169F99644003AC860683D373 /* Pods_Orbot.framework */,
 				6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */,
-				667F0EF91BE82C356D920D33 /* Pods_TorVPN_Mac.framework */,
 				A03394C32A45BEC200012811 /* WidgetKit.framework */,
 				A03394C52A45BEC200012811 /* SwiftUI.framework */,
-				F443987F4A23EF050BEA8ECB /* Pods_StatusWidget.framework */,
-				C42B1393C2F16BF7183321B9 /* Pods_Orbot_Mac_sys.framework */,
-				A2A6AAB83BE9F1055B04878A /* Pods_TorVPN_Mac_sys.framework */,
-				617469B8A27C4819662444AB /* Pods_Orbot_Mac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1201,7 +1167,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01AB60428A53465008A79EE /* Build configuration list for PBXNativeTarget "Orbot Mac" */;
 			buildPhases = (
-				D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */,
 				A01AB5F228A53465008A79EE /* Sources */,
 				A01AB5F328A53465008A79EE /* Frameworks */,
 				A01AB5F428A53465008A79EE /* Resources */,
@@ -1226,7 +1191,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01AB6A928A55706008A79EE /* Build configuration list for PBXNativeTarget "TorVPN Mac" */;
 			buildPhases = (
-				409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */,
 				A03FC6D528F8468F002142F1 /* BartyCrouch */,
 				A01AB69B28A55706008A79EE /* Sources */,
 				A06D605C29019D33001A2E2C /* Embed Frameworks */,
@@ -1252,7 +1216,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A03394D42A45BEC200012811 /* Build configuration list for PBXNativeTarget "StatusWidget" */;
 			buildPhases = (
-				A51CE320AC168D6E37166DD0 /* [CP] Check Pods Manifest.lock */,
 				A03394BE2A45BEC200012811 /* Sources */,
 				A03394BF2A45BEC200012811 /* Frameworks */,
 				A03394C02A45BEC200012811 /* Resources */,
@@ -1304,7 +1267,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05DB2EC2FD97BDD009D2949 /* Build configuration list for PBXNativeTarget "Orbot Mac-sys" */;
 			buildPhases = (
-				A05DB2B62FD97BDD009D2949 /* [CP] Check Pods Manifest.lock */,
 				A05DB2B72FD97BDD009D2949 /* Sources */,
 				A05DB2DE2FD97BDD009D2949 /* Frameworks */,
 				A05DB2E22FD97BDD009D2949 /* Resources */,
@@ -1329,7 +1291,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05DB3052FD97DA1009D2949 /* Build configuration list for PBXNativeTarget "TorVPN Mac-sys" */;
 			buildPhases = (
-				FC276F84A4D655EB836665FE /* [CP] Check Pods Manifest.lock */,
 				A05DB2F42FD97DA1009D2949 /* Sources */,
 				A05DB2F52FD97DA1009D2949 /* Frameworks */,
 				A05DB2F62FD97DA1009D2949 /* Resources */,
@@ -1484,7 +1445,7 @@
 				A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */,
 				A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */,
-				A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */,
+				A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1608,28 +1569,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorVPN Mac-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1690,28 +1629,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -f /opt/homebrew/bin/bartycrouch ]; then\n    /opt/homebrew/bin/bartycrouch update -x\n    /opt/homebrew/bin/bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed. Download it form https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
-		A05DB2B62FD97BDD009D2949 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Orbot Mac-sys-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A07A8E373094B2DF0031E738 /* Load GeoIP Files */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1769,28 +1686,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nDEST=\"$PROJECT_DIR/Shared\"\n\nmkdir -p \"$DEST\"\ncd \"$DEST\"\n\n# Test if file is older then 1 week.\nOLD=\"$(find geoip -mmin +10080 2>/dev/null)\"\n\n# Only download, if files are not existing or older than 1 week.\nif [ ! -f geoip -o ! -z \"$OLD\" ]; then\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip6\nfi\n";
 		};
-		A51CE320AC168D6E37166DD0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StatusWidget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1813,28 +1708,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D760D1C316485BFBD3413FB4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Orbot Mac-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1843,39 +1716,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC276F84A4D655EB836665FE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorVPN Mac-sys-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2300,7 +2147,6 @@
 /* Begin XCBuildConfiguration section */
 		A01AB60228A53465008A79EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A966682C8CED6E8B1BB9C49B /* Pods-Orbot Mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -2338,7 +2184,6 @@
 		};
 		A01AB60328A53465008A79EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1164C6CD568CB9D013077740 /* Pods-Orbot Mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -2376,7 +2221,6 @@
 		};
 		A01AB6AA28A55706008A79EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 245E112FDDC385EA86ED1820 /* Pods-TorVPN Mac.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
@@ -2414,7 +2258,6 @@
 		};
 		A01AB6AB28A55706008A79EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82EE61F08A83ACBA979D7C47 /* Pods-TorVPN Mac.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = "TorVPN Mac/TorVPN_Mac.entitlements";
@@ -2452,7 +2295,6 @@
 		};
 		A03394D22A45BEC200012811 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2610BC8D9FE2690AD854D948 /* Pods-StatusWidget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -2482,7 +2324,6 @@
 		};
 		A03394D32A45BEC200012811 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 168DBD13132A66881422A11E /* Pods-StatusWidget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -2728,7 +2569,6 @@
 		};
 		A05DB2ED2FD97BDD009D2949 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF0D4F885346C5BF7CDD321A /* Pods-Orbot Mac-sys.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -2769,7 +2609,6 @@
 		};
 		A05DB2EE2FD97BDD009D2949 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A45BBB72161AE213CF5E5FB5 /* Pods-Orbot Mac-sys.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -2810,7 +2649,6 @@
 		};
 		A05DB3062FD97DA1009D2949 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 006AE1C005BD05A18A84964D /* Pods-TorVPN Mac-sys.debug.xcconfig */;
 			buildSettings = {
 				AUTOMATION_APPLE_EVENTS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -2871,7 +2709,6 @@
 		};
 		A05DB3072FD97DA1009D2949 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 816668CFE0F321875316C090 /* Pods-TorVPN Mac-sys.release.xcconfig */;
 			buildSettings = {
 				AUTOMATION_APPLE_EVENTS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -3243,7 +3080,7 @@
 				minimumVersion = 5.5.0;
 			};
 		};
-		A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */ = {
+		A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iCepa/Tor.framework";
 			requirement = {
@@ -3316,37 +3153,37 @@
 		};
 		A07A8E293094B1DB0031E738 /* CTorNoLzma */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTorNoLzma;
 		};
 		A07A8E2B3094B1E40031E738 /* CTorNoLzma */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTorNoLzma;
 		};
 		A07A8E2D3094B20E0031E738 /* CTorNoLzma */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTorNoLzma;
 		};
 		A07A8E2F3094B21C0031E738 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTor;
 		};
 		A07A8E313094B2240031E738 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTor;
 		};
 		A07A8E333094B22D0031E738 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTor;
 		};
 		A07A8E353094B2330031E738 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
 			productName = CTor;
 		};
 /* End XCSwiftPackageProductDependency section */
