@@ -196,6 +196,19 @@
 		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
+		A07A8E2A3094B1DB0031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E293094B1DB0031E738 /* CTorNoLzma */; };
+		A07A8E2C3094B1E40031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2B3094B1E40031E738 /* CTorNoLzma */; };
+		A07A8E2E3094B20E0031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2D3094B20E0031E738 /* CTorNoLzma */; };
+		A07A8E303094B21C0031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2F3094B21C0031E738 /* CTor */; };
+		A07A8E323094B2240031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E313094B2240031E738 /* CTor */; };
+		A07A8E343094B22D0031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E333094B22D0031E738 /* CTor */; };
+		A07A8E363094B2330031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E353094B2330031E738 /* CTor */; };
+		A07A8E3C3094B4560031E738 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3A3094B4560031E738 /* geoip */; };
+		A07A8E3D3094B4560031E738 /* geoip6 in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3B3094B4560031E738 /* geoip6 */; };
+		A07A8E3E3094B4560031E738 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3A3094B4560031E738 /* geoip */; };
+		A07A8E3F3094B4560031E738 /* geoip6 in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3B3094B4560031E738 /* geoip6 */; };
+		A07A8E403094B4560031E738 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3A3094B4560031E738 /* geoip */; };
+		A07A8E413094B4560031E738 /* geoip6 in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3B3094B4560031E738 /* geoip6 */; };
 		A081CEDF2ECC94CB00DA2392 /* AppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */; };
 		A08688172975A2310032B141 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08688162975A2310032B141 /* ScanViewController.swift */; };
 		A08C8FF02805D7220065B98D /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08C8FEF2805D7220065B98D /* BlockerViewController.swift */; };
@@ -547,6 +560,8 @@
 		A06BEC7B280095AA00351868 /* ContentBlocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentBlocker.entitlements; sourceTree = "<group>"; };
 		A06C96F5273C36AE0019ABE5 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A06DDCAC29264D0E001F9371 /* DebugMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMessage.swift; sourceTree = "<group>"; };
+		A07A8E3A3094B4560031E738 /* geoip */ = {isa = PBXFileReference; lastKnownFileType = text; path = geoip; sourceTree = "<group>"; };
+		A07A8E3B3094B4560031E738 /* geoip6 */ = {isa = PBXFileReference; lastKnownFileType = text; path = geoip6; sourceTree = "<group>"; };
 		A080ED382FBCB1CB003A8BC8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A080ED392FBCB1D8003A8BC8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A081CEDE2ECC94CB00DA2392 /* AppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconViewController.swift; sourceTree = "<group>"; };
@@ -671,22 +686,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A03CBDF62F3CA9D900B22D96 /* docs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = docs;
 			sourceTree = "<group>";
 		};
 		A04FFDE42EFAD5380094AEFA /* bin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = bin;
 			sourceTree = "<group>";
 		};
 		A05DB2F32FD97CF4009D2949 /* Orbot Mac-sys */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "Orbot Mac-sys";
 			sourceTree = "<group>";
 		};
@@ -706,6 +715,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */,
+				A07A8E303094B21C0031E738 /* CTor in Frameworks */,
 				A04CC9F1307D3A460018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
 				DF35744A806FF39C2F2C4585 /* Pods_Orbot_Mac.framework in Frameworks */,
@@ -717,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
+				A07A8E343094B22D0031E738 /* CTor in Frameworks */,
 				A04CC9F5307D3A5B0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				D774CAAB94E1491FABCFFF7F /* Pods_TorVPN_Mac.framework in Frameworks */,
 				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
@@ -727,6 +738,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07A8E2E3094B20E0031E738 /* CTorNoLzma in Frameworks */,
 				A04CC97C307D331F0018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */,
 				A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */,
@@ -741,6 +753,7 @@
 				A04CC97F307D33DA0018C468 /* ProgressHUD in Frameworks */,
 				A04CC978307D32E50018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
+				A07A8E2C3094B1E40031E738 /* CTorNoLzma in Frameworks */,
 				A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */,
 				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
 				A04CC982307D350A0018C468 /* Eureka in Frameworks */,
@@ -752,6 +765,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05DB2F22FD97C0B009D2949 /* SwiftPortmap in Frameworks */,
+				A07A8E323094B2240031E738 /* CTor in Frameworks */,
 				A04CC9F3307D3A4F0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB2E12FD97BDD009D2949 /* NetworkExtension.framework in Frameworks */,
 				D110A30400328DDB2AD7DAF1 /* Pods_Orbot_Mac_sys.framework in Frameworks */,
@@ -763,6 +777,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05DB2F92FD97DA1009D2949 /* NetworkExtension.framework in Frameworks */,
+				A07A8E363094B2330031E738 /* CTor in Frameworks */,
 				A04CC9F7307D3A620018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB3092FD9801F009D2949 /* libleaf.a in Frameworks */,
 				25E3312E40EBA55C8207F69C /* Pods_TorVPN_Mac_sys.framework in Frameworks */,
@@ -780,6 +795,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07A8E2A3094B1DB0031E738 /* CTorNoLzma in Frameworks */,
 				A04CC97A307D33020018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
@@ -1007,6 +1023,8 @@
 				A0B167D9284F63C80089EB7C /* template-bypass.conf */,
 				A05B73BC24755CE700930C40 /* Assets.xcassets */,
 				A036701D292E70D60012C84A /* exit-node-countries.plist */,
+				A07A8E3A3094B4560031E738 /* geoip */,
+				A07A8E3B3094B4560031E738 /* geoip6 */,
 				A00F5134274545BC0037DD4A /* Localizable.strings */,
 			);
 			path = Shared;
@@ -1188,7 +1206,6 @@
 				A01AB5F328A53465008A79EE /* Frameworks */,
 				A01AB5F428A53465008A79EE /* Resources */,
 				A01AB6AC28A55706008A79EE /* Embed Foundation Extensions */,
-				0EE0CCE28D8566B0FF16BEDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1199,6 +1216,7 @@
 			name = "Orbot Mac";
 			packageProductDependencies = (
 				A04CC9F0307D3A460018C468 /* IPtProxyUI-macOS */,
+				A07A8E2F3094B21C0031E738 /* CTor */,
 			);
 			productName = "Orbot Mac";
 			productReference = A01AB5F628A53465008A79EE /* Orbot.app */;
@@ -1213,6 +1231,7 @@
 				A01AB69B28A55706008A79EE /* Sources */,
 				A06D605C29019D33001A2E2C /* Embed Frameworks */,
 				A01AB69C28A55706008A79EE /* Frameworks */,
+				A07A8E383094B3370031E738 /* Load GeoIP Files */,
 				A01AB69D28A55706008A79EE /* Resources */,
 			);
 			buildRules = (
@@ -1223,6 +1242,7 @@
 			name = "TorVPN Mac";
 			packageProductDependencies = (
 				A04CC9F4307D3A5B0018C468 /* IPtProxyUI-macOS */,
+				A07A8E333094B22D0031E738 /* CTor */,
 			);
 			productName = "TorVPN Mac";
 			productReference = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */;
@@ -1244,6 +1264,7 @@
 			name = StatusWidget;
 			packageProductDependencies = (
 				A04CC97B307D331F0018C468 /* IPtProxyUI-iOS-AppEx */,
+				A07A8E2D3094B20E0031E738 /* CTorNoLzma */,
 			);
 			productName = StatusWidgetExtension;
 			productReference = A03394C22A45BEC200012811 /* StatusWidget.appex */;
@@ -1273,6 +1294,7 @@
 				A04CC977307D32E50018C468 /* IPtProxyUI-iOS-AppEx */,
 				A04CC97E307D33DA0018C468 /* ProgressHUD */,
 				A04CC981307D350A0018C468 /* Eureka */,
+				A07A8E2B3094B1E40031E738 /* CTorNoLzma */,
 			);
 			productName = iCepa;
 			productReference = A05B73B024755CE600930C40 /* Orbot.app */;
@@ -1286,7 +1308,6 @@
 				A05DB2B72FD97BDD009D2949 /* Sources */,
 				A05DB2DE2FD97BDD009D2949 /* Frameworks */,
 				A05DB2E22FD97BDD009D2949 /* Resources */,
-				A05DB2EB2FD97BDD009D2949 /* [CP] Embed Pods Frameworks */,
 				A05DB3082FD97DA1009D2949 /* Embed System Extensions */,
 			);
 			buildRules = (
@@ -1298,6 +1319,7 @@
 			name = "Orbot Mac-sys";
 			packageProductDependencies = (
 				A04CC9F2307D3A4F0018C468 /* IPtProxyUI-macOS */,
+				A07A8E313094B2240031E738 /* CTor */,
 			);
 			productName = "Orbot Mac";
 			productReference = A05DB2EF2FD97BDD009D2949 /* Orbot.app */;
@@ -1311,6 +1333,7 @@
 				A05DB2F42FD97DA1009D2949 /* Sources */,
 				A05DB2F52FD97DA1009D2949 /* Frameworks */,
 				A05DB2F62FD97DA1009D2949 /* Resources */,
+				A07A8E393094B34F0031E738 /* Load GeoIP Files */,
 			);
 			buildRules = (
 			);
@@ -1323,6 +1346,7 @@
 			name = "TorVPN Mac-sys";
 			packageProductDependencies = (
 				A04CC9F6307D3A620018C468 /* IPtProxyUI-macOS */,
+				A07A8E353094B2330031E738 /* CTor */,
 			);
 			productName = "TorVPN Mac-sys";
 			productReference = A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */;
@@ -1354,6 +1378,7 @@
 				A0A735C9247561F200073C81 /* Sources */,
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
 				A0A735CA247561F200073C81 /* Frameworks */,
+				A07A8E373094B2DF0031E738 /* Load GeoIP Files */,
 				A0A735CB247561F200073C81 /* Resources */,
 			);
 			buildRules = (
@@ -1364,6 +1389,7 @@
 			name = TorVPN;
 			packageProductDependencies = (
 				A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */,
+				A07A8E293094B1DB0031E738 /* CTorNoLzma */,
 			);
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
@@ -1458,6 +1484,7 @@
 				A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */,
 				A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */,
+				A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1497,6 +1524,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FF331528B3ADC50079A267 /* template.conf in Resources */,
+				A07A8E3E3094B4560031E738 /* geoip in Resources */,
+				A07A8E3F3094B4560031E738 /* geoip6 in Resources */,
 				A0FF331628B3ADC90079A267 /* template-onion-only.conf in Resources */,
 				A0FF331728B3ADCD0079A267 /* template-bypass.conf in Resources */,
 			);
@@ -1542,6 +1571,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05DB37C2FD9819A009D2949 /* template.conf in Resources */,
+				A07A8E403094B4560031E738 /* geoip in Resources */,
+				A07A8E413094B4560031E738 /* geoip6 in Resources */,
 				A05DB37D2FD9819E009D2949 /* template-onion-only.conf in Resources */,
 				A05DB37E2FD981A2009D2949 /* template-bypass.conf in Resources */,
 			);
@@ -1560,6 +1591,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A023D82B271986FB00A634B7 /* template.conf in Resources */,
+				A07A8E3C3094B4560031E738 /* geoip in Resources */,
+				A07A8E3D3094B4560031E738 /* geoip6 in Resources */,
 				A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */,
 				A0B167DA284F69A70089EB7C /* template-bypass.conf in Resources */,
 			);
@@ -1575,23 +1608,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0EE0CCE28D8566B0FF16BEDB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac/Pods-Orbot Mac-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		409194A5E6D0FCFF456B4364 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1696,22 +1712,62 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A05DB2EB2FD97BDD009D2949 /* [CP] Embed Pods Frameworks */ = {
+		A07A8E373094B2DF0031E738 /* Load GeoIP Files */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+			);
+			name = "Load GeoIP Files";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot Mac-sys/Pods-Orbot Mac-sys-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#!/bin/sh\n\nDEST=\"$PROJECT_DIR/Shared\"\n\nmkdir -p \"$DEST\"\ncd \"$DEST\"\n\n# Test if file is older then 1 week.\nOLD=\"$(find geoip -mmin +10080 2>/dev/null)\"\n\n# Only download, if files are not existing or older than 1 week.\nif [ ! -f geoip -o ! -z \"$OLD\" ]; then\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip6\nfi\n";
+		};
+		A07A8E383094B3370031E738 /* Load GeoIP Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Load GeoIP Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nDEST=\"$PROJECT_DIR/Shared\"\n\nmkdir -p \"$DEST\"\ncd \"$DEST\"\n\n# Test if file is older then 1 week.\nOLD=\"$(find geoip -mmin +10080 2>/dev/null)\"\n\n# Only download, if files are not existing or older than 1 week.\nif [ ! -f geoip -o ! -z \"$OLD\" ]; then\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip6\nfi\n";
+		};
+		A07A8E393094B34F0031E738 /* Load GeoIP Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Load GeoIP Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nDEST=\"$PROJECT_DIR/Shared\"\n\nmkdir -p \"$DEST\"\ncd \"$DEST\"\n\n# Test if file is older then 1 week.\nOLD=\"$(find geoip -mmin +10080 2>/dev/null)\"\n\n# Only download, if files are not existing or older than 1 week.\nif [ ! -f geoip -o ! -z \"$OLD\" ]; then\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip6\nfi\n";
 		};
 		A51CE320AC168D6E37166DD0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1787,9 +1843,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3183,6 +3243,14 @@
 				minimumVersion = 5.5.0;
 			};
 		};
+		A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iCepa/Tor.framework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 409.15.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3245,6 +3313,41 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
 			productName = SwiftPortmap;
+		};
+		A07A8E293094B1DB0031E738 /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A07A8E2B3094B1E40031E738 /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A07A8E2D3094B20E0031E738 /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A07A8E2F3094B21C0031E738 /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A07A8E313094B2240031E738 /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A07A8E333094B22D0031E738 /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A07A8E353094B2330031E738 /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -2,19 +2,9 @@ PODS:
   - GCDWebServerExtension (3.5.4):
     - GCDWebServerExtension/Core (= 3.5.4)
   - GCDWebServerExtension/Core (3.5.4)
-  - Tor/Core (409.14.1)
-  - Tor/CTor-NoLZMA (409.14.1):
-    - Tor/Core
-  - Tor/GeoIP-NoLZMA (409.14.1):
-    - Tor/CTor-NoLZMA
 
 DEPENDENCIES:
   - GCDWebServerExtension (from `https://github.com/tladesignz/GCDWebServer.git`)
-  - Tor/GeoIP-NoLZMA (~> 409.14)
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Tor
 
 EXTERNAL SOURCES:
   GCDWebServerExtension:
@@ -27,8 +17,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   GCDWebServerExtension: a7d9eb7b23a9f03f48a4eada2e57e11483c5a9a9
-  Tor: 885bab50ebad5e6580f7b05b0df623aebfc598cb
 
-PODFILE CHECKSUM: 8ee3be8f4c1573653f093ad3e101ac3f26902437
+PODFILE CHECKSUM: f3c1f0b3452a97234f580bdd0d13430775ab67b0
 
 COCOAPODS: 1.17.0

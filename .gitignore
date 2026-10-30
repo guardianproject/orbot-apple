@@ -1,6 +1,8 @@
 leaf-ffi-orbot/leaf.h
 leaf-ffi-orbot/*/libleaf.a
 Shared/exit-node-countries.plist
+Shared/geoip
+Shared/geoip6
 fastlane/screenshots/screenshots.html
 
 # Created by https://www.gitignore.io/api/xcode,macos,swift,objective-c

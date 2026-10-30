@@ -6,7 +6,7 @@
 //  Copyright © 2020 - 2026 Guardian Project. All rights reserved.
 //
 
-import Tor
+import TorCore
 
 extension TorAuthKey {
 

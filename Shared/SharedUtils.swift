@@ -9,12 +9,14 @@
 import Foundation
 import IPtProxy
 import NetworkExtension
-import Tor
+import TorCore
 import SwiftPortmap
 
 #if os(macOS)
+import Cocoa
 import IPtProxyUI_macOS
 #else
+import UIKit
 import IPtProxyUI_iOS_AppEx
 #endif
 

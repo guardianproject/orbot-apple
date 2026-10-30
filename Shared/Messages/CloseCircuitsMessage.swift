@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Tor
+import TorCore
 
 class CloseCircuitsMessage: Message {
 

@@ -7,11 +7,12 @@
 //
 
 import NetworkExtension
-import Tor
 
 #if os(macOS)
+import CTor
 import IPtProxyUI_macOS
 #else
+import CTorNoLzma
 import IPtProxyUI_iOS_AppEx
 #endif
 
@@ -422,8 +423,8 @@ class TorManager {
 		// GeoIP files for circuit node country display.
 		// If the user set country restrictions, Tor always needs the GeoIP files.
 		if !Settings.disableGeoIp || hasGeoArguments {
-			conf.geoipFile = Bundle.geoIp?.geoipFile
-			conf.geoip6File = Bundle.geoIp?.geoip6File
+			conf.geoipFile = Bundle.main.url(forResource: "geoip", withExtension: nil)
+			conf.geoip6File = Bundle.main.url(forResource: "geoip6", withExtension: nil)
 		}
 
 		var socksPort = "auto"

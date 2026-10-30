@@ -7,7 +7,7 @@
 //
 
 import NetworkExtension
-import Tor
+import TorCore
 import WidgetKit
 
 #if os(macOS)

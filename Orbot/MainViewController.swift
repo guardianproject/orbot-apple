@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Tor
+import TorCore
 import IPtProxyUI_iOS_AppEx
 import ProgressHUD
 import NetworkExtension

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Tor
+import TorCore
 
 class AuthKeyItem: NSCollectionViewItem {
 

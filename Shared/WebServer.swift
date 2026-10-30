@@ -8,7 +8,7 @@
 
 import Foundation
 import GCDWebServerExtension
-import Tor
+import TorCore
 
 open class WebServer: NSObject, GCDWebServerDelegate {
 

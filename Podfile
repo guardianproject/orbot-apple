@@ -2,58 +2,34 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
 
-def tor
-  pod 'Tor/GeoIP-NoLZMA',
-   '~> 409.14'
-#   :git => 'https://github.com/iCepa/Tor.framework'
-#  :path => '../Tor.framework'
-
-#  pod 'Tor/Onionmasq',
-#    :podspec => 'https://raw.githubusercontent.com/iCepa/Tor.framework/pure_pod/Arti.podspec'
-end
-
 target 'Orbot' do
   platform :ios, '15.0'
-
-  tor
 end
 
 target 'Orbot Mac' do
   platform :macos, '12.0'
-
-  tor
 end
 
 target 'Orbot Mac-sys' do
   platform :macos, '12.0'
-
-  tor
 end
 
 target 'TorVPN' do
   platform :ios, '15.0'
-
-  tor
 
   pod 'GCDWebServerExtension', :git => 'https://github.com/tladesignz/GCDWebServer.git'
 end
 
 target 'StatusWidget' do
   platform :ios, '15.0'
-
-  tor
 end
 
 target 'TorVPN Mac' do
   platform :macos, '12.0'
-
-  tor
 end
 
 target 'TorVPN Mac-sys' do
   platform :macos, '12.0'
-
-  tor
 end
 
 # Fix Xcode 15 compile issues.

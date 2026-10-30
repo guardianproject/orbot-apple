@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Tor
+import TorCore
 
 extension NSUserInterfaceItemIdentifier {
 

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import Tor
+import TorCore
 import IPtProxyUI_macOS
 
 protocol EditAuthDelegate: AnyObject {
