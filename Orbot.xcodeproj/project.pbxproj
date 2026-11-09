@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A006A7BB309A1C41001D3C5F /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7BA309A1C41001D3C5F /* CTor */; };
+		A006A7BD309A1C41001D3C5F /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7BC309A1C41001D3C5F /* CTorNoLzma */; };
+		A006A7BF309A1C4B001D3C5F /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7BE309A1C4B001D3C5F /* CTorNoLzma */; };
+		A006A7C1309A1C52001D3C5F /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7C0309A1C52001D3C5F /* CTorNoLzma */; };
+		A006A7C3309A1C5C001D3C5F /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7C2309A1C5C001D3C5F /* CTor */; };
+		A006A7C5309A1C63001D3C5F /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7C4309A1C63001D3C5F /* CTor */; };
+		A006A7C7309A1C68001D3C5F /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A006A7C6309A1C68001D3C5F /* CTor */; };
 		A009F0822812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A009F0832812EE9400A04480 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A00D90DF273AC4CB009C8053 /* ConfigChangedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */; };
@@ -195,13 +202,6 @@
 		A06DDCAE29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCAF29264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
 		A06DDCB029264D0E001F9371 /* DebugMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DDCAC29264D0E001F9371 /* DebugMessage.swift */; };
-		A07A8E2A3094B1DB0031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E293094B1DB0031E738 /* CTorNoLzma */; };
-		A07A8E2C3094B1E40031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2B3094B1E40031E738 /* CTorNoLzma */; };
-		A07A8E2E3094B20E0031E738 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2D3094B20E0031E738 /* CTorNoLzma */; };
-		A07A8E303094B21C0031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E2F3094B21C0031E738 /* CTor */; };
-		A07A8E323094B2240031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E313094B2240031E738 /* CTor */; };
-		A07A8E343094B22D0031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E333094B22D0031E738 /* CTor */; };
-		A07A8E363094B2330031E738 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A07A8E353094B2330031E738 /* CTor */; };
 		A07A8E3C3094B4560031E738 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3A3094B4560031E738 /* geoip */; };
 		A07A8E3D3094B4560031E738 /* geoip6 in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3B3094B4560031E738 /* geoip6 */; };
 		A07A8E3E3094B4560031E738 /* geoip in Resources */ = {isa = PBXBuildFile; fileRef = A07A8E3A3094B4560031E738 /* geoip */; };
@@ -299,6 +299,8 @@
 		A0EF119F28045F6700A03017 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
 		A0EF11A028045F7D00A03017 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E0247566CD00073C81 /* Config.m */; };
 		A0EF11A128045F8200A03017 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735E32475679800073C81 /* Config.swift */; };
+		A0F2BD9D3098DC770095DC04 /* CTor in Frameworks */ = {isa = PBXBuildFile; productRef = A0F2BD9C3098DC770095DC04 /* CTor */; };
+		A0F2BD9F3098DC770095DC04 /* CTorNoLzma in Frameworks */ = {isa = PBXBuildFile; productRef = A0F2BD9E3098DC770095DC04 /* CTorNoLzma */; };
 		A0F3FFB5282EA306003096EC /* template-onion-only.conf in Resources */ = {isa = PBXBuildFile; fileRef = A0F3FFB4282EA264003096EC /* template-onion-only.conf */; };
 		A0F4E9CC2E27E8A50074BB28 /* KindnessModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9CB2E27E8A50074BB28 /* KindnessModeViewController.swift */; };
 		A0F4E9D02E2808360074BB28 /* Dimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E9CF2E2808360074BB28 /* Dimmer.swift */; };
@@ -666,22 +668,16 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A03CBDF62F3CA9D900B22D96 /* docs */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = docs;
 			sourceTree = "<group>";
 		};
 		A04FFDE42EFAD5380094AEFA /* bin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = bin;
 			sourceTree = "<group>";
 		};
 		A05DB2F32FD97CF4009D2949 /* Orbot Mac-sys */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = "Orbot Mac-sys";
 			sourceTree = "<group>";
 		};
@@ -700,8 +696,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F2BD9D3098DC770095DC04 /* CTor in Frameworks */,
+				A006A7BB309A1C41001D3C5F /* CTor in Frameworks */,
 				A04A997F2E5C544F006B03C3 /* SwiftPortmap in Frameworks */,
-				A07A8E303094B21C0031E738 /* CTor in Frameworks */,
 				A04CC9F1307D3A460018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A01AB69A28A55512008A79EE /* NetworkExtension.framework in Frameworks */,
 			);
@@ -711,8 +708,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A006A7C5309A1C63001D3C5F /* CTor in Frameworks */,
 				A01AB6A028A55706008A79EE /* NetworkExtension.framework in Frameworks */,
-				A07A8E343094B22D0031E738 /* CTor in Frameworks */,
 				A04CC9F5307D3A5B0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */,
 			);
@@ -722,10 +719,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A07A8E2E3094B20E0031E738 /* CTorNoLzma in Frameworks */,
 				A04CC97C307D331F0018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A03394C62A45BEC200012811 /* SwiftUI.framework in Frameworks */,
 				A03394C42A45BEC200012811 /* WidgetKit.framework in Frameworks */,
+				A006A7C1309A1C52001D3C5F /* CTorNoLzma in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,10 +730,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0F2BD9F3098DC770095DC04 /* CTorNoLzma in Frameworks */,
 				A04CC97F307D33DA0018C468 /* ProgressHUD in Frameworks */,
 				A04CC978307D32E50018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
+				A006A7BD309A1C41001D3C5F /* CTorNoLzma in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
-				A07A8E2C3094B1E40031E738 /* CTorNoLzma in Frameworks */,
 				A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */,
 				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
 				A04CC982307D350A0018C468 /* Eureka in Frameworks */,
@@ -747,8 +745,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A006A7C3309A1C5C001D3C5F /* CTor in Frameworks */,
 				A05DB2F22FD97C0B009D2949 /* SwiftPortmap in Frameworks */,
-				A07A8E323094B2240031E738 /* CTor in Frameworks */,
 				A04CC9F3307D3A4F0018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB2E12FD97BDD009D2949 /* NetworkExtension.framework in Frameworks */,
 			);
@@ -758,8 +756,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A006A7C7309A1C68001D3C5F /* CTor in Frameworks */,
 				A05DB2F92FD97DA1009D2949 /* NetworkExtension.framework in Frameworks */,
-				A07A8E363094B2330031E738 /* CTor in Frameworks */,
 				A04CC9F7307D3A620018C468 /* IPtProxyUI-macOS in Frameworks */,
 				A05DB3092FD9801F009D2949 /* libleaf.a in Frameworks */,
 			);
@@ -776,7 +774,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A07A8E2A3094B1DB0031E738 /* CTorNoLzma in Frameworks */,
+				A006A7BF309A1C4B001D3C5F /* CTorNoLzma in Frameworks */,
 				A04CC97A307D33020018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
 				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
@@ -1181,7 +1179,8 @@
 			name = "Orbot Mac";
 			packageProductDependencies = (
 				A04CC9F0307D3A460018C468 /* IPtProxyUI-macOS */,
-				A07A8E2F3094B21C0031E738 /* CTor */,
+				A0F2BD9C3098DC770095DC04 /* CTor */,
+				A006A7BA309A1C41001D3C5F /* CTor */,
 			);
 			productName = "Orbot Mac";
 			productReference = A01AB5F628A53465008A79EE /* Orbot.app */;
@@ -1206,7 +1205,7 @@
 			name = "TorVPN Mac";
 			packageProductDependencies = (
 				A04CC9F4307D3A5B0018C468 /* IPtProxyUI-macOS */,
-				A07A8E333094B22D0031E738 /* CTor */,
+				A006A7C4309A1C63001D3C5F /* CTor */,
 			);
 			productName = "TorVPN Mac";
 			productReference = A01AB69F28A55706008A79EE /* TorVPN Mac.appex */;
@@ -1227,7 +1226,7 @@
 			name = StatusWidget;
 			packageProductDependencies = (
 				A04CC97B307D331F0018C468 /* IPtProxyUI-iOS-AppEx */,
-				A07A8E2D3094B20E0031E738 /* CTorNoLzma */,
+				A006A7C0309A1C52001D3C5F /* CTorNoLzma */,
 			);
 			productName = StatusWidgetExtension;
 			productReference = A03394C22A45BEC200012811 /* StatusWidget.appex */;
@@ -1257,7 +1256,8 @@
 				A04CC977307D32E50018C468 /* IPtProxyUI-iOS-AppEx */,
 				A04CC97E307D33DA0018C468 /* ProgressHUD */,
 				A04CC981307D350A0018C468 /* Eureka */,
-				A07A8E2B3094B1E40031E738 /* CTorNoLzma */,
+				A0F2BD9E3098DC770095DC04 /* CTorNoLzma */,
+				A006A7BC309A1C41001D3C5F /* CTorNoLzma */,
 			);
 			productName = iCepa;
 			productReference = A05B73B024755CE600930C40 /* Orbot.app */;
@@ -1281,7 +1281,7 @@
 			name = "Orbot Mac-sys";
 			packageProductDependencies = (
 				A04CC9F2307D3A4F0018C468 /* IPtProxyUI-macOS */,
-				A07A8E313094B2240031E738 /* CTor */,
+				A006A7C2309A1C5C001D3C5F /* CTor */,
 			);
 			productName = "Orbot Mac";
 			productReference = A05DB2EF2FD97BDD009D2949 /* Orbot.app */;
@@ -1307,7 +1307,7 @@
 			name = "TorVPN Mac-sys";
 			packageProductDependencies = (
 				A04CC9F6307D3A620018C468 /* IPtProxyUI-macOS */,
-				A07A8E353094B2330031E738 /* CTor */,
+				A006A7C6309A1C68001D3C5F /* CTor */,
 			);
 			productName = "TorVPN Mac-sys";
 			productReference = A05DB2F82FD97DA1009D2949 /* org.torproject.orbot.ext.systemextension */;
@@ -1350,7 +1350,7 @@
 			name = TorVPN;
 			packageProductDependencies = (
 				A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */,
-				A07A8E293094B1DB0031E738 /* CTorNoLzma */,
+				A006A7BE309A1C4B001D3C5F /* CTorNoLzma */,
 			);
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
@@ -1445,7 +1445,7 @@
 				A04CC976307D32E50018C468 /* XCRemoteSwiftPackageReference "IPtProxyUI-ios" */,
 				A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */,
-				A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */,
+				A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1716,9 +1716,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3048,6 +3052,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iCepa/Tor.framework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 409.16.1;
+			};
+		};
 		A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/osy/SwiftPortmap";
@@ -3061,7 +3073,7 @@
 			repositoryURL = "https://github.com/tladesignz/IPtProxyUI-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 6.1.0;
 			};
 		};
 		A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
@@ -3080,17 +3092,44 @@
 				minimumVersion = 5.5.0;
 			};
 		};
-		A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iCepa/Tor.framework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 409.15.2;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A006A7BA309A1C41001D3C5F /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A006A7BC309A1C41001D3C5F /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A006A7BE309A1C4B001D3C5F /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A006A7C0309A1C52001D3C5F /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTorNoLzma;
+		};
+		A006A7C2309A1C5C001D3C5F /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A006A7C4309A1C63001D3C5F /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
+		A006A7C6309A1C68001D3C5F /* CTor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */;
+			productName = CTor;
+		};
 		A04A997E2E5C544F006B03C3 /* SwiftPortmap */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
@@ -3151,40 +3190,13 @@
 			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
 			productName = SwiftPortmap;
 		};
-		A07A8E293094B1DB0031E738 /* CTorNoLzma */ = {
+		A0F2BD9C3098DC770095DC04 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
+			productName = CTor;
+		};
+		A0F2BD9E3098DC770095DC04 /* CTorNoLzma */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = CTorNoLzma;
-		};
-		A07A8E2B3094B1E40031E738 /* CTorNoLzma */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTorNoLzma;
-		};
-		A07A8E2D3094B20E0031E738 /* CTorNoLzma */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTorNoLzma;
-		};
-		A07A8E2F3094B21C0031E738 /* CTor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTor;
-		};
-		A07A8E313094B2240031E738 /* CTor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTor;
-		};
-		A07A8E333094B22D0031E738 /* CTor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTor;
-		};
-		A07A8E353094B2330031E738 /* CTor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A07A8E263094B1B10031E738 /* XCRemoteSwiftPackageReference "Tor.framework" */;
-			productName = CTor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
