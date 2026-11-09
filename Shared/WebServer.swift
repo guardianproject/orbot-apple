@@ -133,7 +133,9 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 
 		let host = req.query?["host"]
 
-		TorManager.shared.getCircuits { circuits in
+		Task {
+			let circuits = await TorManager.shared.getCircuits()
+
 			var candidates = TorCircuit.filter(circuits)
 
 			if let host = host {
@@ -183,7 +185,9 @@ open class WebServer: NSObject, GCDWebServerDelegate {
 			return completion(error())
 		}
 
-		TorManager.shared.close([id]) { success in
+		Task {
+			let success = await TorManager.shared.close([id])
+
 			if success {
 				completion(self.respond())
 			}

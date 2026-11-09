@@ -230,7 +230,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 
 		if request is GetCircuitsMessage {
-			TorManager.shared.getCircuits { circuits in
+			Task {
+				let circuits = await TorManager.shared.getCircuits()
 				completionHandler?(Self.archive(circuits))
 			}
 
@@ -238,7 +239,8 @@ class BasePTProvider: NEPacketTunnelProvider {
 		}
 
 		if let request = request as? CloseCircuitsMessage {
-			TorManager.shared.close(request.circuits) { success in
+			Task {
+				let success = await TorManager.shared.close(request.circuits)
 				completionHandler?(Self.archive(success))
 			}
 
@@ -337,20 +339,31 @@ class BasePTProvider: NEPacketTunnelProvider {
 
 		oldProgress = -1
 
-		TorManager.shared.start(transport, packetFlow, { [weak self] progress, summary in
-			guard let progress = progress else {
-				return
+		Task { [weak self] in
+			var socksAddr: String?
+			var dnsAddr: String?
+			var err: Error?
+
+			do {
+				(socksAddr, dnsAddr) = try await TorManager.shared.start(self?.transport ?? .none, self!.packetFlow, { progress, summary in
+					guard let progress = progress else {
+						return
+					}
+
+					if progress > self?.oldProgress ?? -1 {
+						self?.connectionAlive()
+						self?.oldProgress = progress
+					}
+
+					Self.messageQueue.append(ProgressMessage(Float(progress) / 100, summary))
+
+					self?.sendMessages()
+				})
+			}
+			catch {
+				err = error
 			}
 
-			if progress > self?.oldProgress ?? -1 {
-				self?.connectionAlive()
-				self?.oldProgress = progress
-			}
-
-			Self.messageQueue.append(ProgressMessage(Float(progress) / 100, summary))
-
-			self?.sendMessages()
-		}, { [weak self] error, socksAddr, dnsAddr in
 			self?.stopConnectionGuard()
 
 			if let self {
@@ -360,12 +373,12 @@ class BasePTProvider: NEPacketTunnelProvider {
 			}
 
 			// Since we seem to have a working connection now, disable smart connect.
-			if error == nil && Settings.smartConnect {
+			if err == nil && Settings.smartConnect {
 				Settings.smartConnect = false
 			}
 
-			completion(error, socksAddr, dnsAddr)
-		})
+			completion(err, socksAddr, dnsAddr)
+		}
 
 
 		if Settings.smartConnect {
@@ -455,7 +468,14 @@ class BasePTProvider: NEPacketTunnelProvider {
 				}
 				while !connected
 
-				TorManager.shared.updateConfig(self.transport)
+				Task {
+					do {
+						try await TorManager.shared.updateConfig(self.transport)
+					}
+					catch {
+						self.log(error.localizedDescription)
+					}
+				}
 
 				Settings.transport = self.transport
 				Self.messageQueue.append(ConfigChangedMessage())
