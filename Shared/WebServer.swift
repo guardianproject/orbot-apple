@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GCDWebServerExtension
+import GCDWebServer
 import TorCore
 
 open class WebServer: NSObject, GCDWebServerDelegate {

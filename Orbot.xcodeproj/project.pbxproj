@@ -291,6 +291,7 @@
 		A0E423BF291956F6001C31E9 /* libleaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E423BE291956E9001C31E9 /* libleaf.a */; };
 		A0E471442FAB540500633EC2 /* ProxyQualityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */; };
 		A0E471452FAB540500633EC2 /* ProxyQualityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E471432FAB540500633EC2 /* ProxyQualityTest.swift */; };
+		A0E5A92430A4B561002453BE /* GCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = A0E5A92330A4B561002453BE /* GCDWebServer */; };
 		A0E5F7632806ECEB00B86AF6 /* noop.json in Resources */ = {isa = PBXBuildFile; fileRef = A0E5F7622806ECEB00B86AF6 /* noop.json */; };
 		A0E5F7652806FE0500B86AF6 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E5F7642806FE0500B86AF6 /* String+Helpers.swift */; };
 		A0EF1197280439C200A03017 /* ContentBlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1196280439C200A03017 /* ContentBlockerViewController.swift */; };
@@ -317,8 +318,6 @@
 		A0FF331D28B3B7F10079A267 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF331C28B3B7F10079A267 /* LogViewController.swift */; };
 		A0FF331E28B3BACE0079A267 /* TorCircuit+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */; };
 		A0FF331F28B3BAE10079A267 /* FileManager+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A735F124756D6B00073C81 /* FileManager+Helpers.swift */; };
-		A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F99644003AC860683D373 /* Pods_Orbot.framework */; };
-		CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,11 +466,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		169F99644003AC860683D373 /* Pods_Orbot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Orbot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.release.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.release.xcconfig"; sourceTree = "<group>"; };
-		2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Orbot.debug.xcconfig"; path = "Target Support Files/Pods-Orbot/Pods-Orbot.debug.xcconfig"; sourceTree = "<group>"; };
-		6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TorVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.release.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.release.xcconfig"; sourceTree = "<group>"; };
 		A009F0812812EE9400A04480 /* TorCircuit+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TorCircuit+Helper.swift"; sourceTree = "<group>"; };
 		A00D90DE273AC4CB009C8053 /* ConfigChangedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigChangedMessage.swift; sourceTree = "<group>"; };
 		A00F5123274529B30037DD4A /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
@@ -652,7 +646,6 @@
 		A0FD91A026F35E5A002C317C /* LeafPTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafPTProvider.swift; sourceTree = "<group>"; };
 		A0FD91A426F36199002C317C /* libleaf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libleaf.a; path = "$(BUILT_PRODUCTS_DIR)/libleaf.a"; sourceTree = "<group>"; };
 		A0FF331C28B3B7F10079A267 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorVPN.debug.xcconfig"; path = "Target Support Files/Pods-TorVPN/Pods-TorVPN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -736,7 +729,6 @@
 				A006A7BD309A1C41001D3C5F /* CTorNoLzma in Frameworks */,
 				A0507CF326F9FB8200F91105 /* NetworkExtension.framework in Frameworks */,
 				A04A99812E5C5ED6006B03C3 /* SwiftPortmap in Frameworks */,
-				A3D344221078B30DAD0EAC0E /* Pods_Orbot.framework in Frameworks */,
 				A04CC982307D350A0018C468 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,7 +769,7 @@
 				A006A7BF309A1C4B001D3C5F /* CTorNoLzma in Frameworks */,
 				A04CC97A307D33020018C468 /* IPtProxyUI-iOS-AppEx in Frameworks */,
 				A0507CF426F9FB8C00F91105 /* NetworkExtension.framework in Frameworks */,
-				CB1C636A27F7C5C1345DB83C /* Pods_TorVPN.framework in Frameworks */,
+				A0E5A92430A4B561002453BE /* GCDWebServer in Frameworks */,
 				A0E423BD291956DD001C31E9 /* libleaf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,7 +870,6 @@
 				A0F8690027D629B000C9D407 /* leaf */,
 				A0D6162627D8E4AA008E0F3C /* Screenshots */,
 				A05B73B124755CE600930C40 /* Products */,
-				A53EFD1654E1809EC93A8DBC /* Pods */,
 				B492266852BAC9D548C91D19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1095,17 +1086,6 @@
 			path = "leaf-ffi-orbot";
 			sourceTree = "<group>";
 		};
-		A53EFD1654E1809EC93A8DBC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */,
-				29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */,
-				C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */,
-				77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B492266852BAC9D548C91D19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1119,8 +1099,6 @@
 				A0507CF226F9FB8200F91105 /* NetworkExtension.framework */,
 				A0507CF526F9FB9400F91105 /* NetworkExtension.framework */,
 				A0FD91A426F36199002C317C /* libleaf.a */,
-				169F99644003AC860683D373 /* Pods_Orbot.framework */,
-				6F705F94F0480AB6452198FF /* Pods_TorVPN.framework */,
 				A03394C32A45BEC200012811 /* WidgetKit.framework */,
 				A03394C52A45BEC200012811 /* SwiftUI.framework */,
 			);
@@ -1236,12 +1214,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A05B73C424755CE700930C40 /* Build configuration list for PBXNativeTarget "Orbot" */;
 			buildPhases = (
-				5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */,
 				A05B73AC24755CE600930C40 /* Sources */,
 				A05B73AD24755CE600930C40 /* Frameworks */,
 				A05B73AE24755CE600930C40 /* Resources */,
 				A0A735D9247561F200073C81 /* Embed Foundation Extensions */,
-				EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1334,7 +1310,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0A735D6247561F200073C81 /* Build configuration list for PBXNativeTarget "TorVPN" */;
 			buildPhases = (
-				C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */,
 				A00F512A274542AE0037DD4A /* BartyCrouch */,
 				A0A735C9247561F200073C81 /* Sources */,
 				A06D605F29019D3B001A2E2C /* Embed Frameworks */,
@@ -1351,6 +1326,7 @@
 			packageProductDependencies = (
 				A04CC979307D33020018C468 /* IPtProxyUI-iOS-AppEx */,
 				A006A7BE309A1C4B001D3C5F /* CTorNoLzma */,
+				A0E5A92330A4B561002453BE /* GCDWebServer */,
 			);
 			productName = TorVPN;
 			productReference = A0A735CD247561F200073C81 /* TorVPN.appex */;
@@ -1446,6 +1422,7 @@
 				A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				A04CC980307D350A0018C468 /* XCRemoteSwiftPackageReference "eureka" */,
 				A006A7B9309A1C40001D3C5F /* XCRemoteSwiftPackageReference "Tor" */,
+				A0E5A92230A4B561002453BE /* XCRemoteSwiftPackageReference "GCDWebServer" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05B73B124755CE600930C40 /* Products */;
@@ -1569,28 +1546,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5EE2208F4ED130172074AC9C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Orbot-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A00F512A274542AE0037DD4A /* BartyCrouch */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -1685,49 +1640,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nDEST=\"$PROJECT_DIR/Shared\"\n\nmkdir -p \"$DEST\"\ncd \"$DEST\"\n\n# Test if file is older then 1 week.\nOLD=\"$(find geoip -mmin +10080 2>/dev/null)\"\n\n# Only download, if files are not existing or older than 1 week.\nif [ ! -f geoip -o ! -z \"$OLD\" ]; then\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip\n    curl --remote-name --location https://gitlab.torproject.org/tpo/core/tor/-/raw/main/src/config/geoip6\nfi\n";
-		};
-		C22D403EE9EDFB01567D08D4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorVPN-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA613F0B6D61304A533884FE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Orbot/Pods-Orbot-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2510,7 +2422,6 @@
 		};
 		A05B73C524755CE700930C40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B8BD982476917CF49792A94 /* Pods-Orbot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -2542,7 +2453,6 @@
 		};
 		A05B73C624755CE700930C40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29D8B1B2B064CBBD60A2A866 /* Pods-Orbot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -2840,7 +2750,6 @@
 		};
 		A0A735D7247561F200073C81 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5392FADA90FED7E02CD5BBE /* Pods-TorVPN.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -2875,7 +2784,6 @@
 		};
 		A0A735D8247561F200073C81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77E200106EB5C66747883FFB /* Pods-TorVPN.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TorVPN/TorVPN.entitlements;
@@ -3092,6 +3000,14 @@
 				minimumVersion = 5.5.0;
 			};
 		};
+		A0E5A92230A4B561002453BE /* XCRemoteSwiftPackageReference "GCDWebServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tladesignz/GCDWebServer";
+			requirement = {
+				kind = revision;
+				revision = 7571e4eb76c289d146de601a6b6ba8f5227abd9a;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3189,6 +3105,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */;
 			productName = SwiftPortmap;
+		};
+		A0E5A92330A4B561002453BE /* GCDWebServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0E5A92230A4B561002453BE /* XCRemoteSwiftPackageReference "GCDWebServer" */;
+			productName = GCDWebServer;
 		};
 		A0F2BD9C3098DC770095DC04 /* CTor */ = {
 			isa = XCSwiftPackageProductDependency;
