@@ -199,7 +199,7 @@ class SettingsViewController: BaseFormViewController {
 				return ButtonRow()
 			}
 
-			$0.multivaluedRowToInsertAt = { index in
+			$0.multivaluedRowToInsertAt = { [weak self] index in
 				return TextRow() {
 					$0.tag = "advanced_\(index)"
 					$0.turnOffAutoCorrect()
@@ -207,7 +207,7 @@ class SettingsViewController: BaseFormViewController {
 						? "--ReachableAddresses"
 						: "99.0.0.0/8, reject 18.0.0.0/8, accept *:80"
 				}
-				.onChange { [weak self] _ in
+				.onChange { _ in
 					self?.saveAdvancedConf()
 				}
 			}
