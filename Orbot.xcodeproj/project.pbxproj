@@ -569,8 +569,6 @@
 		A0A2D8A528B687D200F49BF4 /* AuthKeyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKeyItem.swift; sourceTree = "<group>"; };
 		A0A6E11F2FDBFFEA0088CB6F /* SysExManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysExManager.swift; sourceTree = "<group>"; };
 		A0A735C024755DCB00073C81 /* Orbot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Orbot.entitlements; sourceTree = "<group>"; };
-		A0A735C424755E2100073C81 /* Podfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0A735C524755E2100073C81 /* Podfile */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0A735C624755F2200073C81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		A0A735CD247561F200073C81 /* TorVPN.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TorVPN.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A735CF247561F200073C81 /* BasePTProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePTProvider.swift; sourceTree = "<group>"; };
@@ -944,8 +942,6 @@
 				A00F512527453EE10037DD4A /* .bartycrouch.toml */,
 				A0A735C624755F2200073C81 /* .gitignore */,
 				A0A735F72475804800073C81 /* .gitmodules */,
-				A0A735C524755E2100073C81 /* Podfile */,
-				A0A735C424755E2100073C81 /* Podfile.lock */,
 				A064701A2478170F00311CBE /* README.md */,
 				A0367840274E5E8000344B7F /* CHANGELOG.md */,
 				A064701B24781C5400311CBE /* LICENSE */,
