@@ -2961,7 +2961,7 @@
 			repositoryURL = "https://github.com/iCepa/Tor.framework";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 409.16.1;
+				minimumVersion = 409.17.1;
 			};
 		};
 		A04A997D2E5C544F006B03C3 /* XCRemoteSwiftPackageReference "SwiftPortmap" */ = {
