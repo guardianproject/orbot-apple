@@ -1,0 +1,800 @@
+/* No comment provided by engineer. */
+" where the URL contains the regex \"%@\"" = " where the URL contains the regex \"%@\"";
+
+/* No comment provided by engineer. */
+"%1$@ 2-letter country codes in braces, e.g. \"%2$@\"" = "%1$@ 2-letter country codes in braces, e.g. \"%2$@\"";
+
+/* No comment provided by engineer. */
+"%1$@ by %2$@ for %3$@ on %4$@%5$@." = "%1$@ by %2$@ for %3$@ on %4$@%5$@.";
+
+/* No comment provided by engineer. */
+"%1$@ Bypass %2$@" = "%1$@ Bypass %2$@";
+
+/* No comment provided by engineer. */
+"%1$@ Get information about Tor circuits." = "%1$@ Get information about Tor circuits.";
+
+/* No comment provided by engineer. */
+"%1$@ Get updates on the status of the connection." = "%1$@ Get updates on the status of the connection.";
+
+/* No comment provided by engineer. */
+"%1$@ IP address patterns, e.g. \"%2$@\"" = "%1$@ IP address patterns, e.g. \"%2$@\"";
+
+/* No comment provided by engineer. */
+"%1$@ node fingerprints, e.g. \"%2$@\"" = "%1$@ node fingerprints, e.g. \"%2$@\"";
+
+/* No comment provided by engineer. */
+"%1$@ Options need 2 leading minuses: %2$@" = "%1$@ Options need 2 leading minuses: %2$@";
+
+/* No comment provided by engineer. */
+"%1$@ Some options might get overwritten by %2$@." = "%1$@ Some options might get overwritten by %2$@.";
+
+/* No comment provided by engineer. */
+"%1$@ Stop Tor." = "%1$@ Stop Tor.";
+
+/* No comment provided by engineer. */
+"%1$@ These settings will only take effect after restart." = "%1$@ These settings will only take effect after restart.";
+
+/* No comment provided by engineer. */
+"%1$@ wants to access %2$@." = "%1$@ wants to access %2$@.";
+
+/* No comment provided by engineer. */
+"%@ Arguments to an option need to be in a new line." = "%@ Arguments to an option need to be in a new line.";
+
+/* macOS menu item */
+"%@ Help" = "%@ Help";
+
+/* Placeholder is app name */
+"%@ Status" = "%@ Status";
+
+/* Placeholder is 'Orbot' */
+"%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time." = "%@ VPN will automatically turn off when Kindness Mode is on. Both cannot run at the same time.";
+
+/* Placeholder is 'Orbot' */
+"%@ will test your connection to determine if you can be a Snowflake Proxy for others." = "%@ will test your connection to determine if you can be a Snowflake Proxy for others.";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_1__" = "__empty__";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_2__" = "by";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_3__" = "for";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_4__" = "on";
+
+/* No comment provided by engineer. */
+"__BLOCKER_HEADER_5__" = "where the URL contains";
+
+/* No comment provided by engineer. */
+"A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps." = "A \"Content Blocker\" provides a list of things to block in Safari, all other browsers and all web views used in apps.";
+
+/* macOS menu item */
+"About %@" = "About %@";
+
+/* No comment provided by engineer. */
+"About Running Kindness Mode on %@" = "About Running Kindness Mode on %@";
+
+/* No comment provided by engineer. */
+"Accept installation of system extension. Orbot will not work without it." = "Accept installation of system extension. Orbot will not work without it.";
+
+/* No comment provided by engineer. */
+"Access Request" = "Access Request";
+
+/* No comment provided by engineer. */
+"Activate" = "Activate";
+
+/* No comment provided by engineer. */
+"Activate Kindness Mode" = "Activate Kindness Mode";
+
+/* No comment provided by engineer. */
+"Add" = "Add";
+
+/* No comment provided by engineer. */
+"Add v3 Onion Service Auth Cookie" = "Add v3 Onion Service Auth Cookie";
+
+/* No comment provided by engineer. */
+"Advanced Tor Configuration" = "Advanced Tor Configuration";
+
+/* No comment provided by engineer. */
+"all" = "all";
+
+/* No comment provided by engineer. */
+"all domains" = "all domains";
+
+/* No comment provided by engineer. */
+"all domains but" = "all domains but";
+
+/* No comment provided by engineer. */
+"all domains but %@" = "all domains but %@";
+
+/* No comment provided by engineer. */
+"all types" = "all types";
+
+/* No comment provided by engineer. */
+"Also don't use excluded nodes for network management" = "Also don't use excluded nodes for network management";
+
+/* No comment provided by engineer. */
+"Always clear cache before start" = "Always clear cache before start";
+
+/* No comment provided by engineer. */
+"An app tried to stop %1$@, but you didn't allow it to do this, yet." = "An app tried to stop %1$@, but you didn't allow it to do this, yet.";
+
+/* No comment provided by engineer. */
+"An unknown error occurred." = "An unknown error occurred.";
+
+/* No comment provided by engineer. */
+"Another app requested an API access token." = "Another app requested an API access token.";
+
+/* No comment provided by engineer. */
+"anything" = "anything";
+
+/* No comment provided by engineer. */
+"API Access" = "API Access";
+
+/* No comment provided by engineer. */
+"API Access Token" = "API Access Token";
+
+/* No comment provided by engineer. */
+"App Icon" = "App Icon";
+
+/* No comment provided by engineer. */
+"Approved" = "Approved";
+
+/* No comment provided by engineer. */
+"Ask Tor" = "Ask Tor";
+
+/* No comment provided by engineer. */
+"Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you." = "Ask within your trusted networks and organizations to see if anyone is hosting a bridge. If not, a friend can get bridges for you.";
+
+/* No comment provided by engineer. */
+"Asking Tor Project's Circumvention Service" = "Asking Tor Project's Circumvention Service";
+
+/* No comment provided by engineer. */
+"ATTENTION: This may harm your anonymity and security!" = "ATTENTION: This may harm your anonymity and security!";
+
+/* No comment provided by engineer. */
+"audio/video media" = "audio/video media";
+
+/* No comment provided by engineer. */
+"Auth Cookies" = "Auth Cookies";
+
+/* No comment provided by engineer. */
+"Automatic Restart" = "Automatic Restart";
+
+/* No comment provided by engineer. */
+"Automatically Restart on Error" = "Automatically Restart on Error";
+
+/* No comment provided by engineer. */
+"Block cookies" = "Block cookies";
+
+/* No comment provided by engineer. */
+"Block requests" = "Block requests";
+
+/* No comment provided by engineer. */
+"Blocker" = "Blocker";
+
+/* No comment provided by engineer. */
+"Bridge connected" = "Bridge connected";
+
+/* No comment provided by engineer. */
+"Bridge stopped" = "Bridge stopped";
+
+/* No comment provided by engineer. */
+"Bridges" = "Bridges";
+
+/* No comment provided by engineer. */
+"Bridges from Tor (obfs4) via Email" = "Bridges from Tor (obfs4) via Email";
+
+/* No comment provided by engineer. */
+"Bridges from Tor (obfs4) via Telegram" = "Bridges from Tor (obfs4) via Telegram";
+
+/* macOS menu item */
+"Bring All to Front" = "Bring All to Front";
+
+/* No comment provided by engineer. */
+"Build new Circuits" = "Build new Circuits";
+
+/* No comment provided by engineer. */
+"Built-in Bridges (obfs4)" = "Built-in Bridges (obfs4)";
+
+/* No comment provided by engineer. */
+"Bypass" = "Bypass";
+
+/* No comment provided by engineer. */
+"Bypass: denied" = "Bypass: denied";
+
+/* No comment provided by engineer. */
+"Bypass: granted" = "Bypass: granted";
+
+/* No comment provided by engineer. */
+"Cancel" = "Cancel";
+
+/* macOS menu item */
+"Capitalize" = "Capitalize";
+
+/* No comment provided by engineer. */
+"Choose How to Connect" = "Choose How to Connect";
+
+/* No comment provided by engineer. */
+"Circuits" = "Circuits";
+
+/* No comment provided by engineer. */
+"Clear Tor Cache" = "Clear Tor Cache";
+
+/* No comment provided by engineer. */
+"Cleared!" = "Cleared!";
+
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked." = "Cloaks your traffic. Gets around some Tor blocking. Good if you're on public Wi-Fi, but in a country where Tor isn't blocked.";
+
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking. May be very slow." = "Cloaks your traffic. Gets around some Tor blocking. May be very slow.";
+
+/* No comment provided by engineer. */
+"Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account." = "Cloaks your traffic. Gets around some Tor blocking. Requires an email sent from a Gmail or Riseup account.";
+
+/* macOS menu item */
+"Close" = "Close";
+
+/* No comment provided by engineer. */
+"Close Log" = "Close Log";
+
+/* No comment provided by engineer. */
+"Comma-separated lists of:" = "Comma-separated lists of:";
+
+/* No comment provided by engineer. */
+"Connected" = "Connected";
+
+/* No comment provided by engineer. */
+"Connecting" = "Connecting";
+
+/* No comment provided by engineer. */
+"Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking." = "Connects through Tor volunteers. But uses a different method than 'original' to find the first volunteer. Gets around some Tor blocking.";
+
+/* No comment provided by engineer. */
+"Connects through Tor volunteers. Gets around some Tor blocking." = "Connects through Tor volunteers. Gets around some Tor blocking.";
+
+/* No comment provided by engineer. */
+"Content Blocker" = "Content Blocker";
+
+/* No comment provided by engineer. */
+"Continue" = "Continue";
+
+/* macOS menu item */
+"Copy" = "Copy";
+
+/* No comment provided by engineer. */
+"Copy to Clipboard" = "Copy to Clipboard";
+
+/* No comment provided by engineer. */
+"Could not connect." = "Could not connect.";
+
+/* No comment provided by engineer. */
+"Create your own rules here to e.g. block popups or third-party scripts." = "Create your own rules here to e.g. block popups or third-party scripts.";
+
+/* No comment provided by engineer. */
+"Current State" = "Current State";
+
+/* No comment provided by engineer. */
+"Custom Bridges" = "Custom Bridges";
+
+/* macOS menu item */
+"Customize Toolbar…" = "Customize Toolbar…";
+
+/* macOS menu item */
+"Cut" = "Cut";
+
+/* No comment provided by engineer. */
+"Delete" = "Delete";
+
+/* No comment provided by engineer. */
+"Deny" = "Deny";
+
+/* No comment provided by engineer. */
+"Direct Connection" = "Direct Connection";
+
+/* No comment provided by engineer. */
+"Disable %@ for non-onion traffic" = "Disable %@ for non-onion traffic";
+
+/* No comment provided by engineer. */
+"Disable GeoIP lookup for nodes (reduces RAM usage)" = "Disable GeoIP lookup for nodes (reduces RAM usage)";
+
+/* No comment provided by engineer. */
+"disabled" = "disabled";
+
+/* No comment provided by engineer. */
+"Disabled" = "Disabled";
+
+/* No comment provided by engineer. */
+"Disconnecting" = "Disconnecting";
+
+/* No comment provided by engineer. */
+"DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended." = "DNS tunnels prioritize access over speed and may feel slower. We recommend enabling them only for essential apps. Video streaming is not recommended.";
+
+/* No comment provided by engineer. */
+"Do not use Kindness Mode if you live in a highly censored country." = "Do not use Kindness Mode if you live in a highly censored country.";
+
+/* No comment provided by engineer. */
+"Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes." = "Do not use these nodes. Overrides entry and exit node list. May still be used for management purposes.";
+
+/* No comment provided by engineer. */
+"documents" = "documents";
+
+/* No comment provided by engineer. */
+"Edit" = "Edit";
+
+/* No comment provided by engineer. */
+"Edit v3 Onion Service Auth Cookie" = "Edit v3 Onion Service Auth Cookie";
+
+/* No comment provided by engineer. */
+"enabled" = "enabled";
+
+/* No comment provided by engineer. */
+"Enabled" = "Enabled";
+
+/* No comment provided by engineer. */
+"Enter bridge address" = "Enter bridge address";
+
+/* macOS menu item */
+"Enter Full Screen" = "Enter Full Screen";
+
+/* No comment provided by engineer. */
+"Entry Nodes" = "Entry Nodes";
+
+/* No comment provided by engineer. */
+"Evaluating" = "Evaluating";
+
+/* No comment provided by engineer. */
+"Exclude Nodes" = "Exclude Nodes";
+
+/* No comment provided by engineer. */
+"Exit Node Countries" = "Exit Node Countries";
+
+/* No comment provided by engineer. */
+"Exit Nodes" = "Exit Nodes";
+
+/* No comment provided by engineer. */
+"Expert" = "Expert";
+
+/* No comment provided by engineer. */
+"fetches" = "fetches";
+
+/* macOS menu item */
+"File" = "File";
+
+/* macOS menu item */
+"Find" = "Find";
+
+/* macOS menu item */
+"Find and Replace…" = "Find and Replace…";
+
+/* macOS menu item */
+"Find Next" = "Find Next";
+
+/* macOS menu item */
+"Find Previous" = "Find Previous";
+
+/* macOS menu item */
+"Find…" = "Find…";
+
+/* No comment provided by engineer. */
+"fonts" = "fonts";
+
+/* No comment provided by engineer. */
+"General" = "General";
+
+/* No comment provided by engineer. */
+"Go back to the requesting app and paste the token in the appropriate dialog." = "Go back to the requesting app and paste the token in the appropriate dialog.";
+
+/* No comment provided by engineer. */
+"Go to iOS Settings App -> Safari -> Extensions." = "Go to iOS Settings App -> Safari -> Extensions.";
+
+/* No comment provided by engineer. */
+"Grant" = "Grant";
+
+/* macOS menu item */
+"Help" = "Help";
+
+/* macOS menu item */
+"Hide %@" = "Hide %@";
+
+/* No comment provided by engineer. */
+"Hide apps from network monitoring and get access when they are blocked." = "Hide apps from network monitoring and get access when they are blocked.";
+
+/* macOS menu item */
+"Hide Others" = "Hide Others";
+
+/* No comment provided by engineer. */
+"Host" = "Host";
+
+/* No comment provided by engineer. */
+"I acknowledge I have read the above." = "I acknowledge I have read the above.";
+
+/* No comment provided by engineer. */
+"If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!" = "If these onion services aren't configured correctly, you will leak information to your Internet Service Provider and anybody else listening on that traffic!";
+
+/* No comment provided by engineer. */
+"If you are using Tor bridges, they will temporarily be disconnected." = "If you are using Tor bridges, they will temporarily be disconnected.";
+
+/* No comment provided by engineer. */
+"If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!" = "If you want the app be able to stop %1$@ automatically, please go back to that app and make it restart the authorization process again!";
+
+/* No comment provided by engineer. */
+"images" = "images";
+
+/* No comment provided by engineer. */
+"Install" = "Install";
+
+/* Placeholder is 'Onion Browser' */
+"Install %@" = "Install %@";
+
+/* No comment provided by engineer. */
+"Install Orbot as a VPN on your device to continue." = "Install Orbot as a VPN on your device to continue.";
+
+/* No comment provided by engineer. */
+"Invalid" = "Invalid";
+
+/* No comment provided by engineer. */
+"Isolate Destination Addresses" = "Isolate Destination Addresses";
+
+/* No comment provided by engineer. */
+"It didn't provide a valid app identifier." = "It didn't provide a valid app identifier.";
+
+/* macOS menu item */
+"Jump to Selection" = "Jump to Selection";
+
+/* Placeholder is 'Orbot' */
+"Keep %@ open for Kindness Mode to work." = "Keep %@ open for Kindness Mode to work.";
+
+/* No comment provided by engineer. */
+"Key" = "Key";
+
+/* No comment provided by engineer. */
+"Kindness Mode" = "Kindness Mode";
+
+/* No comment provided by engineer. */
+"Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect." = "Kindness Mode turns your device into a Snowflake Proxy on the Tor network – a bridge to help others connect.";
+
+/* No comment provided by engineer. */
+"Learn More" = "Learn More";
+
+/* No comment provided by engineer. */
+"Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses." = "Likely to keep you connected if Tor is severely blocked. Using this method will launch the Tor Bot Telegram channel. Tap 'Start' or write '%1$@' in the chat to get bridge addresses.";
+
+/* No comment provided by engineer. */
+"Limit Exit Countries" = "Limit Exit Countries";
+
+/* No comment provided by engineer. */
+"Log" = "Log";
+
+/* No comment provided by engineer. */
+"Maintenance" = "Maintenance";
+
+/* macOS menu item */
+"Make Lower Case" = "Make Lower Case";
+
+/* macOS menu item */
+"Make Upper Case" = "Make Upper Case";
+
+/* macOS menu item */
+"Minimize" = "Minimize";
+
+/* No comment provided by engineer. */
+"Next" = "Next";
+
+/* No comment provided by engineer. */
+"No VPN configuration set." = "No VPN configuration set.";
+
+/* No comment provided by engineer. */
+"Node Configuration" = "Node Configuration";
+
+/* No comment provided by engineer. */
+"Not Approved" = "Not Approved";
+
+/* No comment provided by engineer. */
+"Not Installed" = "Not Installed";
+
+/* No comment provided by engineer. */
+"Not sure?" = "Not sure?";
+
+/* No comment provided by engineer. */
+"NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges." = "NOTE: Snowflake doesn't support proxies. Proxy settings will be ignored with Snowflake bridges.";
+
+/* No comment provided by engineer. */
+"Onion-only Mode" = "Onion-only Mode";
+
+/* No comment provided by engineer. */
+"Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor." = "Only traffic to onion services (to domains ending in \".onion\") will be routed over Tor.";
+
+/* No comment provided by engineer. */
+"Only use these nodes as first hop. Ignored, when bridging is used." = "Only use these nodes as first hop. Ignored, when bridging is used.";
+
+/* No comment provided by engineer. */
+"Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!" = "Only use these nodes to connect outside the Tor network. You will degrade functionality if you list too few!";
+
+/* Placeholder is 'Onion Browser' */
+"Open %@" = "Open %@";
+
+/* No comment provided by engineer. */
+"Open Log" = "Open Log";
+
+/* No comment provided by engineer. */
+"other" = "other";
+
+/* No comment provided by engineer. */
+"Password" = "Password";
+
+/* macOS menu item */
+"Paste" = "Paste";
+
+/* macOS menu item */
+"Paste and Match Style" = "Paste and Match Style";
+
+/* No comment provided by engineer. */
+"Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@." = "Paste the bridge addresses you receive below. Or scan the QR code to add them. Friends can get bridges for you at %@.";
+
+/* No comment provided by engineer. */
+"pings" = "pings";
+
+/* No comment provided by engineer. */
+"Please report this error to the requesting app's developers." = "Please report this error to the requesting app's developers.";
+
+/* No comment provided by engineer. */
+"Please wait while we check to see if you can run an effective proxy." = "Please wait while we check to see if you can run an effective proxy.";
+
+/* No comment provided by engineer. */
+"popups" = "popups";
+
+/* No comment provided by engineer. */
+"Port" = "Port";
+
+/* macOS menu item */
+"Preferences…" = "Preferences…";
+
+/* No comment provided by engineer. */
+"Prefix with asterisk (*) to also capture subdomains." = "Prefix with asterisk (*) to also capture subdomains.";
+
+/* No comment provided by engineer. */
+"Proxy" = "Proxy";
+
+/* No comment provided by engineer. */
+"Proxy Quality" = "Proxy Quality";
+
+/* No comment provided by engineer. */
+"QR Code could not be decoded! Are you sure you scanned a .onion URL?" = "QR Code could not be decoded! Are you sure you scanned a .onion URL?";
+
+/* macOS menu item */
+"Quit %@" = "Quit %@";
+
+/* No comment provided by engineer. */
+"raw data" = "raw data";
+
+/* No comment provided by engineer. */
+"Ready to Connect" = "Ready to Connect";
+
+/* No comment provided by engineer. */
+"Reasserting" = "Reasserting";
+
+/* macOS menu item */
+"Redo" = "Redo";
+
+/* No comment provided by engineer. */
+"Restart computer to finish system extension installation." = "Restart computer to finish system extension installation.";
+
+/* IPtProxyNATRestricted */
+"restricted" = "restricted";
+
+/* No comment provided by engineer. */
+"Run Smart Connect to find the best way" = "Run Smart Connect to find the best way";
+
+/* No comment provided by engineer. */
+"Scan a bridge QR code" = "Scan a bridge QR code";
+
+/* No comment provided by engineer. */
+"scripts" = "scripts";
+
+/* macOS menu item */
+"Select All" = "Select All";
+
+/* No comment provided by engineer. */
+"selected domains" = "selected domains";
+
+/* macOS menu item */
+"Services" = "Services";
+
+/* No comment provided by engineer. */
+"Settings" = "Settings";
+
+/* macOS menu item */
+"Show All" = "Show All";
+
+/* macOS menu item */
+"Show Toolbar" = "Show Toolbar";
+
+/* Placeholder is app name */
+"Shows the connection status of %@." = "Shows the connection status of %@.";
+
+/* No comment provided by engineer. */
+"Smart Connect Timeout (s)" = "Smart Connect Timeout (s)";
+
+/* No comment provided by engineer. */
+"Snowflake (AMP)" = "Snowflake (AMP)";
+
+/* No comment provided by engineer. */
+"Snowflake (original)" = "Snowflake (original)";
+
+/* macOS menu item */
+"Speech" = "Speech";
+
+/* No comment provided by engineer. */
+"Start" = "Start";
+
+/* macOS menu item */
+"Start Speaking" = "Start Speaking";
+
+/* No comment provided by engineer. */
+"Stop" = "Stop";
+
+/* macOS menu item */
+"Stop Speaking" = "Stop Speaking";
+
+/* No comment provided by engineer. */
+"Stop Test" = "Stop Test";
+
+/* No comment provided by engineer. */
+"style sheets" = "style sheets";
+
+/* No comment provided by engineer. */
+"SVG documents" = "SVG documents";
+
+/* No comment provided by engineer. */
+"Switch back to last used VPN after stop" = "Switch back to last used VPN after stop";
+
+/* No comment provided by engineer. */
+"Test Connection" = "Test Connection";
+
+/* No comment provided by engineer. */
+"Testing Connection" = "Testing Connection";
+
+/* No comment provided by engineer. */
+"That app will be unable to access Orbot's API as long as this is not fixed." = "That app will be unable to access Orbot's API as long as this is not fixed.";
+
+/* No comment provided by engineer. */
+"The API access token was copied to your clipboard." = "The API access token was copied to your clipboard.";
+
+/* No comment provided by engineer. */
+"The best way to connect to Tor. Use if Tor is not blocked." = "The best way to connect to Tor. Use if Tor is not blocked.";
+
+/* No comment provided by engineer. */
+"The test will try to connect directly to the Tor network." = "The test will try to connect directly to the Tor network.";
+
+/* No comment provided by engineer. */
+"the website" = "the website";
+
+/* No comment provided by engineer. */
+"third parties" = "third parties";
+
+/* No comment provided by engineer. */
+"this regex:" = "this regex:";
+
+/* No comment provided by engineer. */
+"This Week" = "This Week";
+
+/* No comment provided by engineer. */
+"This will allow %1$@ to:" = "This will allow %1$@ to:";
+
+/* No comment provided by engineer. */
+"To make it work, you will need to activate the blocker:" = "To make it work, you will need to activate the blocker:";
+
+/* No comment provided by engineer. */
+"To upgrade, enable UPnP on your Wi-Fi router for this device." = "To upgrade, enable UPnP on your Wi-Fi router for this device.";
+
+/* No comment provided by engineer. */
+"Tor Configuration Reference" = "Tor Configuration Reference";
+
+/* No comment provided by engineer. */
+"Total" = "Total";
+
+/* No comment provided by engineer. */
+"Traffic to all other domains will be routed through your normal Internet connection." = "Traffic to all other domains will be routed through your normal Internet connection.";
+
+/* macOS menu item */
+"Transformations" = "Transformations";
+
+/* No comment provided by engineer. */
+"Turn off Kindness Mode when you use a VPN on this device." = "Turn off Kindness Mode when you use a VPN on this device.";
+
+/* No comment provided by engineer. */
+"Type" = "Type";
+
+/* macOS menu item */
+"Undo" = "Undo";
+
+/* No comment provided by engineer. */
+"Unknown" = "Unknown";
+
+/* IPtProxyNATUnknown */
+"unknown" = "unknown";
+
+/* IPtProxyNATUnrestricted */
+"unrestricted" = "unrestricted";
+
+/* No comment provided by engineer. */
+"Upgrade your Snowflake Proxy" = "Upgrade your Snowflake Proxy";
+
+/* No comment provided by engineer. */
+"Use %1$@" = "Use %1$@";
+
+/* No comment provided by engineer. */
+"Use different circuits for different destination addresses." = "Use different circuits for different destination addresses.";
+
+/* No comment provided by engineer. */
+"Use Direct Connection" = "Use Direct Connection";
+
+/* macOS menu item */
+"Use Selection for Find" = "Use Selection for Find";
+
+/* No comment provided by engineer. */
+"Use Smart Connect" = "Use Smart Connect";
+
+/* No comment provided by engineer. */
+"Username" = "Username";
+
+/* No comment provided by engineer. */
+"Version %@, Build %@" = "Version %1$@, Build %2$@";
+
+/* macOS menu item */
+"View" = "View";
+
+/* No comment provided by engineer. */
+"VPN" = "VPN";
+
+/* No comment provided by engineer. */
+"VPN in a strange state" = "VPN in a strange state";
+
+/* No comment provided by engineer. */
+"Warning" = "Warning";
+
+/* No comment provided by engineer. */
+"We could not return to that app, because it didn't provide a valid callback URL." = "We could not return to that app, because it didn't provide a valid callback URL.";
+
+/* No comment provided by engineer. */
+"We recommend charging the device when running Kindness Mode." = "We recommend charging the device when running Kindness Mode.";
+
+/* No comment provided by engineer. */
+"WebSockets" = "WebSockets";
+
+/* No comment provided by engineer. */
+"Welcome to Kindness Mode" = "Welcome to Kindness Mode";
+
+/* No comment provided by engineer. */
+"Welcome!" = "Welcome!";
+
+/* macOS menu item */
+"Window" = "Window";
+
+/* No comment provided by engineer. */
+"You are a great candidate for becoming a Snowflake Proxy on the Tor network." = "You are a great candidate for becoming a Snowflake Proxy on the Tor network.";
+
+/* No comment provided by engineer. */
+"You can also turn the device face down to minimize power usage. Kindness Mode will continue to run." = "You can also turn the device face down to minimize power usage. Kindness Mode will continue to run.";
+
+/* No comment provided by engineer. */
+"You can enter multiple bridge addresses." = "You can enter multiple bridge addresses.";
+
+/* No comment provided by engineer. */
+"You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network." = "You cannot be a useful Snowflake Proxy at this time. If you keep seeing this message, try again on a different network.";
+
+/* No comment provided by engineer. */
+"Your Impact in Numbers" = "Your Impact in Numbers";
+
+/* No comment provided by engineer. */
+"Your proxy can be more powerful when kindness mode is running on Wi-Fi." = "Your proxy can be more powerful when kindness mode is running on Wi-Fi.";
+
+/* No comment provided by engineer. */
+"Your screen will dim to minimize power usage." = "Your screen will dim to minimize power usage.";
+
+/* macOS menu item */
+"Zoom" = "Zoom";
