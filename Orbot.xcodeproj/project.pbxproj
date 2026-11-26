@@ -2982,7 +2982,7 @@
 			repositoryURL = "https://github.com/tladesignz/IPtProxyUI-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.1.0;
+				minimumVersion = 6.1.1;
 			};
 		};
 		A04CC97D307D33DA0018C468 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
